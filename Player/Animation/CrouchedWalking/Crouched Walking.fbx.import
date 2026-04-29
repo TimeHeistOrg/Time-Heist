@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqde1iv008bv4"
-path="res://.godot/imported/right strafe walking.fbx-dc9656771b01eb9a808fa8ba3d28a58d.scn"
+uid="uid://dasl15aj7xbgd"
+path="res://.godot/imported/Crouched Walking.fbx-b42478a7194730af3aae12e77d3fcd9c.scn"
 
 [deps]
 
-source_file="res://Player[OLD]/Animation/MaleLocomotion/right strafe walking.fbx"
-dest_files=["res://.godot/imported/right strafe walking.fbx-dc9656771b01eb9a808fa8ba3d28a58d.scn"]
+source_file="res://Player/Animation/CrouchedWalking/Crouched Walking.fbx"
+dest_files=["res://.godot/imported/Crouched Walking.fbx-b42478a7194730af3aae12e77d3fcd9c.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player/Animation/MaleLocomotion/right_strafe_walking.res",
+"save_to_file/fallback_path": "res://Player/Animation/CrouchedWalking/crouch_walking.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://cnhsciq1cift1",
+"save_to_file/path": "uid://b82c7x0pae1m3",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

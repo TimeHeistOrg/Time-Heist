@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3kb6aqh2nhvj"
-path="res://.godot/imported/walking.fbx-5c9f207439076b3f09d53d7a4e5c1e52.scn"
+uid="uid://cpe04ji4uldbh"
+path="res://.godot/imported/standard run.fbx-4a821b836ccc4fdc0e203879acd24382.scn"
 
 [deps]
 
-source_file="res://Player[OLD]/Animation/MaleLocomotion/walking.fbx"
-dest_files=["res://.godot/imported/walking.fbx-5c9f207439076b3f09d53d7a4e5c1e52.scn"]
+source_file="res://Player/Animation/MaleLocomotion/standard run.fbx"
+dest_files=["res://.godot/imported/standard run.fbx-4a821b836ccc4fdc0e203879acd24382.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player/Animation/MaleLocomotion/walking.res",
+"save_to_file/fallback_path": "res://Player/Animation/MaleLocomotion/standard_run.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://ciq6tjimiwggh",
+"save_to_file/path": "uid://b5c0dpi3cim2t",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

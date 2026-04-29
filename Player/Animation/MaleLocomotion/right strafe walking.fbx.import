@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cpe04ji4uldbh"
-path="res://.godot/imported/standard run.fbx-5bf4509e29e7c124bdabb7208e6a4881.scn"
+uid="uid://cqde1iv008bv4"
+path="res://.godot/imported/right strafe walking.fbx-a9631e783b771fe28f572425e0738c08.scn"
 
 [deps]
 
-source_file="res://Player[OLD]/Animation/MaleLocomotion/standard run.fbx"
-dest_files=["res://.godot/imported/standard run.fbx-5bf4509e29e7c124bdabb7208e6a4881.scn"]
+source_file="res://Player/Animation/MaleLocomotion/right strafe walking.fbx"
+dest_files=["res://.godot/imported/right strafe walking.fbx-a9631e783b771fe28f572425e0738c08.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player/Animation/MaleLocomotion/standard_run.res",
+"save_to_file/fallback_path": "res://Player/Animation/MaleLocomotion/right_strafe_walking.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://b5c0dpi3cim2t",
+"save_to_file/path": "uid://cnhsciq1cift1",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

@@ -11,7 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://boiwwo22arptp" path="res://Assets/Meshes/Player/BadgeTextured.res" id="5_7uipr"]
 [ext_resource type="Animation" uid="uid://gxcoan78m4c4" path="res://Player[OLD]/Animation/crouch_walking.res" id="5_dm7nj"]
 [ext_resource type="Script" uid="uid://6bxjlk376khp" path="res://Player[OLD]/States/state_machine.gd" id="5_ku6g1"]
-[ext_resource type="Animation" uid="uid://buaklb5wad5a3" path="res://Player[OLD]/Animation/stand_roll.res" id="6_3mea3"]
+[ext_resource type="Animation" uid="uid://buaklb5wad5a3" path="res://Player/Animation/stand_roll.res" id="6_3mea3"]
 [ext_resource type="Script" uid="uid://bgmirdlww6rh4" path="res://Player[OLD]/States/idle.gd" id="6_yr07i"]
 [ext_resource type="Script" uid="uid://2o24sd5tokp5" path="res://Player[OLD]/OLD_player_animation_controller.gd" id="7_3mea3"]
 [ext_resource type="Animation" uid="uid://cg5hlul8mjfu3" path="res://Player[OLD]/Animation/crouch_idle.res" id="7_7v5gs"]

@@ -18,7 +18,6 @@ const TAP_HOLD_THRESH:float = 0.2
 func _ready():
 	change_input_controller(in_control)
 	await get_tree().process_frame
-	player = globals.player
 
 func change_input_controller(controller: InputControllers):
 	match controller:
@@ -63,8 +62,7 @@ func _input_UI(event: InputEvent):
 	pass
 
 func _process_UI(delta: float):
-	if Input.is_action_just_pressed("escape"):
-		change_input_controller(InputControllers.GAMEPLAY)
+	globals.ui_manager.cur_ui.handle_input(delta)
 
 #endregion
 
@@ -93,7 +91,13 @@ func _process_gameplay(delta: float):
 		roll_walk_timer = 0
 	if Input.is_action_just_pressed("player_crouch"):
 		player.toggle_crouch()
-	if Input.is_action_just_pressed("escape"):
-		change_input_controller(InputControllers.UI)
+	if Input.is_action_just_pressed("player_interact"):
+		player.interact()
+	if Input.is_action_just_pressed("device_menu"):
+		globals.ui_manager.device_menu.open()
+		globals.ui_manager.get_node("ButtonMove").play()
+	
+	#if Input.is_action_just_pressed("escape"):
+		#change_input_controller(InputControllers.UI)
 
 #endregion

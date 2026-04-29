@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dasl15aj7xbgd"
-path="res://.godot/imported/Crouched Walking.fbx-2165ad8defc9d439ac848dd1f6056a80.scn"
+uid="uid://dldhhguy1166i"
+path="res://.godot/imported/idle.fbx-10ffac9014ecde012704e916eabe794a.scn"
 
 [deps]
 
-source_file="res://Player[OLD]/Animation/CrouchedWalking/Crouched Walking.fbx"
-dest_files=["res://.godot/imported/Crouched Walking.fbx-2165ad8defc9d439ac848dd1f6056a80.scn"]
+source_file="res://Player/Animation/MaleLocomotion/idle.fbx"
+dest_files=["res://.godot/imported/idle.fbx-10ffac9014ecde012704e916eabe794a.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player[OLD]/Animation/CrouchedWalking/crouch_walking.res",
+"save_to_file/fallback_path": "res://Player/Animation/MaleLocomotion/idle.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://b82c7x0pae1m3",
+"save_to_file/path": "uid://bmfo0j4cs7hp0",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

@@ -5,6 +5,7 @@ class_name Player extends CharacterBody3D
 @onready var camera_pivot: Node3D = $"Camera Pivot"
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var detection_point: Marker3D = $DetectionPoint
+@onready var interactor: Interactor = $Mesh/Interactor
 
 @export_category("Camera")
 @export var camera_up: float = 5.798:
@@ -61,6 +62,7 @@ var can_be_seen: bool = true
 
 func _ready():
 	globals.player = self
+	InputManager.player = self
 	run_enter()
 
 func _process(delta): #This process is for things that should occur regardless of whether the player has control of input
@@ -79,6 +81,9 @@ func _process(delta): #This process is for things that should occur regardless o
 
 func pan_camera_horizontally(angle):
 	camera_pivot.rotate(Vector3.UP, angle)
+
+func interact():
+	interactor.interact()
 
 func unlock_camera():
 	camera_locked = false
@@ -130,6 +135,7 @@ func run_enter():
 	state = MoveStates.RUN
 	state_move = run_move
 	move_acceleration = run_acceleration
+	detection_point.position.y = 1.5
 	animation_tree["parameters/MoveStates/transition_request"] = "RunWalk"
 
 func run_move(input_dir: Vector2, _delta: float):
@@ -142,6 +148,7 @@ func walk_enter():
 	state = MoveStates.WALK
 	state_move = walk_move
 	move_acceleration = walk_acceleration
+	detection_point.position.y = 1.5
 	animation_tree["parameters/MoveStates/transition_request"] = "RunWalk"
 
 func walk_move(input_dir: Vector2, _delta: float):
@@ -154,6 +161,7 @@ func crouch_enter():
 	state = MoveStates.CROUCH
 	state_move = crouch_move
 	move_acceleration = crouch_acceleration
+	detection_point.position.y = 0.7
 	animation_tree["parameters/MoveStates/transition_request"] = "Crouch"
 
 func crouch_move(input_dir: Vector2, _delta: float):

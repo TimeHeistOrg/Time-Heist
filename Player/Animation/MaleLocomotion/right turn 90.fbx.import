@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://k0dk55plxiom"
-path="res://.godot/imported/left turn 90.fbx-2b53165553d2898867a793789e1693d2.scn"
+uid="uid://c03kxh3ps3gx0"
+path="res://.godot/imported/right turn 90.fbx-b80a21fc01db34fc339fe4b8da67dfd9.scn"
 
 [deps]
 
-source_file="res://Player[OLD]/Animation/MaleLocomotion/left turn 90.fbx"
-dest_files=["res://.godot/imported/left turn 90.fbx-2b53165553d2898867a793789e1693d2.scn"]
+source_file="res://Player/Animation/MaleLocomotion/right turn 90.fbx"
+dest_files=["res://.godot/imported/right turn 90.fbx-b80a21fc01db34fc339fe4b8da67dfd9.scn"]
 
 [params]
 
