@@ -2,5 +2,101 @@
 
 [ext_resource type="Script" uid="uid://dseylbfhsmlj1" path="res://Modules/UI/Game UI/Inventory Wheel/inventory_wheel.gd" id="1_cmedq"]
 
+[sub_resource type="GDScript" id="GDScript_cmedq"]
+resource_name = "ArcDraw"
+script/source = "@tool
+extends Node2D
+
+var _center
+var _radius
+var _start
+var _end
+var _point_count
+var _color
+var _width
+var _antialiased
+
+func draw_inven_arc(center: Vector2, radius: float, start: float, end: float, point_count: int, color: Color, width: float, antialiased: bool):
+	_center = center
+	_radius = radius
+	_start = start
+	_end = end
+	_point_count = point_count
+	_color = color
+	_width = width
+	_antialiased = antialiased
+	queue_redraw()
+	
+func _draw() -> void:
+	if not _center:
+		return
+	draw_arc(_center, _radius, _start, _end, _point_count, _color, _width, _antialiased)
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cmedq"]
+blend_mode = 2
+
+[sub_resource type="GDScript" id="GDScript_dqc0u"]
+resource_name = "MaskDraw"
+script/source = "@tool
+extends Node2D
+
+func draw_inven_line():
+	queue_redraw()
+
+func _ready() -> void:
+	var mat = CanvasItemMaterial.new()
+	mat.blend_mode = CanvasItemMaterial.BLEND_MODE_SUB
+	material = mat
+
+func _draw() -> void:
+	var iw = get_parent() as Node2D
+	if iw:
+		var start_rad = - TAU/4 - deg_to_rad(iw.angle/2)
+		for i in range((iw.num_of_items)+1):
+			var rads = deg_to_rad(rad_to_deg(start_rad) + (i * (iw.angle/iw.num_of_items)))
+			var point = Vector2.from_angle(rads)
+			draw_line(
+				point * (iw.radius - iw.width/2) + iw.center,
+				point * (iw.radius + iw.width/2) + iw.center,
+				Color(0.997, 0.812, 0.892, 1.0),
+				iw.gap_width,
+				true
+			)
+		# --- bottom mask ---
+	# The two endpoints of the arc at start and end angles
+	var p_inner_start = Vector2.from_angle(iw.angle_start_rad) * (iw.radius - iw.width / 2.0) + iw.center
+	var p_outer_start = Vector2.from_angle(iw.angle_start_rad) * (iw.radius + iw.width / 2.0) + iw.center
+	var p_inner_end   = Vector2.from_angle(iw.angle_end_rad)   * (iw.radius - iw.width / 2.0) + iw.center
+	var p_outer_end   = Vector2.from_angle(iw.angle_end_rad)   * (iw.radius + iw.width / 2.0) + iw.center
+
+	# A big quad that covers everything below the arc opening
+	var far_down = iw.center.y + iw.radius + 200.0  # well below the arc
+	var far_left = iw.center.x - iw.radius - 200.0
+	var far_right = iw.center.x + iw.radius + 200.0
+
+	draw_colored_polygon(PackedVector2Array([
+		p_outer_start,
+		p_inner_start,
+		p_inner_end,
+		p_outer_end,
+		Vector2(far_right, p_outer_end.y),
+		Vector2(far_right, far_down),
+		Vector2(far_left,  far_down),
+		Vector2(far_left,  p_outer_start.y),
+	]), Color.WHITE)  # WHITE because BLEND_MODE_SUB subtracts regardless of color
+"
+
 [node name="Inventory Wheel" type="Node2D" unique_id=455971298]
 script = ExtResource("1_cmedq")
+gap_width = 15.0
+num_of_items = 5
+
+[node name="Arc" type="Node2D" parent="." unique_id=1407072790]
+z_index = 100
+script = SubResource("GDScript_cmedq")
+
+[node name="Mask" type="Node2D" parent="." unique_id=746913725]
+z_index = 101
+material = SubResource("CanvasItemMaterial_cmedq")
+script = SubResource("GDScript_dqc0u")
