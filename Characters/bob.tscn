@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4754kdk6bsql" path="res://Characters/bob.gd" id="1_mibd3"]
 [ext_resource type="Texture2D" uid="uid://5iw46avuov1y" path="res://Assets/Models/Characters/NEWtexturepaintloficb(rigged)_0.png" id="1_v7abu"]
 [ext_resource type="Texture2D" uid="uid://cj4n27dsjg25q" path="res://Assets/Models/Characters/NEWtexturepaintloficb(rigged)_1.png" id="2_n3x6u"]
-[ext_resource type="Animation" uid="uid://brjmbv4t5ilxq" path="res://Player/Animation/idle.res" id="3_n3x6u"]
+[ext_resource type="Animation" uid="uid://brjmbv4t5ilxq" path="res://Player[OLD]/Animation/idle.res" id="3_n3x6u"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="5_wqim2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v83rm"]

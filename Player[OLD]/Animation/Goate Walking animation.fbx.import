@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bm2gex704b4e6"
-path="res://.godot/imported/Goate Walking animation.fbx-12e75ef27a625f5d3578a2f9831371c0.scn"
+path="res://.godot/imported/Goate Walking animation.fbx-54349a58d41dbbb7fa5925659c0a2d76.scn"
 
 [deps]
 
-source_file="res://Player/Animation/Goate Walking animation.fbx"
-dest_files=["res://.godot/imported/Goate Walking animation.fbx-12e75ef27a625f5d3578a2f9831371c0.scn"]
+source_file="res://Player[OLD]/Animation/Goate Walking animation.fbx"
+dest_files=["res://.godot/imported/Goate Walking animation.fbx-54349a58d41dbbb7fa5925659c0a2d76.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player/Animation/old_walking.res",
+"save_to_file/fallback_path": "res://Player[OLD]/Animation/old_walking.res",
 "save_to_file/keep_custom_tracks": false,
 "save_to_file/path": "uid://b11edrug05vit",
 "settings/loop_mode": 1,

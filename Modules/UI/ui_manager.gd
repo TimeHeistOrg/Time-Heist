@@ -6,7 +6,7 @@ class_name UI_Manager
 @onready var debug_ui = $"DEBUG UI"
 @export var debug_mode: bool = false
 #@onready var camera_ui = $Camera
-@onready var device_menu = $DeviceMenu
+@onready var device_menu: DeviceMenu = $DeviceMenu
 @onready var caught_ui = $CaughtUI
 var ui_stack: Array[Control] = []
 var cur_ui: Control = null
@@ -20,14 +20,9 @@ func _ready():
 	set_menu(desktop_viewer,false)
 	set_menu(caught_ui, false)
 
-func _process(_delta):
-	handle_input(_delta)
-	if globals.controller_of_input == globals.InputController.UI:
-		cur_ui.handle_input(_delta)
-
 func take_control(ui: Control):
 	if ui != debug_ui:
-		globals.controller_of_input = globals.InputController.UI
+		InputManager.change_input_controller(InputManager.InputControllers.UI)
 	if cur_ui:
 		ui_stack.append(cur_ui)
 		cur_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE #doesnt really do anything
@@ -39,7 +34,7 @@ func release_control():
 		cur_ui.mouse_filter = Control.MOUSE_FILTER_STOP #doesnt really do anything
 	else:
 		cur_ui = null
-		globals.controller_of_input = globals.InputController.GAMEPLAY
+		InputManager.change_input_controller(InputManager.InputControllers.GAMEPLAY)
 
 func handle_input(_delta):
 	#if Input.is_action_just_pressed("camera_ui"):
@@ -50,9 +45,6 @@ func handle_input(_delta):
 		globals.toggle_debug_settings()
 	if Input.is_action_just_pressed("ui_copy"):
 		globals.toggle_lesser_debug_settings()
-	if Input.is_action_just_pressed("device_menu"):
-		toggle_menu(device_menu)
-		$ButtonMove.play()
 
 func toggle_menu(ui:UI):
 	if not ui.is_open:

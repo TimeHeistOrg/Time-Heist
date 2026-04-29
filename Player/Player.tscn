@@ -1,31 +1,29 @@
-[gd_scene format=3 uid="uid://b0eilnkhu73fw"]
+[gd_scene format=3 uid="uid://dx080k5623l3p"]
 
-[ext_resource type="Script" uid="uid://dd5q43br4mghh" path="res://Player/player_controller.gd" id="1_kpmja"]
-[ext_resource type="ArrayMesh" uid="uid://0fubj6k0kllb" path="res://Assets/Meshes/Player/TimeMachineTextured.res" id="2_evw08"]
-[ext_resource type="PackedScene" uid="uid://8gkxub0dm0s7" path="res://Modules/Interaction/Interactor.tscn" id="2_f3eu6"]
-[ext_resource type="ArrayMesh" uid="uid://dobbi3lheyckp" path="res://Assets/Meshes/Player/BackpackTextured.res" id="3_ps8ct"]
-[ext_resource type="ArrayMesh" uid="uid://dhgwpvsr6hr1d" path="res://Assets/Meshes/Player/HairTextured.res" id="3_roy6y"]
-[ext_resource type="Animation" uid="uid://brjmbv4t5ilxq" path="res://Player/Animation/idle.res" id="3_v0k0e"]
-[ext_resource type="Animation" uid="uid://brj668nd31yl" path="res://Player/Animation/running.res" id="4_5wa8t"]
-[ext_resource type="ArrayMesh" uid="uid://cxxn5ewrc336a" path="res://Assets/Meshes/Player/BodyTextured.res" id="4_u5tep"]
-[ext_resource type="ArrayMesh" uid="uid://boiwwo22arptp" path="res://Assets/Meshes/Player/BadgeTextured.res" id="5_7uipr"]
-[ext_resource type="Animation" uid="uid://gxcoan78m4c4" path="res://Player/Animation/crouch_walking.res" id="5_dm7nj"]
-[ext_resource type="Script" uid="uid://6bxjlk376khp" path="res://Player/States/state_machine.gd" id="5_ku6g1"]
-[ext_resource type="Animation" uid="uid://buaklb5wad5a3" path="res://Player/Animation/stand_roll.res" id="6_3mea3"]
-[ext_resource type="Script" uid="uid://bgmirdlww6rh4" path="res://Player/States/idle.gd" id="6_yr07i"]
-[ext_resource type="Script" uid="uid://2o24sd5tokp5" path="res://Player/player_animation_controller.gd" id="7_3mea3"]
-[ext_resource type="Animation" uid="uid://cg5hlul8mjfu3" path="res://Player/Animation/crouch_idle.res" id="7_7v5gs"]
-[ext_resource type="Animation" uid="uid://dq1d5hutb1nft" path="res://Player/Animation/walking.res" id="7_8sa4y"]
-[ext_resource type="Script" uid="uid://g1e51k6pxnwx" path="res://Player/player_input.gd" id="7_f3eu6"]
-[ext_resource type="Script" uid="uid://djpyaus28oo7t" path="res://Player/States/walking.gd" id="8_j4rxl"]
-[ext_resource type="Script" uid="uid://b7xtgegfse881" path="res://Player/States/sliding.gd" id="8_j23h2"]
-[ext_resource type="Script" uid="uid://c13i3s04vpg01" path="res://Player/States/rolling.gd" id="8_v0k0e"]
-[ext_resource type="Script" uid="uid://cgl4x6uxdkx3o" path="res://Player/States/running.gd" id="9_0j2ni"]
-[ext_resource type="Animation" uid="uid://4gs4trqbb4dl" path="res://Player/Animation/walking1.res" id="13_yifbt"]
-[ext_resource type="AudioStream" uid="uid://dh3j7sb6u83ej" path="res://Assets/SFX/running.ogg" id="21_roy6y"]
-[ext_resource type="Texture2D" uid="uid://bbradfuplryhd" path="res://Assets/UI/HUD/Minimap/timepin.png" id="24_7uipr"]
+[ext_resource type="Script" uid="uid://djhk3dt3f38v5" path="res://Player/player_controller.gd" id="1_b1ygp"]
+[ext_resource type="ArrayMesh" uid="uid://cxxn5ewrc336a" path="res://Assets/Meshes/Player/BodyTextured.res" id="2_o28un"]
+[ext_resource type="ArrayMesh" uid="uid://dobbi3lheyckp" path="res://Assets/Meshes/Player/BackpackTextured.res" id="3_n471f"]
+[ext_resource type="ArrayMesh" uid="uid://0fubj6k0kllb" path="res://Assets/Meshes/Player/TimeMachineTextured.res" id="4_7emwf"]
+[ext_resource type="ArrayMesh" uid="uid://boiwwo22arptp" path="res://Assets/Meshes/Player/BadgeTextured.res" id="5_hshwv"]
+[ext_resource type="ArrayMesh" uid="uid://dhgwpvsr6hr1d" path="res://Assets/Meshes/Player/HairTextured.res" id="6_gpjlu"]
+[ext_resource type="Animation" uid="uid://bcfh1nth7p8mn" path="res://Player/Animation/CrouchedWalking/crouch_idle.res" id="7_8mwp6"]
+[ext_resource type="Animation" uid="uid://b82c7x0pae1m3" path="res://Player/Animation/CrouchedWalking/crouch_walking.res" id="8_qemgg"]
+[ext_resource type="Animation" uid="uid://1ebaif5esg5f" path="res://Player/Animation/MaleLocomotion/idle.res" id="9_8viyr"]
+[ext_resource type="Animation" uid="uid://dtedtddd5aca" path="res://Player/Animation/MaleLocomotion/left_strafe.res" id="10_sm0op"]
+[ext_resource type="Animation" uid="uid://5xwruum0nqgo" path="res://Player/Animation/MaleLocomotion/left_strafe_walking.res" id="11_76lrf"]
+[ext_resource type="Animation" uid="uid://ccplu82nxt2ii" path="res://Player/Animation/MaleLocomotion/right_strafe.res" id="12_efx54"]
+[ext_resource type="Animation" uid="uid://dsths4qb8268d" path="res://Player/Animation/MaleLocomotion/right_strafe_walking.res" id="13_755ss"]
+[ext_resource type="Animation" uid="uid://buaklb5wad5a3" path="res://Player/Animation/stand_roll.res" id="14_bbimk"]
+[ext_resource type="Animation" uid="uid://dhakdg1pxenbo" path="res://Player/Animation/MaleLocomotion/standard_run.res" id="15_m0h3t"]
+[ext_resource type="Animation" uid="uid://b50qfn4qgsuwk" path="res://Player/Animation/MaleLocomotion/walking.res" id="16_i4o1l"]
+[ext_resource type="PackedScene" uid="uid://8gkxub0dm0s7" path="res://Modules/Interaction/Interactor.tscn" id="17_j2n6q"]
+[ext_resource type="Texture2D" uid="uid://bbradfuplryhd" path="res://Assets/UI/HUD/Minimap/timepin.png" id="18_c6x0f"]
 
-[sub_resource type="Skin" id="Skin_g7pxi"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pta86"]
+radius = 0.25
+height = 1.829
+
+[sub_resource type="Skin" id="Skin_v3wqe"]
 resource_name = "Skin"
 bind_count = 25
 bind/0/name = &"mixamorig_Hips"
@@ -104,7 +102,7 @@ bind/24/name = &"mixamorig_RightToe_End"
 bind/24/bone = -1
 bind/24/pose = Transform3D(-99.45263, 9.794947, -3.6379232, -9.739291, -99.51037, -1.6755428, -3.7842388, -1.3120706, 99.91974, -0.07549876, -0.21602364, -0.009800126)
 
-[sub_resource type="Skin" id="Skin_c6543"]
+[sub_resource type="Skin" id="Skin_a7e3d"]
 resource_name = "Skin2"
 bind_count = 25
 bind/0/name = &"mixamorig_Hips"
@@ -183,7 +181,7 @@ bind/24/name = &"mixamorig_RightToe_End"
 bind/24/bone = -1
 bind/24/pose = Transform3D(-99.45263, 9.794947, -3.637923, -9.739291, -99.51037, -1.6755424, -3.7842379, -1.3120713, 99.91974, -0.07549876, -0.21602364, -0.009800189)
 
-[sub_resource type="Skin" id="Skin_w8efs"]
+[sub_resource type="Skin" id="Skin_evhqo"]
 resource_name = "Skin3"
 bind_count = 25
 bind/0/name = &"mixamorig_Hips"
@@ -262,7 +260,7 @@ bind/24/name = &"mixamorig_RightToe_End"
 bind/24/bone = -1
 bind/24/pose = Transform3D(-99.45263, 9.794946, -3.637923, -9.739291, -99.51037, -1.6755419, -3.7842367, -1.3120708, 99.919716, -0.07549875, -0.21602364, -0.009800015)
 
-[sub_resource type="Skin" id="Skin_pbalu"]
+[sub_resource type="Skin" id="Skin_8p8ys"]
 resource_name = "Skin4"
 bind_count = 25
 bind/0/name = &"mixamorig_Hips"
@@ -341,7 +339,7 @@ bind/24/name = &"mixamorig_RightToe_End"
 bind/24/bone = -1
 bind/24/pose = Transform3D(-99.45263, 9.794947, -3.6379223, -9.739291, -99.51037, -1.6755427, -3.7842386, -1.312071, 99.919716, -0.07549875, -0.21602364, -0.009800105)
 
-[sub_resource type="Skin" id="Skin_cwmru"]
+[sub_resource type="Skin" id="Skin_fw5v7"]
 resource_name = "Skin5"
 bind_count = 25
 bind/0/name = &"mixamorig_Hips"
@@ -420,238 +418,266 @@ bind/24/name = &"mixamorig_RightToe_End"
 bind/24/bone = -1
 bind/24/pose = Transform3D(-99.45263, 9.794947, -3.6379232, -9.739291, -99.51037, -1.6755428, -3.7842386, -1.3120708, 99.91974, -0.07549876, -0.21602364, -0.009800126)
 
-[sub_resource type="Animation" id="Animation_ps8ct"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton3D:mixamorig_Head")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, -4.371139e-08)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7uipr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pgii3"]
 _data = {
-&"RESET": SubResource("Animation_ps8ct")
+&"crouch_idle": ExtResource("7_8mwp6"),
+&"crouch_walking": ExtResource("8_qemgg"),
+&"idle": ExtResource("9_8viyr"),
+&"left_strafe": ExtResource("10_sm0op"),
+&"left_strafe_walking": ExtResource("11_76lrf"),
+&"right_strafe": ExtResource("12_efx54"),
+&"right_strafe_walking": ExtResource("13_755ss"),
+&"stand_roll": ExtResource("14_bbimk"),
+&"standard_run": ExtResource("15_m0h3t"),
+&"walking": ExtResource("16_i4o1l")
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0mko"]
-_data = {
-&"crouch_idle": ExtResource("7_7v5gs"),
-&"crouch_walking": ExtResource("5_dm7nj"),
-&"idle": ExtResource("3_v0k0e"),
-&"running": ExtResource("4_5wa8t"),
-&"stand_roll": ExtResource("6_3mea3"),
-&"walking": ExtResource("7_8sa4y"),
-&"walking1": ExtResource("13_yifbt")
-}
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d3b4r"]
+animation = &"Movement/crouch_idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7v5gs"]
-animation = &"Player/crouch_walking"
-use_custom_timeline = true
-timeline_length = 0.0
-stretch_time_scale = true
-start_offset = 0.0
-loop_mode = 0
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sq2ld"]
+animation = &"Movement/crouch_walking"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8sa4y"]
-animation = &"Player/crouch_walking"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_3mea3"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_7v5gs")
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_7lsfx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_d3b4r")
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_8sa4y")
-blend_point_1/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_sq2ld")
+blend_point_1/pos = 0.90000004
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_d3b4r"]
+xfade_time = 0.3
+input_0/name = "RunWalk"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "Roll"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "Crouch"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rrlna"]
+animation = &"Movement/stand_roll"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_rrlna"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_odemt"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ry4o1"]
+animation = &"Movement/standard_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pgii3"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3shcs"]
+animation = &"Movement/walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ht14g"]
+animation = &"Movement/standard_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_30t5u"]
+animation = &"Movement/standard_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eruo2"]
+animation = &"Movement/walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cma2w"]
+animation = &"Movement/walking"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_33qhy"]
+animation = &"Movement/standard_run"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o6f5k"]
+animation = &"Movement/walking"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ld23j"]
+animation = &"Movement/standard_run"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uwrmx"]
+animation = &"Movement/left_strafe_walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yofyk"]
+animation = &"Movement/walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_imfy4"]
+animation = &"Movement/left_strafe"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jk8b4"]
+animation = &"Movement/right_strafe_walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y7ihl"]
+animation = &"Movement/right_strafe"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2la6v"]
+animation = &"Movement/left_strafe_walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5bk5k"]
+animation = &"Movement/left_strafe"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bejdx"]
+animation = &"Movement/right_strafe_walking"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b045r"]
+animation = &"Movement/right_strafe"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l6i4s"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fxpx3"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a4u73"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7hxpd"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ccvf6"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q4ip2"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iq84r"]
+animation = &"Movement/idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_cprru"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_odemt")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ry4o1")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_yofyk")
+blend_point_2/pos = Vector2(0, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_l6i4s")
+blend_point_3/pos = Vector2(1, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_fxpx3")
+blend_point_4/pos = Vector2(-1, -1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_a4u73")
+blend_point_5/pos = Vector2(-0.5, -1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_7hxpd")
+blend_point_6/pos = Vector2(0.5, -1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_ccvf6")
+blend_point_7/pos = Vector2(0.3, -1)
+blend_point_8/node = SubResource("AnimationNodeAnimation_q4ip2")
+blend_point_8/pos = Vector2(0.8, -1)
+blend_point_9/node = SubResource("AnimationNodeAnimation_iq84r")
+blend_point_9/pos = Vector2(-0.3, -1)
+blend_point_10/node = SubResource("AnimationNodeAnimation_pgii3")
+blend_point_10/pos = Vector2(-0.8, -1)
+blend_point_11/node = SubResource("AnimationNodeAnimation_3shcs")
+blend_point_11/pos = Vector2(1, 0)
+blend_point_12/node = SubResource("AnimationNodeAnimation_ht14g")
+blend_point_12/pos = Vector2(1, 1)
+blend_point_13/node = SubResource("AnimationNodeAnimation_30t5u")
+blend_point_13/pos = Vector2(-1, 1)
+blend_point_14/node = SubResource("AnimationNodeAnimation_eruo2")
+blend_point_14/pos = Vector2(-1, 0)
+blend_point_15/node = SubResource("AnimationNodeAnimation_cma2w")
+blend_point_15/pos = Vector2(-0.5, 0)
+blend_point_16/node = SubResource("AnimationNodeAnimation_33qhy")
+blend_point_16/pos = Vector2(-0.5, 1)
+blend_point_17/node = SubResource("AnimationNodeAnimation_o6f5k")
+blend_point_17/pos = Vector2(0.5, 0)
+blend_point_18/node = SubResource("AnimationNodeAnimation_ld23j")
+blend_point_18/pos = Vector2(0.5, 1)
+blend_point_19/node = SubResource("AnimationNodeAnimation_uwrmx")
+blend_point_19/pos = Vector2(-0.3, 0)
+blend_point_20/node = SubResource("AnimationNodeAnimation_imfy4")
+blend_point_20/pos = Vector2(-0.3, 1)
+blend_point_21/node = SubResource("AnimationNodeAnimation_jk8b4")
+blend_point_21/pos = Vector2(0.3, 0)
+blend_point_22/node = SubResource("AnimationNodeAnimation_y7ihl")
+blend_point_22/pos = Vector2(0.3, 1)
+blend_point_23/node = SubResource("AnimationNodeAnimation_2la6v")
+blend_point_23/pos = Vector2(-0.8, 0)
+blend_point_24/node = SubResource("AnimationNodeAnimation_5bk5k")
+blend_point_24/pos = Vector2(-0.8, 1)
+blend_point_25/node = SubResource("AnimationNodeAnimation_bejdx")
+blend_point_25/pos = Vector2(0.8, 0)
+blend_point_26/node = SubResource("AnimationNodeAnimation_b045r")
+blend_point_26/pos = Vector2(0.8, 1)
 sync = true
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3mea3"]
-animation = &"Player/idle"
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gxmyo"]
+graph_offset = Vector2(-434.99768, 100.43152)
+nodes/output/position = Vector2(560, 112)
+nodes/RunWalkBlend/node = SubResource("AnimationNodeBlendSpace2D_cprru")
+nodes/RunWalkBlend/position = Vector2(-140, 30)
+nodes/CrouchBlendSpace/node = SubResource("AnimationNodeBlendSpace1D_7lsfx")
+nodes/CrouchBlendSpace/position = Vector2(20, 340)
+nodes/MoveStates/node = SubResource("AnimationNodeTransition_d3b4r")
+nodes/MoveStates/position = Vector2(340, 100)
+nodes/RollAnim/node = SubResource("AnimationNodeAnimation_rrlna")
+nodes/RollAnim/position = Vector2(-370, 250)
+nodes/RollTimeScale/node = SubResource("AnimationNodeTimeScale_rrlna")
+nodes/RollTimeScale/position = Vector2(-150, 250)
+node_connections = [&"output", 0, &"MoveStates", &"MoveStates", 0, &"RunWalkBlend", &"MoveStates", 1, &"RollTimeScale", &"MoveStates", 2, &"CrouchBlendSpace", &"RollTimeScale", 0, &"RollAnim"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d7xyo"]
-animation = &"Player/stand_roll"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_evw08"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_roy6y"]
-graph_offset = Vector2(49.133575, 58.55591)
-nodes/output/position = Vector2(820, 150)
-nodes/Roll/node = SubResource("AnimationNodeAnimation_d7xyo")
-nodes/Roll/position = Vector2(320, 120)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_evw08")
-nodes/TimeScale/position = Vector2(550, 100)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Roll"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u5tep"]
-animation = &"Player/idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ps8ct"]
-animation = &"Player/walking"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7uipr"]
-animation = &"Player/running"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_yifbt"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_u5tep")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_ps8ct")
-blend_point_1/pos = 0.5
-blend_point_2/node = SubResource("AnimationNodeAnimation_7uipr")
-blend_point_2/pos = 1.0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_evw08"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8sa4y"]
-xfade_time = 0.3
-advance_mode = 2
-advance_condition = &"not_crouching"
-advance_expression = "(state_string == \"Walking\") or (state_string == \"Running\")"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3nb2p"]
-xfade_time = 0.1
-advance_mode = 2
-advance_expression = "state_string == \"Idle\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d7xyo"]
-xfade_time = 0.3
-advance_mode = 2
-advance_condition = &"is_crouching"
-advance_expression = "state_string == \"Idle\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_roy6y"]
-xfade_time = 0.2
-advance_mode = 2
-advance_condition = &"not_crouching"
-advance_expression = "state_string == \"Idle\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7v5gs"]
-xfade_time = 0.3
-advance_mode = 2
-advance_condition = &"is_crouching"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ps8ct"]
-advance_mode = 2
-advance_expression = "state_string == \"Rolling\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7uipr"]
-xfade_time = 0.5
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"not_crouching"
-advance_expression = "state_string == \"Idle\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yifbt"]
-advance_mode = 2
-advance_expression = "state_string == \"Rolling\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s0mko"]
-advance_mode = 2
-advance_expression = "state_string == \"Rolling\""
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hqjia"]
-xfade_time = 0.5
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"not_crouching"
-advance_expression = "(state_string == \"Running\") or (state_string == \"Walking\")"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x70vp"]
-xfade_time = 0.5
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_crouching"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u5tep"]
-xfade_time = 0.2
-advance_mode = 2
-advance_condition = &"not_crouching"
-advance_expression = "(state_string == \"Walking\") or (state_string == \"Running\")"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d7xyo"]
-states/End/position = Vector2(848.5, 286.5)
-states/Start/position = Vector2(101.5, 245.75)
-states/crouching/node = SubResource("AnimationNodeBlendSpace1D_3mea3")
-states/crouching/position = Vector2(583.02704, 365.7965)
-states/idle/node = SubResource("AnimationNodeAnimation_3mea3")
-states/idle/position = Vector2(247.56143, 245.82202)
-states/roll/node = SubResource("AnimationNodeBlendTree_roy6y")
-states/roll/position = Vector2(247.59216, 372.99652)
-states/walk_run/node = SubResource("AnimationNodeBlendSpace1D_yifbt")
-states/walk_run/position = Vector2(582.1958, 236.79321)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_evw08"), "idle", "walk_run", SubResource("AnimationNodeStateMachineTransition_8sa4y"), "walk_run", "idle", SubResource("AnimationNodeStateMachineTransition_3nb2p"), "idle", "crouching", SubResource("AnimationNodeStateMachineTransition_d7xyo"), "crouching", "idle", SubResource("AnimationNodeStateMachineTransition_roy6y"), "walk_run", "crouching", SubResource("AnimationNodeStateMachineTransition_7v5gs"), "walk_run", "roll", SubResource("AnimationNodeStateMachineTransition_ps8ct"), "roll", "idle", SubResource("AnimationNodeStateMachineTransition_7uipr"), "crouching", "roll", SubResource("AnimationNodeStateMachineTransition_yifbt"), "idle", "roll", SubResource("AnimationNodeStateMachineTransition_s0mko"), "roll", "walk_run", SubResource("AnimationNodeStateMachineTransition_hqjia"), "roll", "crouching", SubResource("AnimationNodeStateMachineTransition_x70vp"), "crouching", "walk_run", SubResource("AnimationNodeStateMachineTransition_u5tep")]
-graph_offset = Vector2(10.389954, 194.49652)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpmja"]
-radius = 0.25
-height = 1.829
-
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=265121882]
+[node name="Player" type="CharacterBody3D" unique_id=288105915]
 collision_mask = 28
-script = ExtResource("1_kpmja")
-max_speed_walking = 2.5
-acceleration_walking = 2.5
-deceleration_walking = 5.0
-max_speed_crouching = 2.2
-acceleration_crouching = 1.0
-deceleration_crouching = 6.0
-max_speed_running = 5.0
-acceleration_running = 2.0
-deceleration_running = 3.0
-roll_speed = 5.0
-crouch_roll_speed = 3.0
-roll_duration = 0.4
+script = ExtResource("1_b1ygp")
 
-[node name="DetectionPoint" type="Marker3D" parent="." unique_id=324428452]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.5, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1521528956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.914, -0.05)
+shape = SubResource("CapsuleShape3D_pta86")
 
-[node name="Mesh" type="Node3D" parent="." unique_id=1214354426]
+[node name="Mesh" type="Node3D" parent="." unique_id=1864642491]
 
-[node name="Armature" type="Node3D" parent="Mesh" unique_id=374266651]
+[node name="Armature" type="Node3D" parent="Mesh" unique_id=1355136757]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Mesh/Armature" unique_id=244160228]
+[node name="Skeleton3D" type="Skeleton3D" parent="Mesh/Armature" unique_id=1357512521]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, -6.0999617e-05, -1.5974116e-06, 6.099962e-05, 0.99999994, -6.391555e-07, 1.5974505e-06, 6.39058e-07, 1, -2.2580475e-06, 0.9995095, -0.0146516)
 bones/0/enabled = true
-bones/0/position = Vector3(0.011462297, 0.940115, -0.00778211)
-bones/0/rotation = Quaternion(-0.025214124, -0.01948919, -0.014289536, 0.99939)
+bones/0/position = Vector3(-2.2580475e-06, 0.9995095, -0.0146516)
+bones/0/rotation = Quaternion(-0.025901621, -0.04709493, -0.026404731, 0.9982054)
 bones/0/scale = Vector3(1, 0.99999994, 1)
 bones/1/name = "mixamorig_Spine"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 0.9915554, 0.12968463, 0, -0.12968466, 0.9915552, -1.0842022e-19, 0.074386224, -0.009728906)
 bones/1/enabled = true
 bones/1/position = Vector3(1.9144864e-12, 0.07438628, -0.009728905)
-bones/1/rotation = Quaternion(-0.04693847, -0.0027738167, 0.0030689961, 0.9988892)
+bones/1/rotation = Quaternion(-0.051876843, 0.0120787965, 0.025785683, 0.99824744)
 bones/1/scale = Vector3(1, 1.0000001, 1)
 bones/2/name = "mixamorig_Spine1"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 0, 0, 0, 0.9999999, -5.137149e-08, 0, 5.1371483e-08, 1, -1.4901161e-10, 0.087523006, 3.513799e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(4.3817359e-13, 0.08752299, 7.152557e-09)
-bones/2/rotation = Quaternion(0.014369976, -0.027933724, 0.0004198873, 0.9995064)
+bones/2/rotation = Quaternion(0.01003983, 0.0016012265, 0.014619691, 0.99984145)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "mixamorig_Spine2"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, 0, 0, 1, 1.9207924e-07, 0, -1.9207924e-07, 1, -1.0842022e-19, 0.10002638, -1.094441e-08)
 bones/3/enabled = true
 bones/3/position = Vector3(3.9396188e-13, 0.1000264, 4.7683715e-09)
-bones/3/rotation = Quaternion(0.01417764, -0.027936138, 0.0011435692, 0.9995085)
+bones/3/rotation = Quaternion(0.022402827, 0.0016279137, 0.014322642, 0.9996451)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "mixamorig_Neck"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, 0, 0, 0, 0.9915553, -0.12968482, 0, 0.12968482, 0.9915553, 0, 0.112529494, -4.537797e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(-3.516522e-13, 0.112529755, 2.8610229e-08)
-bones/4/rotation = Quaternion(0.066581585, 0.017861564, -0.007078209, 0.9975961)
+bones/4/rotation = Quaternion(0.048060544, -0.0020507136, 0.004583354, 0.99883187)
 bones/4/scale = Vector3(1, 0.9999998, 0.9999999)
 bones/5/name = "mixamorig_Head"
 bones/5/parent = 4
 bones/5/rest = Transform3D(1, 0, 0, 0, 0.9999999, 3.11062e-08, 0, -3.1106197e-08, 1, 7.4505804e-11, 0.08023178, 0.02340564)
 bones/5/enabled = true
 bones/5/position = Vector3(-6.4520443e-13, 0.08023163, 0.023405649)
-bones/5/rotation = Quaternion(0, -1, 0, 4.371139e-08)
+bones/5/rotation = Quaternion(-0.068498515, 0.01072607, 0.00039908648, 0.9975935)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "mixamorig_HeadTop_End"
 bones/6/parent = 5
@@ -672,28 +698,28 @@ bones/8/parent = 3
 bones/8/rest = Transform3D(-0.0413152, 0.95463026, -0.2949142, 0.0006662012, -0.29513982, -0.955454, -0.9991461, -0.039671246, 0.011557818, 0.055970486, 0.095796816, -0.0022505429)
 bones/8/enabled = true
 bones/8/position = Vector3(0.055970486, 0.09579686, -0.0022505426)
-bones/8/rotation = Quaternion(-0.5331447, -0.44252425, 0.60627115, -0.3903387)
+bones/8/rotation = Quaternion(-0.6248518, -0.46347523, 0.48829344, -0.39537388)
 bones/8/scale = Vector3(1, 1.0000001, 1)
 bones/9/name = "mixamorig_LeftArm"
 bones/9/parent = 8
 bones/9/rest = Transform3D(0.9941195, -0.10596299, -0.022326408, 0.108289555, 0.9727613, 0.20496063, 2.421439e-08, -0.20617306, 0.9785155, -1.6373449e-09, 0.116052434, -5.9796164e-09)
 bones/9/enabled = true
 bones/9/position = Vector3(1.1920929e-09, 0.11605238, -8.225441e-08)
-bones/9/rotation = Quaternion(0.47625282, 0.20880024, 0.057004713, 0.8522536)
+bones/9/rotation = Quaternion(0.5355619, 0.18339252, 0.20653635, 0.7980498)
 bones/9/scale = Vector3(1, 1.0000001, 1.0000002)
 bones/10/name = "mixamorig_LeftForeArm"
 bones/10/parent = 9
 bones/10/rest = Transform3D(0.99801373, -0.062900044, 0.0034805543, 0.06299625, 0.99648935, -0.055142686, 1.4156103e-07, 0.055252425, 0.9984724, 1.9476564e-08, 0.22108105, 1.4906128e-07)
 bones/10/enabled = true
 bones/10/position = Vector3(-2.06798e-08, 0.22108105, -9.0648754e-08)
-bones/10/rotation = Quaternion(0.036898687, 0.014522845, 0.26049346, 0.964661)
+bones/10/rotation = Quaternion(-5.92645e-08, 7.412746e-08, 0.0139692975, 0.9999024)
 bones/10/scale = Vector3(0.99999976, 1, 0.9999998)
 bones/11/name = "mixamorig_LeftHand"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.9999999, -3.104476e-07, -3.053177e-08, 3.104477e-07, 0.9999998, 1.5474754e-06, 3.0531282e-08, -1.5474752e-06, 1, -4.254955e-09, 0.19366083, 1.0664212e-08)
 bones/11/enabled = true
 bones/11/position = Vector3(-1.1010416e-08, 0.19366096, 1.6164268e-09)
-bones/11/rotation = Quaternion(-7.6606466e-07, -7.450068e-09, 1.6133984e-07, 1)
+bones/11/rotation = Quaternion(0.04746963, -0.28039026, 0.026433485, 0.9583472)
 bones/11/scale = Vector3(1.0000001, 1, 1.0000001)
 bones/12/name = "mixamorig_LeftHand_end"
 bones/12/parent = 11
@@ -707,28 +733,28 @@ bones/13/parent = 3
 bones/13/rest = Transform3D(-0.039119717, -0.9546304, 0.2952129, -0.0006549656, -0.29541445, -0.95536894, 0.9992343, -0.03756714, 0.0109312525, -0.055970494, 0.09578084, -0.0021284514)
 bones/13/enabled = true
 bones/13/position = Vector3(-0.055970483, 0.095780894, -0.002128458)
-bones/13/rotation = Quaternion(0.60205066, -0.39979336, 0.5552559, 0.41157174)
+bones/13/rotation = Quaternion(0.6298819, -0.45910904, 0.50450087, 0.37141177)
 bones/13/scale = Vector3(0.99999976, 0.9999999, 0.99999976)
 bones/14/name = "mixamorig_RightArm"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.99390596, 0.10786912, 0.022695728, -0.110230856, 0.97261137, 0.20463695, -1.1827796e-07, -0.20589165, 0.9785748, -4.4813472e-08, 0.116052486, -1.4654464e-07)
 bones/14/enabled = true
 bones/14/position = Vector3(-2.503395e-08, 0.11605249, 1.013279e-08)
-bones/14/rotation = Quaternion(0.46489093, -0.16429932, -0.05805862, 0.8680504)
+bones/14/rotation = Quaternion(0.45017627, -0.26733315, -0.22969663, 0.8204351)
 bones/14/scale = Vector3(0.9999999, 1.0000001, 1)
 bones/15/name = "mixamorig_RightForeArm"
 bones/15/parent = 14
 bones/15/rest = Transform3D(0.9985345, 0.054042798, -0.0029177864, -0.054121517, 0.9970822, -0.053831983, 4.2258765e-08, 0.053910986, 0.9985459, 3.5140577e-08, 0.22115275, 2.099237e-08)
 bones/15/enabled = true
 bones/15/position = Vector3(1.3569697e-08, 0.22115284, -5.1881845e-08)
-bones/15/rotation = Quaternion(0.036881242, -0.014506494, -0.26319933, 0.9639271)
+bones/15/rotation = Quaternion(-2.4010658e-09, 3.3178362e-09, -0.058044564, 0.99831396)
 bones/15/scale = Vector3(1, 0.9999999, 1)
 bones/16/name = "mixamorig_RightHand"
 bones/16/parent = 15
 bones/16/rest = Transform3D(1, -2.5617524e-08, 5.6152163e-09, 2.5617524e-08, 1, -3.6596155e-08, -5.6152163e-09, 3.659616e-08, 0.9999999, 3.778546e-08, 0.19352493, 3.3156198e-07)
 bones/16/enabled = true
 bones/16/position = Vector3(-1.5030409e-08, 0.19352499, 3.876012e-09)
-bones/16/rotation = Quaternion(1.984916e-08, 1.11758665e-08, 5.090058e-09, 1)
+bones/16/rotation = Quaternion(0.05539158, 0.17495894, -0.004465226, 0.9830063)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/name = "mixamorig_RightHand_end"
 bones/17/parent = 16
@@ -742,28 +768,28 @@ bones/18/parent = 0
 bones/18/rest = Transform3D(-0.99987745, 0.015670821, 3.058523e-07, -0.01566135, -0.99927175, -0.034790102, -0.0005448837, -0.03478581, 0.99939513, 0.067813896, -0.04132096, 0.014486661)
 bones/18/enabled = true
 bones/18/position = Vector3(0.0678139, -0.041320972, 0.014486662)
-bones/18/rotation = Quaternion(0.04122191, 0.055427898, 0.9970027, -0.03484454)
+bones/18/rotation = Quaternion(0.13605271, 0.08160935, 0.98453367, -0.074316956)
 bones/18/scale = Vector3(1.0000002, 0.9999999, 1.0000005)
 bones/19/name = "mixamorig_LeftLeg"
 bones/19/parent = 18
 bones/19/rest = Transform3D(0.99997413, 0.007199592, 0.0003315761, -0.0072072223, 0.9989108, 0.04610565, 7.2688283e-07, -0.046106853, 0.99893653, 5.2784546e-09, 0.44744316, -3.928715e-09)
 bones/19/enabled = true
 bones/19/position = Vector3(5.181573e-10, 0.4474429, -2.7939677e-11)
-bones/19/rotation = Quaternion(-0.22226702, -0.08115741, 0.009293656, 0.97155786)
+bones/19/rotation = Quaternion(-0.13650824, -0.015440415, 0.038611133, 0.9897658)
 bones/19/scale = Vector3(0.99999994, 0.99999994, 0.9999999)
 bones/20/name = "mixamorig_LeftFoot"
 bones/20/parent = 19
 bones/20/rest = Transform3D(0.9975939, -0.0629174, -0.02911372, -1.3411044e-07, 0.41994733, -0.90754837, 0.0693268, 0.90536505, 0.4189368, -4.4434376e-09, 0.41750377, -4.408032e-09)
 bones/20/enabled = true
 bones/20/position = Vector3(-7.4796846e-10, 0.4175039, -5.18281e-09)
-bones/20/rotation = Quaternion(0.6153586, -0.08597011, 0.007933374, 0.783505)
+bones/20/rotation = Quaternion(0.44776285, -0.030596022, -0.057049315, 0.8918059)
 bones/20/scale = Vector3(0.9999997, 0.9999998, 0.9999997)
 bones/21/name = "mixamorig_LeftToeBase"
 bones/21/parent = 20
 bones/21/rest = Transform3D(0.998161, -0.028904917, -0.053283226, -1.21071935e-08, 0.87899333, -0.476834, 0.06061844, 0.475957, 0.87737703, -8.30245e-09, 0.18213053, -5.1976095e-08)
 bones/21/enabled = true
 bones/21/position = Vector3(-1.7229468e-09, 0.18213055, -1.7881393e-09)
-bones/21/rotation = Quaternion(0.24792059, -0.025668982, 0.00639311, 0.9684192)
+bones/21/rotation = Quaternion(0.37543932, -3.2596294e-08, 7.9162426e-08, 0.92684704)
 bones/21/scale = Vector3(0.99999994, 1, 1)
 bones/22/name = "mixamorig_LeftToe_End"
 bones/22/parent = 21
@@ -784,28 +810,28 @@ bones/24/parent = 0
 bones/24/rest = Transform3D(-0.99987745, -0.015665105, -2.1595065e-07, 0.015649913, -0.9989071, -0.04404305, 0.0006897225, -0.044037603, 0.9990307, -0.067813896, -0.04132096, 0.015908068)
 bones/24/enabled = true
 bones/24/position = Vector3(-0.067813896, -0.041320935, 0.01590807)
-bones/24/rotation = Quaternion(-0.091739915, 0.049315907, 0.99364865, 0.042592853)
+bones/24/rotation = Quaternion(-0.09242366, 0.0017739799, 0.9953351, -0.02762052)
 bones/24/scale = Vector3(1.0000002, 1.0000001, 1.0000011)
 bones/25/name = "mixamorig_RightLeg"
 bones/25/parent = 24
 bones/25/rest = Transform3D(0.9999741, -0.0071983426, -0.0001865725, 0.0072007603, 0.99963516, 0.026033117, -8.908537e-07, -0.02603378, 0.9996612, -6.9260127e-09, 0.44760638, 7.957992e-09)
 bones/25/enabled = true
 bones/25/position = Vector3(-6.471237e-09, 0.4476062, 6.821938e-10)
-bones/25/rotation = Quaternion(-0.18296796, 0.025034996, -0.004001848, 0.9827919)
+bones/25/rotation = Quaternion(-0.104380906, 0.084120795, -0.031787954, 0.9904635)
 bones/25/scale = Vector3(0.9999998, 0.9999998, 0.9999998)
 bones/26/name = "mixamorig_RightFoot"
 bones/26/parent = 25
 bones/26/rest = Transform3D(0.99752307, 0.06340083, 0.030464742, 1.0803342e-07, 0.43310344, -0.90134436, -0.07034034, 0.8991118, 0.43203068, 1.0173823e-08, 0.41716218, -7.477685e-09)
 bones/26/enabled = true
 bones/26/position = Vector3(-2.841698e-09, 0.4171623, -1.9511208e-09)
-bones/26/rotation = Quaternion(0.5842847, 0.060148872, 0.025187662, 0.80892473)
+bones/26/rotation = Quaternion(0.49301383, 0.021366667, 0.021094598, 0.8695032)
 bones/26/scale = Vector3(0.99999976, 1.0000001, 1.0000001)
 bones/27/name = "mixamorig_RightToeBase"
 bones/27/parent = 26
 bones/27/rest = Transform3D(0.9983623, 0.027468009, 0.05018212, 9.2200935e-08, 0.87718856, -0.48014575, -0.05720783, 0.4793593, 0.8757523, -5.9709633e-09, 0.1809321, -2.4299766e-08)
 bones/27/enabled = true
 bones/27/position = Vector3(-7.464551e-09, 0.18093212, 1.2069941e-08)
-bones/27/rotation = Quaternion(0.24817084, 0.024223398, -0.0061355093, 0.968394)
+bones/27/rotation = Quaternion(0.39224413, 2.4680062e-08, -1.1175878e-08, 0.9198612)
 bones/27/scale = Vector3(1, 0.99999994, 1)
 bones/28/name = "mixamorig_RightToe_End"
 bones/28/parent = 27
@@ -822,105 +848,59 @@ bones/29/position = Vector3(0, 0.06831209, 0)
 bones/29/rotation = Quaternion(0, 0, 0, 1)
 bones/29/scale = Vector3(1, 1, 1)
 
-[node name="Body" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=142506315]
-mesh = ExtResource("4_u5tep")
-skin = SubResource("Skin_g7pxi")
+[node name="Body" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1649262296]
+mesh = ExtResource("2_o28un")
+skin = SubResource("Skin_v3wqe")
 
-[node name="Backpack" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=862817428]
-mesh = ExtResource("3_ps8ct")
-skin = SubResource("Skin_c6543")
+[node name="Backpack" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1146617930]
+mesh = ExtResource("3_n471f")
+skin = SubResource("Skin_a7e3d")
 
-[node name="fake time device (for now)" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1039194994]
-mesh = ExtResource("2_evw08")
-skin = SubResource("Skin_w8efs")
+[node name="fake time device (for now)" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=265624416]
+mesh = ExtResource("4_7emwf")
+skin = SubResource("Skin_evhqo")
 
-[node name="Badge" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1192836049]
-mesh = ExtResource("5_7uipr")
-skin = SubResource("Skin_pbalu")
+[node name="Badge" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1528689054]
+mesh = ExtResource("5_hshwv")
+skin = SubResource("Skin_8p8ys")
 
-[node name="hair?" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=730912057]
-mesh = ExtResource("3_roy6y")
-skin = SubResource("Skin_cwmru")
+[node name="hair?" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=358221465]
+mesh = ExtResource("6_gpjlu")
+skin = SubResource("Skin_fw5v7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Mesh" unique_id=273669192]
-root_node = NodePath("../Armature")
-libraries/ = SubResource("AnimationLibrary_7uipr")
-libraries/Player = SubResource("AnimationLibrary_s0mko")
+[node name="Interactor" parent="Mesh" unique_id=2145607717 instance=ExtResource("17_j2n6q")]
 
-[node name="AnimationTree" type="AnimationTree" parent="Mesh" unique_id=1256868339]
-root_node = NodePath("../Armature")
-tree_root = SubResource("AnimationNodeStateMachine_d7xyo")
-advance_expression_base_node = NodePath("../../state_machine")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=985673261]
+root_node = NodePath("../Mesh/Armature")
+libraries/Movement = SubResource("AnimationLibrary_pgii3")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=208558552]
+root_node = NodePath("../Mesh/Armature")
+tree_root = SubResource("AnimationNodeBlendTree_gxmyo")
+advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/is_crouching = false
-parameters/conditions/not_crouching = false
-parameters/crouching/blend_position = 0.40037417
-parameters/roll/TimeScale/scale = 1.5
-parameters/walk_run/blend_position = 0.73526657
+parameters/RunWalkBlend/blend_position = Vector2(0, -1)
+parameters/CrouchBlendSpace/blend_position = 0.0
+parameters/MoveStates/current_state = "RunWalk"
+parameters/MoveStates/transition_request = ""
+parameters/MoveStates/current_index = 0
+parameters/RollTimeScale/scale = 1.0
 
-[node name="PlayerAnimationController" type="Node" parent="Mesh" unique_id=1224215104]
-script = ExtResource("7_3mea3")
+[node name="Camera Pivot" type="Node3D" parent="." unique_id=779677481]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1768821236]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.914, -0.05)
-shape = SubResource("CapsuleShape3D_kpmja")
+[node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=214841099]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 5.798, 1.928)
+cull_mask = 1048031
 
-[node name="Interactor" parent="." unique_id=1126691278 instance=ExtResource("2_f3eu6")]
+[node name="DetectionPoint" type="Marker3D" parent="." unique_id=500860138]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.5, 0)
 
-[node name="state_machine" type="Node" parent="." unique_id=198797671 node_paths=PackedStringArray("starting_state")]
-script = ExtResource("5_ku6g1")
-starting_state = NodePath("idle")
-
-[node name="idle" type="Node" parent="state_machine" unique_id=633804944 node_paths=PackedStringArray("walking_state", "running_state")]
-script = ExtResource("6_yr07i")
-walking_state = NodePath("../walking")
-running_state = NodePath("../running")
-
-[node name="walking" type="Node" parent="state_machine" unique_id=265725902 node_paths=PackedStringArray("idle_state", "sliding_state", "running_state")]
-script = ExtResource("8_j4rxl")
-idle_state = NodePath("../idle")
-sliding_state = NodePath("../sliding")
-running_state = NodePath("../running")
-
-[node name="sliding" type="Node" parent="state_machine" unique_id=2093609301 node_paths=PackedStringArray("walking_state", "idle_state", "running_state")]
-script = ExtResource("8_j23h2")
-walking_state = NodePath("../walking")
-idle_state = NodePath("../idle")
-running_state = NodePath("../running")
-
-[node name="rolling" type="Node" parent="state_machine" unique_id=1196094216 node_paths=PackedStringArray("walking_state", "idle_state", "running_state", "sliding_state")]
-script = ExtResource("8_v0k0e")
-walking_state = NodePath("../walking")
-idle_state = NodePath("../idle")
-running_state = NodePath("../running")
-sliding_state = NodePath("../walking")
-
-[node name="running" type="Node" parent="state_machine" unique_id=1006446209 node_paths=PackedStringArray("idle_state", "walking_state", "sliding_state")]
-script = ExtResource("9_0j2ni")
-idle_state = NodePath("../idle")
-walking_state = NodePath("../walking")
-sliding_state = NodePath("../sliding")
-
-[node name="RunningSFX" type="AudioStreamPlayer" parent="state_machine/running" unique_id=77176381]
-stream = ExtResource("21_roy6y")
-volume_db = -25.0
-pitch_scale = 0.71
-
-[node name="input_controller" type="Node" parent="." unique_id=1050087471 node_paths=PackedStringArray("rolling_state")]
-script = ExtResource("7_f3eu6")
-rolling_state = NodePath("../state_machine/rolling")
-
-[node name="roll_window" type="Timer" parent="input_controller" unique_id=1909254658]
-process_callback = 0
-wait_time = 0.3
-one_shot = true
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1581660396]
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=541741299]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.5306983, 0)
 spot_angle = 17.598991
 spot_angle_attenuation = 3.2490091
 
-[node name="Minimap Pin" type="Sprite3D" parent="." unique_id=1357099718]
+[node name="Minimap Pin" type="Sprite3D" parent="." unique_id=44732196]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3, 0)
 layers = 32
-texture = ExtResource("24_7uipr")
+texture = ExtResource("18_c6x0f")

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cy0k7b55bayej"
-path="res://.godot/imported/Goate Sneak Walk.fbx-933f64b1b512f6b1b5d5dc95b8f372d4.scn"
+path="res://.godot/imported/Goate Sneak Walk.fbx-8a3b5def2042610f44c1cc15cc253b1b.scn"
 
 [deps]
 
-source_file="res://Player/Animation/Goate Sneak Walk.fbx"
-dest_files=["res://.godot/imported/Goate Sneak Walk.fbx-933f64b1b512f6b1b5d5dc95b8f372d4.scn"]
+source_file="res://Player[OLD]/Animation/Goate Sneak Walk.fbx"
+dest_files=["res://.godot/imported/Goate Sneak Walk.fbx-8a3b5def2042610f44c1cc15cc253b1b.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player/Animation/crouch_walking.res",
+"save_to_file/fallback_path": "res://Player[OLD]/Animation/crouch_walking.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://gxcoan78m4c4",
 "settings/loop_mode": 0,
