@@ -2,6 +2,7 @@
 extends Node2D
 
 #region Inventory Wheel
+@export var wheel_color : Color = Color(0.405, 0.493, 0.869, 1.0)
 @export var radius : float = 350
 @export var width : float = 180
 @export var gap_width : float = 10
@@ -26,7 +27,7 @@ var step
 		angle_start_rad_extended = - TAU/4 - deg_to_rad(angle_extended/2)
 		angle_end_rad_extended = - TAU/4 + deg_to_rad(angle_extended/2)
 @export_tool_button("Redraw","CanvasItem") var redraw = queue_redraw
-var center = Vector2(-450,-200)
+var center = Vector2.ZERO
 
 @onready var arc: Node2D = $Arc
 @onready var mask: Node2D = $Mask
@@ -34,6 +35,12 @@ var center = Vector2(-450,-200)
 #region Items
 var selected_index: int = 0
 var window: Array = []
+#endregion
+
+#region Rotation
+var rotation_speed = 1
+var target_rotation: float = 0.0
+var snap_angle: float = 0.0  #one slice
 #endregion
 
 func _ready() -> void:
@@ -44,27 +51,29 @@ func _ready() -> void:
 	angle_start_rad_extended = - TAU/4 - deg_to_rad(angle_extended/2)
 	angle_end_rad_extended = - TAU/4 + deg_to_rad(angle_extended/2)
 	step = angle/num_of_items
+	
+	snap_angle = deg_to_rad(angle / num_of_items)
+	target_rotation = 0.0
+	$Wheel.rotation = 0.0
 	queue_redraw()
 
 func _draw() -> void:
 	#var arcs = calc_arcs()
-	#for angle in arcs:
-		#draw_arc(Vector2.ZERO,radius,angle[0], angle[1],100,Color(0.043, 0.376, 0.71, 0.659),width,true)
-	$Arc.draw_inven_arc(center, radius, angle_start_rad_extended,angle_end_rad_extended,100,Color(0.23, 0.377, 0.82, 0.694),width,true)
-	#draw_arc(center, radius, angle_start_rad,angle_end_rad,100,Color(0.23, 0.377, 0.82, 0.694),width,true)
-	$Mask.draw_inven_line()
+	$Wheel/Arc.draw_inven_arc()
+	$Wheel/Mask.draw_inven_line()
+	$MaskBottom.draw_inven_mask()
 		
-func calc_arcs():
-	var current_angle = angle_start_rad
-	
-	var arcs : Array[Vector2]
-	var new_angle = angle - ((num_of_items-1)*gap_width)
-	var step_rad = deg_to_rad(new_angle/num_of_items)
-	for i in range(num_of_items):
-		arcs.append(Vector2(current_angle,current_angle+step_rad))
-		current_angle += (step_rad + deg_to_rad(gap_width))
-	print(arcs)
-	return arcs
+#func calc_arcs():
+	#var current_angle = angle_start_rad
+	#
+	#var arcs : Array[Vector2]
+	#var new_angle = angle - ((num_of_items-1)*gap_width)
+	#var step_rad = deg_to_rad(new_angle/num_of_items)
+	#for i in range(num_of_items):
+		#arcs.append(Vector2(current_angle,current_angle+step_rad))
+		#current_angle += (step_rad + deg_to_rad(gap_width))
+	#print(arcs)
+	#return arcs
 
 func rebuild_window() -> void:
 	window.clear()
@@ -82,5 +91,13 @@ func scroll(direction: int) -> void:
 	if selected_index < 0:
 		selected_index += global_inventory.items.size()
 	rebuild_window()
-	#target_rotation += direction * deg_to_rad(angle / num_of_items) #TODO
+	target_rotation -= direction * snap_angle
 	queue_redraw()
+
+func _process(delta: float) -> void:
+	# Lerp toward target — wheel snaps to slot positions
+	$Wheel.rotation = lerp($Wheel.rotation, target_rotation, delta * 12.0)
+	
+	# Stop redrawing once settled
+	if abs($Wheel.rotation - target_rotation) > 0.001:
+		queue_redraw()

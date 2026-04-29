@@ -55,6 +55,9 @@ var destination_velocity: Vector3
 var current_acceleration: float
 var move_acceleration: float
 
+#inventory
+@onready var inven_wheel: Node2D = $"SubViewport/Inventory Wheel"
+
 func _ready():
 	globals.player2 = self
 	run_enter()

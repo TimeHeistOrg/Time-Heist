@@ -7,30 +7,14 @@ resource_name = "ArcDraw"
 script/source = "@tool
 extends Node2D
 
-var _center
-var _radius
-var _start
-var _end
-var _point_count
-var _color
-var _width
-var _antialiased
-
-func draw_inven_arc(center: Vector2, radius: float, start: float, end: float, point_count: int, color: Color, width: float, antialiased: bool):
-	_center = center
-	_radius = radius
-	_start = start
-	_end = end
-	_point_count = point_count
-	_color = color
-	_width = width
-	_antialiased = antialiased
+func draw_inven_arc():
 	queue_redraw()
 	
 func _draw() -> void:
-	if not _center:
-		return
-	draw_arc(_center, _radius, _start, _end, _point_count, _color, _width, _antialiased)
+	var iw = self.owner as Node2D
+	#draw_arc(_center, _radius, _start, _end, _point_count, _color, _width, _antialiased)
+	#draw_set_transform(-_center)
+	draw_circle(iw.center,iw.radius,iw.wheel_color,false,iw.width,false)
 "
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cmedq"]
@@ -50,28 +34,49 @@ func _ready() -> void:
 	material = mat
 
 func _draw() -> void:
-	var iw = get_parent() as Node2D
+	var iw = self.owner as Node2D
 	if iw:
-		var start_rad = - TAU/4 - deg_to_rad(iw.angle/2)
-		for i in range((iw.num_of_items)+1):
-			var rads = deg_to_rad(rad_to_deg(start_rad) + (i * (iw.angle/iw.num_of_items)))
+		var step = iw.angle / iw.num_of_items  # same step as the arc uses
+		var total_lines = int(360.0 / step)    # how many to fill the circle
+		var start_rad = -TAU / 4 - deg_to_rad(iw.angle / 2)  # same origin as arc
+		
+		for i in range(total_lines):
+			var rads = start_rad + deg_to_rad(step * i)
 			var point = Vector2.from_angle(rads)
 			draw_line(
-				point * (iw.radius - iw.width/2) + iw.center,
-				point * (iw.radius + iw.width/2) + iw.center,
+				point * (iw.radius - iw.width / 2) + iw.center,
+				point * (iw.radius + iw.width / 2) + iw.center,
 				Color(0.997, 0.812, 0.892, 1.0),
 				iw.gap_width,
 				true
 			)
-		# --- bottom mask ---
-	# The two endpoints of the arc at start and end angles
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dqc0u"]
+blend_mode = 2
+
+[sub_resource type="GDScript" id="GDScript_5eme7"]
+resource_name = "MaskBottomDraw"
+script/source = "@tool
+extends Node2D
+
+func draw_inven_mask():
+	queue_redraw()
+
+func _ready() -> void:
+	var mat = CanvasItemMaterial.new()
+	mat.blend_mode = CanvasItemMaterial.BLEND_MODE_SUB
+	material = mat
+
+func _draw() -> void:
+	var iw = get_parent() as Node2D
+	# bottom mask
 	var p_inner_start = Vector2.from_angle(iw.angle_start_rad) * (iw.radius - iw.width / 2.0) + iw.center
 	var p_outer_start = Vector2.from_angle(iw.angle_start_rad) * (iw.radius + iw.width / 2.0) + iw.center
 	var p_inner_end   = Vector2.from_angle(iw.angle_end_rad)   * (iw.radius - iw.width / 2.0) + iw.center
 	var p_outer_end   = Vector2.from_angle(iw.angle_end_rad)   * (iw.radius + iw.width / 2.0) + iw.center
 
-	# A big quad that covers everything below the arc opening
-	var far_down = iw.center.y + iw.radius + 200.0  # well below the arc
+	var far_down = iw.center.y + iw.radius + 200.0
 	var far_left = iw.center.x - iw.radius - 200.0
 	var far_right = iw.center.x + iw.radius + 200.0
 
@@ -84,19 +89,31 @@ func _draw() -> void:
 		Vector2(far_right, far_down),
 		Vector2(far_left,  far_down),
 		Vector2(far_left,  p_outer_start.y),
-	]), Color.WHITE)  # WHITE because BLEND_MODE_SUB subtracts regardless of color
+	]), Color.WHITE)
 "
 
 [node name="Inventory Wheel" type="Node2D" unique_id=455971298]
 script = ExtResource("1_cmedq")
 gap_width = 15.0
+angle = 163.63
 num_of_items = 5
 
-[node name="Arc" type="Node2D" parent="." unique_id=1407072790]
+[node name="Wheel" type="Node2D" parent="." unique_id=664901295]
+
+[node name="Arc" type="Node2D" parent="Wheel" unique_id=1407072790]
 z_index = 100
 script = SubResource("GDScript_cmedq")
 
-[node name="Mask" type="Node2D" parent="." unique_id=746913725]
+[node name="Mask" type="Node2D" parent="Wheel" unique_id=746913725]
 z_index = 101
 material = SubResource("CanvasItemMaterial_cmedq")
 script = SubResource("GDScript_dqc0u")
+
+[node name="MaskBottom" type="Node2D" parent="." unique_id=364948049]
+z_index = 102
+material = SubResource("CanvasItemMaterial_dqc0u")
+script = SubResource("GDScript_5eme7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1058873297]
+offset = Vector2(0, -160.38)
+zoom = Vector2(1.78, 1.78)
