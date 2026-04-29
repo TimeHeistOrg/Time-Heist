@@ -17,7 +17,7 @@ func _ready() -> void:
 	lights = lights_node.get_children() as Array[OfficeLight]
 
 func _on_body_entered(body: Node3D) -> void:
-	if body == globals.player2:
+	if body == globals.player:
 		#lights_on()
 		contains_player = true
 		for light in lights:
@@ -25,7 +25,7 @@ func _on_body_entered(body: Node3D) -> void:
 		print("Entered ", room_id)
 		
 func _on_body_exited(body: Node3D) -> void:
-	if body == globals.player2:
+	if body == globals.player:
 		#lights_off()
 		contains_player = false
 		for light in lights:

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="4_kpk3x"]
 [ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="5_3ybk4"]
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="6_cnd03"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="6_mwdlf"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="7_nigfc"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="8_e2iiq"]
 [ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Custom Assets/cubicle_six_v3.glb" id="10_618fb"]
@@ -16,12 +17,16 @@
 [ext_resource type="PackedScene" uid="uid://bq77m4ykx2yvb" path="res://Assets/Models/Custom Assets/receptionDesk.fbx" id="13_3ybk4"]
 [ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Models/Enviornment/MeetingTable.tscn" id="14_3ybk4"]
 [ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Models/Enviornment/plant.tscn" id="15_cnd03"]
-[ext_resource type="PackedScene" uid="uid://kim31xhwnprl" path="res://Player2/player2.tscn" id="16_cnd03"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="16_nigfc"]
 [ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="17_24gqy"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="17_t1hpg"]
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="18_6ltrj"]
 [ext_resource type="Resource" uid="uid://2u7ypb7xpscs" path="res://Assets/Items/Resources/apple.tres" id="18_84yqd"]
+[ext_resource type="Resource" uid="uid://bl3wymmqufqh2" path="res://Assets/Items/Resources/archive_key.tres" id="23_t1hpg"]
+[ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/basement_albus_keycard.tres" id="24_6ltrj"]
+[ext_resource type="Resource" uid="uid://ccb6qtg54rgyj" path="res://Assets/Items/Resources/basement_security_lockbox_key_1.tres" id="25_m5ojc"]
+[ext_resource type="Resource" uid="uid://gue75w7rapn5" path="res://Assets/Items/Resources/basement_security_lockbox_key_2.tres" id="26_58qlh"]
+[ext_resource type="Resource" uid="uid://c7atpkdvr2gl0" path="res://Assets/Items/Resources/tutorial_door_key.tres" id="27_282k8"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2iiq"]
 emission_shape_offset = Vector3(0, -4, 0)
@@ -174,21 +179,6 @@ size = Vector3(19.5, 1, 18.25)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vt6hr"]
 size = Vector3(12, 1, 5.25)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_mwdlf"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfgm1"]
-resource_local_to_scene = true
-transparency = 1
-shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_mwdlf")
-billboard_mode = 1
-
-[sub_resource type="QuadMesh" id="QuadMesh_qqru8"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_gfgm1")
-size = Vector2(2, 1)
-
 [node name="Z3Floor" type="Node3D" unique_id=2133668272]
 
 [node name="UI Manager" parent="." unique_id=1478464990 instance=ExtResource("1_6ltrj")]
@@ -225,6 +215,8 @@ size = Vector2i(960, 540)
 size_2d_override = Vector2i(640, 360)
 size_2d_override_stretch = true
 render_target_update_mode = 4
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("6_mwdlf")]
 
 [node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=2083977657]
 visible = false
@@ -1748,43 +1740,30 @@ light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 24.5, 2.1, -1.5)
 light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("16_cnd03")]
-camera_up = 7.113
-camera_back = 2.118
-camera_angle = -50.0
+[node name="Item" parent="SubViewportContainer/SubViewport" unique_id=680605862 instance=ExtResource("17_24gqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, -0.75)
+item = ExtResource("18_84yqd")
 
-[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/Player/Mesh/Armature" parent_id_path=PackedInt32Array(288105915, 1355136757) index="0" unique_id=1357512521]
-bones/0/rotation = Quaternion(-0.024755161, -0.046750005, -0.030972213, 0.9981194)
-bones/1/rotation = Quaternion(-0.051108133, 0.011110538, 0.025033364, 0.99831754)
-bones/2/rotation = Quaternion(0.010091163, 0.00079839915, 0.013847218, 0.9998529)
-bones/3/rotation = Quaternion(0.022750745, 0.0011667089, 0.013889966, 0.999644)
-bones/4/rotation = Quaternion(0.049075954, -0.0013538145, 0.0037928598, 0.998787)
-bones/5/rotation = Quaternion(-0.06595837, 0.012025676, -3.2479566e-05, 0.9977499)
-bones/8/rotation = Quaternion(-0.62878096, -0.45916104, 0.48717666, -0.39555597)
-bones/9/rotation = Quaternion(0.5313054, 0.18581548, 0.20389831, 0.80100733)
-bones/10/rotation = Quaternion(-8.6765795e-10, -1.1938391e-07, 0.012734948, 0.99991894)
-bones/11/rotation = Quaternion(0.048304502, -0.28489006, 0.026825862, 0.9569664)
-bones/13/rotation = Quaternion(0.62909013, -0.4599599, 0.5036411, 0.3728647)
-bones/14/rotation = Quaternion(0.45167765, -0.26494262, -0.23230176, 0.8196515)
-bones/15/rotation = Quaternion(5.4444165e-08, 3.7136484e-08, -0.05838067, 0.9982944)
-bones/16/rotation = Quaternion(0.05902568, 0.17514278, -0.0059536733, 0.98275405)
-bones/18/rotation = Quaternion(0.13576232, 0.09156091, 0.9835222, -0.07661242)
-bones/19/rotation = Quaternion(-0.14433292, -0.014921122, 0.037607074, 0.9887017)
-bones/20/rotation = Quaternion(0.4492397, -0.029403292, -0.054793257, 0.8912446)
-bones/24/rotation = Quaternion(-0.09059485, 0.007825655, 0.9954006, -0.030149197)
-bones/25/rotation = Quaternion(-0.10462309, 0.083849624, -0.03139013, 0.99047357)
-bones/26/rotation = Quaternion(0.48822692, 0.023698779, 0.02072353, 0.87214875)
-bones/27/rotation = Quaternion(0.3944021, -7.450581e-09, 5.2154064e-08, 0.918938)
+[node name="Item2" parent="SubViewportContainer/SubViewport" unique_id=100126899 instance=ExtResource("17_24gqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.75)
+item = ExtResource("23_t1hpg")
 
-[node name="Camera3D" parent="SubViewportContainer/SubViewport/Player/Camera Pivot" parent_id_path=PackedInt32Array(288105915, 779677481) index="0" unique_id=214841099]
-transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0, 7.113, 2.118)
-size = 11.313
+[node name="Item3" parent="SubViewportContainer/SubViewport" unique_id=1225612864 instance=ExtResource("17_24gqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 0, -0.75)
+item = ExtResource("24_6ltrj")
 
-[node name="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player/Inventory Wheel Holder" parent_id_path=PackedInt32Array(288105915, 108023813) index="0" unique_id=1335866607]
-mesh = SubResource("QuadMesh_qqru8")
+[node name="Item4" parent="SubViewportContainer/SubViewport" unique_id=1365504915 instance=ExtResource("17_24gqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, -0.75)
+item = ExtResource("25_m5ojc")
+
+[node name="Item5" parent="SubViewportContainer/SubViewport" unique_id=349113609 instance=ExtResource("17_24gqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.75)
+item = ExtResource("26_58qlh")
+
+[node name="Item6" parent="SubViewportContainer/SubViewport" unique_id=278822611 instance=ExtResource("17_24gqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, -0.75)
+item = ExtResource("27_282k8")
 
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/Keycard Scanner" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/EnterDoor" method="unlock_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Outside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="unlock_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Inside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="open"]
-
-[editable path="SubViewportContainer/SubViewport/Player"]
