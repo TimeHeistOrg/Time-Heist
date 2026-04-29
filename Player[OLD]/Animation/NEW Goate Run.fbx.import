@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dl6tlcbtvjwl6"
-path="res://.godot/imported/NEW Goat Idle.fbx-ad86310f338c439ffc9a8b7f4a863882.scn"
+uid="uid://cixmyv6csou3v"
+path="res://.godot/imported/NEW Goate Run.fbx-9df895e844c2e8b5d943c8cb1be1be9d.scn"
 
 [deps]
 
-source_file="res://Player/Animation/NEW Goat Idle.fbx"
-dest_files=["res://.godot/imported/NEW Goat Idle.fbx-ad86310f338c439ffc9a8b7f4a863882.scn"]
+source_file="res://Player[OLD]/Animation/NEW Goate Run.fbx"
+dest_files=["res://.godot/imported/NEW Goate Run.fbx-9df895e844c2e8b5d943c8cb1be1be9d.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player/Animation/idle.res",
+"save_to_file/fallback_path": "res://Player[OLD]/Animation/running.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://brjmbv4t5ilxq",
+"save_to_file/path": "uid://brj668nd31yl",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

@@ -1,13 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://hfiyfqw2qyjn"]
+[gd_scene format=3 uid="uid://hfiyfqw2qyjn"]
 
 [ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="1_j8kak"]
 [ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="2_rkh12"]
 [ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="3_cnn6p"]
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="4_8ap2h"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="5_gnq0a"]
-[ext_resource type="MeshLibrary" uid="uid://c33av8p4dtuad" path="res://Assets/MeshLibrary.tres" id="6_8ap2h"]
-[ext_resource type="PackedScene" uid="uid://b0eilnkhu73fw" path="res://Player/Player.tscn" id="7_gnq0a"]
-[ext_resource type="PackedScene" uid="uid://c2jmn7fqcsv24" path="res://Player/camera_pivot.tscn" id="8_fnp7d"]
+[ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="6_8ap2h"]
+[ext_resource type="PackedScene" uid="uid://b0eilnkhu73fw" path="res://Player[OLD]/OLD_Player.tscn" id="7_gnq0a"]
+[ext_resource type="PackedScene" uid="uid://c2jmn7fqcsv24" path="res://Player[OLD]/OLD_camera_pivot.tscn" id="8_fnp7d"]
 [ext_resource type="Shader" uid="uid://bla1rflwo5qs5" path="res://Modules/Lighting & Visibility/3dVisTest.gdshader" id="9_fnp7d"]
 [ext_resource type="PackedScene" uid="uid://behnx5padapy7" path="res://Modules/Lighting & Visibility/2dVisTest.tscn" id="9_gnq0a"]
 

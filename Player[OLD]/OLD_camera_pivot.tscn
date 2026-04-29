@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2jmn7fqcsv24"]
 
-[ext_resource type="Script" uid="uid://ddcrxqxycn04f" path="res://Player/camera_pivot.gd" id="1_ehrhw"]
+[ext_resource type="Script" uid="uid://ddcrxqxycn04f" path="res://Player[OLD]/camera_pivot.gd" id="1_ehrhw"]
 [ext_resource type="Shader" uid="uid://d1gd8vm0a4uou" path="res://Effects/time_travel_1.gdshader" id="2_iwa17"]
 [ext_resource type="Script" uid="uid://w74t1d1ps1fb" path="res://Effects/time_travel_effect.gd" id="3_fvf84"]
 

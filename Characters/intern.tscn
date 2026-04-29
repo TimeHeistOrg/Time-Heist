@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b1hsxcc4s4w0t" path="res://Characters/intern.gd" id="1_t3mic"]
 [ext_resource type="Texture2D" uid="uid://cun6q2eeqrtld" path="res://Assets/Models/Characters/intern (rigged)_0.png" id="1_uvnqj"]
 [ext_resource type="Texture2D" uid="uid://5u6fhd2ci4dt" path="res://Assets/Models/Characters/intern (rigged)_1.png" id="2_t3mic"]
-[ext_resource type="Animation" uid="uid://brjmbv4t5ilxq" path="res://Player/Animation/idle.res" id="3_iv304"]
+[ext_resource type="Animation" uid="uid://brjmbv4t5ilxq" path="res://Player[OLD]/Animation/idle.res" id="3_iv304"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="5_iv304"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37qwv"]

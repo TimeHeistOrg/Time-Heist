@@ -41,11 +41,11 @@ func _physics_process(delta):
 	if paused:
 		return
 	if Input.is_action_pressed("rewind") and globals.time_juice > 0.0:
-		if globals.time_juice > 0.0 or not globals.player or globals.player.infinite_juice:
+		if globals.time_juice > 0.0 or not globals.player or globals.infinite_juice:
 			rewind(REWIND_MULTIPLIER * delta)
 			if not is_time_traveling:
 				is_time_traveling = true
-			if globals.player and not globals.player.infinite_juice: #DEBUG dont lose juice if debug mode
+			if globals.player and not globals.infinite_juice: #DEBUG dont lose juice if debug mode
 				globals.time_juice = maxf(0.0, globals.time_juice - globals.rewind_drain_per_sec * delta)
 	else:
 		if Input.is_action_pressed("wait"):

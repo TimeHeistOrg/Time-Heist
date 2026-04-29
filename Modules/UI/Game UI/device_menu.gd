@@ -54,6 +54,8 @@ func handle_input(_delta):
 	if Input.is_action_just_pressed("ui_tab_backwards"):
 		focused_tab = (focused_tab - 1 + tabs.size()) % tabs.size()
 		select_tab(focused_tab)
+	if Input.is_action_just_pressed("device_menu"):
+		close()
 	tabs[focused_tab].handle_input(_delta)
 		
 func select_tab(selected_tab : int):

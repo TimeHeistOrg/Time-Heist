@@ -21,9 +21,13 @@ var time_manager: TimeManager
 var ui_manager: UI_Manager
 
 var player : Player
-var player2 : Player2
 
 var camera : Node3D
+
+#region DebugMode
+var infinite_juice: bool = false
+
+#endregion
 
 #region Detection
 var safe_ratio : float = 1
@@ -64,11 +68,11 @@ enum Device_Tabs {
 	Settings
 }
 
-#region temporary test variables
-var player_has_keycard: bool = false
-var janitor_has_keycard: bool = false
-
-#endregion
+##region temporary test variables
+#var player_has_keycard: bool = false
+#var janitor_has_keycard: bool = false
+#
+##endregion
 
 #region ui
 var normal_cursor = preload("res://Assets/UI/Computer/Cursor_normal.png")
