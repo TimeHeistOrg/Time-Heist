@@ -5,8 +5,8 @@ extends Node2D
 @export var wheel_color : Color = Color(0.405, 0.493, 0.869, 1.0)
 @export var radius : float = 350
 @export var width : float = 180
-@export var gap_width : float = 10
-@export var angle : float = 160:
+@export var gap_width : float = 15
+@export var angle : float = 163.63:
 	set(value):
 		angle = value
 		angle_extended = angle + 2*(angle/num_of_items)
@@ -31,6 +31,7 @@ var center = Vector2.ZERO
 
 @onready var arc: Node2D = $Arc
 @onready var mask: Node2D = $Mask
+var is_open : bool = false
 #endregion
 #region Items
 var selected_index: int = 0
@@ -56,6 +57,7 @@ func _ready() -> void:
 	snap_angle = deg_to_rad(angle / num_of_items)
 	target_rotation = 0.0
 	$Wheel.rotation = 0.0
+	$SlotIcons.setup()
 	queue_redraw()
 
 func _draw() -> void:
@@ -77,16 +79,32 @@ func _draw() -> void:
 	#return arcs
 	
 func open() -> void:
+	if is_open:
+		return
+	is_open = true
 	visible = true
 	rebuild_window()
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2.ONE, 0.15) \
+		 .from(Vector2.ZERO) \
+		 .set_ease(Tween.EASE_OUT) \
+		 .set_trans(Tween.TRANS_BACK)
 
 func close() -> void:
-	visible = false
-	get_tree().paused = false
-	#equip_selected()
+	if not is_open:
+		return
+	is_open = false
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.1) \
+		 .set_ease(Tween.EASE_IN) \
+		 .set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(func(): visible = false)
 
 func rebuild_window() -> void:
 	#print(global_inventory.items)
+	window.clear()
+	if global_inventory.items.is_empty():
+		return
 	print(selected_index)
 	print(global_inventory.items[selected_index])
 	window.clear()
@@ -98,9 +116,13 @@ func rebuild_window() -> void:
 		if item_index < 0:
 			item_index += global_inventory.items.size()
 		window.append(global_inventory.items[item_index])
+	if $SlotIcons:
+		$SlotIcons.update_icons(window, $Wheel.rotation)
 
 func scroll(direction: int) -> void:
 	#print("SCROLL")
+	if global_inventory.items.is_empty():
+		return
 	selected_index = (selected_index + direction) % global_inventory.items.size()
 	if selected_index < 0:
 		selected_index += global_inventory.items.size()
@@ -111,6 +133,9 @@ func scroll(direction: int) -> void:
 func _process(delta: float) -> void:
 	# Lerp toward target — wheel snaps to slot positions
 	$Wheel.rotation = lerp($Wheel.rotation, target_rotation, delta * 12.0)
+	
+	# update slot pictures
+	$SlotIcons.update_icons(window, $Wheel.rotation)
 	
 	# Stop redrawing once settled
 	if abs($Wheel.rotation - target_rotation) > 0.001:

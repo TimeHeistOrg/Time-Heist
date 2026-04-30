@@ -2,6 +2,72 @@
 
 [ext_resource type="Script" uid="uid://dseylbfhsmlj1" path="res://Modules/UI/Inventory Wheel/inventory_wheel.gd" id="1_jy7k8"]
 
+[sub_resource type="GDScript" id="GDScript_6up7b"]
+resource_name = "WheelSlotIcons"
+script/source = "# slot_icons.gd
+@tool
+extends Node2D
+
+var sprites: Array[Sprite2D] = []
+
+func setup() -> void:
+	for s in sprites:
+		s.queue_free()
+	sprites.clear()
+	
+	var iw = get_parent() as Node2D
+	var total = iw.num_of_items + 2
+	
+	for i in range(total):
+		var sprite = Sprite2D.new()
+		sprite.centered = true
+		var icon_size = iw.width * 0.4
+		sprite.scale = Vector2(icon_size / 64.0, icon_size / 64.0)
+		add_child(sprite)
+		sprites.append(sprite)
+
+func update_icons(window: Array, wheel_rotation: float) -> void:
+	var iw = get_parent() as Node2D
+	
+	if window.is_empty():
+		for s in sprites:
+			s.visible = false
+		return
+	
+	if sprites.size() != iw.num_of_items + 2:
+		setup()
+
+	var target_size = iw.width * 0.4  # how big you want the icon in pixels
+	var total = sprites.size()
+	var step = iw.angle / iw.num_of_items
+	var start_rad = -TAU / 4 - deg_to_rad(iw.angle / 2)
+	var mid_r = iw.radius
+
+	for i in range(total):
+		var sprite = sprites[i]
+		
+		if i >= window.size():
+			sprite.visible = false
+			continue
+		
+		sprite.visible = true
+		var item = window[i]
+		var is_ghost = (i == 0 or i == total - 1)
+
+		var slice_mid = start_rad + deg_to_rad(step * i + step / 2.0) + wheel_rotation
+		sprite.position = Vector2.from_angle(slice_mid) * mid_r + iw.center
+		sprite.modulate.a = 0.0 if is_ghost else 1.0
+
+		if item and item.get(\"image\") and item.image:
+			sprite.texture = item.image
+			# scale to fit target_size regardless of source resolution
+			var tex_size = item.image.get_size()
+			var longest = max(tex_size.x, tex_size.y)
+			sprite.scale = Vector2.ONE * (target_size / longest)
+		else:
+			sprite.texture = null
+"
+
 [sub_resource type="GDScript" id="GDScript_cmedq"]
 resource_name = "ArcDraw"
 script/source = "@tool
@@ -93,10 +159,12 @@ func _draw() -> void:
 "
 
 [node name="Inventory Wheel" type="Node2D" unique_id=455971298]
+visible = false
 script = ExtResource("1_jy7k8")
-gap_width = 15.0
-angle = 163.63
-num_of_items = 5
+
+[node name="SlotIcons" type="Node2D" parent="." unique_id=748416799]
+z_index = 101
+script = SubResource("GDScript_6up7b")
 
 [node name="Wheel" type="Node2D" parent="." unique_id=664901295]
 
@@ -105,7 +173,7 @@ z_index = 100
 script = SubResource("GDScript_cmedq")
 
 [node name="Mask" type="Node2D" parent="Wheel" unique_id=746913725]
-z_index = 101
+z_index = 102
 material = SubResource("CanvasItemMaterial_6up7b")
 script = SubResource("GDScript_dqc0u")
 
