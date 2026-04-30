@@ -1,12 +1,12 @@
-@tool
 extends Node2D
+class_name InventoryWheel
 
 #region Inventory Wheel
 @export var wheel_color : Color = Color(0.405, 0.493, 0.869, 1.0)
 @export var selected_color : Color = Color(0.27, 0.342, 0.726, 1.0)
-@export var radius : float = 350
-@export var width : float = 180
-@export var gap_width : float = 15
+@export var wheel_radius : float = 350
+@export var wheel_width : float = 180
+
 @export var angle : float = 154.29:
 	set(value):
 		angle = value
@@ -15,12 +15,24 @@ extends Node2D
 var angle_start_rad
 var angle_end_rad
 var step
-@export_range(2,100,1) var num_of_items : int = 3
-@export_tool_button("Redraw","CanvasItem") var redraw = queue_redraw
+const num_of_items : int = 3
 var center = Vector2.ZERO
+
+#region Arc
+const end = -TAU/4 + full_slot_width/2
+
+var slots := []
+const full_slot_width = 360/num_of_items
+const slot_width := full_slot_width - slot_gap_width
+const slot_gap_width : float = 15
+var item : PickupItem
+#endregion
+#region Mask
+
 
 @onready var arc: Node2D = $Arc
 @onready var mask: Node2D = $Mask
+
 var is_open : bool = false
 #endregion
 #region Items
