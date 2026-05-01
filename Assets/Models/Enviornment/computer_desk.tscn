@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_tbu5a"]
 size = Vector3(2.4247742, 1.8823242, 0.7975769)
 
-[node name="ComputerDesk" type="Node3D" unique_id=858584765]
+[node name="CornerDesk" type="Node3D" unique_id=858584765]
 
 [node name="Office_Desk_4" parent="." unique_id=1668904651 instance=ExtResource("1_tbu5a")]
 

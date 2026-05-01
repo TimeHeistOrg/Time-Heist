@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cofbdv5oh4va0"
-path="res://.godot/imported/SmallShelf.fbx-c498c43a2f047ceaf6eac02e911fe23e.scn"
+uid="uid://d2ji5m0su7n6o"
+path="res://.godot/imported/shelfcabinet_enclosed.glb-9d933669a1092f87265e337c6a20af1a.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Custom Assets/SmallShelf.fbx"
-dest_files=["res://.godot/imported/SmallShelf.fbx-c498c43a2f047ceaf6eac02e911fe23e.scn"]
+source_file="res://Assets/Models/Custom Assets/shelfcabinet_enclosed.glb"
+dest_files=["res://.godot/imported/shelfcabinet_enclosed.glb-9d933669a1092f87265e337c6a20af1a.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -39,12 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Small Shelf": {
+"PATH:BigFrame_004": {
 "mesh_instance/layers": 8
 }
 }
 }
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1

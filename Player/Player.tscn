@@ -954,5 +954,5 @@ transparent_bg = true
 size = Vector2i(1920, 1080)
 
 [node name="Inventory Wheel" parent="SubViewport" unique_id=455971298 instance=ExtResource("19_d7xyo")]
-visible = false
 position = Vector2(960, 700)
+selected_color = Color(0.27, 0.342, 0.726, 1)
