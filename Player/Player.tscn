@@ -18,7 +18,7 @@
 [ext_resource type="Animation" uid="uid://b50qfn4qgsuwk" path="res://Player/Animation/MaleLocomotion/walking.res" id="16_i4o1l"]
 [ext_resource type="PackedScene" uid="uid://8gkxub0dm0s7" path="res://Modules/Interaction/Interactor.tscn" id="17_j2n6q"]
 [ext_resource type="Texture2D" uid="uid://bbradfuplryhd" path="res://Assets/UI/HUD/Minimap/timepin.png" id="18_c6x0f"]
-[ext_resource type="PackedScene" uid="uid://cc6byjmc1fhl0" path="res://Modules/UI/Inventory Wheel/inventory_wheel.tscn" id="19_d7xyo"]
+[ext_resource type="PackedScene" uid="uid://cvryici2ywxll" path="res://Modules/UI/Inventory Wheel NEW/inventory_wheel_new.tscn" id="19_d7xyo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pta86"]
 radius = 0.25
@@ -954,5 +954,3 @@ transparent_bg = true
 size = Vector2i(1920, 1080)
 
 [node name="Inventory Wheel" parent="SubViewport" unique_id=455971298 instance=ExtResource("19_d7xyo")]
-position = Vector2(960, 700)
-selected_color = Color(0.27, 0.342, 0.726, 1)
