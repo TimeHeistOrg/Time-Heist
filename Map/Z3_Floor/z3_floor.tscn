@@ -30,7 +30,6 @@
 [ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/basement_albus_keycard.tres" id="24_6ltrj"]
 [ext_resource type="Resource" uid="uid://ccb6qtg54rgyj" path="res://Assets/Items/Resources/basement_security_lockbox_key_1.tres" id="25_m5ojc"]
 [ext_resource type="Resource" uid="uid://gue75w7rapn5" path="res://Assets/Items/Resources/basement_security_lockbox_key_2.tres" id="26_58qlh"]
-[ext_resource type="PackedScene" uid="uid://c6xmqslni8a72" path="res://Assets/Models/Custom Assets/shelfcabinet.glb" id="26_krbj1"]
 [ext_resource type="PackedScene" uid="uid://crv58s02cuc78" path="res://Assets/Models/Enviornment/tall_shelf.tscn" id="27_4rwq3"]
 [ext_resource type="Resource" uid="uid://c7atpkdvr2gl0" path="res://Assets/Items/Resources/tutorial_door_key.tres" id="27_282k8"]
 [ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/Clearance Giver/clearance_giver.tscn" id="27_yf3gh"]
@@ -1854,14 +1853,14 @@ light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 
 [node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Lab" unique_id=1177948583]
 
-[node name="shelfcabinet" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=884932301 instance=ExtResource("26_krbj1")]
-transform = Transform3D(0.7071067, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071067, 30.75, 0, -11.75)
+[node name="ShelfCabinet3" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=2133586313 instance=ExtResource("27_4rwq3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 31.1, 0, -10.950001)
 
-[node name="shelfcabinet2" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=2068036332 instance=ExtResource("26_krbj1")]
-transform = Transform3D(0.86602527, 0, -0.5, 0, 1, 0, 0.5, 0, 0.86602527, 30.0703, 0, -12.300552)
+[node name="ShelfCabinet4" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=438428767 instance=ExtResource("27_4rwq3")]
+transform = Transform3D(0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.7071067, 30.7, 0, -11.750001)
 
-[node name="shelfcabinet3" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=220080613 instance=ExtResource("26_krbj1")]
-transform = Transform3D(-1.1920929e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -1.1920929e-07, 31.085836, 0, -10.921244)
+[node name="ShelfCabinet5" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=1452539223 instance=ExtResource("27_4rwq3")]
+transform = Transform3D(0.9659257, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, 0.9659257, 29.900002, 0, -12.250001)
 
 [node name="SmallShelf" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=891517541 instance=ExtResource("20_y6qj7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 39.35, 0, -16.5)

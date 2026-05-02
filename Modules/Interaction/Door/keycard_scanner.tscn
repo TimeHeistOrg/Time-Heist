@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_kw5qb"]
 [ext_resource type="Script" uid="uid://b2gru4n14mfc5" path="res://Modules/Interaction/Door/keycard_scanner.gd" id="1_xq026"]
+[ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Models/Custom Assets/Card_reader.glb" id="2_0cwtd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq026"]
 resource_local_to_scene = true
@@ -10,25 +11,31 @@ albedo_color = Color(0.934157, 0.25749442, 0.26396477, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_xq026"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_xq026")
-size = Vector3(0.5, 0.5, 0.2)
+size = Vector3(0.14, 0.12, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xq026"]
-size = Vector3(0.5371094, 0.5576172, 0.45703125)
+size = Vector3(0.5371094, 0.4915619, 0.45703125)
 
 [node name="Keycard Scanner" type="Node3D" unique_id=1750000146]
 script = ExtResource("1_xq026")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1035890338]
+[node name="Card_reader" parent="." unique_id=1591298054 instance=ExtResource("2_0cwtd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.008489996)
+
+[node name="Indicator" type="MeshInstance3D" parent="Card_reader" unique_id=1035890338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1094255, 0.012562171)
 mesh = SubResource("BoxMesh_xq026")
+skeleton = NodePath("../..")
 
 [node name="Interactable" type="Area3D" parent="." unique_id=34123462 node_paths=PackedStringArray("mesh", "interact_object")]
 collision_layer = 2
 script = ExtResource("1_kw5qb")
-mesh = NodePath("../MeshInstance3D")
+mesh = NodePath("../Card_reader/Indicator")
 interact_object = NodePath("..")
 metadata/_custom_type_script = "uid://d0afbfeblscar"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1978443951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1969223, 0)
 shape = SubResource("BoxShape3D_xq026")
 
 [node name="Label" type="Label" parent="." unique_id=1916188804]

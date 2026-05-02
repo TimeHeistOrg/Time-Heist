@@ -113,7 +113,7 @@ func _process_gameplay(delta: float):
 	if Input.is_action_just_pressed("device_menu"):
 		globals.ui_manager.device_menu.open()
 		globals.ui_manager.get_node("ButtonMove").play()
-	
+		
 	#if Input.is_action_just_pressed("escape"):
 		#change_input_controller(InputControllers.UI)
 
