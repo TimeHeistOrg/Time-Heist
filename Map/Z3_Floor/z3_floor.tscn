@@ -224,9 +224,6 @@ size_2d_override = Vector2i(640, 360)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("6_mwdlf")]
-script = null
-
 [node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=2083977657]
 visible = false
 metadata/_edit_lock_ = true
@@ -1950,6 +1947,8 @@ item = ExtResource("26_58qlh")
 [node name="Item6" parent="SubViewportContainer/SubViewport" unique_id=278822611 instance=ExtResource("17_24gqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, -0.75)
 item = ExtResource("27_282k8")
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("6_mwdlf")]
 
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/Keycard Scanner" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/EnterDoor" method="unlock_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Outside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="unlock_open"]

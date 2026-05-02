@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://cc6byjmc1fhl0"]
+[gd_scene format=3 uid="uid://cvryici2ywxll"]
 
-[ext_resource type="Script" uid="uid://dseylbfhsmlj1" path="res://Modules/UI/Inventory Wheel/inventory_wheel.gd" id="1_jy7k8"]
+[ext_resource type="Script" uid="uid://6yqw1betpfib" path="res://Modules/UI/Inventory Wheel/inventory_wheel.gd" id="1_jy7k8"]
 
 [sub_resource type="GDScript" id="GDScript_6up7b"]
 resource_name = "WheelSlotIcons"
-script/source = "# slot_icons.gd
-#@tool
+script/source = "# slot_icons.gd 
 extends Node2D
+@onready var iw: InventoryWheel = $\"..\"
 
 var sprites: Array[Sprite2D] = []
 
@@ -15,52 +15,40 @@ func setup() -> void:
 		s.queue_free()
 	sprites.clear()
 	
-	var iw = get_parent() as Node2D
-	var total = iw.num_of_items + 2
-	
-	for i in range(total):
+	# size to actual inventory, not the const
+	for i in range(global_inventory.items.size()):
 		var sprite = Sprite2D.new()
 		sprite.centered = true
-		var icon_size = iw.width * 0.4
-		sprite.scale = Vector2(icon_size / 64.0, icon_size / 64.0)
 		add_child(sprite)
 		sprites.append(sprite)
 
 func update_icons(window: Array, wheel_rotation: float) -> void:
-	var iw = get_parent() as Node2D
-	
-	if window.is_empty():
-		for s in sprites:
-			s.visible = false
-		return
-	
-	if sprites.size() != iw.num_of_items + 2:
+	# rebuild if inventory size changed
+	if sprites.size() != global_inventory.items.size():
 		setup()
 
-	var target_size = iw.width * 0.4  # how big you want the icon in pixels
-	var total = sprites.size()
-	var step = iw.angle / iw.num_of_items
-	var start_rad = -TAU / 4 - deg_to_rad(iw.angle / 2)
-	var mid_r = iw.radius
+	var target_size = iw.wheel_width * 0.4
+	var mid_r = iw.wheel_radius
 
-	for i in range(total):
-		var sprite = sprites[i]
+	for s in sprites:
+		s.visible = false
+
+	for i in range(window.size()):
+		var slot_index = iw.window_start + i
 		
-		if i >= window.size():
-			sprite.visible = false
+		# guard against actual items size, not num_of_items const
+		if slot_index >= global_inventory.items.size():
 			continue
-		
+
+		var sprite = sprites[slot_index]
 		sprite.visible = true
+
+		var slot_angle = iw.start + iw.slot_width * slot_index + iw.slot_width / 2.0 + wheel_rotation
+		sprite.position = Vector2.from_angle(slot_angle) * mid_r + iw.center
+
 		var item = window[i]
-		var is_ghost = (i == 0 or i == total - 1)
-
-		var slice_mid = start_rad + deg_to_rad(step * i + step / 2.0) + wheel_rotation
-		sprite.position = Vector2.from_angle(slice_mid) * mid_r + iw.center
-		sprite.modulate.a = 0.0 if is_ghost else 1.0
-
 		if item and item.get(\"image\") and item.image:
 			sprite.texture = item.image
-			# scale to fit target_size regardless of source resolution
 			var tex_size = item.image.get_size()
 			var longest = max(tex_size.x, tex_size.y)
 			sprite.scale = Vector2.ONE * (target_size / longest)
@@ -70,41 +58,34 @@ func update_icons(window: Array, wheel_rotation: float) -> void:
 
 [sub_resource type="GDScript" id="GDScript_x46q2"]
 resource_name = "DrawChosenSlot"
-script/source = "#@tool
-extends Node2D
+script/source = "extends Node2D
 
 func draw_inven_selected():
 	queue_redraw()
 	
 func _draw() -> void:
 	var iw = self.owner as Node2D
-	var slice_length = deg_to_rad(iw.angle/ iw.num_of_items)
-	var start_of_arc = (-TAU / 4 - deg_to_rad(iw.angle / 2)) + ((iw.num_of_items/2)*slice_length)
-	draw_arc(iw.center,iw.radius, start_of_arc, start_of_arc + slice_length,100,iw.selected_color,iw.width*1.2,false)
+	draw_arc(iw.center,iw.wheel_radius, iw.start, iw.start + iw.slot_width,100,iw.selected_color,iw.wheel_width*1.2,false)
 "
 
 [sub_resource type="GDScript" id="GDScript_cmedq"]
 resource_name = "ArcDraw"
-script/source = "#@tool
-extends Node2D
+script/source = "extends Node2D
 
 func draw_inven_arc():
 	queue_redraw()
 	
 func _draw() -> void:
-	var iw = self.owner as Node2D
-	#draw_arc(_center, _radius, _start, _end, _point_count, _color, _width, _antialiased)
-	#draw_set_transform(-_center)
-	draw_circle(iw.center,iw.radius,iw.wheel_color,false,iw.width,false)
+	var iw = self.owner as InventoryWheel
+	draw_arc(iw.center,iw.wheel_radius,iw.start + iw.window_start*iw.slot_width ,iw.start + (iw.window_end+1)*iw.slot_width,100,iw.wheel_color,iw.wheel_width,false)
 "
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6up7b"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_psyux"]
 blend_mode = 2
 
 [sub_resource type="GDScript" id="GDScript_dqc0u"]
 resource_name = "MaskDraw"
-script/source = "#@tool
-extends Node2D
+script/source = "extends Node2D
 
 func draw_inven_line():
 	queue_redraw()
@@ -115,31 +96,33 @@ func _ready() -> void:
 	material = mat
 
 func _draw() -> void:
-	var iw = self.owner as Node2D
+	var iw = self.owner as InventoryWheel
 	if iw:
-		var step = iw.angle / iw.num_of_items  # same step as the arc uses
-		var total_lines = int(360.0 / step)    # how many to fill the circle
-		var start_rad = -TAU / 4 - deg_to_rad(iw.angle / 2)  # same origin as arc
+		var step = iw.slot_width
 		
-		for i in range(total_lines):
-			var rads = start_rad + deg_to_rad(step * i)
+		for i in range(global_inventory.items.size()):
+			var rads = iw.start + (step * i)
 			var point = Vector2.from_angle(rads)
 			draw_line(
-				point * (iw.radius - iw.width / 2) + iw.center,
-				point * (iw.radius + iw.width / 2) + iw.center,
+				point * (iw.wheel_radius - iw.wheel_width / 2) + iw.center,
+				point * (iw.wheel_radius + iw.wheel_width / 2) + iw.center,
 				Color(0.997, 0.812, 0.892, 1.0),
-				iw.gap_width,
+				iw.slot_gap_width,
 				true
 			)
+			
 "
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x46q2"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oturb"]
 blend_mode = 2
 
 [sub_resource type="GDScript" id="GDScript_5eme7"]
 resource_name = "MaskBottomDraw"
 script/source = "#@tool
 extends Node2D
+
+var angle_start_rad
+var angle_end_rad
 
 func draw_inven_mask():
 	queue_redraw()
@@ -150,16 +133,18 @@ func _ready() -> void:
 	material = mat
 
 func _draw() -> void:
-	var iw = get_parent() as Node2D
+	var iw = get_parent() as InventoryWheel
+	angle_start_rad = - TAU/4 - deg_to_rad(iw.angle/2)
+	angle_end_rad = - TAU/4 + deg_to_rad(iw.angle/2)
 	# bottom mask
-	var p_inner_start = Vector2.from_angle(iw.angle_start_rad) * (iw.radius - iw.width / 2.0) + iw.center
-	var p_outer_start = Vector2.from_angle(iw.angle_start_rad) * (iw.radius + iw.width / 2.0) + iw.center
-	var p_inner_end   = Vector2.from_angle(iw.angle_end_rad)   * (iw.radius - iw.width / 2.0) + iw.center
-	var p_outer_end   = Vector2.from_angle(iw.angle_end_rad)   * (iw.radius + iw.width / 2.0) + iw.center
+	var p_inner_start = Vector2.from_angle(angle_start_rad) * (iw.wheel_radius - iw.wheel_width / 2.0) + iw.center
+	var p_outer_start = Vector2.from_angle(angle_start_rad) * (iw.wheel_radius + iw.wheel_width / 2.0) + iw.center
+	var p_inner_end   = Vector2.from_angle(angle_end_rad)   * (iw.wheel_radius - iw.wheel_width / 2.0) + iw.center
+	var p_outer_end   = Vector2.from_angle(angle_end_rad)   * (iw.wheel_radius + iw.wheel_width / 2.0) + iw.center
 
-	var far_down = iw.center.y + iw.radius + 200.0
-	var far_left = iw.center.x - iw.radius - 200.0
-	var far_right = iw.center.x + iw.radius + 200.0
+	var far_down = iw.center.y + iw.wheel_radius + 200.0
+	var far_left = iw.center.x - iw.wheel_radius - 200.0
+	var far_right = iw.center.x + iw.wheel_radius + 200.0
 
 	draw_colored_polygon(PackedVector2Array([
 		p_outer_start,
@@ -193,12 +178,12 @@ script = SubResource("GDScript_cmedq")
 
 [node name="Mask" type="Node2D" parent="Wheel" unique_id=746913725]
 z_index = 105
-material = SubResource("CanvasItemMaterial_6up7b")
+material = SubResource("CanvasItemMaterial_psyux")
 script = SubResource("GDScript_dqc0u")
 
 [node name="MaskBottom" type="Node2D" parent="." unique_id=364948049]
 z_index = 105
-material = SubResource("CanvasItemMaterial_x46q2")
+material = SubResource("CanvasItemMaterial_oturb")
 script = SubResource("GDScript_5eme7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1058873297]

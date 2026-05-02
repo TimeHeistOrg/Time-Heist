@@ -66,6 +66,7 @@ var can_be_seen: bool = true
 func _ready():
 	globals.player = self
 	InputManager.player = self
+	$"Inventory Wheel Holder".player = self
 	run_enter()
 
 func _process(delta): #This process is for things that should occur regardless of whether the player has control of input
