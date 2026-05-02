@@ -7,7 +7,7 @@ const BASEMENT_ALBUS_KEYCARD = preload("uid://ixu3w8mgsrxm")
 const BASEMENT_SECURITY_LOCKBOX_KEY_1 = preload("uid://ccb6qtg54rgyj")
 const BASEMENT_SECURITY_LOCKBOX_KEY_2 = preload("uid://gue75w7rapn5")
 const TUTORIAL_DOOR_KEY = preload("uid://c7atpkdvr2gl0")
-var items : Array[PickupItem] = [APPLE,ARCHIVE_KEY,BASEMENT_ALBUS_KEYCARD,BASEMENT_SECURITY_LOCKBOX_KEY_1,BASEMENT_SECURITY_LOCKBOX_KEY_2, TUTORIAL_DOOR_KEY]
+var items : Array[PickupItem] = [APPLE,ARCHIVE_KEY,BASEMENT_ALBUS_KEYCARD,BASEMENT_SECURITY_LOCKBOX_KEY_1,BASEMENT_SECURITY_LOCKBOX_KEY_2]
 
 
 @onready var slot_icons: Node2D = $SlotIcons

@@ -5,67 +5,57 @@
 [sub_resource type="GDScript" id="GDScript_6up7b"]
 resource_name = "WheelSlotIcons"
 script/source = "# slot_icons.gd 
-#@tool
 extends Node2D
+@onready var iw: InventoryWheel = $\"..\"
 
 var sprites: Array[Sprite2D] = []
 
-func setup() -> void: #get the NUMBER of sprites correct
+func setup() -> void:
 	for s in sprites:
 		s.queue_free()
 	sprites.clear()
 	
-	var iw = get_parent() as InventoryWheel
-	var total = iw.window_end-iw.window_start+1
-	
-	for i in range(total):
+	# one sprite per total slot in the full wheel
+	for i in range(iw.num_of_items):
 		var sprite = Sprite2D.new()
 		sprite.centered = true
-		var icon_size = iw.wheel_width * 0.4
-		sprite.scale = Vector2(icon_size / 64.0, icon_size / 64.0)
 		add_child(sprite)
 		sprites.append(sprite)
 
 func update_icons(window: Array, wheel_rotation: float) -> void:
-	var iw = get_parent() as InventoryWheel
-	
-	if window.is_empty():
-		for s in sprites:
-			s.visible = false
-		return
-	
-	if sprites.size() != iw.num_of_items_visible:
+	if sprites.size() != iw.num_of_items:
 		setup()
 
-	var target_size = iw.wheel_width * 0.4  # how big you want the icon in pixels
-	var total = sprites.size()
-	var step = 360 / iw.num_of_items
-	#var start_rad = -TAU / 4 - deg_to_rad(iw.angle / 2)
+	var target_size = iw.wheel_width * 0.4
 	var mid_r = iw.wheel_radius
 
-	for i in range(sprites.size()):
-		var sprite = sprites[i]
-		
-		if i >= window.size():
-			sprite.visible = false
+	# hide all first, then only show what's in window
+	for s in sprites:
+		s.visible = false
+
+	for i in range(window.size()):
+		# which absolute slot index does this window entry sit in?
+		var slot_index = iw.window_start + i
+
+		# only draw slots that exist in our num_of_items range
+		if slot_index >= iw.num_of_items:
 			continue
-		
+
+		var sprite = sprites[slot_index]
 		sprite.visible = true
-		print(iw.window_start)
+
+		# position using the slot's fixed angle + wheel rotation
+		var slot_angle = iw.start + iw.slot_width * slot_index + iw.slot_width / 2.0 + wheel_rotation
+		sprite.position = Vector2.from_angle(slot_angle) * mid_r + iw.center
+
 		var item = window[i]
-
-		var slice_mid = iw.start + deg_to_rad(step * i + step / 2.0) + wheel_rotation
-		sprite.position = Vector2.from_angle(slice_mid) * mid_r + iw.center
-
 		if item and item.get(\"image\") and item.image:
 			sprite.texture = item.image
-			# scale to fit target_size regardless of source resolution
 			var tex_size = item.image.get_size()
 			var longest = max(tex_size.x, tex_size.y)
 			sprite.scale = Vector2.ONE * (target_size / longest)
 		else:
 			sprite.texture = null
-	#print(sprites)
 "
 
 [sub_resource type="GDScript" id="GDScript_x46q2"]
@@ -194,7 +184,6 @@ material = SubResource("CanvasItemMaterial_psyux")
 script = SubResource("GDScript_dqc0u")
 
 [node name="MaskBottom" type="Node2D" parent="." unique_id=364948049]
-visible = false
 z_index = 105
 material = SubResource("CanvasItemMaterial_oturb")
 script = SubResource("GDScript_5eme7")
