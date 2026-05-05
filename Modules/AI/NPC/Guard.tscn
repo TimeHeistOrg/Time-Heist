@@ -188,4 +188,5 @@ layers = 32
 texture = ExtResource("2_3duep")
 
 [node name="Cone Vision" parent="." unique_id=1869490121 instance=ExtResource("3_3duep")]
+time_till_caught = 2.0
 catch_active = false

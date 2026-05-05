@@ -46,7 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://dpbn3tv4fvft7" path="res://Assets/Models/Stock Assets/Table_Box.fbx" id="35_g8mcu"]
 [ext_resource type="PackedScene" uid="uid://b0de055ebbyya" path="res://Assets/Models/Enviornment/security_table.tscn" id="37_asnmk"]
 [ext_resource type="Resource" uid="uid://bl3wymmqufqh2" path="res://Assets/Items/Resources/archive_key.tres" id="40_17e87"]
-[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall.tscn" id="43_eyrm5"]
+[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall_old.tscn" id="43_eyrm5"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="44_yp5qg"]
 [ext_resource type="PackedScene" uid="uid://djn3ckwc8enih" path="res://Modules/Interaction/Document/document.tscn" id="45_fr304"]
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="46_c7xkq"]

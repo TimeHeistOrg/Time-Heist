@@ -56,6 +56,9 @@ var destination_velocity: Vector3
 var current_acceleration: float
 var move_acceleration: float
 
+#inventory wheel
+@onready var inventory_wheel: Node2D = $"SubViewport/Inventory Wheel"
+
 #IDK WHAT THESE ARE FOR OR WHY THERE ARE TWO, BUT THEY ARE USED BY CONEVISION
 var is_hidden: bool = false
 var can_be_seen: bool = true
@@ -63,6 +66,7 @@ var can_be_seen: bool = true
 func _ready():
 	globals.player = self
 	InputManager.player = self
+	$"Inventory Wheel Holder".player = self
 	run_enter()
 
 func _process(delta): #This process is for things that should occur regardless of whether the player has control of input

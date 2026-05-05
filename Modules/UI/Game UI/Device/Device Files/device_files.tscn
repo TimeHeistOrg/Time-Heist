@@ -136,6 +136,6 @@ texture_focused = SubResource("GradientTexture2D_h8qpj")
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "WASD - move, Z - zoom out, C - zoom in, Arrow Key - rotate"
+text = "Hold Right Click - pan, Scroll - zoom in/out, Hold Middle Mouse - rotate"
 
 [connection signal="toggled" from="MarginContainer/HBoxContainer/Control/HBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]

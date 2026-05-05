@@ -4,7 +4,7 @@ enum InputControllers {UI, GAMEPLAY, NONE}
 
 var in_control = InputControllers.UI
 
-var camera_sens_hor: float = 20
+var camera_sens_hor: float = 5
 
 var roll_walk_timer: float = 0
 var player: Player:
@@ -15,9 +15,18 @@ var player: Player:
 
 const TAP_HOLD_THRESH:float = 0.2
 
+var close_timer: Timer #for inventory wheel
+
 func _ready():
 	change_input_controller(in_control)
 	await get_tree().process_frame
+	
+	#for inventory wheel
+	close_timer = Timer.new()
+	close_timer.wait_time = 0.8
+	close_timer.one_shot = true
+	close_timer.timeout.connect(func(): player.inventory_wheel.close())
+	add_child(close_timer)
 
 func change_input_controller(controller: InputControllers):
 	match controller:
@@ -93,11 +102,24 @@ func _process_gameplay(delta: float):
 		player.toggle_crouch()
 	if Input.is_action_just_pressed("player_interact"):
 		player.interact()
+	if Input.is_action_just_released("inventory_wheel_scroll_up"):
+		player.inventory_wheel.scroll(1)
+		keep_wheel_open()
+	if Input.is_action_just_released("inventory_wheel_scroll_down"):
+		player.inventory_wheel.scroll(-1)
+		keep_wheel_open()
+	if Input.is_action_just_released("player_interact"):
+		player.inventory_wheel.close()
 	if Input.is_action_just_pressed("device_menu"):
 		globals.ui_manager.device_menu.open()
 		globals.ui_manager.get_node("ButtonMove").play()
-	
+		
 	#if Input.is_action_just_pressed("escape"):
 		#change_input_controller(InputControllers.UI)
+
+func keep_wheel_open() -> void:
+	player.inventory_wheel.open()
+	close_timer.stop()     #cancel a close
+	close_timer.start()    #restart the countdown
 
 #endregion

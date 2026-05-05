@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://cx0ieu0m32vi" path="res://Scenes/Homebase/friend.gd" id="8_urm2d"]
 [ext_resource type="Script" uid="uid://du7w2m0hi52ek" path="res://Scenes/Homebase/leave_area.gd" id="10_li6v2"]
 [ext_resource type="Resource" uid="uid://brwt5hp8o0ynn" path="res://Dialogue/start_run.dialogue" id="13_duq24"]
-[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall.tscn" id="13_g4j4g"]
+[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall_old.tscn" id="13_g4j4g"]
 [ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_char.tscn" id="14_1ssgq"]
 [ext_resource type="Resource" uid="uid://dia7uwu0uy0sd" path="res://Dialogue/to_tutorial.dialogue" id="14_hmmab"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="15_duq24"]
@@ -23,12 +23,12 @@
 [ext_resource type="PackedScene" uid="uid://cratpfmhvs24i" path="res://Assets/Models/Enviornment/4_wide_bookshelf.tscn" id="18_i1y4g"]
 [ext_resource type="PackedScene" uid="uid://coe6an4rwgtgm" path="res://Assets/Models/Enviornment/file_cabinet.tscn" id="19_tmni2"]
 [ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Models/Enviornment/MeetingTable.tscn" id="22_uyw5b"]
-[ext_resource type="PackedScene" uid="uid://8q7cu0tt8b0n" path="res://Assets/Models/Enviornment/big_shelf.tscn" id="24_udxfg"]
 [ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Models/Enviornment/small_shelf.tscn" id="25_blrf4"]
 [ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Models/Enviornment/plant.tscn" id="26_uyw5b"]
-[ext_resource type="PackedScene" uid="uid://bxg3l730qjn07" path="res://Assets/Models/Enviornment/closed_rack.tscn" id="27_b7rcp"]
+[ext_resource type="PackedScene" uid="uid://dhac04mwooy3s" path="res://Assets/Models/Enviornment/tall_shelf_enclosed2.tscn" id="27_blrf4"]
 [ext_resource type="PackedScene" uid="uid://cbuk6xkawm4lf" path="res://Characters/intern.tscn" id="27_udxfg"]
 [ext_resource type="PackedScene" uid="uid://o4040awfxuav" path="res://Characters/bob.tscn" id="28_blrf4"]
+[ext_resource type="PackedScene" uid="uid://crv58s02cuc78" path="res://Assets/Models/Enviornment/tall_shelf.tscn" id="29_5rx8s"]
 
 [sub_resource type="Gradient" id="Gradient_g4j4g"]
 offsets = PackedFloat32Array(0, 0.1539924, 1)
@@ -247,51 +247,6 @@ transform = Transform3D(0.9999755, 0.00012333557, -0.007010158, -0.00013833982, 
 [node name="MeetingTable" parent="SubViewportContainer/SubViewport/Decor" unique_id=185171172 instance=ExtResource("22_uyw5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9971538, 4.7683716e-07, -5.9983897)
 
-[node name="BigShelf" parent="SubViewportContainer/SubViewport/Decor" unique_id=964828957 instance=ExtResource("24_udxfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -9.14)
-
-[node name="BigShelf2" parent="SubViewportContainer/SubViewport/Decor" unique_id=919747374 instance=ExtResource("24_udxfg")]
-transform = Transform3D(0.99999976, -2.8990473e-11, -0.0006632251, 2.8990482e-11, 1, -1.0825762e-14, 0.0006632251, -1.08257926e-14, 0.99999976, -0.05, -1.5688132e-13, -9.14)
-
-[node name="BigShelf3" parent="SubViewportContainer/SubViewport/Decor" unique_id=2090670535 instance=ExtResource("24_udxfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -8.86)
-
-[node name="BigShelf4" parent="SubViewportContainer/SubViewport/Decor" unique_id=581079034 instance=ExtResource("24_udxfg")]
-transform = Transform3D(0.99999976, -2.8990473e-11, -0.0006632251, 2.8990482e-11, 1, -1.0825762e-14, 0.0006632251, -1.08257926e-14, 0.99999976, -0.05, -1.5991552e-13, -8.86)
-
-[node name="BigShelf5" parent="SubViewportContainer/SubViewport/Decor" unique_id=755037654 instance=ExtResource("24_udxfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -7.61)
-
-[node name="BigShelf6" parent="SubViewportContainer/SubViewport/Decor" unique_id=218791626 instance=ExtResource("24_udxfg")]
-transform = Transform3D(0.99999976, -2.8990473e-11, -0.0006632251, 2.8990482e-11, 1, -1.0825762e-14, 0.0006632251, -1.08257926e-14, 0.99999976, -0.05, 3.1679756e-13, -7.61)
-
-[node name="BigShelf7" parent="SubViewportContainer/SubViewport/Decor" unique_id=1398937736 instance=ExtResource("24_udxfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -7.35)
-
-[node name="BigShelf8" parent="SubViewportContainer/SubViewport/Decor" unique_id=1022594670 instance=ExtResource("24_udxfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, -7.35)
-
-[node name="SmallShelf" parent="SubViewportContainer/SubViewport/Decor" unique_id=1214352518 instance=ExtResource("25_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1185894, 0, -2.1652403)
-
-[node name="SmallShelf2" parent="SubViewportContainer/SubViewport/Decor" unique_id=343208584 instance=ExtResource("25_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1185894, 0, -3.000534)
-
-[node name="SmallShelf3" parent="SubViewportContainer/SubViewport/Decor" unique_id=1433694875 instance=ExtResource("25_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1185894, 0, -3.8414342)
-
-[node name="SmallShelf4" parent="SubViewportContainer/SubViewport/Decor" unique_id=640050865 instance=ExtResource("25_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1185894, 0, -4.6879406)
-
-[node name="ClosedRack" parent="SubViewportContainer/SubViewport/Decor" unique_id=1223163465 instance=ExtResource("27_b7rcp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1129684, 0, 0.33164203)
-
-[node name="ClosedRack2" parent="SubViewportContainer/SubViewport/Decor" unique_id=338279011 instance=ExtResource("27_b7rcp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1185894, 0, -0.49465233)
-
-[node name="ClosedRack3" parent="SubViewportContainer/SubViewport/Decor" unique_id=1153431347 instance=ExtResource("27_b7rcp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1185894, 0, -1.329946)
-
 [node name="Plant" parent="SubViewportContainer/SubViewport/Decor" unique_id=991222580 instance=ExtResource("26_uyw5b")]
 transform = Transform3D(0.41697896, 0, 0.9089161, 0, 1, 0, -0.9089161, 0, 0.41697896, 0.8591635, 0, -5.5574937)
 
@@ -360,6 +315,63 @@ transform = Transform3D(0.95855165, 0, 0.28491887, 0, 1, 0, -0.28491887, 0, 0.95
 
 [node name="Bob" parent="SubViewportContainer/SubViewport" unique_id=600862783 instance=ExtResource("28_blrf4")]
 transform = Transform3D(-0.08303429, 0, 0.99654675, 0, 1, 0, -0.99654675, 0, -0.08303429, -1.8482448, 0, -5.176756)
+
+[node name="ShelfCabinet" parent="SubViewportContainer/SubViewport" unique_id=1819643507 instance=ExtResource("27_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, 0.3000002)
+
+[node name="ShelfCabinet2" parent="SubViewportContainer/SubViewport" unique_id=1142887684 instance=ExtResource("27_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -0.49999982)
+
+[node name="ShelfCabinet3" parent="SubViewportContainer/SubViewport" unique_id=1042827175 instance=ExtResource("27_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -1.2999998)
+
+[node name="ShelfCabinet4" parent="SubViewportContainer/SubViewport" unique_id=2070575907 instance=ExtResource("27_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -2.1)
+
+[node name="SmallShelf" parent="SubViewportContainer/SubViewport" unique_id=1214352518 instance=ExtResource("25_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -3.2)
+
+[node name="SmallShelf2" parent="SubViewportContainer/SubViewport" unique_id=226807385 instance=ExtResource("25_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -4)
+
+[node name="SmallShelf3" parent="SubViewportContainer/SubViewport" unique_id=2094504162 instance=ExtResource("25_blrf4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -4.7)
+
+[node name="ShelfCabinet5" parent="SubViewportContainer/SubViewport" unique_id=696665350 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -7.6000004)
+
+[node name="ShelfCabinet6" parent="SubViewportContainer/SubViewport" unique_id=1313294160 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.6000004)
+
+[node name="ShelfCabinet7" parent="SubViewportContainer/SubViewport" unique_id=890403343 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -7.6000004)
+
+[node name="ShelfCabinet8" parent="SubViewportContainer/SubViewport" unique_id=987242225 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.8, 0, -7.8)
+
+[node name="ShelfCabinet9" parent="SubViewportContainer/SubViewport" unique_id=434905005 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -7.8)
+
+[node name="ShelfCabinet10" parent="SubViewportContainer/SubViewport" unique_id=1094777190 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.8, 0, -7.8)
+
+[node name="ShelfCabinet11" parent="SubViewportContainer/SubViewport" unique_id=403777366 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -8.900001)
+
+[node name="ShelfCabinet12" parent="SubViewportContainer/SubViewport" unique_id=208610913 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.900001)
+
+[node name="ShelfCabinet13" parent="SubViewportContainer/SubViewport" unique_id=777444353 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -8.900001)
+
+[node name="ShelfCabinet14" parent="SubViewportContainer/SubViewport" unique_id=1133693517 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.8, 0, -9.1)
+
+[node name="ShelfCabinet15" parent="SubViewportContainer/SubViewport" unique_id=1654844543 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -9.1)
+
+[node name="ShelfCabinet16" parent="SubViewportContainer/SubViewport" unique_id=1927302892 instance=ExtResource("29_5rx8s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.8, 0, -9.1)
 
 [connection signal="anon_interacted" from="SubViewportContainer/SubViewport/Friend/Interactable" to="SubViewportContainer/SubViewport/Friend" method="_on_interactable_anon_interacted"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/ToGameplay/Area3D" to="SubViewportContainer/SubViewport/ToGameplay" method="_on_area_3d_body_entered"]

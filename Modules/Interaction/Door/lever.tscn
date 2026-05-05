@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://d30xr8t56lq6a"]
 
 [ext_resource type="Script" uid="uid://djaivhw1t2eaw" path="res://Modules/Interaction/Door/lever.gd" id="1_kiys5"]
+[ext_resource type="PackedScene" uid="uid://bct5lgiwebt2c" path="res://Assets/Models/Custom Assets/Lever.glb" id="2_k0w4t"]
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="2_qprpv"]
+[ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="3_k0w4t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0w4t"]
+resource_local_to_scene = true
+albedo_color = Color(0.84313726, 0.20392157, 0.21960784, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_473ul"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_k0w4t")
+size = Vector3(0.07, 0.205, 0.05)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq026"]
 resource_local_to_scene = true
@@ -13,12 +24,26 @@ material = SubResource("StandardMaterial3D_xq026")
 size = Vector3(0.25, 0.5, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xq026"]
-size = Vector3(0.5371094, 0.5576172, 0.45703125)
+size = Vector3(0.5371094, 0.5258789, 0.45703125)
 
 [node name="Lever" type="Node3D" unique_id=1750000146]
 script = ExtResource("1_kiys5")
 
+[node name="Lever2" parent="." unique_id=132307889 instance=ExtResource("2_k0w4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.022675514)
+
+[node name="Lever" parent="Lever2" index="0" unique_id=1679151451]
+transform = Transform3D(0.010717607, 0, 0, 0, 0.008881064, -0.02121005, 0, 0.0126834735, 0.014851437, 0.001834972, 0.17868984, -0.02233404)
+
+[node name="LeverBase" parent="Lever2" index="1" unique_id=231270852]
+material_overlay = ExtResource("3_k0w4t")
+
+[node name="Indicator" type="MeshInstance3D" parent="Lever2" unique_id=336625566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15666822, 0)
+mesh = SubResource("BoxMesh_473ul")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1035890338]
+visible = false
 mesh = SubResource("BoxMesh_xq026")
 
 [node name="Interactable" type="Area3D" parent="." unique_id=34123462 node_paths=PackedStringArray("mesh", "interact_object")]
@@ -29,6 +54,9 @@ interact_object = NodePath("..")
 metadata/_custom_type_script = "uid://d0afbfeblscar"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1978443951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05493164, 0)
 shape = SubResource("BoxShape3D_xq026")
 
 [connection signal="anon_interacted" from="Interactable" to="." method="interact"]
+
+[editable path="Lever2"]

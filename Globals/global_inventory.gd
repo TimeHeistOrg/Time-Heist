@@ -6,6 +6,7 @@ var items : Array[PickupItem] : #TIMEVAR
 		if globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"items",items,value)
 		items = value
+		print(items)
 		globals.update_items.emit()
 @export var items_to_start_with : Array[PickupItem] = []
 var documents : Array[DocumentInfo] = [preload("res://Assets/Documents/Resources/basement_goal_note.tres")]
@@ -21,7 +22,7 @@ func _ready() -> void:
 	
 func add_item(item:PickupItem):
 	if not has_item(item):
-		print("added item to the global inventory: ", item)
+		#print("added item to the global inventory: ", item)
 		globals.new_in_device.emit(true, globals.Device_Tabs.Inventory) # for device notif
 		var temp_items = items.duplicate(1)
 		temp_items.append(item)
@@ -32,8 +33,8 @@ func reset_items():
 	
 func remove_item(item:PickupItem):
 	if has_item(item):
-		var temp_items = items
-		items.erase(item)
+		var temp_items = items.duplicate(1)
+		temp_items.erase(item)
 		items = temp_items
 
 func has_item(item:PickupItem):
