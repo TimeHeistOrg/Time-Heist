@@ -79,112 +79,112 @@ grow_amount = -4.125
 [sub_resource type="QuadMesh" id="QuadMesh_6ltrj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ybk4"]
-size = Vector3(5.5, 1, 43.5)
+size = Vector3(5.25, 1, 43.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cnd03"]
-size = Vector3(13.75, 1, 15)
+size = Vector3(13.75, 1, 14.875)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nigfc"]
 size = Vector3(5.75, 1, 14)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2iiq"]
-size = Vector3(0.75, 1, 6.75)
+size = Vector3(0.75, 1, 6.625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1u7u"]
-size = Vector3(18.25, 1, 4.5)
+size = Vector3(18.25, 1, 4.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2auu"]
-size = Vector3(18.75, 1, 4)
+size = Vector3(18.75, 1, 3.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1kpr7"]
-size = Vector3(26.25, 1, 5)
+size = Vector3(26, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwdlf"]
-size = Vector3(18, 1, 3)
+size = Vector3(18, 1, 2.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfgm1"]
 size = Vector3(3.25, 1, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qqru8"]
-size = Vector3(29.5, 1, 7.25)
+size = Vector3(29.25, 1, 7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_24gqy"]
-size = Vector3(29.75, 1, 6.25)
+size = Vector3(29.75, 1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_84yqd"]
-size = Vector3(18, 1, 5.5)
+size = Vector3(18, 1, 5.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1hpg"]
-size = Vector3(12.25, 1, 8.75)
+size = Vector3(12.125, 1, 8.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ltrj"]
-size = Vector3(6.5, 1, 4.5)
+size = Vector3(6.25, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5ojc"]
-size = Vector3(17.75, 1, 6.5)
+size = Vector3(17.5, 1, 6.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_282k8"]
-size = Vector3(17.75, 1, 8.5)
+size = Vector3(17.5, 1, 8.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yos5y"]
-size = Vector3(4.5, 1, 14.75)
+size = Vector3(4.25, 1, 14.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58qlh"]
-size = Vector3(16.75, 1, 9)
+size = Vector3(16.5, 1, 8.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq1go"]
-size = Vector3(4.5, 1, 7.75)
+size = Vector3(4.25, 1, 7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_42wl3"]
-size = Vector3(4.5, 1, 7.75)
+size = Vector3(4.25, 1, 7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dgl2p"]
-size = Vector3(3.75, 1, 5.5)
+size = Vector3(3.75, 1, 5.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6qj7"]
-size = Vector3(12, 1, 6.25)
+size = Vector3(11.75, 1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_krbj1"]
-size = Vector3(6.25, 1, 4.75)
+size = Vector3(6, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4rwq3"]
-size = Vector3(6.25, 1, 4.75)
+size = Vector3(6, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf3gh"]
-size = Vector3(26, 1, 5.5)
+size = Vector3(26, 1, 5.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uijwk"]
 size = Vector3(8, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbdnt"]
-size = Vector3(16.25, 1, 8.25)
+size = Vector3(16.25, 1, 8.125)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0a50"]
-size = Vector3(8.25, 1, 1.5)
+size = Vector3(8, 1, 1.625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wsjrk"]
-size = Vector3(11, 1, 5.25)
+size = Vector3(10.75, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c6rx7"]
-size = Vector3(7.25, 1, 5)
+size = Vector3(7, 1, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk7os"]
-size = Vector3(8, 1, 5)
+size = Vector3(7.75, 1, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjonq"]
-size = Vector3(18.25, 1, 4.5)
+size = Vector3(18, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8kop"]
-size = Vector3(7.75, 1, 5.5)
+size = Vector3(7.5, 1, 5.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83phm"]
-size = Vector3(20.5, 1, 14.75)
+size = Vector3(20.5, 1, 14.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m7rp0"]
-size = Vector3(19.5, 1, 18.25)
+size = Vector3(19.25, 1, 18)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vt6hr"]
-size = Vector3(12, 1, 5.25)
+size = Vector3(11.75, 1, 5.25)
 
 [node name="Z3Floor" type="Node3D" unique_id=2133668272]
 
@@ -1005,42 +1005,42 @@ shape = SubResource("BoxShape3D_3ybk4")
 debug_color = Color(0.93, 0, 0.66650003, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1544601788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.125, 0, -21.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -21.6875)
 shape = SubResource("BoxShape3D_cnd03")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1312788051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0, -36.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -36.125)
 shape = SubResource("BoxShape3D_nigfc")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1380546166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.375, 0, -39.875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, 0, -39.9375)
 shape = SubResource("BoxShape3D_e2iiq")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=104802143]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.875, 0, -38.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 0, -38.75)
 shape = SubResource("BoxShape3D_j1u7u")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=819643498]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.375, 0, -38.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.25, 0, -38.5)
 shape = SubResource("BoxShape3D_e2auu")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=912134063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.625, 0, -43)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.625, 0, -42.875)
 shape = SubResource("BoxShape3D_1kpr7")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1109665849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.75, 0, -39)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.625, 0, -39)
 shape = SubResource("BoxShape3D_mwdlf")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1133671044]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.375, 0, -35.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.25, 0, -35.25)
 shape = SubResource("BoxShape3D_gfgm1")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
@@ -1050,22 +1050,22 @@ shape = SubResource("BoxShape3D_qqru8")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=183174040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.875, 0, -26.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.75, 0, -26.125)
 shape = SubResource("BoxShape3D_24gqy")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=418053086]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.75, 0, -25.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.625, 0, -25.75)
 shape = SubResource("BoxShape3D_84yqd")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=156826347]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.375, 0, -18.625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4375, 0, -18.75)
 shape = SubResource("BoxShape3D_t1hpg")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1714975142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.75, 0, -43.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.75, 0, -43.125)
 shape = SubResource("BoxShape3D_6ltrj")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
@@ -1644,7 +1644,7 @@ room_id = "power_closet"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/PowerCloset" unique_id=1159376433]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/PowerCloset/Area" unique_id=1314475004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.625, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, -2.5)
 shape = SubResource("BoxShape3D_dgl2p")
 debug_color = Color(5.7756904e-07, 0.79794604, 0.53318936, 1)
 
@@ -1746,7 +1746,7 @@ room_id = "upper_balcony"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/UpperBalcony" unique_id=987324798]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/UpperBalcony/Area" unique_id=1539937905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.75, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.75, 0, -2.5625)
 shape = SubResource("BoxShape3D_yf3gh")
 debug_color = Color(1.92523e-07, 0.7598565, 0.8341895, 1)
 
@@ -1774,6 +1774,14 @@ light_energy = 4.0
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071068, 0, -0.7071068, 0.7071067, 20.25, 1.8499999, -0.25)
 light_energy = 4.0
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/UpperBalcony" unique_id=1675175883]
+
+[node name="UpperBalconyDoorLeft" parent="SubViewportContainer/SubViewport/UpperBalcony/Interactables" unique_id=1079680582 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.25, 0, 0)
+
+[node name="UpperBalconyDoorRight" parent="SubViewportContainer/SubViewport/UpperBalcony/Interactables" unique_id=1335753408 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 13.25, 0, 0)
+
 [node name="LowerBalcony" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1928868599 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.75, 0, 32.75)
 script = ExtResource("12_e2iiq")
@@ -1784,12 +1792,12 @@ room_id = "lower_balcony"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/LowerBalcony" unique_id=290426491]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/LowerBalcony/Area" unique_id=542660963]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.875, 0, -3.875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.875, 0, -3.8125)
 shape = SubResource("BoxShape3D_mbdnt")
 debug_color = Color(1.92523e-07, 0.7598565, 0.8341895, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/LowerBalcony/Area" unique_id=1637154301]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.875, 0, -8.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.875, 0, -8.6875)
 shape = SubResource("BoxShape3D_q0a50")
 debug_color = Color(1.92523e-07, 0.7598565, 0.8341895, 1)
 
@@ -1876,6 +1884,11 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.15
 [node name="SmallShelf4" parent="SubViewportContainer/SubViewport/MeetingRoom3/Decor" unique_id=1251241172 instance=ExtResource("20_y6qj7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.1500001, 0, -3.499998)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MeetingRoom3" unique_id=1124746353]
+
+[node name="MeetingRoom3Door" parent="SubViewportContainer/SubViewport/MeetingRoom3/Interactables" unique_id=452002474 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, -3.75)
+
 [node name="WomensRestroom" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1583977204 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.25, 0, -8.25)
 script = ExtResource("12_e2iiq")
@@ -1895,6 +1908,11 @@ debug_color = Color(0.2900884, 0.6265058, 0, 1)
 [node name="WomensRestroom" parent="SubViewportContainer/SubViewport/WomensRestroom/Lights" unique_id=1782762246 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 2.1, -2.5)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/WomensRestroom" unique_id=1048576556]
+
+[node name="WomensRestroomDoor" parent="SubViewportContainer/SubViewport/WomensRestroom/Interactables" unique_id=525976513 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.25, 0, -4.5)
+
 [node name="MensRestroom" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1554167707 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.25, 0, -8.25)
 script = ExtResource("12_e2iiq")
@@ -1913,6 +1931,11 @@ debug_color = Color(0.46699125, 0.48031867, 0.88801116, 1)
 
 [node name="MensRestroom" parent="SubViewportContainer/SubViewport/MensRestroom/Lights" unique_id=190396247 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.75, 2.1, -2.5)
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MensRestroom" unique_id=134806017]
+
+[node name="MensRestroomDoor" parent="SubViewportContainer/SubViewport/MensRestroom/Interactables" unique_id=1488615288 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.25, 0, -4.5)
 
 [node name="LabSmall" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1040369701 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -3.75)
@@ -1941,6 +1964,11 @@ light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 [node name="LabSmall3" parent="SubViewportContainer/SubViewport/LabSmall/Lights" unique_id=1786203617 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.25, 2.1, -2.25)
 light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/LabSmall" unique_id=76740661]
+
+[node name="LabSmallDoor" parent="SubViewportContainer/SubViewport/LabSmall/Interactables" unique_id=1564092754 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 0)
 
 [node name="LabOffice" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1172191028 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 0, 6.75)
@@ -2006,7 +2034,7 @@ room_id = "lab"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/Lab" unique_id=1899962728]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Lab/Area" unique_id=1384370443]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.125, 0, -7.125)
 shape = SubResource("BoxShape3D_83phm")
 debug_color = Color(0.7988201, 0.41489652, 7.70092e-07, 1)
 
@@ -2016,7 +2044,7 @@ shape = SubResource("BoxShape3D_m7rp0")
 debug_color = Color(0.7988201, 0.41489652, 7.70092e-07, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Lab/Area" unique_id=1304262400]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.75, 0, -20.625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.75, 0, -20.5)
 shape = SubResource("BoxShape3D_vt6hr")
 debug_color = Color(0.7988201, 0.41489652, 7.70092e-07, 1)
 
@@ -2173,6 +2201,39 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 31.2
 
 [node name="EntranceRight" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=1843325562 instance=ExtResource("16_nigfc")]
 transform = Transform3D(1, 0, 1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 30.25, 0, -23)
+
+[node name="TLRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=1229011044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -9.75)
+
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TLRoom" unique_id=834629136 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3.5)
+
+[node name="RightDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TLRoom" unique_id=970206591 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -3.5)
+
+[node name="BLRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=1632982671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, 0)
+
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BLRoom" unique_id=1700965680 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1.25)
+
+[node name="RightDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BLRoom" unique_id=1879582197 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -1.25)
+
+[node name="BRRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=857376045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 0)
+
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom" unique_id=152791855 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1.25)
+
+[node name="RightDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom" unique_id=938680000 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -0.75)
+
+[node name="TRRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=975036580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -9.75)
+
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TRRoom" unique_id=115021518 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3.5)
 
 [node name="Item" parent="SubViewportContainer/SubViewport" unique_id=680605862 instance=ExtResource("17_24gqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, -0.75)
