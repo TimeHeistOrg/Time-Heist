@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Models/Enviornment/small_shelf.tscn" id="20_y6qj7"]
 [ext_resource type="Resource" uid="uid://bl3wymmqufqh2" path="res://Assets/Items/Resources/archive_key.tres" id="23_t1hpg"]
 [ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/basement_albus_keycard.tres" id="24_6ltrj"]
+[ext_resource type="PackedScene" uid="uid://3qury6ftpyua" path="res://Modules/Interaction/Recharge Station/recharge_station.tscn" id="25_krbj1"]
 [ext_resource type="Resource" uid="uid://ccb6qtg54rgyj" path="res://Assets/Items/Resources/basement_security_lockbox_key_1.tres" id="25_m5ojc"]
 [ext_resource type="Resource" uid="uid://gue75w7rapn5" path="res://Assets/Items/Resources/basement_security_lockbox_key_2.tres" id="26_58qlh"]
 [ext_resource type="PackedScene" uid="uid://crv58s02cuc78" path="res://Assets/Models/Enviornment/tall_shelf.tscn" id="27_4rwq3"]
@@ -1366,6 +1367,11 @@ transform = Transform3D(0.5000002, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.500
 [node name="OfficeChair4" parent="SubViewportContainer/SubViewport/MeetingRoom1/Decor/Table" unique_id=559547026 instance=ExtResource("15_y6qj7")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 10.25, 0, -4.25)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MeetingRoom1" unique_id=1933176137]
+
+[node name="MeetingRoom1Door" parent="SubViewportContainer/SubViewport/MeetingRoom1/Interactables" unique_id=74631722 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
 [node name="MeetingRoom2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=158377898 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 0, 18.5)
 script = ExtResource("12_e2iiq")
@@ -1458,6 +1464,11 @@ transform = Transform3D(1.7320508, 0, -1, 0, 2, 0, 1, 0, 1.7320508, 16.5, 0, -7.
 [node name="PlantBR" parent="SubViewportContainer/SubViewport/MeetingRoom2/Decor" unique_id=86906644 instance=ExtResource("15_cnd03")]
 transform = Transform3D(-1.0000001, 0, -1.7320508, 0, 2, 0, 1.7320508, 0, -1.0000001, 16.5, 0, -1)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MeetingRoom2" unique_id=445455144]
+
+[node name="MeetingRoom2Door" parent="SubViewportContainer/SubViewport/MeetingRoom2/Interactables" unique_id=543376248 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
 [node name="BackElevatorHallway" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1369241682 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 24.75)
 script = ExtResource("12_e2iiq")
@@ -1499,7 +1510,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.85
 
 [node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/BackElevatorHallway" unique_id=1801425201]
 
-[node name="Meeting1Door" parent="SubViewportContainer/SubViewport/BackElevatorHallway/Interactables" unique_id=74631722 instance=ExtResource("16_nigfc")]
+[node name="Meeting1Door" parent="SubViewportContainer/SubViewport/BackElevatorHallway/Interactables" unique_id=876495101 instance=ExtResource("16_nigfc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
 
 [node name="Meeting2Door" parent="SubViewportContainer/SubViewport/BackElevatorHallway/Interactables" unique_id=172715892 instance=ExtResource("16_nigfc")]
@@ -1660,11 +1671,18 @@ light_energy = 4.0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5, 0, -2.5)
 is_locked = true
 
-[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=1750000146 instance=ExtResource("17_t1hpg")]
+[node name="PowerClosetScannerOutside" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=1750000146 instance=ExtResource("17_t1hpg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.75, 1.25, -3.5)
 needed_item = Array[ExtResource("18_6ltrj")]([ExtResource("18_84yqd")])
 consume_items = true
 locked_label = "Out of order: Missing fuse (apple)"
+perma_unlock = true
+
+[node name="PowerClosetScannerInside" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=562532363 instance=ExtResource("17_t1hpg")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 3.5, 1.25, -3.5)
+
+[node name="Recharge Station" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=2097079311 instance=ExtResource("25_krbj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
 
 [node name="DeadGuyOffice" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=156557167 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.75, 0, -18.5)
@@ -1689,6 +1707,11 @@ light_energy = 4.0
 [node name="DeadGuyOffice2" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Lights" unique_id=1885949279 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -3)
 light_energy = 4.0
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/DeadGuyOffice" unique_id=1618489451]
+
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactables" unique_id=892566462 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
 
 [node name="BossOffice1" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1893216238 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -16.25)
@@ -1716,6 +1739,9 @@ light_energy = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0, -2.75)
 item = ExtResource("18_84yqd")
 
+[node name="BossOffice1Door" parent="SubViewportContainer/SubViewport/BossOffice1/Interactables" unique_id=1353953442 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
 [node name="BossOffice2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1499356571 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -16.25)
 script = ExtResource("12_e2iiq")
@@ -1735,6 +1761,11 @@ debug_color = Color(1, 0.50915164, 0.41966775, 1)
 [node name="BossOffice2" parent="SubViewportContainer/SubViewport/BossOffice2/Lights" unique_id=1540713437 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.75, 2.1, -2)
 light_energy = 4.0
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/BossOffice2" unique_id=574755342]
+
+[node name="BossOffice2Door" parent="SubViewportContainer/SubViewport/BossOffice2/Interactables" unique_id=213563704 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 
 [node name="UpperBalcony" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=983415628 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75, 0, -20.75)
@@ -1811,6 +1842,11 @@ spot_angle = 50.0
 [node name="LowerBalcony2" parent="SubViewportContainer/SubViewport/LowerBalcony/Lights" unique_id=53617295 instance=ExtResource("12_nigfc")]
 transform = Transform3D(-1, -6.181724e-08, 6.181723e-08, 0, 0.7071067, 0.7071068, -8.742278e-08, 0.7071068, -0.7071067, 12.75, 1.8499999, -7.75)
 light_energy = 4.0
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/LowerBalcony" unique_id=352423808]
+
+[node name="LowerBalconyDoor" parent="SubViewportContainer/SubViewport/LowerBalcony/Interactables" unique_id=629704520 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.5, 0, -7.75)
 
 [node name="MeetingRoom3" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1955777875 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -15.75)
@@ -2235,8 +2271,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -9.75)
 [node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TRRoom" unique_id=115021518 instance=ExtResource("16_nigfc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3.5)
 
+[node name="LabBackdoor" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=61335024 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0, -14.25)
+
 [node name="Item" parent="SubViewportContainer/SubViewport" unique_id=680605862 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, -0.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.75, 0, -2.75)
 item = ExtResource("18_84yqd")
 
 [node name="Item2" parent="SubViewportContainer/SubViewport" unique_id=100126899 instance=ExtResource("17_24gqy")]
@@ -2260,7 +2299,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, -0.75)
 item = ExtResource("27_282k8")
 
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("6_mwdlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.830431, 0, -0.36832148)
 
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/Keycard Scanner" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetDoor" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetScannerOutside" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetDoor" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetScannerInside" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetDoor" method="open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Outside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="unlock_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Inside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="open"]

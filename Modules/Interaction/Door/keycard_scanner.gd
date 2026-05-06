@@ -13,11 +13,12 @@ var display_time_elapsed: float = 0
 @export var needed_lever: Array[Lever]
 @export var locked_label : String
 
-@export var is_unlocked: bool = false : #TIMEVAR
+@export var perma_unlock: bool = false
+var unlocked_once: bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"is_unlocked",is_unlocked,value)
-		is_unlocked = value
+			globals.time_manager.timelog(self,"unlocked_once",unlocked_once,value)
+		unlocked_once = value
 
 var feedback_timer : Timer
 var default_color : Color = Color(0.081, 0.081, 0.081, 1.0)
@@ -33,17 +34,16 @@ func _ready() -> void:
 func interact():
 	var unlocked = check_interact()
 	
-	if not unlocked:
-		is_unlocked = false
+	if unlocked or (perma_unlock and unlocked_once):
+		unlocked_once = true
+		keycard_scanned.emit()
+		show_feedback(globals.green_color)
+		return
+	else:
 		display_note = true
 		$Label.visible = true
 		show_feedback(globals.red_color)
 		return
-	else:
-		is_unlocked = true
-		keycard_scanned.emit()
-		is_unlocked = true
-		show_feedback(globals.green_color)
 
 func check_interact():
 	var success = true
