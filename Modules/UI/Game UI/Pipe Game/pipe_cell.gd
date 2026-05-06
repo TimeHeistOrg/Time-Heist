@@ -28,8 +28,8 @@ signal rotation_changed(row: int, col: int)
 @export var angle_90_texture: Texture2D = null
 @export_group("")
 
-@export var row: int = -1
-@export var col: int = -1
+var row: int = -1
+var col: int = -1
 
 # cell setup based on above settings
 func _ready() -> void:
