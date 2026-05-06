@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c4ck8inf0quik"]
+
+[ext_resource type="Script" uid="uid://cvvoxlmdvokts" path="res://Modules/Pipe Game/pipe_game.gd" id="1_ejh36"]
+
+[node name="PipeGame" type="Control" unique_id=1151290293]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ejh36")
+width = 6
+height = 7
