@@ -2,9 +2,9 @@
 extends Node3D
 class_name Generic_Door
 
-@onready var collision_body: StaticBody3D = $"Door_v20/DoorHinge/Door/Door RB"
-@onready var mesh: MeshInstance3D = $Door_v20/DoorHinge/Door
-@onready var animation_player : AnimationPlayer = $Door_v20/AnimationPlayer
+@onready var collision_body: StaticBody3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB"
+@onready var mesh: MeshInstance3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door"
+@onready var animation_player : AnimationPlayer = $"Door_Frame_with_Door_Animated_v2(Faster)/AnimationPlayer"
 
 @export var is_open: bool = false : #TIMEVAR
 	set(value):
@@ -60,8 +60,8 @@ var cur_action: DoorTimeAction = null: #TIMEVAR
 
 var door_ready: bool = false
 var progress:float = 0
-var door_anim_length = 1.25
-var knob_delay = 0.4
+var door_anim_length = 0.625
+var knob_delay = 0.2
 
 func _ready():
 	if is_open:
@@ -125,7 +125,10 @@ func unlock():
 
 func toggle_lock():
 	is_locked = not is_locked
-
+	
+func unlock_open():
+	unlock()
+	open()
 
  #and not globals.player.can_open_any_door
 func interact(person: Node):

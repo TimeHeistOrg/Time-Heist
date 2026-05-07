@@ -73,6 +73,9 @@ var normal_cursor = preload("res://Assets/UI/Computer/Cursor_normal.png")
 var clicking_cursor = preload("res://Assets/UI/Computer/Cursor_click.png")
 #endregion
 
+var green_color : Color = Color("46af56ff")
+var red_color : Color = Color("d73438")
+
 func _ready():
 	time_manager = preload("res://Modules/TimeTravel/TimeManager.gd").new()
 	time_manager.name = "TimeManager"

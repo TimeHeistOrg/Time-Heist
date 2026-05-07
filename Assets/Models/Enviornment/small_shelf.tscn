@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://cofbdv5oh4va0" path="res://Assets/Models/Custom Assets/SmallShelf.fbx" id="1_r1a2i"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rc8u4"]
-size = Vector3(0.8196411, 1.036377, 0.25494385)
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1a2i"]
+size = Vector3(0.82592773, 1.0551758, 0.28320313)
 
 [node name="SmallShelf" type="Node3D" unique_id=1214352518]
-
-[node name="SmallShelf" parent="." unique_id=185629428 instance=ExtResource("1_r1a2i")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=63001347]
 collision_layer = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1742950390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0517578e-05, 0.5194092, 0.0015563965)
-shape = SubResource("BoxShape3D_rc8u4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0517578e-05, 0.52563477, 0.0075712204)
+shape = SubResource("BoxShape3D_r1a2i")
+
+[node name="SmallShelf" parent="." unique_id=944046919 instance=ExtResource("1_r1a2i")]

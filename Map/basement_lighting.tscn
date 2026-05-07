@@ -41,7 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://dpbn3tv4fvft7" path="res://Assets/Models/Stock Assets/Table_Box.fbx" id="41_x8xvc"]
 [ext_resource type="PackedScene" uid="uid://b0de055ebbyya" path="res://Assets/Models/Enviornment/security_table.tscn" id="42_8tqeg"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="42_qhvyw"]
-[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall.tscn" id="43_addyg"]
+[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall_old.tscn" id="43_addyg"]
 [ext_resource type="PackedScene" uid="uid://xao1udvjxbco" path="res://Modules/Interaction/Stashable.tscn" id="43_qhvyw"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="44_w24xq"]
 [ext_resource type="Resource" uid="uid://gue75w7rapn5" path="res://Assets/Items/Resources/basement_security_lockbox_key_2.tres" id="45_54g0j"]
