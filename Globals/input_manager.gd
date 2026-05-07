@@ -102,6 +102,7 @@ func _process_gameplay(delta: float):
 		player.toggle_crouch()
 	if Input.is_action_just_pressed("player_interact"):
 		player.interact()
+
 	if Input.is_action_just_released("inventory_wheel_scroll_up"):
 		player.inventory_wheel.scroll(1)
 		keep_wheel_open()
@@ -110,7 +111,7 @@ func _process_gameplay(delta: float):
 		keep_wheel_open()
 	if Input.is_action_just_released("player_interact"):
 		player.inventory_wheel.close()
-	if Input.is_action_just_pressed("device_menu"):
+	if globals.ui_manager and Input.is_action_just_pressed("device_menu"):
 		globals.ui_manager.device_menu.open()
 		globals.ui_manager.get_node("ButtonMove").play()
 		
