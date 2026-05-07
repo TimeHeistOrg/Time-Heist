@@ -26,17 +26,11 @@ var camera : Node3D
 
 #region DebugMode
 var infinite_juice: bool = false
-
+var player_invisible: bool = false
 #endregion
 
 #region Detection
 var safe_ratio : float = 1
-var gaurd_sight_line_angle : float = 130
-var gaurd_sight_line_radius : float = 15
-var gaurd_smaller_sight_line_radius : float = 1.5
-var person_sight_line_angle : float = 360
-var person_sight_line_radius : float = 3
-var person_smaller_sight_line_radius : float = 0
 #endregion
 
 var time_juice : float = 100
@@ -78,6 +72,9 @@ enum Device_Tabs {
 var normal_cursor = preload("res://Assets/UI/Computer/Cursor_normal.png")
 var clicking_cursor = preload("res://Assets/UI/Computer/Cursor_click.png")
 #endregion
+
+var green_color : Color = Color("46af56ff")
+var red_color : Color = Color("d73438")
 
 func _ready():
 	time_manager = preload("res://Modules/TimeTravel/TimeManager.gd").new()

@@ -41,7 +41,7 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Player[OLD]/Animation/stand_roll.res",
+"save_to_file/fallback_path": "res://Player/Animation/stand_roll.res",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://buaklb5wad5a3",
 "settings/loop_mode": 0,

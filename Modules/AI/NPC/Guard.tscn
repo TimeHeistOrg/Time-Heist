@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dx2qsifcake6f" path="res://Modules/AI/NPC/guard.gd" id="1_3duep"]
 [ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Dialogue/Linda_face.png" id="2_3duep"]
-[ext_resource type="PackedScene" uid="uid://dyhnk6p2fbc87" path="res://Modules/ConeVision/cone_vision.tscn" id="3_3duep"]
+[ext_resource type="PackedScene" uid="uid://be0g844ywaxq6" path="res://Modules/ConeVision/player_detector.tscn" id="3_3duep"]
+[ext_resource type="PackedScene" uid="uid://sr7naop2qhp7" path="res://Modules/ConeVision/laser.tscn" id="3_k7y8f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6qgu"]
 resource_name = "bottom grey"
@@ -157,9 +158,15 @@ stencil_outline_thickness = 0.001
 material = SubResource("StandardMaterial3D_yt8hl")
 radial_segments = 12
 
-[node name="Guard" type="Node3D" unique_id=854805088 node_paths=PackedStringArray("cone_vision")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3duep"]
+size = Vector3(1, 1.9223633, 1)
+
+[node name="Guard" type="Node3D" unique_id=854805088]
 script = ExtResource("1_3duep")
-cone_vision = NodePath("Cone Vision")
+
+[node name="PlayerDetector" parent="." unique_id=1869490121 instance=ExtResource("3_3duep")]
+
+[node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_k7y8f")]
 
 [node name="Cylinder" type="MeshInstance3D" parent="." unique_id=1628374913]
 transform = Transform3D(15.31432, 0, 0, 0, -6.6941016e-07, 8.609855, 0, -15.314319, -3.763487e-07, -0.00017647594, 0.26309648, 0)
@@ -187,5 +194,10 @@ transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-
 layers = 32
 texture = ExtResource("2_3duep")
 
-[node name="Cone Vision" parent="." unique_id=1869490121 instance=ExtResource("3_3duep")]
-catch_active = false
+[node name="Hitbox" type="Area3D" parent="." unique_id=299469070]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1655377873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935791, 0)
+shape = SubResource("BoxShape3D_3duep")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_npc_hitbox_body_entered"]
