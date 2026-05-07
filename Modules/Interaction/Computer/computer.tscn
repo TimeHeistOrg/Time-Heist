@@ -50,11 +50,6 @@ metadata/_custom_type_script = "uid://d0afbfeblscar"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27083367, -0.06754547)
 shape = SubResource("BoxShape3D_2r8gm")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2088442260]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0024785772, 0.2937304, -0.70675313)
-visible = false
-fov = 37.538853
-
 [node name="Screen" type="MeshInstance3D" parent="." unique_id=1400247346]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.008925617, 0.29647523, -0.078984305)
 visible = false

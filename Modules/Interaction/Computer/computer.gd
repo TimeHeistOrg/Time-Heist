@@ -1,14 +1,11 @@
+# computer.gd
 extends Node3D
 class_name Computer
 
-@export var computer_ui : PackedScene
+@export var data: ComputerData
 
-func _ready() -> void:
-	if not computer_ui:
-		push_warning("Computer UI not hooked up")
-		#assert(false)
-	#computer_ui.close()
-	
 func interact():
-	globals.ui_manager.desktop_viewer.display_desktop(computer_ui)
-	
+	if not data:
+		push_warning("Computer has no ComputerData resource")
+		return
+	globals.ui_manager.desktop_viewer.display_computer(data)

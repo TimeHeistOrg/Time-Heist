@@ -1,6 +1,17 @@
 extends UI
 class_name DesktopViewer
 
+const COMPUTER_UI = preload("res://Modules/Interaction/Computer/computer_ui.tscn")
+
+func display_computer(data: ComputerData) -> void:
+	clear_display()
+	var comp_ui = COMPUTER_UI.instantiate() as ComputerUI
+	add_child(comp_ui)
+	comp_ui.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	comp_ui.load_computer(data)
+	open()
+
+## Below is legacy support
 
 func display_desktop(computer_ui : PackedScene):
 	if computer_ui:

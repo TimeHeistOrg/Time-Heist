@@ -16,8 +16,9 @@ size = Vector3(0.14, 0.12, 0.01)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xq026"]
 size = Vector3(0.5371094, 0.4915619, 0.45703125)
 
-[node name="Keycard Scanner" type="Node3D" unique_id=1750000146]
+[node name="Keycard Scanner" type="Node3D" unique_id=1750000146 node_paths=PackedStringArray("lock")]
 script = ExtResource("1_xq026")
+lock = NodePath("")
 
 [node name="Card_reader" parent="." unique_id=1591298054 instance=ExtResource("2_0cwtd")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.008489996)

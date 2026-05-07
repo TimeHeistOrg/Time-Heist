@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TextConvo" format=3 uid="uid://csaufp18yr7m7"]
 
-[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Assets/TextConvos/text_convo_resource.gd" id="1_e1u8w"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="1_e1u8w"]
 
 [resource]
 script = ExtResource("1_e1u8w")

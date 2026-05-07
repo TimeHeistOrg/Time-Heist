@@ -1,9 +1,9 @@
-extends TabContent
-
-@export var file : DocumentInfo
+extends AppBase
+var file
 @onready var file_viewer: TextureRect = $FileViewer
 
-func _ready() -> void:
+func setup(config: FileAppConfig) -> void:
+	file = config.file
 	file_viewer.texture = file.document_image
 
 func open_process():

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://chgq1whavi3qi"]
 
 [ext_resource type="Script" uid="uid://ck3oeogct52e1" path="res://Modules/Interaction/Computer/computer_ui.gd" id="1_01okh"]
-[ext_resource type="Texture2D" uid="uid://c0kml80xyvydp" path="res://Assets/UI/Computer/desktop_image.png" id="2_tjnva"]
 
 [node name="Computer UI" type="Control" unique_id=1952193276]
 layout_mode = 3
@@ -11,7 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_01okh")
-desktop_image = ExtResource("2_tjnva")
 
 [node name="Desktop" type="TextureRect" parent="." unique_id=1028994571]
 layout_mode = 1
@@ -32,3 +30,12 @@ anchor_bottom = 1.0
 offset_top = -70.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Icons" type="HBoxContainer" parent="." unique_id=377949584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

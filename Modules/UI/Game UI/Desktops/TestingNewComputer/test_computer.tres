@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://cdijnfhp66gsc"]
+
+[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_vp0if"]
+[ext_resource type="Resource" uid="uid://wobvj7y2r56i" path="res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_text.tres" id="2_vp0if"]
+[ext_resource type="Texture2D" uid="uid://c0kml80xyvydp" path="res://Assets/UI/Computer/desktop_image.png" id="3_lc2jo"]
+[ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="4_lc2jo"]
+
+[resource]
+script = ExtResource("4_lc2jo")
+desktop_image = ExtResource("3_lc2jo")
+apps = Array[ExtResource("1_vp0if")]([ExtResource("2_vp0if")])
+metadata/_custom_type_script = "uid://drdqf0ywp8oy7"

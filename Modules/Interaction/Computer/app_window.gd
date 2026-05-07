@@ -1,18 +1,20 @@
 extends UI
-class_name DesktopTab
+class_name AppWindow
 
 @onready var panel: Panel = $VBoxContainer/Panel
 @onready var bar: ColorRect = $VBoxContainer/Bar
 
-@export var content : TabContent #make a tabcontent class
+var content
 
 var dragging : bool = false
 var offset : Vector2
 
 func _ready() -> void:
 	hide()
+
+func setup(new_content: AppBase) -> void:
+	content = new_content
 	content.reparent(panel)
-	pass
 
 #region dragging
 func _physics_process(_delta: float) -> void:

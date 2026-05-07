@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1cs4nrno8aha"]
+
+[ext_resource type="Script" uid="uid://cvctf22vft3jp" path="res://Modules/Interaction/lockable.gd" id="1_nu6sf"]
+
+[node name="Lockable" type="Node" unique_id=1120950339]
+script = ExtResource("1_nu6sf")
+
+[node name="Label" type="Label" parent="." unique_id=1636281165]
+z_index = 115
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 898.0
+offset_right = -150.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1

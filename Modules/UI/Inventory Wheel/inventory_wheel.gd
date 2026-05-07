@@ -62,6 +62,7 @@ func _draw() -> void:
 	chosen_slot_drawer.draw_inven_selected()
 	
 func open() -> void:
+	sanitize_selected_index()
 	if is_open or global_inventory.items.is_empty(): #doesnt open if no items held
 		return
 	is_open = true
@@ -88,6 +89,7 @@ func close() -> void:
 	current_tween.tween_callback(func(): visible = false)
 
 func rebuild_window() -> void:
+	sanitize_selected_index()
 	#print(global_inventory.items)
 	window.clear()
 	if global_inventory.items.is_empty():
@@ -124,3 +126,16 @@ func _process(delta: float) -> void:
 	# Stop redrawing once settled
 	if abs($Wheel.rotation - target_rotation) > 0.001:
 		queue_redraw()
+
+func sanitize_selected_index() -> void:
+	if global_inventory.items.is_empty():
+		selected_index = 0
+		target_rotation = 0.0
+		$Wheel.rotation = 0.0
+		return
+	var clamped = clamp(selected_index, 0, global_inventory.items.size() - 1)
+	if clamped != selected_index:
+		selected_index = clamped
+		# snap rotation to match the new index
+		target_rotation = -selected_index * slot_width
+		$Wheel.rotation = target_rotation  # snap instantly, no lerp)

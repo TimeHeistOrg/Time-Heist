@@ -1,6 +1,6 @@
-extends TabContent
+extends AppBase
 
-@export var emails : Array[DocumentInfo]
+var emails
 var email_button_instances : Array[EmailButton]  #TIMEVAR
 	#set(value):
 		#if globals.time_manager and globals.time_manager.logging:
@@ -22,12 +22,15 @@ var finished : bool = false : #TIMEVAR
 			globals.time_manager.timelog(self,"finished",finished,value)
 		finished = value
 
+func setup(config: EmailAppConfig) -> void:
+	emails = config.emails
+	setup_emails()
+
 func _ready() -> void:
 	if emails.size() == 0:
 		push_error("No emails in this email tab!")
 		assert(false)
 	emails.sort_custom(custom_email_sort) #sorts them based on time
-	setup_emails()
 	#next_document_to_add = 0
 	#next_time = emails[0].email_time
 	#print(emails)
