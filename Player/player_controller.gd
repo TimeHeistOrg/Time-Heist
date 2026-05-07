@@ -7,6 +7,7 @@ class_name Player extends CharacterBody3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var detection_point: Marker3D = $DetectionPoint
 @onready var interactor: Interactor = $Mesh/Interactor
+@onready var inventory_wheel: InventoryWheel = $"SubViewport/Inventory Wheel"
 
 @export_category("Camera")
 @export var camera_up: float = 5.798:
@@ -56,9 +57,7 @@ var current_speed: float
 var destination_velocity: Vector3
 var current_acceleration: float
 var move_acceleration: float
-
-#inventory wheel
-@onready var inventory_wheel: Node2D = $"SubViewport/Inventory Wheel"
+var position_locked: bool = false
 
 #IDK WHAT THESE ARE FOR OR WHY THERE ARE TWO, BUT THEY ARE USED BY CONEVISION
 var is_hidden: bool = false
@@ -115,10 +114,17 @@ func roll(): #input manager interface function
 	if state != MoveStates.ROLL:
 		roll_enter()
 
+func lock_position():
+	position_locked = true
+	
+func unlock_position():
+	position_locked = false
+
 func move(input_dir: Vector2, delta): #input manager calls this every physics_process frame with the pertinent input information
-	#anything that should happen for all states should go here
-	state_move.call(input_dir,delta)
-	move_and_slide()
+	if not position_locked:
+		#anything that should happen for all states should go here
+		state_move.call(input_dir,delta)
+		move_and_slide()
 
 func _default_move(input_dir: Vector2, speed: float): #This function is the default movement, used for run, walk, and crouch movement
 	if input_dir.is_zero_approx():

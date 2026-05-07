@@ -7,6 +7,8 @@ class_name Lever
 var on_color : Color = globals.green_color
 var off_color : Color = globals.red_color
 
+signal lever_flipped(flip: bool)
+
 @export var flipped : bool = false : #TIMEVAR
 	set(value):
 		#print("set is_open to ", value)
@@ -59,7 +61,7 @@ var finish_delay = 0.533
 
 func _ready() -> void:
 	if flipped:
-		animation_player.play("Down")
+		indicator.mesh.material.albedo_color = on_color
 	lever_ready = true
 	
 func _process(delta: float) -> void:
@@ -80,7 +82,6 @@ func _process(delta: float) -> void:
 				animation_player.seek(progress,true)
 
 func flip():
-	#print("open")
 	if (not cur_action or not cur_action.flipping):
 		if(not flipped or (cur_action and not cur_action.flipping)):
 			var was_unflipping: bool = cur_action != null
@@ -91,6 +92,7 @@ func flip():
 				progress = 0
 			flipped = true
 			indicator.mesh.material.albedo_color = on_color
+			lever_flipped.emit(true)
 			
 
 func unflip():
@@ -104,6 +106,7 @@ func unflip():
 				progress = 0
 			flipped = false
 			indicator.mesh.material.albedo_color = off_color
+			lever_flipped.emit(false)
 
 func toggle_flip():
 	if cur_action:

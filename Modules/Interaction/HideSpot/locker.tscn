@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://uww33bnurarr"]
+
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="1_gu15c"]
+[ext_resource type="PackedScene" uid="uid://b3j6f486q3yvk" path="res://Modules/Interaction/HideSpot/hide_point.tscn" id="2_r1lcu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ujb7q"]
+size = Vector3(0.5, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghx17"]
+size = Vector3(0.5, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gu15c"]
+size = Vector3(0.5, 2, 1)
+
+[node name="Locker" type="Node3D" unique_id=1382941412]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=817063518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
+layers = 16
+mesh = SubResource("BoxMesh_ujb7q")
+
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("1_gu15c")]
+mesh = NodePath("../Mesh")
+interact_object = NodePath("../HidePoint")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=113367129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
+shape = SubResource("BoxShape3D_ghx17")
+
+[node name="HidePoint" parent="." unique_id=1385311744 instance=ExtResource("2_r1lcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1297337799]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1704035837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
+shape = SubResource("BoxShape3D_gu15c")
+
+[connection signal="interacted_by" from="Interactable" to="HidePoint" method="interact"]
