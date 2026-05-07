@@ -1,7 +1,5 @@
-extends Resource
-class_name AppData
+@abstract class_name AppData extends Resource
 
-@export var app_name: String
-@export var icon: Texture2D
-@export var app_scene: PackedScene 
-@export var app_config: Resource
+var app_name: String
+var icon: Texture2D
+var app_scene: PackedScene 

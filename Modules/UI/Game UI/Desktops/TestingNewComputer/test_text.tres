@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="AppData" format=3 uid="uid://wobvj7y2r56i"]
+[gd_resource type="Resource" script_class="TextAppConfig" format=3 uid="uid://wobvj7y2r56i"]
 
-[ext_resource type="PackedScene" uid="uid://dkcsig15pybbc" path="res://Modules/Interaction/Computer/Text App/text_tab.tscn" id="1_sgcbj"]
-[ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="2_x8m05"]
-[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="3_sgcbj"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="1_26hxc"]
+[ext_resource type="Script" uid="uid://4064plqmijmo" path="res://Modules/Interaction/Computer/Resources/text_app_config.gd" id="2_sgcbj"]
 
 [resource]
-script = ExtResource("3_sgcbj")
-app_name = "Messages"
-icon = ExtResource("2_x8m05")
-app_scene = ExtResource("1_sgcbj")
-metadata/_custom_type_script = "uid://bh2lgnvkrmn2e"
+script = ExtResource("2_sgcbj")
+convos = Array[ExtResource("1_26hxc")]([null])
+which_person = Array[int]([0])
+metadata/_custom_type_script = "uid://4064plqmijmo"

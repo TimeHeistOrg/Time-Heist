@@ -16,11 +16,11 @@ var right_bubble := preload("res://Modules/Interaction/Computer/Text App/text_bu
 func setup(config: TextAppConfig) -> void:
 	convos = config.convos
 	which_person = config.which_person as Array[person]
-	create_convo_buttons()
 
 func _ready() -> void:
 	time_manager = globals.time_manager
 	default_focus = people.get_child(0)
+	create_convo_buttons()
 
 func set_convo(convo : TextConvo):
 	print("veiwing convo between ", convo.person0, " and ", convo.person1)

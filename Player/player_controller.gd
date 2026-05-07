@@ -3,6 +3,7 @@ class_name Player extends CharacterBody3D
 
 @onready var mesh: Node3D = $Mesh
 @onready var camera_pivot: Node3D = $"Camera Pivot"
+@onready var camera: Camera3D = $"Camera Pivot/Camera3D"
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var detection_point: Marker3D = $DetectionPoint
 @onready var interactor: Interactor = $Mesh/Interactor
@@ -65,6 +66,7 @@ var can_be_seen: bool = true
 
 func _ready():
 	globals.player = self
+	globals.player_camera = camera
 	InputManager.player = self
 	$"Inventory Wheel Holder".player = self
 	run_enter()
