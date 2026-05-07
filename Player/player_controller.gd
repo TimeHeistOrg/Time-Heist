@@ -56,12 +56,10 @@ var destination_velocity: Vector3
 var current_acceleration: float
 var move_acceleration: float
 
+var is_hidden: bool = false #hiding in a locker or other place.
+
 #inventory wheel
 @onready var inventory_wheel: Node2D = $"SubViewport/Inventory Wheel"
-
-#IDK WHAT THESE ARE FOR OR WHY THERE ARE TWO, BUT THEY ARE USED BY CONEVISION
-var is_hidden: bool = false
-var can_be_seen: bool = true
 
 func _ready():
 	globals.player = self

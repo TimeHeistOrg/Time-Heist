@@ -131,13 +131,18 @@ func _process(delta: float) -> void:
 				player_spotted = false
 				if catch_active and laser_on:
 					stop_laser()
-				
-		if player_spotted and globals.player.can_be_seen and not globals.time_manager.is_time_traveling:
-			time_detecting += min(globals.time_manager.delta_time,time_till_caught)
-			if catch_active and not laser_on:
-				start_laser()
+		
+		if not globals.time_manager.is_time_traveling:
+			if player_spotted and globals.player.can_be_seen:
+				time_detecting = min(time_detecting + globals.time_manager.delta_time,time_till_caught)
+				if catch_active and not laser_on:
+					start_laser()
+			else:
+				time_detecting = max(time_detecting - globals.time_manager.delta_time, 0.0)
+				if catch_active and laser_on:
+					stop_laser()
 		else:
-			time_detecting = max(time_detecting - globals.time_manager.delta_time, 0.0)
+			time_detecting = max(time_detecting + globals.time_manager.delta_time, 0.0)
 			if catch_active and laser_on:
 				stop_laser()
 		
