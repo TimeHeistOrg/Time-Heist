@@ -1,0 +1,429 @@
+[gd_scene format=3 uid="uid://42jd0b6w7qu4"]
+
+[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="1_2bm35"]
+[ext_resource type="PackedScene" uid="uid://c4ck8inf0quik" path="res://Modules/UI/Game UI/Pipe Game/pipe_game.tscn" id="1_n5ij4"]
+[ext_resource type="PackedScene" uid="uid://cne2roithf6os" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn" id="2_2bm35"]
+[ext_resource type="PackedScene" uid="uid://cbtqqo3a4oo70" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.tscn" id="3_6x575"]
+[ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="4_0mmcj"]
+[ext_resource type="Script" uid="uid://vgwqte4k53qv" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.gd" id="4_n00nx"]
+[ext_resource type="Script" uid="uid://dnrstdlc3i47r" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.gd" id="7_sgv0s"]
+[ext_resource type="Texture2D" uid="uid://bj2ogqq6ttqux" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_90_angle.png" id="8_rjj5u"]
+
+[node name="TestPipe" type="Node2D" unique_id=2073227531]
+
+[node name="UI Manager" parent="." unique_id=1478464990 instance=ExtResource("1_2bm35")]
+
+[node name="PipeGame" parent="." unique_id=1151290293 instance=ExtResource("1_n5ij4")]
+mouse_visible_on_start = true
+
+[node name="Background" type="ColorRect" parent="PipeGame" unique_id=1526601961]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 380.0
+offset_right = 1120.0
+offset_bottom = 700.0
+
+[node name="Row 0" type="Control" parent="PipeGame/Background" unique_id=520973626 instance=ExtResource("3_6x575")]
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 64.0
+script = ExtResource("4_n00nx")
+
+[node name="Cell_(0, 0)" type="TextureRect" parent="PipeGame/Background/Row 0" unique_id=425733919 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 0
+col = 0
+
+[node name="Cell_(0, 1)" type="TextureRect" parent="PipeGame/Background/Row 0" unique_id=1495314876 instance=ExtResource("2_2bm35")]
+modulate = Color(0.6, 1, 0.6, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("4_0mmcj")
+script = ExtResource("7_sgv0s")
+pipe_type = 1
+random_rotation = true
+is_start_pipe = true
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 0
+col = 1
+
+[node name="Cell_(0, 2)" type="TextureRect" parent="PipeGame/Background/Row 0" unique_id=403245511 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+rotation = 1.5707964
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("8_rjj5u")
+script = ExtResource("7_sgv0s")
+pipe_type = 2
+random_rotation = true
+rotation_level = 1
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 0
+col = 2
+
+[node name="Cell_(0, 3)" type="TextureRect" parent="PipeGame/Background/Row 0" unique_id=548426198 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 0
+col = 3
+
+[node name="Cell_(0, 4)" type="TextureRect" parent="PipeGame/Background/Row 0" unique_id=1794290431 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 0
+col = 4
+
+[node name="Row 1" type="Control" parent="PipeGame/Background" unique_id=319579720 instance=ExtResource("3_6x575")]
+anchors_preset = 0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+script = ExtResource("4_n00nx")
+
+[node name="Cell_(1, 0)" type="TextureRect" parent="PipeGame/Background/Row 1" unique_id=1795223709 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 1
+col = 0
+
+[node name="Cell_(1, 1)" type="TextureRect" parent="PipeGame/Background/Row 1" unique_id=1128429412 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 1
+col = 1
+
+[node name="Cell_(1, 2)" type="TextureRect" parent="PipeGame/Background/Row 1" unique_id=1638916762 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("4_0mmcj")
+script = ExtResource("7_sgv0s")
+pipe_type = 1
+random_rotation = true
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 1
+col = 2
+
+[node name="Cell_(1, 3)" type="TextureRect" parent="PipeGame/Background/Row 1" unique_id=1932922650 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 1
+col = 3
+
+[node name="Cell_(1, 4)" type="TextureRect" parent="PipeGame/Background/Row 1" unique_id=306755966 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 1
+col = 4
+
+[node name="Row 2" type="Control" parent="PipeGame/Background" unique_id=1108608121 instance=ExtResource("3_6x575")]
+anchors_preset = 0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 192.0
+script = ExtResource("4_n00nx")
+
+[node name="Cell_(2, 0)" type="TextureRect" parent="PipeGame/Background/Row 2" unique_id=389881299 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 2
+col = 0
+
+[node name="Cell_(2, 1)" type="TextureRect" parent="PipeGame/Background/Row 2" unique_id=696201375 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 2
+col = 1
+
+[node name="Cell_(2, 2)" type="TextureRect" parent="PipeGame/Background/Row 2" unique_id=542160067 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+rotation = 1.5707964
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("4_0mmcj")
+script = ExtResource("7_sgv0s")
+pipe_type = 1
+random_rotation = true
+rotation_level = 1
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 2
+col = 2
+
+[node name="Cell_(2, 3)" type="TextureRect" parent="PipeGame/Background/Row 2" unique_id=108238398 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 2
+col = 3
+
+[node name="Cell_(2, 4)" type="TextureRect" parent="PipeGame/Background/Row 2" unique_id=126539918 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 2
+col = 4
+
+[node name="Row 3" type="Control" parent="PipeGame/Background" unique_id=1874502621 instance=ExtResource("3_6x575")]
+anchors_preset = 0
+offset_top = 192.0
+offset_right = 320.0
+offset_bottom = 256.0
+script = ExtResource("4_n00nx")
+
+[node name="Cell_(3, 0)" type="TextureRect" parent="PipeGame/Background/Row 3" unique_id=1283919466 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 3
+col = 0
+
+[node name="Cell_(3, 1)" type="TextureRect" parent="PipeGame/Background/Row 3" unique_id=1112046412 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 3
+col = 1
+
+[node name="Cell_(3, 2)" type="TextureRect" parent="PipeGame/Background/Row 3" unique_id=397376141 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("8_rjj5u")
+script = ExtResource("7_sgv0s")
+pipe_type = 2
+random_rotation = true
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 3
+col = 2
+
+[node name="Cell_(3, 3)" type="TextureRect" parent="PipeGame/Background/Row 3" unique_id=71176556 instance=ExtResource("2_2bm35")]
+modulate = Color(1, 0.6, 0.6, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("4_0mmcj")
+script = ExtResource("7_sgv0s")
+pipe_type = 1
+is_end_pipe = true
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 3
+col = 3
+
+[node name="Cell_(3, 4)" type="TextureRect" parent="PipeGame/Background/Row 3" unique_id=1114489364 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 3
+col = 4
+
+[node name="Row 4" type="Control" parent="PipeGame/Background" unique_id=892833081 instance=ExtResource("3_6x575")]
+anchors_preset = 0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 320.0
+script = ExtResource("4_n00nx")
+
+[node name="Cell_(4, 0)" type="TextureRect" parent="PipeGame/Background/Row 4" unique_id=454070913 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 4
+col = 0
+
+[node name="Cell_(4, 1)" type="TextureRect" parent="PipeGame/Background/Row 4" unique_id=524227955 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 4
+col = 1
+
+[node name="Cell_(4, 2)" type="TextureRect" parent="PipeGame/Background/Row 4" unique_id=1568727171 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 4
+col = 2
+
+[node name="Cell_(4, 3)" type="TextureRect" parent="PipeGame/Background/Row 4" unique_id=1895825159 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 4
+col = 3
+
+[node name="Cell_(4, 4)" type="TextureRect" parent="PipeGame/Background/Row 4" unique_id=199629665 instance=ExtResource("2_2bm35")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("7_sgv0s")
+straight_texture = ExtResource("4_0mmcj")
+angle_90_texture = ExtResource("8_rjj5u")
+row = 4
+col = 4
+
+[connection signal="gui_input" from="PipeGame/Background/Row 0/Cell_(0, 0)" to="PipeGame/Background/Row 0/Cell_(0, 0)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 0/Cell_(0, 1)" to="PipeGame/Background/Row 0/Cell_(0, 1)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 0/Cell_(0, 2)" to="PipeGame/Background/Row 0/Cell_(0, 2)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 0/Cell_(0, 3)" to="PipeGame/Background/Row 0/Cell_(0, 3)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 0/Cell_(0, 4)" to="PipeGame/Background/Row 0/Cell_(0, 4)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 1/Cell_(1, 0)" to="PipeGame/Background/Row 1/Cell_(1, 0)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 1/Cell_(1, 1)" to="PipeGame/Background/Row 1/Cell_(1, 1)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 1/Cell_(1, 2)" to="PipeGame/Background/Row 1/Cell_(1, 2)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 1/Cell_(1, 3)" to="PipeGame/Background/Row 1/Cell_(1, 3)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 1/Cell_(1, 4)" to="PipeGame/Background/Row 1/Cell_(1, 4)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 2/Cell_(2, 0)" to="PipeGame/Background/Row 2/Cell_(2, 0)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 2/Cell_(2, 1)" to="PipeGame/Background/Row 2/Cell_(2, 1)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 2/Cell_(2, 2)" to="PipeGame/Background/Row 2/Cell_(2, 2)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 2/Cell_(2, 3)" to="PipeGame/Background/Row 2/Cell_(2, 3)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 2/Cell_(2, 4)" to="PipeGame/Background/Row 2/Cell_(2, 4)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 3/Cell_(3, 0)" to="PipeGame/Background/Row 3/Cell_(3, 0)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 3/Cell_(3, 1)" to="PipeGame/Background/Row 3/Cell_(3, 1)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 3/Cell_(3, 2)" to="PipeGame/Background/Row 3/Cell_(3, 2)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 3/Cell_(3, 3)" to="PipeGame/Background/Row 3/Cell_(3, 3)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 3/Cell_(3, 4)" to="PipeGame/Background/Row 3/Cell_(3, 4)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 4/Cell_(4, 0)" to="PipeGame/Background/Row 4/Cell_(4, 0)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 4/Cell_(4, 1)" to="PipeGame/Background/Row 4/Cell_(4, 1)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 4/Cell_(4, 2)" to="PipeGame/Background/Row 4/Cell_(4, 2)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 4/Cell_(4, 3)" to="PipeGame/Background/Row 4/Cell_(4, 3)" method="_gui_input"]
+[connection signal="gui_input" from="PipeGame/Background/Row 4/Cell_(4, 4)" to="PipeGame/Background/Row 4/Cell_(4, 4)" method="_gui_input"]
