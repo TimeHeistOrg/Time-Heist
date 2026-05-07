@@ -3,7 +3,6 @@
 [ext_resource type="ArrayMesh" uid="uid://csukgjabvmcds" path="res://Assets/Meshes/monitor_V3_Cube_006.res" id="1_0jkef"]
 [ext_resource type="Script" uid="uid://mkkydsd6s3el" path="res://Modules/Interaction/Computer/computer.gd" id="1_2r8gm"]
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="2_0jkef"]
-[ext_resource type="PackedScene" uid="uid://v7qhxfhoa5ng" path="res://Modules/UI/Game UI/DesktopViewer/desktop_viewer.tscn" id="4_2r8gm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i46hk"]
 size = Vector3(0.5810547, 0.4736328, 0.21264648)
@@ -56,12 +55,11 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="Screen" type="MeshInstance3D" parent="." unique_id=1400247346]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.008925617, 0.29647523, -0.078984305)
-visible = false
 mesh = SubResource("QuadMesh_j65km")
 
 [node name="SubViewport" type="SubViewport" parent="Screen" unique_id=1627412615]
+handle_input_locally = false
 size = Vector2i(1920, 1080)
-
-[node name="Desktop Viewer" parent="Screen/SubViewport" unique_id=2027082529 instance=ExtResource("4_2r8gm")]
+render_target_update_mode = 4
 
 [connection signal="anon_interacted" from="StaticBody3D/Interactable" to="." method="interact"]
