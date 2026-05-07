@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://sr7naop2qhp7"]
+
+[ext_resource type="Script" uid="uid://coh18nyv7dw38" path="res://Modules/ConeVision/laser.gd" id="1_0fltk"]
+[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Effects/laser.gdshader" id="1_edjot"]
+[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/SFX/laser.ogg" id="3_utjmn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kdpmb"]
+noise_type = 3
+frequency = 0.0282
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xr56i"]
+noise = SubResource("FastNoiseLite_kdpmb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n627y"]
+render_priority = 0
+shader = ExtResource("1_edjot")
+shader_parameter/Color = Color(0.91504997, 0.6551145, 0.9313406, 1)
+shader_parameter/glow_color = Color(0.5845549, 0.4949268, 1, 1)
+shader_parameter/dist = 2.275
+shader_parameter/speed = 13.71
+shader_parameter/glow_intensity = 7.765
+shader_parameter/glow_amount = 1.63
+shader_parameter/posMult = 0.2
+shader_parameter/noise = SubResource("NoiseTexture2D_xr56i")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fs6g4"]
+material = SubResource("ShaderMaterial_n627y")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.0
+
+[node name="Laser" type="Node3D" unique_id=1428973108]
+script = ExtResource("1_0fltk")
+
+[node name="LaserCylinder" type="MeshInstance3D" parent="." unique_id=361005529]
+visible = false
+layers = 9
+mesh = SubResource("CylinderMesh_fs6g4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=81725180]
+stream = ExtResource("3_utjmn")
+volume_db = -5.0
+parameters/looping = true
