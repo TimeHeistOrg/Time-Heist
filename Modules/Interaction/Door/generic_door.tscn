@@ -86,10 +86,10 @@ script = ExtResource("1_nk12b")
 [node name="Door_Frame_with_Door_Animated_v2(Faster)" parent="." unique_id=902016995 instance=ExtResource("2_haa8g")]
 transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -0.47409245, 0, 0.075)
 
-[node name="DoorHinge" parent="Door_Frame_with_Door_Animated_v2(Faster)" index="0" unique_id=1049070667]
+[node name="DoorHinge" parent="Door_Frame_with_Door_Animated_v2(Faster)" index="0" unique_id=1074962099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Door" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge" index="0" unique_id=69134011]
+[node name="Door" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge" index="0" unique_id=544607395]
 material_overlay = ExtResource("3_aahkk")
 mesh = SubResource("ArrayMesh_tcs74")
 
@@ -101,14 +101,12 @@ collision_mask = 0
 [node name="PhysicalCollider" type="CollisionShape3D" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB" unique_id=1785011816]
 shape = SubResource("BoxShape3D_6yhnp")
 
-[node name="DoorKnob" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Knob Pivot" parent_id_path=PackedInt32Array(902016995, 1561010613) index="0" unique_id=718066789]
+[node name="DoorKnob" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Knob Pivot" parent_id_path=PackedInt32Array(902016995, 446470198) index="0" unique_id=288665226]
 mesh = SubResource("ArrayMesh_5o8aa")
 
-[node name="Interactable" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door" index="2" unique_id=242002428 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("2_im0k3")]
+[node name="Interactable" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door" index="2" unique_id=242002428 instance=ExtResource("2_im0k3")]
 process_mode = 1
 transform = Transform3D(0.97087383, 0, 1.5817542e-07, 0, 0.97087383, 0, -1.5817542e-07, 0, 0.97087383, 0.46028405, 0.97087383, 0.048543617)
-mesh = NodePath("")
-interact_object = NodePath("")
 
 [node name="InteractableCollider" type="CollisionShape3D" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Interactable" unique_id=1447105090]
 shape = SubResource("BoxShape3D_6yhnp")

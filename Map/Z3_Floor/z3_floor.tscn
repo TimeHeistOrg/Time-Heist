@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Models/Enviornment/plant.tscn" id="15_cnd03"]
 [ext_resource type="PackedScene" uid="uid://d3gtn4sbko11j" path="res://Assets/Models/Enviornment/office_chair.tscn" id="15_y6qj7"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="16_nigfc"]
-[ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="17_24gqy"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="17_t1hpg"]
 [ext_resource type="PackedScene" uid="uid://c6k8vhjcf6jjc" path="res://Assets/Models/Enviornment/reception_desk.tscn" id="18_4rwq3"]
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="18_6ltrj"]
@@ -25,15 +24,29 @@
 [ext_resource type="PackedScene" uid="uid://dhac04mwooy3s" path="res://Assets/Models/Enviornment/tall_shelf_enclosed2.tscn" id="18_cq1go"]
 [ext_resource type="PackedScene" uid="uid://bvy2dlw8f51f7" path="res://Assets/Models/Enviornment/cubicle_6.tscn" id="18_krbj1"]
 [ext_resource type="PackedScene" uid="uid://0t31h6tiefvb" path="res://Assets/Models/Enviornment/tall_shelf_enclosed.tscn" id="19_42wl3"]
+[ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="19_p8kop"]
+[ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_computer.tres" id="20_83phm"]
 [ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Models/Enviornment/small_shelf.tscn" id="20_y6qj7"]
-[ext_resource type="Resource" uid="uid://bl3wymmqufqh2" path="res://Assets/Items/Resources/archive_key.tres" id="23_t1hpg"]
-[ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/basement_albus_keycard.tres" id="24_6ltrj"]
-[ext_resource type="Resource" uid="uid://ccb6qtg54rgyj" path="res://Assets/Items/Resources/basement_security_lockbox_key_1.tres" id="25_m5ojc"]
-[ext_resource type="Resource" uid="uid://gue75w7rapn5" path="res://Assets/Items/Resources/basement_security_lockbox_key_2.tres" id="26_58qlh"]
+[ext_resource type="PackedScene" uid="uid://uww33bnurarr" path="res://Modules/Interaction/HideSpot/locker.tscn" id="21_wsjrk"]
+[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/NPC/Guard.tscn" id="22_mbdnt"]
+[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="23_q0a50"]
+[ext_resource type="PackedScene" uid="uid://1cs4nrno8aha" path="res://Modules/Interaction/lockable.tscn" id="23_wsjrk"]
+[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="24_dgl2p"]
+[ext_resource type="PackedScene" uid="uid://3qury6ftpyua" path="res://Modules/Interaction/Recharge Station/recharge_station.tscn" id="25_krbj1"]
+[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="25_rjonq"]
+[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="26_7ewkb"]
+[ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="26_uijwk"]
 [ext_resource type="PackedScene" uid="uid://crv58s02cuc78" path="res://Assets/Models/Enviornment/tall_shelf.tscn" id="27_4rwq3"]
-[ext_resource type="Resource" uid="uid://c7atpkdvr2gl0" path="res://Assets/Items/Resources/tutorial_door_key.tres" id="27_282k8"]
+[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="27_necek"]
+[ext_resource type="PackedScene" uid="uid://xijfgkbwlx8u" path="res://Assets/Models/Custom Assets/meetingtable.fbx" id="27_wsjrk"]
 [ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/Clearance Giver/clearance_giver.tscn" id="27_yf3gh"]
+[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_char.tscn" id="28_c6rx7"]
 [ext_resource type="PackedScene" uid="uid://dow6h3uhurjcs" path="res://Assets/Models/Enviornment/corner_desk.tscn" id="28_krbj1"]
+[ext_resource type="PackedScene" uid="uid://8q7cu0tt8b0n" path="res://Assets/Models/Enviornment/big_shelf.tscn" id="32_83phm"]
+[ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="33_m7rp0"]
+[ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="37_m7rp0"]
+[ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="45_1ibeh"]
+[ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="46_pbb5f"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2iiq"]
 emission_shape_offset = Vector3(0, -4, 0)
@@ -79,112 +92,606 @@ grow_amount = -4.125
 [sub_resource type="QuadMesh" id="QuadMesh_6ltrj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ybk4"]
-size = Vector3(5.5, 1, 43.5)
+size = Vector3(5.25, 1, 43.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cnd03"]
-size = Vector3(13.75, 1, 15)
+size = Vector3(13.75, 1, 14.875)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nigfc"]
 size = Vector3(5.75, 1, 14)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2iiq"]
-size = Vector3(0.75, 1, 6.75)
+size = Vector3(0.75, 1, 6.625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1u7u"]
-size = Vector3(18.25, 1, 4.5)
+size = Vector3(18.25, 1, 4.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2auu"]
-size = Vector3(18.75, 1, 4)
+size = Vector3(18.75, 1, 3.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1kpr7"]
-size = Vector3(26.25, 1, 5)
+size = Vector3(26, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwdlf"]
-size = Vector3(18, 1, 3)
+size = Vector3(18, 1, 2.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gfgm1"]
 size = Vector3(3.25, 1, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qqru8"]
-size = Vector3(29.5, 1, 7.25)
+size = Vector3(29.25, 1, 7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_24gqy"]
-size = Vector3(29.75, 1, 6.25)
+size = Vector3(29.75, 1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_84yqd"]
-size = Vector3(18, 1, 5.5)
+size = Vector3(18, 1, 5.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1hpg"]
-size = Vector3(12.25, 1, 8.75)
+size = Vector3(12.125, 1, 8.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ltrj"]
-size = Vector3(6.5, 1, 4.5)
+size = Vector3(6.25, 1, 4.5)
+
+[sub_resource type="Resource" id="Resource_urdum"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+
+[sub_resource type="Resource" id="Resource_71osp"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-21.75, 0, 0)
+time_start = 21.75
+time_end = 21.75
+id = 2
+
+[sub_resource type="Resource" id="Resource_ln6ov"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_urdum")
+next_vertex = SubResource("Resource_71osp")
+time_end = 21.75
+id = 1
+
+[sub_resource type="Resource" id="Resource_wjtok"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-21.75, 0, -11.5)
+time_start = 33.25
+time_end = 33.25
+id = 4
+
+[sub_resource type="Resource" id="Resource_045i1"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_71osp")
+next_vertex = SubResource("Resource_wjtok")
+time_start = 21.75
+time_end = 33.25
+id = 3
+
+[sub_resource type="Resource" id="Resource_6wes1"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-18.25, 0, -11.5)
+time_start = 36.75
+time_end = 36.75
+id = 6
+
+[sub_resource type="Resource" id="Resource_oe07o"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_wjtok")
+next_vertex = SubResource("Resource_6wes1")
+time_start = 33.25
+time_end = 36.75
+id = 5
+
+[sub_resource type="Resource" id="Resource_k1mjt"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-18, 0, -13.75)
+time_start = 39.0138463973999
+time_end = 39.0138463973999
+id = 8
+
+[sub_resource type="Resource" id="Resource_lv2bc"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_6wes1")
+next_vertex = SubResource("Resource_k1mjt")
+time_start = 36.75
+time_end = 39.0138463973999
+id = 7
+
+[sub_resource type="Resource" id="Resource_5ihjg"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(16.25, 0, -13.5)
+time_start = 73.26475811004639
+time_end = 73.26475811004639
+id = 10
+
+[sub_resource type="Resource" id="Resource_7tubn"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_k1mjt")
+next_vertex = SubResource("Resource_5ihjg")
+time_start = 39.0138463973999
+time_end = 73.26475811004639
+id = 9
+
+[sub_resource type="Resource" id="Resource_3itd7"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(16.25, 0, 0)
+time_start = 86.76475811004639
+time_end = 86.76475811004639
+id = 12
+
+[sub_resource type="Resource" id="Resource_men3m"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_5ihjg")
+next_vertex = SubResource("Resource_3itd7")
+time_start = 73.26475811004639
+time_end = 86.76475811004639
+id = 11
+
+[sub_resource type="Resource" id="Resource_bacra"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_3itd7")
+next_vertex = SubResource("Resource_urdum")
+is_loop_line = true
+time_start = 86.76475811004639
+time_end = 103.01475811004639
+id = 13
+
+[sub_resource type="Resource" id="Resource_hjdgr"]
+resource_local_to_scene = true
+script = ExtResource("23_q0a50")
+path_components = Array[ExtResource("24_dgl2p")]([SubResource("Resource_urdum"), SubResource("Resource_ln6ov"), SubResource("Resource_71osp"), SubResource("Resource_045i1"), SubResource("Resource_wjtok"), SubResource("Resource_oe07o"), SubResource("Resource_6wes1"), SubResource("Resource_lv2bc"), SubResource("Resource_k1mjt"), SubResource("Resource_7tubn"), SubResource("Resource_5ihjg"), SubResource("Resource_men3m"), SubResource("Resource_3itd7"), SubResource("Resource_bacra")])
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
+[sub_resource type="Resource" id="Resource_hlbrn"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-24.25, 0, 12.5)
+
+[sub_resource type="Resource" id="Resource_0bsg0"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-24.25, 0, 3.25)
+time_start = 9.25
+time_end = 9.25
+id = 2
+
+[sub_resource type="Resource" id="Resource_mdia2"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_hlbrn")
+next_vertex = SubResource("Resource_0bsg0")
+time_end = 9.25
+id = 1
+
+[sub_resource type="Resource" id="Resource_ga7uj"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-17.5, 0, 3.25)
+time_start = 16.0
+time_end = 16.0
+id = 4
+
+[sub_resource type="Resource" id="Resource_jno8s"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_0bsg0")
+next_vertex = SubResource("Resource_ga7uj")
+time_start = 9.25
+time_end = 16.0
+id = 3
+
+[sub_resource type="Resource" id="Resource_jsgag"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(-24.25, 0, 3.25)
+time_start = 22.75
+time_end = 22.75
+id = 6
+
+[sub_resource type="Resource" id="Resource_6sta3"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_ga7uj")
+next_vertex = SubResource("Resource_jsgag")
+time_start = 16.0
+time_end = 22.75
+id = 5
+
+[sub_resource type="Resource" id="Resource_47nfd"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_jsgag")
+next_vertex = SubResource("Resource_hlbrn")
+is_loop_line = true
+time_start = 22.75
+time_end = 32.0
+id = 7
+
+[sub_resource type="Resource" id="Resource_71dmg"]
+resource_local_to_scene = true
+script = ExtResource("23_q0a50")
+path_components = Array[ExtResource("24_dgl2p")]([SubResource("Resource_hlbrn"), SubResource("Resource_mdia2"), SubResource("Resource_0bsg0"), SubResource("Resource_jno8s"), SubResource("Resource_ga7uj"), SubResource("Resource_6sta3"), SubResource("Resource_jsgag"), SubResource("Resource_47nfd")])
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5ojc"]
-size = Vector3(17.75, 1, 6.5)
+size = Vector3(17.5, 1, 6.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_282k8"]
-size = Vector3(17.75, 1, 8.5)
+size = Vector3(17.5, 1, 8.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yos5y"]
-size = Vector3(4.5, 1, 14.75)
+size = Vector3(4.25, 1, 14.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58qlh"]
-size = Vector3(16.75, 1, 9)
+size = Vector3(16.5, 1, 8.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq1go"]
-size = Vector3(4.5, 1, 7.75)
+size = Vector3(4.25, 1, 7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_42wl3"]
-size = Vector3(4.5, 1, 7.75)
+size = Vector3(4.25, 1, 7.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dgl2p"]
-size = Vector3(3.75, 1, 5.5)
+size = Vector3(3.75, 1, 5.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6qj7"]
-size = Vector3(12, 1, 6.25)
+size = Vector3(11.75, 1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_krbj1"]
-size = Vector3(6.25, 1, 4.75)
+size = Vector3(6, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4rwq3"]
-size = Vector3(6.25, 1, 4.75)
+size = Vector3(6, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf3gh"]
-size = Vector3(26, 1, 5.5)
+size = Vector3(26, 1, 5.375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uijwk"]
 size = Vector3(8, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbdnt"]
-size = Vector3(16.25, 1, 8.25)
+size = Vector3(16.25, 1, 8.125)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0a50"]
-size = Vector3(8.25, 1, 1.5)
+size = Vector3(8, 1, 1.625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wsjrk"]
-size = Vector3(11, 1, 5.25)
+size = Vector3(10.75, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c6rx7"]
-size = Vector3(7.25, 1, 5)
+size = Vector3(7, 1, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk7os"]
-size = Vector3(8, 1, 5)
+size = Vector3(7.75, 1, 4.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjonq"]
-size = Vector3(18.25, 1, 4.5)
+size = Vector3(18, 1, 4.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8kop"]
-size = Vector3(7.75, 1, 5.5)
+size = Vector3(7.5, 1, 5.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83phm"]
-size = Vector3(20.5, 1, 14.75)
+size = Vector3(20.5, 1, 14.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m7rp0"]
-size = Vector3(19.5, 1, 18.25)
+size = Vector3(19.25, 1, 18)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vt6hr"]
-size = Vector3(12, 1, 5.25)
+size = Vector3(11.75, 1, 5.25)
+
+[sub_resource type="Resource" id="Resource_8o8iy"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(30.875, 0, 9)
+
+[sub_resource type="Resource" id="Resource_vtor0"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(22, 0, 9)
+time_start = 11.833333333333334
+time_end = 11.833333333333334
+id = 2
+
+[sub_resource type="Resource" id="Resource_ygele"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_8o8iy")
+next_vertex = SubResource("Resource_vtor0")
+time_end = 11.833333333333334
+id = 1
+
+[sub_resource type="Resource" id="Resource_t8dyp"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(22, 0, 14)
+time_start = 18.5
+time_end = 18.5
+id = 4
+
+[sub_resource type="Resource" id="Resource_sc1jj"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_vtor0")
+next_vertex = SubResource("Resource_t8dyp")
+time_start = 11.833333333333334
+time_end = 18.5
+id = 3
+
+[sub_resource type="Resource" id="Resource_wqor4"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(18.5, 0, 14)
+time_start = 23.166666666666668
+time_end = 23.166666666666668
+id = 6
+
+[sub_resource type="Resource" id="Resource_6ng1u"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_t8dyp")
+next_vertex = SubResource("Resource_wqor4")
+time_start = 18.5
+time_end = 23.166666666666668
+id = 5
+
+[sub_resource type="Resource" id="Resource_dt2so"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(18.5, 0, 19)
+time_start = 29.833333333333336
+time_end = 29.833333333333336
+id = 8
+
+[sub_resource type="Resource" id="Resource_ludy3"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_wqor4")
+next_vertex = SubResource("Resource_dt2so")
+time_start = 23.166666666666668
+time_end = 29.833333333333336
+id = 7
+
+[sub_resource type="Resource" id="Resource_issly"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(33, 0, 19)
+time_start = 49.16666666666667
+time_end = 49.16666666666667
+id = 10
+
+[sub_resource type="Resource" id="Resource_s65nw"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_dt2so")
+next_vertex = SubResource("Resource_issly")
+time_start = 29.833333333333336
+time_end = 49.16666666666667
+id = 9
+
+[sub_resource type="Resource" id="Resource_xc52o"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(33, 0, 11.25)
+time_start = 59.50000000000001
+time_end = 59.50000000000001
+id = 12
+
+[sub_resource type="Resource" id="Resource_50kx0"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_issly")
+next_vertex = SubResource("Resource_xc52o")
+time_start = 49.16666666666667
+time_end = 59.50000000000001
+id = 11
+
+[sub_resource type="Resource" id="Resource_5alli"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(30.75, 0, 11.25)
+time_start = 62.50000000000001
+time_end = 62.50000000000001
+id = 14
+
+[sub_resource type="Resource" id="Resource_uix1y"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_xc52o")
+next_vertex = SubResource("Resource_5alli")
+time_start = 59.50000000000001
+time_end = 62.50000000000001
+id = 13
+
+[sub_resource type="Resource" id="Resource_h0ju5"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_5alli")
+next_vertex = SubResource("Resource_8o8iy")
+is_loop_line = true
+time_start = 62.50000000000001
+time_end = 65.50462595621745
+id = 15
+
+[sub_resource type="Resource" id="Resource_iknc1"]
+resource_local_to_scene = true
+script = ExtResource("23_q0a50")
+path_components = Array[ExtResource("24_dgl2p")]([SubResource("Resource_8o8iy"), SubResource("Resource_ygele"), SubResource("Resource_vtor0"), SubResource("Resource_sc1jj"), SubResource("Resource_t8dyp"), SubResource("Resource_6ng1u"), SubResource("Resource_wqor4"), SubResource("Resource_ludy3"), SubResource("Resource_dt2so"), SubResource("Resource_s65nw"), SubResource("Resource_issly"), SubResource("Resource_50kx0"), SubResource("Resource_xc52o"), SubResource("Resource_uix1y"), SubResource("Resource_5alli"), SubResource("Resource_h0ju5")])
+loop = true
+default_speed = 0.75
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
+[sub_resource type="Resource" id="Resource_6q1tb"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(17.25, 0, 16)
+
+[sub_resource type="Resource" id="Resource_eiwon"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(2.25, 0, 16)
+time_start = 15.0
+time_end = 15.0
+id = 2
+
+[sub_resource type="Resource" id="Resource_yvgy5"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_6q1tb")
+next_vertex = SubResource("Resource_eiwon")
+time_end = 15.0
+id = 1
+
+[sub_resource type="Resource" id="Resource_ej2in"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(2.25, 0, 19.5)
+time_start = 18.5
+time_end = 18.5
+id = 4
+
+[sub_resource type="Resource" id="Resource_80j5r"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_eiwon")
+next_vertex = SubResource("Resource_ej2in")
+time_start = 15.0
+time_end = 18.5
+id = 3
+
+[sub_resource type="Resource" id="Resource_xqhd6"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(17.25, 0, 19.5)
+time_start = 33.5
+time_end = 33.5
+id = 6
+
+[sub_resource type="Resource" id="Resource_8jlgf"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_ej2in")
+next_vertex = SubResource("Resource_xqhd6")
+time_start = 18.5
+time_end = 33.5
+id = 5
+
+[sub_resource type="Resource" id="Resource_l4sw6"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 1.0
+prev_vertex = SubResource("Resource_xqhd6")
+next_vertex = SubResource("Resource_6q1tb")
+is_loop_line = true
+time_start = 33.5
+time_end = 37.0
+id = 7
+
+[sub_resource type="Resource" id="Resource_i3qxv"]
+resource_local_to_scene = true
+script = ExtResource("23_q0a50")
+path_components = Array[ExtResource("24_dgl2p")]([SubResource("Resource_6q1tb"), SubResource("Resource_yvgy5"), SubResource("Resource_eiwon"), SubResource("Resource_80j5r"), SubResource("Resource_ej2in"), SubResource("Resource_8jlgf"), SubResource("Resource_xqhd6"), SubResource("Resource_l4sw6")])
+loop = true
+default_speed = 0.75
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
+[sub_resource type="Resource" id="Resource_nkjqv"]
+script = ExtResource("45_1ibeh")
+end_time = 10.0
+duration = 10.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_3x4ph"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(35.25, 0, 3.25)
+vertex_actions = Array[ExtResource("26_7ewkb")]([SubResource("Resource_nkjqv")])
+time_end = 10.0
+
+[sub_resource type="Resource" id="Resource_q0d1r"]
+script = ExtResource("46_pbb5f")
+rotation_deg = 180.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_n33v6"]
+script = ExtResource("45_1ibeh")
+start_time = 21.0
+end_time = 31.0
+duration = 10.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_71e4g"]
+resource_local_to_scene = true
+script = ExtResource("25_rjonq")
+position = Vector3(35.25, 0, 19)
+vertex_actions = Array[ExtResource("26_7ewkb")]([SubResource("Resource_q0d1r"), SubResource("Resource_n33v6")])
+time_start = 31.0
+time_end = 41.0
+id = 2
+
+[sub_resource type="Resource" id="Resource_05u8t"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_3x4ph")
+next_vertex = SubResource("Resource_71e4g")
+time_start = 10.0
+time_end = 31.0
+id = 1
+
+[sub_resource type="Resource" id="Resource_wst7o"]
+resource_local_to_scene = true
+script = ExtResource("27_necek")
+speed = 0.75
+prev_vertex = SubResource("Resource_71e4g")
+next_vertex = SubResource("Resource_3x4ph")
+is_loop_line = true
+time_start = 41.0
+time_end = 62.0
+id = 3
+
+[sub_resource type="Resource" id="Resource_1wp64"]
+resource_local_to_scene = true
+script = ExtResource("23_q0a50")
+path_components = Array[ExtResource("24_dgl2p")]([SubResource("Resource_3x4ph"), SubResource("Resource_05u8t"), SubResource("Resource_71e4g"), SubResource("Resource_wst7o")])
+loop = true
+default_speed = 0.75
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [node name="Z3Floor" type="Node3D" unique_id=2133668272]
 
@@ -1005,42 +1512,42 @@ shape = SubResource("BoxShape3D_3ybk4")
 debug_color = Color(0.93, 0, 0.66650003, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1544601788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.125, 0, -21.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -21.6875)
 shape = SubResource("BoxShape3D_cnd03")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1312788051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0, -36.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -36.125)
 shape = SubResource("BoxShape3D_nigfc")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1380546166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.375, 0, -39.875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, 0, -39.9375)
 shape = SubResource("BoxShape3D_e2iiq")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=104802143]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.875, 0, -38.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 0, -38.75)
 shape = SubResource("BoxShape3D_j1u7u")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=819643498]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.375, 0, -38.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.25, 0, -38.5)
 shape = SubResource("BoxShape3D_e2auu")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=912134063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.625, 0, -43)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.625, 0, -42.875)
 shape = SubResource("BoxShape3D_1kpr7")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1109665849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.75, 0, -39)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.625, 0, -39)
 shape = SubResource("BoxShape3D_mwdlf")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1133671044]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.375, 0, -35.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.25, 0, -35.25)
 shape = SubResource("BoxShape3D_gfgm1")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
@@ -1050,22 +1557,22 @@ shape = SubResource("BoxShape3D_qqru8")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=183174040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.875, 0, -26.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.75, 0, -26.125)
 shape = SubResource("BoxShape3D_24gqy")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=418053086]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.75, 0, -25.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.625, 0, -25.75)
 shape = SubResource("BoxShape3D_84yqd")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=156826347]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.375, 0, -18.625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4375, 0, -18.75)
 shape = SubResource("BoxShape3D_t1hpg")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1714975142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.75, 0, -43.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.75, 0, -43.125)
 shape = SubResource("BoxShape3D_6ltrj")
 debug_color = Color(0.92941177, 0, 0.6666667, 1)
 
@@ -1298,6 +1805,74 @@ transform = Transform3D(0.4330127, 0, -0.25, 0, 0.5, 0, 0.25, 0, 0.4330127, 25.8
 [node name="Plant2" parent="SubViewportContainer/SubViewport/MainRoom/Decor/ReceptionDesk/MiddleTable" unique_id=721031797 instance=ExtResource("15_cnd03")]
 transform = Transform3D(0.24999999, 0, 0.4330127, 0, 0.5, 0, -0.4330127, 0, 0.24999999, 27.7, 0.55, -30.75)
 
+[node name="HallwayPlant1" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=672951271 instance=ExtResource("15_cnd03")]
+transform = Transform3D(-1.7320509, 0, -0.9999999, 0, 2, 0, 0.9999999, 0, -1.7320509, 4.375, 0, -8.75)
+
+[node name="HallwayPlant2" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=598844225 instance=ExtResource("15_cnd03")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 4.375, 0, -11.625)
+
+[node name="SmallShelf" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1894309648 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.125, 0, -8.5)
+
+[node name="SmallShelf2" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=2059632154 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.125, 0, -8.5)
+
+[node name="SmallShelf3" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1376834580 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.375, 0, -8.5)
+
+[node name="SmallShelf4" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1690825017 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.375, 0, -7.75)
+
+[node name="SmallShelf5" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1855693787 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.125, 0, -7.75)
+
+[node name="SmallShelf6" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=982816931 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.125, 0, -14.875)
+
+[node name="SmallShelf7" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=91796789 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.375, 0, -14.875)
+
+[node name="SmallShelf8" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=898968932 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.375, 0, -14.125)
+
+[node name="SmallShelf9" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=2015571366 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.125, 0, -14.125)
+
+[node name="SmallShelf10" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1486008740 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.375, 0, -10.5)
+
+[node name="SmallShelf11" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1939320645 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.625, 0, -10.5)
+
+[node name="SmallShelf12" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1742893903 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.625, 0, -9.75)
+
+[node name="SmallShelf13" parent="SubViewportContainer/SubViewport/MainRoom/Decor" unique_id=1264306463 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.375, 0, -9.75)
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MainRoom" unique_id=1088527655]
+
+[node name="Computer" parent="SubViewportContainer/SubViewport/MainRoom/Interactables" unique_id=1194039688 instance=ExtResource("19_p8kop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2, 0.7, -27.2)
+data = ExtResource("20_83phm")
+
+[node name="Locker" parent="SubViewportContainer/SubViewport/MainRoom/Interactables" unique_id=1382941412 instance=ExtResource("21_wsjrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.25)
+
+[node name="Guards" type="Node3D" parent="SubViewportContainer/SubViewport/MainRoom" unique_id=1824006808]
+
+[node name="BigLoopGuard" parent="SubViewportContainer/SubViewport/MainRoom/Guards" unique_id=854805088 instance=ExtResource("22_mbdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.75, 0, -24.75)
+branch_paths = Array[ExtResource("23_q0a50")]([SubResource("Resource_hjdgr")])
+follow_branch = 0
+path = SubResource("Resource_hjdgr")
+
+[node name="Guard" parent="SubViewportContainer/SubViewport/MainRoom/Guards" unique_id=1150655872 instance=ExtResource("22_mbdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -12.25)
+branch_paths = Array[ExtResource("23_q0a50")]([SubResource("Resource_71dmg")])
+follow_branch = 0
+path = SubResource("Resource_71dmg")
+
 [node name="MeetingRoom1" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1965594668 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 0, 24.75)
 script = ExtResource("12_e2iiq")
@@ -1365,6 +1940,11 @@ transform = Transform3D(0.5000002, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.500
 
 [node name="OfficeChair4" parent="SubViewportContainer/SubViewport/MeetingRoom1/Decor/Table" unique_id=559547026 instance=ExtResource("15_y6qj7")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 10.25, 0, -4.25)
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MeetingRoom1" unique_id=1933176137]
+
+[node name="MeetingRoom1Door" parent="SubViewportContainer/SubViewport/MeetingRoom1/Interactables" unique_id=74631722 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
 
 [node name="MeetingRoom2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=158377898 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 0, 18.5)
@@ -1458,6 +2038,11 @@ transform = Transform3D(1.7320508, 0, -1, 0, 2, 0, 1, 0, 1.7320508, 16.5, 0, -7.
 [node name="PlantBR" parent="SubViewportContainer/SubViewport/MeetingRoom2/Decor" unique_id=86906644 instance=ExtResource("15_cnd03")]
 transform = Transform3D(-1.0000001, 0, -1.7320508, 0, 2, 0, 1.7320508, 0, -1.0000001, 16.5, 0, -1)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MeetingRoom2" unique_id=445455144]
+
+[node name="MeetingRoom2Door" parent="SubViewportContainer/SubViewport/MeetingRoom2/Interactables" unique_id=543376248 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
 [node name="BackElevatorHallway" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1369241682 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 24.75)
 script = ExtResource("12_e2iiq")
@@ -1499,7 +2084,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.85
 
 [node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/BackElevatorHallway" unique_id=1801425201]
 
-[node name="Meeting1Door" parent="SubViewportContainer/SubViewport/BackElevatorHallway/Interactables" unique_id=74631722 instance=ExtResource("16_nigfc")]
+[node name="Meeting1Door" parent="SubViewportContainer/SubViewport/BackElevatorHallway/Interactables" unique_id=876495101 instance=ExtResource("16_nigfc")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
 
 [node name="Meeting2Door" parent="SubViewportContainer/SubViewport/BackElevatorHallway/Interactables" unique_id=172715892 instance=ExtResource("16_nigfc")]
@@ -1531,6 +2116,11 @@ spot_attenuation = 1.0
 
 [node name="ElevatorRoom2" parent="SubViewportContainer/SubViewport/ElevatorRoom/Lights" unique_id=1253225628 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.75, 2.1, -4.5)
+light_energy = 4.0
+spot_attenuation = 1.0
+
+[node name="ElevatorRoom3" parent="SubViewportContainer/SubViewport/ElevatorRoom/Lights" unique_id=1153773584 instance=ExtResource("12_nigfc")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.75, 2.1, -4.5)
 light_energy = 4.0
 spot_attenuation = 1.0
 
@@ -1644,7 +2234,7 @@ room_id = "power_closet"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/PowerCloset" unique_id=1159376433]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/PowerCloset/Area" unique_id=1314475004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.625, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, -2.5)
 shape = SubResource("BoxShape3D_dgl2p")
 debug_color = Color(5.7756904e-07, 0.79794604, 0.53318936, 1)
 
@@ -1660,11 +2250,21 @@ light_energy = 4.0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5, 0, -2.5)
 is_locked = true
 
-[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=1750000146 instance=ExtResource("17_t1hpg")]
+[node name="PowerClosetScannerOutside" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=1750000146 node_paths=PackedStringArray("lock") instance=ExtResource("17_t1hpg")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.75, 1.25, -3.5)
+lock = NodePath("Lockable")
+
+[node name="Lockable" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetScannerOutside" unique_id=1120950339 instance=ExtResource("23_wsjrk")]
 needed_item = Array[ExtResource("18_6ltrj")]([ExtResource("18_84yqd")])
 consume_items = true
-locked_label = "Out of order: Missing fuse (apple)"
+locked_label = "Out of Order: missing 1 fuse"
+perma_unlock = true
+
+[node name="PowerClosetScannerInside" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=562532363 instance=ExtResource("17_t1hpg")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 3.5, 1.25, -3.5)
+
+[node name="Recharge Station" parent="SubViewportContainer/SubViewport/PowerCloset/Interactables" unique_id=2097079311 instance=ExtResource("25_krbj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
 
 [node name="DeadGuyOffice" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=156557167 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.75, 0, -18.5)
@@ -1690,6 +2290,49 @@ light_energy = 4.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -3)
 light_energy = 4.0
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/DeadGuyOffice" unique_id=1618489451]
+
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactables" unique_id=892566462 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
+
+[node name="Interactable" type="Node3D" parent="SubViewportContainer/SubViewport/DeadGuyOffice" unique_id=771539387]
+
+[node name="Standard Desk" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=1034372253 instance=ExtResource("26_uijwk")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.625, 0, -3)
+
+[node name="OfficeChair" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=1017589403 instance=ExtResource("15_y6qj7")]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 9.375, 0, -3.125)
+
+[node name="OfficeChair2" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=1565882697 instance=ExtResource("15_y6qj7")]
+transform = Transform3D(0.86602545, 4.371139e-08, 0.5, -5.9710864e-08, 1, 1.599948e-08, -0.5, -4.371139e-08, 0.86602545, 3.0750008, 0, -4.0250015)
+
+[node name="OfficeChair3" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=1980306654 instance=ExtResource("15_y6qj7")]
+transform = Transform3D(-0.50000006, -4.37114e-08, 0.86602545, -5.9710864e-08, 1, 1.599948e-08, -0.86602545, -4.371138e-08, -0.50000006, 2.7749996, 0, -2.3250027)
+
+[node name="Plant" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=494240286 instance=ExtResource("15_cnd03")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 10.875, 0, -5.125)
+
+[node name="Plant2" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=1431786649 instance=ExtResource("15_cnd03")]
+transform = Transform3D(1.7320508, 0, -1, 0, 2, 0, 1, 0, 1.7320508, 10.875, 0, -0.625)
+
+[node name="meetingtable" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=37027379 instance=ExtResource("27_wsjrk")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 4.299999, 0, -3)
+
+[node name="SmallShelf" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=89252730 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2999992, -0.5, -0.099998474)
+
+[node name="SmallShelf2" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=68386720 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0999985, 0.100000024, -0.099998474)
+
+[node name="SmallShelf3" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=721533697 instance=ExtResource("20_y6qj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999977, -0.19999999, -0.099998474)
+
+[node name="Standard Char" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=909215667 instance=ExtResource("28_c6rx7")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 7.6000004, 0, -3.6999989)
+
+[node name="Standard Char2" parent="SubViewportContainer/SubViewport/DeadGuyOffice/Interactable" unique_id=1626391909 instance=ExtResource("28_c6rx7")]
+transform = Transform3D(-0.5000001, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.5000001, 7.800001, 0, -2.3999996)
+
 [node name="BossOffice1" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1893216238 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -16.25)
 script = ExtResource("12_e2iiq")
@@ -1712,9 +2355,31 @@ light_energy = 4.0
 
 [node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/BossOffice1" unique_id=1309344083]
 
-[node name="Fuse" parent="SubViewportContainer/SubViewport/BossOffice1/Interactables" unique_id=93420287 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0, -2.75)
-item = ExtResource("18_84yqd")
+[node name="BossOffice1Door" parent="SubViewportContainer/SubViewport/BossOffice1/Interactables" unique_id=1353953442 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/BossOffice1" unique_id=51329154]
+
+[node name="CornerDesk" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=858584765 instance=ExtResource("28_krbj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4000006, 0, -3.2000008)
+
+[node name="OfficeChair" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=1484541642 instance=ExtResource("15_y6qj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -3.7000008)
+
+[node name="Plant" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=257320209 instance=ExtResource("15_cnd03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0.7, -3.9000015)
+
+[node name="BigShelf" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=964828957 instance=ExtResource("32_83phm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10000038, 0, -0.79999924)
+
+[node name="BigShelf2" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=1208242006 instance=ExtResource("32_83phm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10000038, 0, -1.5999985)
+
+[node name="BigShelf3" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=1518623405 instance=ExtResource("32_83phm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10000038, 0, -2.3999977)
+
+[node name="Counter" parent="SubViewportContainer/SubViewport/BossOffice1/Decor" unique_id=53593089 instance=ExtResource("33_m7rp0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.4000006, 0, -0.5)
 
 [node name="BossOffice2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1499356571 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -16.25)
@@ -1736,6 +2401,11 @@ debug_color = Color(1, 0.50915164, 0.41966775, 1)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.75, 2.1, -2)
 light_energy = 4.0
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/BossOffice2" unique_id=574755342]
+
+[node name="BossOffice2Door" parent="SubViewportContainer/SubViewport/BossOffice2/Interactables" unique_id=213563704 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
 [node name="UpperBalcony" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=983415628 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75, 0, -20.75)
 script = ExtResource("12_e2iiq")
@@ -1746,7 +2416,7 @@ room_id = "upper_balcony"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/UpperBalcony" unique_id=987324798]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/UpperBalcony/Area" unique_id=1539937905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.75, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.75, 0, -2.5625)
 shape = SubResource("BoxShape3D_yf3gh")
 debug_color = Color(1.92523e-07, 0.7598565, 0.8341895, 1)
 
@@ -1774,6 +2444,14 @@ light_energy = 4.0
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071068, 0, -0.7071068, 0.7071067, 20.25, 1.8499999, -0.25)
 light_energy = 4.0
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/UpperBalcony" unique_id=1675175883]
+
+[node name="UpperBalconyDoorLeft" parent="SubViewportContainer/SubViewport/UpperBalcony/Interactables" unique_id=1079680582 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.25, 0, 0)
+
+[node name="UpperBalconyDoorRight" parent="SubViewportContainer/SubViewport/UpperBalcony/Interactables" unique_id=1335753408 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 13.25, 0, 0)
+
 [node name="LowerBalcony" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1928868599 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.75, 0, 32.75)
 script = ExtResource("12_e2iiq")
@@ -1784,12 +2462,12 @@ room_id = "lower_balcony"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/LowerBalcony" unique_id=290426491]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/LowerBalcony/Area" unique_id=542660963]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.875, 0, -3.875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.875, 0, -3.8125)
 shape = SubResource("BoxShape3D_mbdnt")
 debug_color = Color(1.92523e-07, 0.7598565, 0.8341895, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/LowerBalcony/Area" unique_id=1637154301]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.875, 0, -8.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.875, 0, -8.6875)
 shape = SubResource("BoxShape3D_q0a50")
 debug_color = Color(1.92523e-07, 0.7598565, 0.8341895, 1)
 
@@ -1803,6 +2481,11 @@ spot_angle = 50.0
 [node name="LowerBalcony2" parent="SubViewportContainer/SubViewport/LowerBalcony/Lights" unique_id=53617295 instance=ExtResource("12_nigfc")]
 transform = Transform3D(-1, -6.181724e-08, 6.181723e-08, 0, 0.7071067, 0.7071068, -8.742278e-08, 0.7071068, -0.7071067, 12.75, 1.8499999, -7.75)
 light_energy = 4.0
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/LowerBalcony" unique_id=352423808]
+
+[node name="LowerBalconyDoor" parent="SubViewportContainer/SubViewport/LowerBalcony/Interactables" unique_id=629704520 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.5, 0, -7.75)
 
 [node name="MeetingRoom3" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1955777875 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -15.75)
@@ -1876,6 +2559,11 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.15
 [node name="SmallShelf4" parent="SubViewportContainer/SubViewport/MeetingRoom3/Decor" unique_id=1251241172 instance=ExtResource("20_y6qj7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.1500001, 0, -3.499998)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MeetingRoom3" unique_id=1124746353]
+
+[node name="MeetingRoom3Door" parent="SubViewportContainer/SubViewport/MeetingRoom3/Interactables" unique_id=452002474 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, -3.75)
+
 [node name="WomensRestroom" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1583977204 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.25, 0, -8.25)
 script = ExtResource("12_e2iiq")
@@ -1895,6 +2583,11 @@ debug_color = Color(0.2900884, 0.6265058, 0, 1)
 [node name="WomensRestroom" parent="SubViewportContainer/SubViewport/WomensRestroom/Lights" unique_id=1782762246 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.5, 2.1, -2.5)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/WomensRestroom" unique_id=1048576556]
+
+[node name="WomensRestroomDoor" parent="SubViewportContainer/SubViewport/WomensRestroom/Interactables" unique_id=525976513 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.25, 0, -4.5)
+
 [node name="MensRestroom" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1554167707 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.25, 0, -8.25)
 script = ExtResource("12_e2iiq")
@@ -1913,6 +2606,11 @@ debug_color = Color(0.46699125, 0.48031867, 0.88801116, 1)
 
 [node name="MensRestroom" parent="SubViewportContainer/SubViewport/MensRestroom/Lights" unique_id=190396247 instance=ExtResource("12_nigfc")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.75, 2.1, -2.5)
+
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MensRestroom" unique_id=134806017]
+
+[node name="MensRestroomDoor" parent="SubViewportContainer/SubViewport/MensRestroom/Interactables" unique_id=1488615288 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.25, 0, -4.5)
 
 [node name="LabSmall" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1040369701 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -3.75)
@@ -1942,6 +2640,11 @@ light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.25, 2.1, -2.25)
 light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 
+[node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/LabSmall" unique_id=76740661]
+
+[node name="LabSmallDoor" parent="SubViewportContainer/SubViewport/LabSmall/Interactables" unique_id=1564092754 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 0)
+
 [node name="LabOffice" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1172191028 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 0, 6.75)
 script = ExtResource("12_e2iiq")
@@ -1966,17 +2669,20 @@ light_color = Color(0.8421599, 0.84230804, 0.9769384, 1)
 
 [node name="EnterDoor" parent="SubViewportContainer/SubViewport/LabOffice/Interactables" unique_id=1260815018 instance=ExtResource("16_nigfc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0)
+is_locked = true
 
-[node name="Outside" parent="SubViewportContainer/SubViewport/LabOffice/Interactables" unique_id=1773200884 instance=ExtResource("17_t1hpg")]
+[node name="Outside" parent="SubViewportContainer/SubViewport/LabOffice/Interactables" unique_id=1773200884 node_paths=PackedStringArray("lock") instance=ExtResource("17_t1hpg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 1.25, 0.25)
+lock = NodePath("Lockable")
+
+[node name="Lockable" parent="SubViewportContainer/SubViewport/LabOffice/Interactables/Outside" unique_id=863984741 instance=ExtResource("23_wsjrk")]
 needed_item = Array[ExtResource("18_6ltrj")]([ExtResource("18_84yqd")])
 consume_items = true
-locked_label = "Out of order: Missing fuse (apple)"
+locked_label = "Out of Order: missing 1 fuse"
+perma_unlock = true
 
 [node name="Inside" parent="SubViewportContainer/SubViewport/LabOffice/Interactables" unique_id=644357372 instance=ExtResource("17_t1hpg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.75, 1.25, 0)
-needed_item = Array[ExtResource("18_6ltrj")]([ExtResource("18_84yqd")])
-locked_label = "Out of order: Missing fuse (apple)"
 
 [node name="Clearance Giver" parent="SubViewportContainer/SubViewport/LabOffice/Interactables" unique_id=1251886145 instance=ExtResource("27_yf3gh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7000008, 0, -4.5)
@@ -1984,7 +2690,7 @@ clearance_type = 3
 
 [node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/LabOffice" unique_id=157349932]
 
-[node name="CornerDesk" parent="SubViewportContainer/SubViewport/LabOffice/Decor" unique_id=858584765 instance=ExtResource("28_krbj1")]
+[node name="CornerDesk" parent="SubViewportContainer/SubViewport/LabOffice/Decor" unique_id=406900413 instance=ExtResource("28_krbj1")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.25, 0, -4.05)
 
 [node name="Plant" parent="SubViewportContainer/SubViewport/LabOffice/Decor" unique_id=1561429228 instance=ExtResource("15_cnd03")]
@@ -1994,7 +2700,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6500015, 0, -0.6499996)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.750002, 0, -4.45)
 
 [node name="OfficeChair" parent="SubViewportContainer/SubViewport/LabOffice/Decor" unique_id=234673891 instance=ExtResource("15_y6qj7")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 5.950001, 0, -3.55)
+transform = Transform3D(0.25881916, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, 0.25881916, 5.200001, 0, -3.925)
 
 [node name="Lab" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1151432934 node_paths=PackedStringArray("room_area", "lights_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 24.75)
@@ -2006,7 +2712,7 @@ room_id = "lab"
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/Lab" unique_id=1899962728]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Lab/Area" unique_id=1384370443]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -7.125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.125, 0, -7.125)
 shape = SubResource("BoxShape3D_83phm")
 debug_color = Color(0.7988201, 0.41489652, 7.70092e-07, 1)
 
@@ -2016,7 +2722,7 @@ shape = SubResource("BoxShape3D_m7rp0")
 debug_color = Color(0.7988201, 0.41489652, 7.70092e-07, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Lab/Area" unique_id=1304262400]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.75, 0, -20.625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.75, 0, -20.5)
 shape = SubResource("BoxShape3D_vt6hr")
 debug_color = Color(0.7988201, 0.41489652, 7.70092e-07, 1)
 
@@ -2105,6 +2811,15 @@ transform = Transform3D(0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710
 [node name="ShelfCabinet5" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=1452539223 instance=ExtResource("27_4rwq3")]
 transform = Transform3D(0.9659257, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, 0.9659257, 29.900002, 0, -12.250001)
 
+[node name="ShelfCabinet6" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=1969994622 instance=ExtResource("27_4rwq3")]
+transform = Transform3D(0.96592575, 0, -0.25881916, 0, 1, 0, 0.25881916, 0, 0.96592575, 25.463629, 0, -16.882593)
+
+[node name="ShelfCabinet7" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=298551564 instance=ExtResource("27_4rwq3")]
+transform = Transform3D(1.0000001, 0, -2.3841858e-07, 0, 1, 0, 2.3841858e-07, 0, 1.0000001, 24.522655, 0, -16.94476)
+
+[node name="ShelfCabinet8" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=519852583 instance=ExtResource("27_4rwq3")]
+transform = Transform3D(0.9659258, 0, 0.25881878, 0, 1, 0, -0.25881878, 0, 0.9659258, 23.46372, 0, -16.87265)
+
 [node name="SmallShelf" parent="SubViewportContainer/SubViewport/Lab/Decor" unique_id=891517541 instance=ExtResource("20_y6qj7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 39.35, 0, -16.5)
 
@@ -2174,32 +2889,80 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 31.2
 [node name="EntranceRight" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=1843325562 instance=ExtResource("16_nigfc")]
 transform = Transform3D(1, 0, 1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 30.25, 0, -23)
 
-[node name="Item" parent="SubViewportContainer/SubViewport" unique_id=680605862 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, -0.75)
-item = ExtResource("18_84yqd")
+[node name="TLRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=1229011044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -9.75)
 
-[node name="Item2" parent="SubViewportContainer/SubViewport" unique_id=100126899 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.75)
-item = ExtResource("23_t1hpg")
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TLRoom" unique_id=834629136 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3.5)
 
-[node name="Item3" parent="SubViewportContainer/SubViewport" unique_id=1225612864 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 0, -0.75)
-item = ExtResource("24_6ltrj")
+[node name="RightDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TLRoom" unique_id=970206591 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -3.5)
 
-[node name="Item4" parent="SubViewportContainer/SubViewport" unique_id=1365504915 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, -0.75)
-item = ExtResource("25_m5ojc")
+[node name="Lever" parent="SubViewportContainer/SubViewport/Lab/Interactables/TLRoom" unique_id=157375757 instance=ExtResource("37_m7rp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000001, 0.90000004, -4.5)
 
-[node name="Item5" parent="SubViewportContainer/SubViewport" unique_id=349113609 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.75)
-item = ExtResource("26_58qlh")
+[node name="BLRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=1632982671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, 0)
 
-[node name="Item6" parent="SubViewportContainer/SubViewport" unique_id=278822611 instance=ExtResource("17_24gqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, -0.75)
-item = ExtResource("27_282k8")
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BLRoom" unique_id=1700965680 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1.25)
+
+[node name="RightDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BLRoom" unique_id=1879582197 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -1.25)
+
+[node name="BRRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=857376045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 0)
+
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom" unique_id=152791855 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1.25)
+
+[node name="RightDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom" unique_id=938680000 instance=ExtResource("16_nigfc")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.25, 0, -0.75)
+is_locked = true
+
+[node name="SecretLabKeycardScanner" parent="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom" unique_id=761995917 node_paths=PackedStringArray("lock") instance=ExtResource("17_t1hpg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, -1.625)
+lock = NodePath("Lockable")
+
+[node name="Lockable" parent="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom/SecretLabKeycardScanner" unique_id=72494472 node_paths=PackedStringArray("needed_lever") instance=ExtResource("23_wsjrk")]
+needed_lever = [NodePath("../../../TLRoom/Lever")]
+locked_label = "..."
+
+[node name="TRRoom" type="Node3D" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=975036580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, -9.75)
+
+[node name="LeftDoor" parent="SubViewportContainer/SubViewport/Lab/Interactables/TRRoom" unique_id=115021518 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3.5)
+
+[node name="LabBackdoor" parent="SubViewportContainer/SubViewport/Lab/Interactables" unique_id=61335024 instance=ExtResource("16_nigfc")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0, -14.25)
+
+[node name="Guards" type="Node3D" parent="SubViewportContainer/SubViewport/Lab" unique_id=1482434652]
+
+[node name="BigLoopGuard" parent="SubViewportContainer/SubViewport/Lab/Guards" unique_id=1898539759 instance=ExtResource("22_mbdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.625, 0, -15.75)
+branch_paths = Array[ExtResource("23_q0a50")]([SubResource("Resource_iknc1")])
+follow_branch = 0
+path = SubResource("Resource_iknc1")
+
+[node name="SmallLoopGuard" parent="SubViewportContainer/SubViewport/Lab/Guards" unique_id=1294913957 instance=ExtResource("22_mbdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -8.75)
+branch_paths = Array[ExtResource("23_q0a50")]([SubResource("Resource_i3qxv")])
+follow_branch = 0
+path = SubResource("Resource_i3qxv")
+
+[node name="LineGuard" parent="SubViewportContainer/SubViewport/Lab/Guards" unique_id=1629200249 instance=ExtResource("22_mbdnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -21.5)
+branch_paths = Array[ExtResource("23_q0a50")]([SubResource("Resource_1wp64")])
+follow_branch = 0
+path = SubResource("Resource_1wp64")
 
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("6_mwdlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.805431, 0, 20.35668)
 
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/Keycard Scanner" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetDoor" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetScannerOutside" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetDoor" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetScannerInside" to="SubViewportContainer/SubViewport/PowerCloset/Interactables/PowerClosetDoor" method="open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Outside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="unlock_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/LabOffice/Interactables/Inside" to="SubViewportContainer/SubViewport/LabOffice/Interactables/EnterDoor" method="open"]
+[connection signal="lever_flipped" from="SubViewportContainer/SubViewport/Lab/Interactables/TLRoom/Lever" to="SubViewportContainer/SubViewport/Lab/Lights/LabRoboticsRoom4" method="set_light"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom/SecretLabKeycardScanner" to="SubViewportContainer/SubViewport/Lab/Interactables/BRRoom/RightDoor" method="unlock_open"]

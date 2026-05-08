@@ -1,6 +1,6 @@
-extends TabContent
+extends AppBase
 
-@export var emails : Array[DocumentInfo]
+var emails
 var email_button_instances : Array[EmailButton]  #TIMEVAR
 	#set(value):
 		#if globals.time_manager and globals.time_manager.logging:
@@ -8,8 +8,8 @@ var email_button_instances : Array[EmailButton]  #TIMEVAR
 		#email_button_instances = value
 		#print("SET FUNCTION CALLED")
 @onready var email_buttons: VBoxContainer = $HBoxContainer/EmailButtons
-@onready var email_resizer: Control = $HBoxContainer/ScrollContainer/EmailResizer
-@onready var email_viewer: TextureRect = $HBoxContainer/ScrollContainer/EmailResizer/EmailViewer
+#@onready var email_resizer: Control = $HBoxContainer/ScrollContainer/EmailResizer
+@onready var email_viewer: TextureRect = $HBoxContainer/ScrollContainer/EmailViewer
 @onready var scroll_container: ScrollContainer = $HBoxContainer/ScrollContainer
 
 const EmailButtonScene = preload("res://Modules/Interaction/Computer/Email App/email_button.tscn")
@@ -21,6 +21,9 @@ var finished : bool = false : #TIMEVAR
 		if globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"finished",finished,value)
 		finished = value
+
+func setup(config: EmailAppConfig) -> void:
+	emails = config.emails
 
 func _ready() -> void:
 	if emails.size() == 0:
@@ -44,10 +47,16 @@ func _process(_delta: float) -> void:
 				if email_button_instances[email_button_instances.size()-1].sent:
 					finished = true
 
-func view_panel(document: DocumentInfo):
-	print("viewing: ", document.title)
+func view_panel(document: DocumentInfo) -> void:
 	email_viewer.texture = document.document_image
 	scroll_container.scroll_vertical = 0
+	
+	if document.document_image:
+		var tex_size = document.document_image.get_size()
+		# fit width to scroll container, scale height proportionally
+		var available_width = scroll_container.size.x
+		var scale = available_width / tex_size.x
+		email_viewer.custom_minimum_size = Vector2(available_width, tex_size.y * scale)
 	
 func setup_emails():
 	for email in emails:

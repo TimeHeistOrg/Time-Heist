@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="21_qhv1s"]
 [ext_resource type="PackedScene" uid="uid://chgq1whavi3qi" path="res://Modules/Interaction/Computer/computer_ui.tscn" id="22_2gpm5"]
 [ext_resource type="PackedScene" uid="uid://b1xuaj1s3dwef" path="res://Modules/Interaction/Computer/desktop_item.tscn" id="23_epd46"]
-[ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/computer_tab.tscn" id="24_twad6"]
+[ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/app_window.tscn" id="24_twad6"]
 [ext_resource type="PackedScene" uid="uid://bnhismy4o74yd" path="res://Modules/Interaction/Computer/Email App/email_tab.tscn" id="25_6uxxh"]
 [ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Assets/Documents/document_resource.gd" id="26_adxvu"]
 [ext_resource type="Resource" uid="uid://4qtrr47gldo5" path="res://Assets/Documents/Resources/dictionary_temp.tres" id="27_sgxhe"]

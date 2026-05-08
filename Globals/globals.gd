@@ -21,6 +21,7 @@ var time_manager: TimeManager
 var ui_manager: UI_Manager
 
 var player : Player
+var player_camera : Camera3D
 
 var camera : Node3D
 

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://chgq1whavi3qi" path="res://Modules/Interaction/Computer/computer_ui.tscn" id="1_ei6pc"]
 [ext_resource type="PackedScene" uid="uid://b1xuaj1s3dwef" path="res://Modules/Interaction/Computer/desktop_item.tscn" id="2_lrqen"]
-[ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/computer_tab.tscn" id="3_r5cru"]
+[ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/app_window.tscn" id="3_r5cru"]
 [ext_resource type="PackedScene" uid="uid://dkcsig15pybbc" path="res://Modules/Interaction/Computer/Text App/text_tab.tscn" id="4_4mqo0"]
-[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Assets/TextConvos/text_convo_resource.gd" id="5_514rl"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="5_514rl"]
 [ext_resource type="Resource" uid="uid://cxus0xrdd5e5u" path="res://Assets/TextConvos/Resources/Archive Puzzle/mrsecurity_to_john.tres" id="6_meel3"]
 
 [node name="BasementAlbusDesktop" type="Control" unique_id=1828267665]

@@ -13,10 +13,11 @@ class_name Generic_Door
 			if door_ready and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_open",is_open,value)
 			is_open = value
-			if value:
-				collision_body.process_mode = Node.PROCESS_MODE_DISABLED
-			else:
-				collision_body.process_mode = Node.PROCESS_MODE_INHERIT
+			if collision_body:
+				if value:
+					collision_body.process_mode = Node.PROCESS_MODE_DISABLED
+				else:
+					collision_body.process_mode = Node.PROCESS_MODE_INHERIT
 			
 		elif animation_player:
 			is_open = value

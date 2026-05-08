@@ -1,15 +1,14 @@
 [gd_resource type="Resource" script_class="TextConvo" format=3 uid="uid://csaufp18yr7m7"]
 
-[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Assets/TextConvos/text_convo_resource.gd" id="1_e1u8w"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="1_e1u8w"]
 
 [resource]
 script = ExtResource("1_e1u8w")
-person0 = "The Player"
-person1 = "The Developer"
-conversation = "15,1Hello Player!
-23,0Um... Hello?
-34,1You are reading an example conversation we set up
-40,0Wow thats sick! Are these messages being sent out based on the time?
-45,1They are!!!
-50,1Okay bye!"
+person0 = "Developer"
+person1 = "Player"
+conversation = "5,0Hello player!
+10,1Hi?
+12,1What is this?
+15,0I am messaging you in real time!
+17,1Thats... kinda cool"
 metadata/_custom_type_script = "uid://cwa1su0fsxi7t"

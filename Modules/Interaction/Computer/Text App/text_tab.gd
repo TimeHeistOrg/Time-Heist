@@ -1,8 +1,8 @@
-extends TabContent
+extends AppBase
 
-@export var convos : Array[TextConvo]
+var convos : Array[TextConvo]
 enum person {person0, person1}
-@export var which_person : Array[person]
+var which_person : Array[person]
 
 var current_convo : TextConvo
 
@@ -13,10 +13,14 @@ var current_convo : TextConvo
 var left_bubble := preload("res://Modules/Interaction/Computer/Text App/text_bubble_left.tscn")
 var right_bubble := preload("res://Modules/Interaction/Computer/Text App/text_bubble_right.tscn")
 
+func setup(config: TextAppConfig) -> void:
+	convos = config.convos
+	which_person = config.which_person as Array[person]
+
 func _ready() -> void:
 	time_manager = globals.time_manager
-	create_convo_buttons()
 	default_focus = people.get_child(0)
+	create_convo_buttons()
 
 func set_convo(convo : TextConvo):
 	print("veiwing convo between ", convo.person0, " and ", convo.person1)

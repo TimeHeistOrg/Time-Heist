@@ -3,9 +3,11 @@ class_name Player extends CharacterBody3D
 
 @onready var mesh: Node3D = $Mesh
 @onready var camera_pivot: Node3D = $"Camera Pivot"
+@onready var camera: Camera3D = $"Camera Pivot/Camera3D"
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var detection_point: Marker3D = $DetectionPoint
 @onready var interactor: Interactor = $Mesh/Interactor
+@onready var inventory_wheel: InventoryWheel = $"SubViewport/Inventory Wheel"
 
 @export_category("Camera")
 @export var camera_up: float = 5.798:
@@ -56,13 +58,12 @@ var destination_velocity: Vector3
 var current_acceleration: float
 var move_acceleration: float
 
+var position_locked: bool = false
 var is_hidden: bool = false #hiding in a locker or other place.
-
-#inventory wheel
-@onready var inventory_wheel: Node2D = $"SubViewport/Inventory Wheel"
 
 func _ready():
 	globals.player = self
+	globals.player_camera = camera
 	InputManager.player = self
 	$"Inventory Wheel Holder".player = self
 	run_enter()
@@ -111,10 +112,17 @@ func roll(): #input manager interface function
 	if state != MoveStates.ROLL:
 		roll_enter()
 
+func lock_position():
+	position_locked = true
+	
+func unlock_position():
+	position_locked = false
+
 func move(input_dir: Vector2, delta): #input manager calls this every physics_process frame with the pertinent input information
-	#anything that should happen for all states should go here
-	state_move.call(input_dir,delta)
-	move_and_slide()
+	if not position_locked:
+		#anything that should happen for all states should go here
+		state_move.call(input_dir,delta)
+		move_and_slide()
 
 func _default_move(input_dir: Vector2, speed: float): #This function is the default movement, used for run, walk, and crouch movement
 	if input_dir.is_zero_approx():

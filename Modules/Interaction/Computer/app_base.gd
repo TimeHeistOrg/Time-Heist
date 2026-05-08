@@ -1,5 +1,5 @@
 extends Control
-class_name TabContent
+class_name AppBase
 
 var default_focus : Control
 

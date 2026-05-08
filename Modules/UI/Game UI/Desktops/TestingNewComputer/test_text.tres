@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TextAppConfig" format=3 uid="uid://wobvj7y2r56i"]
+
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="1_26hxc"]
+[ext_resource type="Script" uid="uid://4064plqmijmo" path="res://Modules/Interaction/Computer/Resources/text_app_config.gd" id="2_sgcbj"]
+
+[resource]
+script = ExtResource("2_sgcbj")
+convos = Array[ExtResource("1_26hxc")]([null])
+which_person = Array[int]([0])
+metadata/_custom_type_script = "uid://4064plqmijmo"
