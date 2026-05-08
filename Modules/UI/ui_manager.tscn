@@ -70,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_yaem8")
 
 [node name="HUD" parent="." unique_id=528506545 instance=ExtResource("5_df44s")]

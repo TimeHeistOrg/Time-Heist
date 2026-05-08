@@ -166,6 +166,7 @@ script = ExtResource("1_3duep")
 
 [node name="PlayerDetector" parent="." unique_id=1869490121 instance=ExtResource("3_3duep")]
 collision_layer = 0
+input_ray_pickable = false
 
 [node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_k7y8f")]
 
@@ -197,6 +198,7 @@ texture = ExtResource("2_3duep")
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=299469070]
 collision_layer = 0
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1655377873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935791, 0)

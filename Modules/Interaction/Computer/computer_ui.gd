@@ -7,6 +7,9 @@ class_name ComputerUI
 const DESKTOP_ITEM = preload("res://Modules/Interaction/Computer/desktop_item.tscn")
 const APP_WINDOW = preload("res://Modules/Interaction/Computer/app_window.tscn")
 
+func _ready() -> void:
+	close()
+
 func load_computer(data: ComputerData) -> void:
 	desktop.texture = data.desktop_image
 	

@@ -231,7 +231,7 @@ id = 11
 [sub_resource type="Resource" id="Resource_ln6ov"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 1.0
+speed = 0.9999999999999991
 prev_vertex = SubResource("Resource_urdum")
 next_vertex = SubResource("Resource_m7rp0")
 is_loop_line = true
@@ -421,7 +421,7 @@ id = 4
 [sub_resource type="Resource" id="Resource_mdia2"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 0.75
+speed = 0.7500000000000001
 prev_vertex = SubResource("Resource_hjdgr")
 next_vertex = SubResource("Resource_0bsg0")
 time_start = 11.833333333333334
@@ -439,7 +439,7 @@ id = 6
 [sub_resource type="Resource" id="Resource_jno8s"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 0.75
+speed = 0.7499999999999998
 prev_vertex = SubResource("Resource_0bsg0")
 next_vertex = SubResource("Resource_ga7uj")
 time_start = 18.5
@@ -457,7 +457,7 @@ id = 8
 [sub_resource type="Resource" id="Resource_6sta3"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 0.75
+speed = 0.7499999999999999
 prev_vertex = SubResource("Resource_ga7uj")
 next_vertex = SubResource("Resource_jsgag")
 time_start = 23.166666666666668
@@ -475,7 +475,7 @@ id = 10
 [sub_resource type="Resource" id="Resource_71dmg"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 0.75
+speed = 0.7499999999999999
 prev_vertex = SubResource("Resource_jsgag")
 next_vertex = SubResource("Resource_47nfd")
 time_start = 29.833333333333336
@@ -493,7 +493,7 @@ id = 12
 [sub_resource type="Resource" id="Resource_vtor0"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 0.75
+speed = 0.7499999999999998
 prev_vertex = SubResource("Resource_47nfd")
 next_vertex = SubResource("Resource_8o8iy")
 time_start = 49.16666666666667
@@ -521,7 +521,7 @@ id = 13
 [sub_resource type="Resource" id="Resource_sc1jj"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 0.75
+speed = 0.7500000000000006
 prev_vertex = SubResource("Resource_ygele")
 next_vertex = SubResource("Resource_bacra")
 is_loop_line = true
@@ -546,14 +546,14 @@ position = Vector3(17, 0, 16.25)
 resource_local_to_scene = true
 script = ExtResource("25_rjonq")
 position = Vector3(2.25, 0, 16)
-time_start = 15.0
-time_end = 15.0
+time_start = 14.752118
+time_end = 14.752118
 id = 2
 
 [sub_resource type="Resource" id="Resource_ludy3"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 1.0
+speed = 0.9834745407104493
 prev_vertex = SubResource("Resource_6ng1u")
 next_vertex = SubResource("Resource_dt2so")
 time_end = 15.0
@@ -563,8 +563,8 @@ id = 1
 resource_local_to_scene = true
 script = ExtResource("25_rjonq")
 position = Vector3(2.25, 0, 19.5)
-time_start = 18.5
-time_end = 18.5
+time_start = 18.25211811065674
+time_end = 18.25211811065674
 id = 4
 
 [sub_resource type="Resource" id="Resource_s65nw"]
@@ -581,8 +581,8 @@ id = 3
 resource_local_to_scene = true
 script = ExtResource("25_rjonq")
 position = Vector3(17.25, 0, 19.5)
-time_start = 33.5
-time_end = 33.5
+time_start = 33.25211811065674
+time_end = 33.25211811065674
 id = 6
 
 [sub_resource type="Resource" id="Resource_50kx0"]
@@ -598,7 +598,7 @@ id = 5
 [sub_resource type="Resource" id="Resource_5alli"]
 resource_local_to_scene = true
 script = ExtResource("27_necek")
-speed = 1.0
+speed = 0.9313146046229771
 prev_vertex = SubResource("Resource_xc52o")
 next_vertex = SubResource("Resource_6ng1u")
 is_loop_line = true
@@ -1551,6 +1551,7 @@ lights_node = NodePath("Lights")
 room_id = "main_room"
 
 [node name="Area" type="Area3D" parent="SubViewportContainer/SubViewport/MainRoom" unique_id=739677210]
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/MainRoom/Area" unique_id=1904714503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -21.5)
@@ -1899,7 +1900,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.37
 [node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MainRoom" unique_id=1088527655]
 
 [node name="Computer" parent="SubViewportContainer/SubViewport/MainRoom/Interactables" unique_id=1194039688 instance=ExtResource("19_p8kop")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2, 0.7, -27.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2, 0.7, -28.825)
 data = ExtResource("20_83phm")
 
 [node name="Locker" parent="SubViewportContainer/SubViewport/MainRoom/Interactables" unique_id=1382941412 instance=ExtResource("21_wsjrk")]

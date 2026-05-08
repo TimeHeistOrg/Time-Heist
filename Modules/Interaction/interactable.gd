@@ -2,7 +2,6 @@ extends Area3D
 class_name Interactable
 
 @export var mesh: GeometryInstance3D = null
-@export var interact_object: Node = null
 static var outline_material:ShaderMaterial = preload("res://Assets/Materials/Interactable/interactable_outline.tres")
 static var highlight_material:ShaderMaterial = preload("res://Assets/Materials/Interactable/interactable_highlight.tres")
 static var invalid_outline_material:StandardMaterial3D = preload("res://Assets/Materials/Interactable/Invalid_Highlight.tres")
