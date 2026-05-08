@@ -52,7 +52,6 @@ func clear_display(node):
 		
 func handle_input(_delta):
 	if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("player_interact"):
-		print("DESKTOP_VIEWER HANDLED INPUT")
 		if external_display:
 			external_display.close_computer()
 			external_display = null

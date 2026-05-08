@@ -42,7 +42,7 @@ class_name Player extends CharacterBody3D
 @export var roll_speed: float = 5
 @export var roll_duration: float = 0.75
 
-var camera_locked: bool = true
+var camera_locked: bool = false
 
 enum MoveStates {RUN, WALK, CROUCH, ROLL}
 var state: MoveStates
@@ -83,7 +83,8 @@ func _process(delta): #This process is for things that should occur regardless o
 		current_speed = velocity.length()
 
 func pan_camera_horizontally(angle):
-	camera_pivot.rotate(Vector3.UP, angle)
+	if not camera_locked:
+		camera_pivot.rotate(Vector3.UP, angle)
 
 func interact():
 	interactor.interact()

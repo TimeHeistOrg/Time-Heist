@@ -29,12 +29,14 @@ func interact() -> void:
 		return
 	original_transform = globals.player_camera.global_transform
 	original_fov = globals.player_camera.fov
+	globals.player.lock_camera()
 	lerp_camera_to_screen()
 
 func lerp_camera_to_screen() -> void:
 	is_viewing = true
 	#globals.player.disable_input()
 	globals.ui_manager.desktop_viewer.display_computer_on_model(self, sub_viewport, data)
+	
 	
 	if tween:
 		tween.kill()
@@ -79,6 +81,7 @@ func close_computer() -> void:
 		print(sub_viewport.get_child_count())
 		if sub_viewport.get_child_count() != 0:
 			sub_viewport.get_child(0).queue_free()
+		globals.player.unlock_camera()
 	)
 
 #func handle_input(_delta) -> void:
