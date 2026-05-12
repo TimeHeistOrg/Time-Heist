@@ -57,7 +57,7 @@
 [ext_resource type="Resource" uid="uid://bo6vi7myjmsgh" path="res://Assets/Documents/Resources/basement_pin_board.tres" id="52_sbk6u"]
 [ext_resource type="PackedScene" uid="uid://dy2raru83cfe6" path="res://Assets/Models/Enviornment/break_room_table.tscn" id="54_vsdh8"]
 [ext_resource type="Texture2D" uid="uid://dn4jk0ilbavbu" path="res://Assets/Documents/Textures/6a_small_basement_map.png" id="54_xj822"]
-[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_char.tscn" id="55_w3oxr"]
+[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="55_w3oxr"]
 [ext_resource type="Texture2D" uid="uid://fi7o4pmphiqr" path="res://Assets/Documents/Textures/7a_basement_pin_board.png" id="57_xj822"]
 [ext_resource type="PackedScene" uid="uid://b3j6f486q3yvk" path="res://Modules/Interaction/HideSpot/hide_point.tscn" id="60_j008v"]
 [ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="60_wy2fh"]

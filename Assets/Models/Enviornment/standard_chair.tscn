@@ -16,3 +16,5 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1919852006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5488281, 0)
 shape = SubResource("BoxShape3D_dds80")
+
+[editable path="Chair_A"]

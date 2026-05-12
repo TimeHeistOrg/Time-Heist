@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvm6vcceemdoc"]
+
+[ext_resource type="PackedScene" uid="uid://cq6vq7f2exyrx" path="res://Assets/Models/Custom Assets/Whiteboard.glb" id="1_06pyr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udxfg"]
+size = Vector3(1.9839478, 2.125, 0.17468262)
+
+[node name="Whiteboard" type="Node3D" unique_id=865723330]
+
+[node name="Whiteboard" parent="." unique_id=353574779 instance=ExtResource("1_06pyr")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.035, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=644151774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1573324213]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.024841307, 0.5375, -0.0012817393)
+shape = SubResource("BoxShape3D_udxfg")

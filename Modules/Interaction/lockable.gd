@@ -1,7 +1,7 @@
 extends Node
 class_name Lockable
 
-@onready var label: Label = $Label
+@onready var label: Label = $CanvasLayer/Label
 
 var display_note: bool = false
 var display_time_elapsed: float = 0
@@ -73,6 +73,6 @@ func _process(delta):
 		if display_time_elapsed >= 2:
 			display_note = false
 			display_time_elapsed = 0
-			$Label.visible = false
+			label.visible = false
 		else:
 			display_time_elapsed += delta

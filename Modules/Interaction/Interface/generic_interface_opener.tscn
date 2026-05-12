@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b8ujtjyoflg8w"]
+
+[ext_resource type="Script" uid="uid://dbbgpv5n4n33b" path="res://Modules/Interaction/Interface/generic_interface_opener.gd" id="1_7cvtx"]
+[ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Models/Custom Assets/Card_reader.glb" id="2_q2p1s"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_njdgo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0um5"]
+size = Vector3(0.25, 0.29907227, 0.34545898)
+
+[node name="GenericInterfaceOpener" type="Node3D" unique_id=1288327488]
+script = ExtResource("1_7cvtx")
+
+[node name="Card_reader" parent="." unique_id=2114805307 instance=ExtResource("2_q2p1s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.010682881, 0, 0)
+
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("3_njdgo")]
+mesh = NodePath("../Card_reader/KeyCardReader")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=270588032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12194824, 0.12231445, 0)
+shape = SubResource("BoxShape3D_s0um5")
+
+[connection signal="anon_interacted" from="Interactable" to="." method="interact"]
+
+[editable path="Card_reader"]
