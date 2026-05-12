@@ -27,7 +27,7 @@ var camera : Node3D
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = false
+var player_invisible: bool = true
 #endregion
 
 #region Detection

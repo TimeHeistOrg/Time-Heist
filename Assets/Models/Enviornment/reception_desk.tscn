@@ -11,6 +11,7 @@ size = Vector3(4.2000003, 1, 0.815)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1674208294]
 collision_layer = 8
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1660648795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5731407, 0.50122786, 0.0026855469)

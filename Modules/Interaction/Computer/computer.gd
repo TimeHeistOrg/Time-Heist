@@ -4,6 +4,8 @@ class_name Computer
 
 @export var data: ComputerData
 @onready var view_position: Marker3D = $ViewPosition
+@onready var computer_ui: ComputerUI = %"Computer UI"
+@onready var sub_viewport: SubViewport = $SubViewport
 
 var player_camera: Camera3D
 var original_transform: Transform3D
@@ -13,28 +15,23 @@ var tween: Tween
 var computer_ui_instance: ComputerUI
 var target_fov : float = 90
 
-#func interact():
-	#if not data:
-		#push_warning("Computer has no ComputerData resource")
-		#return
-	##globals.ui_manager.desktop_viewer.display_computer(data)
-	#desktop_viewer.display_computer(data)
-
-@onready var sub_viewport: SubViewport = $Screen/SubViewport
-
 const COMPUTER_UI = preload("res://Modules/Interaction/Computer/computer_ui.tscn")
+
+func _ready() -> void:
+	computer_ui.load_computer(preload("res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_computer.tres"))
 
 func interact() -> void:
 	if is_viewing:
 		return
 	original_transform = globals.player_camera.global_transform
 	original_fov = globals.player_camera.fov
+	globals.player.lock_camera()
+	computer_ui.open()
 	lerp_camera_to_screen()
+	#print("COMPUTER INTERACT")
 
 func lerp_camera_to_screen() -> void:
 	is_viewing = true
-	#globals.player.disable_input()
-	globals.ui_manager.desktop_viewer.display_computer_on_model(self, sub_viewport, data)
 	
 	if tween:
 		tween.kill()
@@ -76,13 +73,15 @@ func close_computer() -> void:
 	tween.tween_callback(func():
 		is_viewing = false
 		#globals.ui_manager.desktop_viewer.call_deffered("close")
-		print(sub_viewport.get_child_count())
-		if sub_viewport.get_child_count() != 0:
-			sub_viewport.get_child(0).queue_free()
+		#print(sub_viewport.get_child_count())
+		#if sub_viewport.get_child_count() != 0:
+			#sub_viewport.get_child(0).queue_free()
+		if globals.player:
+			globals.player.unlock_camera()
 	)
 
-#func handle_input(_delta) -> void:
-	#if is_viewing:
-		#if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("player_interact"):
+func handle_input(_delta) -> void:
+	if is_viewing:
+		if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("player_interact"):
 			#print("COMPUTER HANDLED INPUT")
-			#close_computer()
+			close_computer()

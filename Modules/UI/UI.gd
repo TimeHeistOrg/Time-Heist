@@ -4,6 +4,7 @@ class_name UI
 
 var is_open : bool = true
 @export var default_focus : Control
+@export var sub_viewport : SubViewport
 
 func open():
 	if is_open:
@@ -15,6 +16,7 @@ func open():
 	globals.ui_manager.take_control(self)
 	if default_focus:
 		default_focus.grab_focus()
+	print(InputManager.in_control)
 
 func close():
 	if not is_open:
@@ -24,7 +26,12 @@ func close():
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 	globals.ui_manager.release_control()
+	print(InputManager.in_control)
 
 func handle_input(_delta):
 	if Input.is_action_just_pressed("escape"):
 		close()
+		
+func handle_event(event):
+	if sub_viewport:
+		sub_viewport.push_input(event)

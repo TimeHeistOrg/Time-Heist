@@ -68,10 +68,14 @@ func _switch_to_ui():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _input_UI(event: InputEvent):
+	if globals.ui_manager:
+		globals.ui_manager.cur_ui.handle_event(event)
 	pass
 
 func _process_UI(delta: float):
-	globals.ui_manager.cur_ui.handle_input(delta)
+	#print(get_viewport().gui_get_hovered_control())
+	if globals.ui_manager:
+		globals.ui_manager.cur_ui.handle_input(delta)
 
 #endregion
 

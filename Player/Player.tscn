@@ -609,7 +609,6 @@ blend_point_26/pos = Vector2(0.8, 1)
 sync = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gxmyo"]
-graph_offset = Vector2(-434.99768, 100.43152)
 nodes/output/position = Vector2(560, 112)
 nodes/RunWalkBlend/node = SubResource("AnimationNodeBlendSpace2D_cprru")
 nodes/RunWalkBlend/position = Vector2(-140, 30)
@@ -662,6 +661,7 @@ size = Vector2(2.83, 1.5)
 
 [node name="Player" type="CharacterBody3D" unique_id=288105915]
 collision_mask = 28
+input_ray_pickable = false
 script = ExtResource("1_b1ygp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1521528956]
@@ -953,6 +953,7 @@ skeleton = NodePath("../..")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=94125279]
 transparent_bg = true
+gui_disable_input = true
 size = Vector2i(1920, 1080)
 
 [node name="Inventory Wheel" parent="SubViewport" unique_id=455971298 instance=ExtResource("19_d7xyo")]
