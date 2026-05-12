@@ -3,12 +3,21 @@ class_name ComputerUI
 
 @onready var desktop: TextureRect = $Desktop
 @onready var icons_container: Control = $Icons
+@onready var computer: Computer = $"../.."
 
 const DESKTOP_ITEM = preload("res://Modules/Interaction/Computer/desktop_item.tscn")
 const APP_WINDOW = preload("res://Modules/Interaction/Computer/app_window.tscn")
 
 func _ready() -> void:
 	close()
+
+#func open():
+	#print("Hello computer opening")
+	#super.open()
+
+func close():
+	computer.close_computer()
+	super.close()
 
 func load_computer(data: ComputerData) -> void:
 	desktop.texture = data.desktop_image

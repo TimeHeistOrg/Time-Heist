@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="9_ymwqx"]
 [ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="10_07tka"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="12_07tka"]
+[ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="13_k1gnt"]
+[ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_computer.tres" id="14_7aoa1"]
 
 [sub_resource type="Gradient" id="Gradient_mwdlf"]
 offsets = PackedFloat32Array(0, 0.1539924, 1)
@@ -87,20 +89,20 @@ size_2d_override = Vector2i(640, 360)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=771670139]
+[node name="Floor" type="StaticBody3D" parent="SubViewportContainer" unique_id=771670139]
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=612664855]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/Floor" unique_id=612664855]
 shape = SubResource("WorldBoundaryShape3D_0qcv7")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=1963213374]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/Floor" unique_id=1963213374]
 layers = 4
 mesh = SubResource("PlaneMesh_fry3c")
 surface_material_override/0 = SubResource("StandardMaterial3D_m7fnc")
 metadata/_edit_lock_ = true
 
-[node name="Walls" type="GridMap" parent="SubViewportContainer/SubViewport" unique_id=488532655]
+[node name="Walls" type="GridMap" parent="SubViewportContainer" unique_id=488532655]
 mesh_library = ExtResource("8_piedo")
 cell_size = Vector3(0.25, 2, 0.25)
 cell_center_y = false
@@ -111,19 +113,19 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="SubViewportContainer/SubViewport" unique_id=473583453]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="SubViewportContainer" unique_id=473583453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.058178, 0, 21.921896)
 process_material = SubResource("ParticleProcessMaterial_mgh7o")
 draw_pass_1 = SubResource("QuadMesh_0wlcr")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1533534779]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer" unique_id=1533534779]
 transform = Transform3D(1, 0, 0, 0, 0.44293037, 0.8965561, 0, -0.8965561, 0.44293037, 0, 6.798643, 5.608078)
 visible = false
 layers = 64
 
-[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=586401872]
+[node name="Lights" type="Node3D" parent="SubViewportContainer" unique_id=586401872]
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1870678051]
+[node name="SpotLight3D6" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1870678051]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -13.321789, 9.112866, 6.0631075)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -136,7 +138,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=556486793]
+[node name="SpotLight3D7" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=556486793]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -12.571789, 9.112866, -0.18689251)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -149,7 +151,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=714744138]
+[node name="SpotLight3D8" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=714744138]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -15.321789, 7.8628664, -15.4368925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -162,7 +164,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D18" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=952938771]
+[node name="SpotLight3D18" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=952938771]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -7.4713936, 7.8628664, -15.4368925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -175,7 +177,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D9" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=516763463]
+[node name="SpotLight3D9" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=516763463]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -7.571789, 9.112866, -11.6868925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -188,7 +190,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D10" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1660479256]
+[node name="SpotLight3D10" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1660479256]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -2.5717888, 9.112866, -6.9368925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -201,7 +203,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D11" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=316716589]
+[node name="SpotLight3D11" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=316716589]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -0.3217888, 9.112866, -16.936893)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -215,7 +217,7 @@ spot_attenuation = 0.5
 spot_angle = 41.64
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=869748245]
+[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=869748245]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 4.178211, 7.1128664, -11.686893)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -228,7 +230,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D16" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1051647848]
+[node name="SpotLight3D16" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1051647848]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 11.678211, 7.1128664, -7.6868935)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -241,7 +243,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D15" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1883681625]
+[node name="SpotLight3D15" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1883681625]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -2.5717888, 6.8628664, -4.1868935)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -254,7 +256,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=50844680]
+[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=50844680]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 7.1256046, 2.686267, -0.063752174)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -268,7 +270,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D13" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1600892347]
+[node name="SpotLight3D13" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1600892347]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 3.0984678, 2.686267, -0.063752174)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -282,7 +284,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D19" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1733961585]
+[node name="SpotLight3D19" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1733961585]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 11.494732, 2.8242683, -0.26296568)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -296,7 +298,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D20" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1356505385]
+[node name="SpotLight3D20" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=1356505385]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 14.959049, 2.8242683, -0.26296568)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -310,7 +312,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=939809107]
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=939809107]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 2, 8.232662, 9.596434)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -324,7 +326,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D14" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=346048323]
+[node name="SpotLight3D14" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=346048323]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 4.25, 2.3891387, 7.501831)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -337,7 +339,7 @@ spot_range = 7.946
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=593014381]
+[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=593014381]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 0, 8.232662, 28.134186)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -351,7 +353,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=2050861288]
+[node name="SpotLight3D5" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=2050861288]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -9.51265, 6.501198, -6.1524324)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -365,7 +367,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D17" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=357107182]
+[node name="SpotLight3D17" type="SpotLight3D" parent="SubViewportContainer/Lights" unique_id=357107182]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -16.51265, 8.501198, -6.1524324)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -379,25 +381,25 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("8_rbmgi")]
+[node name="Player" parent="SubViewportContainer" unique_id=288105915 instance=ExtResource("8_rbmgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5)
 
-[node name="Lever" parent="." unique_id=1750000146 instance=ExtResource("10_07tka")]
+[node name="Lever" parent="SubViewportContainer" unique_id=1750000146 instance=ExtResource("10_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 1, -3.0000007)
 
-[node name="Lever2" parent="." unique_id=572724153 instance=ExtResource("10_07tka")]
+[node name="Lever2" parent="SubViewportContainer" unique_id=572724153 instance=ExtResource("10_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.75, 1, -3.0000007)
 is_jammed = true
 
-[node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("9_ymwqx")]
+[node name="Generic_Door" parent="SubViewportContainer" unique_id=74631722 instance=ExtResource("9_ymwqx")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.25, 0, -3)
 
-[node name="Keycard Scanner" parent="." unique_id=609647611 instance=ExtResource("12_07tka")]
+[node name="Keycard Scanner" parent="SubViewportContainer" unique_id=609647611 instance=ExtResource("12_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.5, 0.75, -3)
-needed_clearance = Array[int]([1])
-locked_label = "This is a failure test"
 
-[node name="Keycard Scanner2" parent="." unique_id=925346116 instance=ExtResource("12_07tka")]
+[node name="Keycard Scanner2" parent="SubViewportContainer" unique_id=925346116 instance=ExtResource("12_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.25, 0.75, -3)
-locked_label = "This is a success test (you shouldnt see this)"
-is_unlocked = true
+
+[node name="Computer" parent="SubViewportContainer" unique_id=1194039688 instance=ExtResource("13_k1gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.819148)
+data = ExtResource("14_7aoa1")

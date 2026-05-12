@@ -64,7 +64,7 @@ func check_interact():
 				success = false
 	if needed_lever:
 		for lever in needed_lever:
-			if not lever.flipped:
+			if lever.flipped:
 				success= false
 	return success
 

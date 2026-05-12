@@ -15,6 +15,7 @@ func open():
 	globals.ui_manager.take_control(self)
 	if default_focus:
 		default_focus.grab_focus()
+	print(InputManager.in_control)
 
 func close():
 	if not is_open:
@@ -24,6 +25,7 @@ func close():
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
 	globals.ui_manager.release_control()
+	print(InputManager.in_control)
 
 func handle_input(_delta):
 	if Input.is_action_just_pressed("escape"):

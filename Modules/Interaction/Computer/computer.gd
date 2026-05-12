@@ -4,6 +4,8 @@ class_name Computer
 
 @export var data: ComputerData
 @onready var view_position: Marker3D = $ViewPosition
+@onready var computer_ui: ComputerUI = %"Computer UI"
+
 
 var player_camera: Camera3D
 var original_transform: Transform3D
@@ -30,8 +32,9 @@ func interact() -> void:
 	original_transform = globals.player_camera.global_transform
 	original_fov = globals.player_camera.fov
 	globals.player.lock_camera()
-	$"SubViewport/Computer UI".open()
+	computer_ui.open()
 	lerp_camera_to_screen()
+	#print("COMPUTER INTERACT")
 
 func lerp_camera_to_screen() -> void:
 	is_viewing = true
@@ -80,17 +83,18 @@ func close_computer() -> void:
 	tween.tween_callback(func():
 		is_viewing = false
 		#globals.ui_manager.desktop_viewer.call_deffered("close")
-		print(sub_viewport.get_child_count())
-		if sub_viewport.get_child_count() != 0:
-			sub_viewport.get_child(0).queue_free()
-		globals.player.unlock_camera()
+		#print(sub_viewport.get_child_count())
+		#if sub_viewport.get_child_count() != 0:
+			#sub_viewport.get_child(0).queue_free()
+		if globals.player:
+			globals.player.unlock_camera()
 	)
 
-#func handle_input(_delta) -> void:
-	#if is_viewing:
-		#if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("player_interact"):
+func handle_input(_delta) -> void:
+	if is_viewing:
+		if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("player_interact"):
 			#print("COMPUTER HANDLED INPUT")
-			#close_computer()
+			close_computer()
 			
 # Used for checking if the mouse is inside the Area3D.
 var is_mouse_inside = false
@@ -99,12 +103,12 @@ var last_event_pos2D = null
 # The time of the last event in seconds since engine start.
 var last_event_time: float = -1.0
 
-@onready var node_viewport = $SubViewport
+@onready var node_viewport = %SubViewport
 @onready var node_quad = $Screen
 @onready var node_area = $Screen/Area3D
 
 func _ready():
-	$"SubViewport/Computer UI".load_computer(preload("res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_computer.tres"))
+	computer_ui.load_computer(preload("res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_computer.tres"))
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
