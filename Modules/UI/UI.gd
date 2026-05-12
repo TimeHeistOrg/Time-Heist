@@ -4,6 +4,7 @@ class_name UI
 
 var is_open : bool = true
 @export var default_focus : Control
+@export var sub_viewport : SubViewport
 
 func open():
 	if is_open:
@@ -30,3 +31,7 @@ func close():
 func handle_input(_delta):
 	if Input.is_action_just_pressed("escape"):
 		close()
+		
+func handle_event(event):
+	if sub_viewport:
+		sub_viewport.push_input(event)

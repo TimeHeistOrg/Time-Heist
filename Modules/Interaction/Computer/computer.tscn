@@ -24,7 +24,7 @@ material = SubResource("StandardMaterial3D_8daly")
 size = Vector2(0.57, 0.35)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0jkef"]
-size = Vector3(0.57, 0.35, 0.1)
+size = Vector3(0.57, 0.35, 0.05)
 
 [node name="Computer" type="Node3D" unique_id=1194039688]
 script = ExtResource("1_2r8gm")
@@ -60,15 +60,17 @@ mesh = SubResource("QuadMesh_j65km")
 [node name="Area3D" type="Area3D" parent="Screen" unique_id=1770695385]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Screen/Area3D" unique_id=1810588887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.024999999)
 shape = SubResource("BoxShape3D_0jkef")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1627412615]
 unique_name_in_owner = true
+own_world_3d = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
-render_target_update_mode = 0
 
-[node name="Computer UI" parent="SubViewport" unique_id=1952193276 instance=ExtResource("4_2r8gm")]
+[node name="Computer UI" parent="SubViewport" unique_id=1952193276 node_paths=PackedStringArray("sub_viewport") instance=ExtResource("4_2r8gm")]
 unique_name_in_owner = true
+sub_viewport = NodePath("..")
 
 [connection signal="anon_interacted" from="StaticBody3D/Interactable" to="." method="interact"]

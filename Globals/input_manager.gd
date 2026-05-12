@@ -38,7 +38,6 @@ func change_input_controller(controller: InputControllers):
 			_switch_to_none()
 
 func _physics_process(delta):
-	print(get_viewport().gui_get_hovered_control())
 	match in_control:
 		InputControllers.UI:
 			_process_UI(delta)
@@ -69,9 +68,12 @@ func _switch_to_ui():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _input_UI(event: InputEvent):
+	if globals.ui_manager:
+		globals.ui_manager.cur_ui.handle_event(event)
 	pass
 
 func _process_UI(delta: float):
+	print(get_viewport().gui_get_hovered_control())
 	if globals.ui_manager:
 		globals.ui_manager.cur_ui.handle_input(delta)
 
