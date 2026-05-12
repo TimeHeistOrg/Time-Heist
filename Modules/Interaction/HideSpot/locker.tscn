@@ -1,30 +1,25 @@
 [gd_scene format=3 uid="uid://uww33bnurarr"]
 
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="1_gu15c"]
+[ext_resource type="PackedScene" uid="uid://cdbpk2wwrnswd" path="res://Assets/Models/Custom Assets/Locker.glb" id="1_r1lcu"]
 [ext_resource type="PackedScene" uid="uid://b3j6f486q3yvk" path="res://Modules/Interaction/HideSpot/hide_point.tscn" id="2_r1lcu"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ujb7q"]
-size = Vector3(0.5, 2, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ghx17"]
-size = Vector3(0.5, 2, 1)
+size = Vector3(0.57214355, 2, 0.6064453)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gu15c"]
-size = Vector3(0.5, 2, 1)
+size = Vector3(0.5751953, 2, 0.60253906)
 
 [node name="Locker" type="Node3D" unique_id=1382941412]
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=817063518]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
-layers = 16
-mesh = SubResource("BoxMesh_ujb7q")
+[node name="Locker" parent="." unique_id=1632036133 instance=ExtResource("1_r1lcu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.29, 0, 0)
 
-[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("1_gu15c")]
-mesh = NodePath("../Mesh")
-interact_object = NodePath("../HidePoint")
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("1_gu15c")]
+mesh = NodePath("../Locker/Cube")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=113367129]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28607178, 1, 0)
 shape = SubResource("BoxShape3D_ghx17")
 
 [node name="HidePoint" parent="." unique_id=1385311744 instance=ExtResource("2_r1lcu")]
@@ -35,7 +30,9 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1704035837]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28759766, 1, 0)
 shape = SubResource("BoxShape3D_gu15c")
 
 [connection signal="interacted_by" from="Interactable" to="HidePoint" method="interact"]
+
+[editable path="Locker"]

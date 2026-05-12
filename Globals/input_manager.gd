@@ -73,7 +73,7 @@ func _input_UI(event: InputEvent):
 	pass
 
 func _process_UI(delta: float):
-	print(get_viewport().gui_get_hovered_control())
+	#print(get_viewport().gui_get_hovered_control())
 	if globals.ui_manager:
 		globals.ui_manager.cur_ui.handle_input(delta)
 

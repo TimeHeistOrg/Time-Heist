@@ -1904,7 +1904,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.37
 [node name="Interactables" type="Node3D" parent="SubViewportContainer/SubViewport/MainRoom" unique_id=1088527655]
 
 [node name="Computer" parent="SubViewportContainer/SubViewport/MainRoom/Interactables" unique_id=1194039688 instance=ExtResource("19_p8kop")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2, 0.7, -28.825)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2, 0.7, -27.2)
 data = ExtResource("20_83phm")
 
 [node name="Locker" parent="SubViewportContainer/SubViewport/MainRoom/Interactables" unique_id=1382941412 instance=ExtResource("21_wsjrk")]
