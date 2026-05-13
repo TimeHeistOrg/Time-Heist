@@ -10,6 +10,7 @@ var display_time_elapsed: float = 0
 @export var needed_clearance: Array[globals.Clearances]
 @export var needed_doc: Array[DocumentInfo]
 @export var needed_lever: Array[Lever]
+@export var lever_check_unflipped : bool = false
 @export var locked_label : String = "Locked!"
 
 @export var perma_unlock: bool = false
@@ -66,8 +67,13 @@ func check_interact():
 				success = false
 	if needed_lever:
 		for lever in needed_lever:
-			if lever.flipped:
-				success= false
+			print(lever.flipped)
+			if not lever_check_unflipped:
+				if lever.flipped:
+					success= false
+			else:
+				if not lever.flipped:
+					success= false
 	return success
 
 #func _process(delta):

@@ -60,9 +60,11 @@ var lever_anim_length = 1.833
 var finish_delay = 0.533
 
 func _ready() -> void:
-	if flipped:
-		indicator.mesh.material.albedo_color = on_color
-	lever_ready = true
+	if not Engine.is_editor_hint():
+		if flipped:
+			flip()
+			indicator.mesh.material.albedo_color = on_color
+		lever_ready = true
 	
 func _process(delta: float) -> void:
 	if not Engine.is_editor_hint():
