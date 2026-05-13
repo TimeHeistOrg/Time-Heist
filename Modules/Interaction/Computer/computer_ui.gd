@@ -8,18 +8,23 @@ class_name ComputerUI
 const DESKTOP_ITEM = preload("res://Modules/Interaction/Computer/desktop_item.tscn")
 const APP_WINDOW = preload("res://Modules/Interaction/Computer/app_window.tscn")
 
+static var desktop_size: Vector2 = Vector2(1920,1080)
+
 func _ready() -> void:
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
+	size = desktop_size
 	close()
 
-#func open():
-	#print("Hello computer opening")
-	#super.open()
+func open():
+	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	print("Hello computer opening")
+	super.open()
 
 func close():
 	computer.close_computer()
+	print("Hello computer closing")
 	super.close()
 
 func load_computer(data: ComputerData) -> void:
@@ -56,7 +61,7 @@ func open_app(app: AppData) -> void:
 		open_windows[app].move_to_front()
 		return
 	
-	var win = APP_WINDOW.instantiate()
+	var win: AppWindow = APP_WINDOW.instantiate()
 	add_child(win)
 	
 	var content = app.app_scene.instantiate() as AppBase
@@ -85,12 +90,12 @@ var last_event_time: float = -1.0
 		#set_process(false)
 
 func _mouse_entered_area():
-	print("entered")
+	#print("entered")
 	is_mouse_inside = true
 
 
 func _mouse_exited_area():
-	print("exit")
+	#print("exit")
 	is_mouse_inside = false
 
 func _unhandled_input(event):
@@ -104,7 +109,7 @@ func _unhandled_input(event):
 
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
-	print("input")
+	#print("input")
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.
 	var quad_mesh_size = node_quad.mesh.size
 
