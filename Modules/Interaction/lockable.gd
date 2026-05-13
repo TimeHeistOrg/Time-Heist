@@ -1,7 +1,7 @@
 extends Node
 class_name Lockable
 
-@onready var label: Label = $CanvasLayer/Label
+@onready var label: Label = $Label
 
 var display_note: bool = false
 var display_time_elapsed: float = 0
@@ -39,8 +39,10 @@ func try_unlock():
 		return false
 		
 func fail_unlock():
-	display_note = true
-	label.visible = true
+	print("failed unlock")
+	globals.ui_manager.display_message(locked_label)
+	#display_note = true
+	#label.visible = true
 
 func succ_unlock():
 	unlocked_once = true
@@ -68,11 +70,11 @@ func check_interact():
 				success= false
 	return success
 
-func _process(delta):
-	if display_note:
-		if display_time_elapsed >= 2:
-			display_note = false
-			display_time_elapsed = 0
-			label.visible = false
-		else:
-			display_time_elapsed += delta
+#func _process(delta):
+	#if display_note:
+		#if display_time_elapsed >= 2:
+			#display_note = false
+			#display_time_elapsed = 0
+			#label.visible = false
+		#else:
+			#display_time_elapsed += delta

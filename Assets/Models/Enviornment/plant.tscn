@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bypd3h8336gog"]
 
-[ext_resource type="PackedScene" uid="uid://brppxk3p8u5yd" path="res://Assets/Models/Custom Assets/plant.fbx" id="1_dupgp"]
+[ext_resource type="PackedScene" uid="uid://brppxk3p8u5yd" path="res://Assets/Models/Imported Assets/plant.fbx" id="1_dupgp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uyw5b"]
 height = 1.0

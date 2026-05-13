@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b044w5b2cv7tp"]
+
+[ext_resource type="Script" uid="uid://c716rv5vpbu1u" path="res://Modules/Interaction/Door/bathroom_stall_door.gd" id="1_w2822"]
+[ext_resource type="PackedScene" uid="uid://bwhdpl42wl8l5" path="res://Modules/Interaction/Door/bathroom_stall_door.glb" id="2_2boax"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="6_p0a7j"]
+[ext_resource type="AudioStream" uid="uid://cdpr7pq46qe1h" path="res://Assets/SFX/open_door.ogg" id="7_tobi8"]
+[ext_resource type="AudioStream" uid="uid://bihq08irhlvhi" path="res://Assets/SFX/door_lock.ogg" id="8_5vc0y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6yhnp"]
+size = Vector3(1, 2, 0.1)
+
+[node name="Bathroom Stall Door" type="Node3D" unique_id=74631722]
+script = ExtResource("1_w2822")
+
+[node name="Timer" type="Timer" parent="." unique_id=295246165]
+
+[node name="bathroom_stall_door" parent="." unique_id=1636347813 instance=ExtResource("2_2boax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.875)
+
+[node name="Door RB" type="StaticBody3D" parent="bathroom_stall_door/ToiletDoor" parent_id_path=PackedInt32Array(1636347813, 1288816523) index="0" unique_id=274956453]
+transform = Transform3D(1, 0, 1.6292068e-07, 0, 1, 0, -1.6292068e-07, 0, 1, -0.46431497, 0.0022630095, 0.000432536)
+collision_layer = 16
+collision_mask = 0
+
+[node name="PhysicalCollider" type="CollisionShape3D" parent="bathroom_stall_door/ToiletDoor/Door RB" unique_id=1785011816]
+shape = SubResource("BoxShape3D_6yhnp")
+
+[node name="Interactable" parent="bathroom_stall_door/ToiletDoor" parent_id_path=PackedInt32Array(1636347813, 1288816523) index="1" unique_id=242002428 instance=ExtResource("6_p0a7j")]
+process_mode = 1
+transform = Transform3D(1, 0, 1.6292068e-07, 0, 1, 0, -1.6292068e-07, 0, 1, -0.464315, 0.0022630095, 0.000432536)
+
+[node name="InteractableCollider" type="CollisionShape3D" parent="bathroom_stall_door/ToiletDoor/Interactable" unique_id=1447105090]
+shape = SubResource("BoxShape3D_6yhnp")
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="." unique_id=1949909753]
+stream = ExtResource("7_tobi8")
+volume_db = -15.0
+
+[node name="DoorLock" type="AudioStreamPlayer" parent="." unique_id=1517413505]
+stream = ExtResource("8_5vc0y")
+volume_db = -22.0
+
+[connection signal="interacted_by" from="bathroom_stall_door/ToiletDoor/Interactable" to="." method="interact"]
+
+[editable path="bathroom_stall_door"]

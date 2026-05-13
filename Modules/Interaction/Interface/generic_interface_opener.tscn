@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8ujtjyoflg8w"]
 
 [ext_resource type="Script" uid="uid://dbbgpv5n4n33b" path="res://Modules/Interaction/Interface/generic_interface_opener.gd" id="1_7cvtx"]
-[ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Models/Custom Assets/Card_reader.glb" id="2_q2p1s"]
+[ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Models/Imported Assets/Card_reader.glb" id="2_q2p1s"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_njdgo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0um5"]

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2jmn7fqcsv24" path="res://Player[OLD]/OLD_camera_pivot.tscn" id="8_po6rv"]
 [ext_resource type="PackedScene" uid="uid://b0eilnkhu73fw" path="res://Player[OLD]/OLD_Player.tscn" id="9_o0dnm"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="10_ufuob"]
-[ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Custom Assets/cubicle_six_v3.glb" id="11_8a1gs"]
+[ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Imported Assets/cubicle_six_v3.glb" id="11_8a1gs"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="12_gp5nr"]
 [ext_resource type="PackedScene" uid="uid://bqogo44h7ydxf" path="res://Modules/UI/Game UI/UIPuzzles/test_puzzle.tscn" id="13_itykr"]
 [ext_resource type="PackedScene" uid="uid://pq0bcv62221l" path="res://Modules/Interaction/Interface/interface.tscn" id="14_6a1xg"]

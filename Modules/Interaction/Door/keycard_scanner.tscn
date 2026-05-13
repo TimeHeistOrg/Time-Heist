@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_kw5qb"]
 [ext_resource type="Script" uid="uid://b2gru4n14mfc5" path="res://Modules/Interaction/Door/keycard_scanner.gd" id="1_xq026"]
-[ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Models/Custom Assets/Card_reader.glb" id="2_0cwtd"]
+[ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Models/Imported Assets/Card_reader.glb" id="2_0cwtd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq026"]
 resource_local_to_scene = true

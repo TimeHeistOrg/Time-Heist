@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d30xr8t56lq6a"]
 
 [ext_resource type="Script" uid="uid://djaivhw1t2eaw" path="res://Modules/Interaction/Door/lever.gd" id="1_kiys5"]
-[ext_resource type="PackedScene" uid="uid://bct5lgiwebt2c" path="res://Assets/Models/Custom Assets/Lever.glb" id="2_k0w4t"]
+[ext_resource type="PackedScene" uid="uid://bct5lgiwebt2c" path="res://Assets/Models/Imported Assets/Lever.glb" id="2_k0w4t"]
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="2_qprpv"]
 [ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="3_k0w4t"]
 

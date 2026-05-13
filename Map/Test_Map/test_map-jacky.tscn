@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b0eilnkhu73fw" path="res://Player[OLD]/OLD_Player.tscn" id="8_515ed"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="9_kblvk"]
 [ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="10_0l4f8"]
-[ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Custom Assets/cubicle_six_v3.glb" id="11_fotk3"]
+[ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Imported Assets/cubicle_six_v3.glb" id="11_fotk3"]
 [ext_resource type="PackedScene" uid="uid://oyq0g5wotgxh" path="res://Assets/Models/Door_v20.gltf" id="12_b4kwg"]
 [ext_resource type="Material" uid="uid://bnu20tryb3xh8" path="res://Assets/Materials/PS Graphics Textures/Door_Material/door_material.tres" id="13_36fif"]
 [ext_resource type="Material" uid="uid://bps7barfjsgtm" path="res://Assets/Materials/PS Graphics Textures/Door_Material/knob_material.tres" id="14_a6xxq"]

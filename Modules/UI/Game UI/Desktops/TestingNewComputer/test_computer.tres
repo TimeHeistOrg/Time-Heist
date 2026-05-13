@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://cdijnfhp66gsc"]
 
 [ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_vp0if"]
+[ext_resource type="Resource" uid="uid://bui5ehkvr1j06" path="res://Assets/Documents/Resources/z3_bossoffice1_passkey.tres" id="2_pdc8g"]
 [ext_resource type="Texture2D" uid="uid://c0kml80xyvydp" path="res://Assets/UI/Computer/desktop_image.png" id="3_lc2jo"]
 [ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Assets/Documents/document_resource.gd" id="4_kkj4l"]
 [ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="4_lc2jo"]
@@ -10,7 +11,7 @@
 
 [sub_resource type="Resource" id="Resource_1xfwy"]
 script = ExtResource("6_o50am")
-file = ExtResource("5_pdc8g")
+file = ExtResource("2_pdc8g")
 metadata/_custom_type_script = "uid://ch45yfbtv40b2"
 
 [sub_resource type="Resource" id="Resource_tr3qd"]

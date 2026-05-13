@@ -114,6 +114,7 @@ func enter_sus():
 	_enter_state(AlertStates.SUSPICIOUS)
 
 func _enter_sus():
+	$AudioStreamPlayer.play()
 	$torso.get_surface_override_material(0).emission = Color(1.0, 0.0, 0.0, 1.0)
 
 func enter_alert():

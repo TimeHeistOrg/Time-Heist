@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bdcam7xlo4ify"]
+
+[ext_resource type="PackedScene" uid="uid://ef0meil1vil0" path="res://Assets/Models/Imported Assets/toilet.glb" id="1_piki7"]
+[ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="2_gyknt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxg1y"]
+size = Vector3(0.625, 0.94714355, 0.7715454)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jnbsa"]
+size = Vector3(0.6298828, 0.9603882, 0.77197266)
+
+[node name="Toilet" type="Node3D" unique_id=70609053]
+
+[node name="toilet" parent="." unique_id=561813451 instance=ExtResource("1_piki7")]
+
+[node name="Flush Lever_001" parent="toilet" index="1" unique_id=1404556937]
+transform = Transform3D(0.016786624, -0.0033680557, 0.00073401077, 0.00344707, 0.016419195, -0.0034930012, -1.6761684e-05, 0.003569251, 0.016761066, -0.28508365, 0.69693214, -0.22676846)
+
+[node name="Toilet Seat_001" parent="toilet" index="2" unique_id=266318404]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.47252116, -0.12855344)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1352851715]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=188251608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47357178, -0.007232666)
+shape = SubResource("BoxShape3D_oxg1y")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1715808081 node_paths=PackedStringArray("mesh")]
+script = ExtResource("2_gyknt")
+mesh = NodePath("../toilet/Toilet_001")
+metadata/_custom_type_script = "uid://d0afbfeblscar"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=156885981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47964478, -0.010986328)
+shape = SubResource("BoxShape3D_jnbsa")
+
+[editable path="toilet"]
