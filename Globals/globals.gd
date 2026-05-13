@@ -72,6 +72,7 @@ enum Device_Tabs {
 #region ui
 var normal_cursor = preload("res://Assets/UI/Computer/Cursor_normal.png")
 var clicking_cursor = preload("res://Assets/UI/Computer/Cursor_click.png")
+var ui_scale: float = .75
 #endregion
 
 var green_color : Color = Color("46af56ff")

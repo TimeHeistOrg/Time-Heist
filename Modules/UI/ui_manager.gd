@@ -2,7 +2,6 @@ extends Control
 class_name UI_Manager
 
 @onready var document_viewer = $DocumentViewer
-@onready var desktop_viewer: DesktopViewer = $"Desktop Viewer"
 @onready var debug_ui = $"DEBUG UI"
 @export var debug_mode: bool = false
 #@onready var camera_ui = $Camera
@@ -17,7 +16,6 @@ func _ready():
 	set_menu(device_menu,false)
 	set_menu(debug_ui,debug_mode)
 	set_menu(document_viewer,false)
-	set_menu(desktop_viewer,false)
 	set_menu(caught_ui, false)
 
 func take_control(ui: Control):

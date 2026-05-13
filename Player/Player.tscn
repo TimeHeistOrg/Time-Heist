@@ -926,8 +926,10 @@ parameters/RollTimeScale/scale = 1.0
 
 [node name="Camera Pivot" type="Node3D" parent="." unique_id=779677481]
 
-[node name="Camera3D" type="Camera3D" parent="Camera Pivot" unique_id=214841099]
+[node name="CameraMarker" type="Marker3D" parent="Camera Pivot" unique_id=1115571115]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 5.798, 1.928)
+
+[node name="Camera3D" type="Camera3D" parent="Camera Pivot/CameraMarker" unique_id=214841099]
 cull_mask = 1048031
 
 [node name="DetectionPoint" type="Marker3D" parent="." unique_id=500860138]

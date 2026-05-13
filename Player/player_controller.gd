@@ -3,28 +3,34 @@ class_name Player extends CharacterBody3D
 
 @onready var mesh: Node3D = $Mesh
 @onready var camera_pivot: Node3D = $"Camera Pivot"
-@onready var camera: Camera3D = $"Camera Pivot/Camera3D"
+@onready var camera: Camera3D = $"Camera Pivot/CameraMarker/Camera3D"
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var detection_point: Marker3D = $DetectionPoint
 @onready var interactor: Interactor = $Mesh/Interactor
 @onready var inventory_wheel: InventoryWheel = $"SubViewport/Inventory Wheel"
+@onready var camera_marker: Marker3D = $"Camera Pivot/CameraMarker"
 
 @export_category("Camera")
 @export var camera_up: float = 5.798:
 	set(value):
 		camera_up = value
 		if Engine.is_editor_hint():
-			$"Camera Pivot/Camera3D".position.y = value
+			camera_marker.position.y = value
 @export var camera_back: float = 1.928:
 	set(value):
 		camera_back = value
 		if Engine.is_editor_hint():
-			$"Camera Pivot/Camera3D".position.z = value
+			camera_marker.position.z = value
 @export var camera_angle: float = -60:
 	set(value):
 		camera_angle = value
 		if Engine.is_editor_hint():
-			$"Camera Pivot/Camera3D".rotation.x = deg_to_rad(value)
+			camera_marker.rotation.x = deg_to_rad(value)
+@export var camera_fov: float = 75:
+	set(value):
+		camera_fov = value
+		if Engine.is_editor_hint():
+			$"Camera Pivot/CameraMarker/Camera3D".fov = value
 
 @export_category("Movement Exports")
 @export var turn_weight: float = 0.5
@@ -62,11 +68,11 @@ var position_locked: bool = false
 var is_hidden: bool = false #hiding in a locker or other place.
 
 func _ready():
-	globals.player = self
-	globals.player_camera = camera
-	InputManager.player = self
-	$"Inventory Wheel Holder".player = self
-	run_enter()
+	if not Engine.is_editor_hint():
+		globals.player = self
+		InputManager.player = self
+		$"Inventory Wheel Holder".player = self
+		run_enter()
 
 func _process(delta): #This process is for things that should occur regardless of whether the player has control of input
 	if not Engine.is_editor_hint():
@@ -85,6 +91,34 @@ func _process(delta): #This process is for things that should occur regardless o
 func pan_camera_horizontally(angle):
 	if not camera_locked:
 		camera_pivot.rotate(Vector3.UP, angle)
+
+func return_camera(done_callable: Callable):
+	if not camera.position.is_zero_approx():
+		var tween = create_tween()
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(
+			camera,
+			"transform",
+			Transform3D.IDENTITY,
+			0.6
+		)
+		tween.parallel().tween_property(
+			camera,
+			"fov",
+			camera_fov,
+			0.6
+		)
+		tween.tween_callback(func():
+			done_callable.call()
+			#globals.ui_manager.desktop_viewer.call_deffered("close")
+			#print(sub_viewport.get_child_count())
+			#if sub_viewport.get_child_count() != 0:
+				#sub_viewport.get_child(0).queue_free()
+			unlock_camera()
+		)
+	else:
+		camera.position = Vector3.ZERO
 
 func interact():
 	interactor.interact()
