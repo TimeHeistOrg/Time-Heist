@@ -65,12 +65,10 @@ shape = SubResource("BoxShape3D_0jkef")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1627412615]
 unique_name_in_owner = true
-own_world_3d = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
 
-[node name="Computer UI" parent="SubViewport" unique_id=1952193276 node_paths=PackedStringArray("sub_viewport") instance=ExtResource("4_2r8gm")]
+[node name="Computer UI" parent="SubViewport" unique_id=1952193276 instance=ExtResource("4_2r8gm")]
 unique_name_in_owner = true
-sub_viewport = NodePath("..")
 
 [connection signal="anon_interacted" from="StaticBody3D/Interactable" to="." method="interact"]

@@ -7,7 +7,6 @@ class_name Computer
 @onready var computer_ui: ComputerUI = %"Computer UI"
 @onready var sub_viewport: SubViewport = $SubViewport
 
-var player_camera: Camera3D
 var original_transform: Transform3D
 var original_fov: float
 var is_viewing: bool = false
@@ -23,8 +22,6 @@ func _ready() -> void:
 func interact() -> void:
 	if is_viewing:
 		return
-	original_transform = globals.player_camera.global_transform
-	original_fov = globals.player_camera.fov
 	globals.player.lock_camera()
 	computer_ui.open()
 	lerp_camera_to_screen()
@@ -39,49 +36,18 @@ func lerp_camera_to_screen() -> void:
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(
-		globals.player_camera,
+		globals.player.camera,
 		"global_transform",
 		view_position.global_transform,
 		0.6
 	)
 	tween.parallel().tween_property(
-		globals.player_camera,
+		globals.player.camera,
 		"fov",
 		target_fov,
 		0.6
 	)
-	
 
 func close_computer() -> void:
-	if tween:
-		tween.kill()
-	tween = create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(
-		globals.player_camera,
-		"global_transform",
-		original_transform,
-		0.6
-	)
-	tween.parallel().tween_property(
-		globals.player_camera,
-		"fov",
-		original_fov,
-		0.6
-	)
-	tween.tween_callback(func():
-		is_viewing = false
-		#globals.ui_manager.desktop_viewer.call_deffered("close")
-		#print(sub_viewport.get_child_count())
-		#if sub_viewport.get_child_count() != 0:
-			#sub_viewport.get_child(0).queue_free()
-		if globals.player:
-			globals.player.unlock_camera()
-	)
-
-func handle_input(_delta) -> void:
-	if is_viewing:
-		if Input.is_action_just_pressed("escape") or Input.is_action_just_pressed("player_interact"):
-			#print("COMPUTER HANDLED INPUT")
-			close_computer()
+	if globals.player:
+		globals.player.return_camera(func(): is_viewing = false)

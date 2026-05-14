@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://otgu70i5id8y"]
+
+[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="1_2ubgt"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="1_ht85y"]
+[ext_resource type="Material" uid="uid://kvqyxm07kwge" path="res://Effects/screen_post_fx.tres" id="1_i6uw2"]
+[ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="2_7c0by"]
+
+[node name="Computer Testing" type="Node3D" unique_id=788554195]
+
+[node name="UI Manager" parent="." unique_id=1478464990 instance=ExtResource("1_2ubgt")]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1804465281]
+texture_filter = 1
+material = ExtResource("1_i6uw2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=557221160]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+physics_object_picking = true
+size = Vector2i(960, 540)
+size_2d_override = Vector2i(640, 360)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("1_ht85y")]
+
+[node name="Computer" parent="SubViewportContainer/SubViewport" unique_id=1194039688 instance=ExtResource("2_7c0by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.088819)

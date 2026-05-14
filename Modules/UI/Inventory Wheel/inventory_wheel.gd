@@ -26,8 +26,8 @@ const start = -TAU/4 - slot_width/2
 const slot_width = deg_to_rad(360/num_of_items)
 #const slot_width := full_slot_width - slot_gap_width
 const slot_gap_width : float = 15
-@onready var arc: Node2D = $Arc
-@onready var mask: Node2D = $Mask
+@onready var arc: Node2D = $Wheel/Arc
+@onready var mask: Node2D = $Wheel/Mask
 
 var is_open : bool = false
 

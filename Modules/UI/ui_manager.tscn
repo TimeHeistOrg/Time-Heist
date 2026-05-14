@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b8umb5d42v56y" path="res://Modules/UI/Game UI/HUD/hud.tscn" id="5_df44s"]
 [ext_resource type="PackedScene" uid="uid://djm2xkntdba18" path="res://Modules/UI/Game UI/device_menu.tscn" id="5_keavj"]
 [ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="6_df44s"]
-[ext_resource type="PackedScene" uid="uid://v7qhxfhoa5ng" path="res://Modules/UI/Game UI/DesktopViewer/desktop_viewer.tscn" id="6_purnk"]
 [ext_resource type="PackedScene" uid="uid://cndkl22sd4vd8" path="res://Modules/UI/Game UI/CaughtUI.tscn" id="8_1ex2v"]
 
 [sub_resource type="GDScript" id="GDScript_yaem8"]
@@ -123,11 +122,6 @@ script = SubResource("GDScript_isv23")
 [node name="Safe Ratio Display" type="Label" parent="DEBUG UI/VBoxContainer" unique_id=679642968]
 layout_mode = 2
 script = SubResource("GDScript_df44s")
-
-[node name="Desktop Viewer" parent="." unique_id=2027082529 instance=ExtResource("6_purnk")]
-visible = false
-z_index = 1
-layout_mode = 1
 
 [node name="DocumentViewer" parent="." unique_id=1468834605 instance=ExtResource("3_jfs1l")]
 visible = false

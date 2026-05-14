@@ -4,8 +4,8 @@ class_name Lever
 
 @onready var animation_player: AnimationPlayer = $Lever2/AnimationPlayer
 @onready var indicator: MeshInstance3D = $Lever2/Indicator
-var on_color : Color = globals.green_color
-var off_color : Color = globals.red_color
+var on_color : Color
+var off_color : Color
 
 signal lever_flipped(flip: bool)
 
@@ -60,11 +60,12 @@ var lever_anim_length = 1.833
 var finish_delay = 0.533
 
 func _ready() -> void:
+	if flipped:
+		indicator.mesh.material.albedo_color = on_color
+	lever_ready = true
 	if not Engine.is_editor_hint():
-		if flipped:
-			flip()
-			indicator.mesh.material.albedo_color = on_color
-		lever_ready = true
+		on_color = globals.green_color
+		off_color = globals.red_color
 	
 func _process(delta: float) -> void:
 	if not Engine.is_editor_hint():

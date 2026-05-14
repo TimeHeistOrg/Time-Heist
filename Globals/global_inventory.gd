@@ -6,7 +6,7 @@ var items : Array[PickupItem] : #TIMEVAR
 		if globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"items",items,value)
 		items = value
-		print(items)
+		#print(items)
 		globals.update_items.emit()
 @export var items_to_start_with : Array[PickupItem] = []
 var documents : Array[DocumentInfo] = [preload("res://Assets/Documents/Resources/basement_goal_note.tres")]
