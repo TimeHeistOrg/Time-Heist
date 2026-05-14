@@ -9,7 +9,7 @@ var items : Array[PickupItem] : #TIMEVAR
 		#print(items)
 		globals.update_items.emit()
 @export var items_to_start_with : Array[PickupItem] = []
-var documents : Array[DocumentInfo] = [preload("res://Assets/Documents/Resources/basement_goal_note.tres")]
+var documents : Array[DocumentInfo] = [preload("res://Assets/Documents/Resources/hello_playtester.tres")]
 var clearances : Array[globals.Clearances]
 signal update_device_files
 

@@ -8,5 +8,5 @@ script = ExtResource("1_qitqh")
 document_id = 9
 title = "Mysterious Security Room Note"
 document_image = ExtResource("1_2yt1x")
-relevant_tags = Array[String](["Uncategorized", "Basement", "All Files"])
+relevant_tags = Array[String](["Basement", "All Files"])
 metadata/_custom_type_script = "uid://c4r7d4bl70rat"

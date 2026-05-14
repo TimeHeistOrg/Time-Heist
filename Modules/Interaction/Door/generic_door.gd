@@ -32,6 +32,9 @@ class_name Generic_Door
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_locked",is_locked,value)
+			if value:
+				print("here")
+				$AudioStreamPlayer3D.play()
 		is_locked = value
 
 var cur_action: DoorTimeAction = null: #TIMEVAR

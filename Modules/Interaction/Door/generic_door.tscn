@@ -80,18 +80,16 @@ shadow_mesh = SubResource("ArrayMesh_bbycu")
 
 [node name="Generic_Door" type="Node3D" unique_id=74631722]
 script = ExtResource("1_nk12b")
-is_open = null
-is_locked = null
 
 [node name="Timer" type="Timer" parent="." unique_id=295246165]
 
 [node name="Door_Frame_with_Door_Animated_v2(Faster)" parent="." unique_id=902016995 instance=ExtResource("2_haa8g")]
 transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -0.47409245, 0, 0.075)
 
-[node name="DoorHinge" parent="Door_Frame_with_Door_Animated_v2(Faster)" index="0" unique_id=1294770791]
+[node name="DoorHinge" parent="Door_Frame_with_Door_Animated_v2(Faster)" index="0" unique_id=367917815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Door" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge" index="0" unique_id=1160806817]
+[node name="Door" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge" index="0" unique_id=217019814]
 material_overlay = ExtResource("3_aahkk")
 mesh = SubResource("ArrayMesh_tcs74")
 
@@ -103,7 +101,7 @@ collision_mask = 0
 [node name="PhysicalCollider" type="CollisionShape3D" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB" unique_id=1785011816]
 shape = SubResource("BoxShape3D_6yhnp")
 
-[node name="DoorKnob" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Knob Pivot" parent_id_path=PackedInt32Array(902016995, 816142031) index="0" unique_id=220925075]
+[node name="DoorKnob" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Knob Pivot" parent_id_path=PackedInt32Array(902016995, 1603933095) index="0" unique_id=524392665]
 mesh = SubResource("ArrayMesh_5o8aa")
 
 [node name="Interactable" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door" index="2" unique_id=242002428 instance=ExtResource("2_im0k3")]
@@ -120,6 +118,9 @@ volume_db = -15.0
 [node name="DoorLock" type="AudioStreamPlayer" parent="." unique_id=1517413505]
 stream = ExtResource("5_iwxtq")
 volume_db = -22.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="." unique_id=121705833]
+stream = ExtResource("5_iwxtq")
 
 [connection signal="interacted_by" from="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Interactable" to="." method="interact"]
 

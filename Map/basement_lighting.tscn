@@ -62,7 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://b3j6f486q3yvk" path="res://Modules/Interaction/HideSpot/hide_point.tscn" id="60_j008v"]
 [ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="60_wy2fh"]
 [ext_resource type="PackedScene" uid="uid://b6e5qgk70022f" path="res://Modules/UI/Game UI/Desktops/basement_albus_desktop.tscn" id="61_88fyl"]
-[ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/basement_albus_keycard.tres" id="61_j008v"]
+[ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/z3_drylab_keycard.tres" id="61_j008v"]
 [ext_resource type="PackedScene" uid="uid://b64j2lbpoxerw" path="res://Modules/Interaction/Security Cameras/security_ui.tscn" id="62_j008v"]
 [ext_resource type="Script" uid="uid://0r212ndsymxn" path="res://Modules/UI/Game UI/Minimap/mini_map_camera.gd" id="66_wy2fh"]
 

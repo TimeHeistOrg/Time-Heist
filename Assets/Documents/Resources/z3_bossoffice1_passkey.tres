@@ -8,5 +8,5 @@ script = ExtResource("1_7cljy")
 document_id = 12
 title = "Office Passkeys"
 document_image = ExtResource("1_6pl0a")
-relevant_tags = Array[String](["Passwords", "Uncategorized"])
+relevant_tags = Array[String](["Passwords", "All Files"])
 metadata/_custom_type_script = "uid://c4r7d4bl70rat"
