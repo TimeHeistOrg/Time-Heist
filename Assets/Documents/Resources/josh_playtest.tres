@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://dv3f4s8papevu"]
+
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Assets/Documents/document_resource.gd" id="1_7tlfx"]
+[ext_resource type="Texture2D" uid="uid://dq50rpyirfdj5" path="res://Assets/Documents/Textures/13_josh_playtest.png" id="1_tctvn"]
+
+[resource]
+script = ExtResource("1_7tlfx")
+document_id = 13
+title = "Josh! Hi!"
+document_image = ExtResource("1_tctvn")
+relevant_tags = Array[String](["Uncategorized", "Josh..."])
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

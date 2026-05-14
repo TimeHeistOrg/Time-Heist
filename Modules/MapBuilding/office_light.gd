@@ -28,10 +28,10 @@ func toggle():
 		on()
 	
 func set_light(flip: bool):
-	if flip:
-		on()
-	else:
-		off()
+	on() if flip else off()
+		
+func set_light_opposite(flip: bool):
+	on() if not flip else off()
 
 func _process(delta: float) -> void:
 	light_energy = lerpf(light_energy, target_energy, fade_speed * delta)

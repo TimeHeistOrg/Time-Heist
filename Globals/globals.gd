@@ -52,6 +52,7 @@ var allow_interact: bool = true
 enum Clearances {
 	Security,
 	Lab,
+	LabII,
 	Upper_Office,
 	Utility,
 	Other

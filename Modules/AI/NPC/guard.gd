@@ -125,7 +125,7 @@ func _enter_alert():
 	pass
 
 func _on_npc_hitbox_body_entered(body: Node3D) -> void:
-	if body == globals.player and globals.player_invisible:
+	if body == globals.player and not globals.player_invisible:
 		catch_player()
 
 func catch_player():

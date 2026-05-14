@@ -59,6 +59,7 @@ var cur_action: DoorTimeAction = null: #TIMEVAR
 		cur_action = value
 
 
+
 var door_ready: bool = false
 var progress:float = 0
 var door_anim_length = 0.625
@@ -126,6 +127,20 @@ func unlock():
 
 func toggle_lock():
 	is_locked = not is_locked
+	
+func set_lock_opposite(flipped : bool):
+	if flipped:
+		is_locked = false
+	else:
+		close()
+		is_locked = true
+
+func set_lock(flipped : bool):
+	if flipped:
+		close()
+		is_locked = true
+	else:
+		is_locked = false
 	
 func unlock_open():
 	unlock()
