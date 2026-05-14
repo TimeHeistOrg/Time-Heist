@@ -16,7 +16,10 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8daly"]
 resource_local_to_scene = true
+shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_i46hk")
+texture_filter = 1
+texture_repeat = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_j65km"]
 resource_local_to_scene = true
@@ -65,6 +68,7 @@ shape = SubResource("BoxShape3D_0jkef")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1627412615]
 unique_name_in_owner = true
+own_world_3d = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
 

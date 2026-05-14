@@ -36,6 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "You've been caught!"
+horizontal_alignment = 1
 
 [node name="TryAgain" type="Button" parent="." unique_id=2014763679]
 process_mode = 3
@@ -77,6 +78,7 @@ focus_neighbor_top = NodePath("../TryAgain")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../TryAgain")
 theme_override_font_sizes/font_size = 60
+disabled = true
 text = "Return to Homebase"
 
 [connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

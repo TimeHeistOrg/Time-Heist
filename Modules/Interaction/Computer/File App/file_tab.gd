@@ -1,4 +1,4 @@
-extends AppBase
+class_name FileTab extends AppBase
 var file
 @onready var file_viewer: TextureRect = $FileViewer
 
