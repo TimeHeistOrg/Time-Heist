@@ -63,6 +63,10 @@ func progress(npc: NPC, from: float, to: float):
 	return to >= time_end
 
 func revert(npc: NPC, from: float, to: float):
-	npc.global_position = get_position_at_time(to)
-	npc.look_at(npc.global_position + get_direction())
-	return to < time_start
+	if to > time_start:
+		npc.global_position = get_position_at_time(to)
+		npc.look_at(npc.global_position + get_direction())
+		return false
+	else:
+		npc.global_position = prev_vertex.position
+		return true
