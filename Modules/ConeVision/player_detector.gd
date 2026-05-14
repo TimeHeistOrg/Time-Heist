@@ -90,11 +90,11 @@ func create_mesh():
 	
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
-		if player_in_zone and not globals.player.is_hidden and not globals.player_invisible and not globals.time_manager.is_time_traveling:
+		if player_in_zone and not globals.player.is_hidden and not globals.player_invisible and globals.time_manager.delta_time > 0:
 			sight_checker.look_at(globals.player.detection_point.global_position)
 			if sight_checker.get_collider() == globals.player:
 				player_spotted = true
-			else:
+		else:
 				player_spotted = false
 
 func _on_body_entered(body: Node3D) -> void:
