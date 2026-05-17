@@ -27,7 +27,7 @@ var camera : Node3D
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = true
+var player_invisible: bool = false
 #endregion
 
 #region Detection
@@ -52,6 +52,7 @@ var allow_interact: bool = true
 enum Clearances {
 	Security,
 	Lab,
+	LabII,
 	Upper_Office,
 	Utility,
 	Other

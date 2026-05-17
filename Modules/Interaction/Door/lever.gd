@@ -15,16 +15,15 @@ signal lever_flipped(flip: bool)
 		if not Engine.is_editor_hint():
 			if lever_ready and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"flipped",flipped,value)
-			flipped = value
-			
-		elif animation_player:
-			flipped = value
+			lever_flipped.emit(value)
+		if animation_player:
 			if value:
 				animation_player.play("Down")
 				indicator.mesh.material.albedo_color = on_color
 			else:
 				animation_player.play("Up")
 				indicator.mesh.material.albedo_color = off_color
+		flipped = value
 				
 @export var is_jammed : bool = false: #TIMEVAR
 	set(value):
@@ -118,6 +117,12 @@ func toggle_flip():
 	else:
 		@warning_ignore("standalone_ternary")
 		unflip() if flipped else flip()
+
+func set_flipped(yes_flip: bool):
+	if yes_flip:
+		flip()
+	else:
+		unflip()
 
 func jam():
 	is_jammed = true

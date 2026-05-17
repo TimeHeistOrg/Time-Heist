@@ -58,6 +58,9 @@ func _physics_process(delta):
 			stopped_time_travel.emit()
 			is_time_traveling = false
 	cur_time += delta_time
+	if cur_time > 5 * 60:
+		globals.player_caught()
+		globals.ui_manager.caught_ui.label.text = "Out of time!"
 	#print(cur_time)
 	
 

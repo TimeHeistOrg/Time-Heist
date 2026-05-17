@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://cdmieat3en1nr"]
+
+[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_fy18i"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="2_wlore"]
+[ext_resource type="Script" uid="uid://4064plqmijmo" path="res://Modules/Interaction/Computer/Resources/text_app_config.gd" id="3_n127l"]
+[ext_resource type="Resource" uid="uid://d3gtigfbf5ijo" path="res://Assets/UI/Computer/Text Messages/josh_andy_curly_drylab_keycard.tres" id="3_wlore"]
+[ext_resource type="Texture2D" uid="uid://c0kml80xyvydp" path="res://Assets/UI/Computer/desktop_image.png" id="4_bl8om"]
+[ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="5_5ferf"]
+[ext_resource type="Resource" uid="uid://b2okpxvbvt0xf" path="res://Assets/Documents/Resources/z3_lab_map.tres" id="5_bl8om"]
+[ext_resource type="Script" uid="uid://ch45yfbtv40b2" path="res://Modules/Interaction/Computer/Resources/file_app_config.gd" id="6_5ferf"]
+
+[sub_resource type="Resource" id="Resource_khkq3"]
+script = ExtResource("3_n127l")
+convos = Array[ExtResource("2_wlore")]([ExtResource("3_wlore")])
+which_person = Array[int]([0])
+metadata/_custom_type_script = "uid://4064plqmijmo"
+
+[sub_resource type="Resource" id="Resource_4gk66"]
+script = ExtResource("6_5ferf")
+file = ExtResource("5_bl8om")
+metadata/_custom_type_script = "uid://ch45yfbtv40b2"
+
+[resource]
+script = ExtResource("5_5ferf")
+desktop_image = ExtResource("4_bl8om")
+apps = Array[ExtResource("1_fy18i")]([SubResource("Resource_khkq3"), SubResource("Resource_4gk66")])
+metadata/_custom_type_script = "uid://drdqf0ywp8oy7"

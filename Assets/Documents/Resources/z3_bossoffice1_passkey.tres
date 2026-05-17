@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://bui5ehkvr1j06"]
+
+[ext_resource type="Texture2D" uid="uid://n1frjojlywyu" path="res://Assets/Documents/Textures/12_office_passkeys.png" id="1_6pl0a"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Assets/Documents/document_resource.gd" id="1_7cljy"]
+
+[resource]
+script = ExtResource("1_7cljy")
+document_id = 12
+title = "Office Passkeys"
+document_image = ExtResource("1_6pl0a")
+relevant_tags = Array[String](["Passwords", "All Files"])
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

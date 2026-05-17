@@ -1,5 +1,7 @@
 extends UI
 
+@onready var label: Label = $Label
+
 func _on_try_again_pressed():
 	print("press restart")
 	close()

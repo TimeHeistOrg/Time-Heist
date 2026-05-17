@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Dialogue/Linda_face.png" id="2_3duep"]
 [ext_resource type="PackedScene" uid="uid://be0g844ywaxq6" path="res://Modules/ConeVision/player_detector.tscn" id="3_3duep"]
 [ext_resource type="PackedScene" uid="uid://sr7naop2qhp7" path="res://Modules/ConeVision/laser.tscn" id="3_k7y8f"]
+[ext_resource type="AudioStream" uid="uid://c2wmvoidbx0k2" path="res://Assets/SFX/digital-ui-access-denied-alert-vadi-sound-1-1-00-01.mp3" id="5_1t78y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6qgu"]
 resource_name = "bottom grey"
@@ -163,10 +164,14 @@ size = Vector3(1, 1.9223633, 1)
 
 [node name="Guard" type="Node3D" unique_id=854805088]
 script = ExtResource("1_3duep")
+alert_time = 0.8
+caught_time = 1.6
 
 [node name="PlayerDetector" parent="." unique_id=1869490121 instance=ExtResource("3_3duep")]
 collision_layer = 0
 input_ray_pickable = false
+sight_line_angle = 100.0
+sight_line_radius = 7.5
 
 [node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_k7y8f")]
 
@@ -203,5 +208,8 @@ input_ray_pickable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1655377873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935791, 0)
 shape = SubResource("BoxShape3D_3duep")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1442212525]
+stream = ExtResource("5_1t78y")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_npc_hitbox_body_entered"]

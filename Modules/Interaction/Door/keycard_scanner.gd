@@ -4,6 +4,15 @@ class_name KeycardScanner
 @onready var indicator: MeshInstance3D = $Card_reader/Indicator
 
 @export var lock : Lockable = null
+@export var retrigger : float = 0.0 #seconds
+var retrigger_timer: float = 0.0
+var is_ready : bool = true : #TIMEVAR
+	set(value):
+		if globals.time_manager and globals.time_manager.logging:
+			globals.time_manager.timelog(self,"is_ready",is_ready,value)
+		elif not value:
+			retrigger_timer = retrigger
+		is_ready = value
 
 signal keycard_scanned
 
@@ -19,13 +28,25 @@ func _ready() -> void:
 	indicator.mesh.material.albedo_color = default_color
 
 func interact():
+	if not is_ready:
+		return
 	if lock and not lock.try_unlock():
 		show_feedback(globals.red_color)
 		return
-		
+	
 	keycard_scanned.emit()
 	show_feedback(globals.green_color)
-			
+	if retrigger > 0:
+		is_ready = false
+
+func _physics_process(delta: float) -> void:
+	if not is_ready:
+		retrigger_timer += globals.time_manager.delta_time
+		if retrigger_timer >= retrigger:
+			keycard_scanned.emit()
+			retrigger_timer = 0
+			is_ready = true
+		
 func show_feedback(color: Color) -> void:
 	indicator.mesh.material.albedo_color = color
 	feedback_timer.stop()

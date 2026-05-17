@@ -32,6 +32,9 @@ class_name Generic_Door
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_locked",is_locked,value)
+			if value:
+				print("here")
+				$AudioStreamPlayer3D.play()
 		is_locked = value
 
 var cur_action: DoorTimeAction = null: #TIMEVAR
@@ -57,6 +60,7 @@ var cur_action: DoorTimeAction = null: #TIMEVAR
 		if globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"cur_action",cur_action,value)
 		cur_action = value
+
 
 
 var door_ready: bool = false
@@ -126,6 +130,20 @@ func unlock():
 
 func toggle_lock():
 	is_locked = not is_locked
+	
+func set_lock_opposite(flipped : bool):
+	if flipped:
+		is_locked = false
+	else:
+		close()
+		is_locked = true
+
+func set_lock(flipped : bool):
+	if flipped:
+		close()
+		is_locked = true
+	else:
+		is_locked = false
 	
 func unlock_open():
 	unlock()

@@ -9,14 +9,17 @@
 size = Vector3(0.5810547, 0.4736328, 0.21264648)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2r8gm"]
-size = Vector3(0.6, 0.6, 0.2)
+size = Vector3(0.7607422, 0.7118408, 0.49746093)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_i46hk"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8daly"]
 resource_local_to_scene = true
+shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_i46hk")
+texture_filter = 1
+texture_repeat = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_j65km"]
 resource_local_to_scene = true
@@ -47,7 +50,7 @@ skeleton = NodePath("../..")
 mesh = NodePath("../MeshInstance3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Interactable" unique_id=806806907]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27083367, -0.06754547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2520959, -0.21627595)
 shape = SubResource("BoxShape3D_2r8gm")
 
 [node name="ViewPosition" type="Marker3D" parent="." unique_id=212127651]
@@ -65,6 +68,7 @@ shape = SubResource("BoxShape3D_0jkef")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1627412615]
 unique_name_in_owner = true
+own_world_3d = true
 handle_input_locally = false
 size = Vector2i(1920, 1080)
 

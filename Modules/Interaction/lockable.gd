@@ -10,6 +10,7 @@ var display_time_elapsed: float = 0
 @export var needed_clearance: Array[globals.Clearances]
 @export var needed_doc: Array[DocumentInfo]
 @export var needed_lever: Array[Lever]
+@export var lever_check_unflipped : bool = false
 @export var locked_label : String = "Locked!"
 
 @export var perma_unlock: bool = false
@@ -39,8 +40,10 @@ func try_unlock():
 		return false
 		
 func fail_unlock():
-	display_note = true
-	label.visible = true
+	print("failed unlock")
+	globals.ui_manager.display_message(locked_label)
+	#display_note = true
+	#label.visible = true
 
 func succ_unlock():
 	unlocked_once = true
@@ -64,15 +67,20 @@ func check_interact():
 				success = false
 	if needed_lever:
 		for lever in needed_lever:
-			if lever.flipped:
-				success= false
+			print(lever.flipped)
+			if lever_check_unflipped:
+				if lever.flipped:
+					success= false
+			else:
+				if not lever.flipped:
+					success= false
 	return success
 
-func _process(delta):
-	if display_note:
-		if display_time_elapsed >= 2:
-			display_note = false
-			display_time_elapsed = 0
-			$Label.visible = false
-		else:
-			display_time_elapsed += delta
+#func _process(delta):
+	#if display_note:
+		#if display_time_elapsed >= 2:
+			#display_note = false
+			#display_time_elapsed = 0
+			#label.visible = false
+		#else:
+			#display_time_elapsed += delta

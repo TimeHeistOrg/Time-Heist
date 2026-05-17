@@ -63,4 +63,6 @@ func collect_clearance(clearance : globals.Clearances):
 		$"HBoxContainer/Inventory/Clearance/Upper Office".show()
 	if clearance == globals.Clearances.Utility:
 		$HBoxContainer/Inventory/Clearance/Utility.show()
+	if clearance == globals.Clearances.LabII:
+		$HBoxContainer/Inventory/Clearance/LabII.show()
 #endregion

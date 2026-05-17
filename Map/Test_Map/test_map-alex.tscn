@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="10_6nm1w"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="10_g2cin"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="11_6nm1w"]
-[ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Custom Assets/cubicle_six_v3.glb" id="11_88cv8"]
+[ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Imported Assets/cubicle_six_v3.glb" id="11_88cv8"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="11_fsrqj"]
 [ext_resource type="PackedScene" uid="uid://bqogo44h7ydxf" path="res://Modules/UI/Game UI/UIPuzzles/test_puzzle.tscn" id="12_mtkwk"]
 [ext_resource type="PackedScene" uid="uid://pq0bcv62221l" path="res://Modules/Interaction/Interface/interface.tscn" id="13_88cv8"]

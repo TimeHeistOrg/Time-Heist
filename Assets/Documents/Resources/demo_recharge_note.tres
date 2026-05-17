@@ -8,4 +8,5 @@ script = ExtResource("1_miy72")
 document_id = 8
 title = "Recharger Note"
 document_image = ExtResource("1_omlia")
+relevant_tags = Array[String](["All Files"])
 metadata/_custom_type_script = "uid://c4r7d4bl70rat"

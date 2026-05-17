@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_yfypv")
 name = "Key"
-description = "Opens archive room"
+description = "Apple!"
 image = ExtResource("1_gvnc6")
 mesh = ExtResource("2_au83d")
 metadata/_custom_type_script = "uid://dgvkvasouhadn"

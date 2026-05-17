@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b1sw083h5lqhn"]
+
+[ext_resource type="PackedScene" uid="uid://cofbdv5oh4va0" path="res://Assets/Models/Imported Assets/SmallShelf.fbx" id="1_35a4y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1a2i"]
+size = Vector3(3.0888672, 1.0551758, 0.28320313)
+
+[node name="SmallShelf" type="Node3D" unique_id=1214352518]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=63001347]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1742950390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0517578e-05, 0.52563477, 0.0075712204)
+shape = SubResource("BoxShape3D_r1a2i")
+
+[node name="SmallShelf" parent="." unique_id=944046919 instance=ExtResource("1_35a4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0, 0)
+
+[node name="SmallShelf3" parent="." unique_id=1374330824 instance=ExtResource("1_35a4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 0, 0)
+
+[node name="SmallShelf2" parent="." unique_id=137647164 instance=ExtResource("1_35a4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 0, 0)
+
+[node name="SmallShelf4" parent="." unique_id=744974293 instance=ExtResource("1_35a4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.125, 0, 0)

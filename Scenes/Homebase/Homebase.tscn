@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://du7w2m0hi52ek" path="res://Scenes/Homebase/leave_area.gd" id="10_li6v2"]
 [ext_resource type="Resource" uid="uid://brwt5hp8o0ynn" path="res://Dialogue/start_run.dialogue" id="13_duq24"]
 [ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall_old.tscn" id="13_g4j4g"]
-[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_char.tscn" id="14_1ssgq"]
+[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="14_1ssgq"]
 [ext_resource type="Resource" uid="uid://dia7uwu0uy0sd" path="res://Dialogue/to_tutorial.dialogue" id="14_hmmab"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="15_duq24"]
 [ext_resource type="PackedScene" uid="uid://fmcuj3rcvfja" path="res://Assets/Models/Enviornment/l_desk.tscn" id="16_hmmab"]

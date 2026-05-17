@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cv00ael0hyxty"]
 
-[ext_resource type="PackedScene" uid="uid://xijfgkbwlx8u" path="res://Assets/Models/Custom Assets/meetingtable.fbx" id="1_osp7e"]
+[ext_resource type="PackedScene" uid="uid://xijfgkbwlx8u" path="res://Assets/Models/Imported Assets/meetingtable.fbx" id="1_osp7e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hmmab"]
 size = Vector3(2, 1, 4)

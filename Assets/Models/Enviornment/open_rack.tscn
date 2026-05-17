@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmwqoiqmc8gg2"]
 
-[ext_resource type="PackedScene" uid="uid://dpdvkht1hejii" path="res://Assets/Models/Custom Assets/BigFrame.fbx" id="1_5glh3"]
+[ext_resource type="PackedScene" uid="uid://dpdvkht1hejii" path="res://Assets/Models/Imported Assets/BigFrame.fbx" id="1_5glh3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_udxfg"]
 size = Vector3(0.82263184, 1.9519043, 0.25805664)

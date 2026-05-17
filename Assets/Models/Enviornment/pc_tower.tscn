@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c3wleconqpaqy"]
+
+[ext_resource type="PackedScene" uid="uid://bqod8oromaayo" path="res://Assets/Models/Imported Assets/pc_tower.glb" id="1_b7evj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udxfg"]
+size = Vector3(0.33381653, 0.3460617, 0.17041016)
+
+[node name="PC Tower" type="Node3D" unique_id=865723330]
+
+[node name="pc_tower" parent="." unique_id=1442999369 instance=ExtResource("1_b7evj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=644151774]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1573324213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17120743, 0)
+shape = SubResource("BoxShape3D_udxfg")

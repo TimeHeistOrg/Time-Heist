@@ -61,7 +61,8 @@ func _gen_board() -> void:
 			cell.owner = get_tree().edited_scene_root if Engine.is_editor_hint() else null
 			row_cells.append(cell)
 			cell.init(r, c)
-			cell.rotation_changed.connect(_on_cell_updated)
+			if not Engine.is_editor_hint():
+				cell.rotation_changed.connect(_on_cell_updated)
 
 		
 		# add row to board
@@ -153,8 +154,10 @@ func _get_cell_neighbors(cell: Node) -> Array:
 		
 
 func _ready() -> void:	
-	if mouse_visible_on_start:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if not Engine.is_editor_hint():
+		close()
+		if mouse_visible_on_start:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	# the signal get funky since they are made in the editor/before runtime or something
 	# so i found this approach to fix it...
@@ -168,6 +171,7 @@ func _build_board_from_scene() -> void:
 	for row_node in background.get_children():
 		var row_cells: Array = []
 		for cell in row_node.get_children():
-			cell.rotation_changed.connect(_on_cell_updated)
+			if not Engine.is_editor_hint():
+				cell.rotation_changed.connect(_on_cell_updated)
 			row_cells.append(cell)
 		board.append(row_cells)

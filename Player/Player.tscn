@@ -18,7 +18,9 @@
 [ext_resource type="Animation" uid="uid://b50qfn4qgsuwk" path="res://Player/Animation/MaleLocomotion/walking.res" id="16_i4o1l"]
 [ext_resource type="PackedScene" uid="uid://8gkxub0dm0s7" path="res://Modules/Interaction/Interactor.tscn" id="17_j2n6q"]
 [ext_resource type="Texture2D" uid="uid://bbradfuplryhd" path="res://Assets/UI/HUD/Minimap/timepin.png" id="18_c6x0f"]
+[ext_resource type="Shader" uid="uid://d1gd8vm0a4uou" path="res://Effects/time_travel_1.gdshader" id="18_roy6y"]
 [ext_resource type="PackedScene" uid="uid://cvryici2ywxll" path="res://Modules/UI/Inventory Wheel/inventory_wheel.tscn" id="19_d7xyo"]
+[ext_resource type="Script" uid="uid://w74t1d1ps1fb" path="res://Effects/time_travel_effect.gd" id="19_u5tep"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pta86"]
 radius = 0.25
@@ -622,6 +624,15 @@ nodes/RollTimeScale/node = SubResource("AnimationNodeTimeScale_rrlna")
 nodes/RollTimeScale/position = Vector2(-150, 250)
 node_connections = [&"output", 0, &"MoveStates", &"MoveStates", 0, &"RunWalkBlend", &"MoveStates", 1, &"RollTimeScale", &"MoveStates", 2, &"CrouchBlendSpace", &"RollTimeScale", 0, &"RollAnim"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ps8ct"]
+shader = ExtResource("18_roy6y")
+shader_parameter/intensity = 0.0
+shader_parameter/chromatic_spread = 15.0
+shader_parameter/warp_amount = 0.8
+shader_parameter/radial_blur_power = 0.2
+shader_parameter/tint = Color(0.8, 0.9, 1, 1)
+shader_parameter/brightness = 1.5
+
 [sub_resource type="GDScript" id="GDScript_evw08"]
 resource_name = "Inventory Wheel Holder"
 script/source = "extends Node3D
@@ -931,6 +942,25 @@ transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot/CameraMarker" unique_id=214841099]
 cull_mask = 1048031
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera Pivot/CameraMarker/Camera3D" unique_id=1937731431]
+
+[node name="TimeTravelRect" type="ColorRect" parent="Camera Pivot/CameraMarker/Camera3D/CanvasLayer" unique_id=1380001694]
+material = SubResource("ShaderMaterial_ps8ct")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("19_u5tep")
+
+[node name="ColorRect" type="ColorRect" parent="Camera Pivot/CameraMarker/Camera3D/CanvasLayer" unique_id=1010823247]
+visible = false
+modulate = Color(1, 0.684147, 0.7443726, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="DetectionPoint" type="Marker3D" parent="." unique_id=500860138]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.5, 0)

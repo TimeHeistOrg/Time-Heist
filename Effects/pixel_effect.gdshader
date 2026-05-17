@@ -4,7 +4,7 @@ shader_type canvas_item;
 //uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
 
 // The number of "pixels" of color that it is quantized into.
-uniform vec2 screen_res = vec2(960.0, 540.0); 
+// uniform vec2 screen_res = vec2(960.0, 540.0); 
 uniform float color_levels = 8.0;
 uniform sampler2D lookup_table : source_color;
 

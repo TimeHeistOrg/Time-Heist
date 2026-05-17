@@ -18,6 +18,8 @@ func setup(new_content: AppBase) -> void:
 	#print("window SETUP")
 	content = new_content
 	panel.add_child(content)
+	if new_content is FileTab:
+		scale = Vector2.ONE * 2
 	#content.reparent(panel)
 
 #region dragging

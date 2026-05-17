@@ -17,7 +17,9 @@ var target_fov : float = 90
 const COMPUTER_UI = preload("res://Modules/Interaction/Computer/computer_ui.tscn")
 
 func _ready() -> void:
-	computer_ui.load_computer(preload("res://Modules/UI/Game UI/Desktops/TestingNewComputer/test_computer.tres"))
+	if data:
+		computer_ui.load_computer(data)
+	
 
 func interact() -> void:
 	if is_viewing:

@@ -147,3 +147,21 @@ offset_bottom = 40.0
 [node name="ButtonMove" type="AudioStreamPlayer" parent="." unique_id=447146223]
 stream = ExtResource("6_df44s")
 volume_db = -18.0
+
+[node name="Message" type="Label" parent="." unique_id=1588894704]
+unique_name_in_owner = true
+z_index = 4
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 386.0
+offset_top = -257.0
+offset_right = -386.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+autowrap_mode = 2

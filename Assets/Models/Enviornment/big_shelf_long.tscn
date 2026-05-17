@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b4ad3ylkwaj3p"]
+
+[ext_resource type="PackedScene" uid="uid://dgqw7jgbresdc" path="res://Assets/Models/Imported Assets/BigShelf.fbx" id="1_wgr4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uyw5b"]
+size = Vector3(3.1074219, 1.9243774, 0.25)
+
+[node name="BigShelfLong" type="Node3D" unique_id=964828957]
+
+[node name="BigShelf" parent="." unique_id=1470837679 instance=ExtResource("1_wgr4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0, 0)
+
+[node name="BigShelf2" parent="." unique_id=226045655 instance=ExtResource("1_wgr4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 0, 0)
+
+[node name="BigShelf3" parent="." unique_id=1165092049 instance=ExtResource("1_wgr4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.125, 0, 0)
+
+[node name="BigShelf4" parent="." unique_id=113128690 instance=ExtResource("1_wgr4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1013979786]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=146539579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024414063, 0.9637146, 9.1552734e-05)
+shape = SubResource("BoxShape3D_uyw5b")

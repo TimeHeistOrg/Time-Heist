@@ -3,15 +3,22 @@ class_name UI_Manager
 
 @onready var document_viewer = $DocumentViewer
 @onready var debug_ui = $"DEBUG UI"
+@onready var message_label: Label = %Message
 @export var debug_mode: bool = false
 #@onready var camera_ui = $Camera
 @onready var device_menu: DeviceMenu = $DeviceMenu
 @onready var caught_ui = $CaughtUI
 var ui_stack: Array[Control] = []
 var cur_ui: Control = null
+var message_timer : Timer
 
 
 func _ready():
+	message_timer = Timer.new()
+	message_timer.one_shot = true
+	message_timer.timeout.connect(func(): message_label.hide())
+	add_child(message_timer)
+	
 	globals.ui_manager = self
 	set_menu(device_menu,false)
 	set_menu(debug_ui,debug_mode)
@@ -55,4 +62,9 @@ func set_menu(ui:UI,value:bool):
 		ui.open()
 	else:
 		ui.close()
-	
+
+func display_message(text : String):
+	message_label.text = text
+	message_label.show()
+	message_timer.stop()
+	message_timer.start(2.0)

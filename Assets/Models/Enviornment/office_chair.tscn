@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3gtn4sbko11j"]
 
-[ext_resource type="PackedScene" uid="uid://c10whac4yvmis" path="res://Assets/Models/Custom Assets/officechairv2.glb" id="1_8ig32"]
+[ext_resource type="PackedScene" uid="uid://c10whac4yvmis" path="res://Assets/Models/Imported Assets/officechairv2.glb" id="1_8ig32"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt0i7"]
 

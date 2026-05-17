@@ -14,7 +14,7 @@ enum AlertStates {NORMAL, SUSPICIOUS, ALERT}
 var state = AlertStates.NORMAL : #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
-			print("setting state to: ", AlertStates.find_key(value))
+			#print("setting state to: ", AlertStates.find_key(value))
 			if globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"state",state,value)
 			_enter_state(value)
@@ -25,7 +25,7 @@ var last_detecting_player: float = INF
 var detecting_player: float = 0 : #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
-			print("setting detecting player to: ", value)
+			#print("setting detecting player to: ", value)
 			if globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"detecting_player",detecting_player,value)
 			if globals.time_manager.delta_time < 0:
@@ -65,13 +65,13 @@ func _process(_delta):
 				alert_process()
 
 func normal_process():
-	print("normal_process: delta_time: ", time_manager.delta_time, " time_offset: ", time_offset)
+	#print("normal_process: delta_time: ", time_manager.delta_time, " time_offset: ", time_offset)
 	if time_detecting > 0:
 		time_offset -= time_detecting
 		time_offset = max(0, time_offset)
 		time_detecting = 0
 	if detector.player_spotted:
-		print("going to sus from normal")
+		#print("going to sus from normal")
 		enter_sus()
 		sus_process()
 		return
@@ -87,7 +87,7 @@ func normal_process():
 	last_processed_time = cur_time
 
 func sus_process():
-	print("sus_process")
+	#print("sus_process")
 	detecting_process()
 	if time_detecting >= alert_time:
 		enter_alert()
@@ -109,31 +109,31 @@ func alert_process():
 			laser.stop_laser()
 
 func detecting_process():
-	print("detecting_process")
+	#print("detecting_process")
 	if detecting_player > 0:
 		if time_manager.delta_time < 0 and last_detecting_player - time_manager.cur_time < -time_manager.delta_time:
-			print(1)
+			#print(1)
 			time_detecting += time_manager.delta_time - (last_detecting_player - time_manager.cur_time)
 			time_offset += time_manager.delta_time
 		else:
-			print(2)
+			#print(2)
 			time_detecting += time_manager.delta_time
 			time_offset += time_manager.delta_time
 	elif detecting_player < 0:
 		if time_manager.delta_time > 0 and time_detecting < time_manager.delta_time:
-			print(3)
+			#print(3)
 			time_offset -= time_detecting
 			time_detecting = 0
 			normal_process()
 		else:
-			print(4)
+			#print(4)
 			time_detecting -= time_manager.delta_time
 			time_offset += time_manager.delta_time
 	time_detecting = clamp(time_detecting, 0, caught_time)
 	time_offset = max(0, time_offset)
 	globals.safe_ratio = min(globals.safe_ratio, (caught_time - time_detecting) / caught_time)
-	print("time detecting: ", time_detecting, " delta_time: ", time_manager.delta_time, " time_offset: ", time_offset)
-	print("cur_time: ",time_manager.cur_time, " detecting_player: ", detecting_player, " last_detecting_player: ", last_detecting_player)
+	#print("time detecting: ", time_detecting, " delta_time: ", time_manager.delta_time, " time_offset: ", time_offset)
+	#print("cur_time: ",time_manager.cur_time, " detecting_player: ", detecting_player, " last_detecting_player: ", last_detecting_player)
 
 func enter_normal():
 	state = AlertStates.NORMAL
@@ -147,6 +147,7 @@ func enter_sus():
 	_enter_state(AlertStates.SUSPICIOUS)
 
 func _enter_sus():
+	$AudioStreamPlayer.play()
 	$torso.get_surface_override_material(0).emission = Color(1.0, 0.0, 0.0, 1.0)
 
 func enter_alert():
