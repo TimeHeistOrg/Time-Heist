@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_urgcb"]
 [ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="3_0d2mm"]
 [ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="4_sby2f"]
-[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/NPC/Guard.tscn" id="4_w2fhl"]
+[ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/NPC.tscn" id="5_3aima"]
 [ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="5_khdrh"]
 [ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="6_nhqvp"]
 [ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="7_3aima"]
 [ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="8_sby2f"]
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="10_nhqvp"]
 [ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="10_w2fhl"]
-[ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="11_npck5"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="13_npck5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m53t8"]
@@ -32,63 +31,105 @@ func _process(delta):
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ah0ni"]
 
+[sub_resource type="Resource" id="Resource_3aima"]
+resource_local_to_scene = true
+script = ExtResource("4_sby2f")
+
+[sub_resource type="Resource" id="Resource_npck5"]
+script = ExtResource("10_w2fhl")
+end_time = 2.0
+duration = 2.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
 [sub_resource type="Resource" id="Resource_w2fhl"]
 resource_local_to_scene = true
 script = ExtResource("4_sby2f")
-position = Vector3(9.875, 0, 11.5)
-
-[sub_resource type="Resource" id="Resource_i3qxv"]
-script = ExtResource("11_npck5")
-metadata/_custom_type_script = "uid://68nqpa721my0"
-
-[sub_resource type="Resource" id="Resource_3x4ph"]
-script = ExtResource("10_w2fhl")
-end_time = 10.0
-duration = 10.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_npck5"]
-resource_local_to_scene = true
-script = ExtResource("4_sby2f")
-position = Vector3(10.125, 0, 23.75)
-vertex_actions = Array[ExtResource("5_khdrh")]([SubResource("Resource_i3qxv"), SubResource("Resource_3x4ph")])
-time_start = 24.505102
-time_end = 34.50510215759277
+position = Vector3(0, 0, -4)
+vertex_actions = Array[ExtResource("5_khdrh")]([SubResource("Resource_npck5")])
+time_start = 4.0
+time_end = 6.0
 id = 2
 
 [sub_resource type="Resource" id="Resource_7oa7a"]
 resource_local_to_scene = true
 script = ExtResource("6_nhqvp")
-speed = 0.5
-prev_vertex = SubResource("Resource_w2fhl")
-next_vertex = SubResource("Resource_npck5")
-time_end = 24.505102
+speed = 1.0
+prev_vertex = SubResource("Resource_3aima")
+next_vertex = SubResource("Resource_w2fhl")
+time_end = 4.0
 id = 1
+
+[sub_resource type="Resource" id="Resource_7sp3u"]
+script = ExtResource("10_w2fhl")
+end_time = 2.0
+duration = 2.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
 
 [sub_resource type="Resource" id="Resource_jyu0l"]
 resource_local_to_scene = true
+script = ExtResource("4_sby2f")
+position = Vector3(4, 0, -4)
+vertex_actions = Array[ExtResource("5_khdrh")]([SubResource("Resource_7sp3u")])
+time_start = 14.0
+time_end = 16.0
+id = 4
+
+[sub_resource type="Resource" id="Resource_lj00a"]
+resource_local_to_scene = true
 script = ExtResource("6_nhqvp")
 speed = 0.5
-prev_vertex = SubResource("Resource_npck5")
-next_vertex = SubResource("Resource_w2fhl")
-is_loop_line = true
-time_start = 34.50510215759277
-time_end = 59.010204
+prev_vertex = SubResource("Resource_w2fhl")
+next_vertex = SubResource("Resource_jyu0l")
+time_start = 6.0
+time_end = 14.0
 id = 3
 
-[sub_resource type="Resource" id="Resource_7sp3u"]
+[sub_resource type="Resource" id="Resource_usbjq"]
+script = ExtResource("10_w2fhl")
+end_time = 2.0
+duration = 2.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_7e2gi"]
+resource_local_to_scene = true
+script = ExtResource("4_sby2f")
+position = Vector3(4, 0, 0)
+vertex_actions = Array[ExtResource("5_khdrh")]([SubResource("Resource_usbjq")])
+time_start = 20.0
+time_end = 22.0
+id = 6
+
+[sub_resource type="Resource" id="Resource_k52w3"]
+resource_local_to_scene = true
+script = ExtResource("6_nhqvp")
+speed = 1.0
+prev_vertex = SubResource("Resource_jyu0l")
+next_vertex = SubResource("Resource_7e2gi")
+time_start = 16.0
+time_end = 20.0
+id = 5
+
+[sub_resource type="Resource" id="Resource_q3uff"]
+resource_local_to_scene = true
+script = ExtResource("6_nhqvp")
+speed = 2.0
+prev_vertex = SubResource("Resource_7e2gi")
+next_vertex = SubResource("Resource_3aima")
+is_loop_line = true
+time_start = 22.0
+time_end = 24.0
+id = 7
+
+[sub_resource type="Resource" id="Resource_70th2"]
 resource_local_to_scene = true
 script = ExtResource("7_3aima")
-path_components = Array[ExtResource("3_0d2mm")]([SubResource("Resource_w2fhl"), SubResource("Resource_7oa7a"), SubResource("Resource_npck5"), SubResource("Resource_jyu0l")])
-snap = 0.125
+path_components = Array[ExtResource("3_0d2mm")]([SubResource("Resource_3aima"), SubResource("Resource_7oa7a"), SubResource("Resource_w2fhl"), SubResource("Resource_lj00a"), SubResource("Resource_jyu0l"), SubResource("Resource_k52w3"), SubResource("Resource_7e2gi"), SubResource("Resource_q3uff")])
 loop = true
-default_speed = 0.5
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [node name="Pathing Test World" type="Node3D" unique_id=1891461424]
 
 [node name="Player" parent="." unique_id=288105915 instance=ExtResource("10_nhqvp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6158981, 0, 13.549504)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7756777, 0, -3.2493715)
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=1728502867]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.7857132, 22.849392, 1.5849341e-06)
@@ -120,12 +161,9 @@ texture = ExtResource("8_sby2f")
 [node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("13_npck5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
-[node name="LineGuard2" parent="." unique_id=854805088 instance=ExtResource("4_w2fhl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.875, 0, 11.5)
-alert_time = 50.0
-caught_time = 100.0
-branch_paths = Array[ExtResource("7_3aima")]([SubResource("Resource_7sp3u")])
+[node name="NPC" parent="." unique_id=854805088 instance=ExtResource("5_3aima")]
+branch_paths = Array[ExtResource("7_3aima")]([SubResource("Resource_70th2")])
 follow_branch = 0
-path = SubResource("Resource_7sp3u")
+path = SubResource("Resource_70th2")
 
 [connection signal="anon_interacted" from="TestCube/Interactable" to="TestCube" method="interact"]
