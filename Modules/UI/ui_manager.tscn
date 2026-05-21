@@ -132,11 +132,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="CaughtUI" parent="." unique_id=519183442 instance=ExtResource("8_1ex2v")]
-visible = false
-z_index = 1
-layout_mode = 1
-
 [node name="Interface" type="Control" parent="." unique_id=722000712]
 visible = false
 z_index = 1
@@ -165,3 +160,11 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356941901]
+layer = 100
+
+[node name="CaughtUI" parent="CanvasLayer" unique_id=519183442 instance=ExtResource("8_1ex2v")]
+unique_name_in_owner = true
+visible = false
+z_index = 1

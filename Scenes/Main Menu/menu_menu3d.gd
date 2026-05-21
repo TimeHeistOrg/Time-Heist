@@ -8,7 +8,7 @@ var lerp_speed : float = 5.0
 var chosen_marker : Marker3D
 
 func _ready() -> void:
-	$CanvasLayer/Play.grab_focus()
+	$CanvasLayer/OriginalFocus.grab_focus()
 	pass
 
 func _on_play_pressed() -> void:
