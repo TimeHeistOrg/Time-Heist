@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://brwt5hp8o0ynn" path="res://Dialogue/start_run.dialogue" id="13_duq24"]
 [ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall_old.tscn" id="13_g4j4g"]
 [ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="14_1ssgq"]
-[ext_resource type="Resource" uid="uid://dia7uwu0uy0sd" path="res://Dialogue/to_tutorial.dialogue" id="14_hmmab"]
+[ext_resource type="PackedScene" uid="uid://dkqvotopd4ufp" path="res://Dialogue/dialogue_area.tscn" id="15_blrf4"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="15_duq24"]
 [ext_resource type="PackedScene" uid="uid://fmcuj3rcvfja" path="res://Assets/Models/Enviornment/l_desk.tscn" id="16_hmmab"]
 [ext_resource type="PackedScene" uid="uid://b4umi6y0r105j" path="res://Assets/Models/Enviornment/computer_desk.tscn" id="18_duq24"]
@@ -96,6 +96,21 @@ stencil_outline_thickness = 0.001
 material = SubResource("StandardMaterial3D_g4j4g")
 size = Vector3(0.25, 3, 1.25)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rx8s"]
+albedo_color = Color(0.99999994, 0.8714967, 0.78246945, 1)
+metallic = 0.8
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.98004, 0.80192906, 0.36848813, 1)
+emission_energy_multiplier = 3.0
+backlight = Color(0.99997944, 0.71876156, 0.67345256, 1)
+stencil_flags = 2
+stencil_outline_thickness = 0.001
+
+[sub_resource type="BoxMesh" id="BoxMesh_b7rcp"]
+material = SubResource("StandardMaterial3D_5rx8s")
+size = Vector3(0.25, 3, 1.25)
+
 [node name="Homebase" type="Node3D" unique_id=1137310330]
 script = ExtResource("1_hfwyr")
 
@@ -154,9 +169,8 @@ CAMERA_DISTANCE_UP = 3.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.07403, 0, -5.1269326)
 script = ExtResource("8_urm2d")
 
-[node name="Interactable" parent="SubViewportContainer/SubViewport/Friend" unique_id=242002428 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("8_gjqgy")]
+[node name="Interactable" parent="SubViewportContainer/SubViewport/Friend" unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("8_gjqgy")]
 mesh = NodePath("../MeshInstance3D")
-interact_object = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Friend/Interactable" unique_id=1929693689]
 shape = SubResource("BoxShape3D_urm2d")
@@ -185,26 +199,19 @@ text = "Start Run"
 font_size = 45
 outline_size = 10
 
-[node name="ToTutorial" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=122859577]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.4710345, 1.5, -7.5207176)
-script = ExtResource("10_li6v2")
-dialogue = ExtResource("14_hmmab")
+[node name="ToTutorial" parent="SubViewportContainer/SubViewport" unique_id=1102014529 instance=ExtResource("15_blrf4")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -7.4710345, 1.5, -7.5207176)
 
-[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/ToTutorial" unique_id=1257003195]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/ToTutorial/Area3D" unique_id=1843549040]
-shape = SubResource("BoxShape3D_li6v2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/ToTutorial" unique_id=1287791601]
-mesh = SubResource("BoxMesh_hfwyr")
-
-[node name="TutorialLabel" type="Label3D" parent="SubViewportContainer/SubViewport/ToTutorial" unique_id=278076342]
+[node name="TutorialLabel2" type="Label3D" parent="SubViewportContainer/SubViewport/ToTutorial" unique_id=1554712577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6693946, 0.8584688, -0.011715889)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Tutorial"
 font_size = 45
 outline_size = 10
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/ToTutorial" unique_id=1989052377]
+mesh = SubResource("BoxMesh_b7rcp")
 
 [node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1678166322]
 
@@ -375,4 +382,3 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.8,
 
 [connection signal="anon_interacted" from="SubViewportContainer/SubViewport/Friend/Interactable" to="SubViewportContainer/SubViewport/Friend" method="_on_interactable_anon_interacted"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/ToGameplay/Area3D" to="SubViewportContainer/SubViewport/ToGameplay" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="SubViewportContainer/SubViewport/ToTutorial/Area3D" to="SubViewportContainer/SubViewport/ToTutorial" method="_on_area_3d_body_entered"]
