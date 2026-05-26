@@ -9,7 +9,7 @@ var retrigger_timer: float = 0.0
 var is_ready : bool = true : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"is_ready",is_ready,value)
+			globals.time_manager.timelog(self,"is_ready",is_ready)
 		elif not value:
 			retrigger_timer = retrigger
 		is_ready = value

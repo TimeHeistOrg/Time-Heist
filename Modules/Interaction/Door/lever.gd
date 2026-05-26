@@ -14,7 +14,7 @@ signal lever_flipped(flip: bool)
 		#print("set is_open to ", value)
 		if not Engine.is_editor_hint():
 			if lever_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"flipped",flipped,value)
+				globals.time_manager.timelog(self,"flipped",flipped)
 			lever_flipped.emit(value)
 		if animation_player:
 			if value:
@@ -29,7 +29,7 @@ signal lever_flipped(flip: bool)
 	set(value):
 		if not Engine.is_editor_hint():
 			if lever_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_jammed",is_jammed,value)
+				globals.time_manager.timelog(self,"is_jammed",is_jammed)
 		is_jammed = value
 		
 var cur_action: LeverTimeAction = null: #TIMEVAR
@@ -49,7 +49,7 @@ var cur_action: LeverTimeAction = null: #TIMEVAR
 				animation_player.play("DownToUp")
 				animation_player.pause()
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"cur_action",cur_action,value)
+			globals.time_manager.timelog(self,"cur_action",cur_action)
 		cur_action = value
 
 

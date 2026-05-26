@@ -11,7 +11,7 @@ class_name Generic_Door
 		#print("set is_open to ", value)
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_open",is_open,value)
+				globals.time_manager.timelog(self,"is_open",is_open)
 			is_open = value
 			if collision_body:
 				if value:
@@ -31,7 +31,7 @@ class_name Generic_Door
 		#print("set is_locked to ", value)
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_locked",is_locked,value)
+				globals.time_manager.timelog(self,"is_locked",is_locked)
 			if value:
 				print("here")
 				$AudioStreamPlayer3D.play()
@@ -58,7 +58,7 @@ var cur_action: DoorTimeAction = null: #TIMEVAR
 				animation_player.play("Door_Action_Close")
 				animation_player.pause()
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"cur_action",cur_action,value)
+			globals.time_manager.timelog(self,"cur_action",cur_action)
 		cur_action = value
 
 

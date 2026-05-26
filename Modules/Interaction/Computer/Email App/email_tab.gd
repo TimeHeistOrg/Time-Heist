@@ -4,7 +4,7 @@ var emails
 var email_button_instances : Array[EmailButton]  #TIMEVAR
 	#set(value):
 		#if globals.time_manager and globals.time_manager.logging:
-			#globals.time_manager.timelog(self,"email_button_instances",email_button_instances,value)
+			#globals.time_manager.timelog(self,"email_button_instances",email_button_instances)
 		#email_button_instances = value
 		#print("SET FUNCTION CALLED")
 @onready var email_buttons: VBoxContainer = $HBoxContainer/EmailButtons
@@ -19,7 +19,7 @@ var first_time : bool = true #need?
 var finished : bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"finished",finished,value)
+			globals.time_manager.timelog(self,"finished",finished)
 		finished = value
 
 func setup(config: EmailAppConfig) -> void:

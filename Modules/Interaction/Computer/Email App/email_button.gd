@@ -18,7 +18,7 @@ var email_info : DocumentInfo
 var sent : bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"sent",sent,value)
+			globals.time_manager.timelog(self,"sent",sent)
 		sent = value
 		if value:
 			show()

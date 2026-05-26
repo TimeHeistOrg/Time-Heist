@@ -17,7 +17,7 @@ var player_spotted : bool
 var disabled : bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"disabled",disabled,value)
+			globals.time_manager.timelog(self,"disabled",disabled)
 		disabled = value
 		process_mode = Node.PROCESS_MODE_DISABLED if value else Node.PROCESS_MODE_INHERIT
 

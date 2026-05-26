@@ -16,7 +16,7 @@ var state = AlertStates.NORMAL : #TIMEVAR
 		if not Engine.is_editor_hint():
 			#print("setting state to: ", AlertStates.find_key(value))
 			if globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"state",state,value)
+				globals.time_manager.timelog(self,"state",state)
 			_enter_state(value)
 		state = value
 
@@ -27,7 +27,7 @@ var detecting_player: float = 0 : #TIMEVAR
 		if not Engine.is_editor_hint():
 			#print("setting detecting player to: ", value)
 			if globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"detecting_player",detecting_player,value)
+				globals.time_manager.timelog(self,"detecting_player",detecting_player)
 			if globals.time_manager.delta_time < 0:
 				last_detecting_player = abs(detecting_player)
 		detecting_player = value

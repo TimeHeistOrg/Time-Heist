@@ -17,7 +17,7 @@ var display_time_elapsed: float = 0
 var unlocked_once: bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"unlocked_once",unlocked_once,value)
+			globals.time_manager.timelog(self,"unlocked_once",unlocked_once)
 		unlocked_once = value
 
 var feedback_timer : Timer

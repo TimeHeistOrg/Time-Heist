@@ -1,4 +1,4 @@
-extends Node
+class_name InputManager extends Node
 
 enum InputControllers {UI, GAMEPLAY, NONE}
 

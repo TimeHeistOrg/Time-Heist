@@ -70,7 +70,8 @@ var is_hidden: bool = false #hiding in a locker or other place.
 func _ready():
 	if not Engine.is_editor_hint():
 		globals.player = self
-		InputManager.player = self
+		if globals.input_manager:
+			globals.input_manager.player = self
 		$"Inventory Wheel Holder".player = self
 		run_enter()
 
