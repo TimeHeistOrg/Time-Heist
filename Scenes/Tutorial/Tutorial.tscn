@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="7_qriqi"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="8_nr5nl"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="9_0wmwb"]
+[ext_resource type="Script" uid="uid://eqki63ticm1v" path="res://Map/Debug_Maps/test_room_hide.gd" id="10_k05aa"]
+[ext_resource type="PackedScene" uid="uid://bxqpme2qjir3g" path="res://Modules/MapBuilding/office_light.tscn" id="12_4353k"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="15_u5ky3"]
 [ext_resource type="PackedScene" uid="uid://dkqvotopd4ufp" path="res://Dialogue/dialogue_area.tscn" id="16_3civr"]
 [ext_resource type="PackedScene" uid="uid://bomvk14icglbq" path="res://Modules/AI/NPC/NPCLucasTest.tscn" id="16_7uyeq"]
@@ -82,7 +84,19 @@ ao_texture = ExtResource("5_e8mef")
 uv1_scale = Vector3(12.5, 12.5, 12.5)
 grow_amount = -4.125
 
-[sub_resource type="Resource" id="Resource_3civr"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_84t3p"]
+size = Vector3(7.75, 1, 11.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k05aa"]
+size = Vector3(6.25, 1, 11.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4353k"]
+size = Vector3(6, 1, 11.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhr5i"]
+size = Vector3(6, 1, 11.25)
+
+[sub_resource type="Resource" id="Resource_xhr5i"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(3.25, 0, 13.25)
@@ -94,7 +108,7 @@ property_name = "picked_up"
 dest_path_id = 1
 metadata/_custom_type_script = "uid://dytcvxvfnohai"
 
-[sub_resource type="Resource" id="Resource_k05aa"]
+[sub_resource type="Resource" id="Resource_uttcq"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(6.5, 0, 13.25)
@@ -103,16 +117,16 @@ time_start = 3.25
 time_end = 3.25
 id = 2
 
-[sub_resource type="Resource" id="Resource_4353k"]
+[sub_resource type="Resource" id="Resource_3q7n2"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_3civr")
-next_vertex = SubResource("Resource_k05aa")
+prev_vertex = SubResource("Resource_xhr5i")
+next_vertex = SubResource("Resource_uttcq")
 time_end = 3.25
 id = 1
 
-[sub_resource type="Resource" id="Resource_84t3p"]
+[sub_resource type="Resource" id="Resource_mqc0c"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(3.25, 0, 13.25)
@@ -120,17 +134,17 @@ time_start = 6.5
 time_end = 6.5
 id = 4
 
-[sub_resource type="Resource" id="Resource_xhr5i"]
+[sub_resource type="Resource" id="Resource_mwfe8"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_k05aa")
-next_vertex = SubResource("Resource_84t3p")
+prev_vertex = SubResource("Resource_uttcq")
+next_vertex = SubResource("Resource_mqc0c")
 time_start = 3.25
 time_end = 6.5
 id = 3
 
-[sub_resource type="Resource" id="Resource_uttcq"]
+[sub_resource type="Resource" id="Resource_7kydn"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(3.25, 0, 10.25)
@@ -138,40 +152,40 @@ time_start = 9.5
 time_end = 9.5
 id = 6
 
-[sub_resource type="Resource" id="Resource_3q7n2"]
+[sub_resource type="Resource" id="Resource_1r3lh"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_84t3p")
-next_vertex = SubResource("Resource_uttcq")
+prev_vertex = SubResource("Resource_mqc0c")
+next_vertex = SubResource("Resource_7kydn")
 time_start = 6.5
 time_end = 9.5
 id = 5
 
-[sub_resource type="Resource" id="Resource_mqc0c"]
+[sub_resource type="Resource" id="Resource_2fa5o"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_uttcq")
-next_vertex = SubResource("Resource_3civr")
+prev_vertex = SubResource("Resource_7kydn")
+next_vertex = SubResource("Resource_xhr5i")
 is_loop_line = true
 time_start = 9.5
 time_end = 12.5
 id = 7
 
-[sub_resource type="Resource" id="Resource_mwfe8"]
+[sub_resource type="Resource" id="Resource_ixt3n"]
 resource_local_to_scene = true
 script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_3civr"), SubResource("Resource_4353k"), SubResource("Resource_k05aa"), SubResource("Resource_xhr5i"), SubResource("Resource_84t3p"), SubResource("Resource_3q7n2"), SubResource("Resource_uttcq"), SubResource("Resource_mqc0c")])
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_xhr5i"), SubResource("Resource_3q7n2"), SubResource("Resource_uttcq"), SubResource("Resource_mwfe8"), SubResource("Resource_mqc0c"), SubResource("Resource_1r3lh"), SubResource("Resource_7kydn"), SubResource("Resource_2fa5o")])
 loop = true
 metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
-[sub_resource type="Resource" id="Resource_7kydn"]
+[sub_resource type="Resource" id="Resource_0wfx5"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(3.25, 0, 13.25)
 
-[sub_resource type="Resource" id="Resource_1r3lh"]
+[sub_resource type="Resource" id="Resource_ulrwx"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(6.5, 0, 13.25)
@@ -179,20 +193,23 @@ time_start = 3.25
 time_end = 3.25
 id = 2
 
-[sub_resource type="Resource" id="Resource_2fa5o"]
+[sub_resource type="Resource" id="Resource_ui3m5"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_7kydn")
-next_vertex = SubResource("Resource_1r3lh")
+prev_vertex = SubResource("Resource_0wfx5")
+next_vertex = SubResource("Resource_ulrwx")
 time_end = 3.25
 id = 1
 
-[sub_resource type="Resource" id="Resource_ixt3n"]
+[sub_resource type="Resource" id="Resource_wkett"]
 resource_local_to_scene = true
 script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_7kydn"), SubResource("Resource_2fa5o"), SubResource("Resource_1r3lh")])
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_0wfx5"), SubResource("Resource_ui3m5"), SubResource("Resource_ulrwx")])
 metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uttcq"]
+size = Vector3(7, 1, 11.25)
 
 [sub_resource type="Resource" id="Resource_ek4v5"]
 script = ExtResource("35_3civr")
@@ -200,7 +217,7 @@ end_time = 112.0
 duration = 112.0
 metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
 
-[sub_resource type="Resource" id="Resource_0wfx5"]
+[sub_resource type="Resource" id="Resource_s3w85"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(16.25, 0, 9)
@@ -212,7 +229,7 @@ script = ExtResource("36_k05aa")
 door = NodePath("../Office door")
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
-[sub_resource type="Resource" id="Resource_ulrwx"]
+[sub_resource type="Resource" id="Resource_tjh5p"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(13.5, 0, 9)
@@ -221,17 +238,17 @@ time_start = 114.75
 time_end = 114.75
 id = 2
 
-[sub_resource type="Resource" id="Resource_ui3m5"]
+[sub_resource type="Resource" id="Resource_cvxcn"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_0wfx5")
-next_vertex = SubResource("Resource_ulrwx")
+prev_vertex = SubResource("Resource_s3w85")
+next_vertex = SubResource("Resource_tjh5p")
 time_start = 112.0
 time_end = 114.75
 id = 1
 
-[sub_resource type="Resource" id="Resource_wkett"]
+[sub_resource type="Resource" id="Resource_2m0nu"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(12.5, 0, 9)
@@ -239,12 +256,12 @@ time_start = 115.75
 time_end = 115.75
 id = 4
 
-[sub_resource type="Resource" id="Resource_s3w85"]
+[sub_resource type="Resource" id="Resource_ucgc0"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_ulrwx")
-next_vertex = SubResource("Resource_wkett")
+prev_vertex = SubResource("Resource_tjh5p")
+next_vertex = SubResource("Resource_2m0nu")
 time_start = 114.75
 time_end = 115.75
 id = 3
@@ -255,7 +272,7 @@ door = NodePath("../Office door")
 action = 1
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
-[sub_resource type="Resource" id="Resource_tjh5p"]
+[sub_resource type="Resource" id="Resource_dfokh"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(12.5, 0, 6.25)
@@ -264,22 +281,22 @@ time_start = 118.5
 time_end = 118.5
 id = 6
 
-[sub_resource type="Resource" id="Resource_cvxcn"]
+[sub_resource type="Resource" id="Resource_f6pwu"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_wkett")
-next_vertex = SubResource("Resource_tjh5p")
+prev_vertex = SubResource("Resource_2m0nu")
+next_vertex = SubResource("Resource_dfokh")
 time_start = 115.75
 time_end = 118.5
 id = 5
 
 [sub_resource type="Resource" id="Resource_fj7il"]
 script = ExtResource("37_4353k")
-interactable = NodePath("../Item")
+interactable = NodePath("../../Room 7/Item")
 metadata/_custom_type_script = "uid://dn4bpr3ia1qr0"
 
-[sub_resource type="Resource" id="Resource_2m0nu"]
+[sub_resource type="Resource" id="Resource_yjryn"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(12.5, 0, 4.75)
@@ -288,12 +305,12 @@ time_start = 120.0
 time_end = 120.0
 id = 8
 
-[sub_resource type="Resource" id="Resource_ucgc0"]
+[sub_resource type="Resource" id="Resource_bbtu8"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_tjh5p")
-next_vertex = SubResource("Resource_2m0nu")
+prev_vertex = SubResource("Resource_dfokh")
+next_vertex = SubResource("Resource_yjryn")
 time_start = 118.5
 time_end = 120.0
 id = 7
@@ -304,7 +321,7 @@ door = NodePath("../Office door")
 action = 4
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
-[sub_resource type="Resource" id="Resource_dfokh"]
+[sub_resource type="Resource" id="Resource_tfsam"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(12.5, 0, 5.75)
@@ -313,17 +330,17 @@ time_start = 121.0
 time_end = 121.0
 id = 10
 
-[sub_resource type="Resource" id="Resource_f6pwu"]
+[sub_resource type="Resource" id="Resource_dx32d"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_2m0nu")
-next_vertex = SubResource("Resource_dfokh")
+prev_vertex = SubResource("Resource_yjryn")
+next_vertex = SubResource("Resource_tfsam")
 time_start = 120.0
 time_end = 121.0
 id = 9
 
-[sub_resource type="Resource" id="Resource_yjryn"]
+[sub_resource type="Resource" id="Resource_oyw2e"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(12.5, 0, 9)
@@ -331,17 +348,17 @@ time_start = 124.25
 time_end = 124.25
 id = 12
 
-[sub_resource type="Resource" id="Resource_bbtu8"]
+[sub_resource type="Resource" id="Resource_ph251"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_dfokh")
-next_vertex = SubResource("Resource_yjryn")
+prev_vertex = SubResource("Resource_tfsam")
+next_vertex = SubResource("Resource_oyw2e")
 time_start = 121.0
 time_end = 124.25
 id = 11
 
-[sub_resource type="Resource" id="Resource_tfsam"]
+[sub_resource type="Resource" id="Resource_ry1l5"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(9.75, 0, 9)
@@ -349,21 +366,27 @@ time_start = 127.0
 time_end = 127.0
 id = 14
 
-[sub_resource type="Resource" id="Resource_dx32d"]
+[sub_resource type="Resource" id="Resource_74eai"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_yjryn")
-next_vertex = SubResource("Resource_tfsam")
+prev_vertex = SubResource("Resource_oyw2e")
+next_vertex = SubResource("Resource_ry1l5")
 time_start = 124.25
 time_end = 127.0
 id = 13
 
-[sub_resource type="Resource" id="Resource_oyw2e"]
+[sub_resource type="Resource" id="Resource_hilbg"]
 resource_local_to_scene = true
 script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_0wfx5"), SubResource("Resource_ui3m5"), SubResource("Resource_ulrwx"), SubResource("Resource_s3w85"), SubResource("Resource_wkett"), SubResource("Resource_cvxcn"), SubResource("Resource_tjh5p"), SubResource("Resource_ucgc0"), SubResource("Resource_2m0nu"), SubResource("Resource_f6pwu"), SubResource("Resource_dfokh"), SubResource("Resource_bbtu8"), SubResource("Resource_yjryn"), SubResource("Resource_dx32d"), SubResource("Resource_tfsam")])
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_s3w85"), SubResource("Resource_cvxcn"), SubResource("Resource_tjh5p"), SubResource("Resource_ucgc0"), SubResource("Resource_2m0nu"), SubResource("Resource_f6pwu"), SubResource("Resource_dfokh"), SubResource("Resource_bbtu8"), SubResource("Resource_yjryn"), SubResource("Resource_dx32d"), SubResource("Resource_tfsam"), SubResource("Resource_ph251"), SubResource("Resource_oyw2e"), SubResource("Resource_74eai"), SubResource("Resource_ry1l5")])
 metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q7n2"]
+size = Vector3(10.75, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28cgg"]
+size = Vector3(10.75, 1, 4.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3civr"]
 size = Vector3(2, 2, 2)
@@ -381,7 +404,10 @@ stencil_outline_thickness = 0.001
 
 [sub_resource type="BoxMesh" id="BoxMesh_4353k"]
 material = SubResource("StandardMaterial3D_g4j4g")
-size = Vector3(1.5, 4, 1.5)
+size = Vector3(1.5, 2.07, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mqc0c"]
+size = Vector3(8.125, 1, 7)
 
 [node name="Tutorial" type="Node3D" unique_id=1137310330]
 script = ExtResource("1_k05aa")
@@ -437,71 +463,98 @@ metadata/_editor_floor_ = Vector3(0, 2, 0)
 [node name="Tutorial" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=538595978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.25, 0, 0)
 
-[node name="Step 1" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1370897758]
+[node name="Room 1" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1370897758 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room1"
 
-[node name="Welcome" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 1" unique_id=1050964909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 3.5, 4.852394)
+[node name="Welcome" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1050964909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 3.5, -9.897606)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Welcome to Time Heist!"
 font_size = 100
 outline_size = 20
 
-[node name="WASD and Arrow" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 1" unique_id=1550713812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2.5, 4.852394)
+[node name="WASD and Arrow" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1550713812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 2.5, -9.897606)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "WASD to move
 Arrow keys to rotate camera"
 font_size = 60
 
-[node name="Look behind you" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 1" unique_id=1763534436]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 1.5, 4.852394)
+[node name="Look behind you" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1763534436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 1.5, -9.897606)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Try looking behind you..."
 font_size = 40
 outline_size = 6
 
-[node name="Step 2" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=572761233]
-
-[node name="Hello!" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 2" unique_id=1218158571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2.5, 13.629649)
+[node name="Hello!" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1218158571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -1.1203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Hello! Lets go through that door"
 font_size = 60
 
-[node name="E to interact" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 2" unique_id=1865087543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 1.75, 13.629649)
+[node name="E to interact" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1865087543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 1.75, -1.1203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Press E to interact"
 font_size = 60
 
-[node name="Highlight" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 2" unique_id=1222920833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 0.5, 13.629649)
+[node name="Highlight" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1222920833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0.5, -1.1203508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "That yellow highlight means 
 something is interactable"
 font_size = 60
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Step 2" unique_id=74631722 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.75, 0, 11.5)
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=74631722 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.75, 0, -3.25)
 
-[node name="Step 3" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2031050201]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.75)
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=103637573]
 
-[node name="Good job" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=1780585984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 3.5, 13.629649)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Area3D" unique_id=50089706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.5, -5.5)
+shape = SubResource("BoxShape3D_84t3p")
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=2066797167]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Lights" unique_id=1607967816 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.75, 2.1, -2.75)
+light_energy = 5.0
+
+[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Lights" unique_id=1373704371 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.75, 2.1, -5.75)
+light_energy = 5.0
+
+[node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Lights" unique_id=2146802889 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.75, 2.1, -8.75)
+light_energy = 5.0
+
+[node name="Room 2" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2031050201 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room2"
+
+[node name="Good job" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1780585984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -2.8703508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Good job!"
 font_size = 60
 
-[node name="Shift and C" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=1561547828]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 2.25, 13.629649)
+[node name="Shift and C" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1561547828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.25, -2.8703508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Hold shift to walk
@@ -509,90 +562,137 @@ Press shift to roll
 Press C to toggle crouch"
 font_size = 60
 
-[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=854805088 instance=ExtResource("16_7uyeq")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, 0, 10)
+[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=854805088 instance=ExtResource("16_7uyeq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.25, 0, -6.5)
 
-[node name="Crouch behind" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=1433120194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 13.629649)
+[node name="Crouch behind" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1433120194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.5, -2.8703508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Now be careful with this gaurd
 Try crouching behind these boxes to pass"
 font_size = 50
 
-[node name="Counter" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=70609053 instance=ExtResource("18_capbt")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 9)
+[node name="Counter" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=70609053 instance=ExtResource("18_capbt")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75, 0, -7.5)
 
-[node name="Counter2" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=1708058709 instance=ExtResource("18_capbt")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 10)
+[node name="Counter2" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1708058709 instance=ExtResource("18_capbt")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75, 0, -6.5)
 
-[node name="Counter3" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=2086660309 instance=ExtResource("18_capbt")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 11)
+[node name="Counter3" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=2086660309 instance=ExtResource("18_capbt")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75, 0, -5.5)
 
-[node name="Dialogue Area" parent="SubViewportContainer/SubViewport/Tutorial/Step 3" unique_id=1102014529 instance=ExtResource("16_3civr")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.5, 0, 13.25)
+[node name="Dialogue Area" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1102014529 instance=ExtResource("16_3civr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.25, 0, -3.25)
 dialogue = ExtResource("17_k05aa")
 
-[node name="Step 4" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2080792882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.25, 0, -0.25)
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=557954254]
 
-[node name="Collecting" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 4" unique_id=721274551]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75, 2.5, 6.629649)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Area3D" unique_id=1630835119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -5.5)
+shape = SubResource("BoxShape3D_k05aa")
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=337922022]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Lights" unique_id=1129220751 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -2.75)
+light_energy = 5.0
+
+[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Lights" unique_id=55917920 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -5.75)
+light_energy = 5.0
+
+[node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Lights" unique_id=1756236485 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -8.75)
+light_energy = 5.0
+
+[node name="Room 3" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2080792882 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room3"
+
+[node name="Collecting" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=721274551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -8.370351)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "In Time Heist, you will be collecting
 a lot of documents and items"
 font_size = 60
 
-[node name="Tab for menu" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 4" unique_id=1896941279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75, 1.5, 6.629649)
+[node name="Tab for menu" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1896941279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -8.370351)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Press Tab to open up your
 device menu"
 font_size = 60
 
-[node name="Little note" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 4" unique_id=335607387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75, 0.5, 6.629649)
+[node name="Little note" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=335607387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8.370351)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "We left you a little note to find!"
 font_size = 60
 
-[node name="Step 5" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1605892003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.25, 0, 6.75)
-
-[node name="Get poster" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 5" unique_id=514410265]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.25, 5.379649)
+[node name="Get poster" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=514410265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.25, -2.6203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Interact with the paper
 to collect it!"
 font_size = 60
 
-[node name="In device" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 5" unique_id=153831175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 5.629649)
+[node name="In device" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=153831175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 2.5, -2.3703508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "It'll now appear in your device"
 font_size = 60
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Step 5" unique_id=1086968595 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.75, 0, 4.75)
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1086968595 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -3.25)
 
-[node name="Document" parent="SubViewportContainer/SubViewport/Tutorial/Step 5" unique_id=1367753552 instance=ExtResource("19_gewwa")]
-transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -4.0393863, 1, 6.5518303)
+[node name="Document" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1367753552 instance=ExtResource("19_gewwa")]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 5.7106137, 1, -1.4481697)
 document_info = ExtResource("20_g7vx3")
 texture = ExtResource("21_svqji")
 
-[node name="Step 6" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1530790636]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.25, 0, 6.75)
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1005022274]
 
-[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Step 6" unique_id=1034372253 instance=ExtResource("22_dfnc0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.75, 0, 0.75)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Area3D" unique_id=1540368277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -5.5)
+shape = SubResource("BoxShape3D_4353k")
 
-[node name="Given 5 minutes" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 6" unique_id=604032080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 4.75, 4.379649)
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=2096466333]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=1195765680 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -2.75)
+light_energy = 5.0
+
+[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=978745601 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -5.75)
+light_energy = 5.0
+
+[node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=1754375021 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -8.75)
+light_energy = 5.0
+
+[node name="Room 4" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1785480485 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room4"
+
+[node name="Step1" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1530790636]
+
+[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=1034372253 instance=ExtResource("22_dfnc0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -7.25)
+
+[node name="Given 5 minutes" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=604032080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.75, -3.6203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "In Time Heist you are given 5 minutes
@@ -600,30 +700,30 @@ in an office to piece together
 what happens in the building"
 font_size = 60
 
-[node name="Same way" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 6" unique_id=189312028]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 3, 4.379649)
+[node name="Same way" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=189312028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3, -3.6203508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "NPC walk around, door open and close, etc.
 but everything happens the same way every night"
 font_size = 60
 
-[node name="Same way2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 6" unique_id=1668670362]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 1.5, 4.379649)
+[node name="Same way2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=1668670362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.5, -3.6203508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Try using things like company computers to
 clue you into the story"
 font_size = 60
 
-[node name="Computer" parent="SubViewportContainer/SubViewport/Tutorial/Step 6" unique_id=1194039688 instance=ExtResource("22_upwis")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.75, 0.9284655, 0.75)
+[node name="Computer" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=1194039688 instance=ExtResource("22_upwis")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0.9284655, -7.25)
 
-[node name="Step 7" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1260914630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.25, 0, 6.75)
+[node name="Step2" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1260914630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.75)
 
-[node name="Needs key" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 7" unique_id=1358099222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 3.25, -1.3703508)
+[node name="Needs key" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=1358099222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.25, -3.6203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "This door needs a key!
@@ -631,8 +731,8 @@ Look behind you"
 font_size = 45
 outline_size = 10
 
-[node name="Inventory" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 7" unique_id=1498598656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 2.5, -1.3703508)
+[node name="Inventory" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=1498598656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -3.6203508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "The item shows up in your
@@ -640,22 +740,46 @@ device inventory"
 font_size = 45
 outline_size = 10
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Step 7" unique_id=677614050 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.75, 0, -1.75)
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=677614050 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -4)
 is_locked = true
 
-[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Step 7" unique_id=1750000146 instance=ExtResource("23_7sy1d")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 1.25, -0.75)
+[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=1750000146 instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.75, 1.25, -3)
 
-[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Step 7" unique_id=93420287 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0, -2.25)
+[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=93420287 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
 item = ExtResource("25_v3e2r")
 
-[node name="Step 8" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=370433401]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 0, 8.5)
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1097360618]
 
-[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=629088788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 4.25, -1.3703508)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Area3D" unique_id=1694557390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -5.5)
+shape = SubResource("BoxShape3D_xhr5i")
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1548234323]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=1009484600 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -2.75)
+light_energy = 5.0
+
+[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=1292607774 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -5.75)
+light_energy = 5.0
+
+[node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=113763232 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -8.75)
+light_energy = 5.0
+
+[node name="Room 5" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=370433401 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room5"
+
+[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=629088788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4.25, -7.620351)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Your time travel device lets you witness
@@ -663,8 +787,8 @@ every part of the map at different times in the night"
 font_size = 45
 outline_size = 10
 
-[node name="Controls" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=2075277436]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 3.5, -1.3703508)
+[node name="Controls" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=2075277436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -7.620351)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Hold R to rewind time (you cannot be caught)
@@ -672,8 +796,8 @@ Hold F to \"wait\" and fast forward time (you CAN be caught)"
 font_size = 45
 outline_size = 10
 
-[node name="Controls2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=395218524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25, 3, 5.129649)
+[node name="Controls2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=395218524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3, -1.1203508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "You can change the world! Grab
@@ -681,8 +805,8 @@ this apple to see how the npc's path changes"
 font_size = 45
 outline_size = 10
 
-[node name="Try it" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=1524481766]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 2.5, -1.3703508)
+[node name="Try it" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1524481766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -7.620351)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Try it out on the npc to the left!
@@ -691,31 +815,55 @@ Use the blue recharge station to charge it up"
 font_size = 45
 outline_size = 10
 
-[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=2097079311 instance=ExtResource("25_dmal2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 0, -3.75)
+[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=2097079311 instance=ExtResource("25_dmal2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -10)
 
-[node name="L Desk" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=1045552972 instance=ExtResource("26_2otw2")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.75, 0, 4)
+[node name="L Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1045552972 instance=ExtResource("26_2otw2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -2.25)
 
-[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=203181129 instance=ExtResource("27_gbpfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75, 0, 4.75)
+[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=203181129 instance=ExtResource("27_gbpfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.5)
 color = Color(1, 0.7058824, 1, 1)
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_mwfe8"), SubResource("Resource_ixt3n")])
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_ixt3n"), SubResource("Resource_wkett")])
 follow_branch = 0
-path = SubResource("Resource_ixt3n")
+path = SubResource("Resource_wkett")
 
-[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=1223794530 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 4.5)
+[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1223794530 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 1, -1.75)
 item = ExtResource("34_yxgu2")
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Step 8" unique_id=837675722 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.75, 0, 2)
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=837675722 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7, 0, -4.25)
 
-[node name="Step 9" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1717180513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 0, 8.5)
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1373150628]
 
-[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=1893864073]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.75, 3.1296492)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Area3D" unique_id=779498100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.375, 0.5, -5.5)
+shape = SubResource("BoxShape3D_uttcq")
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=551326145]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Lights" unique_id=910271631 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -2.75)
+light_energy = 5.0
+
+[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Lights" unique_id=843290689 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -5.75)
+light_energy = 5.0
+
+[node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Lights" unique_id=87116401 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -8.75)
+light_energy = 5.0
+
+[node name="Room 6" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1717180513 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room6"
+
+[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1893864073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 3.75, -3.1203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Time travel can be used to solve puzzles.. for example:
@@ -725,8 +873,8 @@ Time C : door is left open"
 font_size = 45
 outline_size = 10
 
-[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=1672016461]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.25, 3.1296492)
+[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1672016461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 2.25, -3.1203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "You would enter the room after time C. Travel back
@@ -734,8 +882,56 @@ to the time before B and grab the item"
 font_size = 45
 outline_size = 10
 
-[node name="Timetravel3" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=2131189087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 2, -2.8703508)
+[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=704321281 instance=ExtResource("25_dmal2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="Office door" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=222323412 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -7)
+is_locked = true
+
+[node name="Exit door" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1495521941 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.75, 0, -2.25)
+is_locked = true
+
+[node name="Door scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=528108776 instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.5, 1.25, -3.25)
+
+[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1494589062 instance=ExtResource("27_gbpfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5.75)
+color = Color(1, 0.87058824, 0.78431374, 1)
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_hilbg")])
+follow_branch = 0
+path = SubResource("Resource_hilbg")
+
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=353285168]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Area3D" unique_id=1165007650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0.5, -3.375)
+shape = SubResource("BoxShape3D_3q7n2")
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1337816386]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Lights" unique_id=581124496 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.625, 2.1, -3.75)
+light_energy = 5.0
+
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Lights" unique_id=1966648331 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 2.1, -3.75)
+light_energy = 5.0
+
+[node name="OfficeLight5" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Lights" unique_id=1919133702 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.25, 2.1, -3.75)
+light_energy = 5.0
+
+[node name="Room 7" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1703796551 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 0, 7.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room7"
+
+[node name="Timetravel3" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=2131189087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2.1203508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "This item was take at 1:51am
@@ -743,64 +939,84 @@ Try going back to before that time"
 font_size = 45
 outline_size = 10
 
-[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=704321281 instance=ExtResource("25_dmal2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0, 5.75)
+[node name="Recharge Station2" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=494808321 instance=ExtResource("25_dmal2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75, 0, -3.5)
 
-[node name="Recharge Station2" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=494808321 instance=ExtResource("25_dmal2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4.25)
+[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=1332388319 instance=ExtResource("22_dfnc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -3.75)
 
-[node name="Office door" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=222323412 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.75)
-is_locked = true
-
-[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=1332388319 instance=ExtResource("22_dfnc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
-
-[node name="Exit door" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=1495521941 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8, 0, 4)
-is_locked = true
-
-[node name="Door scanner" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=528108776 instance=ExtResource("23_7sy1d")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.75, 1.25, 3)
-
-[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=2125445559 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(0.20536724, 0, -0.97868496, 0, 1, 0, 0.97868496, 0, 0.20536724, 0, 0.96071184, -4.5)
+[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=2125445559 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(0.20536724, 0, -0.97868496, 0, 1, 0, 0.97868496, 0, 0.20536724, 2.75, 0.96071184, -3.75)
 item = ExtResource("38_84t3p")
 
-[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Step 9" unique_id=1494589062 instance=ExtResource("27_gbpfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0, 0.5)
-color = Color(1, 0.87058824, 0.78431374, 1)
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_oyw2e")])
-follow_branch = 0
-path = SubResource("Resource_oyw2e")
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=81164661]
 
-[node name="Step 10" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1863731427]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 0, 8.5)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Area3D" unique_id=1016983536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0.5, -2)
+shape = SubResource("BoxShape3D_28cgg")
 
-[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 10" unique_id=596948274]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 2.25, 3.1296492)
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=671850537]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Lights" unique_id=649006419 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.625, 2.1, -1.875)
+light_energy = 5.0
+
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Lights" unique_id=266368490 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 2.1, -1.875)
+light_energy = 5.0
+
+[node name="OfficeLight5" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Lights" unique_id=158861079 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.25, 2.1, -1.875)
+light_energy = 5.0
+
+[node name="Room 8" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1863731427 node_paths=PackedStringArray("room_area", "lights_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.25, 0, 14.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D2")
+lights_node = NodePath("Lights")
+room_id = "tutorial_room8"
+
+[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=596948274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2.25, -3.1203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Good job! I think you're ready to play!"
 font_size = 45
 outline_size = 10
 
-[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 10" unique_id=1301922082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 1.36, 3.13)
+[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=1301922082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1.36, -3.12)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Go through the doorway to go to homebase"
 font_size = 45
 outline_size = 10
 
-[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 10" unique_id=1583330489]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 3)
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=1583330489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -3.25)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 10/Area3D" unique_id=1692915184]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" unique_id=1692915184]
 shape = SubResource("BoxShape3D_3civr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Tutorial/Step 10/Area3D" unique_id=426595266]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" unique_id=426595266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0)
 mesh = SubResource("BoxMesh_4353k")
+
+[node name="Area3D2" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=327900028]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D2" unique_id=1615710405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9375, 0.5, -3.375)
+shape = SubResource("BoxShape3D_mqc0c")
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=386379750]
+
+[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Lights" unique_id=114787640 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2, 2.1, -3.75)
+light_energy = 5.0
+
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Lights" unique_id=1970266804 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.625, 2.1, -3.75)
+light_energy = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=22178100]
 transform = Transform3D(1, 0, 0, 0, 0.657362, 0.753575, 0, -0.753575, 0.657362, 0, 0, 0)
@@ -808,60 +1024,8 @@ visible = false
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1091210565]
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=744613407]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 5.5, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D8" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=883967982]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 12.75, 7.841367, 10.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D11" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=883456966]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 12.75, 7.841367, 5.117388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
 [node name="SpotLight3D9" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1020263123]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 17.75, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D10" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=839639722]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 23.75, 7.841367, 11.367388)
 light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
 light_energy = 6.0
 light_size = 0.25
@@ -886,63 +1050,11 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=339427002]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -0.5, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1145509900]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -6.75, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D6" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=923958911]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -13, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D7" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=268095440]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -19.75, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("38_3civr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 7.75)
 
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Step 7/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Step 7/Generic_Door" method="toggle_open"]
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Step 9/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Step 9/Exit door" method="toggle_open"]
-[connection signal="body_entered" from="SubViewportContainer/SubViewport/Tutorial/Step 10/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2/Generic_Door" method="toggle_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 6/Exit door" method="toggle_open"]
+[connection signal="body_entered" from="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="UI Manager"]
