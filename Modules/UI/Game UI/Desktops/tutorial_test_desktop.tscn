@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="8_f5oos"]
 [ext_resource type="Resource" uid="uid://csaufp18yr7m7" path="res://Assets/TextConvos/Resources/Tutorial/tutorial_computer_convo.tres" id="9_h7og4"]
 [ext_resource type="PackedScene" uid="uid://cijyt3whigooo" path="res://Modules/Interaction/Computer/File App/file_tab.tscn" id="10_24l01"]
-[ext_resource type="Texture2D" uid="uid://8g781rd26jc5" path="res://Assets/Documents/Textures/10_hello_playtester.png" id="10_em078"]
-[ext_resource type="Resource" uid="uid://cw2nowwwbrvos" path="res://Assets/Documents/Resources/hello_playtester.tres" id="11_em078"]
+[ext_resource type="Texture2D" uid="uid://c8pnkwlmfoe7d" path="res://Assets/Documents/Textures/10_hello_playtester.png" id="10_em078"]
+[ext_resource type="Resource" uid="uid://cw2nowwwbrvos" path="res://Assets/Documents/Resources/tutorial_hello_playtester.tres" id="11_em078"]
 
 [node name="Tutorial Test Desktop" type="Control" unique_id=718053962]
 layout_mode = 3

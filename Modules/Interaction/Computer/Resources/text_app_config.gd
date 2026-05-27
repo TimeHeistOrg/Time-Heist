@@ -3,7 +3,7 @@ class_name TextAppConfig
 
 func _init() -> void:
 	app_name = "Text"
-	icon = preload("res://Assets/UI/Computer/Apps/text_app_icon.png")
+	icon = preload("res://Assets/UI/Computer/Apps/text app.png")
 	app_scene = preload("res://Modules/Interaction/Computer/Text App/text_tab.tscn")
 
 @export var convos: Array[TextConvo]

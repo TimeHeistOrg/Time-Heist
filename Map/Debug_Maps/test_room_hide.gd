@@ -3,6 +3,7 @@ extends Node3D
 var lights
 @export var room_area: Area3D
 @export var lights_node: Node3D
+@export var labels_node: LabelsFade
 @export var room_id: String = "room_01"
 
 @export var fade_speed: float = 5.0
@@ -22,7 +23,9 @@ func _on_body_entered(body: Node3D) -> void:
 		contains_player = true
 		for light in lights:
 			light.on()
-		print("Entered ", room_id)
+		#print("Entered ", room_id)
+		if labels_node:
+			labels_node.fade_in()
 		
 func _on_body_exited(body: Node3D) -> void:
 	if body == globals.player:
@@ -30,7 +33,12 @@ func _on_body_exited(body: Node3D) -> void:
 		contains_player = false
 		for light in lights:
 			light.off()
-		print("Exited ", room_id)
+		
+		if labels_node:
+			labels_node.fade_out()
+		
+		
+		#print("Exited ", room_id)
 
 #func _process(delta: float) -> void:
 	#if not lights:

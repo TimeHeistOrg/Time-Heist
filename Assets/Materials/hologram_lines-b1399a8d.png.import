@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdwgms53s2ss2"
-path="res://.godot/imported/text_app_icon.png-52faaed371ba31cef9e28ed58b77bd78.ctex"
+uid="uid://eptfks42t6en"
+path="res://.godot/imported/hologram_lines-b1399a8d.png-65d067ad660d349d91f6fb8567b57e92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Computer/Apps/text_app_icon.png"
-dest_files=["res://.godot/imported/text_app_icon.png-52faaed371ba31cef9e28ed58b77bd78.ctex"]
+source_file="res://Assets/Materials/hologram_lines-b1399a8d.png"
+dest_files=["res://.godot/imported/hologram_lines-b1399a8d.png-65d067ad660d349d91f6fb8567b57e92.ctex"]
 
 [params]
 

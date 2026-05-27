@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://bxqpme2qjir3g" path="res://Modules/MapBuilding/office_light.tscn" id="12_4353k"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="15_u5ky3"]
 [ext_resource type="PackedScene" uid="uid://dkqvotopd4ufp" path="res://Dialogue/dialogue_area.tscn" id="16_3civr"]
-[ext_resource type="PackedScene" uid="uid://bomvk14icglbq" path="res://Modules/AI/NPC/NPCLucasTest.tscn" id="16_7uyeq"]
 [ext_resource type="Resource" uid="uid://bbw00q5pjdvhg" path="res://Dialogue/Tutorial/tutorial_test.dialogue" id="17_k05aa"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="18_capbt"]
 [ext_resource type="PackedScene" uid="uid://djn3ckwc8enih" path="res://Modules/Interaction/Document/document.tscn" id="19_gewwa"]
-[ext_resource type="Resource" uid="uid://cw2nowwwbrvos" path="res://Assets/Documents/Resources/hello_playtester.tres" id="20_g7vx3"]
+[ext_resource type="Resource" uid="uid://cw2nowwwbrvos" path="res://Assets/Documents/Resources/tutorial_hello_playtester.tres" id="20_g7vx3"]
+[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/NPC/Guard.tscn" id="20_mwfe8"]
 [ext_resource type="Texture2D" uid="uid://dfjrrmsqrdlee" path="res://Assets/Documents/Textures/hello_playtester_small.png" id="21_svqji"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="22_dfnc0"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="22_upwis"]
@@ -25,20 +25,42 @@
 [ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="24_ps4sb"]
 [ext_resource type="PackedScene" uid="uid://3qury6ftpyua" path="res://Modules/Interaction/Recharge Station/recharge_station.tscn" id="25_dmal2"]
 [ext_resource type="Resource" uid="uid://c7atpkdvr2gl0" path="res://Assets/Items/Resources/tutorial_door_key.tres" id="25_v3e2r"]
-[ext_resource type="PackedScene" uid="uid://fmcuj3rcvfja" path="res://Assets/Models/Enviornment/l_desk.tscn" id="26_2otw2"]
 [ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/NPC.tscn" id="27_gbpfp"]
 [ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="28_yxgu2"]
 [ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="29_4q678"]
 [ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="30_fr3jc"]
 [ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="31_2v2e4"]
+[ext_resource type="PackedScene" uid="uid://1cs4nrno8aha" path="res://Modules/Interaction/lockable.tscn" id="31_ulrwx"]
 [ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="32_2otw2"]
-[ext_resource type="Script" uid="uid://dytcvxvfnohai" path="res://addons/NPC Pathing/PathClasses/BranchAction.gd" id="32_gbpfp"]
+[ext_resource type="PackedScene" uid="uid://c6k8vhjcf6jjc" path="res://Assets/Models/Enviornment/reception_desk.tscn" id="32_7kydn"]
+[ext_resource type="Resource" uid="uid://b7xexmrmy5oyr" path="res://Assets/Documents/Resources/tutorial_paper.tres" id="34_1r3lh"]
+[ext_resource type="Resource" uid="uid://dt7xgcttdeiwu" path="res://Modules/UI/Game UI/Desktops/Tutorial/tutorial_computer.tres" id="34_ixt3n"]
 [ext_resource type="Resource" uid="uid://2u7ypb7xpscs" path="res://Assets/Items/Resources/apple.tres" id="34_yxgu2"]
+[ext_resource type="Texture2D" uid="uid://bnuuxuhnd4ps8" path="res://Assets/Documents/Textures/18_tutorial_paper.png" id="35_2fa5o"]
 [ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="35_3civr"]
 [ext_resource type="Script" uid="uid://cjhgp3kkd22yr" path="res://addons/NPC Pathing/PathClasses/DoorAction.gd" id="36_k05aa"]
-[ext_resource type="Script" uid="uid://dn4bpr3ia1qr0" path="res://addons/NPC Pathing/PathClasses/InteractAction.gd" id="37_4353k"]
+[ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/Clearance Giver/clearance_giver.tscn" id="37_ek4v5"]
+[ext_resource type="PackedScene" uid="uid://cnj7efh2s8lov" path="res://Modules/Lighting & Visibility/labelsfade.tscn" id="38_0wfx5"]
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="38_3civr"]
-[ext_resource type="Resource" uid="uid://bl3wymmqufqh2" path="res://Assets/Items/Resources/archive_key.tres" id="38_84t3p"]
+[ext_resource type="PackedScene" uid="uid://dow6h3uhurjcs" path="res://Assets/Models/Enviornment/corner_desk.tscn" id="40_mqc0c"]
+[ext_resource type="PackedScene" uid="uid://d3gtn4sbko11j" path="res://Assets/Models/Enviornment/office_chair.tscn" id="41_mwfe8"]
+[ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Models/Enviornment/MeetingTable.tscn" id="42_7kydn"]
+[ext_resource type="PackedScene" uid="uid://b4444a5rqfiiv" path="res://Assets/Models/Enviornment/locker_no_interact.tscn" id="43_1r3lh"]
+[ext_resource type="PackedScene" uid="uid://bvm6vcceemdoc" path="res://Assets/Models/Enviornment/whiteboard.tscn" id="43_j8vsw"]
+[ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Models/Enviornment/plant.tscn" id="44_2fa5o"]
+[ext_resource type="Resource" uid="uid://b48k1wsjxht6j" path="res://Assets/Items/Resources/coffee_mug.tres" id="44_wkett"]
+[ext_resource type="PackedScene" uid="uid://b1sw083h5lqhn" path="res://Assets/Models/Enviornment/small_shelf_long.tscn" id="45_ixt3n"]
+[ext_resource type="Resource" uid="uid://2x0ba0nmg2we" path="res://Assets/Items/Resources/fuse.tres" id="45_s3w85"]
+[ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Models/Enviornment/small_shelf.tscn" id="46_ek4v5"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="46_s3w85"]
+[ext_resource type="PackedScene" uid="uid://crjkh3mdkhhfr" path="res://Assets/Models/Enviornment/tv.tscn" id="47_mwfe8"]
+[ext_resource type="PackedScene" uid="uid://c3wleconqpaqy" path="res://Assets/Models/Enviornment/pc_tower.tscn" id="48_wkett"]
+[ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="50_s3w85"]
+[ext_resource type="PackedScene" uid="uid://b4ad3ylkwaj3p" path="res://Assets/Models/Enviornment/big_shelf_long.tscn" id="50_ucgc0"]
+[ext_resource type="PackedScene" uid="uid://bd0iyc8b0gku6" path="res://Assets/Models/Enviornment/sink.tscn" id="51_dfokh"]
+[ext_resource type="PackedScene" uid="uid://0oh788m3hc14" path="res://Assets/Models/Enviornment/mirror.tscn" id="52_f6pwu"]
+[ext_resource type="Script" uid="uid://daejfwfkoy2cv" path="res://addons/NPC Pathing/PathClasses/SetVarAction.gd" id="54_wkett"]
+[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="61_yjryn"]
 
 [sub_resource type="Gradient" id="Gradient_ciaa5"]
 offsets = PackedFloat32Array(0, 0.1539924, 1)
@@ -87,306 +109,484 @@ grow_amount = -4.125
 [sub_resource type="BoxShape3D" id="BoxShape3D_84t3p"]
 size = Vector3(7.75, 1, 11.25)
 
+[sub_resource type="Resource" id="Resource_j8vsw"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(-10.875, 0, 1.75)
+
+[sub_resource type="Resource" id="Resource_ucgc0"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(-15.25, 0, 1.75)
+time_start = 4.375
+time_end = 4.375
+id = 2
+
+[sub_resource type="Resource" id="Resource_yjryn"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_j8vsw")
+next_vertex = SubResource("Resource_ucgc0")
+time_end = 4.375
+id = 1
+
+[sub_resource type="Resource" id="Resource_lrtsd"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_ucgc0")
+next_vertex = SubResource("Resource_j8vsw")
+is_loop_line = true
+time_start = 4.375
+time_end = 8.75
+id = 3
+
+[sub_resource type="Resource" id="Resource_bbtu8"]
+resource_local_to_scene = true
+script = ExtResource("28_yxgu2")
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_j8vsw"), SubResource("Resource_yjryn"), SubResource("Resource_ucgc0"), SubResource("Resource_lrtsd")])
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_k05aa"]
 size = Vector3(6.25, 1, 11.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4353k"]
-size = Vector3(6, 1, 11.25)
+size = Vector3(6, 1, 16.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhr5i"]
-size = Vector3(6, 1, 11.25)
+size = Vector3(6, 1, 8.75)
 
-[sub_resource type="Resource" id="Resource_xhr5i"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_uttcq"]
+size = Vector3(13, 1, 11.25)
+
+[sub_resource type="Resource" id="Resource_fj7il"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(3.25, 0, 13.25)
+position = Vector3(3.5, 0, 5.375)
 
-[sub_resource type="Resource" id="Resource_28cgg"]
-script = ExtResource("32_gbpfp")
-object = NodePath("../Item")
-property_name = "picked_up"
-dest_path_id = 1
-metadata/_custom_type_script = "uid://dytcvxvfnohai"
+[sub_resource type="Resource" id="Resource_dfokh"]
+script = ExtResource("50_s3w85")
+rotation_deg = 135.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
 
-[sub_resource type="Resource" id="Resource_uttcq"]
+[sub_resource type="Resource" id="Resource_f6pwu"]
+script = ExtResource("35_3civr")
+end_time = 5.0
+duration = 5.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_tfsam"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(6.5, 0, 13.25)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_28cgg")])
-time_start = 3.25
-time_end = 3.25
+position = Vector3(3.25, 0, 8.75)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_dfokh"), SubResource("Resource_f6pwu")])
+time_start = 3.3842466
+time_end = 8.384246587753296
 id = 2
 
-[sub_resource type="Resource" id="Resource_3q7n2"]
+[sub_resource type="Resource" id="Resource_dx32d"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_xhr5i")
-next_vertex = SubResource("Resource_uttcq")
-time_end = 3.25
+speed = 0.9999999963812614
+prev_vertex = SubResource("Resource_fj7il")
+next_vertex = SubResource("Resource_tfsam")
+time_end = 3.3842466
 id = 1
 
-[sub_resource type="Resource" id="Resource_mqc0c"]
+[sub_resource type="Resource" id="Resource_ph251"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(3.25, 0, 13.25)
-time_start = 6.5
-time_end = 6.5
+position = Vector3(4.75, 0, 8.75)
+time_start = 9.884246587753296
+time_end = 9.884246587753296
 id = 4
 
-[sub_resource type="Resource" id="Resource_mwfe8"]
+[sub_resource type="Resource" id="Resource_ry1l5"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_uttcq")
-next_vertex = SubResource("Resource_mqc0c")
-time_start = 3.25
-time_end = 6.5
+prev_vertex = SubResource("Resource_tfsam")
+next_vertex = SubResource("Resource_ph251")
+time_start = 8.384246587753296
+time_end = 9.884246587753296
 id = 3
 
-[sub_resource type="Resource" id="Resource_7kydn"]
+[sub_resource type="Resource" id="Resource_oyw2e"]
+script = ExtResource("35_3civr")
+end_time = 3.0
+duration = 3.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_o5vlg"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(3.25, 0, 10.25)
-time_start = 9.5
-time_end = 9.5
+position = Vector3(4.75, 0, 9.5)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_oyw2e")])
+time_start = 10.634246587753296
+time_end = 13.634246587753296
 id = 6
 
-[sub_resource type="Resource" id="Resource_1r3lh"]
+[sub_resource type="Resource" id="Resource_7m7tr"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_mqc0c")
-next_vertex = SubResource("Resource_7kydn")
-time_start = 6.5
-time_end = 9.5
+prev_vertex = SubResource("Resource_ph251")
+next_vertex = SubResource("Resource_o5vlg")
+time_start = 9.884246587753296
+time_end = 10.634246587753296
 id = 5
 
-[sub_resource type="Resource" id="Resource_2fa5o"]
+[sub_resource type="Resource" id="Resource_74eai"]
+script = ExtResource("50_s3w85")
+rotation_deg = 96.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_hilbg"]
+script = ExtResource("35_3civr")
+end_time = 2.0
+duration = 2.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_hk7cx"]
+script = ExtResource("50_s3w85")
+rotation_deg = 197.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_fk0l2"]
+script = ExtResource("35_3civr")
+start_time = 2.0
+end_time = 5.0
+duration = 3.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_hql20"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(4.75, 0, 7)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_74eai"), SubResource("Resource_hilbg"), SubResource("Resource_hk7cx"), SubResource("Resource_fk0l2")])
+time_start = 16.134246587753296
+time_end = 21.134246587753296
+id = 8
+
+[sub_resource type="Resource" id="Resource_q3s2m"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_7kydn")
-next_vertex = SubResource("Resource_xhr5i")
-is_loop_line = true
-time_start = 9.5
-time_end = 12.5
+prev_vertex = SubResource("Resource_o5vlg")
+next_vertex = SubResource("Resource_hql20")
+time_start = 13.634246587753296
+time_end = 16.134246587753296
 id = 7
 
-[sub_resource type="Resource" id="Resource_ixt3n"]
+[sub_resource type="Resource" id="Resource_yxrk4"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(8, 0, 7)
+time_start = 24.384246587753296
+time_end = 24.384246587753296
+id = 10
+
+[sub_resource type="Resource" id="Resource_7uvhe"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_hql20")
+next_vertex = SubResource("Resource_yxrk4")
+time_start = 21.134246587753296
+time_end = 24.384246587753296
+id = 9
+
+[sub_resource type="Resource" id="Resource_qgntx"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(4.25, 0, 7)
+time_start = 28.134246587753296
+time_end = 28.134246587753296
+id = 12
+
+[sub_resource type="Resource" id="Resource_cuqy8"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_yxrk4")
+next_vertex = SubResource("Resource_qgntx")
+time_start = 24.384246587753296
+time_end = 28.134246587753296
+id = 11
+
+[sub_resource type="Resource" id="Resource_ace7s"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_qgntx")
+next_vertex = SubResource("Resource_fj7il")
+is_loop_line = true
+time_start = 28.134246587753296
+time_end = 29.92397427558899
+id = 13
+
+[sub_resource type="Resource" id="Resource_4ry0o"]
 resource_local_to_scene = true
 script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_xhr5i"), SubResource("Resource_3q7n2"), SubResource("Resource_uttcq"), SubResource("Resource_mwfe8"), SubResource("Resource_mqc0c"), SubResource("Resource_1r3lh"), SubResource("Resource_7kydn"), SubResource("Resource_2fa5o")])
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_fj7il"), SubResource("Resource_dx32d"), SubResource("Resource_tfsam"), SubResource("Resource_ry1l5"), SubResource("Resource_ph251"), SubResource("Resource_7m7tr"), SubResource("Resource_o5vlg"), SubResource("Resource_q3s2m"), SubResource("Resource_hql20"), SubResource("Resource_7uvhe"), SubResource("Resource_yxrk4"), SubResource("Resource_cuqy8"), SubResource("Resource_qgntx"), SubResource("Resource_ace7s")])
 loop = true
 metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
-[sub_resource type="Resource" id="Resource_0wfx5"]
+[sub_resource type="Resource" id="Resource_viqwk"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(3.25, 0, 13.25)
+position = Vector3(8, 0, 8.125)
 
-[sub_resource type="Resource" id="Resource_ulrwx"]
+[sub_resource type="Resource" id="Resource_p1yqh"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(6.5, 0, 13.25)
-time_start = 3.25
-time_end = 3.25
+position = Vector3(5.5, 0, 8.125)
+time_start = 2.5
+time_end = 2.5
 id = 2
 
-[sub_resource type="Resource" id="Resource_ui3m5"]
+[sub_resource type="Resource" id="Resource_ioh28"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_0wfx5")
-next_vertex = SubResource("Resource_ulrwx")
-time_end = 3.25
+prev_vertex = SubResource("Resource_viqwk")
+next_vertex = SubResource("Resource_p1yqh")
+time_end = 2.5
 id = 1
 
-[sub_resource type="Resource" id="Resource_wkett"]
-resource_local_to_scene = true
-script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_0wfx5"), SubResource("Resource_ui3m5"), SubResource("Resource_ulrwx")])
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
+[sub_resource type="Resource" id="Resource_bcb1c"]
+script = ExtResource("50_s3w85")
+rotation_deg = 180.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uttcq"]
-size = Vector3(7, 1, 11.25)
-
-[sub_resource type="Resource" id="Resource_ek4v5"]
+[sub_resource type="Resource" id="Resource_ea3xs"]
 script = ExtResource("35_3civr")
-end_time = 112.0
-duration = 112.0
+end_time = 5.0
+duration = 5.0
 metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
 
-[sub_resource type="Resource" id="Resource_s3w85"]
+[sub_resource type="Resource" id="Resource_mljjq"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(16.25, 0, 9)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_ek4v5")])
-time_end = 112.0
+position = Vector3(7.25, 0, 9)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_bcb1c"), SubResource("Resource_ea3xs")])
+time_start = 4.456559538841248
+time_end = 9.456559538841248
+id = 4
 
-[sub_resource type="Resource" id="Resource_j8vsw"]
+[sub_resource type="Resource" id="Resource_g6ry7"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_p1yqh")
+next_vertex = SubResource("Resource_mljjq")
+time_start = 2.5
+time_end = 4.456559538841248
+id = 3
+
+[sub_resource type="Resource" id="Resource_alef8"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_mljjq")
+next_vertex = SubResource("Resource_viqwk")
+is_loop_line = true
+time_start = 9.456559538841248
+time_end = 10.609002590179443
+id = 5
+
+[sub_resource type="Resource" id="Resource_cjl8i"]
+resource_local_to_scene = true
+script = ExtResource("28_yxgu2")
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_viqwk"), SubResource("Resource_ioh28"), SubResource("Resource_p1yqh"), SubResource("Resource_g6ry7"), SubResource("Resource_mljjq"), SubResource("Resource_alef8")])
+snap = 0.125
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
+
+[sub_resource type="Resource" id="Resource_s2kma"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(20.125, 0, 8.75)
+
+[sub_resource type="Resource" id="Resource_jq0yw"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(18.5, 0, 8.75)
+time_start = 1.625
+time_end = 1.625
+id = 2
+
+[sub_resource type="Resource" id="Resource_1plgo"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_s2kma")
+next_vertex = SubResource("Resource_jq0yw")
+time_end = 1.625
+id = 1
+
+[sub_resource type="Resource" id="Resource_6c18y"]
 script = ExtResource("36_k05aa")
 door = NodePath("../Office door")
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
-[sub_resource type="Resource" id="Resource_tjh5p"]
+[sub_resource type="Resource" id="Resource_ouk7w"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(13.5, 0, 9)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_j8vsw")])
-time_start = 114.75
-time_end = 114.75
-id = 2
-
-[sub_resource type="Resource" id="Resource_cvxcn"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_s3w85")
-next_vertex = SubResource("Resource_tjh5p")
-time_start = 112.0
-time_end = 114.75
-id = 1
-
-[sub_resource type="Resource" id="Resource_2m0nu"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(12.5, 0, 9)
-time_start = 115.75
-time_end = 115.75
+position = Vector3(18.5, 0, 8.5)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_6c18y")])
+time_start = 1.875
+time_end = 1.875
 id = 4
 
-[sub_resource type="Resource" id="Resource_ucgc0"]
+[sub_resource type="Resource" id="Resource_wmbfu"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_tjh5p")
-next_vertex = SubResource("Resource_2m0nu")
-time_start = 114.75
-time_end = 115.75
+prev_vertex = SubResource("Resource_jq0yw")
+next_vertex = SubResource("Resource_ouk7w")
+time_start = 1.625
+time_end = 1.875
 id = 3
 
-[sub_resource type="Resource" id="Resource_lrtsd"]
+[sub_resource type="Resource" id="Resource_52ddb"]
 script = ExtResource("36_k05aa")
 door = NodePath("../Office door")
 action = 1
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
-[sub_resource type="Resource" id="Resource_dfokh"]
+[sub_resource type="Resource" id="Resource_mmtwr"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(12.5, 0, 6.25)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_lrtsd")])
-time_start = 118.5
-time_end = 118.5
+position = Vector3(18.5, 0, 7.375)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_52ddb")])
+time_start = 3.0
+time_end = 3.0
 id = 6
 
-[sub_resource type="Resource" id="Resource_f6pwu"]
+[sub_resource type="Resource" id="Resource_81075"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_2m0nu")
-next_vertex = SubResource("Resource_dfokh")
-time_start = 115.75
-time_end = 118.5
+prev_vertex = SubResource("Resource_ouk7w")
+next_vertex = SubResource("Resource_mmtwr")
+time_start = 1.875
+time_end = 3.0
 id = 5
 
-[sub_resource type="Resource" id="Resource_fj7il"]
-script = ExtResource("37_4353k")
-interactable = NodePath("../../Room 7/Item")
-metadata/_custom_type_script = "uid://dn4bpr3ia1qr0"
+[sub_resource type="Resource" id="Resource_fhvwx"]
+script = ExtResource("54_wkett")
+property = "picked_up"
+object = NodePath("../../Room 7/Item")
+type = 4
+bool_value = true
+metadata/_custom_type_script = "uid://daejfwfkoy2cv"
 
-[sub_resource type="Resource" id="Resource_yjryn"]
+[sub_resource type="Resource" id="Resource_ejtd8"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(12.5, 0, 4.75)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_fj7il")])
-time_start = 120.0
-time_end = 120.0
+position = Vector3(18.5, 0, 4.75)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_fhvwx")])
+time_start = 5.625
+time_end = 5.625
 id = 8
 
-[sub_resource type="Resource" id="Resource_bbtu8"]
+[sub_resource type="Resource" id="Resource_o721t"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_dfokh")
-next_vertex = SubResource("Resource_yjryn")
-time_start = 118.5
-time_end = 120.0
+prev_vertex = SubResource("Resource_mmtwr")
+next_vertex = SubResource("Resource_ejtd8")
+time_start = 3.0
+time_end = 5.625
 id = 7
 
-[sub_resource type="Resource" id="Resource_6c18y"]
+[sub_resource type="Resource" id="Resource_wkett"]
 script = ExtResource("36_k05aa")
 door = NodePath("../Office door")
-action = 4
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
-[sub_resource type="Resource" id="Resource_tfsam"]
+[sub_resource type="Resource" id="Resource_sain6"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(12.5, 0, 5.75)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_6c18y")])
-time_start = 121.0
-time_end = 121.0
+position = Vector3(18.5, 0, 6.75)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_wkett")])
+time_start = 7.625
+time_end = 7.625
 id = 10
 
-[sub_resource type="Resource" id="Resource_dx32d"]
+[sub_resource type="Resource" id="Resource_i52hx"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_yjryn")
-next_vertex = SubResource("Resource_tfsam")
-time_start = 120.0
-time_end = 121.0
+prev_vertex = SubResource("Resource_ejtd8")
+next_vertex = SubResource("Resource_sain6")
+time_start = 5.625
+time_end = 7.625
 id = 9
 
-[sub_resource type="Resource" id="Resource_oyw2e"]
+[sub_resource type="Resource" id="Resource_u41jk"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(12.5, 0, 9)
-time_start = 124.25
-time_end = 124.25
+position = Vector3(18.5, 0, 8.75)
+time_start = 9.625
+time_end = 9.625
 id = 12
 
-[sub_resource type="Resource" id="Resource_ph251"]
+[sub_resource type="Resource" id="Resource_wbn2w"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_tfsam")
-next_vertex = SubResource("Resource_oyw2e")
-time_start = 121.0
-time_end = 124.25
+prev_vertex = SubResource("Resource_sain6")
+next_vertex = SubResource("Resource_u41jk")
+time_start = 7.625
+time_end = 9.625
 id = 11
 
-[sub_resource type="Resource" id="Resource_ry1l5"]
+[sub_resource type="Resource" id="Resource_aw1ul"]
+script = ExtResource("50_s3w85")
+rotation_deg = 90.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_ipndl"]
+script = ExtResource("35_3civr")
+end_time = 1.0
+duration = 1.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_i7j6t"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
-position = Vector3(9.75, 0, 9)
-time_start = 127.0
-time_end = 127.0
+position = Vector3(20.125, 0, 8.75)
+vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_aw1ul"), SubResource("Resource_ipndl")])
+time_start = 11.25
+time_end = 12.25
 id = 14
 
-[sub_resource type="Resource" id="Resource_74eai"]
+[sub_resource type="Resource" id="Resource_fkywi"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
-prev_vertex = SubResource("Resource_oyw2e")
-next_vertex = SubResource("Resource_ry1l5")
-time_start = 124.25
-time_end = 127.0
+prev_vertex = SubResource("Resource_u41jk")
+next_vertex = SubResource("Resource_i7j6t")
+time_start = 9.625
+time_end = 11.25
 id = 13
 
-[sub_resource type="Resource" id="Resource_hilbg"]
+[sub_resource type="Resource" id="Resource_61w73"]
 resource_local_to_scene = true
 script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_s3w85"), SubResource("Resource_cvxcn"), SubResource("Resource_tjh5p"), SubResource("Resource_ucgc0"), SubResource("Resource_2m0nu"), SubResource("Resource_f6pwu"), SubResource("Resource_dfokh"), SubResource("Resource_bbtu8"), SubResource("Resource_yjryn"), SubResource("Resource_dx32d"), SubResource("Resource_tfsam"), SubResource("Resource_ph251"), SubResource("Resource_oyw2e"), SubResource("Resource_74eai"), SubResource("Resource_ry1l5")])
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_s2kma"), SubResource("Resource_1plgo"), SubResource("Resource_jq0yw"), SubResource("Resource_wmbfu"), SubResource("Resource_ouk7w"), SubResource("Resource_81075"), SubResource("Resource_mmtwr"), SubResource("Resource_o721t"), SubResource("Resource_ejtd8"), SubResource("Resource_i52hx"), SubResource("Resource_sain6"), SubResource("Resource_wbn2w"), SubResource("Resource_u41jk"), SubResource("Resource_fkywi"), SubResource("Resource_i7j6t")])
+snap = 0.125
 metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3q7n2"]
-size = Vector3(10.75, 1, 7)
+size = Vector3(6, 1, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_28cgg"]
-size = Vector3(10.75, 1, 4.25)
+size = Vector3(6, 1, 4.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3civr"]
 size = Vector3(2, 2, 2)
@@ -404,7 +604,7 @@ stencil_outline_thickness = 0.001
 
 [sub_resource type="BoxMesh" id="BoxMesh_4353k"]
 material = SubResource("StandardMaterial3D_g4j4g")
-size = Vector3(1.5, 2.07, 1.5)
+size = Vector3(2, 2.07, 2.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mqc0c"]
 size = Vector3(8.125, 1, 7)
@@ -445,7 +645,7 @@ visible = false
 shape = SubResource("WorldBoundaryShape3D_hfwyr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=683846590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007951736, -0.0012888908, -0.042707443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028934479, -0.0012888908, -0.09393215)
 mesh = SubResource("PlaneMesh_xauru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ciaa5")
 
@@ -456,65 +656,20 @@ cell_center_y = false
 collision_layer = 8
 collision_mask = 0
 data = {
-"cells": PackedInt32Array(20, 14, 1048576, 19, 14, 1048576, 18, 14, 1048576, 17, 14, 1048576, 16, 14, 1048576, 15, 14, 1048576, 14, 14, 1048576, 13, 14, 1048576, 12, 14, 1048576, 11, 14, 1048576, 10, 14, 1048576, 9, 14, 1048576, 8, 14, 1048576, 7, 14, 1048576, 6, 14, 1048576, 5, 14, 1048576, 4, 14, 1048576, 3, 14, 1048576, 2, 14, 1048576, 1, 14, 1048576, 0, 14, 1048576, 65535, 14, 1048576, 65534, 14, 1048576, 65533, 14, 1048576, 65532, 14, 1048576, 36, 14, 1048576, 36, 15, 1048576, 36, 16, 1048576, 36, 17, 1048576, 36, 18, 1048576, 36, 19, 1048576, 36, 20, 1048576, 36, 21, 1048576, 36, 22, 1048576, 36, 23, 1048576, 36, 24, 1048576, 36, 25, 1048576, 36, 26, 1048576, 36, 27, 1048576, 36, 28, 1048576, 36, 29, 1048576, 36, 30, 1048576, 36, 31, 1048576, 36, 32, 1048576, 36, 33, 1048576, 36, 34, 1048576, 36, 35, 1048576, 36, 36, 1048576, 36, 37, 1048576, 36, 38, 1048576, 65496, 14, 1048576, 65497, 14, 1048576, 65498, 14, 1048576, 65499, 14, 1048576, 65500, 14, 1048576, 65501, 14, 1048576, 65502, 14, 1048576, 65503, 14, 1048576, 65504, 14, 1048576, 65505, 14, 1048576, 65506, 14, 1048576, 65507, 14, 1048576, 65508, 14, 1048576, 65509, 14, 1048576, 65510, 14, 1048576, 65511, 14, 1048576, 65512, 14, 1048576, 65513, 14, 1048576, 65514, 14, 1048576, 65515, 14, 1048576, 65516, 14, 1048576, 65517, 14, 1048576, 65518, 14, 1048576, 65519, 14, 1048576, 65520, 14, 1048576, 65521, 14, 1048576, 65522, 14, 1048576, 65523, 14, 1048576, 65524, 14, 1048576, 65525, 14, 1048576, 65526, 14, 1048576, 65527, 14, 1048576, 65528, 14, 1048576, 65529, 14, 1048576, 65530, 14, 1048576, 65531, 14, 1048576, 65496, 23, 1048576, 65496, 24, 1048576, 65496, 25, 1048576, 65496, 26, 1048576, 65496, 27, 1048576, 65496, 28, 1048576, 65496, 29, 1048576, 65496, 30, 1048576, 65496, 31, 1048576, 65496, 32, 1048576, 65496, 33, 1048576, 65496, 34, 1048576, 65496, 35, 1048576, 65496, 36, 1048576, 65496, 37, 1048576, 65496, 38, 1048576, 65496, 59, 1048576, 65497, 59, 1048576, 65498, 59, 1048576, 65499, 59, 1048576, 65500, 59, 1048576, 65501, 59, 1048576, 65502, 59, 1048576, 65503, 59, 1048576, 65504, 59, 1048576, 65505, 59, 1048576, 65506, 59, 1048576, 65507, 59, 1048576, 65508, 59, 1048576, 65509, 59, 1048576, 65510, 59, 1048576, 65511, 59, 1048576, 65512, 59, 1048576, 65513, 59, 1048576, 65514, 59, 1048576, 65515, 59, 1048576, 65516, 59, 1048576, 65517, 59, 1048576, 65518, 59, 1048576, 65519, 59, 1048576, 65520, 59, 1048576, 65521, 59, 1048576, 65522, 59, 1048576, 65523, 59, 1048576, 65524, 59, 1048576, 65525, 59, 1048576, 65526, 59, 1048576, 65527, 59, 1048576, 65528, 59, 1048576, 65529, 59, 1048576, 65530, 59, 1048576, 65531, 59, 1048576, 65532, 59, 1048576, 65533, 59, 1048576, 65534, 59, 1048576, 65535, 59, 1048576, 0, 59, 1048576, 1, 59, 1048576, 2, 59, 1048576, 3, 59, 1048576, 4, 59, 1048576, 5, 59, 1048576, 6, 59, 1048576, 7, 59, 1048576, 8, 59, 1048576, 9, 59, 1048576, 10, 59, 1048576, 11, 59, 1048576, 12, 59, 1048576, 13, 59, 1048576, 14, 59, 1048576, 15, 59, 1048576, 16, 59, 1048576, 17, 59, 1048576, 18, 59, 1048576, 19, 59, 1048576, 20, 59, 1048576, 21, 59, 1048576, 22, 59, 1048576, 23, 59, 1048576, 24, 59, 1048576, 25, 59, 1048576, 26, 59, 1048576, 27, 59, 1048576, 28, 59, 1048576, 29, 59, 1048576, 30, 59, 1048576, 31, 59, 1048576, 32, 59, 1048576, 33, 59, 1048576, 34, 59, 1048576, 35, 59, 1048576, 36, 59, 0, 65496, 39, 1048576, 65496, 40, 1048576, 65496, 41, 1048576, 65496, 42, 1048576, 65496, 43, 1048576, 65496, 44, 1048576, 65496, 45, 1048576, 65496, 46, 1048576, 65496, 47, 1048576, 65496, 48, 1048576, 65496, 49, 1048576, 65496, 50, 1048576, 65496, 51, 1048576, 65496, 52, 1048576, 65496, 53, 1048576, 65496, 54, 1048576, 65496, 55, 1048576, 65496, 56, 1048576, 65496, 57, 1048576, 65496, 58, 1048576, 36, 39, 1048576, 36, 44, 1048576, 36, 45, 1048576, 36, 46, 1048576, 36, 47, 1048576, 36, 48, 1048576, 36, 49, 1048576, 36, 50, 1048576, 36, 51, 1048576, 36, 52, 1048576, 36, 53, 1048576, 36, 54, 1048576, 36, 55, 1048576, 36, 56, 1048576, 36, 57, 1048576, 36, 58, 1048576, 65520, 15, 1048576, 65520, 16, 1048576, 65520, 17, 1048576, 65520, 18, 1048576, 65520, 19, 1048576, 65520, 20, 1048576, 65520, 21, 1048576, 65520, 22, 1048576, 65520, 23, 1048576, 65520, 24, 1048576, 65520, 25, 1048576, 65520, 26, 1048576, 65520, 27, 1048576, 65520, 28, 1048576, 65520, 29, 1048576, 65520, 30, 1048576, 65520, 31, 1048576, 65520, 32, 1048576, 65520, 33, 1048576, 65520, 34, 1048576, 65520, 35, 1048576, 65520, 36, 1048576, 65520, 37, 1048576, 65520, 38, 1048576, 65520, 39, 1048576, 65520, 40, 1048576, 65520, 41, 1048576, 65520, 42, 1048576, 65520, 43, 1048576, 65520, 52, 1048576, 65520, 53, 1048576, 65520, 54, 1048576, 65520, 55, 1048576, 65520, 56, 1048576, 65520, 57, 1048576, 65520, 58, 1048576, 65520, 48, 1048576, 65520, 49, 1048576, 65520, 50, 1048576, 65520, 51, 1048576, 8, 40, 1048576, 8, 41, 1048576, 8, 42, 1048576, 8, 43, 1048576, 8, 44, 1048576, 8, 45, 1048576, 8, 46, 1048576, 8, 47, 1048576, 8, 48, 1048576, 8, 49, 1048576, 8, 50, 1048576, 8, 51, 1048576, 8, 52, 1048576, 8, 53, 1048576, 8, 54, 1048576, 8, 55, 1048576, 8, 56, 1048576, 8, 57, 1048576, 8, 58, 1048576, 8, 24, 1048576, 8, 25, 1048576, 8, 26, 1048576, 8, 27, 1048576, 8, 28, 1048576, 8, 29, 1048576, 8, 30, 1048576, 8, 31, 1048576, 8, 32, 1048576, 8, 33, 1048576, 8, 34, 1048576, 8, 35, 1048576, 8, 36, 1048576, 8, 37, 1048576, 8, 38, 1048576, 8, 39, 1048576, 65440, 14, 1048576, 65441, 14, 1048576, 65442, 14, 1048576, 65443, 14, 1048576, 65444, 14, 1048576, 65445, 14, 1048576, 65446, 14, 1048576, 65447, 14, 1048576, 65448, 14, 1048576, 65449, 14, 1048576, 65450, 14, 1048576, 65451, 14, 1048576, 65452, 14, 1048576, 65453, 14, 1048576, 65454, 14, 1048576, 65455, 14, 1048576, 65456, 14, 1048576, 65457, 14, 1048576, 65458, 14, 1048576, 65459, 14, 1048576, 65460, 14, 1048576, 65461, 14, 1048576, 65462, 14, 1048576, 65463, 14, 1048576, 65464, 14, 1048576, 65465, 14, 1048576, 65466, 14, 1048576, 65467, 14, 1048576, 65468, 14, 1048576, 65469, 14, 1048576, 65470, 14, 1048576, 65471, 14, 1048576, 65472, 14, 1048576, 65473, 14, 1048576, 65474, 14, 1048576, 65475, 14, 1048576, 65476, 14, 1048576, 65477, 14, 1048576, 65478, 14, 1048576, 65479, 14, 1048576, 65480, 14, 1048576, 65481, 14, 1048576, 65482, 14, 1048576, 65483, 14, 1048576, 65484, 14, 1048576, 65485, 14, 1048576, 65486, 14, 1048576, 65487, 14, 1048576, 65488, 14, 1048576, 65489, 14, 1048576, 65490, 14, 1048576, 65491, 14, 1048576, 65492, 14, 1048576, 65493, 14, 1048576, 65494, 14, 1048576, 65495, 14, 1048576, 65440, 15, 1048576, 65440, 16, 1048576, 65440, 17, 1048576, 65440, 18, 1048576, 65440, 19, 1048576, 65440, 20, 1048576, 65440, 21, 1048576, 65440, 22, 1048576, 65440, 23, 1048576, 65440, 24, 1048576, 65440, 25, 1048576, 65440, 26, 1048576, 65440, 27, 1048576, 65440, 28, 1048576, 65440, 29, 1048576, 65440, 30, 1048576, 65440, 31, 1048576, 65440, 32, 1048576, 65440, 33, 1048576, 65440, 34, 1048576, 65440, 35, 1048576, 65440, 36, 1048576, 65440, 37, 1048576, 65440, 38, 1048576, 65440, 39, 1048576, 65440, 40, 1048576, 65440, 41, 1048576, 65440, 42, 1048576, 65440, 43, 1048576, 65440, 44, 1048576, 65440, 45, 1048576, 65440, 46, 1048576, 65440, 47, 1048576, 65440, 48, 1048576, 65440, 49, 1048576, 65440, 50, 1048576, 65440, 51, 1048576, 65440, 52, 1048576, 65440, 53, 1048576, 65440, 54, 1048576, 65440, 55, 1048576, 65440, 56, 1048576, 65440, 57, 1048576, 65440, 58, 1048576, 65440, 59, 1048576, 65441, 59, 1048576, 65442, 59, 1048576, 65443, 59, 1048576, 65444, 59, 1048576, 65445, 59, 1048576, 65446, 59, 1048576, 65447, 59, 1048576, 65448, 59, 1048576, 65449, 59, 1048576, 65450, 59, 1048576, 65451, 59, 1048576, 65452, 59, 1048576, 65453, 59, 1048576, 65454, 59, 1048576, 65455, 59, 1048576, 65456, 59, 1048576, 65457, 59, 1048576, 65458, 59, 1048576, 65459, 59, 1048576, 65460, 59, 1048576, 65461, 59, 1048576, 65462, 59, 1048576, 65463, 59, 1048576, 65464, 59, 1048576, 65465, 59, 1048576, 65466, 59, 1048576, 65467, 59, 1048576, 65468, 59, 1048576, 65469, 59, 1048576, 65470, 59, 1048576, 65471, 59, 1048576, 65472, 59, 1048576, 65473, 59, 1048576, 65474, 59, 1048576, 65475, 59, 1048576, 65476, 59, 1048576, 65477, 59, 1048576, 65478, 59, 1048576, 65479, 59, 1048576, 65480, 59, 1048576, 65481, 59, 1048576, 65482, 59, 1048576, 65483, 59, 1048576, 65484, 59, 1048576, 65485, 59, 1048576, 65486, 59, 1048576, 65487, 59, 1048576, 65488, 59, 1048576, 65489, 59, 1048576, 65490, 59, 1048576, 65491, 59, 1048576, 65492, 59, 1048576, 65493, 59, 1048576, 65494, 59, 1048576, 65495, 59, 1048576, 65471, 48, 1048576, 65471, 49, 1048576, 65471, 50, 1048576, 65471, 51, 1048576, 65471, 52, 1048576, 65471, 53, 1048576, 65471, 54, 1048576, 65471, 55, 1048576, 65471, 56, 1048576, 65471, 57, 1048576, 65471, 58, 1048576, 65471, 15, 1048576, 65471, 16, 1048576, 65471, 17, 1048576, 65471, 18, 1048576, 65471, 19, 1048576, 65471, 20, 1048576, 65471, 21, 1048576, 65471, 22, 1048576, 65471, 23, 1048576, 65471, 24, 1048576, 65471, 25, 1048576, 65471, 26, 1048576, 65471, 27, 1048576, 65471, 28, 1048576, 65471, 29, 1048576, 65471, 30, 1048576, 65471, 31, 1048576, 65471, 32, 1048576, 65471, 33, 1048576, 65471, 34, 1048576, 65471, 35, 1048576, 65471, 36, 1048576, 65471, 37, 1048576, 65471, 38, 1048576, 65471, 39, 1048576, 65471, 40, 1048576, 65471, 41, 1048576, 65471, 42, 1048576, 65471, 43, 1048576, 65508, 36, 1048576, 65509, 36, 1048576, 65510, 36, 1048576, 65511, 36, 1048576, 65512, 36, 1048576, 65513, 36, 1048576, 65514, 36, 1048576, 65515, 36, 1048576, 65516, 36, 1048576, 65517, 36, 1048576, 65518, 36, 1048576, 65519, 36, 1048576, 8, 15, 0, 8, 16, 0, 8, 17, 0, 8, 23, 0, 8, 22, 0, 21, 14, 0, 22, 14, 0, 23, 14, 0, 24, 14, 0, 25, 14, 0, 26, 14, 0, 27, 14, 0, 28, 14, 0, 29, 14, 0, 30, 14, 0, 31, 14, 0, 32, 14, 0, 33, 14, 0, 34, 14, 0, 35, 14, 0, 37, 14, 0, 38, 14, 0, 39, 14, 0, 40, 14, 0, 41, 14, 0, 42, 14, 0, 43, 14, 0, 44, 14, 0, 45, 14, 0, 46, 14, 0, 47, 14, 0, 48, 14, 0, 49, 14, 0, 50, 14, 0, 51, 14, 0, 52, 14, 0, 53, 14, 0, 54, 14, 0, 55, 14, 0, 56, 14, 0, 57, 14, 0, 58, 14, 0, 59, 14, 0, 60, 14, 0, 61, 14, 0, 62, 14, 0, 63, 14, 0, 64, 14, 0, 64, 59, 0, 63, 59, 0, 62, 59, 0, 61, 59, 0, 60, 59, 0, 59, 59, 0, 58, 59, 0, 57, 59, 0, 56, 59, 0, 55, 59, 0, 54, 59, 0, 53, 59, 0, 52, 59, 0, 51, 59, 0, 50, 59, 0, 49, 59, 0, 48, 59, 0, 47, 59, 0, 46, 59, 0, 45, 59, 0, 44, 59, 0, 43, 59, 0, 42, 59, 0, 41, 59, 0, 40, 59, 0, 39, 59, 0, 38, 59, 0, 37, 59, 0, 65, 14, 0, 66, 14, 0, 67, 14, 0, 68, 14, 0, 69, 14, 0, 70, 14, 0, 71, 14, 0, 72, 14, 0, 73, 14, 0, 74, 14, 0, 75, 14, 0, 76, 14, 0, 77, 14, 0, 78, 14, 0, 79, 14, 0, 79, 15, 0, 79, 16, 0, 79, 17, 0, 79, 18, 0, 79, 19, 0, 79, 20, 0, 79, 21, 0, 79, 22, 0, 79, 23, 0, 79, 24, 0, 79, 25, 0, 79, 26, 0, 79, 27, 0, 79, 28, 0, 79, 29, 0, 79, 30, 0, 79, 31, 0, 79, 32, 0, 79, 33, 0, 79, 34, 0, 79, 35, 0, 79, 36, 0, 79, 37, 0, 79, 38, 0, 79, 39, 0, 79, 40, 0, 79, 41, 0, 79, 42, 0, 79, 43, 0, 79, 44, 0, 79, 45, 0, 79, 46, 0, 79, 47, 0, 79, 52, 0, 79, 53, 0, 79, 54, 0, 79, 55, 0, 79, 56, 0, 79, 57, 0, 79, 58, 0, 79, 59, 0, 65, 59, 0, 66, 59, 0, 67, 59, 0, 68, 59, 0, 69, 59, 0, 70, 59, 0, 71, 59, 0, 72, 59, 0, 73, 59, 0, 74, 59, 0, 75, 59, 0, 76, 59, 0, 77, 59, 0, 78, 59, 0, 37, 31, 0, 38, 31, 0, 39, 31, 0, 40, 31, 0, 41, 31, 0, 42, 31, 0, 43, 31, 0, 44, 31, 0, 45, 31, 0, 46, 31, 0, 47, 31, 0, 52, 31, 0, 53, 31, 0, 54, 31, 0, 55, 31, 0, 56, 31, 0, 57, 31, 0, 58, 31, 0, 59, 31, 0, 60, 31, 0, 61, 31, 0, 62, 31, 0, 63, 31, 0, 64, 31, 0, 65, 31, 0, 66, 31, 0, 67, 31, 0, 68, 31, 0, 69, 31, 0, 70, 31, 0, 71, 31, 0, 72, 31, 0, 73, 31, 0, 74, 31, 0, 75, 31, 0, 76, 31, 0, 77, 31, 0, 78, 31, 0, 80, 31, 0, 81, 31, 0, 82, 31, 0, 83, 31, 0, 84, 31, 0, 85, 31, 0, 86, 31, 0, 87, 31, 0, 88, 31, 0, 89, 31, 0, 90, 31, 0, 91, 31, 0, 92, 31, 0, 93, 31, 0, 94, 31, 0, 95, 31, 0, 96, 31, 0, 97, 31, 0, 98, 31, 0, 99, 31, 0, 100, 31, 0, 101, 31, 0, 102, 31, 0, 103, 31, 0, 104, 31, 0, 105, 31, 0, 106, 31, 0, 107, 31, 0, 108, 31, 0, 109, 31, 0, 110, 31, 0, 111, 31, 0, 111, 32, 0, 111, 33, 0, 111, 34, 0, 111, 35, 0, 111, 36, 0, 111, 37, 0, 111, 38, 0, 111, 39, 0, 111, 40, 0, 111, 41, 0, 111, 42, 0, 111, 43, 0, 111, 48, 0, 111, 49, 0, 111, 50, 0, 111, 51, 0, 111, 52, 0, 111, 53, 0, 111, 54, 0, 111, 55, 0, 111, 56, 0, 111, 57, 0, 111, 58, 0, 111, 59, 0, 80, 59, 0, 81, 59, 0, 82, 59, 0, 83, 59, 0, 84, 59, 0, 85, 59, 0, 86, 59, 0, 87, 59, 0, 88, 59, 0, 89, 59, 0, 90, 59, 0, 91, 59, 0, 92, 59, 0, 93, 59, 0, 94, 59, 0, 95, 59, 0, 96, 59, 0, 97, 59, 0, 98, 59, 0, 99, 59, 0, 100, 59, 0, 101, 59, 0, 102, 59, 0, 103, 59, 0, 104, 59, 0, 105, 59, 0, 106, 59, 0, 107, 59, 0, 108, 59, 0, 109, 59, 0, 110, 59, 0, 112, 41, 0, 112, 50, 0, 113, 50, 0, 114, 50, 0, 115, 50, 0, 116, 50, 0, 117, 50, 0, 118, 50, 0, 119, 50, 0, 120, 50, 0, 113, 41, 0, 114, 41, 0, 115, 41, 0, 116, 41, 0, 117, 41, 0, 120, 49, 0, 120, 48, 0, 120, 47, 0, 120, 46, 0, 120, 45, 0, 120, 44, 0, 120, 43, 0, 120, 42, 0, 120, 41, 0, 118, 41, 0, 119, 41, 0)
+"cells": PackedInt32Array(20, 14, 1048576, 19, 14, 1048576, 18, 14, 1048576, 17, 14, 1048576, 16, 14, 1048576, 15, 14, 1048576, 14, 14, 1048576, 13, 14, 1048576, 12, 14, 1048576, 11, 14, 1048576, 10, 14, 1048576, 9, 14, 1048576, 8, 14, 1048576, 36, 14, 1048576, 36, 15, 1048576, 36, 16, 1048576, 36, 17, 1048576, 36, 18, 1048576, 36, 19, 1048576, 36, 20, 1048576, 36, 21, 1048576, 36, 22, 1048576, 36, 23, 1048576, 36, 24, 1048576, 36, 25, 1048576, 36, 26, 1048576, 36, 27, 1048576, 36, 28, 1048576, 36, 29, 1048576, 36, 30, 1048576, 36, 31, 1048576, 36, 32, 1048576, 36, 33, 1048576, 36, 34, 1048576, 36, 35, 1048576, 36, 36, 1048576, 36, 37, 1048576, 36, 38, 1048576, 65496, 14, 1048576, 65497, 14, 1048576, 65498, 14, 1048576, 65499, 14, 1048576, 65500, 14, 1048576, 65501, 14, 1048576, 65502, 14, 1048576, 65503, 14, 1048576, 65504, 14, 1048576, 65505, 14, 1048576, 65506, 14, 1048576, 65507, 14, 1048576, 65508, 14, 1048576, 65509, 14, 1048576, 65510, 14, 1048576, 65511, 14, 1048576, 65512, 14, 1048576, 65513, 14, 1048576, 65514, 14, 1048576, 65515, 14, 1048576, 65516, 14, 1048576, 65517, 14, 1048576, 65518, 14, 1048576, 65519, 14, 1048576, 65520, 14, 1048576, 65496, 23, 1048576, 65496, 24, 1048576, 65496, 25, 1048576, 65496, 26, 1048576, 65496, 27, 1048576, 65496, 28, 1048576, 65496, 29, 1048576, 65496, 30, 1048576, 65496, 31, 1048576, 65496, 32, 1048576, 65496, 33, 1048576, 65496, 34, 1048576, 65496, 35, 1048576, 65496, 36, 1048576, 65496, 37, 1048576, 65496, 38, 1048576, 65496, 59, 1048576, 65508, 59, 1048576, 65509, 59, 1048576, 65510, 59, 1048576, 65511, 59, 1048576, 65512, 59, 1048576, 65513, 59, 1048576, 65514, 59, 1048576, 65515, 59, 1048576, 65516, 59, 1048576, 65517, 59, 1048576, 65518, 59, 1048576, 65519, 59, 1048576, 65520, 59, 1048576, 8, 59, 1048576, 9, 59, 1048576, 10, 59, 1048576, 11, 59, 1048576, 12, 59, 1048576, 13, 59, 1048576, 14, 59, 1048576, 15, 59, 1048576, 16, 59, 1048576, 17, 59, 1048576, 18, 59, 1048576, 19, 59, 1048576, 20, 59, 1048576, 21, 59, 1048576, 22, 59, 1048576, 23, 59, 1048576, 24, 59, 1048576, 25, 59, 1048576, 26, 59, 1048576, 27, 59, 1048576, 28, 59, 1048576, 29, 59, 1048576, 30, 59, 1048576, 31, 59, 1048576, 32, 59, 1048576, 33, 59, 1048576, 34, 59, 1048576, 35, 59, 1048576, 65496, 39, 1048576, 65496, 40, 1048576, 65496, 41, 1048576, 65496, 42, 1048576, 65496, 43, 1048576, 65496, 44, 1048576, 65496, 45, 1048576, 65496, 46, 1048576, 65496, 47, 1048576, 65496, 48, 1048576, 65496, 49, 1048576, 65496, 50, 1048576, 65496, 51, 1048576, 65496, 52, 1048576, 65496, 53, 1048576, 65496, 54, 1048576, 65496, 55, 1048576, 65496, 56, 1048576, 65496, 57, 1048576, 65496, 58, 1048576, 36, 39, 1048576, 36, 44, 1048576, 36, 45, 1048576, 36, 46, 1048576, 36, 47, 1048576, 65520, 15, 1048576, 65520, 16, 1048576, 65520, 17, 1048576, 65520, 18, 1048576, 65520, 19, 1048576, 65520, 20, 1048576, 65520, 21, 1048576, 65520, 22, 1048576, 65520, 23, 1048576, 65520, 24, 1048576, 65520, 25, 1048576, 65520, 26, 1048576, 65520, 27, 1048576, 65520, 28, 1048576, 65520, 29, 1048576, 65520, 30, 1048576, 65520, 31, 1048576, 65520, 32, 1048576, 65520, 33, 1048576, 65520, 34, 1048576, 65520, 35, 1048576, 65520, 36, 1048576, 65520, 37, 1048576, 65520, 38, 1048576, 65520, 39, 1048576, 65520, 40, 1048576, 65520, 41, 1048576, 65520, 42, 1048576, 65520, 43, 1048576, 65520, 52, 1048576, 65520, 53, 1048576, 65520, 54, 1048576, 65520, 55, 1048576, 65520, 56, 1048576, 65520, 57, 1048576, 65520, 58, 1048576, 65520, 48, 1048576, 65520, 49, 1048576, 65520, 50, 1048576, 65520, 51, 1048576, 8, 40, 1048576, 8, 41, 1048576, 8, 42, 1048576, 8, 43, 1048576, 8, 44, 1441792, 8, 45, 1048576, 8, 46, 1048576, 8, 47, 1048576, 8, 52, 1048576, 8, 53, 1048576, 8, 54, 1048576, 8, 55, 1048576, 8, 56, 1048576, 8, 57, 1048576, 8, 58, 1048576, 8, 24, 1048576, 8, 25, 1048576, 8, 26, 1048576, 8, 27, 1048576, 8, 28, 1048576, 8, 29, 1048576, 8, 30, 1048576, 8, 31, 1048576, 8, 32, 1048576, 8, 33, 1048576, 8, 34, 1048576, 8, 35, 1048576, 8, 36, 1048576, 8, 37, 1048576, 8, 38, 1048576, 8, 39, 1048576, 65440, 14, 1048576, 65441, 14, 1048576, 65442, 14, 1048576, 65443, 14, 1048576, 65444, 14, 1048576, 65445, 14, 1048576, 65446, 14, 1048576, 65447, 14, 1048576, 65448, 14, 1048576, 65449, 14, 1048576, 65450, 14, 1048576, 65451, 14, 1048576, 65452, 14, 1048576, 65453, 14, 1048576, 65454, 14, 1048576, 65455, 14, 1048576, 65456, 14, 1048576, 65457, 14, 1048576, 65458, 14, 1048576, 65459, 14, 1048576, 65460, 14, 1048576, 65461, 14, 1048576, 65462, 14, 1048576, 65463, 14, 1048576, 65464, 14, 1048576, 65465, 14, 1048576, 65466, 14, 1048576, 65467, 14, 1048576, 65468, 14, 1048576, 65469, 14, 1048576, 65470, 14, 1048576, 65471, 14, 1048576, 65472, 14, 1441794, 65473, 14, 1441794, 65474, 14, 1441794, 65475, 14, 1441794, 65476, 14, 1441794, 65477, 14, 1441794, 65478, 14, 1441794, 65479, 14, 1441794, 65480, 14, 1441794, 65481, 14, 1441794, 65482, 14, 1441794, 65483, 14, 1441794, 65484, 14, 1441794, 65485, 14, 1441794, 65486, 14, 1441794, 65487, 14, 1441794, 65488, 14, 1441794, 65489, 14, 1441794, 65490, 14, 1441794, 65491, 14, 1441794, 65492, 14, 1441794, 65493, 14, 1441794, 65494, 14, 1441794, 65495, 14, 1441794, 65440, 15, 1048576, 65440, 16, 1048576, 65440, 17, 1048576, 65440, 18, 1048576, 65440, 19, 1048576, 65440, 20, 1048576, 65440, 21, 1048576, 65440, 22, 1048576, 65440, 23, 1048576, 65440, 24, 1048576, 65440, 25, 1048576, 65440, 26, 1048576, 65440, 27, 1048576, 65440, 28, 1048576, 65440, 29, 1048576, 65440, 30, 1048576, 65440, 31, 1048576, 65440, 32, 1048576, 65440, 33, 1048576, 65440, 34, 1048576, 65440, 35, 1048576, 65440, 36, 1048576, 65440, 37, 1048576, 65440, 38, 1048576, 65440, 39, 1048576, 65440, 40, 1048576, 65440, 41, 1048576, 65440, 42, 1048576, 65440, 43, 1048576, 65440, 44, 1048576, 65440, 45, 1048576, 65440, 46, 1048576, 65440, 47, 1048576, 65440, 48, 1048576, 65440, 49, 1048576, 65440, 50, 1048576, 65440, 51, 1048576, 65440, 52, 1048576, 65440, 53, 1048576, 65440, 54, 1048576, 65440, 55, 1048576, 65440, 56, 1048576, 65440, 57, 1048576, 65440, 58, 1048576, 65440, 59, 1048576, 65441, 59, 1048576, 65442, 59, 1048576, 65443, 59, 1048576, 65444, 59, 1048576, 65445, 59, 1048576, 65446, 59, 1048576, 65447, 59, 1048576, 65448, 59, 1048576, 65449, 59, 1048576, 65450, 59, 1048576, 65451, 59, 1048576, 65452, 59, 1048576, 65453, 59, 1048576, 65454, 59, 1048576, 65455, 59, 1048576, 65456, 59, 1048576, 65457, 59, 1048576, 65458, 59, 1048576, 65459, 59, 1048576, 65460, 59, 1048576, 65461, 59, 1048576, 65462, 59, 1048576, 65463, 59, 1048576, 65464, 59, 1048576, 65465, 59, 1048576, 65466, 59, 1048576, 65467, 59, 1048576, 65468, 59, 1048576, 65469, 59, 1048576, 65470, 59, 1048576, 65471, 59, 1048576, 65472, 59, 1048576, 65473, 59, 1048576, 65474, 59, 1048576, 65475, 59, 1048576, 65476, 59, 1048576, 65477, 59, 1048576, 65478, 59, 1048576, 65479, 59, 1048576, 65480, 59, 1048576, 65481, 59, 1048576, 65482, 59, 1048576, 65483, 59, 1048576, 65484, 59, 1048576, 65485, 59, 1048576, 65486, 59, 1048576, 65487, 59, 1048576, 65488, 59, 1048576, 65489, 59, 1048576, 65490, 59, 1048576, 65491, 59, 1048576, 65492, 59, 1048576, 65493, 59, 1048576, 65494, 59, 1048576, 65495, 59, 1048576, 65471, 48, 1048576, 65471, 49, 1048576, 65471, 50, 1048576, 65471, 51, 1048576, 65471, 52, 1048576, 65471, 53, 1048576, 65471, 54, 1048576, 65471, 55, 1048576, 65471, 56, 1048576, 65471, 57, 1048576, 65471, 58, 1048576, 65471, 15, 1048576, 65471, 16, 1048576, 65471, 17, 1048576, 65471, 18, 1048576, 65471, 19, 1048576, 65471, 20, 1048576, 65471, 21, 1048576, 65471, 22, 1048576, 65471, 23, 1048576, 65471, 24, 1048576, 65471, 25, 1048576, 65471, 26, 1048576, 65471, 27, 1048576, 65471, 28, 1048576, 65471, 29, 1048576, 65471, 30, 1048576, 65471, 31, 1048576, 65471, 32, 1048576, 65471, 33, 1048576, 65471, 34, 1048576, 65471, 35, 1048576, 65471, 36, 1048576, 65471, 37, 1048576, 65471, 38, 1048576, 65471, 39, 1048576, 65471, 40, 1048576, 65471, 41, 1048576, 65471, 42, 1048576, 65471, 43, 1048576, 65508, 36, 1048576, 65509, 36, 1048576, 65510, 36, 1048576, 65511, 36, 1048576, 65512, 36, 1048576, 65513, 36, 1048576, 65514, 36, 1048576, 65515, 36, 1048576, 65516, 36, 1048576, 65517, 36, 1048576, 65518, 36, 1048576, 65519, 36, 1048576, 8, 15, 0, 8, 16, 0, 8, 17, 0, 8, 23, 0, 8, 22, 0, 21, 14, 0, 22, 14, 0, 23, 14, 0, 24, 14, 0, 25, 14, 0, 26, 14, 0, 27, 14, 0, 28, 14, 0, 29, 14, 0, 30, 14, 0, 31, 14, 0, 32, 14, 0, 33, 14, 0, 34, 14, 0, 35, 14, 0, 60, 14, 0, 61, 14, 0, 62, 14, 0, 63, 14, 0, 64, 14, 0, 64, 59, 0, 63, 59, 0, 62, 59, 0, 61, 59, 0, 60, 59, 0, 59, 59, 0, 58, 59, 0, 57, 59, 0, 56, 59, 0, 55, 59, 0, 54, 59, 0, 53, 59, 0, 52, 59, 0, 51, 59, 0, 50, 59, 0, 49, 59, 0, 48, 59, 0, 47, 59, 0, 46, 59, 0, 45, 59, 0, 44, 59, 0, 43, 59, 0, 42, 59, 0, 41, 59, 0, 40, 59, 0, 39, 59, 0, 38, 59, 0, 37, 59, 0, 65, 14, 0, 66, 14, 0, 67, 14, 0, 68, 14, 0, 69, 14, 0, 70, 14, 0, 71, 14, 0, 72, 14, 0, 73, 14, 0, 74, 14, 0, 75, 14, 0, 76, 14, 0, 77, 14, 0, 78, 14, 0, 79, 14, 1441792, 79, 31, 0, 79, 59, 0, 65, 59, 0, 66, 59, 0, 67, 59, 0, 68, 59, 0, 69, 59, 0, 70, 59, 0, 71, 59, 0, 72, 59, 0, 73, 59, 0, 74, 59, 0, 75, 59, 0, 76, 59, 0, 77, 59, 0, 78, 59, 0, 37, 31, 0, 38, 31, 0, 39, 31, 0, 40, 31, 0, 41, 31, 0, 42, 31, 0, 43, 31, 0, 44, 31, 0, 45, 31, 0, 46, 31, 0, 47, 31, 0, 52, 31, 0, 53, 31, 0, 54, 31, 0, 55, 31, 0, 56, 31, 0, 57, 31, 0, 58, 31, 0, 59, 31, 0, 60, 31, 1441792, 61, 31, 0, 62, 31, 0, 63, 31, 0, 64, 31, 0, 65, 31, 0, 66, 31, 0, 67, 31, 0, 68, 31, 0, 69, 31, 0, 70, 31, 0, 71, 31, 0, 76, 31, 0, 77, 31, 0, 78, 31, 0, 80, 31, 0, 81, 31, 0, 82, 31, 0, 83, 31, 0, 84, 31, 0, 85, 31, 0, 86, 31, 0, 87, 31, 0, 88, 31, 0, 89, 31, 0, 90, 31, 0, 91, 31, 0, 92, 31, 0, 93, 31, 0, 94, 31, 0, 95, 31, 0, 96, 31, 0, 97, 31, 0, 98, 31, 0, 99, 31, 0, 100, 31, 0, 101, 31, 0, 102, 31, 0, 103, 31, 0, 104, 31, 0, 105, 31, 0, 106, 31, 0, 107, 31, 0, 108, 31, 0, 109, 31, 0, 110, 31, 0, 111, 31, 0, 111, 32, 0, 111, 33, 0, 111, 34, 0, 111, 35, 0, 111, 36, 0, 111, 37, 0, 111, 38, 0, 111, 39, 0, 111, 40, 0, 111, 41, 0, 111, 42, 0, 111, 43, 0, 111, 48, 0, 111, 49, 0, 111, 50, 0, 111, 51, 0, 111, 52, 0, 111, 53, 0, 111, 54, 0, 111, 55, 0, 111, 56, 0, 111, 57, 0, 111, 58, 0, 111, 59, 0, 80, 59, 0, 81, 59, 0, 82, 59, 0, 83, 59, 0, 84, 59, 0, 85, 59, 0, 86, 59, 0, 87, 59, 0, 88, 59, 0, 89, 59, 0, 90, 59, 0, 91, 59, 0, 92, 59, 0, 93, 59, 0, 94, 59, 0, 95, 59, 0, 96, 59, 0, 97, 59, 0, 98, 59, 0, 99, 59, 0, 100, 59, 0, 101, 59, 0, 102, 59, 0, 103, 59, 0, 104, 59, 0, 105, 59, 0, 106, 59, 0, 107, 59, 0, 108, 59, 0, 109, 59, 0, 110, 59, 0, 112, 41, 0, 112, 50, 0, 113, 50, 0, 114, 50, 0, 115, 50, 0, 116, 50, 0, 117, 50, 0, 118, 50, 0, 119, 50, 0, 120, 50, 0, 113, 41, 0, 114, 41, 0, 115, 41, 0, 116, 41, 0, 117, 41, 0, 120, 49, 0, 120, 48, 0, 120, 47, 0, 120, 46, 0, 120, 45, 0, 120, 44, 0, 120, 43, 0, 120, 42, 0, 120, 41, 0, 118, 41, 0, 119, 41, 0, 65471, 0, 1441792, 65471, 1, 1441792, 65471, 2, 1441792, 65471, 3, 1441792, 65471, 4, 1441792, 65471, 5, 1441792, 65471, 6, 1441792, 65471, 7, 1441792, 65471, 8, 1441792, 65471, 9, 1441792, 65471, 10, 1441792, 65471, 11, 1441792, 65471, 12, 1441792, 65471, 13, 1441792, 65472, 0, 1441792, 65473, 0, 1441792, 65474, 0, 1441792, 65475, 0, 1441792, 65476, 0, 1441792, 65477, 0, 1441792, 65478, 0, 1441792, 65479, 0, 1441792, 65480, 0, 1441792, 65481, 0, 1441792, 65482, 0, 1441792, 65483, 0, 1441792, 65484, 0, 1441792, 65485, 0, 1441792, 65486, 0, 1441792, 65487, 0, 1441792, 65488, 0, 1441792, 65489, 0, 1441792, 65490, 0, 1441792, 65491, 0, 1441792, 65492, 0, 1441792, 65493, 0, 1441792, 65494, 0, 1441792, 65495, 0, 1441792, 65496, 0, 1441792, 65496, 1, 1441792, 65496, 2, 1441792, 65496, 3, 1441792, 65496, 4, 1441792, 65496, 5, 1441792, 65496, 6, 1441792, 65496, 7, 1441792, 65496, 8, 1441792, 65496, 9, 1441792, 65496, 10, 1441792, 65496, 11, 1441792, 65496, 12, 1441792, 65496, 13, 1441792, 65496, 60, 1441792, 65496, 61, 1441792, 65496, 62, 1441792, 65496, 63, 1441792, 65496, 64, 1441792, 65496, 65, 1441792, 65496, 66, 1441792, 65496, 67, 1441792, 65496, 68, 1441792, 65496, 69, 1441792, 65496, 70, 1441792, 65496, 71, 1441792, 65496, 72, 1441792, 65496, 73, 1441792, 65496, 74, 1441792, 65496, 75, 1441792, 65496, 76, 1441792, 65496, 77, 1441792, 65496, 78, 1441792, 65496, 79, 1441792, 65497, 79, 1441792, 65498, 79, 1441792, 65499, 79, 1441792, 65500, 79, 1441792, 65501, 79, 1441792, 65502, 79, 1441792, 65503, 79, 1441792, 65504, 79, 1441792, 65505, 79, 1441792, 65506, 79, 1441792, 65507, 79, 1441792, 65508, 79, 1441792, 65509, 79, 1441792, 65510, 79, 1441792, 65511, 79, 1441792, 65512, 79, 1441792, 65513, 79, 1441792, 65514, 79, 1441792, 65515, 79, 1441792, 65516, 79, 1441792, 65517, 79, 1441792, 65518, 79, 1441792, 65519, 79, 1441792, 65520, 79, 1441792, 65520, 60, 1441792, 65520, 61, 1441792, 65520, 62, 1441792, 65520, 63, 1441792, 65520, 64, 1441792, 65520, 65, 1441792, 65520, 66, 1441792, 65520, 67, 1441792, 65520, 72, 1441792, 65520, 73, 1441792, 65520, 74, 1441792, 65520, 75, 1441792, 65520, 76, 1441792, 65520, 77, 1441792, 65520, 78, 1441792, 8, 60, 1441792, 8, 61, 1441792, 8, 62, 1441792, 8, 63, 1441792, 8, 64, 1441792, 8, 65, 1441792, 8, 66, 1441792, 8, 67, 1441792, 8, 68, 1441792, 8, 69, 1441792, 8, 70, 1441792, 8, 71, 1441792, 8, 72, 1441792, 8, 73, 1441792, 8, 74, 1441792, 8, 75, 1441792, 8, 76, 1441792, 8, 77, 1441792, 8, 78, 1441792, 8, 79, 1441792, 65521, 79, 1441792, 65522, 79, 1441792, 65523, 79, 1441792, 65524, 79, 1441792, 65525, 79, 1441792, 65526, 79, 1441792, 65527, 79, 1441792, 65528, 79, 1441792, 65529, 79, 1441792, 65530, 79, 1441792, 65531, 79, 1441792, 65532, 79, 1441792, 65533, 79, 1441792, 65534, 79, 1441792, 65535, 79, 1441792, 0, 79, 1441792, 1, 79, 1441792, 2, 79, 1441792, 3, 79, 1441792, 4, 79, 1441792, 5, 79, 1441792, 6, 79, 1441792, 7, 79, 1441792, 65520, 44, 1441792, 65520, 45, 1441792, 65520, 46, 1441792, 65520, 47, 1441792, 8, 18, 1441792, 8, 19, 1441792, 8, 20, 1441792, 8, 21, 1441792, 65521, 44, 1441792, 65522, 44, 1441792, 65523, 44, 1441792, 65524, 44, 1441792, 65525, 44, 1441792, 65526, 44, 1441792, 65527, 44, 1441792, 65528, 44, 1441792, 65529, 44, 1441792, 65530, 44, 1441792, 65531, 44, 1441792, 65532, 44, 1441792, 65533, 44, 1441792, 65534, 44, 1441792, 65535, 44, 1441792, 0, 44, 1441792, 1, 44, 1441792, 2, 44, 1441792, 3, 44, 1441792, 4, 44, 1441792, 5, 44, 1441792, 6, 44, 1441792, 7, 44, 1441792, 36, 40, 1441792, 36, 41, 1441792, 36, 42, 1441792, 36, 43, 1441792, 9, 39, 1441794, 10, 39, 1441794, 11, 39, 1441794, 12, 39, 1441794, 13, 39, 1441794, 14, 39, 1441794, 15, 39, 1441794, 16, 39, 1441794, 17, 39, 1441794, 18, 39, 1441794, 19, 39, 1441794, 20, 39, 1441794, 21, 39, 1441794, 22, 39, 1441794, 23, 39, 1441794, 24, 39, 1441794, 25, 39, 1441794, 26, 39, 1441794, 27, 39, 1441794, 28, 39, 1441794, 29, 39, 1441794, 30, 39, 1441794, 31, 39, 1441794, 32, 39, 1441794, 33, 39, 1441794, 34, 39, 1441794, 35, 39, 1441794, 36, 59, 0, 36, 58, 1048576, 36, 57, 1048576, 36, 56, 1048576, 60, 15, 1441792, 60, 16, 1441792, 60, 17, 1441792, 60, 18, 1441792, 60, 19, 1441792, 60, 20, 1441792, 60, 21, 1441792, 60, 22, 1441792, 60, 23, 1441792, 60, 24, 1441792, 60, 25, 1441792, 60, 26, 1441792, 60, 27, 1441792, 60, 28, 1441792, 60, 29, 1441792, 60, 30, 1441792, 60, 32, 1441792, 60, 33, 1441792, 60, 34, 1441792, 60, 35, 1441792, 60, 36, 1441792, 60, 37, 1441792, 60, 38, 1441792, 60, 39, 1441792, 60, 40, 1441792, 60, 41, 1441792, 60, 42, 1441792, 60, 43, 1441792, 60, 44, 1441792, 60, 45, 1441792, 60, 46, 1441792, 60, 47, 1441792, 60, 52, 1441792, 60, 53, 1441792, 60, 54, 1441792, 60, 55, 1441792, 60, 56, 1441792, 60, 57, 1441792, 60, 58, 1441792, 48, 31, 1441792, 49, 31, 1441792, 50, 31, 1441792, 51, 31, 1441792, 84, 32, 1441792, 84, 33, 1441792, 84, 34, 1441792, 84, 35, 1441792, 84, 36, 1441792, 84, 37, 1441792, 84, 38, 1441792, 84, 39, 1441792, 84, 40, 1441792, 84, 41, 1441792, 84, 42, 1441792, 84, 43, 1441792, 84, 44, 1441792, 84, 45, 1441792, 84, 46, 1441792, 84, 47, 1441792, 84, 52, 1441792, 84, 53, 1441792, 84, 54, 1441792, 84, 55, 1441792, 84, 56, 1441792, 84, 57, 1441792, 84, 58, 1441792, 84, 14, 1441792, 84, 15, 1441792, 84, 16, 1441792, 84, 17, 1441792, 84, 18, 1441792, 84, 19, 1441792, 84, 20, 1441792, 84, 21, 1441792, 84, 22, 1441792, 84, 23, 1441792, 84, 24, 1441792, 84, 25, 1441792, 84, 26, 1441792, 84, 27, 1441792, 84, 28, 1441792, 84, 29, 1441792, 84, 30, 1441792, 80, 14, 1441792, 81, 14, 1441792, 82, 14, 1441792, 83, 14, 1441792)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Tutorial" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=538595978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.25, 0, 0)
 
-[node name="Room 1" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1370897758 node_paths=PackedStringArray("room_area", "lights_node")]
+[node name="Room 1" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1370897758 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room1"
-
-[node name="Welcome" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1050964909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 3.5, -9.897606)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Welcome to Time Heist!"
-font_size = 100
-outline_size = 20
-
-[node name="WASD and Arrow" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1550713812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 2.5, -9.897606)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "WASD to move
-Arrow keys to rotate camera"
-font_size = 60
-
-[node name="Look behind you" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1763534436]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 1.5, -9.897606)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Try looking behind you..."
-font_size = 40
-outline_size = 6
-
-[node name="Hello!" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1218158571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -1.1203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Hello! Lets go through that door"
-font_size = 60
-
-[node name="E to interact" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1865087543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 1.75, -1.1203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Press E to interact"
-font_size = 60
-
-[node name="Highlight" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=1222920833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0.5, -1.1203508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "That yellow highlight means 
-something is interactable"
-font_size = 60
 
 [node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=74631722 instance=ExtResource("15_u5ky3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.75, 0, -3.25)
@@ -539,39 +694,137 @@ light_energy = 5.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.75, 2.1, -8.75)
 light_energy = 5.0
 
-[node name="Room 2" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2031050201 node_paths=PackedStringArray("room_area", "lights_node")]
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=143872740]
+
+[node name="CornerDesk" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=858584765 instance=ExtResource("40_mqc0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2231884, -0.025024414, -10.003938)
+metadata/asset_placer_res_id = "uid://dow6h3uhurjcs"
+
+[node name="OfficeChair" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1214352518 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.8660256, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660256, 6.3836803, -0.025024414, -10.319389)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="MeetingTable" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=185171172 instance=ExtResource("42_7kydn")]
+transform = Transform3D(1.8626451e-07, 0, 1.0000005, 0, 1, 0, -1.0000005, 0, 1.8626451e-07, 2.6425323, -0.025024414, -9.18487)
+metadata/asset_placer_res_id = "uid://cv00ael0hyxty"
+
+[node name="Locker" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1382941412 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(-1.0000012, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0, -1.0000012, 7.47946, -0.025024414, -7.9728713)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Locker (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=191421800 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(-1.0000012, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0, -1.0000012, 7.47946, -0.025024414, -7.3807073)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Locker (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1274341113 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(-1.0000012, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0, -1.0000012, 7.4683933, -0.025024414, -6.8051457)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="OfficeChair (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=627256761 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.9396927, 0, -0.34202015, 0, 1, 0, 0.34202015, 0, 0.9396927, 4.502039, -0.025024414, -10.341526)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1570017920 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1, 0, 7.450581e-09, 0, 1.0000001, 2.531849, -0.025024414, -10.391335)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=555584684 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.642788, 0, 0.7660447, 0, 1, 0, -0.7660447, 0, 0.642788, 0.6502056, -0.025024414, -9.992869)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1717894627 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(1.6391277e-07, 0, 1.0000006, 0, 1, 0, -1.0000006, 0, 1.6391277e-07, 0.5450554, -0.025024414, -8.659117)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="Plant" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=991222580 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.6809739, 0, 0.61182445, 0, 1.7888542, 0, -0.61182445, 0, 1.6809739, 0.8299198, -0.025024414, -0.73797035)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=781853181 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(-0.6118247, 0, 1.6809751, 0, 1.7888542, 0, -1.6809751, 0, -0.6118247, 6.8291245, -0.025024414, -0.6552143)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="SmallShelf" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=611001295 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(2.1606684e-07, 0, 1.0000004, 0, 1, 0, -1.0000004, 0, 2.1606684e-07, 0.13239479, -0.025024414, -3.0618286)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="SmallShelf2" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1710469330 instance=ExtResource("46_ek4v5")]
+transform = Transform3D(1.8626451e-07, 0, 1.0000005, 0, 1, 0, -1.0000005, 0, 1.8626451e-07, 0.14237404, -0.025024414, -5.511903)
+metadata/asset_placer_res_id = "uid://efb0belj2klm"
+
+[node name="SmallShelf (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=1261540273 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5980988, -0.025024414, -3.1428127)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="SmallShelf (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=764420709 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5980988, -0.025024414, -2.9021683)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="Plant (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Decor" unique_id=848652663 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6973362, 1.0281982, -3.0353765)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=668998449 instance=ExtResource("38_0wfx5")]
+
+[node name="Welcome" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1050964909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 3.125, -9.897606)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Welcome to Time Heist!"
+font_size = 100
+outline_size = 20
+
+[node name="WASD and Arrow" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1550713812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 2.125, -9.647606)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "WASD to move
+Use mouse to rotate camera"
+font_size = 60
+
+[node name="Look behind you" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1763534436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 1.25, -9.272606)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Try looking behind you..."
+font_size = 40
+outline_size = 6
+
+[node name="Hello!" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1218158571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -1.1203508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Hello! Lets go through that door"
+font_size = 60
+
+[node name="E to interact" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1865087543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 1.75, -1.1203508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Press E to interact"
+font_size = 60
+
+[node name="Highlight" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1222920833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 0.5, -1.1203508)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "That yellow highlight means 
+something is interactable"
+font_size = 60
+
+[node name="Room 2" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2031050201 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room2"
 
-[node name="Good job" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1780585984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -2.8703508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Good job!"
-font_size = 60
-
-[node name="Shift and C" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1561547828]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.25, -2.8703508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Hold shift to walk
-Press shift to roll
-Press C to toggle crouch"
-font_size = 60
-
-[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=854805088 instance=ExtResource("16_7uyeq")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.25, 0, -6.5)
-
-[node name="Crouch behind" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1433120194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.5, -2.8703508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Now be careful with this gaurd
-Try crouching behind these boxes to pass"
-font_size = 50
+[node name="WalkGuard" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=854805088 instance=ExtResource("20_mwfe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.125, 0, -13)
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_bbtu8")])
+follow_branch = 0
+path = SubResource("Resource_bbtu8")
 
 [node name="Counter" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=70609053 instance=ExtResource("18_capbt")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75, 0, -7.5)
@@ -583,6 +836,7 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75, 0, -5.5)
 
 [node name="Dialogue Area" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1102014529 instance=ExtResource("16_3civr")]
+process_mode = 4
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.25, 0, -3.25)
 dialogue = ExtResource("17_k05aa")
 
@@ -606,63 +860,94 @@ light_energy = 5.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -8.75)
 light_energy = 5.0
 
-[node name="Room 3" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2080792882 node_paths=PackedStringArray("room_area", "lights_node")]
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Lights" unique_id=1909651754 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -12.375)
+light_energy = 5.0
+
+[node name="Guard" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=2089707640 instance=ExtResource("20_mwfe8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.125, 0, -6.5)
+
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=94376811]
+
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=278877565 instance=ExtResource("38_0wfx5")]
+
+[node name="Good job" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Labels" unique_id=1780585984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.5, -2.4953508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Good job!"
+font_size = 60
+
+[node name="Shift and C" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Labels" unique_id=1561547828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.25, -2.4953508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Hold shift to walk
+Press shift to roll
+Press C to toggle crouch"
+font_size = 60
+
+[node name="Crouch behind" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Labels" unique_id=1433120194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.5, -2.4953508)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Now be careful with this gaurd
+Try crouching behind these boxes to pass"
+font_size = 50
+
+[node name="Guards" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Labels" unique_id=10706750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2.25, -10.245351)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Guards will turn red and stop moving when suspicious.
+Stay out of their line of sight for them to return to normal"
+font_size = 50
+
+[node name="Room 3" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2080792882 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room3"
 
-[node name="Collecting" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=721274551]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, -8.370351)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "In Time Heist, you will be collecting
-a lot of documents and items"
-font_size = 60
-
-[node name="Tab for menu" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1896941279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -8.370351)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Press Tab to open up your
-device menu"
-font_size = 60
-
-[node name="Little note" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=335607387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -8.370351)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "We left you a little note to find!"
-font_size = 60
-
-[node name="Get poster" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=514410265]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.25, -2.6203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Interact with the paper
-to collect it!"
-font_size = 60
-
-[node name="In device" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=153831175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 2.5, -2.3703508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "It'll now appear in your device"
-font_size = 60
-
 [node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1086968595 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -3.25)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 2.75)
+is_locked = true
 
-[node name="Document" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1367753552 instance=ExtResource("19_gewwa")]
-transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 5.7106137, 1, -1.4481697)
+[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" unique_id=1750000146 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 1, 0.25)
+lock = NodePath("Lockable")
+
+[node name="Lockable" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door/Keycard Scanner" unique_id=1120950339 instance=ExtResource("31_ulrwx")]
+needed_clearance = Array[int]([0])
+locked_label = "Security Clearance Needed"
+
+[node name="Keycard Scanner2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" unique_id=1198437881 instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.875, 1, 0)
+
+[node name="Poster" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1367753552 instance=ExtResource("19_gewwa")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.9606137, 1, -5.4481697)
 document_info = ExtResource("20_g7vx3")
 texture = ExtResource("21_svqji")
+
+[node name="ReceptionDesk" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1223163465 instance=ExtResource("32_7kydn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.125, 0, -1.375)
+
+[node name="Computer" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/ReceptionDesk" unique_id=1194039688 instance=ExtResource("22_upwis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3703966, 0.6726415, -0.25)
+data = ExtResource("34_ixt3n")
+
+[node name="Document" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/ReceptionDesk" unique_id=1497111846 instance=ExtResource("19_gewwa")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, -0.5, 0.7088425, -0.25)
+document_info = ExtResource("34_1r3lh")
+max_size = 0.4
+texture = ExtResource("35_2fa5o")
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1005022274]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Area3D" unique_id=1540368277]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -3)
 shape = SubResource("BoxShape3D_4353k")
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=2096466333]
@@ -671,180 +956,294 @@ shape = SubResource("BoxShape3D_4353k")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -2.75)
 light_energy = 5.0
 
-[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=978745601 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -5.75)
+[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=733521505 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2, 2.1, 2.5)
+light_energy = 5.0
+
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=570916254 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.625, 2.1, 2.5)
 light_energy = 5.0
 
 [node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Lights" unique_id=1754375021 instance=ExtResource("12_4353k")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -8.75)
 light_energy = 5.0
 
-[node name="Room 4" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1785480485 node_paths=PackedStringArray("room_area", "lights_node")]
+[node name="Clearance Giver" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1251886145 instance=ExtResource("37_ek4v5")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.25, 0, 0.875)
+
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=502289266 instance=ExtResource("38_0wfx5")]
+
+[node name="Collecting2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=1355162722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -8.370351)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "In Time Heist, you will be
+replaying the same night
+over and over again"
+font_size = 60
+
+[node name="Little note2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=208005686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.75, -8.370351)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "There are only 2 things that stay
+between runs..."
+font_size = 60
+
+[node name="Documents2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=18512926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3.125, -2.9953508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Documents!"
+font_size = 50
+
+[node name="In device4" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=1833124176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 2, -2.7453508)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Interact with them on tables, walls,
+and in computers
+Press [TAB] to view them in your device"
+font_size = 50
+
+[node name="Clearances2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=1272338611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 3, 3.50465)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Clearances!"
+font_size = 50
+
+[node name="In device5" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=690731189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 2.25, 3.75465)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "These will show up in your inventory
+and give you access to certain rooms"
+font_size = 50
+
+[node name="In device6" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=1696698783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 2.125, 1.1296501)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Interact to
+gain clearance
+V"
+font_size = 35
+
+[node name="In device7" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Labels" unique_id=1234656600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.625, 2.125, 3.62965)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Interact to
+open the door
+V"
+font_size = 35
+
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=739102664]
+
+[node name="SmallShelf" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=697229869 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1.4156103e-07, 0, -1.0000005, 0, 1, 0, 1.0000005, 0, 1.4156103e-07, 5.551622, 0, -7.2656584)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="BigShelfLong" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=588656335 instance=ExtResource("50_ucgc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.265662, 0, -10.830444)
+metadata/asset_placer_res_id = "uid://b4ad3ylkwaj3p"
+
+[node name="Standard Char" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=909215667 instance=ExtResource("61_yjryn")]
+transform = Transform3D(0.6427879, 0, -0.76604456, 0, 1, 0, 0.76604456, 0, 0.6427879, 5.08474, 0, -10.03426)
+metadata/asset_placer_res_id = "uid://cg5npvrjq8mrx"
+
+[node name="Standard Char (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=821702667 instance=ExtResource("61_yjryn")]
+transform = Transform3D(-0.76604545, 0, 0.64278793, 0, 1, 0, -0.64278793, 0, -0.76604545, 2.9920292, 0, -6.334689)
+metadata/asset_placer_res_id = "uid://cg5npvrjq8mrx"
+
+[node name="Locker" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=694728395 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(-1.0000014, 0, 3.501773e-07, 0, 1, 0, -3.501773e-07, 0, -1.0000014, 5.6742215, 0, -9.150122)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Plant" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1707145313 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.6021681, 0, 0, 0, 1.6021681, 0, 0, 0, 1.6021681, 2.30544, 0, -10.559357)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1570926030 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.6021681, 0, 0, 0, 1.6021681, 0, 0, 0, 1.6021681, 5.1236453, 0, -4.880639)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="OfficeChair" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1303948549 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(-0.4707407, 0, -0.81534696, 0, 0.94148004, 0, 0.81534696, 0, -0.4707407, 5.0684533, 0, -0.94587326)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=563165344 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.4707409, 0, -0.8153472, 0, 0.94148004, 0, 0.8153472, 0, 0.4707409, 4.9287386, 0, -3.916791)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="TV" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1569570921 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 1.2523707, -2.4989548)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="TV (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1923464899 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 4.253388, 1.347478, 5)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="TV (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1430595333 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 1.5993814, 1.3399246, 5)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="Locker (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=82773092 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(2.1606684e-07, 0, 1.0000004, 0, 1, 0, -1.0000004, 0, 2.1606684e-07, 3.1784883, 0.023833632, 5)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Plant (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1744116465 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.3784213, 0, 0, 0, 1.3784213, 0, 0, 0, 1.3784213, 5.315339, -1.1920929e-07, 4.6682854)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=772624873 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.3784213, 0, 0, 0, 1.3784213, 0, 0, 0, 1.3784213, 0.29281044, 0, 4.638756)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="SmallShelf2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1579603650 instance=ExtResource("46_ek4v5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4765959, 0, 4.913784)
+metadata/asset_placer_res_id = "uid://efb0belj2klm"
+
+[node name="SmallShelf (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1013380489 instance=ExtResource("46_ek4v5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6688013, 0, 4.9143696)
+metadata/asset_placer_res_id = "uid://efb0belj2klm"
+
+[node name="SmallShelf (1)2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1016139060 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000006, 0, 1, 0, 1.0000006, 0, 1.0430813e-07, 0.15167618, -2.3841858e-07, 2.470541)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="SmallShelf (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Decor" unique_id=1270401450 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1.0430813e-07, 0, -1.0000006, 0, 1, 0, 1.0000006, 0, 1.0430813e-07, 0.14074707, 0, -2.9546509)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="Room 4" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1785480485 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room4"
 
-[node name="Step1" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1530790636]
+[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1034372253 instance=ExtResource("22_dfnc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.375, 0, 1.375)
 
-[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=1034372253 instance=ExtResource("22_dfnc0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -7.25)
+[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Standard Desk" unique_id=93420287 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.625, 0.94255984, 0.125)
+item = ExtResource("34_yxgu2")
 
-[node name="Given 5 minutes" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=604032080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.75, -3.6203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "In Time Heist you are given 5 minutes
-in an office to piece together
-what happens in the building"
-font_size = 60
+[node name="Item2" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Standard Desk" unique_id=1515143601 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9560574, 0.125)
+item = ExtResource("44_wkett")
 
-[node name="Same way" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=189312028]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3, -3.6203508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "NPC walk around, door open and close, etc.
-but everything happens the same way every night"
-font_size = 60
+[node name="Item3" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Standard Desk" unique_id=743049923 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625, 0.97408974, 0.125)
+item = ExtResource("45_s3w85")
 
-[node name="Same way2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=1668670362]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.5, -3.6203508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Try using things like company computers to
-clue you into the story"
-font_size = 60
-
-[node name="Computer" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step1" unique_id=1194039688 instance=ExtResource("22_upwis")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0.9284655, -7.25)
-
-[node name="Step2" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1260914630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.75)
-
-[node name="Needs key" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=1358099222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.25, -3.6203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "This door needs a key!
-Look behind you"
-font_size = 45
-outline_size = 10
-
-[node name="Inventory" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=1498598656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -3.6203508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "The item shows up in your
-device inventory"
-font_size = 45
-outline_size = 10
-
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=677614050 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -4)
+[node name="Room 4 Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=677614050 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -2.25)
 is_locked = true
 
-[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=1750000146 instance=ExtResource("23_7sy1d")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.75, 1.25, -3)
+[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1766836423 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.75, 1.25, -1.125)
+lock = NodePath("Lockable")
 
-[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2" unique_id=93420287 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
-item = ExtResource("25_v3e2r")
+[node name="Lockable" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner" unique_id=61925629 instance=ExtResource("31_ulrwx")]
+needed_item = Array[ExtResource("46_s3w85")]([ExtResource("34_yxgu2")])
+consume_items = true
+locked_label = "Give me an apple"
+
+[node name="Keycard Scanner2" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1550539764 instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 1.25, -3.25)
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1097360618]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Area3D" unique_id=1694557390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, 0.75)
 shape = SubResource("BoxShape3D_xhr5i")
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1548234323]
 
 [node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=1009484600 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -2.75)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -1.625)
 light_energy = 5.0
 
-[node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=1292607774 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -5.75)
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=1276610800 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, 2.5)
 light_energy = 5.0
 
-[node name="OfficeLight3" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Lights" unique_id=113763232 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.875, 2.1, -8.75)
-light_energy = 5.0
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=272405223 instance=ExtResource("38_0wfx5")]
 
-[node name="Room 5" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=370433401 node_paths=PackedStringArray("room_area", "lights_node")]
+[node name="Collect items" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Labels" unique_id=1668670362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.375, 2.37965)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Interact to collected items
+[SCROLL] to view your inventoy wheel
+[TAB] to see them in your device"
+font_size = 45
+
+[node name="Need apple" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Labels" unique_id=189312028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 2.5, -1.1203508)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "This door needs
+an apple
+V"
+font_size = 40
+
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1536183276]
+
+[node name="TV (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=865723330 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(1.937151e-07, 0, 1.938625, 0, 1.9386235, 0, -1.938625, 0, 1.937151e-07, 2.9435, 1.2519288, -3.5)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="Plant (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=1155401292 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.4641001, 0, 0, 0, 1.4641001, 0, 0, 0, 1.4641001, 0.41651297, 0, -3.1696072)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="PC Tower" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=2027628177 instance=ExtResource("48_wkett")]
+transform = Transform3D(0.19388223, 0, -1.0995594, 0, 1.1165211, 0, 1.0995594, 0, 0.19388223, 3.0210958, 0.2450782, 1.5096436)
+metadata/asset_placer_res_id = "uid://c3wleconqpaqy"
+
+[node name="SmallShelf (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=973603132 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1.8626451e-07, 0, 1.0000005, 0, 1, 0, -1.0000005, 0, 1.8626451e-07, 0.14114547, 0, -0.31498337)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="CornerDesk" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=960859015 instance=ExtResource("40_mqc0c")]
+transform = Transform3D(-5.662441e-07, 0, 1.0000017, 0, 1, 0, -1.0000017, 0, -5.662441e-07, 4.72923, 0, 3.985855)
+metadata/asset_placer_res_id = "uid://dow6h3uhurjcs"
+
+[node name="OfficeChair (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=833778409 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1, 0, 7.450581e-09, 0, 1.0000001, 4.641685, 0, 3.799368)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="Whiteboard" parent="SubViewportContainer/SubViewport/Tutorial/Room 4/Decor" unique_id=716841464 instance=ExtResource("43_j8vsw")]
+transform = Transform3D(0.9396927, 0, 0.34202015, 0, 1, 0, -0.34202015, 0, 0.9396927, 4.9710493, 0, 0.62195206)
+metadata/asset_placer_res_id = "uid://bvm6vcceemdoc"
+
+[node name="Room 5" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=370433401 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room5"
-
-[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=629088788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4.25, -7.620351)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Your time travel device lets you witness
-every part of the map at different times in the night"
-font_size = 45
-outline_size = 10
-
-[node name="Controls" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=2075277436]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -7.620351)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Hold R to rewind time (you cannot be caught)
-Hold F to \"wait\" and fast forward time (you CAN be caught)"
-font_size = 45
-outline_size = 10
-
-[node name="Controls2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=395218524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3, -1.1203508)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "You can change the world! Grab
-this apple to see how the npc's path changes"
-font_size = 45
-outline_size = 10
-
-[node name="Try it" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1524481766]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -7.620351)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Try it out on the npc to the left!
-Time travel isnt infinite, watch the meter on the top left!
-Use the blue recharge station to charge it up"
-font_size = 45
-outline_size = 10
-
-[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=2097079311 instance=ExtResource("25_dmal2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -10)
-
-[node name="L Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1045552972 instance=ExtResource("26_2otw2")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, -2.25)
-
-[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=203181129 instance=ExtResource("27_gbpfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.5)
-color = Color(1, 0.7058824, 1, 1)
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_ixt3n"), SubResource("Resource_wkett")])
-follow_branch = 0
-path = SubResource("Resource_wkett")
-
-[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1223794530 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 1, -1.75)
-item = ExtResource("34_yxgu2")
-
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=837675722 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7, 0, -4.25)
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1373150628]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Area3D" unique_id=779498100]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.375, 0.5, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.375, 0.5, -5.5)
 shape = SubResource("BoxShape3D_uttcq")
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=551326145]
 
 [node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Lights" unique_id=910271631 instance=ExtResource("12_4353k")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -2.75)
+light_energy = 5.0
+
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Lights" unique_id=1549438078 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.75, 2.1, -2.75)
 light_energy = 5.0
 
 [node name="OfficeLight2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Lights" unique_id=843290689 instance=ExtResource("12_4353k")]
@@ -855,145 +1254,393 @@ light_energy = 5.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.25, 2.1, -8.75)
 light_energy = 5.0
 
-[node name="Room 6" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1717180513 node_paths=PackedStringArray("room_area", "lights_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 0, 14.75)
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1661745242 instance=ExtResource("38_0wfx5")]
+
+[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Labels" unique_id=629088788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -1.9953508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Time Travel is the name of the game.
+Use it to explore every part of the night"
+font_size = 45
+outline_size = 10
+
+[node name="Controls" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Labels" unique_id=2075277436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.375, 2.25, -2.3703508)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Hold [R] to rewind
+Hold [F] to \"wait\" and pass time faster"
+font_size = 45
+outline_size = 10
+
+[node name="Try it" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Labels" unique_id=395218524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.25, -5.370351)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Watch these workers go about their day.
+Try rewinding and waiting"
+font_size = 45
+outline_size = 10
+
+[node name="Try it2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Labels" unique_id=1455665494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.625, 2.125, -5.870351)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "If you lose one and rewind,
+you gain it back!"
+font_size = 45
+outline_size = 10
+
+[node name="Lose items" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Labels" unique_id=1963634820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.375, 2.875, -6.245351)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "If you pick up an item and
+then rewind, you lose it"
+font_size = 45
+outline_size = 10
+
+[node name="Recharge" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Labels" unique_id=1125524581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.75, 2.25, -4.620351)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Interact with rewind stations to
+fill up time travel charge
+V"
+font_size = 45
+outline_size = 10
+
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1689062259]
+
+[node name="TV" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=2078831388 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(2.682209e-07, 0, -1.0000014, 0, 1, 0, 1.0000014, 0, 2.682209e-07, -15.382819, 0.79999995, 0.036590576)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="OfficeChair" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1091404457 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.8660256, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660256, -13.664124, 0, -1.0073853)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=341942364 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.5000003, 0, 0.8660258, 0, 1, 0, -0.8660258, 0, 0.5000003, -16.816095, 0, -1.0547056)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="Plant" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1490432022 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.8804122, 0, 0, 0, 1.8804122, 0, 0, 0, 1.8804122, -12.769369, 0, -0.37737274)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1899632516 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.6284856, 0, -0.94020635, 0, 1.8804122, 0, 0.94020635, 0, 1.6284856, -12.844216, 0, -4.4505186)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="SmallShelf" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=99990609 instance=ExtResource("46_ek4v5")]
+transform = Transform3D(1.8626451e-07, 0, -1.0000005, 0, 1, 0, 1.0000005, 0, 1.8626451e-07, -12.349105, 0, -3.2037344)
+metadata/asset_placer_res_id = "uid://efb0belj2klm"
+
+[node name="SmallShelf (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1523685218 instance=ExtResource("46_ek4v5")]
+transform = Transform3D(1.8626451e-07, 0, -1.0000005, 0, 1, 0, 1.0000005, 0, 1.8626451e-07, -12.342274, 0, -1.6011877)
+metadata/asset_placer_res_id = "uid://efb0belj2klm"
+
+[node name="Plant (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=521964727 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.602168, 0, 0, 0, 1.602168, 0, 0, 0, 1.602168, -17.71674, 0, -13.941599)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1015357684 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.602168, 0, 0, 0, 1.602168, 0, 0, 0, 1.602168, -12.640626, 0, -13.992155)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="TV (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1530935164 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(-1.4064101, 0, 5.476763e-07, 0, 1.4064085, 0, -5.476763e-07, 0, -1.4064101, -18.271805, 1.2, -6.445139)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="SmallShelf2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1348487408 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(2.1606684e-07, 0, 1.0000004, 0, 1, 0, -1.0000004, 0, 2.1606684e-07, -18.092556, 0, -9.160496)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="MeetingTable" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=361057400 instance=ExtResource("42_7kydn")]
+transform = Transform3D(1.8626451e-07, 0, 1.0000005, 0, 1, 0, -1.0000005, 0, 1.8626451e-07, 4.207823, 0, -9.17651)
+metadata/asset_placer_res_id = "uid://cv00ael0hyxty"
+
+[node name="OfficeChair (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1569393962 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(-0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, -0.642788, 6.350607, 0, -8.18992)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1745421261 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.866027, 0, -0.5000012, 0, 1, 0, 0.5000012, 0, 0.866027, 6.065777, 0, -10.272799)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=903694454 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(1.0000024, 0, -2.3841858e-07, 0, 1, 0, 2.3841858e-07, 0, 1.0000024, 4.3674736, 0, -10.286641)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="OfficeChair (5)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1517315386 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(0.9396951, 0, 0.34202072, 0, 1, 0, -0.34202072, 0, 0.9396951, 2.4760218, 0, -10.354034)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="Plant (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1939445232 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.862234, 0, 0, 0, 1.862234, 0, 0, 0, 1.862234, 0.38226032, 0, -10.661457)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (5)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1694955767 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(0.4951713, 0, 0, 0, 0.4951713, 0, 0, 0, 0.4951713, 3.8086271, 0.7814101, -9.026165)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (6)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=141784466 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(0.4951713, 0, 0, 0, 0.4951713, 0, 0, 0, 0.4951713, 4.5812755, 0.7814101, -9.045946)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="CornerDesk" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1972418641 instance=ExtResource("40_mqc0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0495276, 0, -6.0107117)
+metadata/asset_placer_res_id = "uid://dow6h3uhurjcs"
+
+[node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1024264458 instance=ExtResource("22_dfnc0")]
+transform = Transform3D(0.9414801, 0, 0, 0, 0.9414801, 0, 0, 0, 0.9414801, 5.434544, 0, -5.2070208)
+metadata/asset_placer_res_id = "uid://cvmqwgofqw5y5"
+
+[node name="Locker" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1928102949 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028395653, 0, -8.096422)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Locker (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1558095526 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0066645145, 0, -8.943719)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="TV (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=525913544 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 1.2862871, -6.7488184)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="PC Tower" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1422082414 instance=ExtResource("48_wkett")]
+transform = Transform3D(0.8660256, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660256, 0.35011458, 0.7595215, -6.003742)
+metadata/asset_placer_res_id = "uid://c3wleconqpaqy"
+
+[node name="Computer" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1364855301 instance=ExtResource("22_upwis")]
+transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 0.25, 0.75, -6.625)
+
+[node name="CornerDesk2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=761897051 instance=ExtResource("40_mqc0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -5.875)
+
+[node name="BigShelfLong (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=964828957 instance=ExtResource("50_ucgc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3969746, 0, 4.819031)
+metadata/asset_placer_res_id = "uid://b4ad3ylkwaj3p"
+
+[node name="Sink" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1752773839 instance=ExtResource("51_dfokh")]
+transform = Transform3D(1.937151e-07, 0, -1.0000004, 0, 1, 0, 1.0000004, 0, 1.937151e-07, 2.310667, 0.009887457, 0)
+metadata/asset_placer_res_id = "uid://bd0iyc8b0gku6"
+
+[node name="Mirror" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1455883799 instance=ExtResource("52_f6pwu")]
+transform = Transform3D(-2.4586916e-07, 0, -1.0000038, 0, 1, 0, 1.0000038, 0, -2.4586916e-07, 2.3247623, 1.3811945, 0)
+metadata/asset_placer_res_id = "uid://0oh788m3hc14"
+
+[node name="Plant (5)2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=2143122774 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.1391909, 0, 0, 0, 1.1391909, 0, 0, 0, 1.1391909, 6.456462, 0, -0.29064178)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Plant (6)2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=474562530 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.5702848, 0, 0, 0, 1.5702848, 0, 0, 0, 1.5702848, 6.4244804, 0, -4.311716)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="SmallShelf (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1770696140 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5607505, 0, -4.5280476)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="TV (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1811322961 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(1.4901161e-07, 0, 1.6678916, 0, 1.6678895, 0, -1.6678916, 0, 1.4901161e-07, 10.768061, 1.1995766, -6.75)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="Locker (2)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=375319174 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(-6.4074993e-07, 0, -1.0000015, 0, 1, 0, 1.0000015, 0, -6.4074993e-07, 9.245125, 0, -6.7193995)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Locker (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1359365802 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(8.7171793e-07, 0, 1.0000025, 0, 1, 0, -1.0000025, 0, 8.7171793e-07, 11.919667, 0, -0.018533707)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Locker (4)" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=1166494298 instance=ExtResource("43_1r3lh")]
+transform = Transform3D(8.7171793e-07, 0, 1.0000025, 0, 1, 0, -1.0000025, 0, 8.7171793e-07, 11.299313, 0, -0.010051727)
+metadata/asset_placer_res_id = "uid://b4444a5rqfiiv"
+
+[node name="Standard Desk2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5/Decor" unique_id=663227407 instance=ExtResource("22_dfnc0")]
+transform = Transform3D(1.0000001, 0, -7.450581e-09, 0, 1, 0, 7.450581e-09, 0, 1.0000001, 9.024833, 0, -0.32625484)
+metadata/asset_placer_res_id = "uid://cvmqwgofqw5y5"
+
+[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1481007531 instance=ExtResource("27_gbpfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, -9.375)
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_4ry0o")])
+follow_branch = 0
+path = SubResource("Resource_4ry0o")
+
+[node name="NPC2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1796486969 instance=ExtResource("27_gbpfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0, -6.625)
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_cjl8i")])
+follow_branch = 0
+path = SubResource("Resource_cjl8i")
+
+[node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1375448456 instance=ExtResource("24_ps4sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0.75, -5.125)
+item = ExtResource("34_yxgu2")
+
+[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=2097079311 instance=ExtResource("25_dmal2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.875, -0.5, -4.625)
+
+[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=834935891 instance=ExtResource("15_u5ky3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13, 0, -2.25)
+
+[node name="Room 6" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1717180513 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room6"
-
-[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1893864073]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 3.75, -3.1203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Time travel can be used to solve puzzles.. for example:
-Time A : item is inside room but door is locked
-Time B : item is taken out of room by npc
-Time C : door is left open"
-font_size = 45
-outline_size = 10
-
-[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1672016461]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 2.25, -3.1203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "You would enter the room after time C. Travel back
-to the time before B and grab the item"
-font_size = 45
-outline_size = 10
-
-[node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=704321281 instance=ExtResource("25_dmal2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
 
 [node name="Office door" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=222323412 instance=ExtResource("15_u5ky3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -7)
 is_locked = true
 
 [node name="Exit door" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1495521941 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.75, 0, -2.25)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -2.25)
 is_locked = true
 
-[node name="Door scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=528108776 instance=ExtResource("23_7sy1d")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.5, 1.25, -3.25)
-
-[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1494589062 instance=ExtResource("27_gbpfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5.75)
-color = Color(1, 0.87058824, 0.78431374, 1)
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_hilbg")])
+[node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1009577029 instance=ExtResource("27_gbpfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 0, -6)
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_61w73")])
 follow_branch = 0
-path = SubResource("Resource_hilbg")
+path = SubResource("Resource_61w73")
+
+[node name="Door scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=528108776 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.75, 1.25, -3.25)
+lock = NodePath("Lockable")
+
+[node name="Lockable" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" unique_id=227268280 instance=ExtResource("31_ulrwx")]
+needed_item = Array[ExtResource("46_s3w85")]([ExtResource("25_v3e2r")])
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=353285168]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Area3D" unique_id=1165007650]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0.5, -3.375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -3.375)
 shape = SubResource("BoxShape3D_3q7n2")
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1337816386]
 
 [node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Lights" unique_id=581124496 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.625, 2.1, -3.75)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 2.1, -3.75)
 light_energy = 5.0
 
-[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Lights" unique_id=1966648331 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 2.1, -3.75)
-light_energy = 5.0
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=981868174 instance=ExtResource("38_0wfx5")]
 
-[node name="OfficeLight5" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Lights" unique_id=1919133702 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.25, 2.1, -3.75)
-light_energy = 5.0
-
-[node name="Room 7" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1703796551 node_paths=PackedStringArray("room_area", "lights_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 0, 7.75)
-script = ExtResource("10_k05aa")
-room_area = NodePath("Area3D")
-lights_node = NodePath("Lights")
-room_id = "tutorial_room7"
-
-[node name="Timetravel3" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=2131189087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2.1203508)
+[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Labels" unique_id=1893864073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.875, 2.5411625, -3.1203508)
 billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "This item was take at 1:51am
-Try going back to before that time"
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Time travel can be used to solve puzzles!
+Try figuring out how to get the item in the room nextdoor"
 font_size = 45
 outline_size = 10
 
+[node name="Try it2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Labels" unique_id=299194408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 2.125, -6.370351)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Press this to
+state the puzzle
+V"
+font_size = 40
+outline_size = 10
+
+[node name="Decor" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=2079695811]
+
+[node name="Plant (7)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=1636204608 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8366337, 0.9453125, -0.42150497)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="CornerDesk (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=81161474 instance=ExtResource("40_mqc0c")]
+transform = Transform3D(-1.0000014, 0, -2.30968e-07, 0, 1, 0, 2.30968e-07, 0, -1.0000014, 1.5960674, 0, -5.783633)
+metadata/asset_placer_res_id = "uid://dow6h3uhurjcs"
+
+[node name="OfficeChair (3)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=706172810 instance=ExtResource("41_mwfe8")]
+transform = Transform3D(-0.76604486, 0, 0.6427883, 0, 1, 0, -0.6427883, 0, -0.76604486, 1.6620464, 0, -5.948022)
+metadata/asset_placer_res_id = "uid://d3gtn4sbko11j"
+
+[node name="TV (5)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=556759537 instance=ExtResource("47_mwfe8")]
+transform = Transform3D(-4.61936e-07, 0, -1.0000015, 0, 1, 0, 1.0000015, 0, -4.61936e-07, 1.4097519, 1.1747386, 0)
+metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
+
+[node name="Plant (8)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=824718910 instance=ExtResource("44_2fa5o")]
+transform = Transform3D(1.3509905, 0, 0, 0, 1.3509905, 0, 0, 0, 1.3509905, 0.3715315, 0, -0.3456707)
+metadata/asset_placer_res_id = "uid://bypd3h8336gog"
+
+[node name="Whiteboard (1)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=811316203 instance=ExtResource("43_j8vsw")]
+transform = Transform3D(0.9414815, 0, 2.1606684e-07, 0, 0.9414801, 0, -2.1606684e-07, 0, 0.9414815, 5.3311806, 0, -4.822383)
+metadata/asset_placer_res_id = "uid://bvm6vcceemdoc"
+
+[node name="SmallShelf (5)" parent="SubViewportContainer/SubViewport/Tutorial/Room 6/Decor" unique_id=622928133 instance=ExtResource("45_ixt3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9137554, 0, -0.14978981)
+metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
+
+[node name="Room 7" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1703796551 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 7.75)
+script = ExtResource("10_k05aa")
+room_area = NodePath("Area3D")
+lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
+room_id = "tutorial_room7"
+
 [node name="Recharge Station2" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=494808321 instance=ExtResource("25_dmal2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75, 0, -3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -3.5)
 
 [node name="Standard Desk" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=1332388319 instance=ExtResource("22_dfnc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -3.75)
 
 [node name="Item" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=2125445559 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(0.20536724, 0, -0.97868496, 0, 1, 0, 0.97868496, 0, 0.20536724, 2.75, 0.96071184, -3.75)
-item = ExtResource("38_84t3p")
+transform = Transform3D(0.20536724, 0, -0.97868496, 0, 1, 0, 0.97868496, 0, 0.20536724, 3.125, 0.96071184, -3.75)
+item = ExtResource("25_v3e2r")
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=81164661]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Area3D" unique_id=1016983536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0.5, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0.5, -2)
 shape = SubResource("BoxShape3D_28cgg")
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=671850537]
 
 [node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Lights" unique_id=649006419 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.625, 2.1, -1.875)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 2.1, -1.875)
 light_energy = 5.0
 
-[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Lights" unique_id=266368490 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5, 2.1, -1.875)
-light_energy = 5.0
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 7" unique_id=1078965264 instance=ExtResource("38_0wfx5")]
 
-[node name="OfficeLight5" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Lights" unique_id=158861079 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.25, 2.1, -1.875)
-light_energy = 5.0
+[node name="Try it3" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 7/Labels" unique_id=426041466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.125, 2.125, -1.9953508)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "If you are in here and there is no item,
+try rewinding to when they was"
+font_size = 40
+outline_size = 10
 
-[node name="Room 8" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1863731427 node_paths=PackedStringArray("room_area", "lights_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.25, 0, 14.75)
+[node name="Room 8" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1863731427 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, 0, 14.75)
 script = ExtResource("10_k05aa")
 room_area = NodePath("Area3D2")
 lights_node = NodePath("Lights")
+labels_node = NodePath("Labels")
 room_id = "tutorial_room8"
 
-[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=596948274]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2.25, -3.1203508)
-billboard = 1
-modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Good job! I think you're ready to play!"
-font_size = 45
-outline_size = 10
-
-[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=1301922082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1.36, -3.12)
-billboard = 1
-modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Go through the doorway to go to homebase"
-font_size = 45
-outline_size = 10
+[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=1802106867]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 7.398876, 5.6760917, -3.3826122)
+light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=1583330489]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -3.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75, 1, -3.25)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" unique_id=1692915184]
 shape = SubResource("BoxShape3D_3civr")
@@ -1010,51 +1657,40 @@ shape = SubResource("BoxShape3D_mqc0c")
 
 [node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=386379750]
 
-[node name="OfficeLight" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Lights" unique_id=114787640 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2, 2.1, -3.75)
+[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Lights" unique_id=1970266804 instance=ExtResource("12_4353k")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.125, 2.1, -3.75)
 light_energy = 5.0
 
-[node name="OfficeLight4" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Lights" unique_id=1970266804 instance=ExtResource("12_4353k")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.625, 2.1, -3.75)
-light_energy = 5.0
+[node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 8" unique_id=1833806532 instance=ExtResource("38_0wfx5")]
+
+[node name="Timetravel" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Labels" unique_id=596948274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 3.25, -3.1203508)
+billboard = 1
+modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
+text = "Good job! I think you're ready to play!"
+font_size = 45
+outline_size = 10
+
+[node name="Timetravel2" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 8/Labels" unique_id=1301922082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 2.3600001, -3.12)
+billboard = 1
+modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
+text = "Go through the doorway to go to homebase"
+font_size = 45
+outline_size = 10
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=22178100]
 transform = Transform3D(1, 0, 0, 0, 0.657362, 0.753575, 0, -0.753575, 0.657362, 0, 0, 0)
 visible = false
 
-[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1091210565]
-
-[node name="SpotLight3D9" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1020263123]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 17.75, 7.841367, 8.867388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
-[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1802106867]
-transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 28.648876, 5.6760917, 11.367388)
-light_color = Color(0.9339286, 0.80005723, 0.6955485, 1)
-light_energy = 6.0
-light_size = 0.25
-light_specular = 0.0
-shadow_enabled = true
-shadow_blur = 0.5
-spot_range = 31.135
-spot_attenuation = 0.5
-spot_angle = 60.0
-spot_angle_attenuation = 2.4622889
-
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("38_3civr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 7.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 8.125)
 
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 4/Step2/Generic_Door" method="toggle_open"]
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 6/Exit door" method="toggle_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 4/Room 4 Door" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 4/Room 4 Door" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 6/Exit door" method="unlock_open"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="UI Manager"]

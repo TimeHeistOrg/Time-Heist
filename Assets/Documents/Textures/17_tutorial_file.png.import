@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pnkwlmfoe7d"
-path.s3tc="res://.godot/imported/10_hello_playtester.png-cf841a136e9c378daf7280d862420a29.s3tc.ctex"
-path.etc2="res://.godot/imported/10_hello_playtester.png-cf841a136e9c378daf7280d862420a29.etc2.ctex"
+uid="uid://pby23nxijoct"
+path.s3tc="res://.godot/imported/17_tutorial_file.png-aed555cc4f5bf76ba8f9bc84d730225f.s3tc.ctex"
+path.etc2="res://.godot/imported/17_tutorial_file.png-aed555cc4f5bf76ba8f9bc84d730225f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Documents/Textures/10_hello_playtester.png"
-dest_files=["res://.godot/imported/10_hello_playtester.png-cf841a136e9c378daf7280d862420a29.s3tc.ctex", "res://.godot/imported/10_hello_playtester.png-cf841a136e9c378daf7280d862420a29.etc2.ctex"]
+source_file="res://Assets/Documents/Textures/17_tutorial_file.png"
+dest_files=["res://.godot/imported/17_tutorial_file.png-aed555cc4f5bf76ba8f9bc84d730225f.s3tc.ctex", "res://.godot/imported/17_tutorial_file.png-aed555cc4f5bf76ba8f9bc84d730225f.etc2.ctex"]
 
 [params]
 
