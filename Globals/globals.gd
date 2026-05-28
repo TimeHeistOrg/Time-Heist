@@ -119,6 +119,10 @@ signal collect_clearance(clearance : Clearances)
 signal use_item(item : PickupItem)
 @warning_ignore("unused_signal")
 signal new_in_device(value : bool, tab : Device_Tabs)
+@warning_ignore("unused_signal")
+signal start_charging
+@warning_ignore("unused_signal")
+signal stop_charging
 #endregion
 
 #region Debug

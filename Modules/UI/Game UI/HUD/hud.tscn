@@ -6,12 +6,70 @@
 [ext_resource type="Texture2D" uid="uid://rlak5fjasfud" path="res://Assets/UI/HUD/timemachineDBleft.png" id="3_maspv"]
 [ext_resource type="Texture2D" uid="uid://b80dfq17wtnqa" path="res://Assets/UI/HUD/timemachineDBright.png" id="4_3n30j"]
 [ext_resource type="Texture2D" uid="uid://bkt5l60d7puc0" path="res://Assets/UI/HUD/notification.png" id="6_maspv"]
+[ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="7_lfvhm"]
+[ext_resource type="Texture2D" uid="uid://dhl4c1p6dchg2" path="res://Assets/UI/HUD/simpleDepletionBarbg.png" id="7_w4p76"]
+[ext_resource type="Texture2D" uid="uid://cprxsye5p23cj" path="res://Assets/UI/HUD/simpleDepletionBaroutline.png" id="8_lfvhm"]
+[ext_resource type="Texture2D" uid="uid://blarw24w6yvg8" path="res://Assets/UI/HUD/simpleDepletionBarfull.png" id="9_5ex3c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3n30j"]
 load_path = "res://.godot/imported/DBempty.png-ddffdb95b591911a933dab6b7af1aa3a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8xiwf"]
 load_path = "res://.godot/imported/DBfull.png-0df07d8ec7d360b5bf3adca59d061d77.ctex"
+
+[sub_resource type="Animation" id="Animation_5ex3c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TextureProgressBar:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lfvhm"]
+resource_name = "BarPlayer"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TextureProgressBar:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666669),
+"transitions": PackedFloat32Array(0.5743491, 0.18946458, 0.18946458),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.35, 0.35), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="Animation" id="Animation_0r5qi"]
+resource_name = "disappear"
+length = 0.166
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TextureProgressBar:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166),
+"transitions": PackedFloat32Array(0.37892905, 0.37892905),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ex3c"]
+_data = {
+&"RESET": SubResource("Animation_5ex3c"),
+&"appear": SubResource("Animation_lfvhm"),
+&"disappear": SubResource("Animation_0r5qi")
+}
 
 [sub_resource type="Animation" id="Animation_3n30j"]
 length = 0.001
@@ -162,6 +220,7 @@ texture = ExtResource("6_maspv")
 expand_mode = 1
 
 [node name="Time" type="Label" parent="." unique_id=15072857]
+modulate = Color(0.7882353, 0.91764706, 0.9607843, 1)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -176,6 +235,7 @@ text = "00:00"
 horizontal_alignment = 2
 
 [node name="Time Seconds" type="Label" parent="." unique_id=1706191143]
+modulate = Color(0.7882353, 0.91764706, 0.9607843, 1)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -188,8 +248,41 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "00"
 
+[node name="BarPlayer" type="AnimationPlayer" parent="." unique_id=958442892]
+root_node = NodePath("../LightPlayer")
+libraries/ = SubResource("AnimationLibrary_5ex3c")
+
 [node name="BobPlayer" type="AnimationPlayer" parent="." unique_id=60608052]
 libraries/ = SubResource("AnimationLibrary_3n30j")
 
 [node name="LightPlayer" type="AnimationPlayer" parent="." unique_id=1043630829]
 libraries/ = SubResource("AnimationLibrary_3n30j")
+
+[node name="ProgressBar" type="TextureRect" parent="." unique_id=99749606]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 414.0
+offset_top = -78.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_lfvhm")
+expand_mode = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1328858356]
+unique_name_in_owner = true
+modulate = Color(0.627451, 0.8352941, 0.99215686, 1)
+layout_mode = 0
+offset_left = 714.2
+offset_top = 453.87
+offset_right = 929.20013
+offset_bottom = 929.87
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(106.55, 234.05)
+fill_mode = 3
+texture_under = ExtResource("7_w4p76")
+texture_over = ExtResource("8_lfvhm")
+texture_progress = ExtResource("9_5ex3c")
