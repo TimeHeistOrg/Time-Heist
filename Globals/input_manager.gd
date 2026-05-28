@@ -7,17 +7,13 @@ var in_control = InputControllers.UI
 var camera_sens_hor: float = 5
 
 var roll_walk_timer: float = 0
-var player: Player:
-	set(value):
-		player = value
-		if value:
-			change_input_controller(InputControllers.GAMEPLAY)
 
 const TAP_HOLD_THRESH:float = 0.2
 
 var close_timer: Timer #for inventory wheel
 
 func _ready():
+	globals.input_manager = self
 	change_input_controller(in_control)
 	await get_tree().process_frame
 	
@@ -25,7 +21,7 @@ func _ready():
 	close_timer = Timer.new()
 	close_timer.wait_time = 0.8
 	close_timer.one_shot = true
-	close_timer.timeout.connect(func(): player.inventory_wheel.close())
+	close_timer.timeout.connect(func(): globals.player.inventory_wheel.close())
 	add_child(close_timer)
 
 func change_input_controller(controller: InputControllers):
@@ -38,6 +34,7 @@ func change_input_controller(controller: InputControllers):
 			_switch_to_none()
 
 func _physics_process(delta):
+	_process_universal(delta)
 	match in_control:
 		InputControllers.UI:
 			_process_UI(delta)
@@ -47,6 +44,7 @@ func _physics_process(delta):
 			pass
 
 func _input(event):
+	_input_universal(event)
 	match in_control:
 		InputControllers.UI:
 			_input_UI(event)
@@ -54,6 +52,21 @@ func _input(event):
 			_input_gameplay(event)
 		InputControllers.NONE:
 			pass
+
+#region universal
+func _process_universal(_delta: float):
+	if globals.time_manager:
+		globals.time_manager.set_time_travelling(Input.is_action_pressed("rewind"))
+		globals.time_manager.set_fast_forwarding(Input.is_action_pressed("wait") or Input.is_action_pressed("wait_faster"))
+		if Input.is_action_pressed("wait_faster"): #Wait faster implementation is temporary, should be moved into debug ui
+			globals.time_manager.WAIT_MULTIPLIER = globals.time_manager.WAIT_FASTER_MULTIPLIER
+		else:
+			globals.time_manager.WAIT_MULTIPLIER = 5
+
+func _input_universal(_event: InputEvent):
+	pass
+
+#endregion
 
 #region None
 func _switch_to_none():
@@ -85,10 +98,12 @@ func _switch_to_gameplay():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input_gameplay(event: InputEvent):
+	var player = globals.player
 	if player and event is InputEventMouseMotion:
 		player.pan_camera_horizontally(-deg_to_rad(event.screen_relative.x * (camera_sens_hor/100)))
 
 func _process_gameplay(delta: float):
+	var player = globals.player
 	if player:
 		player.move(Input.get_vector("player_left","player_right","player_up","player_down"), delta)
 	if Input.is_action_pressed("player_roll_walk"):
@@ -121,7 +136,7 @@ func _process_gameplay(delta: float):
 		#change_input_controller(InputControllers.UI)
 
 func keep_wheel_open() -> void:
-	player.inventory_wheel.open()
+	globals.player.inventory_wheel.open()
 	close_timer.stop()     #cancel a close
 	close_timer.start()    #restart the countdown
 

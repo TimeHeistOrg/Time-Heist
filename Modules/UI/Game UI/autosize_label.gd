@@ -8,7 +8,7 @@ func _ready() -> void:
 	clip_text = true
 	item_rect_changed.connect(_on_item_rect_changed)
 
-func _set(property: StringName, value: Variant) -> bool:
+func _set(property: StringName, _value: Variant) -> bool:
 	match property:
 		"text":
 			# listen for text changes

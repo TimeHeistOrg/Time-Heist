@@ -39,7 +39,7 @@ func interact():
 	if retrigger > 0:
 		is_ready = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not is_ready:
 		retrigger_timer += globals.time_manager.delta_time
 		if retrigger_timer >= retrigger:

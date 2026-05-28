@@ -28,9 +28,11 @@ func toggle():
 		on()
 	
 func set_light(flip: bool):
+	@warning_ignore("standalone_ternary")
 	on() if flip else off()
 		
 func set_light_opposite(flip: bool):
+	@warning_ignore("standalone_ternary")
 	on() if not flip else off()
 
 func _process(delta: float) -> void:

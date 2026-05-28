@@ -66,7 +66,7 @@ func _ready() -> void:
 		on_color = globals.green_color
 		off_color = globals.red_color
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		
 		if cur_action:

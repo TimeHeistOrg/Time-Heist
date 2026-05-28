@@ -69,9 +69,8 @@ var is_hidden: bool = false #hiding in a locker or other place.
 
 func _ready():
 	if not Engine.is_editor_hint():
+		print("player_controller ready")
 		globals.player = self
-		if globals.input_manager:
-			globals.input_manager.player = self
 		$"Inventory Wheel Holder".player = self
 		run_enter()
 
@@ -155,7 +154,7 @@ func unlock_position():
 	position_locked = false
 
 func move(input_dir: Vector2, delta): #input manager calls this every physics_process frame with the pertinent input information
-	if not position_locked:
+	if not position_locked and globals.time_manager and globals.time_manager.time_multiplier == 1:
 		#anything that should happen for all states should go here
 		state_move.call(input_dir,delta)
 		move_and_slide()

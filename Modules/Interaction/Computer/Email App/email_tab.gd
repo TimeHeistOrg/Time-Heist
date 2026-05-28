@@ -55,8 +55,8 @@ func view_panel(document: DocumentInfo) -> void:
 		var tex_size = document.document_image.get_size()
 		# fit width to scroll container, scale height proportionally
 		var available_width = scroll_container.size.x
-		var scale = available_width / tex_size.x
-		email_viewer.custom_minimum_size = Vector2(available_width, tex_size.y * scale)
+		var doc_scale = available_width / tex_size.x
+		email_viewer.custom_minimum_size = Vector2(available_width, tex_size.y * doc_scale)
 	
 func setup_emails():
 	for email in emails:

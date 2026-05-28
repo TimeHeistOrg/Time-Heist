@@ -5,7 +5,6 @@ extends Node
 # since this is a global, need to assign these in _ready
 var scene_holder: Node
 var current_scene: Node
-var current_scene_type: Scene
 
 enum Scene {
 	GAMEPLAY,
@@ -28,23 +27,27 @@ func change_scene(s: Scene) -> void:
 	# clear current scene if there
 	if current_scene:
 		current_scene.queue_free()
-		
+		current_scene = null
 	# instantiate designated scene and save ref
-	globals.time_manager.restart_time()
-	current_scene = scene_paths[s].instantiate()
-	current_scene_type = s
-	if scene_holder:
-		scene_holder.add_child(current_scene)
-		global_inventory.reset_items()
-	
+	call_deferred("_load_scene",scene_paths[s])
+
+func change_scene_to_path(path: String):
+	# clear current scene if there
+	if current_scene:
+		current_scene.queue_free()
+		current_scene = null
+	call_deferred("_load_scene",path)
+
+func _load_scene(path: String):
+	current_scene = load(path).instantiate()
+	scene_holder.add_child(current_scene)
+
+func reload_current_scene():
+	change_scene_to_path(current_scene.scene_file_path)
+
 func _ready() -> void:
-	if get_tree().current_scene.name == ROOT_SCENE_NAME:
-		scene_holder = get_tree().current_scene.get_node("./SceneHolder")
-		change_scene(START_SCENE)
-	else:
-		current_scene = get_tree().current_scene
-		scene_holder = Node.new()
-		scene_holder.name = "SceneHolder"
-		add_child(scene_holder)
-		await get_tree().process_frame
-		get_tree().current_scene.reparent(scene_holder)
+	current_scene = get_tree().current_scene
+	scene_holder = Node.new()
+	scene_holder.name = "SceneHolder"
+	add_child(scene_holder)
+	current_scene.call_deferred("reparent",scene_holder)

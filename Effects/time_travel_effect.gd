@@ -12,8 +12,6 @@ var tween : Tween
 var active: bool = false
 
 func _ready() -> void:
-	globals.time_manager.start_time_travel.connect(_play_anim)
-	globals.time_manager.stop_time_travel.connect(_stop_animation)
 	visible = false
 
 func _process(_delta):

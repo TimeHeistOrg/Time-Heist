@@ -90,7 +90,7 @@ func to_homebase():
 
 func retry():
 	#print("restart")
-	SceneManager.change_scene(SceneManager.current_scene_type)
+	SceneManager.reload_current_scene()
 
 
 #region Signals

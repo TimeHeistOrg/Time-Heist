@@ -23,6 +23,7 @@ var rewind_drain_per_sec : float = 15
 var rewind_charge_per_sec : float = 40
 
 var time_travelling: bool = false
+var fast_forwarding: bool = false
 
 func _ready():
 	globals.time_manager = self
@@ -30,23 +31,29 @@ func _ready():
 	start_time()
 
 func _physics_process(delta):
-	if Input.is_action_pressed("rewind"):
-		if time_juice > 0.0 or not globals.player or globals.infinite_juice:
-			time_multiplier = REWIND_MULTIPLIER
-	else:
-		if Input.is_action_pressed("wait"):
-			time_multiplier = WAIT_MULTIPLIER
-		elif Input.is_action_pressed("wait_faster"):
-			time_multiplier = WAIT_FASTER_MULTIPLIER
-		else:
-			time_multiplier = 1
+	#if Input.is_action_pressed("rewind"):
+		#if time_juice > 0.0 or not globals.player or globals.infinite_juice:
+			#time_multiplier = REWIND_MULTIPLIER
+	#else:
+		#if Input.is_action_pressed("wait"):
+			#time_multiplier = WAIT_MULTIPLIER
+		#elif Input.is_action_pressed("wait_faster"):
+			#time_multiplier = WAIT_FASTER_MULTIPLIER
+		#else:
+			#time_multiplier = 1
 	
-	if time_multiplier < 0: #rewind
+	
+	if time_travelling: #rewind
+		time_multiplier = REWIND_MULTIPLIER
 		rewind(delta * time_multiplier)
-		time_travelling = true
+	elif fast_forwarding:
+		time_multiplier = WAIT_MULTIPLIER
+		delta_time = delta * time_multiplier
+		cur_time += delta_time
 	else:
-		time_travelling = false
-		cur_time = delta * time_multiplier
+		time_multiplier = 1
+		delta_time = delta * time_multiplier
+		cur_time += delta_time
 	
 	if cur_time > 5 * 60:
 		globals.player_caught()
@@ -58,11 +65,15 @@ func start_time():
 func stop_time():
 	time_multiplier = 0
 
-func start_fast_forward(multiplier: float):
-	time_multiplier = multiplier
+func set_fast_forwarding(value: bool):
+	fast_forwarding = value
+	if value:
+		time_travelling = false
 
-func stop_fast_forward():
-	time_multiplier = 1
+func set_time_travelling(value: bool):
+	time_travelling = value
+	if value:
+		fast_forwarding = false
 
 func rewind(time_sec:float):
 	delta_time = time_sec
