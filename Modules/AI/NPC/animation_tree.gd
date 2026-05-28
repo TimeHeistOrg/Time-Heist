@@ -6,7 +6,7 @@ var last_processed_component: PathComponent
 var time_scale: float = 0 #to adapt to time travel
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if npc_script.cur_component != last_processed_component:
 		last_processed_component = npc_script.cur_component
 		if last_processed_component is PathLine:

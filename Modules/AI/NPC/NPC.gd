@@ -21,7 +21,7 @@ class_name NPC extends Node3D
 var path_following: NPCPath = null: #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"path_following",path_following,value)
+			globals.time_manager.timelog(self,"path_following",path_following)
 		path_following = value
 		initialize_path_vars()
 

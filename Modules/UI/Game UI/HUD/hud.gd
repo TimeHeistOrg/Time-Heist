@@ -12,7 +12,7 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	time_juice.value = globals.time_juice
+	time_juice.value = globals.time_manager.time_juice
 	if globals.time_manager:
 		var cur_time: int = int(globals.time_manager.cur_time)
 		@warning_ignore("integer_division")

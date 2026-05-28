@@ -23,7 +23,7 @@ var center = Vector2.ZERO
 const start = -TAU/4 - slot_width/2
 
 #var slots := [0,1,2, 3, 4, 5, 6, 7, 8, 9]
-const slot_width = deg_to_rad(360/num_of_items)
+const slot_width = deg_to_rad(360.0/num_of_items)
 #const slot_width := full_slot_width - slot_gap_width
 const slot_gap_width : float = 15
 @onready var arc: Node2D = $Wheel/Arc
@@ -96,8 +96,10 @@ func rebuild_window() -> void:
 		return
 	window_start = selected_index
 	window_end = selected_index
+	@warning_ignore("integer_division")
 	while validate_index(window_start-1) and selected_index - (window_start-1) <= num_of_items_visible/2:
 		window_start -= 1
+	@warning_ignore("integer_division")
 	while validate_index(window_end+1) and (window_end+1) - selected_index <= num_of_items_visible/2:
 		window_end += 1
 	for i in range(window_start,window_end+1):

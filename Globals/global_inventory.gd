@@ -4,7 +4,7 @@ class_name GlobalInventory
 var items : Array[PickupItem] : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"items",items,value)
+			globals.time_manager.timelog(self,"items",items)
 		items = value
 		#print(items)
 		globals.update_items.emit()

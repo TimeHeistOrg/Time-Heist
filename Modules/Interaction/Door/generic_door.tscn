@@ -86,10 +86,10 @@ script = ExtResource("1_nk12b")
 [node name="Door_Frame_with_Door_Animated_v2(Faster)" parent="." unique_id=902016995 instance=ExtResource("2_haa8g")]
 transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -0.47409245, 0, 0.075)
 
-[node name="DoorHinge" parent="Door_Frame_with_Door_Animated_v2(Faster)" index="0" unique_id=367917815]
+[node name="DoorHinge" parent="Door_Frame_with_Door_Animated_v2(Faster)" index="0" unique_id=388145644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Door" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge" index="0" unique_id=217019814]
+[node name="Door" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge" index="0" unique_id=308317800]
 material_overlay = ExtResource("3_aahkk")
 mesh = SubResource("ArrayMesh_tcs74")
 
@@ -101,7 +101,7 @@ collision_mask = 0
 [node name="PhysicalCollider" type="CollisionShape3D" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB" unique_id=1785011816]
 shape = SubResource("BoxShape3D_6yhnp")
 
-[node name="DoorKnob" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Knob Pivot" parent_id_path=PackedInt32Array(902016995, 1603933095) index="0" unique_id=524392665]
+[node name="DoorKnob" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Knob Pivot" parent_id_path=PackedInt32Array(902016995, 2123228977) index="0" unique_id=704263750]
 mesh = SubResource("ArrayMesh_5o8aa")
 
 [node name="Interactable" parent="Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door" index="2" unique_id=242002428 instance=ExtResource("2_im0k3")]

@@ -13,7 +13,7 @@ class_name Item
 var picked_up : bool : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"picked_up",picked_up,value)
+			globals.time_manager.timelog(self,"picked_up",picked_up)
 		picked_up = value
 		@warning_ignore("standalone_ternary")
 		hide() if value else show()

@@ -9,7 +9,7 @@ var retrigger_timer: float = 0.0
 var is_ready : bool = true : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"is_ready",is_ready,value)
+			globals.time_manager.timelog(self,"is_ready",is_ready)
 		elif not value:
 			retrigger_timer = retrigger
 		is_ready = value
@@ -39,7 +39,7 @@ func interact():
 	if retrigger > 0:
 		is_ready = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not is_ready:
 		retrigger_timer += globals.time_manager.delta_time
 		if retrigger_timer >= retrigger:

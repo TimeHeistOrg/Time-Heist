@@ -94,6 +94,8 @@ func _process(_delta: float) -> void:
 			sight_checker.look_at(globals.player.detection_point.global_position)
 			if sight_checker.get_collider() == globals.player:
 				player_spotted = true
+			else:
+				player_spotted = false
 		else:
 				player_spotted = false
 

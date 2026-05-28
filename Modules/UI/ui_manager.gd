@@ -27,7 +27,8 @@ func _ready():
 
 func take_control(ui: Control):
 	if ui != debug_ui:
-		InputManager.change_input_controller(InputManager.InputControllers.UI)
+		if globals.input_manager:
+			globals.input_manager.change_input_controller(globals.input_manager.InputControllers.UI)
 	if cur_ui:
 		ui_stack.append(cur_ui)
 		cur_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE #doesnt really do anything
@@ -39,7 +40,8 @@ func release_control():
 		cur_ui.mouse_filter = Control.MOUSE_FILTER_STOP #doesnt really do anything
 	else:
 		cur_ui = null
-		InputManager.change_input_controller(InputManager.InputControllers.GAMEPLAY)
+		if globals.input_manager:
+			globals.input_manager.change_input_controller(globals.input_manager.InputControllers.GAMEPLAY)
 
 func handle_input(_delta):
 	#if Input.is_action_just_pressed("camera_ui"):
