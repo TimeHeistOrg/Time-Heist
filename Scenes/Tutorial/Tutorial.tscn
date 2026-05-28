@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://djn3ckwc8enih" path="res://Modules/Interaction/Document/document.tscn" id="19_gewwa"]
 [ext_resource type="Resource" uid="uid://cw2nowwwbrvos" path="res://Assets/Documents/Resources/tutorial_hello_playtester.tres" id="20_g7vx3"]
 [ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/NPC/Guard.tscn" id="20_mwfe8"]
+[ext_resource type="Texture2D" uid="uid://ct0fj7qibiwlc" path="res://Assets/UI/Logo/time heist long logo hifi.png" id="21_dfokh"]
 [ext_resource type="Texture2D" uid="uid://dfjrrmsqrdlee" path="res://Assets/Documents/Textures/hello_playtester_small.png" id="21_svqji"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="22_dfnc0"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="22_upwis"]
@@ -110,12 +111,12 @@ grow_amount = -4.125
 [sub_resource type="BoxShape3D" id="BoxShape3D_84t3p"]
 size = Vector3(7.75, 1, 11.25)
 
-[sub_resource type="Resource" id="Resource_ucgc0"]
+[sub_resource type="Resource" id="Resource_yjryn"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(-10.875, 0, 1.75)
 
-[sub_resource type="Resource" id="Resource_yjryn"]
+[sub_resource type="Resource" id="Resource_lrtsd"]
 resource_local_to_scene = true
 script = ExtResource("30_fr3jc")
 position = Vector3(-15.25, 0, 1.75)
@@ -123,47 +124,35 @@ time_start = 4.375
 time_end = 4.375
 id = 2
 
-[sub_resource type="Resource" id="Resource_lrtsd"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_ucgc0")
-next_vertex = SubResource("Resource_yjryn")
-time_end = 4.375
-id = 1
-
 [sub_resource type="Resource" id="Resource_bbtu8"]
 resource_local_to_scene = true
 script = ExtResource("32_2otw2")
 speed = 1.0
 prev_vertex = SubResource("Resource_yjryn")
-next_vertex = SubResource("Resource_ucgc0")
+next_vertex = SubResource("Resource_lrtsd")
+time_end = 4.375
+id = 1
+
+[sub_resource type="Resource" id="Resource_fj7il"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_lrtsd")
+next_vertex = SubResource("Resource_yjryn")
 is_loop_line = true
 time_start = 4.375
 time_end = 8.75
 id = 3
 
-[sub_resource type="Resource" id="Resource_fj7il"]
+[sub_resource type="Resource" id="Resource_tfsam"]
 resource_local_to_scene = true
 script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_ucgc0"), SubResource("Resource_lrtsd"), SubResource("Resource_yjryn"), SubResource("Resource_bbtu8")])
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_yjryn"), SubResource("Resource_bbtu8"), SubResource("Resource_lrtsd"), SubResource("Resource_fj7il")])
 loop = true
 metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k05aa"]
 size = Vector3(6.25, 1, 11.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfsam"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0.87058824, 0.78431374, 1)
-metallic = 0.8
-roughness = 0.5
-emission_enabled = true
-emission = Color(0.8117647, 0.49019608, 0, 1)
-emission_energy_multiplier = 3.0
-backlight = Color(0.99997944, 0.71876156, 0.67345256, 1)
-stencil_flags = 2
-stencil_outline_thickness = 0.001
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4353k"]
 size = Vector3(6, 1, 16.25)
@@ -782,15 +771,20 @@ metadata/asset_placer_res_id = "uid://bypd3h8336gog"
 [node name="Labels" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=668998449 instance=ExtResource("38_0wfx5")]
 
 [node name="Welcome" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1050964909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 3.125, -9.897606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 3.25, -9.897606)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Welcome to Time Heist!"
-font_size = 100
+text = "Welcome to"
+font_size = 70
 outline_size = 20
 
+[node name="Logo" type="Sprite3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1007928810]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.75, 2.75, -9.897606)
+billboard = 1
+texture = ExtResource("21_dfokh")
+
 [node name="WASD and Arrow" type="Label3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1/Labels" unique_id=1550713812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 2.125, -9.647606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 2, -9.647606)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "WASD to move
@@ -840,9 +834,9 @@ room_id = "tutorial_room2"
 
 [node name="WalkGuard" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=854805088 instance=ExtResource("20_mwfe8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.125, 0, -13)
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_fj7il")])
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_tfsam")])
 follow_branch = 0
-path = SubResource("Resource_fj7il")
+path = SubResource("Resource_tfsam")
 
 [node name="Counter" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=70609053 instance=ExtResource("18_capbt")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.75, 0, -7.5)
@@ -924,15 +918,6 @@ font_size = 50
 
 [node name="Tutorial Guard" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=232750231 instance=ExtResource("30_ucgc0")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -6.5)
-
-[node name="PlayerDetector" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Tutorial Guard" index="0" unique_id=1869490121]
-sight_line_angle = 50.0
-
-[node name="Cylinder" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Tutorial Guard" index="2" unique_id=1628374913]
-surface_material_override/0 = SubResource("StandardMaterial3D_tfsam")
-
-[node name="torso" parent="SubViewportContainer/SubViewport/Tutorial/Room 2/Tutorial Guard" index="4" unique_id=805945296]
-surface_material_override/0 = SubResource("StandardMaterial3D_tfsam")
 
 [node name="Room 3" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2080792882 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 14.75)
@@ -1730,4 +1715,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 8.125)
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="UI Manager"]
-[editable path="SubViewportContainer/SubViewport/Tutorial/Room 2/Tutorial Guard"]

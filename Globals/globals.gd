@@ -25,6 +25,11 @@ var player_camera : Camera3D
 
 var camera : Node3D
 
+#region Tutorial
+var in_tutorial : bool = false
+var tutorial_start_point : int = 0
+#endregion
+
 #region DebugMode
 var infinite_juice: bool = false
 var player_invisible: bool = false
@@ -95,10 +100,14 @@ func player_caught():
 	get_tree().paused = true
 	
 func player_tutorial_caught():
-	if get_tree().current_scene.name == "Tutorial":
-		ui_manager.fade_to_black.open()
-		get_tree().current_scene.reset_to_save()
-		ui_manager.fade_to_black.close()
+	if SceneManager.current_scene is Tutorial:
+		#time_manager.stop_time()
+		#get_tree().paused = true
+		#ui_manager.mouse_filter = Control.MOUSE_FILTER_STOP
+		await ui_manager.fade_to_black.open()
+		print("fade over")
+		SceneManager.current_scene.reset_to_save()
+		await ui_manager.fade_to_black.close()
 
 func to_homebase():
 	#print("to homebase")

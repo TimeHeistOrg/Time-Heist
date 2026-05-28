@@ -22,6 +22,12 @@ func _ready() -> void:
 	globals.time_manager.stopped_time_travel.connect(func(): time_traveling = false)
 	globals.start_charging.connect(func(): charging = true)
 	globals.stop_charging.connect(func(): charging = false)
+	
+	if globals.in_tutorial:
+		$ProgressBar.hide()
+		timeline_pin.hide()
+		time_label.hide()
+		time_label_seconds.hide()
 	pass
 
 func _process(_delta: float) -> void:
