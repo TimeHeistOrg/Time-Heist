@@ -8,6 +8,8 @@ class_name UI_Manager
 #@onready var camera_ui = $Camera
 @onready var device_menu: DeviceMenu = $DeviceMenu
 @onready var caught_ui = %CaughtUI
+@onready var fade_to_black = %"Fade to Black"
+
 var ui_stack: Array[Control] = []
 var cur_ui: Control = null
 var message_timer : Timer
@@ -24,6 +26,7 @@ func _ready():
 	set_menu(debug_ui,debug_mode)
 	set_menu(document_viewer,false)
 	set_menu(caught_ui, false)
+	set_menu(fade_to_black, false)
 
 func take_control(ui: Control):
 	if ui != debug_ui:

@@ -1,5 +1,5 @@
 @tool
-class_name Guard extends NPC
+class_name TutorialGuard extends NPC
 
 #Seen at all -> Suspicious:
 	#stops moving, tracks player, quesrtion mark
@@ -162,6 +162,6 @@ func _on_npc_hitbox_body_entered(body: Node3D) -> void:
 		catch_player()
 
 func catch_player():
-	globals.player_caught()
+	globals.player_tutorial_caught()
 	#print("player caught!")
 	pass

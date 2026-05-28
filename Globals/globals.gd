@@ -27,7 +27,7 @@ var camera : Node3D
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = true
+var player_invisible: bool = false
 #endregion
 
 #region Detection
@@ -93,6 +93,12 @@ func player_caught():
 		ui_manager.mouse_filter = Control.MOUSE_FILTER_STOP
 	time_manager.stop_time()
 	get_tree().paused = true
+	
+func player_tutorial_caught():
+	if get_tree().current_scene.name == "Tutorial":
+		ui_manager.fade_to_black.open()
+		get_tree().current_scene.reset_to_save()
+		ui_manager.fade_to_black.close()
 
 func to_homebase():
 	#print("to homebase")

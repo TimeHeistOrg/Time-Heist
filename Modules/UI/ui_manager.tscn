@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djm2xkntdba18" path="res://Modules/UI/Game UI/device_menu.tscn" id="5_keavj"]
 [ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="6_df44s"]
 [ext_resource type="PackedScene" uid="uid://cndkl22sd4vd8" path="res://Modules/UI/Game UI/CaughtUI.tscn" id="8_1ex2v"]
+[ext_resource type="PackedScene" uid="uid://xr60nvoo2ab6" path="res://Modules/UI/Game UI/FadetoBlack.tscn" id="8_sx7gw"]
 
 [sub_resource type="GDScript" id="GDScript_yaem8"]
 resource_name = "TimeDisplay"
@@ -168,3 +169,6 @@ layer = 100
 unique_name_in_owner = true
 visible = false
 z_index = 1
+
+[node name="Fade to Black" parent="CanvasLayer" unique_id=337677308 instance=ExtResource("8_sx7gw")]
+unique_name_in_owner = true
