@@ -11,7 +11,7 @@ class_name Generic_Door
 		#print("set is_open to ", value)
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_open",is_open,value)
+				globals.time_manager.timelog(self,"is_open",is_open)
 			is_open = value
 			if collision_body:
 				if value:
@@ -31,9 +31,9 @@ class_name Generic_Door
 		#print("set is_locked to ", value)
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_locked",is_locked,value)
-			if value:
-				print("here")
+				globals.time_manager.timelog(self,"is_locked",is_locked)
+			if is_node_ready() and value:
+				#print("here")
 				$AudioStreamPlayer3D.play()
 		is_locked = value
 
@@ -58,7 +58,7 @@ var cur_action: DoorTimeAction = null: #TIMEVAR
 				animation_player.play("Door_Action_Close")
 				animation_player.pause()
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"cur_action",cur_action,value)
+			globals.time_manager.timelog(self,"cur_action",cur_action)
 		cur_action = value
 
 
@@ -78,6 +78,7 @@ func _process(_delta):
 	if not Engine.is_editor_hint():
 		
 		if cur_action:
+			#print(cur_action.opening, ", ", cur_action.end_progress)
 			if globals.time_manager.delta_time > 0: #time travelling forward
 				progress += globals.time_manager.delta_time
 				if progress >= animation_player.current_animation_length:
@@ -92,7 +93,7 @@ func _process(_delta):
 				animation_player.seek(progress,true)
 
 func open():
-	#print("open")
+	print("open")
 	if (not cur_action or not cur_action.opening):
 		if(not is_open or (cur_action and not cur_action.opening)):
 			var was_closing: bool = cur_action != null

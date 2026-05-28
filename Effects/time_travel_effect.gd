@@ -9,11 +9,21 @@ var is_playing_effect = false
 @onready var time_travel_post_fx = preload("res://Effects/time_travel_post_fx.tres")
 var tween : Tween
 
+var active: bool = false
 
 func _ready() -> void:
-	globals.time_manager.time_traveled.connect(_play_anim)
-	globals.time_manager.stopped_time_travel.connect(_stop_animation)
 	visible = false
+
+func _process(_delta):
+	if globals.time_manager:
+		if globals.time_manager.time_travelling:
+			if not active:
+				_play_anim()
+				active = true
+		else:
+			if active:
+				_stop_animation()
+				active = false
 
 func _play_anim() -> void:
 	if is_playing_effect:

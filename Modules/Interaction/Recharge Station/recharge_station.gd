@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		if charging:
 			wire_mesh.clear_surfaces()
 			draw_line()
-			globals.time_juice = minf(globals.max_time_juice, globals.time_juice + globals.rewind_charge_per_sec * delta)
+			globals.time_manager.time_juice = minf(globals.time_manager.max_time_juice, globals.time_manager.time_juice + globals.time_manager.rewind_charge_per_sec * delta)
 	pass
 	
 func interact():

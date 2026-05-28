@@ -27,7 +27,6 @@ document_database="*res://Globals/document_database.gd"
 global_inventory="*uid://bd6hj8r16s6lx"
 DialogueManager="*uid://c3rodes2l3gxb"
 SceneManager="*uid://cbn2aivlaf362"
-InputManager="*uid://c85ew4wup87yn"
 
 [dialogue_manager]
 
