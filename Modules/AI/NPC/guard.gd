@@ -77,7 +77,9 @@ func normal_process():
 		return
 	if not path_following:
 		return
-	var cur_time = max(time_manager.cur_time - time_offset, 0)
+	var cur_time = time_manager.cur_time - time_offset + start_offset
+	if cur_time < 0:
+		return
 	if path_following.loop:
 		cur_time = fmod(cur_time,path_following.get_path_duration())
 	if last_processed_time > cur_time: # moved backward in time

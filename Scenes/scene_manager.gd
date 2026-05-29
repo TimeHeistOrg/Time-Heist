@@ -52,22 +52,22 @@ func reload_current_scene():
 	get_tree().paused = true
 	if globals.time_manager:
 		globals.time_manager.stop_time()
-	print("reload normal")
+	#print("reload normal")
 	change_scene_to_path(current_scene.scene_file_path)
 
 func reload_current_scene_transition():
 	get_tree().paused = true
 	if globals.time_manager:
 		globals.time_manager.stop_time()
-	print("reload transition")
+	#print("reload transition")
 	await transition_animator.fade_in()
 	change_scene_to_path(current_scene.scene_file_path)
 	await transition_animator.fade_out()
 
 func _ready() -> void:
 	current_scene = get_tree().current_scene
-	print(current_scene)
-	print(get_tree().current_scene)
+	#print(current_scene)
+	#print(get_tree().current_scene)
 	scene_holder = Node.new()
 	scene_holder.name = "SceneHolder"
 	add_child(scene_holder)
