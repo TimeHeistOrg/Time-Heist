@@ -4,7 +4,7 @@ class_name RechargeStation
 var in_zone : bool = false
 var charging : bool = false:
 	set(value):
-		print("set charing to ", value)
+		#print("set charing to ", value)
 		if not value:
 			wire_mesh.clear_surfaces()
 		charging = value
@@ -49,7 +49,7 @@ func draw_line():
 
 func _on_charge_area_body_entered(body: Node3D) -> void:
 	if body == globals.player:
-		print("entering zone")
+		#print("entering zone")
 		#old_speed = player.current_max_speed
 		#player.current_max_speed = speed_in_zone
 		in_zone = true
@@ -57,7 +57,7 @@ func _on_charge_area_body_entered(body: Node3D) -> void:
 	
 func _on_charge_area_body_exited(body: Node3D) -> void:
 	if body == globals.player:
-		print("exiting zone")
+		#print("exiting zone")
 		#player.current_max_speed = old_speed
 		in_zone = false
 		wire_mesh.clear_surfaces()

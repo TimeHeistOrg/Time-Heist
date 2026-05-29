@@ -76,7 +76,7 @@ func interact_with(nodepath: NodePath):
 	
 
 func face(rotation_deg: float):
-	print("facing ", rotation_deg)
+	#print("facing ", rotation_deg)
 	rotation.y = deg_to_rad(rotation_deg)
 
 func branch_if(branchAction: BranchAction):

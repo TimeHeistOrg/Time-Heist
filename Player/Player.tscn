@@ -448,7 +448,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_sq2ld")
 blend_point_1/pos = 0.90000004
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_d3b4r"]
-xfade_time = 0.3
+xfade_time = 0.25
 input_0/name = "RunWalk"
 input_0/auto_advance = false
 input_0/break_loop_at_end = false
@@ -610,8 +610,11 @@ blend_point_26/node = SubResource("AnimationNodeAnimation_b045r")
 blend_point_26/pos = Vector2(0.8, 1)
 sync = true
 
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_roy6y"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gxmyo"]
-nodes/output/position = Vector2(560, 112)
+graph_offset = Vector2(-253.77786, 31.746307)
+nodes/output/position = Vector2(650, 120)
 nodes/RunWalkBlend/node = SubResource("AnimationNodeBlendSpace2D_cprru")
 nodes/RunWalkBlend/position = Vector2(-140, 30)
 nodes/CrouchBlendSpace/node = SubResource("AnimationNodeBlendSpace1D_7lsfx")
@@ -622,7 +625,9 @@ nodes/RollAnim/node = SubResource("AnimationNodeAnimation_rrlna")
 nodes/RollAnim/position = Vector2(-370, 250)
 nodes/RollTimeScale/node = SubResource("AnimationNodeTimeScale_rrlna")
 nodes/RollTimeScale/position = Vector2(-150, 250)
-node_connections = [&"output", 0, &"MoveStates", &"MoveStates", 0, &"RunWalkBlend", &"MoveStates", 1, &"RollTimeScale", &"MoveStates", 2, &"CrouchBlendSpace", &"RollTimeScale", 0, &"RollAnim"]
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_roy6y")
+nodes/TimeScale/position = Vector2(490, 90)
+node_connections = [&"output", 0, &"TimeScale", &"MoveStates", 0, &"RunWalkBlend", &"MoveStates", 1, &"RollTimeScale", &"MoveStates", 2, &"CrouchBlendSpace", &"RollTimeScale", 0, &"RollAnim", &"TimeScale", 0, &"MoveStates"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ps8ct"]
 shader = ExtResource("18_roy6y")
@@ -934,6 +939,7 @@ parameters/MoveStates/current_state = "RunWalk"
 parameters/MoveStates/transition_request = ""
 parameters/MoveStates/current_index = 0
 parameters/RollTimeScale/scale = 1.0
+parameters/TimeScale/scale = 1.0
 
 [node name="Camera Pivot" type="Node3D" parent="." unique_id=779677481]
 

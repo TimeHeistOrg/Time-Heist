@@ -22,7 +22,7 @@ func _on_body_entered(body: Node3D) -> void:
 		contains_player = true
 		for light in lights:
 			light.on()
-		print("Entered ", room_id)
+		#print("Entered ", room_id)
 		
 func _on_body_exited(body: Node3D) -> void:
 	if body == globals.player:
@@ -30,7 +30,7 @@ func _on_body_exited(body: Node3D) -> void:
 		contains_player = false
 		for light in lights:
 			light.off()
-		print("Exited ", room_id)
+		#print("Exited ", room_id)
 
 #func _process(delta: float) -> void:
 	#if not lights:

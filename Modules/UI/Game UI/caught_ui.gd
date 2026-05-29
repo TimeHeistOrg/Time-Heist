@@ -3,14 +3,14 @@ extends UI
 @onready var label: Label = $Label
 
 func _on_try_again_pressed():
-	print("press restart")
+	#print("press restart")
 	close()
 	get_tree().paused = false
 	globals.retry()
 
 
 func _on_homebase_pressed():
-	print("press homebase")
+	#print("press homebase")
 	close()
 	get_tree().paused = false
 	globals.to_homebase()

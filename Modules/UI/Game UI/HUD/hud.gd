@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 func new_notif(value : bool, tab : globals.Device_Tabs):
 	var do_show : bool = false
 	notif_on_tab[tab] = value
-	print("checking ", notif_on_tab)
+	#print("checking ", notif_on_tab)
 	for notif_tab in notif_on_tab:
 		if notif_tab:
 			do_show = true
