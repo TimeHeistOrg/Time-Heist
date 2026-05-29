@@ -11,6 +11,7 @@ var roll_walk_timer: float = 0
 const TAP_HOLD_THRESH:float = 0.2
 
 var close_timer: Timer #for inventory wheel
+var toggle_crouch: bool = true
 
 func _ready():
 	globals.input_manager = self
@@ -25,6 +26,15 @@ func _ready():
 	add_child(close_timer)
 
 func change_input_controller(controller: InputControllers):
+	if controller == in_control:
+		return
+	match in_control:
+		InputControllers.UI:
+			_leave_ui()
+		InputControllers.GAMEPLAY:
+			_leave_gameplay()
+		InputControllers.NONE:
+			pass
 	match controller:
 		InputControllers.UI:
 			_switch_to_ui()
@@ -80,6 +90,9 @@ func _switch_to_ui():
 	in_control = InputControllers.UI
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
+func _leave_ui():
+	pass
+
 func _input_UI(event: InputEvent):
 	if globals.ui_manager:
 		globals.ui_manager.cur_ui.handle_event(event)
@@ -97,28 +110,41 @@ func _switch_to_gameplay():
 	in_control = InputControllers.GAMEPLAY
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func _leave_gameplay():
+	globals.player.lost_input()
+	if not toggle_crouch:
+		globals.player.set_crouch(false)
+
 func _input_gameplay(event: InputEvent):
 	var player = globals.player
 	if player and event is InputEventMouseMotion:
 		player.pan_camera_horizontally(-deg_to_rad(event.screen_relative.x * (camera_sens_hor/100)))
 
-func _process_gameplay(delta: float):
+func _process_gameplay(_delta: float):
 	var player = globals.player
 	if player:
-		player.move(Input.get_vector("player_left","player_right","player_up","player_down"), delta)
-	if Input.is_action_pressed("player_roll_walk"):
-		if roll_walk_timer < TAP_HOLD_THRESH:
-			roll_walk_timer += delta
-		else:
-			player.set_walk(true)
-	if Input.is_action_just_released("player_roll_walk"):
-		if roll_walk_timer < TAP_HOLD_THRESH:
-			player.roll()
-		else:
-			player.set_walk(false)
-		roll_walk_timer = 0
-	if Input.is_action_just_pressed("player_crouch"):
-		player.toggle_crouch()
+		player.move(Input.get_vector("player_left","player_right","player_up","player_down"))
+	#if Input.is_action_pressed("player_roll_walk"):
+		#if roll_walk_timer < TAP_HOLD_THRESH:
+			#roll_walk_timer += delta
+		#else:
+			#player.set_walk(true)
+	#if Input.is_action_just_released("player_roll_walk"):
+		#if roll_walk_timer < TAP_HOLD_THRESH:
+			#player.roll()
+		#else:
+			#player.set_walk(false)
+		#roll_walk_timer = 0
+	if Input.is_action_just_pressed("player_roll_walk"):
+		player.roll()
+	if toggle_crouch:
+		if Input.is_action_just_pressed("player_crouch"):
+			player.toggle_crouch()
+	else:
+		if Input.is_action_just_pressed("player_crouch"):
+			player.set_crouch(true)
+		if Input.is_action_just_released("player_crouch"):
+			player.set_crouch(false)
 	if Input.is_action_just_pressed("player_interact"):
 		player.interact()
 

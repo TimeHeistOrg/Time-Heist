@@ -42,27 +42,15 @@ func _ready():
 	start_time()
 
 func _physics_process(delta):
-	#if Input.is_action_pressed("rewind"):
-		#if time_juice > 0.0 or not globals.player or globals.infinite_juice:
-			#time_multiplier = REWIND_MULTIPLIER
-	#else:
-		#if Input.is_action_pressed("wait"):
-			#time_multiplier = WAIT_MULTIPLIER
-		#elif Input.is_action_pressed("wait_faster"):
-			#time_multiplier = WAIT_FASTER_MULTIPLIER
-		#else:
-			#time_multiplier = 1
-	
-	
 	if time_travelling: #rewind
 		time_multiplier = REWIND_MULTIPLIER
 		rewind(delta * time_multiplier)
-	elif fast_forwarding:
-		time_multiplier = WAIT_MULTIPLIER
-		delta_time = delta * time_multiplier
-		cur_time += delta_time
+		time_juice = max(0, time_juice - delta * rewind_drain_per_sec)
 	else:
-		time_multiplier = 1
+		if fast_forwarding:
+			time_multiplier = WAIT_MULTIPLIER
+		else:
+			time_multiplier = 1
 		delta_time = delta * time_multiplier
 		cur_time += delta_time
 	
@@ -82,9 +70,14 @@ func set_fast_forwarding(value: bool):
 		time_travelling = false
 
 func set_time_travelling(value: bool):
-	time_travelling = value
 	if value:
-		fast_forwarding = false
+		if time_juice > 0:
+			time_travelling = true
+			fast_forwarding = false
+		else:
+			time_travelling = false
+	else:
+		time_travelling = value
 
 func rewind(time_sec:float):
 	delta_time = time_sec
