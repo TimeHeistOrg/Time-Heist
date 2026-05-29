@@ -8,14 +8,12 @@ class_name ComputerUI
 const DESKTOP_ITEM = preload("res://Modules/Interaction/Computer/desktop_item.tscn")
 const APP_WINDOW = preload("res://Modules/Interaction/Computer/app_window.tscn")
 
-static var desktop_size: Vector2 = Vector2(1920,1080)
+static var desktop_size: Vector2 = Vector2(1920,1080) #unused
 
 func _ready() -> void:
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
-	size = desktop_size
-	#set_deferred("size",desktop_size)
 	close()
 
 func open():
@@ -110,7 +108,6 @@ func _unhandled_input(event):
 
 
 func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int):
-	print(size)
 	#print("input")
 	# Get mesh size to detect edges and make conversions. This code only support PlaneMesh and QuadMesh.
 	var quad_mesh_size = node_quad.mesh.size

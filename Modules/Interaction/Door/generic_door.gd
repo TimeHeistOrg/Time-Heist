@@ -93,7 +93,7 @@ func _process(_delta):
 				animation_player.seek(progress,true)
 
 func open():
-	print("open")
+	#print("open")
 	if (not cur_action or not cur_action.opening):
 		if(not is_open or (cur_action and not cur_action.opening)):
 			var was_closing: bool = cur_action != null
