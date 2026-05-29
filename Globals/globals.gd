@@ -30,7 +30,7 @@ var tutorial_start_point : int = 0
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = false
+var player_invisible: bool = true
 #endregion
 
 #region Detection
@@ -90,14 +90,8 @@ func player_caught():
 	get_tree().paused = true
 	
 func player_tutorial_caught():
-	if SceneManager.current_scene is Tutorial:
-		#time_manager.stop_time()
-		#get_tree().paused = true
-		#ui_manager.mouse_filter = Control.MOUSE_FILTER_STOP
-		await ui_manager.fade_to_black.open()
-		print("fade over")
-		SceneManager.current_scene.reset_to_save()
-		await ui_manager.fade_to_black.close()
+	SceneManager.reload_current_scene_transition()
+	#get_tree().paused = true
 
 func to_homebase():
 	#print("to homebase")

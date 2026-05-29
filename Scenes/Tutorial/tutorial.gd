@@ -34,9 +34,3 @@ func _ready():
 func _on_area_3d_body_entered(_body):
 	SceneManager.change_scene(SceneManager.Scene.HOMEBASE)
 	globals.in_tutorial = false
-	
-func reset_to_save():
-	#print("reloading")
-	get_tree().reload_current_scene()
-	#if globals.player:
-		#globals.player.global_position = current_respawn.global_position

@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://djm2xkntdba18" path="res://Modules/UI/Game UI/device_menu.tscn" id="5_keavj"]
 [ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="6_df44s"]
 [ext_resource type="PackedScene" uid="uid://cndkl22sd4vd8" path="res://Modules/UI/Game UI/CaughtUI.tscn" id="8_1ex2v"]
-[ext_resource type="PackedScene" uid="uid://xr60nvoo2ab6" path="res://Modules/UI/Game UI/FadetoBlack.tscn" id="8_sx7gw"]
 
 [sub_resource type="GDScript" id="GDScript_yaem8"]
 resource_name = "TimeDisplay"
@@ -64,6 +63,7 @@ func _process(_delta):
 "
 
 [node name="UI Manager" type="Control" unique_id=1478464990]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,6 +74,7 @@ mouse_filter = 2
 script = ExtResource("1_yaem8")
 
 [node name="HUD" parent="." unique_id=528506545 instance=ExtResource("5_df44s")]
+unique_name_in_owner = true
 z_index = 4
 layout_mode = 1
 
@@ -169,6 +170,3 @@ layer = 100
 unique_name_in_owner = true
 visible = false
 z_index = 1
-
-[node name="Fade to Black" parent="CanvasLayer" unique_id=337677308 instance=ExtResource("8_sx7gw")]
-unique_name_in_owner = true

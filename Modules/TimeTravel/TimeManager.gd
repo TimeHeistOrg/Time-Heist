@@ -22,7 +22,18 @@ var max_time_juice : float = 100
 var rewind_drain_per_sec : float = 15
 var rewind_charge_per_sec : float = 40
 
-var time_travelling: bool = false
+signal start_time_travel
+signal end_time_travel
+
+var time_travelling: bool = false:
+	set(value):
+		if value == time_travelling:
+			return
+		if value:
+			start_time_travel.emit()
+		else:
+			end_time_travel.emit()
+		time_travelling = value
 var fast_forwarding: bool = false
 
 func _ready():

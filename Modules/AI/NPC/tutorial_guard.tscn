@@ -170,7 +170,7 @@ caught_time = 1.6
 [node name="PlayerDetector" parent="." unique_id=1869490121 instance=ExtResource("2_r3n6b")]
 collision_layer = 0
 input_ray_pickable = false
-sight_line_angle = 100.0
+sight_line_angle = 45.0
 sight_line_radius = 7.5
 
 [node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_s4gjg")]

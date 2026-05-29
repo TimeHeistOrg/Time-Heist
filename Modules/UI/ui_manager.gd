@@ -26,7 +26,6 @@ func _ready():
 	set_menu(debug_ui,debug_mode)
 	set_menu(document_viewer,false)
 	set_menu(caught_ui, false)
-	set_menu(fade_to_black, false)
 
 func take_control(ui: Control):
 	if ui != debug_ui:
