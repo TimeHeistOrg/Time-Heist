@@ -2,6 +2,7 @@ extends Node3D
 class_name KeycardScanner
 
 @onready var indicator: MeshInstance3D = $Card_reader/Indicator
+@export var perma_locked: bool = false
 
 @export var lock : Lockable = null
 @export var retrigger : float = 0.0 #seconds
@@ -30,7 +31,7 @@ func _ready() -> void:
 func interact():
 	if not is_ready:
 		return
-	if lock and not lock.try_unlock():
+	if (lock and not lock.try_unlock()) or perma_locked:
 		show_feedback(globals.red_color)
 		return
 	

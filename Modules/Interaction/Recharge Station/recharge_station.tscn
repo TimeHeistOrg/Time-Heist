@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bu61w3fsjjqll" path="res://Modules/Interaction/Recharge Station/recharge_station.gd" id="1_34lw2"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_ivxhb"]
+[ext_resource type="PackedScene" uid="uid://pmnkf7o45cti" path="res://Assets/Models/Imported Assets/recharge_station.glb" id="2_xitml"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xitml"]
-size = Vector3(1.0410156, 2.517456, 1.0400391)
+size = Vector3(1.0410156, 2, 1.0400391)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivxhb"]
 albedo_color = Color(0.1751267, 0.45907015, 0.940742, 1)
@@ -14,7 +15,7 @@ material = SubResource("StandardMaterial3D_ivxhb")
 size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivxhb"]
-size = Vector3(1.2893066, 2.6054688, 1.2587891)
+size = Vector3(1.2893066, 2.1240234, 1.2587891)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yvhtf"]
 height = 0.84973145
@@ -30,18 +31,22 @@ collision_layer = 24
 collision_mask = 0
 
 [node name="Physical Collider" type="CollisionShape3D" parent="StaticBody3D" unique_id=1078341816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.758728, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.017456, 0)
 shape = SubResource("BoxShape3D_xitml")
+
+[node name="recharge_station" parent="." unique_id=675147298 instance=ExtResource("2_xitml")]
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 0, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=967242394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("BoxMesh_xitml")
 
 [node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("2_ivxhb")]
 mesh = NodePath("../Mesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1549966930]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8027344, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.043457, 0)
 shape = SubResource("BoxShape3D_ivxhb")
 
 [node name="Charge Area" type="Area3D" parent="." unique_id=542977651]

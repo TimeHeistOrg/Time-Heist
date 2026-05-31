@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="10_07tka"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="12_07tka"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="13_k1gnt"]
+[ext_resource type="PackedScene" uid="uid://3qury6ftpyua" path="res://Modules/Interaction/Recharge Station/recharge_station.tscn" id="14_k1gnt"]
 
 [sub_resource type="Gradient" id="Gradient_mwdlf"]
 offsets = PackedFloat32Array(0, 0.1539924, 1)
@@ -401,3 +402,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.5
 
 [node name="Keycard Scanner2" parent="SubViewportContainer/SubViewport" unique_id=925346116 instance=ExtResource("12_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.25, 0.75, -3)
+
+[node name="Recharge Station" parent="." unique_id=2097079311 instance=ExtResource("14_k1gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7279787, -4.7683716e-07, -8.801042)

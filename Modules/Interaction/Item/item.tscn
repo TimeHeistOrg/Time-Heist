@@ -11,9 +11,8 @@ script = ExtResource("1_sfirg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1829794582]
 
-[node name="Interactable" parent="." unique_id=766215210 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("3_46odt")]
+[node name="Interactable" parent="." unique_id=766215210 node_paths=PackedStringArray("mesh") instance=ExtResource("3_46odt")]
 mesh = NodePath("../MeshInstance3D")
-interact_object = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=555249436]
 shape = SubResource("BoxShape3D_iea5r")
