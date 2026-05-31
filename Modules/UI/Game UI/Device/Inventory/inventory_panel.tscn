@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://dc0glsn1mwwwq"]
 
 [ext_resource type="Script" uid="uid://31ibymxtbwo0" path="res://Modules/UI/Game UI/Device/Inventory/inventory_panel.gd" id="1_uxjxt"]
+[ext_resource type="FontFile" uid="uid://datdkauvfmpa2" path="res://Assets/UI/Font/Dhurjati/Dhurjati-Regular.ttf" id="2_woo5j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf5q0"]
+bg_color = Color(0.6039216, 0.77254903, 0.827451, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="InventoryPanel" type="Control" unique_id=881891003 node_paths=PackedStringArray("main_focus")]
 layout_mode = 3
@@ -191,6 +199,7 @@ columns = 10
 [node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer" unique_id=426348759]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bf5q0")
 
 [node name="ItemInfo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Panel" unique_id=2007348829]
 layout_mode = 1
@@ -199,4 +208,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 50
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_woo5j")
+theme_override_font_sizes/normal_font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1

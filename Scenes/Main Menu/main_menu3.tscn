@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c8fbb58rxxhkr" path="res://Scenes/Main Menu/menu_menu3d.gd" id="1_ltef7"]
 [ext_resource type="Texture2D" uid="uid://cxy8sj7p8e6l1" path="res://Assets/UI/Main Menu/settingshover.png" id="1_waq0v"]
 [ext_resource type="Texture2D" uid="uid://1e762uk44mwt" path="res://Assets/UI/Main Menu/settingsdefault.png" id="2_ltef7"]
-[ext_resource type="Texture2D" uid="uid://b81rhk5a7asg" path="res://Assets/UI/Main Menu/timeheistlogolofi.png" id="3_i6mko"]
 [ext_resource type="Texture2D" uid="uid://dsg2oiempe3xa" path="res://Assets/UI/Main Menu/playdefault.png" id="3_ifg3e"]
+[ext_resource type="Texture2D" uid="uid://oqs3kaav46hm" path="res://Assets/UI/Logo/time heist logo hifi.png" id="3_ilpl1"]
 [ext_resource type="Texture2D" uid="uid://bhq8qc76s7c86" path="res://Assets/UI/Main Menu/playhover.png" id="4_i6mko"]
 [ext_resource type="Texture2D" uid="uid://dw70mj6jev0jy" path="res://Assets/UI/Main Menu/buildingscape 1.png" id="4_ilpl1"]
 [ext_resource type="Texture2D" uid="uid://bfc7iirrlrj5r" path="res://Assets/UI/Main Menu/creditshover.png" id="5_i6g8v"]
@@ -100,10 +100,10 @@ transform = Transform3D(0.9890365, 0, 0.14767131, 0, 1, 0, -0.14767131, 0, 0.989
 [node name="marker_left" type="Marker3D" parent="SubViewportContainer/SubViewport" unique_id=671783515]
 transform = Transform3D(0.9890159, 0, -0.1478094, 0, 1, 0, 0.1478094, 0, 0.9890159, -0.8, 0, 0.3)
 
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=1173155521]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8043903, 0.79779303, -3.023798)
+[node name="Logo" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=1173155521]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -1.8043903, 0.79779303, -3.023798)
 billboard = 1
-texture = ExtResource("3_i6mko")
+texture = ExtResource("3_ilpl1")
 
 [node name="Background" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=166571912]
 transform = Transform3D(2.31, 0, 0, 0, 1.31, 0, 0, 0, 1, 0, -1.1196852, -7.4181414)
@@ -180,6 +180,9 @@ offset_right = 145.5
 offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_left = NodePath("../Settings")
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../Credits")
 theme = ExtResource("7_mohnt")
 text = "Quit"
 
@@ -188,6 +191,25 @@ offset_top = 898.0
 offset_right = 1920.0
 offset_bottom = 980.0
 texture = ExtResource("10_ifg3e")
+
+[node name="OriginalFocus" type="Control" parent="CanvasLayer" unique_id=437885043]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Play")
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Play")
+focus_mode = 2
 
 [connection signal="focus_entered" from="CanvasLayer/Settings" to="." method="_on_settings_focus_entered"]
 [connection signal="mouse_entered" from="CanvasLayer/Settings" to="." method="_on_settings_focus_entered"]

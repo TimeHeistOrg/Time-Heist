@@ -32,6 +32,7 @@ var cur_action_ix: int = 0
 var last_processed_time: float = 0
 var reached_path_end: bool = false
 var branched: bool
+@export var start_offset: float = 0
 
 var start_pos: Vector3
 
@@ -51,7 +52,7 @@ var start_pos: Vector3
 func initialize_path_vars():
 	if not globals.time_manager:
 		return
-	var cur_time = globals.time_manager.cur_time
+	var cur_time = globals.time_manager.cur_time + start_offset
 	if path_following:
 		cur_component = path_following.at(0)
 		while cur_component and cur_component.time_end <= cur_time:
@@ -92,6 +93,12 @@ func branch_if(branchAction: BranchAction):
 		return true
 	return false
 
+func set_start_offset(value:float):
+	start_offset = value
+
+func start_path_at_current_time(): #very temporary for tutorial purpose
+	start_offset = -time_manager.cur_time
+
 func _ready():
 	if not Engine.is_editor_hint():
 		time_manager = globals.time_manager
@@ -105,7 +112,9 @@ func _process(_delta):
 	if not Engine.is_editor_hint():
 		if not path_following:
 			return
-		var cur_time = time_manager.cur_time
+		var cur_time = time_manager.cur_time + start_offset
+		if cur_time < 0:
+			return
 		if path_following.loop:
 			cur_time = fmod(cur_time,path_following.get_path_duration())
 		if last_processed_time > cur_time: # moved backward in time

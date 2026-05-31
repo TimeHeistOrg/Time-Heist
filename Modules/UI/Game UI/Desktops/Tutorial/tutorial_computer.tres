@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://dt7xgcttdeiwu"]
+
+[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_tjpym"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Assets/Documents/document_resource.gd" id="2_jquaa"]
+[ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="2_mjga5"]
+[ext_resource type="Resource" uid="uid://ckhuw1svdluec" path="res://Assets/Documents/Resources/tutorial_email.tres" id="3_du3th"]
+[ext_resource type="Script" uid="uid://bjskgs3dd7urj" path="res://Modules/Interaction/Computer/Resources/email_app_config.gd" id="3_vq0iq"]
+[ext_resource type="Script" uid="uid://ch45yfbtv40b2" path="res://Modules/Interaction/Computer/Resources/file_app_config.gd" id="4_vq0iq"]
+[ext_resource type="Resource" uid="uid://b751ng4sj0vkt" path="res://Assets/Documents/Resources/tutorial_file.tres" id="5_wp2bv"]
+
+[sub_resource type="Resource" id="Resource_u0l0j"]
+script = ExtResource("3_vq0iq")
+emails = Array[ExtResource("2_jquaa")]([ExtResource("3_du3th")])
+metadata/_custom_type_script = "uid://bjskgs3dd7urj"
+
+[sub_resource type="Resource" id="Resource_du3th"]
+script = ExtResource("4_vq0iq")
+file = ExtResource("5_wp2bv")
+metadata/_custom_type_script = "uid://ch45yfbtv40b2"
+
+[resource]
+script = ExtResource("2_mjga5")
+apps = Array[ExtResource("1_tjpym")]([SubResource("Resource_u0l0j"), SubResource("Resource_du3th")])
+metadata/_custom_type_script = "uid://drdqf0ywp8oy7"

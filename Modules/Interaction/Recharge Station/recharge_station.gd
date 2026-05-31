@@ -31,8 +31,10 @@ func interact():
 		return
 	if charging: 
 		charging = false
+		globals.stop_charging.emit()
 	else:
 		charging = true
+		globals.start_charging.emit()
 	
 func draw_line():
 	var start_point = Vector3.ZERO  # local origin of the laser node
@@ -62,3 +64,4 @@ func _on_charge_area_body_exited(body: Node3D) -> void:
 		in_zone = false
 		wire_mesh.clear_surfaces()
 		charging = false
+		globals.stop_charging.emit()

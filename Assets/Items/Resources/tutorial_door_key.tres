@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_dj2xq")
 name = "Weird silver key"
-description = "Opens the door behind you! interact with the keycard scanner next to the door!"
+description = "Opens the next door"
 image = ExtResource("1_n70d4")
 mesh = ExtResource("2_cnxeq")
 metadata/_custom_type_script = "uid://dgvkvasouhadn"

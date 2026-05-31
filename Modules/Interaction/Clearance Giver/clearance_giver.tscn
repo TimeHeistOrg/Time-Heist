@@ -2,50 +2,24 @@
 
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_le8sc"]
 [ext_resource type="Script" uid="uid://dbkxdjsb03h5e" path="res://Modules/Interaction/Clearance Giver/clearance_giver.gd" id="1_r8iwe"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_xr4ad"]
-size = Vector3(1, 0.86, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8iwe"]
-albedo_color = Color(0.40587795, 0.6774896, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_le8sc"]
-size = Vector3(1, 0.88, 0.44)
-
-[sub_resource type="BoxMesh" id="BoxMesh_r8iwe"]
-size = Vector3(1, 0.37, 0.76)
+[ext_resource type="PackedScene" uid="uid://c4weuyyccstc2" path="res://Assets/Models/Interactables/ClearanceMachine.glb" id="2_fh5j6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8iwe"]
-size = Vector3(1.0683594, 1.770752, 1.1643066)
+size = Vector3(0.81030273, 1.770752, 0.875)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fh5j6"]
-size = Vector3(1, 1.6975098, 1)
+size = Vector3(0.68066406, 1.6975098, 0.74316406)
 
 [node name="Clearance Giver" type="Node3D" unique_id=1251886145]
 script = ExtResource("1_r8iwe")
 
-[node name="Mesh" type="Node3D" parent="." unique_id=612838289]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh" unique_id=51251177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, 0)
-mesh = SubResource("BoxMesh_xr4ad")
-surface_material_override/0 = SubResource("StandardMaterial3D_r8iwe")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh" unique_id=2009156000]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23, -0.28)
-mesh = SubResource("BoxMesh_le8sc")
-surface_material_override/0 = SubResource("StandardMaterial3D_r8iwe")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mesh" unique_id=1835123005]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48, -0.11)
-mesh = SubResource("BoxMesh_r8iwe")
-surface_material_override/0 = SubResource("StandardMaterial3D_r8iwe")
+[node name="ClearanceMachine" parent="." unique_id=1189117188 instance=ExtResource("2_fh5j6")]
 
 [node name="Interactable" type="Area3D" parent="." unique_id=1071358984 node_paths=PackedStringArray("mesh")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_le8sc")
-mesh = NodePath("../Mesh/MeshInstance3D")
+mesh = NodePath("")
 metadata/_custom_type_script = "uid://d0afbfeblscar"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1555061485]
@@ -57,7 +31,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1013551560]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8206787, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8206787, -0.030273438)
 shape = SubResource("BoxShape3D_fh5j6")
 
 [connection signal="anon_interacted" from="Interactable" to="." method="interact"]

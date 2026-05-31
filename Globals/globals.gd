@@ -23,9 +23,14 @@ var player_camera : Camera3D
 
 var camera : Node3D
 
+#region Tutorial
+var in_tutorial : bool = false
+var tutorial_start_point : int = 0
+#endregion
+
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = false
+var player_invisible: bool = true
 #endregion
 
 #region Detection
@@ -83,6 +88,10 @@ func player_caught():
 		ui_manager.mouse_filter = Control.MOUSE_FILTER_STOP
 	time_manager.stop_time()
 	get_tree().paused = true
+	
+func player_tutorial_caught():
+	SceneManager.reload_current_scene_transition()
+	#get_tree().paused = true
 
 func to_homebase():
 	#print("to homebase")
@@ -108,6 +117,10 @@ signal collect_clearance(clearance : Clearances)
 signal use_item(item : PickupItem)
 @warning_ignore("unused_signal")
 signal new_in_device(value : bool, tab : Device_Tabs)
+@warning_ignore("unused_signal")
+signal start_charging
+@warning_ignore("unused_signal")
+signal stop_charging
 #endregion
 
 #region Debug
