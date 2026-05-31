@@ -2,9 +2,9 @@
 extends Node3D
 class_name Generic_Door
 
-@onready var collision_body: StaticBody3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB"
-@onready var mesh: MeshInstance3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door"
-@onready var animation_player : AnimationPlayer = $"Door_Frame_with_Door_Animated_v2(Faster)/AnimationPlayer"
+@onready var collision_body: StaticBody3D = $"Door/DoorHinge/DoorMesh/Door RB"
+@onready var mesh: MeshInstance3D = $Door/DoorHinge/DoorMesh
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 @export var is_open: bool = false : #TIMEVAR
 	set(value):

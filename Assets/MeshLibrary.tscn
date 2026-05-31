@@ -182,6 +182,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.25)
 shape = SubResource("BoxShape3D_rgqh2")
 
 [node name="StairFlight" type="MeshInstance3D" parent="." unique_id=172617441]
+visible = false
 layers = 33
 mesh = ExtResource("6_upl86")
 

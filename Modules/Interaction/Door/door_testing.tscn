@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://b0eo68htgjcd3"]
 
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="1_26vd6"]
-[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="2_30l1c"]
-[ext_resource type="PackedScene" uid="uid://c2jmn7fqcsv24" path="res://Player[OLD]/OLD_camera_pivot.tscn" id="3_6rnln"]
 [ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="4_0fo0o"]
 [ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="5_2h3rx"]
 [ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="6_p4sqk"]
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="7_pgbwf"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="7_qn7us"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="8_itaa2"]
-[ext_resource type="PackedScene" uid="uid://b0eilnkhu73fw" path="res://Player[OLD]/OLD_Player.tscn" id="9_ent17"]
+[ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="8_y8gmf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_meejx"]
 
@@ -29,14 +28,6 @@ grow_amount = -4.125
 
 [node name="DoorTesting" type="Node3D" unique_id=1787823224]
 
-[node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("1_26vd6")]
-
-[node name="UI Manager" parent="." unique_id=1478464990 instance=ExtResource("2_30l1c")]
-
-[node name="Camera_pivot" parent="." unique_id=144358182 instance=ExtResource("3_6rnln")]
-CAMERA_DISTANCE_BACK = 3.0
-CAMERA_DISTANCE_UP = 3.5
-
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1607686888]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1278929793]
@@ -46,5 +37,15 @@ shape = SubResource("WorldBoundaryShape3D_meejx")
 mesh = SubResource("PlaneMesh_r14a3")
 surface_material_override/0 = SubResource("StandardMaterial3D_ypf6f")
 
-[node name="CharacterBody3D" parent="." unique_id=265121882 instance=ExtResource("9_ent17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4435679, 0, 3.908525)
+[node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("1_26vd6")]
+
+[node name="Player" parent="." unique_id=288105915 instance=ExtResource("7_qn7us")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5013666)
+
+[node name="Walls" type="GridMap" parent="." unique_id=1249332313]
+mesh_library = ExtResource("8_y8gmf")
+cell_size = Vector3(0.25, 2, 0.25)
+cell_center_y = false
+collision_layer = 8
+collision_mask = 0
+metadata/_editor_floor_ = Vector3(0, 0, 0)

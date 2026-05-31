@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://00k0re5x71sa"]
+
+[ext_resource type="Script" uid="uid://cvhp5yuu7n664" path="res://Modules/Interaction/Door/base_door.gd" id="1_a6vaa"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_xklbc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xklbc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xklbc"]
+
+[node name="BaseDoor" type="Node3D" unique_id=1176759108]
+script = ExtResource("1_a6vaa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1214916851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_xklbc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=335056918]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1901058985]
+shape = SubResource("BoxShape3D_xklbc")
+
+[node name="Interactable" parent="MeshInstance3D" unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("2_xklbc")]
+mesh = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Interactable" unique_id=1074898481]
+shape = SubResource("BoxShape3D_xklbc")
