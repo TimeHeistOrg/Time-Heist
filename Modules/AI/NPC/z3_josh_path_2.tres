@@ -9,12 +9,12 @@
 [ext_resource type="Script" uid="uid://cjhgp3kkd22yr" path="res://addons/NPC Pathing/PathClasses/DoorAction.gd" id="8_4p5e4"]
 [ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="9_b6v4q"]
 
-[sub_resource type="Resource" id="Resource_v11av"]
+[sub_resource type="Resource" id="Resource_4cqtb"]
 script = ExtResource("4_3gqfl")
 rotation_deg = 90.0
 metadata/_custom_type_script = "uid://68nqpa721my0"
 
-[sub_resource type="Resource" id="Resource_c6h2g"]
+[sub_resource type="Resource" id="Resource_vmfy0"]
 script = ExtResource("5_nu5op")
 end_time = 60.0
 duration = 60.0
@@ -24,13 +24,12 @@ metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
 resource_local_to_scene = true
 script = ExtResource("2_qhgeu")
 position = Vector3(20.375, 0, -7.375)
-vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_v11av"), SubResource("Resource_c6h2g")])
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_4cqtb"), SubResource("Resource_vmfy0")])
 time_end = 60.0
 
 [sub_resource type="Resource" id="Resource_fjjbm"]
 script = ExtResource("5_nu5op")
-start_time = 222.875
-end_time = 224.875
+end_time = 2.0
 duration = 2.0
 metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
 
@@ -75,8 +74,8 @@ id = 3
 resource_local_to_scene = true
 script = ExtResource("2_qhgeu")
 position = Vector3(-23, 0, -0.625)
-time_start = 236.79220771789554
-time_end = 236.79220771789554
+time_start = 236.7922077178955
+time_end = 236.7922077178955
 id = 6
 
 [sub_resource type="Resource" id="Resource_rk2n6"]
@@ -86,15 +85,15 @@ speed = 1.4999999999999931
 prev_vertex = SubResource("Resource_8kwe4")
 next_vertex = SubResource("Resource_l5glx")
 time_start = 230.375
-time_end = 236.79220771789554
+time_end = 236.7922077178955
 id = 5
 
 [sub_resource type="Resource" id="Resource_4uldv"]
 resource_local_to_scene = true
 script = ExtResource("2_qhgeu")
 position = Vector3(-20.875, 0, -8)
-time_start = 241.90890153249106
-time_end = 241.90890153249106
+time_start = 241.90890153249103
+time_end = 241.90890153249103
 id = 8
 
 [sub_resource type="Resource" id="Resource_76cgj"]
@@ -103,8 +102,8 @@ script = ExtResource("6_71cje")
 speed = 1.5000000000000056
 prev_vertex = SubResource("Resource_l5glx")
 next_vertex = SubResource("Resource_4uldv")
-time_start = 236.79220771789554
-time_end = 241.90890153249106
+time_start = 236.7922077178955
+time_end = 241.90890153249103
 id = 7
 
 [sub_resource type="Resource" id="Resource_6p77y"]
@@ -121,7 +120,7 @@ script = ExtResource("6_71cje")
 speed = 1.4999999999999971
 prev_vertex = SubResource("Resource_4uldv")
 next_vertex = SubResource("Resource_6p77y")
-time_start = 241.90890153249106
+time_start = 241.90890153249103
 time_end = 247.05199305216473
 id = 9
 
@@ -143,7 +142,7 @@ time_start = 247.05199305216473
 time_end = 251.80199305216473
 id = 11
 
-[sub_resource type="Resource" id="Resource_srluf"]
+[sub_resource type="Resource" id="Resource_sq051"]
 script = ExtResource("8_4p5e4")
 door = NodePath("../../../Closet/Interactables/ClosetDoor")
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
@@ -152,7 +151,7 @@ metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 resource_local_to_scene = true
 script = ExtResource("2_qhgeu")
 position = Vector3(-8.75, 0, -13.25)
-vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_srluf")])
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_sq051")])
 time_start = 252.21865971883136
 time_end = 252.21865971883136
 id = 14
@@ -185,7 +184,7 @@ time_start = 252.21865971883136
 time_end = 254.21865971883136
 id = 15
 
-[sub_resource type="Resource" id="Resource_etl8t"]
+[sub_resource type="Resource" id="Resource_s14ng"]
 script = ExtResource("5_nu5op")
 end_time = 60.0
 duration = 60.0
@@ -195,7 +194,7 @@ metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
 resource_local_to_scene = true
 script = ExtResource("2_qhgeu")
 position = Vector3(-9.5, 0, -5.25)
-vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_etl8t")])
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_s14ng")])
 time_start = 257.5892845789591
 time_end = 317.5892845789591
 id = 18

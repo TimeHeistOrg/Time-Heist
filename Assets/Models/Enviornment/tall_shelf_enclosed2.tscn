@@ -8,6 +8,7 @@ size = Vector3(0.86621094, 1.9394531, 0.29125977)
 [node name="ShelfCabinet" type="Node3D" unique_id=1819643507]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1604324428]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1944788081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96875, 0)

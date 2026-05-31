@@ -43,7 +43,7 @@ visible = false
 mesh = SubResource("BoxMesh_xitml")
 
 [node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("2_ivxhb")]
-mesh = NodePath("../Mesh")
+mesh = NodePath("../recharge_station/Cylinder_001")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1549966930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.043457, 0)
@@ -64,3 +64,5 @@ mesh = SubResource("ImmediateMesh_34lw2")
 [connection signal="anon_interacted" from="Interactable" to="." method="interact"]
 [connection signal="body_entered" from="Charge Area" to="." method="_on_charge_area_body_entered"]
 [connection signal="body_exited" from="Charge Area" to="." method="_on_charge_area_body_exited"]
+
+[editable path="recharge_station"]

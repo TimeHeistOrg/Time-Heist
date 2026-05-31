@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://gue75w7rapn5"]
 
-[ext_resource type="Texture2D" uid="uid://burdl6iie5b6f" path="res://Assets/Items/Textures/silver_key_2.png" id="1_nketp"]
+[ext_resource type="Texture2D" uid="uid://burdl6iie5b6f" path="res://Assets/Items/Textures/silver_key_2_old.png" id="1_nketp"]
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="2_e1yjx"]
 
 [resource]

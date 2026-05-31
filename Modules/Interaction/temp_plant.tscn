@@ -4,6 +4,22 @@
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_kguye"]
 [ext_resource type="Script" uid="uid://buhosr6g8knnm" path="res://Modules/Interaction/stashable.gd" id="4_7uwef"]
 
+[sub_resource type="GDScript" id="GDScript_ooshc"]
+script/source = "extends Node3D
+
+var is_visible: bool: #TIMEVAR
+	set(value):
+		if globals.time_manager and globals.time_manager.logging:
+			globals.time_manager.timelog(self,\"is_visible\",is_visible)
+		is_visible = value
+		if value:
+			show()
+			process_mode = Node.PROCESS_MODE_INHERIT
+		else:
+			hide()
+			process_mode = Node.PROCESS_MODE_DISABLED
+"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7uwef"]
 size = Vector3(0.44726563, 0.32687378, 0.3642578)
 
@@ -11,6 +27,7 @@ size = Vector3(0.44726563, 0.32687378, 0.3642578)
 size = Vector3(0.25952148, 0.21334839, 0.29589844)
 
 [node name="Temp Coffee" type="Node3D" unique_id=1100459895]
+script = SubResource("GDScript_ooshc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=323044159]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.08328891, 0)

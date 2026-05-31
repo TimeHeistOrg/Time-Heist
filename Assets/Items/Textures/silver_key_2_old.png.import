@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://burdl6iie5b6f"
-path.s3tc="res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.s3tc.ctex"
-path.etc2="res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.etc2.ctex"
+path.s3tc="res://.godot/imported/silver_key_2_old.png-2361b5ace23fa61532ca36ac9e8d29a4.s3tc.ctex"
+path.etc2="res://.godot/imported/silver_key_2_old.png-2361b5ace23fa61532ca36ac9e8d29a4.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Items/Textures/silver_key_2.png"
-dest_files=["res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.s3tc.ctex", "res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.etc2.ctex"]
+source_file="res://Assets/Items/Textures/silver_key_2_old.png"
+dest_files=["res://.godot/imported/silver_key_2_old.png-2361b5ace23fa61532ca36ac9e8d29a4.s3tc.ctex", "res://.godot/imported/silver_key_2_old.png-2361b5ace23fa61532ca36ac9e8d29a4.etc2.ctex"]
 
 [params]
 
