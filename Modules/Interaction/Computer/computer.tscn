@@ -46,8 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8119463, -0.73505557, 0.248
 mesh = ExtResource("1_0jkef")
 skeleton = NodePath("../..")
 
-[node name="Interactable" parent="StaticBody3D" unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("3_0jkef")]
-mesh = NodePath("../MeshInstance3D")
+[node name="Interactable" parent="StaticBody3D" unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("3_0jkef")]
+meshes = [NodePath("../MeshInstance3D")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Interactable" unique_id=806806907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2520959, -0.21627595)

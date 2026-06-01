@@ -7,13 +7,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_xitml"]
 size = Vector3(1.0410156, 2, 1.0400391)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivxhb"]
-albedo_color = Color(0.1751267, 0.45907015, 0.940742, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_xitml"]
-material = SubResource("StandardMaterial3D_ivxhb")
-size = Vector3(1, 2, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivxhb"]
 size = Vector3(1.2893066, 2.1240234, 1.2587891)
 
@@ -37,13 +30,8 @@ shape = SubResource("BoxShape3D_xitml")
 [node name="recharge_station" parent="." unique_id=675147298 instance=ExtResource("2_xitml")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 0, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=967242394]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
-mesh = SubResource("BoxMesh_xitml")
-
-[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("2_ivxhb")]
-mesh = NodePath("../recharge_station/Cylinder_001")
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("2_ivxhb")]
+meshes = [NodePath("../recharge_station/Cylinder_001")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1549966930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.043457, 0)

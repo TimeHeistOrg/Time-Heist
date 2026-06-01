@@ -15,11 +15,11 @@ script = ExtResource("1_r8iwe")
 
 [node name="ClearanceMachine" parent="." unique_id=1189117188 instance=ExtResource("2_fh5j6")]
 
-[node name="Interactable" type="Area3D" parent="." unique_id=1071358984 node_paths=PackedStringArray("mesh")]
+[node name="Interactable" type="Area3D" parent="." unique_id=1071358984 node_paths=PackedStringArray("meshes")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_le8sc")
-mesh = NodePath("../ClearanceMachine/Clearance Machine")
+meshes = [NodePath("../ClearanceMachine/Clearance Machine")]
 metadata/_custom_type_script = "uid://d0afbfeblscar"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1555061485]
