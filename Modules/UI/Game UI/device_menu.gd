@@ -36,6 +36,7 @@ func open():
 	await $CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.animation_finished
 	hud.set_device_icon(false) #hides device hud icon when device is open
 	select_tab(focused_tab)
+	$CanvasLayer2/SubViewportContainer.mouse_filter = MOUSE_FILTER_PASS
 
 func close():
 	get_viewport().gui_release_focus()
@@ -49,6 +50,7 @@ func close():
 	else:
 		await get_tree().create_timer(0.4).timeout
 		super.close()
+	$CanvasLayer2/SubViewportContainer.mouse_filter = MOUSE_FILTER_IGNORE
 
 #region Tab Functions
 func handle_input(_delta):
