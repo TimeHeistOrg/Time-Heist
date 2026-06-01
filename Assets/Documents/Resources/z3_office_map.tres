@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_ts2bt")
-document_id = 14
+document_id = 21
 title = "Office Map"
 document_image = ExtResource("1_iu7yt")
-relevant_tags = Array[String](["Map"])
+relevant_tags = Array[String](["Map", "All Files"])
 metadata/_custom_type_script = "uid://c4r7d4bl70rat"
