@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_2anw3")
 name = "Gold Key"
-description = "A gold key"
+description = "A gold key. Thats it."
 image = ExtResource("1_y3ltp")
 mesh = ExtResource("2_e7tme")
 metadata/_custom_type_script = "uid://dgvkvasouhadn"

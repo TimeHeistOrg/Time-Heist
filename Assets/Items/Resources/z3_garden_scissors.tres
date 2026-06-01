@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://byt5mxt5py6iu"]
+
+[ext_resource type="Texture2D" uid="uid://cwlivqka4dofg" path="res://Assets/Items/Textures/garden_scissors.png" id="1_pvib0"]
+[ext_resource type="ArrayMesh" uid="uid://chcrwlwiyawed" path="res://Assets/Items/Meshes/stapler.res" id="2_pvib0"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="3_cudyw"]
+
+[resource]
+script = ExtResource("3_cudyw")
+name = "Gardeb scissors"
+description = "These look like they don't belong here"
+image = ExtResource("1_pvib0")
+mesh = ExtResource("2_pvib0")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"

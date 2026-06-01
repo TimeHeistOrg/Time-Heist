@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgj2thh04t27e"]
+
+[resource]
+resource_name = "PlantTall.004"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.09650701, 0.2727246, 0.10899022, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

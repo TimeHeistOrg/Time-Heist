@@ -121,3 +121,6 @@ func is_locked_setter(_value:bool): #made so that setter can be overridden in ch
 
 func is_disabled_setter(value: bool):
 	disabled.emit(value)
+	
+func is_disabled_setter_opposite(value: bool):
+	disabled.emit(not value)

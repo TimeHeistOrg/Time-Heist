@@ -33,8 +33,7 @@ script = SubResource("GDScript_ooshc")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.08328891, 0)
 mesh = ExtResource("1_ooshc")
 
-[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("3_kguye")]
-mesh = NodePath("../MeshInstance3D")
+[node name="Interactable" parent="." unique_id=242002428 instance=ExtResource("3_kguye")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=779887924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.116989136, 0)

@@ -1,0 +1,196 @@
+[gd_resource type="Resource" script_class="NPCPath" format=3 uid="uid://he4ofbrsac5s"]
+
+[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="1_ficbx"]
+[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="2_u714k"]
+[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="3_hwjxj"]
+[ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="4_urroj"]
+[ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="5_lnocm"]
+[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="6_lnntd"]
+[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="7_7d2i7"]
+
+[sub_resource type="Resource" id="Resource_75s6j"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(25.5, 0, 18.375)
+
+[sub_resource type="Resource" id="Resource_e33lw"]
+script = ExtResource("4_urroj")
+rotation_deg = -90.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_iesck"]
+script = ExtResource("5_lnocm")
+end_time = 5.0
+duration = 5.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_w7bug"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(18.75, 0, 18.375)
+vertex_actions = Array[ExtResource("3_hwjxj")]([SubResource("Resource_e33lw"), SubResource("Resource_iesck")])
+time_start = 6.75
+time_end = 11.75
+id = 2
+
+[sub_resource type="Resource" id="Resource_aa4gb"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_75s6j")
+next_vertex = SubResource("Resource_w7bug")
+time_end = 6.75
+id = 1
+
+[sub_resource type="Resource" id="Resource_3un1l"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(25.5, 0, 18.375)
+time_start = 18.5
+time_end = 18.5
+id = 4
+
+[sub_resource type="Resource" id="Resource_ld600"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_w7bug")
+next_vertex = SubResource("Resource_3un1l")
+time_start = 11.75
+time_end = 18.5
+id = 3
+
+[sub_resource type="Resource" id="Resource_7xda0"]
+script = ExtResource("5_lnocm")
+end_time = 5.0
+duration = 5.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_e13fs"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(25.5, 0, 16)
+vertex_actions = Array[ExtResource("3_hwjxj")]([SubResource("Resource_7xda0")])
+time_start = 20.875
+time_end = 25.875
+id = 6
+
+[sub_resource type="Resource" id="Resource_wlw1w"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_3un1l")
+next_vertex = SubResource("Resource_e13fs")
+time_start = 18.5
+time_end = 20.875
+id = 5
+
+[sub_resource type="Resource" id="Resource_kdf83"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(25.5, 0, 18.375)
+time_start = 28.25
+time_end = 28.25
+id = 8
+
+[sub_resource type="Resource" id="Resource_h8drs"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_e13fs")
+next_vertex = SubResource("Resource_kdf83")
+time_start = 25.875
+time_end = 28.25
+id = 7
+
+[sub_resource type="Resource" id="Resource_4uoyp"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(18.75, 0, 18.375)
+time_start = 35.0
+time_end = 35.0
+id = 10
+
+[sub_resource type="Resource" id="Resource_4crov"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_kdf83")
+next_vertex = SubResource("Resource_4uoyp")
+time_start = 28.25
+time_end = 35.0
+id = 9
+
+[sub_resource type="Resource" id="Resource_h8m6c"]
+script = ExtResource("5_lnocm")
+end_time = 5.0
+duration = 5.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_jsmpv"]
+script = ExtResource("4_urroj")
+rotation_deg = -70.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_te78m"]
+script = ExtResource("5_lnocm")
+start_time = 5.0
+end_time = 10.0
+duration = 5.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_jpjf3"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(18.75, 0, 15)
+vertex_actions = Array[ExtResource("3_hwjxj")]([SubResource("Resource_h8m6c"), SubResource("Resource_jsmpv"), SubResource("Resource_te78m")])
+time_start = 38.375
+time_end = 48.375
+id = 12
+
+[sub_resource type="Resource" id="Resource_3pyq4"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_4uoyp")
+next_vertex = SubResource("Resource_jpjf3")
+time_start = 35.0
+time_end = 38.375
+id = 11
+
+[sub_resource type="Resource" id="Resource_2pxe8"]
+resource_local_to_scene = true
+script = ExtResource("2_u714k")
+position = Vector3(18.75, 0, 18.375)
+time_start = 51.75
+time_end = 51.75
+id = 14
+
+[sub_resource type="Resource" id="Resource_2342s"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_jpjf3")
+next_vertex = SubResource("Resource_2pxe8")
+time_start = 48.375
+time_end = 51.75
+id = 13
+
+[sub_resource type="Resource" id="Resource_xrvnu"]
+resource_local_to_scene = true
+script = ExtResource("6_lnntd")
+speed = 1.0
+prev_vertex = SubResource("Resource_2pxe8")
+next_vertex = SubResource("Resource_75s6j")
+is_loop_line = true
+time_start = 51.75
+time_end = 58.5
+id = 15
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("7_7d2i7")
+path_components = Array[ExtResource("1_ficbx")]([SubResource("Resource_75s6j"), SubResource("Resource_aa4gb"), SubResource("Resource_w7bug"), SubResource("Resource_ld600"), SubResource("Resource_3un1l"), SubResource("Resource_wlw1w"), SubResource("Resource_e13fs"), SubResource("Resource_h8drs"), SubResource("Resource_kdf83"), SubResource("Resource_4crov"), SubResource("Resource_4uoyp"), SubResource("Resource_3pyq4"), SubResource("Resource_jpjf3"), SubResource("Resource_2342s"), SubResource("Resource_2pxe8"), SubResource("Resource_xrvnu")])
+snap = 0.125
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
