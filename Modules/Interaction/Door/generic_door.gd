@@ -2,9 +2,9 @@
 extends Node3D
 class_name Generic_Door
 
-@onready var collision_body: StaticBody3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB"
-@onready var mesh: MeshInstance3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door"
-@onready var animation_player : AnimationPlayer = $"Door_Frame_with_Door_Animated_v2(Faster)/AnimationPlayer"
+@onready var collision_body: StaticBody3D = $"Door/DoorHinge/DoorMesh/Door RB"
+@onready var mesh: MeshInstance3D = $Door/DoorHinge/DoorMesh
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 @export var is_open: bool = false : #TIMEVAR
 	set(value):
@@ -76,7 +76,6 @@ func _ready():
 
 func _process(_delta):
 	if not Engine.is_editor_hint():
-		
 		if cur_action:
 			#print(cur_action.opening, ", ", cur_action.end_progress)
 			if globals.time_manager.delta_time > 0: #time travelling forward
@@ -149,6 +148,18 @@ func set_lock(flipped : bool):
 func unlock_open():
 	unlock()
 	open()
+
+func play_open_sound():
+	print("open sound")
+
+func play_close_sound():
+	print("close sound")
+
+func play_shake_sound(): #this is the sound that plays if door is attempted to be opened while locked
+	print("shake sound")
+
+func play_lock_sound():
+	print("lock sound")
 
  #and not globals.player.can_open_any_door
 func interact(person: Node):
