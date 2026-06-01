@@ -50,12 +50,11 @@ shadow_mesh = SubResource("ArrayMesh_ptfpa")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yuln"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0.87058824, 0.78431374, 1)
+albedo_color = Color(0.87086356, 0.28329608, 0.22849053, 1)
 metallic = 0.8
 roughness = 0.5
 emission_enabled = true
-emission = Color(0.8126371, 0.49151874, 0, 1)
-emission_energy_multiplier = 3.0
+emission = Color(1, 0, 0, 1)
 backlight = Color(0.99997944, 0.71876156, 0.67345256, 1)
 stencil_flags = 2
 stencil_outline_thickness = 0.001
