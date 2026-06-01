@@ -1,6 +1,7 @@
 ~ start
 Do you want to replay to the tutorial?
 - Yes
+	do globals.tutorial_start_point = 0
 	do SceneManager.change_scene_with_transition(SceneManager.Scene.TUTORIAL)
 	=> END
 - No

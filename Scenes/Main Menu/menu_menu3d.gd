@@ -19,6 +19,7 @@ func _on_play_pressed() -> void:
 	dim_lights($SubViewportContainer/SubViewport/Lights.get_children())
 	animation_player.play("mixamo_com_001")
 	await animation_player.animation_finished
+	globals.tutorial_start_point = 0
 	SceneManager.change_scene_with_transition(SceneManager.Scene.TUTORIAL)
 	pass
 
