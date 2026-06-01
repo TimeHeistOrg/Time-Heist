@@ -8,7 +8,6 @@ class_name UI_Manager
 #@onready var camera_ui = $Camera
 @onready var device_menu: DeviceMenu = $DeviceMenu
 @onready var caught_ui = %CaughtUI
-@onready var fade_to_black = %"Fade to Black"
 
 var ui_stack: Array[Control] = []
 var cur_ui: Control = null
