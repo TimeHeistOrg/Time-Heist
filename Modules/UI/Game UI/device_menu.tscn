@@ -30,7 +30,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, -0.25)
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../../CanvasLayer2/MarginContainer/HBoxContainer:custom_minimum_size")
+tracks/2/path = NodePath("../../../CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer:custom_minimum_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -60,7 +60,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0.25, 0, -0.25, 0.16666667, 1, 0, 0, -0
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../../CanvasLayer2/MarginContainer/HBoxContainer:custom_minimum_size")
+tracks/2/path = NodePath("../../../CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer:custom_minimum_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -90,7 +90,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, -0.25, 0.16666667, 1, 0, 0, -0.
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../../CanvasLayer2/MarginContainer/HBoxContainer:custom_minimum_size")
+tracks/2/path = NodePath("../../../CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer:custom_minimum_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -146,13 +146,13 @@ cull_mask = 512
 [node name="TimeMachine_left" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1942334391 instance=ExtResource("10_q575b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
 
-[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=310105191]
+[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=1304617415]
 layers = 512
 
 [node name="TimeMachine_right" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1412619158 instance=ExtResource("11_mgddb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
 
-[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=1759296469]
+[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=148522851]
 layers = 512
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=25230241]
@@ -167,7 +167,25 @@ autoplay = &"RESET"
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=293497102]
 layer = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2" unique_id=1772771113]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer2" unique_id=904575863]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/SubViewportContainer" unique_id=1069525773]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport" unique_id=1772771113]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -177,12 +195,12 @@ grow_vertical = 2
 theme_override_constants/margin_top = 75
 theme_override_constants/margin_bottom = 76
 
-[node name="HBoxContainer" type="Control" parent="CanvasLayer2/MarginContainer" unique_id=1028146340]
+[node name="HBoxContainer" type="Control" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer" unique_id=1028146340]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect" type="ColorRect" parent="CanvasLayer2/MarginContainer/HBoxContainer" unique_id=815694146]
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer" unique_id=815694146]
 modulate = Color(1, 1, 1, 0.8117647)
 custom_minimum_size = Vector2(1420, 0)
 layout_mode = 1
@@ -199,7 +217,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect" unique_id=176816240]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect" unique_id=176816240]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -211,56 +229,58 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer" unique_id=1757122488]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer" unique_id=1757122488]
 layout_mode = 2
 
-[node name="Tabs" type="PanelContainer" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=225485587]
+[node name="Tabs" type="PanelContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=225485587]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pmuwh")
 
-[node name="TabTexture" type="TextureRect" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs" unique_id=981628280]
+[node name="TabTexture" type="TextureRect" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs" unique_id=981628280]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_ijymv")
 
-[node name="Buttons" type="HBoxContainer" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs" unique_id=1675234072]
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs" unique_id=1675234072]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="database" type="Button" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=1696146067]
+[node name="database" type="Button" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=1696146067]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
-[node name="inventory" type="Button" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=511501974]
+[node name="inventory" type="Button" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=511501974]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
-[node name="settings" type="Button" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=1222573306]
+[node name="settings" type="Button" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=1222573306]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 
-[node name="MenuTabs" type="PanelContainer" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=985773308]
+[node name="MenuTabs" type="PanelContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=985773308]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="DeviceFiles" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1302796986 instance=ExtResource("4_4t7mm")]
+[node name="DeviceFiles" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1302796986 instance=ExtResource("4_4t7mm")]
 layout_mode = 2
 
-[node name="InventoryPanel" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=473098046 instance=ExtResource("4_7dje4")]
+[node name="InventoryPanel" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=473098046 instance=ExtResource("4_7dje4")]
 visible = false
 layout_mode = 2
 
-[node name="SettingsPanel" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1743540238 instance=ExtResource("4_hgc2y")]
+[node name="SettingsPanel" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1743540238 instance=ExtResource("4_hgc2y")]
 visible = false
 layout_mode = 2
 
-[node name="Mini Time Juice Bar" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect" unique_id=608980422 instance=ExtResource("8_pmuwh")]
+[node name="Mini Time Juice Bar" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect" unique_id=608980422 instance=ExtResource("8_pmuwh")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -281,9 +301,9 @@ volume_db = -15.0
 stream = ExtResource("8_ijymv")
 volume_db = -15.0
 
-[connection signal="pressed" from="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/database" to="." method="_on_database_pressed"]
-[connection signal="pressed" from="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/inventory" to="." method="_on_inventory_pressed"]
-[connection signal="pressed" from="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/database" to="." method="_on_database_pressed"]
+[connection signal="pressed" from="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/settings" to="." method="_on_settings_pressed"]
 
 [editable path="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left"]
 [editable path="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right"]

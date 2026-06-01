@@ -9,17 +9,17 @@ var has_item : bool
 		is_locked = value
 @export var held_item : PickupItem = null : #TIMEVAR
 	set(value):
-		print("\tSTASHABLE SET BEING CALLED. HELD_IMEM IS NOW ", value)
+		#print("\tSTASHABLE SET BEING CALLED. HELD_IMEM IS NOW ", value)
 		if globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"held_item",held_item)
 		held_item = value
 		has_item = true if value else false
-		print("\tHAS ITEM??? ", has_item)
+		#print("\tHAS ITEM??? ", has_item)
 @export var expected_item : PickupItem
 
 func interact(person : Node):
 	if person == globals.player:
-		print("player touching plant")
+		#print("player touching plant")
 		if not is_locked:
 			if has_item:
 				globals.collect_item.emit(held_item)
@@ -28,13 +28,11 @@ func interact(person : Node):
 				if global_inventory.has_item(expected_item):
 					globals.remove_item.emit(expected_item)
 					held_item = expected_item
-				else:
-					print("\tplayer doesnt have item")
 		else:
-			print("\tlocked! suckaaaa")
+			#print("\tlocked! suckaaaa")
 			return
 	else:
-		print("\tnpc touching plant")
+		#print("\tnpc touching plant")
 		if has_item: # NPC interaction is kinda temp rn. NPCs should honestly have an inventory
 			held_item = null
 		else:

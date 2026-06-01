@@ -52,7 +52,6 @@ shadow_mesh = SubResource("ArrayMesh_ukplf")
 resource_name = "DoorMaterial"
 cull_mode = 2
 albedo_texture = ExtResource("1_cr35u")
-metallic = 1.0
 metallic_texture = ExtResource("2_o5j8f")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_o5j8f")
@@ -233,8 +232,6 @@ closed_animation = ExtResource("8_2r4nq")
 close_swing_length = 0.625
 close_start_buffer = 0.167
 locked_animation = ExtResource("9_u1dwy")
-is_open = null
-is_locked = null
 
 [node name="DoubleDoor" type="Node3D" parent="." unique_id=1812601370]
 

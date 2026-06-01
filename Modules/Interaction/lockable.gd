@@ -32,7 +32,7 @@ func _ready() -> void:
 func try_unlock():
 	var unlocked = check_interact()
 	
-	if unlocked or (perma_unlock and unlocked_once):
+	if unlocked or (perma_unlock and unlocked_once) or globals.player_unlock_everything:
 		succ_unlock()
 		return true
 	else:

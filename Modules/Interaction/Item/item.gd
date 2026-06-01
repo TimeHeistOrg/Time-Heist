@@ -8,7 +8,7 @@ class_name Item
 		$MeshInstance3D.mesh = null
 		if value:
 			$MeshInstance3D.mesh = value.mesh
-		item = value;
+		item = value
 
 var picked_up : bool : #TIMEVAR
 	set(value):
