@@ -1,40 +1,18 @@
 [gd_scene format=4 uid="uid://ob26146yejqw"]
 
-[ext_resource type="PackedScene" uid="uid://brppxk3p8u5yd" path="res://Assets/Models/Imported Assets/plant.fbx" id="1_iaw5b"]
+[ext_resource type="Script" uid="uid://n080insgvwlu" path="res://Modules/Interaction/red_plant.gd" id="1_c7n2r"]
 [ext_resource type="Material" uid="uid://b0n7pf7t5l8ih" path="res://Assets/Materials/RedPlant/PlantTallLight.002 (2).tres" id="2_alu41"]
+[ext_resource type="ArrayMesh" uid="uid://dgy6der0lws1q" path="res://Assets/Meshes/Evironment/Cut_plant.res" id="3_alu41"]
 [ext_resource type="Material" uid="uid://cr3xmm8rql0jv" path="res://Assets/Materials/RedPlant/PlantTall.005 (2).tres" id="3_b5vlu"]
+[ext_resource type="Material" uid="uid://ojikb8c65g83" path="res://Assets/Materials/RedPlant/Pot Material.002.tres" id="3_w7c0t"]
 [ext_resource type="Material" uid="uid://bklf1fl6i64o7" path="res://Assets/Materials/RedPlant/PlantTall.004 (2).tres" id="4_c7n2r"]
+[ext_resource type="Material" uid="uid://x1th4llfsrc1" path="res://Assets/Materials/RedPlant/Dirt.002.tres" id="4_urj2q"]
 [ext_resource type="Material" uid="uid://c0b2jmg6cqkuk" path="res://Assets/Materials/RedPlant/Plant.002 (2).tres" id="5_032er"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="6_b5vlu"]
+[ext_resource type="Material" uid="uid://c4og1kna0m1v5" path="res://Assets/Materials/RedPlant/FlowerHead.005.tres" id="8_b4in8"]
+[ext_resource type="Material" uid="uid://b2wjl4wd02ajb" path="res://Assets/Materials/RedPlant/FlowerHead.004.tres" id="9_uuk1s"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkx4w"]
-resource_name = "Pot Material.002"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.2102229, 0.13528827, 0.10518872, 1)
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0250"]
-resource_name = "Dirt.002"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.49430427, 0.2989378, 0.21718228, 1)
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1bon"]
-resource_name = "FlowerHead.005"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.49998975, 0.41615227, 0.18126573, 1)
-emission_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qdwc"]
-resource_name = "FlowerHead.004"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.49998975, 0.41615227, 0.18126573, 1)
-emission_enabled = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_qficr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ni8ud"]
 _surfaces = [{
 "aabb": AABB(-0.0039128456, -0.003861508, 0.0035022888, 0.007837903, 0.0077875294, 0.0012679072),
 "format": 34359742465,
@@ -122,7 +100,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_owhus"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_b5mqx"]
 resource_name = "plant_01_Cube_007"
 _surfaces = [{
 "aabb": AABB(-0.0039128456, -0.003861508, 0.0035022888, 0.007837903, 0.0077875294, 0.0012679072),
@@ -141,7 +119,7 @@ _surfaces = [{
 "format": 34359742471,
 "index_count": 336,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIwAkACUAJgAnACgAKQAqACsALAAtAC4ALwAwADEAMgAzADQANQA2ADcAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACFAIYAhgCHAIQAiACJAIoAigCLAIgAjACNAI4AjgCPAIwAkACRAJIAkgCTAJAAlACVAJYAlgCXAJQAmACZAJoAmwCcAJ0AngCfAKAAoQCiAKMApAClAKYApwCoAKkAqgCrAKwArQCuAK8AsACxALIAsgCzALAAtAC1ALYAtgC3ALQAuAC5ALoAugC7ALgAvAC9AL4AvgC/ALwAwADBAMIAwgDDAMAAxADFAMYAxgDHAMQAyADJAMoAygDLAMgAzADNAM4AzgDPAMwA0ADRANIA0gDTANAA1ADVANYA1gDXANQA2ADZANoA2gDbANgA3ADdAN4A3gDfANwA4ADhAOIA4gDjAOAA5ADlAOYA5gDnAOQA6ADpAOoA6gDrAOgA7ADtAO4A7gDvAOwA"),
-"material": SubResource("StandardMaterial3D_kkx4w"),
+"material": ExtResource("3_w7c0t"),
 "name": "Pot Material.002",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -152,7 +130,7 @@ _surfaces = [{
 "format": 34359742471,
 "index_count": 48,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwA"),
-"material": SubResource("StandardMaterial3D_w0250"),
+"material": ExtResource("4_urj2q"),
 "name": "Dirt.002",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -199,7 +177,7 @@ _surfaces = [{
 "format": 34359742471,
 "index_count": 171,
 "index_data": PackedByteArray("AAABAAIAAwAEAAUABQAGAAMABwAIAAkACQAKAAcACwAMAA0ADgAPABAAEAARAA4AEgATABQAFAAVABIAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgAjACQAJAAlACIAJgAnACgAKAApACYAKgArACwALAAtACoALgAvADAAMAAxAC4AMgAzADQANAA1ADIANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPgA/AEAAQABBAD4AQgBDAEQARABFAEIARgBHAEgASABJAEYASgBLAEwATABNAEoATgBPAFAAUABRAE4AUgBTAFQAVABVAFIAVgBXAFgAWABZAFYAWgBbAFwAXABdAFoAXgBfAGAAYABhAF4AYgBjAGQAZABlAGIAZgBnAGgAaABpAGYAagBrAGwAbABtAGoAbgBvAHAAcQByAHMAcwB0AHEA"),
-"material": SubResource("StandardMaterial3D_x1bon"),
+"material": ExtResource("8_b4in8"),
 "name": "FlowerHead.005",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -210,7 +188,7 @@ _surfaces = [{
 "format": 34359742471,
 "index_count": 171,
 "index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACwAMAA0ADQAOAAsADwAQABEAEQASAA8AEwAUABUAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgAjACQAJAAlACIAJgAnACgAKAApACYAKgArACwALAAtACoALgAvADAAMAAxAC4AMgAzADQANAA1ADIANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPgA/AEAAQABBAD4AQgBDAEQARABFAEIARgBHAEgASABJAEYASgBLAEwATABNAEoATgBPAFAAUABRAE4AUgBTAFQAVABVAFIAVgBXAFgAWABZAFYAWgBbAFwAXABdAFoAXgBfAGAAYABhAF4AYgBjAGQAZABlAGIAZgBnAGgAaABpAGYAagBrAGwAbQBuAG8AbwBwAG0AcQByAHMAcwB0AHEA"),
-"material": SubResource("StandardMaterial3D_5qdwc"),
+"material": ExtResource("9_uuk1s"),
 "name": "FlowerHead.004",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -218,21 +196,26 @@ _surfaces = [{
 "vertex_data": PackedByteArray("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")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_qficr")
+shadow_mesh = SubResource("ArrayMesh_ni8ud")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uyw5b"]
 height = 1.0
 radius = 0.13427734
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c7n2r"]
+height = 1.0
+radius = 0.25
+
 [node name="RedPlant" type="Node3D" unique_id=991222580]
+script = ExtResource("1_c7n2r")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=219643490]
+[node name="Plant" type="MeshInstance3D" parent="." unique_id=219643490]
+transform = Transform3D(49.93, 0, 0, 0, -2.1825097e-06, 49.93, 0, -49.93, -2.1825097e-06, 0, 0, 0)
+mesh = SubResource("ArrayMesh_b5mqx")
 
-[node name="plant" parent="." unique_id=597789594 instance=ExtResource("1_iaw5b")]
+[node name="Plant2" type="MeshInstance3D" parent="." unique_id=1459784064]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="PlantBottomLeaves_001" parent="plant" index="0" unique_id=711031058]
-mesh = SubResource("ArrayMesh_owhus")
+mesh = ExtResource("3_alu41")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=872042486]
 collision_layer = 8
@@ -241,4 +224,11 @@ collision_layer = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0069590807, 0.50082713, -0.0023393035)
 shape = SubResource("CylinderShape3D_uyw5b")
 
-[editable path="plant"]
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("6_b5vlu")]
+meshes = [NodePath("../Plant")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=766921446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_c7n2r")
+
+[connection signal="anon_interacted" from="Interactable" to="." method="interact"]
