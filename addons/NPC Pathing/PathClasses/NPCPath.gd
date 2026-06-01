@@ -224,13 +224,13 @@ func _validate_vertex_actions_change(vertex: PathVertex):
 	#if property.name == "path_components":
 		#property.usage = PROPERTY_USAGE_STORAGE
 
-func progress(npc: NPC, from: float, to: float):
+func progress(npc: PathFollower, from: float, to: float):
 	while npc.cur_component and npc.cur_component.progress(npc,from,to) and not npc.branched:
 		npc.cur_component = at(npc.cur_component.id+1)
 		npc.cur_action_ix = 0
 	npc.branched = false
 
-func revert(npc: NPC, from: float, to: float):
+func revert(npc: PathFollower, from: float, to: float):
 	if npc.cur_component == null and to < at(size()-1).time_end:
 		npc.cur_component = at(size()-1)
 	while npc.cur_component and npc.cur_component.revert(npc,from,to):

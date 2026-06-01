@@ -1,5 +1,5 @@
 @tool
-class_name NPC extends Node3D
+class_name PathFollower extends Node3D
 
 @export var color : Color = Color("cf7d00"):
 	set(value):

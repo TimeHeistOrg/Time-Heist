@@ -57,12 +57,12 @@ func _validate_property(property: Dictionary):
 		else:
 			property.usage |= PROPERTY_USAGE_READ_ONLY
 
-func progress(npc: NPC, from: float, to: float):
+func progress(npc: PathFollower, from: float, to: float):
 	npc.global_position = get_position_at_time(to)
 	npc.look_at(npc.global_position + get_direction())
 	return to >= time_end
 
-func revert(npc: NPC, from: float, to: float):
+func revert(npc: PathFollower, from: float, to: float):
 	if to > time_start:
 		npc.global_position = get_position_at_time(to)
 		npc.look_at(npc.global_position + get_direction())

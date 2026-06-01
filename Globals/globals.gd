@@ -30,7 +30,7 @@ var tutorial_start_point : int = 0
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = true
+var player_invisible: bool = false
 #endregion
 
 #region Detection

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dysir75iv3ew6" path="res://Modules/UI/Game UI/Desktops/basement_desktop_john.tscn" id="13_57erv"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="21_snd4y"]
 [ext_resource type="PackedScene" uid="uid://bh5x2kq2lklrk" path="res://Modules/UI/Game UI/Desktops/basement_desktop_lib.tscn" id="23_vsdh8"]
-[ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/NPC.tscn" id="25_2giet"]
+[ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="25_2giet"]
 [ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="26_1wneo"]
 [ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="27_mlo4f"]
 [ext_resource type="PackedScene" uid="uid://bomvk14icglbq" path="res://Modules/AI/NPC/NPCLucasTest.tscn" id="28_cgwgq"]

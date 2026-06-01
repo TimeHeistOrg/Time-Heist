@@ -1,5 +1,5 @@
 @abstract
 class_name InstantAction extends VertexAction
 
-func revert(npc: NPC, from: float, to: float):
+func revert(npc: PathFollower, from: float, to: float):
 	return true
