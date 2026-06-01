@@ -10,18 +10,21 @@ extends Node3D
 var lerp_speed : float = 5.0
 var chosen_marker : Marker3D
 
+var play_clicked:bool = false
+
 func _ready() -> void:
 	$CanvasLayer/OriginalFocus.grab_focus()
 	pass
 
 func _on_play_pressed() -> void:
-	tighten_vignette()
-	dim_lights($SubViewportContainer/SubViewport/Lights.get_children())
-	animation_player.play("mixamo_com_001")
-	await animation_player.animation_finished
-	globals.tutorial_start_point = 0
-	SceneManager.change_scene_with_transition(SceneManager.Scene.TUTORIAL)
-	pass
+	if not play_clicked:
+		play_clicked = true
+		tighten_vignette()
+		dim_lights($SubViewportContainer/SubViewport/Lights.get_children())
+		animation_player.play("mixamo_com_001")
+		await animation_player.animation_finished
+		globals.tutorial_start_point = 0
+		SceneManager.change_scene_with_transition(SceneManager.Scene.TUTORIAL)
 
 func dim_lights(lights: Array, duration: float = 0.5) -> void:
 	var tween = create_tween()
