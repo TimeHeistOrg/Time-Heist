@@ -18,10 +18,10 @@ enum Scene {
 	#FADE
 #}
 var scene_paths := {
-	Scene.GAMEPLAY: preload("res://Scenes/Gameplay/Gameplay.tscn"),
-	Scene.HOMEBASE: preload("res://Scenes/Homebase/Homebase.tscn"),
-	Scene.MAIN_MENU: preload("res://Scenes/Main Menu/main_menu3.tscn"),
-	Scene.TUTORIAL: preload("res://Scenes/Tutorial/Tutorial.tscn")
+	Scene.GAMEPLAY: "res://Scenes/Gameplay/Gameplay.tscn",
+	Scene.HOMEBASE: "res://Scenes/Homebase/Homebase.tscn",
+	Scene.MAIN_MENU: "res://Scenes/Main Menu/main_menu3.tscn",
+	Scene.TUTORIAL: "res://Scenes/Tutorial/Tutorial.tscn"
 }
 
 const START_SCENE := Scene.MAIN_MENU
@@ -42,7 +42,7 @@ func change_scene_to_path_with_transition(path:String):
 func change_scene_to_path(path: String):
 	# clear current scene if there
 	if current_scene:
-		scene_holder.remove_child(current_scene)
+		scene_holder.call_deferred("remove_child",current_scene)
 		current_scene.queue_free()
 		current_scene = null
 	call_deferred("_load_scene",path)

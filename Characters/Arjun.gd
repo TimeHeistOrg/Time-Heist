@@ -2,16 +2,15 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 
-var dialogue := load("res://Dialogue/bob.dialogue")
+@export var dialogue: DialogueResource
 var balloon_scene := "res://Dialogue/balloon.tscn"
 var dial_start_loc := "start"
 var dialogue_balloon
 
 func _ready():
-	animation_player.play("Bob/idle")
+	animation_player.play("intern/idle")
 
 func interact():
-	print("interacted")
 	if dialogue_balloon and is_instance_valid(dialogue_balloon):
 		#print("Already talking to friend")
 		return
@@ -25,5 +24,4 @@ func _on_dialogue_finish() -> void:
 	dialogue_balloon = null
 
 func _on_interactable_anon_interacted() -> void:
-	print("interacted")
 	interact()

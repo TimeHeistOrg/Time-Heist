@@ -32,5 +32,5 @@ func _ready():
 	globals.time_manager.start_time()
 
 func _on_area_3d_body_entered(_body):
-	SceneManager.change_scene(SceneManager.Scene.HOMEBASE)
+	SceneManager.change_scene_with_transition(SceneManager.Scene.HOMEBASE)
 	globals.in_tutorial = false

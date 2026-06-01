@@ -1985,7 +1985,7 @@ id = 44
 [sub_resource type="Resource" id="Resource_fe153"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 1.4999999999999893
+speed = 1.4999999999999891
 prev_vertex = SubResource("Resource_rwa8m")
 next_vertex = SubResource("Resource_q0qgs")
 time_start = 160.9738029638926
@@ -2190,7 +2190,7 @@ id = 64
 [sub_resource type="Resource" id="Resource_2rrnv"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 1.5000000000000107
+speed = 1.5000000000000109
 prev_vertex = SubResource("Resource_6p77y")
 next_vertex = SubResource("Resource_38rwy")
 time_start = 215.53962779045105
@@ -2283,7 +2283,7 @@ id = 72
 [sub_resource type="Resource" id="Resource_u23x4"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 1.4999999999999933
+speed = 1.4999999999999931
 prev_vertex = SubResource("Resource_s40bf")
 next_vertex = SubResource("Resource_e45jx")
 time_start = 230.37495493888855
@@ -2319,7 +2319,7 @@ id = 76
 [sub_resource type="Resource" id="Resource_dfk5i"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 1.4999999999999973
+speed = 1.4999999999999971
 prev_vertex = SubResource("Resource_f4x5l")
 next_vertex = SubResource("Resource_tg0f1")
 time_start = 241.9088564713796
@@ -2967,7 +2967,7 @@ id = 6
 [sub_resource type="Resource" id="Resource_68eyv"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 0.9999999293519677
+speed = 0.9999999293519676
 prev_vertex = SubResource("Resource_0xbwb")
 next_vertex = SubResource("Resource_8f11b")
 time_start = 3.625
@@ -3003,7 +3003,7 @@ id = 10
 [sub_resource type="Resource" id="Resource_uytvm"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 0.9999999462561039
+speed = 0.999999946256104
 prev_vertex = SubResource("Resource_6er6p")
 next_vertex = SubResource("Resource_i7iip")
 time_start = 18.544153
@@ -3279,7 +3279,7 @@ id = 36
 [sub_resource type="Resource" id="Resource_d3alx"]
 resource_local_to_scene = true
 script = ExtResource("54_yvgy5")
-speed = 0.9999999999999949
+speed = 0.9999999999999948
 prev_vertex = SubResource("Resource_uh2jh")
 next_vertex = SubResource("Resource_8i7tb")
 time_start = 104.34344363212584
@@ -4208,6 +4208,7 @@ time_manager = true
 layer = 10
 
 [node name="BossOffice1Keypad" parent="CanvasLayer" unique_id=1594533560 instance=ExtResource("44_71osp")]
+visible = false
 correct_code = "16542"
 max_digits = 5
 
@@ -6255,6 +6256,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.375, 0, 0.124996185)
 puzzle = NodePath("PipeGame")
 
 [node name="PipeGame" parent="SubViewportContainer/SubViewport/MeetingRoom1/Interactables/MeetingRoom1Door/PuzzlePanel" unique_id=1162614481 instance=ExtResource("3_men3m")]
+visible = false
 mouse_visible_on_start = true
 
 [node name="Background" type="ColorRect" parent="SubViewportContainer/SubViewport/MeetingRoom1/Interactables/MeetingRoom1Door/PuzzlePanel/PipeGame" unique_id=847680296]
@@ -6716,8 +6718,8 @@ layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
 offset_bottom = 64.0
-texture = ExtResource("7_0bsg0")
-pipe_type = 1
+texture = ExtResource("9_ga7uj")
+pipe_type = 2
 
 [node name="Cell_(1, 4)" parent="SubViewportContainer/SubViewport/MeetingRoom2/Interactables/MeetingRoom2Door/PuzzlePanel/PipeGame/Background/Row 1" unique_id=756973501 instance=ExtResource("6_hlbrn")]
 layout_mode = 0
@@ -6835,6 +6837,8 @@ layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
 offset_bottom = 64.0
+texture = ExtResource("9_ga7uj")
+pipe_type = 2
 
 [node name="Cell_(4, 2)" parent="SubViewportContainer/SubViewport/MeetingRoom2/Interactables/MeetingRoom2Door/PuzzlePanel/PipeGame/Background/Row 4" unique_id=456901405 instance=ExtResource("6_hlbrn")]
 layout_mode = 0
@@ -6849,8 +6853,10 @@ layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
 offset_bottom = 64.0
+rotation = 1.5707964
 texture = ExtResource("7_0bsg0")
 pipe_type = 1
+rotation_level = 1
 
 [node name="Cell_(4, 4)" parent="SubViewportContainer/SubViewport/MeetingRoom2/Interactables/MeetingRoom2Door/PuzzlePanel/PipeGame/Background/Row 4" unique_id=1638588538 instance=ExtResource("6_hlbrn")]
 modulate = Color(1, 0.6, 0.6, 1)
@@ -8496,7 +8502,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.375, 0.375, -18)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.375, 0.375, -18)
 
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("6_mwdlf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.505165, 0, -1.0322113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.255165, 0, 24.092789)
 
 [connection signal="code_accepted" from="CanvasLayer/BossOffice1Keypad" to="SubViewportContainer/SubViewport/BossOffice1/Interactables/BossOffice1Door" method="unlock_and_open"]
 [connection signal="puzzle_solved" from="SubViewportContainer/SubViewport/MeetingRoom1/Interactables/MeetingRoom1Door/PuzzlePanel/PipeGame" to="SubViewportContainer/SubViewport/MeetingRoom1/Interactables/MeetingRoom1Door" method="unlock_and_open"]
