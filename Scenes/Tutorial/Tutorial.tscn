@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="8_nr5nl"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="9_0wmwb"]
 [ext_resource type="Script" uid="uid://eqki63ticm1v" path="res://Map/Debug_Maps/test_room_hide.gd" id="10_k05aa"]
+[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="11_dfokh"]
 [ext_resource type="PackedScene" uid="uid://bxqpme2qjir3g" path="res://Modules/MapBuilding/office_light.tscn" id="12_4353k"]
-[ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="15_u5ky3"]
 [ext_resource type="PackedScene" uid="uid://dkqvotopd4ufp" path="res://Dialogue/dialogue_area.tscn" id="16_3civr"]
 [ext_resource type="Resource" uid="uid://bbw00q5pjdvhg" path="res://Dialogue/Tutorial/tutorial_test.dialogue" id="17_k05aa"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="18_capbt"]
@@ -112,6 +112,46 @@ size = Vector3(7.75, 1, 11.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k05aa"]
 size = Vector3(6.25, 1, 11.25)
+
+[sub_resource type="Resource" id="Resource_wbn2w"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(-11, 0, 1.75)
+
+[sub_resource type="Resource" id="Resource_i7j6t"]
+resource_local_to_scene = true
+script = ExtResource("30_fr3jc")
+position = Vector3(-15.25, 0, 1.75)
+time_start = 4.25
+time_end = 4.25
+id = 2
+
+[sub_resource type="Resource" id="Resource_fkywi"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_wbn2w")
+next_vertex = SubResource("Resource_i7j6t")
+time_end = 4.25
+id = 1
+
+[sub_resource type="Resource" id="Resource_61w73"]
+resource_local_to_scene = true
+script = ExtResource("32_2otw2")
+speed = 1.0
+prev_vertex = SubResource("Resource_i7j6t")
+next_vertex = SubResource("Resource_wbn2w")
+is_loop_line = true
+time_start = 4.25
+time_end = 8.5
+id = 3
+
+[sub_resource type="Resource" id="Resource_q8fxt"]
+resource_local_to_scene = true
+script = ExtResource("28_yxgu2")
+path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_wbn2w"), SubResource("Resource_fkywi"), SubResource("Resource_i7j6t"), SubResource("Resource_61w73")])
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4353k"]
 size = Vector3(6, 1, 16.25)
@@ -390,7 +430,7 @@ id = 1
 
 [sub_resource type="Resource" id="Resource_6c18y"]
 script = ExtResource("36_k05aa")
-door = NodePath("../Office door")
+door = NodePath("../SwingingDoor")
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
 [sub_resource type="Resource" id="Resource_cjl8i"]
@@ -414,7 +454,7 @@ id = 3
 
 [sub_resource type="Resource" id="Resource_52ddb"]
 script = ExtResource("36_k05aa")
-door = NodePath("../Office door")
+door = NodePath("../SwingingDoor")
 action = 1
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
@@ -466,7 +506,7 @@ id = 7
 
 [sub_resource type="Resource" id="Resource_wkett"]
 script = ExtResource("36_k05aa")
-door = NodePath("../Office door")
+door = NodePath("../SwingingDoor")
 metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
 
 [sub_resource type="Resource" id="Resource_mmtwr"]
@@ -636,8 +676,8 @@ lights_node = NodePath("Lights")
 labels_node = NodePath("Labels")
 room_id = "tutorial_room1"
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=74631722 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.75, 0, -3.25)
+[node name="SwingingDoor" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=952628281 instance=ExtResource("11_dfokh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.625, 0, -3.625)
 
 [node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/Tutorial/Room 1" unique_id=103637573]
 input_ray_pickable = false
@@ -859,7 +899,7 @@ font_size = 60
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.5, -2.4953508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Now be careful with this gaurd
+text = "Now be careful with this guard
 Try crouching behind these boxes to pass"
 font_size = 50
 
@@ -871,13 +911,14 @@ text = "Guards will turn red and stop moving when suspicious.
 Stay out of their line of sight for them to return to normal"
 font_size = 50
 
-[node name="Tutorial Guard" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=232750231 instance=ExtResource("30_ucgc0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, -6.5)
-script = null
+[node name="Tutorial Guard" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=854805088 instance=ExtResource("30_ucgc0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.75, 0, -6.5)
 
-[node name="Tutorial Guard2" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=854805088 instance=ExtResource("30_ucgc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 0, -12.875)
-script = null
+[node name="Tutorial Guard2" parent="SubViewportContainer/SubViewport/Tutorial/Room 2" unique_id=1964660062 instance=ExtResource("30_ucgc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12.875)
+branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_q8fxt")])
+follow_branch = 0
+path = SubResource("Resource_q8fxt")
 
 [node name="Room 3" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=2080792882 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 14.75)
@@ -887,20 +928,20 @@ lights_node = NodePath("Lights")
 labels_node = NodePath("Labels")
 room_id = "tutorial_room3"
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1086968595 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, 2.75)
+[node name="SwingingDoor" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1195117425 instance=ExtResource("11_dfokh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.875, 0, 2.375)
 is_locked = true
 
-[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" unique_id=1750000146 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 1, 0.25)
+[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor" unique_id=1750000146 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 1, 0.125)
 lock = NodePath("Lockable")
 
-[node name="Lockable" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door/Keycard Scanner" unique_id=1120950339 instance=ExtResource("31_ulrwx")]
+[node name="Lockable" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor/Keycard Scanner" unique_id=1120950339 instance=ExtResource("31_ulrwx")]
 needed_clearance = Array[int]([0])
 locked_label = "Security Clearance Needed"
 
-[node name="Keycard Scanner2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" unique_id=1198437881 instance=ExtResource("23_7sy1d")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.875, 1, 0)
+[node name="Keycard Scanner2" parent="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor" unique_id=1198437881 instance=ExtResource("23_7sy1d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.5, 1, -0.125)
 
 [node name="Poster" parent="SubViewportContainer/SubViewport/Tutorial/Room 3" unique_id=1367753552 instance=ExtResource("19_gewwa")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.9606137, 1, -5.4481697)
@@ -1117,8 +1158,8 @@ item = ExtResource("44_wkett")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625, 0.97408974, 0.125)
 item = ExtResource("45_s3w85")
 
-[node name="Room 4 Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=677614050 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -2.25)
+[node name="SwingingDoor" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=55335935 instance=ExtResource("11_dfokh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.875, 0, -2.625)
 is_locked = true
 
 [node name="Keycard Scanner" parent="SubViewportContainer/SubViewport/Tutorial/Room 4" unique_id=1766836423 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
@@ -1443,12 +1484,14 @@ metadata/asset_placer_res_id = "uid://cvmqwgofqw5y5"
 
 [node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1481007531 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, -9.375)
+catch_enabled = false
 branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_7uvhe")])
 follow_branch = 0
 path = SubResource("Resource_7uvhe")
 
 [node name="NPC2" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1796486969 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0, -6.625)
+catch_enabled = false
 branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_ioh28")])
 follow_branch = 0
 path = SubResource("Resource_ioh28")
@@ -1460,8 +1503,8 @@ item = ExtResource("34_yxgu2")
 [node name="Recharge Station" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=2097079311 instance=ExtResource("25_dmal2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.875, -0.5, -4.625)
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=834935891 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13, 0, -2.25)
+[node name="SwingingDoor" parent="SubViewportContainer/SubViewport/Tutorial/Room 5" unique_id=1662675299 instance=ExtResource("11_dfokh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.875, 0, -2.625)
 
 [node name="Room 6" type="Node3D" parent="SubViewportContainer/SubViewport/Tutorial" unique_id=1717180513 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 14.75)
@@ -1471,16 +1514,17 @@ lights_node = NodePath("Lights")
 labels_node = NodePath("Labels")
 room_id = "tutorial_room6"
 
-[node name="Office door" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=222323412 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -7)
+[node name="SwingingDoor" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=179584217 instance=ExtResource("11_dfokh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.875, 0, -6.875)
 is_locked = true
 
-[node name="Exit door" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1495521941 instance=ExtResource("15_u5ky3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 0, -2.25)
+[node name="SwingingDoor2" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=307712747 instance=ExtResource("11_dfokh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.875, 0, -2.625)
 is_locked = true
 
 [node name="NPC" parent="SubViewportContainer/SubViewport/Tutorial/Room 6" unique_id=1009577029 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 0, -6)
+catch_enabled = false
 branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_u41jk")])
 follow_branch = 0
 start_offset = inf_neg
@@ -1671,10 +1715,10 @@ visible = false
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("38_3civr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 8.125)
 
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" method="unlock_open"]
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 3/Generic_Door" method="unlock_open"]
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 4/Room 4 Door" method="unlock_open"]
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 4/Room 4 Door" method="unlock_open"]
-[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 6/Exit door" method="unlock_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor" method="unlock_and_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 3/SwingingDoor" method="unlock_and_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 4/SwingingDoor" method="unlock_and_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 4/SwingingDoor" method="unlock_and_open"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 6/SwingingDoor2" method="unlock_and_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 6/NPC" method="start_path_at_current_time"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" to="." method="_on_area_3d_body_entered"]

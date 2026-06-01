@@ -1,0 +1,16 @@
+~ start
+% => first
+% => second
+~ first
+Maria: “Have you gotten used to it yet?”
+Maria: “I’m still coming to terms with it myself. I feel like I should be at home with my family…”
+Maria: “...Or applying to jobs. But it’s not like any time is actually passing, I suppose.”
+do get_tree().paused = false
+=> END
+~ second
+Maria: "I can’t imagine how stressful this must be."
+Maria: “I’m already stressed out enough as it is without infiltrating a massive corporation and bending time to do so.”
+Maria: “Let’s have a spa day after this.”
+
+do get_tree().paused = false
+=> END

@@ -1,7 +1,8 @@
 [gd_scene format=4 uid="uid://o4040awfxuav"]
 
-[ext_resource type="Script" uid="uid://4754kdk6bsql" path="res://Characters/bob.gd" id="1_mibd3"]
+[ext_resource type="Script" uid="uid://4754kdk6bsql" path="res://Characters/Katya.gd" id="1_mibd3"]
 [ext_resource type="Texture2D" uid="uid://5iw46avuov1y" path="res://Assets/Models/Characters/NEWtexturepaintloficb(rigged)_0.png" id="1_v7abu"]
+[ext_resource type="Resource" uid="uid://b7oh6vsnbai2j" path="res://Dialogue/Tutorial/Katya.dialogue" id="2_335ux"]
 [ext_resource type="Texture2D" uid="uid://cj4n27dsjg25q" path="res://Assets/Models/Characters/NEWtexturepaintloficb(rigged)_1.png" id="2_n3x6u"]
 [ext_resource type="Animation" uid="uid://brjmbv4t5ilxq" path="res://Player[OLD]/Animation/idle.res" id="3_n3x6u"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="5_wqim2"]
@@ -224,8 +225,9 @@ _data = {
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mibd3"]
 radius = 0.17333984
 
-[node name="Bob" type="Node3D" unique_id=600862783]
+[node name="Katya" type="Node3D" unique_id=600862783]
 script = ExtResource("1_mibd3")
+dialogue = ExtResource("2_335ux")
 
 [node name="Armature" type="Node3D" parent="." unique_id=123170952]
 transform = Transform3D(1, 0, 0, 0, 1, 7.5497894e-08, 0, -7.5497894e-08, 1, 0, 0, 0)
@@ -460,8 +462,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1140994235]
 shape = SubResource("CylinderShape3D_mibd3")
 
-[node name="Interactable2" parent="." unique_id=242002428 node_paths=PackedStringArray("interact_object") instance=ExtResource("5_wqim2")]
-interact_object = NodePath("..")
+[node name="Interactable2" parent="." unique_id=242002428 instance=ExtResource("5_wqim2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable2" unique_id=405670665]
 shape = SubResource("CylinderShape3D_mibd3")

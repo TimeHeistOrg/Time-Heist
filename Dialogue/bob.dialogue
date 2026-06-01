@@ -1,6 +1,0 @@
-~ start
-Bob: Hi Justin.
-Bob: I'm counting on you...
-Bob: You better not let me down.
-do get_tree().paused = false
-=> END

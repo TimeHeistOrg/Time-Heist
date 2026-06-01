@@ -49,7 +49,9 @@ func turn_off():
 func panel_on_setter(value: bool):
 	if value:
 		mesh.set_surface_override_material(1,on_mat)
-		$KeyCardReader/Interactable.enable()
+		if not Engine.is_editor_hint():
+			$KeyCardReader/Interactable.enable()
 	else:
 		mesh.set_surface_override_material(1,off_mat)
-		$KeyCardReader/Interactable.disable()
+		if not Engine.is_editor_hint():
+			$KeyCardReader/Interactable.disable()

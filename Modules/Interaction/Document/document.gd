@@ -15,10 +15,12 @@ class_name Document
 		if value:
 			fit_sprite_to_texture(value)
 			
+@warning_ignore("shadowed_variable_base_class")
 var is_visible: bool = true: #TIMEVAR
 	set(value):
-		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"is_visible",is_visible)
+		if not Engine.is_editor_hint():
+			if globals.time_manager and globals.time_manager.logging:
+				globals.time_manager.timelog(self,"is_visible",is_visible)
 		is_visible = value
 		if value:
 			show()

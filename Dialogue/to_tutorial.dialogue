@@ -1,8 +1,7 @@
 ~ start
 Do you want to replay to the tutorial?
 - Yes
-	do get_tree().paused = false
-	do SceneManager.change_scene(SceneManager.Scene.TUTORIAL)
+	do SceneManager.change_scene_with_transition(SceneManager.Scene.TUTORIAL)
 	=> END
 - No
 	do get_tree().paused = false

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtqvqn1tt42x"
-path="res://.godot/imported/Bob_face.png-f8ff88c8f6c626b93b7ea6ca015170fc.ctex"
+path="res://.godot/imported/Maria_face.png-1fd03722af7fd70bb3ebdf05fae4e6ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogue/Bob_face.png"
-dest_files=["res://.godot/imported/Bob_face.png-f8ff88c8f6c626b93b7ea6ca015170fc.ctex"]
+source_file="res://Dialogue/Maria_face.png"
+dest_files=["res://.godot/imported/Maria_face.png-1fd03722af7fd70bb3ebdf05fae4e6ab.ctex"]
 
 [params]
 

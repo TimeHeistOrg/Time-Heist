@@ -62,8 +62,8 @@ func _process(_delta):
 	pass
 
 func open():
-	#if is_opening:
-		#return
+	if is_open:
+		return
 	if is_closing:
 		var open_progress: float = open_start_buffer + (open_swing_length - anim_player.cur_progress)
 		if pos_z: #opens towards -z
@@ -84,8 +84,8 @@ func open():
 	is_open = true
 
 func close():
-	#if is_closing:
-		#return
+	if not is_open:
+		return
 	if is_opening:
 		var close_progress: float = close_start_buffer + (close_swing_length - anim_player.cur_progress)
 		if pos_z: #closes towards -z
@@ -157,36 +157,50 @@ func is_locked_setter(value:bool):
 		play_unlock_sound()
 
 func play_open_sound():
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("open sound")
 		pass
 
 func play_creak_open(_progress: float = 0): #proportion is how open the door is range of 0-1
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("creak open, progress: ", progress)
 		pass
 
 func play_creak_close(_progress: float = 0): #proportion is how closed the door is range of 0-1
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("creak close, progress: ", progress)
 		pass
 
 func play_close_sound():
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("close sound")
 		pass
 
 func play_shake_sound(): #this is the sound that plays if door is attempted to be opened while locked
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("shake sound")
 		pass
 
 func play_lock_sound():
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("lock sound")
 		pass
 
 func play_unlock_sound():
+	if Engine.is_editor_hint():
+		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("unlock sound")
 		pass

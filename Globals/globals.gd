@@ -30,8 +30,8 @@ var tutorial_start_point : int = 0
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = true
-var player_unlock_everything: bool = true
+var player_invisible: bool = false
+var player_unlock_everything: bool = false
 #endregion
 
 #region Detection
@@ -96,11 +96,11 @@ func player_tutorial_caught():
 
 func to_homebase():
 	#print("to homebase")
-	SceneManager.change_scene(SceneManager.Scene.HOMEBASE)
+	SceneManager.change_scene_with_transition(SceneManager.Scene.HOMEBASE)
 
 func retry():
 	#print("restart")
-	SceneManager.reload_current_scene()
+	SceneManager.reload_current_scene_transition()
 
 
 #region Signals

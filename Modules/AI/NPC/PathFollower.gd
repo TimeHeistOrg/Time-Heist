@@ -61,7 +61,7 @@ func initialize_path_vars():
 			cur_action_ix = 0
 			var first_instant_action_ix: int = -1 #This is in the case where there are instant actions at the beginning, they should not be skipped over if starting at the beginning of the vertex
 			var cur_action: VertexAction = cur_component.action(cur_action_ix)
-			while(true):
+			while(cur_action):
 				if cur_action is InstantAction:
 					if first_instant_action_ix < 0:
 						first_instant_action_ix = cur_action_ix
