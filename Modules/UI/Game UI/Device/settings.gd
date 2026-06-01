@@ -59,7 +59,8 @@ func _on_homebase_pressed() -> void:
 	SceneManager.change_scene_with_transition(SceneManager.Scene.HOMEBASE)
 
 func _on_quit_pressed() -> void:
-	SceneManager.quit_game()
+	SceneManager.change_scene_with_transition(SceneManager.Scene.MAIN_MENU)
+	#SceneManager.quit_game()
 
 #region Settings
 func _on_resolution_options_item_selected(index: int) -> void:
