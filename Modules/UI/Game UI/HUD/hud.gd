@@ -29,14 +29,14 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	time_juice.value = globals.time_manager.time_juice
+	time_juice.value = globals.time_manager.time_juice if globals.time_manager else 100.0
 	if globals.time_manager:
 		var cur_time: int = int(globals.time_manager.cur_time)
 		@warning_ignore("integer_division")
 		time_label.text = "%02d:%02d" % [globals.time_manager.night_start_hours,globals.time_manager.night_start_minutes+(cur_time/60)] #start time is 1:49
 		time_label_seconds.text = "%02d" % [int(cur_time)%60]
 		
-	if charging or globals.time_manager.time_travelling:
+	if globals.time_manager and (charging or globals.time_manager.time_travelling):
 		mini_time_juice_bar.open_bar()
 	else:
 		mini_time_juice_bar.close_bar()
@@ -61,7 +61,9 @@ func new_notif(value : bool, tab : globals.Device_Tabs):
 		$LightPlayer.play('RESET')
 
 func update_marker() -> void:
-	var progress = clamp(globals.time_manager.cur_time / globals.time_manager.night_end, 0.0, 1.0)
+	var progress = 0
+	if globals.time_manager:
+		progress = clamp(globals.time_manager.cur_time / globals.time_manager.night_end, 0.0, 1.0)
 	
 	var start_x = timeline_start.global_position.x - timeline_pin.size.x/2
 	var end_x = timeline_end.global_position.x - timeline_pin.size.x/2

@@ -36,7 +36,7 @@ func handle_input(_delta):
 
 func select():
 	super.select()
-	var button = folder_buttons.get_child(0) as FolderButton
+	var button = (folder_buttons.get_child(0) as FolderButton) if folder_buttons.get_children().size() > 0 else null
 	if button:
 		button.button_pressed = true
 	globals.new_in_device.emit(false, globals.Device_Tabs.Files)
