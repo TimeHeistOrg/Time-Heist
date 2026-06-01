@@ -6152,7 +6152,7 @@ path = SubResource("Resource_qndpy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.125, 0, -32.125)
 branch_paths = Array[ExtResource("23_q0a50")]([SubResource("Resource_jj0q8"), SubResource("Resource_olast")])
 follow_branch = 0
-path = SubResource("Resource_olast")
+path = SubResource("Resource_jj0q8")
 
 [node name="Rando" parent="SubViewportContainer/SubViewport/MainRoom/NPCs" unique_id=1278023597 instance=ExtResource("49_6sta3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.125, 0, -32.375)
