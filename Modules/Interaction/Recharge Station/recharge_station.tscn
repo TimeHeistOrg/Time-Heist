@@ -37,9 +37,8 @@ shape = SubResource("BoxShape3D_xitml")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_xitml")
 
-[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("2_ivxhb")]
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("2_ivxhb")]
 mesh = NodePath("../Mesh")
-interact_object = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1549966930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8027344, 0)

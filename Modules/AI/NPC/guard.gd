@@ -9,14 +9,14 @@ class_name Guard extends NPC
 	#exclamation, spread alert to other nearby guards (wait on this)
 	#laser if still in sight
 
-enum AlertStates {NORMAL, SUSPICIOUS, ALERT}
+enum AlertStates {NORMAL, SUSPICIOUS, ALERT, CAUGHT}
 
 var state = AlertStates.NORMAL : #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
 			#print("setting state to: ", AlertStates.find_key(value))
 			if globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"state",state,value)
+				globals.time_manager.timelog(self,"state",state)
 			_enter_state(value)
 		state = value
 
@@ -27,7 +27,7 @@ var detecting_player: float = 0 : #TIMEVAR
 		if not Engine.is_editor_hint():
 			#print("setting detecting player to: ", value)
 			if globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"detecting_player",detecting_player,value)
+				globals.time_manager.timelog(self,"detecting_player",detecting_player)
 			if globals.time_manager.delta_time < 0:
 				last_detecting_player = abs(detecting_player)
 		detecting_player = value
@@ -77,7 +77,9 @@ func normal_process():
 		return
 	if not path_following:
 		return
-	var cur_time = max(time_manager.cur_time - time_offset, 0)
+	var cur_time = time_manager.cur_time - time_offset + start_offset
+	if cur_time < 0:
+		return
 	if path_following.loop:
 		cur_time = fmod(cur_time,path_following.get_path_duration())
 	if last_processed_time > cur_time: # moved backward in time
@@ -99,7 +101,7 @@ func alert_process():
 	if time_detecting < alert_time:
 		enter_sus()
 	if time_detecting == caught_time:
-		catch_player()
+		enter_caught()
 	if detector.player_spotted:
 		if not laser.laser_on:
 			laser.start_laser()
@@ -145,6 +147,11 @@ func _enter_normal():
 func enter_sus():
 	state = AlertStates.SUSPICIOUS
 	_enter_state(AlertStates.SUSPICIOUS)
+	
+func enter_caught():
+	state = AlertStates.CAUGHT
+	_enter_state(AlertStates.CAUGHT)
+	catch_player()
 
 func _enter_sus():
 	$AudioStreamPlayer.play()
@@ -159,9 +166,7 @@ func _enter_alert():
 
 func _on_npc_hitbox_body_entered(body: Node3D) -> void:
 	if body == globals.player and not globals.player_invisible:
-		catch_player()
-
+		enter_caught()
+		
 func catch_player():
 	globals.player_caught()
-	print("player caught!")
-	pass

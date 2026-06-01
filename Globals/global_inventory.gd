@@ -4,12 +4,12 @@ class_name GlobalInventory
 var items : Array[PickupItem] : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"items",items,value)
+			globals.time_manager.timelog(self,"items",items)
 		items = value
 		#print(items)
 		globals.update_items.emit()
 @export var items_to_start_with : Array[PickupItem] = []
-var documents : Array[DocumentInfo] = [preload("res://Assets/Documents/Resources/hello_playtester.tres")]
+var documents : Array[DocumentInfo] = []
 var clearances : Array[globals.Clearances]
 signal update_device_files
 

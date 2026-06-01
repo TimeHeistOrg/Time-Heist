@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cw2s4bmk01to8"]
 
+[ext_resource type="ArrayMesh" uid="uid://cm2ucyu2yoy4t" path="res://Assets/Meshes/Walls/Wall.res" id="1_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://v2p65exd6thd" path="res://Assets/Meshes/untrimmed_wall.res" id="2_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://cf64cvvno8yr5" path="res://Assets/Meshes/WideWall_Cube_001.res" id="2_m8hoe"]
-[ext_resource type="ArrayMesh" uid="uid://c2fkji6qvuma2" path="res://Assets/Meshes/Doorway_Cube_002.res" id="3_m8hoe"]
-[ext_resource type="ArrayMesh" uid="uid://qasop43fbedt" path="res://Assets/Meshes/WindowSmallWall_Cube_004.res" id="3_rgqh2"]
-[ext_resource type="ArrayMesh" uid="uid://cajdu0cwfm2md" path="res://Assets/Meshes/WindowWideWall_Cube_003.res" id="4_tmw5u"]
-[ext_resource type="ArrayMesh" uid="uid://bvi5rdddg7fjs" path="res://Assets/Meshes/SmallWall_v2_Cube_003.res" id="6_tmw5u"]
+[ext_resource type="ArrayMesh" uid="uid://b721wjhrywnsc" path="res://Assets/Meshes/Walls/HalfWallMiddle.res" id="3_l6peu"]
+[ext_resource type="ArrayMesh" uid="uid://b7o1olkitp2fj" path="res://Assets/Meshes/Walls/HalfWallEdge.res" id="4_l6peu"]
+[ext_resource type="ArrayMesh" uid="uid://bmv2grujv4m2d" path="res://Assets/Meshes/Walls/Doorway.tres" id="5_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://blfq83f2t8l1f" path="res://Assets/Meshes/staircase_Cube.res" id="6_upl86"]
 [ext_resource type="ArrayMesh" uid="uid://dyx80kvgx8fo1" path="res://Assets/Meshes/FloorTile_Cube.res" id="7_upl86"]
 [ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="8_a05ek"]
@@ -14,17 +14,26 @@
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="11_m0onw"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="12_p5opj"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rgqh2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_m0onw"]
 size = Vector3(0.25, 2, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_upl86"]
 size = Vector3(0.25, 2, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tmw5u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2k06"]
 size = Vector3(0.25, 1, 0.25)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6qwye"]
-size = Vector3(0.25, 1, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8gwj"]
+size = Vector3(0.25, 1, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6peu"]
+size = Vector3(0.25, 1, 0.125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgqh2"]
+size = Vector3(0.038, 2, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_utgb0"]
+size = Vector3(0.038, 2, 0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_so2ud"]
 size = Vector3(0.25, 3.55, 1.5)
@@ -123,13 +132,13 @@ size = Vector3(0.25, 1, 0.25)
 [node name="SmallWall" type="MeshInstance3D" parent="." unique_id=682191582]
 visible = false
 layers = 33
-mesh = ExtResource("6_tmw5u")
+mesh = ExtResource("1_l6peu")
 
 [node name="RigidBody3D" type="StaticBody3D" parent="SmallWall" unique_id=864653458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SmallWall/RigidBody3D" unique_id=1675896749]
-shape = SubResource("BoxShape3D_rgqh2")
+shape = SubResource("BoxShape3D_m0onw")
 
 [node name="WideWall" type="MeshInstance3D" parent="." unique_id=1798293783]
 visible = false
@@ -142,46 +151,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.375)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WideWall/RigidBody3D" unique_id=156315385]
 shape = SubResource("BoxShape3D_upl86")
 
-[node name="WindowSmallWall" type="MeshInstance3D" parent="." unique_id=161874877]
+[node name="WindowMiddle" type="MeshInstance3D" parent="." unique_id=161874877]
 visible = false
 layers = 33
-mesh = ExtResource("3_rgqh2")
+mesh = ExtResource("3_l6peu")
 
-[node name="RigidBody3D" type="StaticBody3D" parent="WindowSmallWall" unique_id=946474403]
+[node name="RigidBody3D" type="StaticBody3D" parent="WindowMiddle" unique_id=946474403]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowSmallWall/RigidBody3D" unique_id=457006250]
-shape = SubResource("BoxShape3D_tmw5u")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowMiddle/RigidBody3D" unique_id=457006250]
+shape = SubResource("BoxShape3D_m2k06")
 
-[node name="WindowWideWall" type="MeshInstance3D" parent="." unique_id=1470660928]
+[node name="WindowEdge" type="MeshInstance3D" parent="." unique_id=1470660928]
 visible = false
 layers = 33
-mesh = ExtResource("4_tmw5u")
+mesh = ExtResource("4_l6peu")
 
-[node name="RigidBody3D" type="StaticBody3D" parent="WindowWideWall" unique_id=2087358250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.375)
+[node name="RigidBody3D" type="StaticBody3D" parent="WindowEdge" unique_id=2087358250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowWideWall/RigidBody3D" unique_id=1655353193]
-shape = SubResource("BoxShape3D_6qwye")
+[node name="Bottom half" type="CollisionShape3D" parent="WindowEdge/RigidBody3D" unique_id=1655353193]
+shape = SubResource("BoxShape3D_q8gwj")
+
+[node name="Top Half" type="CollisionShape3D" parent="WindowEdge/RigidBody3D" unique_id=1809586484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.062)
+shape = SubResource("BoxShape3D_l6peu")
 
 [node name="DoorWay" type="MeshInstance3D" parent="." unique_id=2128339612]
 visible = false
 layers = 33
-mesh = ExtResource("3_m8hoe")
+mesh = ExtResource("5_l6peu")
 
 [node name="RigidBody3D" type="StaticBody3D" parent="DoorWay" unique_id=912881974]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorWay/RigidBody3D" unique_id=22186799]
+[node name="LeftFrame" type="CollisionShape3D" parent="DoorWay/RigidBody3D" unique_id=22186799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106, 1, 0)
 shape = SubResource("BoxShape3D_rgqh2")
 
-[node name="RigidBody3D2" type="StaticBody3D" parent="DoorWay" unique_id=1619056865]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.25)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorWay/RigidBody3D2" unique_id=1965290187]
-shape = SubResource("BoxShape3D_rgqh2")
+[node name="RightFrame" type="CollisionShape3D" parent="DoorWay/RigidBody3D" unique_id=534566873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 1, 0)
+shape = SubResource("BoxShape3D_utgb0")
 
 [node name="StairFlight" type="MeshInstance3D" parent="." unique_id=172617441]
+visible = false
 layers = 33
 mesh = ExtResource("6_upl86")
 

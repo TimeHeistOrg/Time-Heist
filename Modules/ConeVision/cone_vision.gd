@@ -17,7 +17,7 @@ var player_spotted : bool
 var disabled : bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"disabled",disabled,value)
+			globals.time_manager.timelog(self,"disabled",disabled)
 		disabled = value
 		process_mode = Node.PROCESS_MODE_DISABLED if value else Node.PROCESS_MODE_INHERIT
 
@@ -119,7 +119,7 @@ func create_mesh():
 	if collision:
 		collision.polygon = polygon_points
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		if player_in_zone and not globals.player.is_hidden and globals.player.can_be_seen and not globals.time_manager.is_time_traveling:
 			#sight_checker.look_at(Vector3(globals.player.global_position.x, 1, globals.player.global_position.z))

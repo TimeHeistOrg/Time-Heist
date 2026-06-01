@@ -14,10 +14,8 @@ class_name Globals extends Node
 #6: Minimap stuff
 #7: Lights
 
-enum InputController {UI, GAMEPLAY, TIMETRAVEL}
-var controller_of_input = InputController.GAMEPLAY
-
 var time_manager: TimeManager
+var input_manager: InputManager
 var ui_manager: UI_Manager
 
 var player : Player
@@ -25,19 +23,19 @@ var player_camera : Camera3D
 
 var camera : Node3D
 
+#region Tutorial
+var in_tutorial : bool = false
+var tutorial_start_point : int = 0
+#endregion
+
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = false
+var player_invisible: bool = true
 #endregion
 
 #region Detection
 var safe_ratio : float = 1
 #endregion
-
-var time_juice : float = 100
-var max_time_juice : float = 100
-var rewind_drain_per_sec : float = 15
-var rewind_charge_per_sec : float = 40
 
 var allow_interact: bool = true
 
@@ -80,10 +78,7 @@ var green_color : Color = Color("46af56ff")
 var red_color : Color = Color("d73438")
 
 func _ready():
-	time_manager = preload("res://Modules/TimeTravel/TimeManager.gd").new()
-	time_manager.name = "TimeManager"
-	add_child(time_manager)
-	time_juice = 100
+	pass
 
 func player_caught():
 	#print("caught!")
@@ -93,6 +88,10 @@ func player_caught():
 		ui_manager.mouse_filter = Control.MOUSE_FILTER_STOP
 	time_manager.stop_time()
 	get_tree().paused = true
+	
+func player_tutorial_caught():
+	SceneManager.reload_current_scene_transition()
+	#get_tree().paused = true
 
 func to_homebase():
 	#print("to homebase")
@@ -100,8 +99,7 @@ func to_homebase():
 
 func retry():
 	#print("restart")
-	time_juice = max_time_juice
-	SceneManager.change_scene(SceneManager.current_scene_type)
+	SceneManager.reload_current_scene()
 
 
 #region Signals
@@ -119,6 +117,10 @@ signal collect_clearance(clearance : Clearances)
 signal use_item(item : PickupItem)
 @warning_ignore("unused_signal")
 signal new_in_device(value : bool, tab : Device_Tabs)
+@warning_ignore("unused_signal")
+signal start_charging
+@warning_ignore("unused_signal")
+signal stop_charging
 #endregion
 
 #region Debug
@@ -126,7 +128,7 @@ func toggle_debug_settings():
 	player.can_be_seen = not player.can_be_seen
 	player.can_open_any_door = not player.can_open_any_door
 	player.infinite_juice = not player.infinite_juice
-	time_juice = max_time_juice
+	time_manager.time_juice = time_manager.max_time_juice
 	player.set_collision_mask_value(4, not player.get_collision_mask_value(4))
 func toggle_lesser_debug_settings():
 	player.can_be_seen = not player.can_be_seen

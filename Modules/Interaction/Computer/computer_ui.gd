@@ -8,23 +8,22 @@ class_name ComputerUI
 const DESKTOP_ITEM = preload("res://Modules/Interaction/Computer/desktop_item.tscn")
 const APP_WINDOW = preload("res://Modules/Interaction/Computer/app_window.tscn")
 
-static var desktop_size: Vector2 = Vector2(1920,1080)
+static var desktop_size: Vector2 = Vector2(1920,1080) #unused
 
 func _ready() -> void:
 	node_area.mouse_entered.connect(_mouse_entered_area)
 	node_area.mouse_exited.connect(_mouse_exited_area)
 	node_area.input_event.connect(_mouse_input_event)
-	size = desktop_size
 	close()
 
 func open():
 	#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	print("Hello computer opening")
+	#print("Hello computer opening")
 	super.open()
 
 func close():
 	computer.close_computer()
-	print("Hello computer closing")
+	#print("Hello computer closing")
 	super.close()
 
 func load_computer(data: ComputerData) -> void:

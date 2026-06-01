@@ -1,12 +1,12 @@
 @tool
-extends UI	
+extends UI
 
 
 const CELL_SIZE = 64  # pixel width and height of each cell
 const PIPE_ROW = preload("res://Modules/UI/Game UI/Pipe Game/pipe_row.tscn")
 const PIPE_CELL = preload("res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn")
 
-signal pipe_game_solved
+signal puzzle_solved
 
 @export var mouse_visible_on_start: bool = false
 @export_group("Pipe Board Settings")
@@ -20,9 +20,10 @@ var board: Array = []
 
 # generates the board UI
 func _gen_board() -> void:
-	print("Generating %dx%d board..." % [width, height])
+	#print("Generating %dx%d board..." % [width, height])
 	
 	# clear all children and reset board
+	#print("here")
 	for c in get_children():
 		c.free()
 	board.clear()
@@ -32,10 +33,20 @@ func _gen_board() -> void:
 	background.name = "Background"
 	background.color = Color.WHITE
 	background.size = Vector2(width * CELL_SIZE, height * CELL_SIZE)
-	background.position = Vector2(
-		(1920 - width*CELL_SIZE) / 2.0,
-		(1080 - height*CELL_SIZE) / 2.0
-	)
+	
+	background.anchor_left = 0.5
+	background.anchor_right = 0.5
+	background.anchor_top = 0.5
+	background.anchor_bottom = 0.5
+	
+	var half_width = (width * CELL_SIZE) / 2.0
+	var half_height = (height * CELL_SIZE) / 2.0
+	
+	background.offset_left = -half_width
+	background.offset_right = half_width
+	background.offset_top = -half_height
+	background.offset_bottom = half_height
+	
 	add_child(background)
 	background.owner = get_tree().edited_scene_root if Engine.is_editor_hint() else null
 	
@@ -71,14 +82,14 @@ func _gen_board() -> void:
 	_build_board_from_scene()
 
 # handler for when a cell emit's its signal when it's rotated
-func _on_cell_updated(row: int, col: int) -> void:
-	print("cell at (%d, %d) was updated" % [row, col])
+func _on_cell_updated(_row: int, _col: int) -> void:
+	#print("cell at (%d, %d) was updated" % [row, col])
 	_check_puzzle_solve_state()
 
 # checks if the puzzle is solved, emits signal if solved
 func _check_puzzle_solve_state() -> void:
 	if board.is_empty():
-		print("tried to check puzzle solve but the board is empty")
+		#print("tried to check puzzle solve but the board is empty")
 		return
 		
 	# find start cell
@@ -92,7 +103,7 @@ func _check_puzzle_solve_state() -> void:
 			break
 	
 	if start_cell == null:
-		print("couldnt find start cell")
+		#print("couldnt find start cell")
 		return
 		
 	# bfs from start and look if end node is connected
@@ -109,8 +120,8 @@ func _check_puzzle_solve_state() -> void:
 		
 		# check if current cell is end
 		if cur_cell.is_end_pipe:
-			pipe_game_solved.emit()
-			print("puzzle solved")
+			solved()
+			#print("puzzle solved")
 			return
 			
 		# get and add neighbors to queue if not visited
@@ -121,7 +132,7 @@ func _check_puzzle_solve_state() -> void:
 				cell_queue.append(neighbor_cell)
 	
 	# did not find end pipe connection
-	print("puzzle is not solved")
+	#print("puzzle is not solved")
 		
 func _get_cell_neighbors(cell: Node) -> Array:
 	var row = cell.row
@@ -153,12 +164,7 @@ func _get_cell_neighbors(cell: Node) -> Array:
 	return res
 		
 
-func _ready() -> void:	
-	if not Engine.is_editor_hint():
-		close()
-		if mouse_visible_on_start:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
+func _ready() -> void:
 	# the signal get funky since they are made in the editor/before runtime or something
 	# so i found this approach to fix it...
 	# there's probably a cleaner way but idk
@@ -166,12 +172,19 @@ func _ready() -> void:
 
 func _build_board_from_scene() -> void:
 	board.clear()
-	var background = get_child(0)
-	
-	for row_node in background.get_children():
-		var row_cells: Array = []
-		for cell in row_node.get_children():
-			if not Engine.is_editor_hint():
-				cell.rotation_changed.connect(_on_cell_updated)
-			row_cells.append(cell)
-		board.append(row_cells)
+	if get_child_count() > 0:
+		var background = get_child(0)
+		for r in range(background.get_child_count()):
+			var row_node = background.get_child(r)
+			var row_cells: Array = []
+			for c in range(row_node.get_child_count()):
+				var cell = row_node.get_child(c)
+				cell.init(r,c)
+				if not Engine.is_editor_hint():
+					cell.rotation_changed.connect(_on_cell_updated)
+				row_cells.append(cell)
+			board.append(row_cells)
+
+func solved():
+	puzzle_solved.emit()
+	close()

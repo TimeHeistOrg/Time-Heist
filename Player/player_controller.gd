@@ -45,8 +45,8 @@ class_name Player extends CharacterBody3D
 @export var max_crouch_speed: float = 2.2
 @export var crouch_acceleration: float = 2.2
 @export_group("Rolling")
-@export var roll_speed: float = 5
-@export var roll_duration: float = 0.75
+@export var roll_speed: float = 6
+@export var roll_duration: float = 0.5
 
 var camera_locked: bool = false
 
@@ -56,6 +56,7 @@ var state_move: Callable
 
 #movement variables
 var destination_rotation: float
+var movement_direction: Vector2
 var roll_timer: float = 0
 var defer_crouch: bool = false #this is for if the player presses crouch during roll, will be placed in crouch mode after roll is complete
 var player_facing: Vector3 #represents the direction the player should be facing (is set based on input, and not on where mesh is in rotation)
@@ -69,24 +70,46 @@ var is_hidden: bool = false #hiding in a locker or other place.
 
 func _ready():
 	if not Engine.is_editor_hint():
+		#print("player_controller ready")
 		globals.player = self
-		InputManager.player = self
+		if globals.input_manager:
+			globals.input_manager.change_input_controller(InputManager.InputControllers.GAMEPLAY)
 		$"Inventory Wheel Holder".player = self
+		animation_tree["parameters/RollTimeScale/scale"] = 0.9/roll_duration
 		run_enter()
 
 func _process(delta): #This process is for things that should occur regardless of whether the player has control of input
 	if not Engine.is_editor_hint():
+		if globals.time_manager:
+			if globals.time_manager.time_travelling:
+				animation_tree["parameters/TimeScale/scale"] = 0
+				return
+			elif globals.time_manager.fast_forwarding:
+				animation_tree["parameters/TimeScale/scale"] = 1
+				movement_direction = Vector2.ZERO
+			else:
+				animation_tree["parameters/TimeScale/scale"] = 1
+		
 		if not is_equal_approx(mesh.rotation.y, destination_rotation):
 			mesh.rotation.y = lerp_angle(mesh.rotation.y, destination_rotation, turn_weight)
 		else:
 			mesh.rotation.y = destination_rotation
 		
 		if not state == MoveStates.ROLL:
-			if not velocity.is_equal_approx(destination_velocity):
+			if abs((velocity-destination_velocity).length()) > 0.5:
 				velocity = lerp(velocity, destination_velocity, current_acceleration * delta)
 			else:
 				velocity = destination_velocity
+		#updating animation values
+		animation_tree["parameters/RunWalkBlend/blend_position"].y = speed_to_blend_value(current_speed)
+		animation_tree["parameters/CrouchBlendSpace/blend_position"] = 1 - (max_crouch_speed - current_speed)/max_crouch_speed
+		if globals.time_manager:
+			state_move.call(globals.time_manager.delta_time)
+		else:
+			state_move.call(delta)
+		move_and_slide()
 		current_speed = velocity.length()
+		movement_direction = Vector2.ZERO
 
 func pan_camera_horizontally(angle):
 	if not camera_locked:
@@ -137,6 +160,13 @@ func toggle_crouch(): #input manager interface function
 	else:
 		crouch_enter()
 
+func set_crouch(value: bool):
+	if value and state != MoveStates.ROLL:
+		crouch_enter()
+	elif not value and state == MoveStates.CROUCH:
+		run_enter()
+	
+
 func set_walk(val: bool): #input manager interface function
 	if val and state == MoveStates.RUN:
 		walk_enter()
@@ -153,19 +183,24 @@ func lock_position():
 func unlock_position():
 	position_locked = false
 
-func move(input_dir: Vector2, delta): #input manager calls this every physics_process frame with the pertinent input information
-	if not position_locked:
-		#anything that should happen for all states should go here
-		state_move.call(input_dir,delta)
-		move_and_slide()
+func lost_input(): #called when the input manager switches away from gameplay
+	pass
 
-func _default_move(input_dir: Vector2, speed: float): #This function is the default movement, used for run, walk, and crouch movement
-	if input_dir.is_zero_approx():
+func move(input_dir: Vector2): #input manager calls this every physics_process frame with the pertinent input information
+	if position_locked:
+		return
+	movement_direction = input_dir
+
+func _default_move(direction, speed: float): #This function is the default movement, used for run, walk, and crouch movement
+	if direction.is_zero_approx():
 		current_acceleration = deceleration
 		destination_velocity = Vector3.ZERO
 	else:
-		current_acceleration = move_acceleration
-		destination_velocity = (Vector3(input_dir.x, 0, input_dir.y).normalized() * speed).rotated(Vector3.UP,camera_pivot.rotation.y)
+		if current_speed > max_crouch_speed:
+			current_acceleration = deceleration
+		else:
+			current_acceleration = move_acceleration
+		destination_velocity = (Vector3(direction.x, 0, direction.y).normalized() * speed).rotated(Vector3.UP,camera_pivot.rotation.y)
 		destination_rotation = Vector3.FORWARD.signed_angle_to(velocity, Vector3.UP)
 		player_facing = destination_velocity.normalized()
 
@@ -183,9 +218,8 @@ func run_enter():
 	detection_point.position.y = 1.5
 	animation_tree["parameters/MoveStates/transition_request"] = "RunWalk"
 
-func run_move(input_dir: Vector2, _delta: float):
-	_default_move(input_dir, max_run_speed)
-	animation_tree["parameters/RunWalkBlend/blend_position"].y = speed_to_blend_value(current_speed)
+func run_move(_delta: float):
+	_default_move(movement_direction, max_run_speed)
 #endregion
 
 #region walk
@@ -196,9 +230,8 @@ func walk_enter():
 	detection_point.position.y = 1.5
 	animation_tree["parameters/MoveStates/transition_request"] = "RunWalk"
 
-func walk_move(input_dir: Vector2, _delta: float):
-	_default_move(input_dir, max_walk_speed)
-	animation_tree["parameters/RunWalkBlend/blend_position"].y = speed_to_blend_value(current_speed)
+func walk_move(_delta: float):
+	_default_move(movement_direction, max_walk_speed)
 #endregion
 
 #region crouch
@@ -209,9 +242,8 @@ func crouch_enter():
 	detection_point.position.y = 0.7
 	animation_tree["parameters/MoveStates/transition_request"] = "Crouch"
 
-func crouch_move(input_dir: Vector2, _delta: float):
-	_default_move(input_dir, max_crouch_speed)
-	animation_tree["parameters/CrouchBlendSpace/blend_position"] = 1 - (max_crouch_speed - current_speed)/max_crouch_speed
+func crouch_move(_delta: float):
+	_default_move(movement_direction, max_crouch_speed)
 #endregion
 
 #region roll
@@ -219,10 +251,12 @@ func roll_enter():
 	state = MoveStates.ROLL
 	state_move = roll_move
 	roll_timer = roll_duration
-	velocity = player_facing * roll_speed
+	destination_rotation = Vector3.FORWARD.signed_angle_to(player_facing, Vector3.UP)
+	mesh.rotation.y = destination_rotation
+	velocity = player_facing * ((roll_speed * 0.75) + (roll_speed * (current_speed/max_run_speed) * 0.25))
 	animation_tree["parameters/MoveStates/transition_request"] = "Roll"
 
-func roll_move(_input_dir: Vector2, delta: float):
+func roll_move(delta: float):
 	if roll_timer <= 0:
 		if defer_crouch:
 			defer_crouch = false

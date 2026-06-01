@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://begdut20cbu15" path="res://Modules/UI/Game UI/Device/settings.tscn" id="4_hgc2y"]
 [ext_resource type="AudioStream" uid="uid://da3exkttg2ndx" path="res://Assets/SFX/button_confirm.ogg" id="7_m01ss"]
 [ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="8_ijymv"]
+[ext_resource type="PackedScene" uid="uid://ds171imx2qg0u" path="res://Modules/UI/Game UI/MiniTimeJuiceBar/mini_time_juice_bar.tscn" id="8_pmuwh"]
 [ext_resource type="PackedScene" uid="uid://ddugiq37t31fv" path="res://Assets/Models/Imported Assets/TimeMachine_left.fbx" id="10_q575b"]
 [ext_resource type="PackedScene" uid="uid://coioh5wpt010b" path="res://Assets/Models/Imported Assets/TimeMachine_right.fbx" id="11_mgddb"]
 
@@ -117,6 +118,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hgc2y")
+disable_e_to_close = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580131768]
 layer = 2
@@ -144,13 +146,13 @@ cull_mask = 512
 [node name="TimeMachine_left" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1942334391 instance=ExtResource("10_q575b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
 
-[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=1657953528]
+[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=310105191]
 layers = 512
 
 [node name="TimeMachine_right" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1412619158 instance=ExtResource("11_mgddb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
 
-[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=1822411138]
+[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=1759296469]
 layers = 512
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=25230241]
@@ -257,6 +259,19 @@ layout_mode = 2
 [node name="SettingsPanel" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1743540238 instance=ExtResource("4_hgc2y")]
 visible = false
 layout_mode = 2
+
+[node name="Mini Time Juice Bar" parent="CanvasLayer2/MarginContainer/HBoxContainer/TextureRect" unique_id=608980422 instance=ExtResource("8_pmuwh")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -420.5
+offset_right = -21.0
+offset_bottom = -420.5
+rotation = 1.5707964
 
 [node name="ButtonConfirm" type="AudioStreamPlayer" parent="." unique_id=656915482]
 stream = ExtResource("7_m01ss")

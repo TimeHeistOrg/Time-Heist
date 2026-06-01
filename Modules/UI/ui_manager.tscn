@@ -63,6 +63,7 @@ func _process(_delta):
 "
 
 [node name="UI Manager" type="Control" unique_id=1478464990]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,6 +74,7 @@ mouse_filter = 2
 script = ExtResource("1_yaem8")
 
 [node name="HUD" parent="." unique_id=528506545 instance=ExtResource("5_df44s")]
+unique_name_in_owner = true
 z_index = 4
 layout_mode = 1
 
@@ -132,11 +134,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="CaughtUI" parent="." unique_id=519183442 instance=ExtResource("8_1ex2v")]
-visible = false
-z_index = 1
-layout_mode = 1
-
 [node name="Interface" type="Control" parent="." unique_id=722000712]
 visible = false
 z_index = 1
@@ -165,3 +162,11 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=356941901]
+layer = 100
+
+[node name="CaughtUI" parent="CanvasLayer" unique_id=519183442 instance=ExtResource("8_1ex2v")]
+unique_name_in_owner = true
+visible = false
+z_index = 1

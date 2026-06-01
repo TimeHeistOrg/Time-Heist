@@ -4,7 +4,7 @@ var emails
 var email_button_instances : Array[EmailButton]  #TIMEVAR
 	#set(value):
 		#if globals.time_manager and globals.time_manager.logging:
-			#globals.time_manager.timelog(self,"email_button_instances",email_button_instances,value)
+			#globals.time_manager.timelog(self,"email_button_instances",email_button_instances)
 		#email_button_instances = value
 		#print("SET FUNCTION CALLED")
 @onready var email_buttons: VBoxContainer = $HBoxContainer/EmailButtons
@@ -19,7 +19,7 @@ var first_time : bool = true #need?
 var finished : bool = false : #TIMEVAR
 	set(value):
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"finished",finished,value)
+			globals.time_manager.timelog(self,"finished",finished)
 		finished = value
 
 func setup(config: EmailAppConfig) -> void:
@@ -55,8 +55,8 @@ func view_panel(document: DocumentInfo) -> void:
 		var tex_size = document.document_image.get_size()
 		# fit width to scroll container, scale height proportionally
 		var available_width = scroll_container.size.x
-		var scale = available_width / tex_size.x
-		email_viewer.custom_minimum_size = Vector2(available_width, tex_size.y * scale)
+		var doc_scale = available_width / tex_size.x
+		email_viewer.custom_minimum_size = Vector2(available_width, tex_size.y * doc_scale)
 	
 func setup_emails():
 	for email in emails:

@@ -1,9 +1,104 @@
 [gd_scene format=3 uid="uid://b8umb5d42v56y"]
 
 [ext_resource type="Script" uid="uid://di5tt110m4f64" path="res://Modules/UI/Game UI/HUD/hud.gd" id="1_6qein"]
-[ext_resource type="Texture2D" uid="uid://ck1i4sr0w4o20" path="res://Assets/UI/HUD/timemachineuiassetempty.png" id="1_xrti2"]
-[ext_resource type="Texture2D" uid="uid://dc2y6bypod0bh" path="res://Assets/UI/HUD/timemachineuiassetCIRCLE (1).png" id="2_6qein"]
-[ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="4_r0gy4"]
+[ext_resource type="Texture2D" uid="uid://rlak5fjasfud" path="res://Assets/UI/HUD/timemachineDBleft.png" id="3_maspv"]
+[ext_resource type="Texture2D" uid="uid://b80dfq17wtnqa" path="res://Assets/UI/HUD/timemachineDBright.png" id="4_3n30j"]
+[ext_resource type="Texture2D" uid="uid://bkt5l60d7puc0" path="res://Assets/UI/HUD/notification.png" id="6_maspv"]
+[ext_resource type="FontFile" uid="uid://cgkrybl1pl3jp" path="res://Assets/UI/Font/digital-7/digital-7.ttf" id="7_5ex3c"]
+[ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="7_lfvhm"]
+[ext_resource type="Texture2D" uid="uid://bbradfuplryhd" path="res://Assets/UI/HUD/Minimap/timepin.png" id="12_0r5qi"]
+[ext_resource type="PackedScene" uid="uid://ds171imx2qg0u" path="res://Modules/UI/Game UI/MiniTimeJuiceBar/mini_time_juice_bar.tscn" id="13_2b275"]
+
+[sub_resource type="Animation" id="Animation_3n30j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Device Icon/NewNotif:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.99, 0.56925, 0.495, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_maspv"]
+resource_name = "bob"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Device Icon/DeviceRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0459734, 0.2, 0.36666667, 0.5),
+"transitions": PackedFloat32Array(1.8660661, 0.49999982, 1.8660661, 0.35355246, 1.8660661),
+"update": 0,
+"values": [Vector2(20, 15), Vector2(10, 15), Vector2(65.8, 15), Vector2(10, 15), Vector2(20, 15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Device Icon/NewNotif:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0459734, 0.2, 0.36666667, 0.5),
+"transitions": PackedFloat32Array(1.8660661, 0.49999982, 1.8660661, 0.35355246, 1.8660661),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-10, 0), Vector2(45.8, 0), Vector2(-10, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w4p76"]
+resource_name = "pulse"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Device Icon/NewNotif:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.99, 0.56925, 0.495, 1), Color(0.99, 0.56925, 0.495, 0.49411765), Color(0.99, 0.56925, 0.495, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8xiwf"]
+resource_name = "pulse_light"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Device Icon/NewNotif:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.99, 0.56925, 0.495, 1), Color(0.99, 0.56925, 0.495, 0.49411765), Color(0.99, 0.56925, 0.495, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3n30j"]
+_data = {
+&"RESET": SubResource("Animation_3n30j"),
+&"bob": SubResource("Animation_maspv"),
+&"pulse": SubResource("Animation_w4p76"),
+&"pulse_light": SubResource("Animation_8xiwf")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3n30j"]
+load_path = "res://.godot/imported/DBempty.png-ddffdb95b591911a933dab6b7af1aa3a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8xiwf"]
+load_path = "res://.godot/imported/DBfull.png-0df07d8ec7d360b5bf3adca59d061d77.ctex"
 
 [node name="HUD" type="Control" unique_id=528506545]
 layout_mode = 3
@@ -15,28 +110,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_6qein")
 
-[node name="TimeJuice" type="TextureProgressBar" parent="." unique_id=467930012]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 4
-radial_initial_angle = 340.0
-texture_under = ExtResource("1_xrti2")
-texture_progress = ExtResource("2_6qein")
-texture_progress_offset = Vector2(82, -43.355)
-
-[node name="NewNotif" type="TextureRect" parent="TimeJuice" unique_id=889791476]
-visible = false
-modulate = Color(0.76132107, 0.16330728, 0.09244985, 1)
-layout_mode = 0
-offset_left = 23.0
-offset_top = 89.0
-offset_right = 63.0
-offset_bottom = 129.0
-texture = ExtResource("4_r0gy4")
-expand_mode = 1
-
 [node name="Time" type="Label" parent="." unique_id=15072857]
+modulate = Color(0.7882353, 0.91764706, 0.9607843, 1)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -46,11 +121,13 @@ offset_right = 296.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("7_5ex3c")
+theme_override_font_sizes/font_size = 133
 text = "00:00"
 horizontal_alignment = 2
 
 [node name="Time Seconds" type="Label" parent="." unique_id=1706191143]
+modulate = Color(0.7882353, 0.91764706, 0.9607843, 1)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -60,5 +137,111 @@ offset_top = -108.0
 offset_right = 397.0
 offset_bottom = -20.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("7_5ex3c")
+theme_override_font_sizes/font_size = 76
 text = "00"
+
+[node name="BobPlayer" type="AnimationPlayer" parent="." unique_id=60608052]
+libraries/ = SubResource("AnimationLibrary_3n30j")
+
+[node name="LightPlayer" type="AnimationPlayer" parent="." unique_id=1043630829]
+libraries/ = SubResource("AnimationLibrary_3n30j")
+
+[node name="ProgressBar" type="TextureRect" parent="." unique_id=99749606]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 414.0
+offset_top = -125.91766
+offset_bottom = -8.917725
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_lfvhm")
+expand_mode = 1
+
+[node name="TimelineStart" type="Control" parent="." unique_id=1253217676]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 497.0
+offset_top = 951.08234
+offset_right = 497.0
+offset_bottom = 951.08234
+
+[node name="TimelineEnd" type="Control" parent="." unique_id=1240343040]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1918.0
+offset_top = 951.08234
+offset_right = 1918.0
+offset_bottom = 951.08234
+
+[node name="TimelinePin" type="TextureRect" parent="." unique_id=607145392]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 444.0
+offset_top = 901.0
+offset_right = 550.0
+offset_bottom = 1007.0
+pivot_offset = Vector2(53, 70)
+texture = ExtResource("12_0r5qi")
+
+[node name="Mini Time Juice Bar" parent="." unique_id=608980422 instance=ExtResource("13_2b275")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -122.0
+offset_top = 108.0
+offset_right = -122.0
+offset_bottom = 108.0
+start_visible = false
+
+[node name="Device Icon" type="Control" parent="." unique_id=1023797018]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeJuiceBar" type="TextureProgressBar" parent="Device Icon" unique_id=1973085586]
+unique_name_in_owner = true
+modulate = Color(0.6285765, 0.8358478, 0.99185294, 1)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 31.58
+offset_right = 528.0
+offset_bottom = 821.58
+scale = Vector2(0.36, 0.36)
+fill_mode = 3
+radial_initial_angle = 340.0
+texture_under = SubResource("CompressedTexture2D_3n30j")
+texture_progress = SubResource("CompressedTexture2D_8xiwf")
+
+[node name="DeviceLeft" type="TextureRect" parent="Device Icon" unique_id=520537565]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 278.0
+offset_bottom = 325.0
+texture = ExtResource("3_maspv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DeviceRight" type="TextureRect" parent="Device Icon" unique_id=470994823]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 313.0
+offset_bottom = 324.0
+texture = ExtResource("4_3n30j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NewNotif" type="TextureRect" parent="Device Icon" unique_id=889791476]
+unique_name_in_owner = true
+modulate = Color(0.99, 0.56925, 0.495, 0)
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 347.0
+texture = ExtResource("6_maspv")
+expand_mode = 1

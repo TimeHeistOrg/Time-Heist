@@ -2,6 +2,7 @@ extends UI
 class_name DeviceMenu
 
 var first_time : bool = true
+@onready var hud: HUD = %HUD
 
 #region Tabs
 @onready var menu_tabs: PanelContainer = $CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs
@@ -31,12 +32,15 @@ func open():
 	super.open()
 	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("open")
 	$CanvasLayer2/MarginContainer.mouse_filter = MOUSE_FILTER_STOP
+	await $CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.animation_finished
+	hud.set_device_icon(false) #hides device hud icon when device is open
 	select_tab(focused_tab)
 
 func close():
 	get_viewport().gui_release_focus()
 	$CanvasLayer2/MarginContainer.mouse_filter = MOUSE_FILTER_IGNORE
 	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("close")
+	hud.set_device_icon(true) #open device hud icon when device is closed
 	if first_time:
 		$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("RESET")
 		first_time = false

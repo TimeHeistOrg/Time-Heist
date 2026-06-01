@@ -2,16 +2,16 @@
 extends Node3D
 class_name Generic_Door
 
-@onready var collision_body: StaticBody3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door/Door RB"
-@onready var mesh: MeshInstance3D = $"Door_Frame_with_Door_Animated_v2(Faster)/DoorHinge/Door"
-@onready var animation_player : AnimationPlayer = $"Door_Frame_with_Door_Animated_v2(Faster)/AnimationPlayer"
+@onready var collision_body: StaticBody3D = $"Door/DoorHinge/DoorMesh/Door RB"
+@onready var mesh: MeshInstance3D = $Door/DoorHinge/DoorMesh
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 @export var is_open: bool = false : #TIMEVAR
 	set(value):
 		#print("set is_open to ", value)
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_open",is_open,value)
+				globals.time_manager.timelog(self,"is_open",is_open)
 			is_open = value
 			if collision_body:
 				if value:
@@ -31,9 +31,9 @@ class_name Generic_Door
 		#print("set is_locked to ", value)
 		if not Engine.is_editor_hint():
 			if door_ready and globals.time_manager and globals.time_manager.logging:
-				globals.time_manager.timelog(self,"is_locked",is_locked,value)
-			if value:
-				print("here")
+				globals.time_manager.timelog(self,"is_locked",is_locked)
+			if is_node_ready() and value:
+				#print("here")
 				$AudioStreamPlayer3D.play()
 		is_locked = value
 
@@ -58,7 +58,7 @@ var cur_action: DoorTimeAction = null: #TIMEVAR
 				animation_player.play("Door_Action_Close")
 				animation_player.pause()
 		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,"cur_action",cur_action,value)
+			globals.time_manager.timelog(self,"cur_action",cur_action)
 		cur_action = value
 
 
@@ -76,8 +76,8 @@ func _ready():
 
 func _process(_delta):
 	if not Engine.is_editor_hint():
-		
 		if cur_action:
+			#print(cur_action.opening, ", ", cur_action.end_progress)
 			if globals.time_manager.delta_time > 0: #time travelling forward
 				progress += globals.time_manager.delta_time
 				if progress >= animation_player.current_animation_length:
@@ -148,6 +148,18 @@ func set_lock(flipped : bool):
 func unlock_open():
 	unlock()
 	open()
+
+func play_open_sound():
+	print("open sound")
+
+func play_close_sound():
+	print("close sound")
+
+func play_shake_sound(): #this is the sound that plays if door is attempted to be opened while locked
+	print("shake sound")
+
+func play_lock_sound():
+	print("lock sound")
 
  #and not globals.player.can_open_any_door
 func interact(person: Node):

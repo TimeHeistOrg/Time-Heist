@@ -1,0 +1,5 @@
+~ start
+Good job!
+Now, *Hold Shift* to walk, *Press Shift* to roll, *Press C* to toggle crouch
+do get_tree().paused = false
+=> END

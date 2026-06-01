@@ -36,8 +36,9 @@ func handle_input(_delta):
 
 func select():
 	super.select()
-	var button = folder_buttons.get_child(0) as FolderButton
-	button.button_pressed = true
+	var button = (folder_buttons.get_child(0) as FolderButton) if folder_buttons.get_children().size() > 0 else null
+	if button:
+		button.button_pressed = true
 	globals.new_in_device.emit(false, globals.Device_Tabs.Files)
 	if fullscreen and fullscreen_button:
 		fullscreen_button.grab_focus() #for when you are in fullscreen, change tabs, then come back
