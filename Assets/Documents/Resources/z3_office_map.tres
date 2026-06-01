@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_ts2bt")
-document_id = 21
+document_id = 14
 title = "Office Map"
 document_image = ExtResource("1_iu7yt")
 relevant_tags = Array[String](["Map", "All Files"])

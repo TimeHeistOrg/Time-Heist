@@ -17,3 +17,5 @@ collision_layer = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=119196330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0069590807, 0.50082713, -0.0023393035)
 shape = SubResource("CylinderShape3D_uyw5b")
+
+[editable path="plant"]
