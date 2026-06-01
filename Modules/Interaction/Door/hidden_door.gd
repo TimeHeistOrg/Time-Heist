@@ -19,3 +19,9 @@ func open():
 
 func close():
 	door.position = closed_position
+	
+func set_open(open : bool):
+	if open:
+		open()
+	else:
+		close()

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://ci0fil53nv2jc"]
+
+[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_mclbe"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="2_nif7o"]
+[ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="2_qws2w"]
+[ext_resource type="Script" uid="uid://4064plqmijmo" path="res://Modules/Interaction/Computer/Resources/text_app_config.gd" id="3_8favv"]
+[ext_resource type="Resource" uid="uid://dhl6d2hx8bmid" path="res://Assets/TextConvos/Resources/Z3/locker_bros.tres" id="3_8ie0a"]
+[ext_resource type="Resource" uid="uid://ds08skryxc4s8" path="res://Assets/TextConvos/Resources/Z3/manny_to_maria.tres" id="4_8ie0a"]
+
+[sub_resource type="Resource" id="Resource_mnlha"]
+script = ExtResource("3_8favv")
+convos = Array[ExtResource("2_nif7o")]([ExtResource("3_8ie0a"), ExtResource("4_8ie0a")])
+which_person = Array[int]([0, 0])
+metadata/_custom_type_script = "uid://4064plqmijmo"
+
+[resource]
+script = ExtResource("2_qws2w")
+apps = Array[ExtResource("1_mclbe")]([SubResource("Resource_mnlha")])
+metadata/_custom_type_script = "uid://drdqf0ywp8oy7"

@@ -5,7 +5,8 @@ var first_time : bool = true
 @onready var hud: HUD = %HUD
 
 #region Tabs
-@onready var menu_tabs: PanelContainer = $CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs
+@onready var margin_container: MarginContainer = %MarginContainer
+@onready var menu_tabs: PanelContainer = %MenuTabs
 var tabs : Array[MenuTabPanel]
 @export var focused_tab : int = 0
 var tab_assets : Array[Texture] = [
@@ -13,7 +14,7 @@ var tab_assets : Array[Texture] = [
 	preload("res://Assets/UI/Device Menu/inventoryselect.png"),
 	preload("res://Assets/UI/Device Menu/settingsselect.png")
 ]
-@onready var tab_texture: TextureRect = $CanvasLayer2/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/TabTexture
+@onready var tab_texture: TextureRect = %TabTexture
 #endregion
 
 @onready var button_move : AudioStreamPlayer = $ButtonMove
@@ -31,14 +32,14 @@ func _ready() -> void:
 func open():
 	super.open()
 	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("open")
-	$CanvasLayer2/MarginContainer.mouse_filter = MOUSE_FILTER_STOP
+	margin_container.mouse_filter = MOUSE_FILTER_STOP
 	await $CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.animation_finished
 	hud.set_device_icon(false) #hides device hud icon when device is open
 	select_tab(focused_tab)
 
 func close():
 	get_viewport().gui_release_focus()
-	$CanvasLayer2/MarginContainer.mouse_filter = MOUSE_FILTER_IGNORE
+	margin_container.mouse_filter = MOUSE_FILTER_IGNORE
 	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("close")
 	hud.set_device_icon(true) #open device hud icon when device is closed
 	if first_time:
@@ -63,6 +64,7 @@ func handle_input(_delta):
 	tabs[focused_tab].handle_input(_delta)
 		
 func select_tab(selected_tab : int):
+	focused_tab = selected_tab
 	for tab in tabs:
 		tab.hide()
 	tab_texture.texture = tab_assets[selected_tab]

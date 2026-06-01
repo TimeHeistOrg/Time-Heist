@@ -31,6 +31,12 @@ func _ready() -> void:
 func interact():
 	if not is_ready:
 		return
+	if globals.player_unlock_everything:
+		keycard_scanned.emit()
+		show_feedback(globals.green_color)
+		if retrigger > 0:
+			is_ready = false
+		return
 	if (lock and not lock.try_unlock()) or perma_locked:
 		show_feedback(globals.red_color)
 		return

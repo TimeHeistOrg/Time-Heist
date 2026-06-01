@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="TextConvo" format=3 uid="uid://dhl6d2hx8bmid"]
+
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="1_agmou"]
+
+[resource]
+script = ExtResource("1_agmou")
+person0 = "Manny"
+person1 = "Lenny"
+conversation = "0,0Lenny, shes talking again...
+0,1what? oh Laura?
+0,0ya dude just mumbling to herself behind me, i hear it
+0,1shes obsessed with that room
+0,1Im kinda over it
+0,0Ive never seen ANYONE enter it other than her. does the door even work!?
+0,1Ive never seen anyone go through it either lol not even Laura
+0,0Im gonna ask Maria, she has a better view
+"
+metadata/_custom_type_script = "uid://cwa1su0fsxi7t"
