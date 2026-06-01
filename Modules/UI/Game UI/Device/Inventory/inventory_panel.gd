@@ -24,6 +24,7 @@ func collect_item(item:PickupItem):
 	slot.set_data(item)
 	slot.mouse_entered.connect(view_info.bind(slot.item))
 	slot.mouse_exited.connect(empty_info)
+	$Pickup.play()
 
 func remove_item(requested_item:PickupItem):
 	print("removing item ", requested_item.name)
@@ -31,6 +32,7 @@ func remove_item(requested_item:PickupItem):
 		if item_slot.item == requested_item:
 			item_slot.queue_free()
 			return # removed the FIRST item of this kind
+	$Drop.play()
 			
 func update_items():
 	for item in global_inventory.items: # adds items into panel that are in global inven
