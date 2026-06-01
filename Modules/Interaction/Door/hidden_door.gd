@@ -21,8 +21,8 @@ func open():
 func close():
 	anim_player.play("close")
 	
-func set_open(open : bool):
-	if open:
+func set_open(value : bool):
+	if value:
 		open()
 	else:
 		close()
