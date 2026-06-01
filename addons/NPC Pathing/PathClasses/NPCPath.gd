@@ -194,13 +194,16 @@ func _validate_speed_change(line: PathLine, old: float):
 func _validate_time_start_change(vertex: PathVertex, old: float):
 	var value = vertex.time_start
 	vertex.time_start = old
-	var prev_line: PathLine = at(vertex.id-1)
-	var prev_vert: PathVertex = prev_line.prev_vertex
-	if value < prev_vert.time_end:
-		value = prev_vert.time_end
-	prev_line.time_end = value
-	prev_line.recalculate_speed()
-	_recalculate_time_from(vertex.id-1)
+	if vertex.id > 0:
+		var prev_line: PathLine = at(vertex.id-1)
+		var prev_vert: PathVertex = prev_line.prev_vertex
+		if value < prev_vert.time_end:
+			value = prev_vert.time_end
+		prev_line.time_end = value
+		prev_line.recalculate_speed()
+		_recalculate_time_from(vertex.id-1)
+	else:
+		_recalculate_time_from(vertex.id)
 
 func _validate_time_end_change(vertex: PathVertex, old: float):
 	var time_dif = vertex.time_end - old
@@ -224,13 +227,13 @@ func _validate_vertex_actions_change(vertex: PathVertex):
 	#if property.name == "path_components":
 		#property.usage = PROPERTY_USAGE_STORAGE
 
-func progress(npc: NPC, from: float, to: float):
+func progress(npc: PathFollower, from: float, to: float):
 	while npc.cur_component and npc.cur_component.progress(npc,from,to) and not npc.branched:
 		npc.cur_component = at(npc.cur_component.id+1)
 		npc.cur_action_ix = 0
 	npc.branched = false
 
-func revert(npc: NPC, from: float, to: float):
+func revert(npc: PathFollower, from: float, to: float):
 	if npc.cur_component == null and to < at(size()-1).time_end:
 		npc.cur_component = at(size()-1)
 	while npc.cur_component and npc.cur_component.revert(npc,from,to):

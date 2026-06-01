@@ -1,5 +1,5 @@
 @tool
-class_name Guard extends NPC
+class_name Guard extends PathFollower
 
 #Seen at all -> Suspicious:
 	#stops moving, tracks player, quesrtion mark

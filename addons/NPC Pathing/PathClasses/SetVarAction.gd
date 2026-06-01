@@ -11,7 +11,7 @@ enum types {none, int, float, string, bool}
 @export var string_value: String
 @export var bool_value: bool
 
-func progress(npc: NPC, from: float, to: float):
+func progress(npc: PathFollower, from: float, to: float):
 	if type == types.none:
 		return true
 	var node = npc.get_node(object)
