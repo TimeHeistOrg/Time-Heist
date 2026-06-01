@@ -62,6 +62,8 @@ func _process(_delta):
 	pass
 
 func open():
+	#if is_opening:
+		#return
 	if is_closing:
 		var open_progress: float = open_start_buffer + (open_swing_length - anim_player.cur_progress)
 		if pos_z: #opens towards -z
@@ -82,6 +84,8 @@ func open():
 	is_open = true
 
 func close():
+	#if is_closing:
+		#return
 	if is_opening:
 		var close_progress: float = close_start_buffer + (close_swing_length - anim_player.cur_progress)
 		if pos_z: #closes towards -z

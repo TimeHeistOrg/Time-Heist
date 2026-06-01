@@ -5,7 +5,7 @@ var resource_slot: PathResourcePicker
 var is_open: bool = false
 var mini_inspector: Control
 
-func _init(_npc: NPC, _undo_redo: EditorUndoRedoManager):
+func _init(_npc: PathFollower, _undo_redo: EditorUndoRedoManager):
 	set_object_and_property(_npc,"path")
 	undo_redo = _undo_redo
 	resource_slot = PathResourcePicker.new(self)

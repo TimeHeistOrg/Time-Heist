@@ -2,7 +2,6 @@
 extends EditorNode3DGizmoPlugin
 
 
-const NPC = preload("res://Modules/AI/NPC/NPC.gd")
 const PathingGizmo = preload("res://addons/NPC Pathing/pathing_gizmo.gd")
 
 var undo_redo
@@ -18,7 +17,7 @@ func _init(_undo_redo: EditorUndoRedoManager):
 	create_handle_material("handle")
 
 func _create_gizmo(node):
-	if node is NPC:
+	if node is PathFollower:
 		return PathingGizmo.new(undo_redo)
 	else:
 		return null

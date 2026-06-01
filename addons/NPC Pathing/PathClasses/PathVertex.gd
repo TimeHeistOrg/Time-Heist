@@ -68,14 +68,14 @@ func verify_signals():
 func vertex_action_changed():
 	emit_manual_change("vertex_actions",null)
 
-func progress(npc: NPC, from: float, to: float):
+func progress(npc: PathFollower, from: float, to: float):
 	var cur_action = action(npc.cur_action_ix)
 	while cur_action and cur_action.progress(npc, from, to):
 		npc.cur_action_ix += 1
 		cur_action = action(npc.cur_action_ix)
 	return to >= time_end
 
-func revert(npc: NPC, from: float, to: float):
+func revert(npc: PathFollower, from: float, to: float):
 	var cur_action = action(npc.cur_action_ix)
 	while cur_action and cur_action.revert(npc, from, to):
 		npc.cur_action_ix -= 1

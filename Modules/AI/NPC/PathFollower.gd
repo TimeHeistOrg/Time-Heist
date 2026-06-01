@@ -1,5 +1,5 @@
 @tool
-class_name NPC extends Node3D
+class_name PathFollower extends Node3D
 
 @export var color : Color = Color("cf7d00"):
 	set(value):
@@ -59,10 +59,22 @@ func initialize_path_vars():
 			cur_component = path_following.at(cur_component.id+1)
 		if cur_component is PathVertex:
 			cur_action_ix = 0
-			var cur_action = cur_component.action(cur_action_ix)
-			while cur_action is InstantAction or (cur_action is WaitAction and cur_action.end_time <= cur_time):
+			var first_instant_action_ix: int = -1 #This is in the case where there are instant actions at the beginning, they should not be skipped over if starting at the beginning of the vertex
+			var cur_action: VertexAction = cur_component.action(cur_action_ix)
+			while(true):
+				if cur_action is InstantAction:
+					if first_instant_action_ix < 0:
+						first_instant_action_ix = cur_action_ix
+				elif cur_action is WaitAction:
+					if cur_action.end_time >= cur_time:
+						if cur_action.start_time == cur_time:
+							cur_action_ix = first_instant_action_ix
+							cur_action = cur_component.action(cur_action_ix)
+						break
+					first_instant_action_ix = -1
 				cur_action_ix += 1
 				cur_action = cur_component.action(cur_action_ix)
+			#while cur_action is InstantAction or (cur_action is WaitAction and cur_action.end_time <= cur_time):
 
 func interact_with(nodepath: NodePath):
 	var node = get_node(nodepath)
