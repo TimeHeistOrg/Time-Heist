@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://rop0vuvsqp3w" path="res://Assets/UI/Main Menu/creditsdefault.png" id="6_ilpl1"]
 [ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="7_mohnt"]
 [ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="10_ifg3e"]
+[ext_resource type="Shader" uid="uid://ddnclfmn4abmy" path="res://Effects/main_menu_vignette.gdshader" id="12_i6g8v"]
 
 [sub_resource type="Gradient" id="Gradient_mwdlf"]
 offsets = PackedFloat32Array(0, 0.1539924, 0.75342464, 1)
@@ -2065,6 +2066,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8qt34")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilpl1"]
+shader = ExtResource("12_i6g8v")
+shader_parameter/strength = 1.0
+shader_parameter/radius = 0.7410000351975
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
 [node name="MainMenu3" type="Node3D" unique_id=281524917]
 script = ExtResource("1_ltef7")
 
@@ -2108,6 +2115,109 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012798309, 0.028505325, -0
 transform = Transform3D(2.1252377, 0, 0, 0, 0.33396327, 0, 0, 0, 1.0185913, -1.7490871, -0.9752307, -13.939119)
 mesh = SubResource("ArrayMesh_24fjd")
 
+[node name="CoolTowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="1" unique_id=423266636]
+layers = 4
+
+[node name="OfficeSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="2" unique_id=144963710]
+layers = 256
+mesh = SubResource("ArrayMesh_bgryv")
+
+[node name="TowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="3" unique_id=926847428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4632578, -14.008069, -45.878307)
+
+[node name="Camera" parent="SubViewportContainer/SubViewport/titlescreenv3" index="8" unique_id=468975109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4954393, 4.0880947, 13.867525)
+far = 220.79
+
+[node name="MainSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="16" unique_id=1206822745]
+layers = 512
+mesh = SubResource("ArrayMesh_ntibg")
+
+[node name="HeliPadSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="17" unique_id=2049935378]
+layers = 4
+mesh = SubResource("ArrayMesh_j0vim")
+
+[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/titlescreenv3/Armature" parent_id_path=PackedInt32Array(1359590925, 1642871082) index="0" unique_id=1412132974]
+bones/0/position = Vector3(-0.008413643, 1.1659902, -193.46)
+bones/0/rotation = Quaternion(-0.5379754, -0.09280015, 0.025388949, 0.8374522)
+bones/1/position = Vector3(-4.4703484e-07, 7.4956274, -0.99010175)
+bones/1/rotation = Quaternion(-0.07892294, 0.00245107, 0.02170548, 0.9966414)
+bones/2/position = Vector3(3.5762787e-07, 8.820845, -3.4123677e-06)
+bones/2/rotation = Quaternion(-0.030297948, 0.012639789, 0.020925032, 0.99924195)
+bones/3/position = Vector3(-3.5762787e-07, 10.081007, 2.2798777e-06)
+bones/3/rotation = Quaternion(-0.030387629, 0.012292779, 0.021003483, 0.9992419)
+bones/4/position = Vector3(-5.364418e-07, 11.341091, -3.0029887e-06)
+bones/4/rotation = Quaternion(0.078986436, 0.0026942892, -0.0020585796, 0.9968699)
+bones/5/position = Vector3(-3.2782555e-07, 6.6687784, 1.8854624)
+bones/5/rotation = Quaternion(0.09128948, 0.05924404, -0.08091143, 0.9907622)
+bones/6/position = Vector3(9.536743e-07, 37.348587, 10.559555)
+bones/7/position = Vector3(5.4999385, 9.7257185, -0.1594032)
+bones/7/rotation = Quaternion(-0.67442685, -0.2923606, 0.32591045, -0.59452176)
+bones/8/position = Vector3(5.2204996e-10, 11.602624, -2.9443232e-05)
+bones/8/rotation = Quaternion(-0.39714938, -0.42588368, 0.41241607, 0.70057726)
+bones/9/position = Vector3(1.809618e-06, 20.16053, -1.0130343e-06)
+bones/9/rotation = Quaternion(0.061976485, -0.0010995679, 0.32977927, 0.94202095)
+bones/10/position = Vector3(-1.6609729e-06, 20.334682, 6.3295083e-06)
+bones/10/rotation = Quaternion(-0.0044516064, -0.89263856, -0.14784452, 0.42581525)
+bones/11/position = Vector3(-1.752903, 4.1376963, -1.9311916e-05)
+bones/11/rotation = Quaternion(0.41264638, 0.10625132, -0.1236557, 0.89618236)
+bones/12/position = Vector3(-0.9773514, 3.4595659, -8.33458e-06)
+bones/12/rotation = Quaternion(-0.23234574, -0.26046827, -0.4366342, 0.82916963)
+bones/13/position = Vector3(0.063003525, 4.0038037, 7.966204e-06)
+bones/13/rotation = Quaternion(-0.33531156, 0.037861146, 0.048441257, 0.940099)
+bones/14/position = Vector3(0.9143428, 3.677658, -5.185633e-06)
+bones/15/position = Vector3(-1.3768575e-05, 10.809169, -0.083126985)
+bones/15/rotation = Quaternion(0.7101058, 0.2794923, -0.12613326, 0.63381726)
+bones/16/position = Vector3(0.016537964, 9.288394, 5.98342e-06)
+bones/16/rotation = Quaternion(0.63603425, 0.04493251, 0.15478395, 0.75464123)
+bones/17/position = Vector3(-0.06404829, 7.516314, -1.6483453e-05)
+bones/17/rotation = Quaternion(0.61642826, 0.054786064, 0.27445123, 0.73599684)
+bones/18/position = Vector3(0.047513366, 4.784672, 4.529935e-06)
+bones/19/position = Vector3(-5.4999466, 9.739712, -0.26550373)
+bones/19/rotation = Quaternion(0.6534371, -0.45194715, 0.2284612, 0.5626449)
+bones/20/position = Vector3(-5.7471407e-06, 11.602619, 2.6518414e-05)
+bones/20/rotation = Quaternion(-0.19958362, 0.5826813, -0.43586335, 0.65625614)
+bones/21/position = Vector3(-3.7608235e-05, 20.196877, -4.801401e-06)
+bones/21/rotation = Quaternion(0.08216821, 0.0024061385, -0.42530587, 0.90130883)
+bones/22/position = Vector3(5.506312e-06, 20.296894, 6.0989514e-06)
+bones/22/rotation = Quaternion(0.3902335, 0.79654884, 0.06501392, 0.4571663)
+bones/23/position = Vector3(1.9872068, 4.0384417, -3.7252894e-06)
+bones/23/rotation = Quaternion(0.2750298, 0.030136092, -0.11246737, 0.9543593)
+bones/24/position = Vector3(1.1187747, 3.4224737, 4.9565697e-06)
+bones/24/rotation = Quaternion(0.09275224, 0.27707374, 0.62973046, 0.7197685)
+bones/25/position = Vector3(-0.17249238, 3.9830973, 2.5430321e-05)
+bones/25/rotation = Quaternion(-0.3170568, 0.026762733, 0.2350732, 0.9184223)
+bones/26/position = Vector3(-0.94629717, 3.665123, 8.344905e-07)
+bones/27/position = Vector3(7.238712e-06, 11.20284, -0.29393715)
+bones/27/rotation = Quaternion(-0.10030581, -0.16439986, -0.39870778, -0.896629)
+bones/28/position = Vector3(0.36050558, 9.709988, 8.141505e-06)
+bones/28/rotation = Quaternion(0.8929896, -0.07687363, 0.17698026, 0.40661785)
+bones/29/position = Vector3(-0.15168118, 7.5851693, 1.2767665e-05)
+bones/29/rotation = Quaternion(0.530711, -0.011595022, -0.016235491, 0.847318)
+bones/30/position = Vector3(-0.20882231, 5.2312317, 6.407501e-06)
+bones/31/position = Vector3(6.7953067, -4.170811, 1.3004048)
+bones/31/rotation = Quaternion(0.14664438, -0.015429398, 0.9815718, -0.12154942)
+bones/32/position = Vector3(-4.896646e-06, 43.9052, 3.0981319e-06)
+bones/32/rotation = Quaternion(-0.551609, 0.028183572, -0.034571603, 0.83290935)
+bones/33/position = Vector3(6.430939e-06, 42.12452, 1.4881935e-05)
+bones/33/rotation = Quaternion(0.28849202, -0.14829862, -0.18642287, 0.92737615)
+bones/34/position = Vector3(-1.1682318e-05, 18.230394, -1.1725555e-05)
+bones/34/rotation = Quaternion(0.3260486, -0.011253543, 0.00080655114, 0.9452857)
+bones/35/position = Vector3(5.68165e-06, 6.7910504, -4.2375177e-06)
+bones/36/position = Vector3(-6.795309, -4.1708245, 1.3649048)
+bones/36/rotation = Quaternion(-0.08006021, -0.16147307, 0.97261894, 0.14672811)
+bones/37/position = Vector3(-1.124432e-06, 43.919754, 3.0693445e-05)
+bones/37/rotation = Quaternion(-0.6308898, 0.022521604, -0.10679618, 0.7681572)
+bones/38/position = Vector3(-4.1449894e-06, 42.0885, 2.1418755e-06)
+bones/38/rotation = Quaternion(0.30114168, 0.078668274, -0.018539565, 0.9501481)
+bones/39/position = Vector3(-1.9903615e-05, 18.139803, -1.4139478e-05)
+bones/39/rotation = Quaternion(0.37119666, 0.013526988, 0.00071055954, 0.92845553)
+bones/40/position = Vector3(-3.934838e-08, 6.8207483, 1.15297735e-05)
+
+[node name="CoolSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="20" unique_id=1646884704]
+layers = 32
+mesh = SubResource("ArrayMesh_i6g8v")
+
 [node name="ResidentialSkyScraper3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/titlescreenv3" unique_id=1736283261]
 transform = Transform3D(2.1252377, 0, 0, 0, 0.33396327, 0, 0, 0, 1.0185913, 24.917675, -7.0015674, -17.037052)
 mesh = SubResource("ArrayMesh_24fjd")
@@ -2117,13 +2227,6 @@ skeleton = NodePath("")
 transform = Transform3D(2.1252377, 0, 0, 0, 0.33396327, 0, 0, 0, 1.0185913, -18.021189, -0.9752307, -35.54737)
 mesh = SubResource("ArrayMesh_24fjd")
 skeleton = NodePath("")
-
-[node name="CoolTowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="3" unique_id=423266636]
-layers = 4
-
-[node name="OfficeSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="4" unique_id=144963710]
-layers = 256
-mesh = SubResource("ArrayMesh_bgryv")
 
 [node name="OfficeSkyScraper2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/titlescreenv3" unique_id=543824246]
 transform = Transform3D(2.3972778, 0, 0, 0, 2.3972778, 0, 0, 0, 2.3972778, 32.43284, -9.246772, -29.685162)
@@ -2142,99 +2245,6 @@ transform = Transform3D(2.2561615, 0, 0.8103559, 0, 2.3972778, 0, -0.8103559, 0,
 layers = 256
 mesh = SubResource("ArrayMesh_bgryv")
 skeleton = NodePath("")
-
-[node name="Camera" parent="SubViewportContainer/SubViewport/titlescreenv3" index="13" unique_id=468975109]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4954393, 4.0880947, 13.867525)
-far = 220.79
-
-[node name="MainSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="21" unique_id=1206822745]
-layers = 512
-mesh = SubResource("ArrayMesh_ntibg")
-
-[node name="HeliPadSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="22" unique_id=2049935378]
-layers = 4
-mesh = SubResource("ArrayMesh_j0vim")
-
-[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/titlescreenv3/Armature" parent_id_path=PackedInt32Array(1359590925, 1642871082) index="0" unique_id=1412132974]
-bones/0/position = Vector3(0.06972107, -2.8295732, -208.3614)
-bones/0/rotation = Quaternion(-0.75342506, -0.05565221, 0.067643784, 0.6516731)
-bones/1/position = Vector3(-5.811453e-07, 7.4956427, -0.99009585)
-bones/1/rotation = Quaternion(-0.037128597, 0.060014248, 0.020213831, 0.997302)
-bones/2/position = Vector3(4.172325e-07, 8.820864, -4.31668e-06)
-bones/2/rotation = Quaternion(0.09697093, 0.02871479, 0.0025709502, 0.9948696)
-bones/3/position = Vector3(3.5762787e-07, 10.08099, -1.2042001e-06)
-bones/3/rotation = Quaternion(0.0929257, 0.03553763, -0.0153643545, 0.99492)
-bones/4/position = Vector3(0, 11.341124, 3.7526177e-06)
-bones/4/rotation = Quaternion(0.056501016, 0.07706672, 0.024941696, 0.99511117)
-bones/5/position = Vector3(1.7881393e-07, 6.6688027, 1.8854659)
-bones/5/rotation = Quaternion(0.15450947, -0.10063765, 0.0013651642, 0.9828515)
-bones/6/position = Vector3(1.1920929e-07, 37.348595, 10.559556)
-bones/7/position = Vector3(5.499938, 9.725713, -0.1594023)
-bones/7/rotation = Quaternion(-0.5203547, -0.5024836, 0.34961537, -0.5954077)
-bones/8/position = Vector3(-1.8406663e-06, 11.60262, -7.5299467e-06)
-bones/8/rotation = Quaternion(-0.10693942, -0.66994166, 0.5461826, 0.49135196)
-bones/9/position = Vector3(-4.7400554e-06, 20.160522, -2.2651493e-06)
-bones/9/rotation = Quaternion(0.0593818, 0.0006891391, 0.39861503, 0.9151936)
-bones/10/position = Vector3(9.371991e-06, 20.334635, 1.9174977e-05)
-bones/10/rotation = Quaternion(0.0029142722, -0.760991, -0.33937144, 0.5529117)
-bones/11/position = Vector3(-1.7529379, 4.1377215, -7.390948e-06)
-bones/11/rotation = Quaternion(0.26461464, 0.14554858, -0.17055483, 0.9379264)
-bones/12/position = Vector3(-0.97731954, 3.45956, -4.9898554e-06)
-bones/12/rotation = Quaternion(-0.085699506, -0.041783027, 0.035314247, 0.994818)
-bones/13/position = Vector3(0.06299289, 4.0037923, 1.9478994e-06)
-bones/13/rotation = Quaternion(-0.094631724, 0.009965419, 0.20250045, 0.97464824)
-bones/14/position = Vector3(0.9143127, 3.6776466, -8.344645e-06)
-bones/15/position = Vector3(1.3714634e-06, 10.809174, -0.08313794)
-bones/15/rotation = Quaternion(0.5179056, 0.48529524, -0.1398452, 0.6904388)
-bones/16/position = Vector3(0.016525716, 9.288389, 7.1106806e-06)
-bones/16/rotation = Quaternion(0.7767552, -0.0031450684, 0.25362435, 0.57646865)
-bones/17/position = Vector3(-0.06403756, 7.516308, -1.2144962e-05)
-bones/17/rotation = Quaternion(0.22572942, 3.349781e-05, 0.08107867, 0.9708103)
-bones/18/position = Vector3(0.047504444, 4.7846723, 1.2576548e-05)
-bones/19/position = Vector3(-5.499951, 9.739754, -0.26550043)
-bones/19/rotation = Quaternion(0.444212, -0.49007192, 0.6185408, 0.4241608)
-bones/20/position = Vector3(-7.145741e-08, 11.602621, -2.4436471e-05)
-bones/20/rotation = Quaternion(0.030544097, 0.4589689, -0.7339318, 0.4997587)
-bones/21/position = Vector3(6.796001e-06, 20.196896, 2.0244348e-05)
-bones/21/rotation = Quaternion(0.07613725, -0.00028626248, -0.47658652, 0.87582445)
-bones/22/position = Vector3(3.5046087e-06, 20.29693, -9.512405e-07)
-bones/22/rotation = Quaternion(-0.23296614, 0.7602389, 0.3461668, 0.49792796)
-bones/23/position = Vector3(1.987201, 4.038432, 4.2915362e-06)
-bones/23/rotation = Quaternion(0.2348266, -0.1568751, -0.019292397, 0.9591009)
-bones/24/position = Vector3(1.1187675, 3.4225063, 9.997904e-06)
-bones/24/rotation = Quaternion(-0.09011768, 0.24799421, 0.15996073, 0.9512047)
-bones/25/position = Vector3(-0.17247558, 3.983069, -6.1326864e-06)
-bones/25/rotation = Quaternion(-0.4481611, 0.08651127, 0.09107561, 0.88508344)
-bones/26/position = Vector3(-0.9463234, 3.6651084, -1.1205731e-05)
-bones/27/position = Vector3(1.0590385e-05, 11.202846, -0.2939172)
-bones/27/rotation = Quaternion(-0.6340645, 0.48411366, -0.111106664, -0.59266484)
-bones/28/position = Vector3(0.36055928, 9.710004, -7.24677e-06)
-bones/28/rotation = Quaternion(0.584578, 0.017888919, -0.2520214, 0.7709953)
-bones/29/position = Vector3(-0.15170097, 7.5851803, 1.5483332e-05)
-bones/29/rotation = Quaternion(0.42436358, 0.0049717766, -0.16571365, 0.89018536)
-bones/30/position = Vector3(-0.20882973, 5.2312307, 7.4505806e-06)
-bones/31/position = Vector3(6.7953105, -4.1707897, 1.3004198)
-bones/31/rotation = Quaternion(0.020258747, 0.7033452, 0.70257205, -0.10624332)
-bones/32/position = Vector3(4.0559426e-06, 43.90521, 1.949293e-05)
-bones/32/rotation = Quaternion(-0.1697547, -0.080614194, 0.0037446548, 0.9821765)
-bones/33/position = Vector3(6.131568e-07, 42.124516, 1.5909478e-05)
-bones/33/rotation = Quaternion(0.40369114, -0.059250586, -0.018883625, 0.91277945)
-bones/34/position = Vector3(1.2861892e-06, 18.230389, -2.1325315e-05)
-bones/34/rotation = Quaternion(0.22153437, -0.0027014778, 0.0015138027, 0.9751477)
-bones/35/position = Vector3(-1.7093262e-06, 6.7910247, -1.3237819e-05)
-bones/36/position = Vector3(-6.7953105, -4.1707854, 1.3649287)
-bones/36/rotation = Quaternion(0.0007173387, 0.83588535, 0.54792804, 0.03271414)
-bones/37/position = Vector3(2.843777e-06, 43.91975, -9.526684e-06)
-bones/37/rotation = Quaternion(-0.83714527, 0.011486689, -0.017204963, 0.54658926)
-bones/38/position = Vector3(1.1530774e-06, 42.088493, 7.233263e-06)
-bones/38/rotation = Quaternion(0.5980004, -0.015950127, 0.105411686, 0.79437375)
-bones/39/position = Vector3(-1.2098217e-06, 18.139791, -2.933939e-07)
-bones/39/rotation = Quaternion(0.27621475, 0.0056883898, -0.0005092897, 0.961079)
-bones/40/position = Vector3(3.775349e-06, 6.8207283, 6.1653554e-06)
-
-[node name="CoolSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="25" unique_id=1646884704]
-layers = 32
-mesh = SubResource("ArrayMesh_i6g8v")
 
 [node name="CoolSkyScraper3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/titlescreenv3" unique_id=789112499]
 transform = Transform3D(1.8224046, 0, -0.6121741, 0, 2.2000637, 0, 0.6121741, 0, 1.8224046, 38.116585, -3.0626292, -28.429247)
@@ -2255,6 +2265,87 @@ current = true
 fov = 32.9
 near = 0.1
 far = 220.79
+
+[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=120910041]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1822087315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.756692, 5.3599715, -17.893032)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966304
+omni_range = 29.613
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=744210668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.159691, 8.578009, -16.857065)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966276
+omni_range = 20.149
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=870718834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.628505, 10.878814, -27.330471)
+light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966304
+omni_range = 14.807
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1736495732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.597905, 4.4361577, -26.207651)
+layers = 257
+light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966528
+omni_range = 18.656
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=570262334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.393548, -2.0064983, -50.183388)
+light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966273
+omni_range = 18.656
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1925200534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.597905, 4.4361577, -26.207651)
+layers = 257
+light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966528
+omni_range = 18.656
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1542671838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.393548, -2.0064983, -50.183388)
+light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 100.0
+light_cull_mask = 4294966273
+omni_range = 18.656
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1415643233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0472046, 5.3162384, 6.6411734)
+layers = 512
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_cull_mask = 4294966784
+omni_range = 14.697
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1207388149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5004404, 2.010347, -9.805834)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 10.0
+light_cull_mask = 4294966527
+omni_range = 7.573
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1881663630]
 
@@ -2355,91 +2446,26 @@ focus_neighbor_bottom = NodePath("../Play")
 focus_mode = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1153286788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7925171, 5.5188417, -1.198046)
-light_energy = 4.299
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2878778, 3.0591664, -1.3520565)
+light_energy = 1.581
 light_volumetric_fog_energy = 0.0
-light_size = 100.0
+light_size = 99.51
 light_cull_mask = 4294966527
+shadow_enabled = true
 omni_range = 20.149
 
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D" unique_id=1822087315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4688144, 2.300805, -16.540976)
-light_energy = 3.86
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966304
-omni_range = 29.613
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=193219381]
+layer = 2
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D" unique_id=744210668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8718133, 5.5188417, -15.505009)
-light_energy = 0.743
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966276
-omni_range = 20.149
-
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D/OmniLight3D2" unique_id=870718834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.468814, 2.300805, -10.473406)
-light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
-light_energy = 0.6
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966304
-omni_range = 14.807
-
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D/OmniLight3D2/OmniLight3D" unique_id=1736495732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.22641, -6.442656, 1.1228199)
-layers = 257
-light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
-light_energy = 12.235
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966528
-omni_range = 18.656
-
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D/OmniLight3D2/OmniLight3D/OmniLight3D" unique_id=1542671838]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2043571, -6.442656, -23.975737)
-light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
-light_energy = 12.235
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966273
-omni_range = 18.656
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="OmniLight3D/OmniLight3D2/OmniLight3D" unique_id=1925200534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.22641, -6.442656, 1.1228199)
-layers = 257
-light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
-light_energy = 12.235
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966528
-omni_range = 18.656
-
-[node name="OmniLight3D" type="OmniLight3D" parent="OmniLight3D/OmniLight3D2/OmniLight3D/OmniLight3D2" unique_id=570262334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2043571, -6.442656, -23.975737)
-light_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
-light_energy = 12.235
-light_volumetric_fog_energy = 0.0
-light_size = 100.0
-light_cull_mask = 4294966273
-omni_range = 18.656
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="OmniLight3D" unique_id=1207388149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7883182, -1.0488195, -8.453777)
-light_energy = 0.595
-light_volumetric_fog_energy = 0.0
-light_size = 10.0
-light_cull_mask = 4294966527
-omni_range = 7.573
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1415643233]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0472046, 5.3162384, 6.6411734)
-layers = 512
-light_energy = 5.185
-light_volumetric_fog_energy = 0.0
-light_cull_mask = 4294966784
-omni_range = 14.697
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1213550878]
+material = SubResource("ShaderMaterial_ilpl1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="focus_entered" from="CanvasLayer/Settings" to="." method="_on_settings_focus_entered"]
 [connection signal="mouse_entered" from="CanvasLayer/Settings" to="." method="_on_settings_focus_entered"]
