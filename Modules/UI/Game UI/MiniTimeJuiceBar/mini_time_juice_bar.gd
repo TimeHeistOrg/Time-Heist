@@ -12,7 +12,7 @@ func _ready() -> void:
 		mini_bar.hide()
 
 func _process(_delta: float) -> void:
-	mini_bar.value = globals.time_manager.time_juice
+	mini_bar.value = globals.time_manager.time_juice if globals.time_manager else 100.0
 	
 func open_bar():
 	if not bar_visible:
