@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b8umb5d42v56y"]
 
 [ext_resource type="Script" uid="uid://di5tt110m4f64" path="res://Modules/UI/Game UI/HUD/hud.gd" id="1_6qein"]
+[ext_resource type="Texture2D" uid="uid://uy5xoboh5ltp" path="res://Assets/UI/HUD/newtimeline.png" id="3_8xiwf"]
 [ext_resource type="Texture2D" uid="uid://rlak5fjasfud" path="res://Assets/UI/HUD/timemachineDBleft.png" id="3_maspv"]
 [ext_resource type="Texture2D" uid="uid://b80dfq17wtnqa" path="res://Assets/UI/HUD/timemachineDBright.png" id="4_3n30j"]
 [ext_resource type="Texture2D" uid="uid://bkt5l60d7puc0" path="res://Assets/UI/HUD/notification.png" id="6_maspv"]
 [ext_resource type="FontFile" uid="uid://cgkrybl1pl3jp" path="res://Assets/UI/Font/digital-7/digital-7.ttf" id="7_5ex3c"]
-[ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="7_lfvhm"]
 [ext_resource type="Texture2D" uid="uid://bbradfuplryhd" path="res://Assets/UI/HUD/Minimap/timepin.png" id="12_0r5qi"]
 [ext_resource type="PackedScene" uid="uid://ds171imx2qg0u" path="res://Modules/UI/Game UI/MiniTimeJuiceBar/mini_time_juice_bar.tscn" id="13_2b275"]
 
@@ -116,13 +116,15 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -149.0
-offset_right = 296.0
+offset_left = 915.0
+offset_top = -58.0
+offset_right = 1038.0
+offset_bottom = -14.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_5ex3c")
-theme_override_font_sizes/font_size = 133
+theme_override_font_sizes/font_size = 60
 text = "00:00"
 horizontal_alignment = 2
 
@@ -132,13 +134,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 312.0
-offset_top = -108.0
-offset_right = 397.0
-offset_bottom = -20.0
+offset_left = 1044.0
+offset_top = -39.0
+offset_right = 1077.0
+offset_bottom = -13.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_5ex3c")
-theme_override_font_sizes/font_size = 76
+theme_override_font_sizes/font_size = 35
 text = "00"
 
 [node name="BobPlayer" type="AnimationPlayer" parent="." unique_id=60608052]
@@ -154,46 +156,59 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 414.0
-offset_top = -125.91766
-offset_bottom = -8.917725
+offset_top = -139.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_lfvhm")
+texture = ExtResource("3_8xiwf")
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="ProgressBar" unique_id=1807233286]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 1163.0
+offset_bottom = 60.917664
+color = Color(0.7882353, 0.91764706, 0.9607843, 1)
 
 [node name="TimelineStart" type="Control" parent="." unique_id=1253217676]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = 497.0
-offset_top = 951.08234
-offset_right = 497.0
-offset_bottom = 951.08234
+offset_left = 419.0
+offset_top = 995.0
+offset_right = 419.0
+offset_bottom = 995.0
 
 [node name="TimelineEnd" type="Control" parent="." unique_id=1240343040]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = 1918.0
-offset_top = 951.08234
-offset_right = 1918.0
-offset_bottom = 951.08234
+offset_left = 1574.0
+offset_top = 994.0
+offset_right = 1574.0
+offset_bottom = 994.0
 
 [node name="TimelinePin" type="TextureRect" parent="." unique_id=607145392]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 444.0
-offset_top = 901.0
-offset_right = 550.0
-offset_bottom = 1007.0
-pivot_offset = Vector2(53, 70)
+offset_left = 382.0
+offset_top = 921.0
+offset_right = 457.0
+offset_bottom = 996.0
+pivot_offset = Vector2(37.5, 75)
 texture = ExtResource("12_0r5qi")
+expand_mode = 1
 
 [node name="Mini Time Juice Bar" parent="." unique_id=608980422 instance=ExtResource("13_2b275")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = -122.0
-offset_top = 108.0
-offset_right = -122.0
-offset_bottom = 108.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 63.0
+offset_right = -121.0
+offset_bottom = 63.0
 start_visible = false
 
 [node name="Device Icon" type="Control" parent="." unique_id=1023797018]

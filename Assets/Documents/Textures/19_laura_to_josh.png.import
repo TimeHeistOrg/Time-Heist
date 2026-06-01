@@ -2,22 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://burdl6iie5b6f"
-path.s3tc="res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.s3tc.ctex"
-path.etc2="res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.etc2.ctex"
+uid="uid://bnbcooeil0ruq"
+path="res://.godot/imported/19_laura_to_josh.png-e24abfbc90838ed60fb1996e06592dba.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/Textures/silver_key_2.png"
-dest_files=["res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.s3tc.ctex", "res://.godot/imported/silver_key_2.png-44f848404a0d0297e04a53e0461e0dc0.etc2.ctex"]
+source_file="res://Assets/Documents/Textures/19_laura_to_josh.png"
+dest_files=["res://.godot/imported/19_laura_to_josh.png-e24abfbc90838ed60fb1996e06592dba.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -25,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -39,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

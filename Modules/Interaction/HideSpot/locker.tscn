@@ -15,8 +15,8 @@ size = Vector3(0.5751953, 2, 0.60253906)
 [node name="Locker" parent="." unique_id=1632036133 instance=ExtResource("1_r1lcu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.29, 0, 0)
 
-[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("mesh") instance=ExtResource("1_gu15c")]
-mesh = NodePath("../Locker/Cube")
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("1_gu15c")]
+meshes = [NodePath("../Locker/Cube"), NodePath("../Locker/Cube_001")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=113367129]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28607178, 1, 0)

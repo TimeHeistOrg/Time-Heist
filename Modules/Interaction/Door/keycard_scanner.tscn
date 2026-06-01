@@ -27,9 +27,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1094255, 0.012562171)
 mesh = SubResource("BoxMesh_xq026")
 skeleton = NodePath("../..")
 
-[node name="Interactable" type="Area3D" parent="." unique_id=34123462]
+[node name="Interactable" type="Area3D" parent="." unique_id=34123462 node_paths=PackedStringArray("meshes")]
 collision_layer = 2
 script = ExtResource("1_kw5qb")
+meshes = [NodePath("../Card_reader/KeyCardReader")]
 metadata/_custom_type_script = "uid://d0afbfeblscar"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1978443951]
@@ -37,3 +38,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1969223, 0)
 shape = SubResource("BoxShape3D_xq026")
 
 [connection signal="anon_interacted" from="Interactable" to="." method="interact"]
+
+[editable path="Card_reader"]

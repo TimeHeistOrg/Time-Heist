@@ -36,6 +36,16 @@ func change_scene(s: Scene) -> void:
 	# instantiate designated scene and save ref
 	call_deferred("_load_scene",scene_paths[s])
 
+func change_scene_with_transition(s: Scene) -> void:
+	# clear current scene if there
+	await transition_animator.fade_in()
+	if current_scene:
+		current_scene.queue_free()
+		current_scene = null
+	# instantiate designated scene and save ref
+	call_deferred("_load_scene",scene_paths[s])
+	await transition_animator.fade_out()
+
 func change_scene_to_path(path: String):
 	# clear current scene if there
 	if current_scene:
@@ -63,6 +73,10 @@ func reload_current_scene_transition():
 	await transition_animator.fade_in()
 	change_scene_to_path(current_scene.scene_file_path)
 	await transition_animator.fade_out()
+
+func quit_game():
+	await transition_animator.fade_in()
+	get_tree().quit()
 
 func _ready() -> void:
 	current_scene = get_tree().current_scene

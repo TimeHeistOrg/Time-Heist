@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://c7atpkdvr2gl0"]
 
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="1_dj2xq"]
-[ext_resource type="Texture2D" uid="uid://cvpbqw8yprtuj" path="res://Assets/Items/Textures/silver_key_1.png" id="1_n70d4"]
+[ext_resource type="Texture2D" uid="uid://cvpbqw8yprtuj" path="res://Assets/Items/Textures/silver_key_1_old.png" id="1_n70d4"]
 [ext_resource type="ArrayMesh" uid="uid://bvlbaq33kvbs" path="res://Assets/Items/Meshes/archive_key.res" id="2_cnxeq"]
 
 [resource]

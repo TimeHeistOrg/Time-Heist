@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://bv4qh8to2wluy"]
+
+[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_y3kiq"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="2_85yea"]
+[ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="2_ej125"]
+[ext_resource type="Resource" uid="uid://ds08skryxc4s8" path="res://Assets/TextConvos/Resources/Z3/manny_to_maria.tres" id="3_0qast"]
+[ext_resource type="Script" uid="uid://4064plqmijmo" path="res://Modules/Interaction/Computer/Resources/text_app_config.gd" id="4_mvu07"]
+
+[sub_resource type="Resource" id="Resource_f1j35"]
+script = ExtResource("4_mvu07")
+convos = Array[ExtResource("2_85yea")]([ExtResource("3_0qast")])
+which_person = Array[int]([1])
+metadata/_custom_type_script = "uid://4064plqmijmo"
+
+[resource]
+script = ExtResource("2_ej125")
+apps = Array[ExtResource("1_y3kiq")]([SubResource("Resource_f1j35")])
+metadata/_custom_type_script = "uid://drdqf0ywp8oy7"
