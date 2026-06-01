@@ -72,6 +72,8 @@ func _ready():
 	if not Engine.is_editor_hint():
 		#print("player_controller ready")
 		globals.player = self
+		if globals.input_manager:
+			globals.input_manager.change_input_controller(InputManager.InputControllers.GAMEPLAY)
 		$"Inventory Wheel Holder".player = self
 		animation_tree["parameters/RollTimeScale/scale"] = 0.9/roll_duration
 		run_enter()

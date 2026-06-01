@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dyadt7gnohtdq"
-path="res://.godot/imported/DoorWithFrame.glb-ce4e5e41d5aaeced0399b469fe3fd6bc.scn"
+uid="uid://cgotvjl1pn2ri"
+path="res://.godot/imported/Wall.glb-c81b5fbb5d6070e195fb0e8112436497.scn"
 
 [deps]
 
-source_file="res://Modules/Interaction/Door/DoorWithFrame.glb"
-dest_files=["res://.godot/imported/DoorWithFrame.glb-ce4e5e41d5aaeced0399b469fe3fd6bc.scn"]
+source_file="res://Assets/Models/Imported Assets/Walls/Wall.glb"
+dest_files=["res://.godot/imported/Wall.glb-c81b5fbb5d6070e195fb0e8112436497.scn"]
 
 [params]
 
@@ -37,6 +37,18 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"Wall_Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Meshes/Walls/Wall.res",
+"save_to_file/path": "uid://cm2ucyu2yoy4t"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
