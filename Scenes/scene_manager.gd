@@ -41,6 +41,7 @@ func change_scene_to_path_with_transition(path:String):
 
 func change_scene_to_path(path: String):
 	# clear current scene if there
+	global_inventory.reset_items()
 	if current_scene:
 		scene_holder.call_deferred("remove_child",current_scene)
 		current_scene.queue_free()
