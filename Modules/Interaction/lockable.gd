@@ -10,6 +10,7 @@ var display_time_elapsed: float = 0
 @export var needed_clearance: Array[globals.Clearances]
 @export var needed_doc: Array[DocumentInfo]
 @export var needed_lever: Array[Lever]
+@export var needed_plants: Array[RedPlant]
 @export var lever_check_unflipped : bool = false
 @export var locked_label : String = "Locked!"
 
@@ -73,6 +74,10 @@ func check_interact():
 					success= false
 			else:
 				if not lever.flipped:
+					success= false
+	if needed_plants:
+		for plant in needed_plants:
+			if not plant.cut:
 					success= false
 	return success
 
