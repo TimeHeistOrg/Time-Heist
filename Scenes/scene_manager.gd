@@ -29,34 +29,28 @@ const ROOT_SCENE_NAME := "TimeHeist"
 
 
 func change_scene(s: Scene) -> void:
-	# clear current scene if there
-	if current_scene:
-		current_scene.queue_free()
-		current_scene = null
-	# instantiate designated scene and save ref
-	call_deferred("_load_scene",scene_paths[s])
+	change_scene_to_path(scene_paths[s])
 
 func change_scene_with_transition(s: Scene) -> void:
-	# clear current scene if there
+	change_scene_to_path_with_transition(scene_paths[s])
+
+func change_scene_to_path_with_transition(path:String):
 	await transition_animator.fade_in()
-	if current_scene:
-		current_scene.queue_free()
-		current_scene = null
-	# instantiate designated scene and save ref
-	call_deferred("_load_scene",scene_paths[s])
+	change_scene_to_path(path)
 	await transition_animator.fade_out()
 
 func change_scene_to_path(path: String):
 	# clear current scene if there
 	if current_scene:
+		scene_holder.remove_child(current_scene)
 		current_scene.queue_free()
 		current_scene = null
 	call_deferred("_load_scene",path)
-	get_tree().paused = false
 
 func _load_scene(path: String):
 	current_scene = load(path).instantiate()
 	scene_holder.add_child(current_scene)
+	get_tree().paused = false
 
 func reload_current_scene():
 	get_tree().paused = true
