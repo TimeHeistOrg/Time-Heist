@@ -1,12 +1,14 @@
 extends Node
 
+@export var player: Player
+@export var exclusion_list: Array[Node]
 @export_category("Includes")
 @export var input_manager: bool
 @export var ui_manager: bool
 @export var time_manager: bool
-@export var player: Player
-@export var exclusion_list: Array[Node]
+@export var add_effects: bool = true
 
+@onready var scene_subviewport_container = $SubViewportContainer
 @onready var scene_subviewport = $SubViewportContainer/SubViewport
 @onready var screen_camera = $ScreenSubViewport/Camera3D
 
@@ -30,8 +32,14 @@ func _ready():
 			var tm: TimeManager = time_manager_scene.new()
 			add_child(tm)
 			#print("path ", tm.get_path())
-		
-		move_scene_into_subviewport()
+		if add_effects:
+			move_scene_into_subviewport()
+		else:
+			scene_subviewport_container.visible = false
+			for sibling: Node in get_parent().get_children():
+				if sibling is Player and not player:
+					player = sibling
+			
 
 func move_scene_into_subviewport():
 	for sibling: Node in get_parent().get_children():

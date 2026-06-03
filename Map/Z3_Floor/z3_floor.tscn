@@ -4206,10 +4206,10 @@ metadata/_custom_type_script = "uid://bqksnw54upvlw"
 [node name="Z3Floor" type="Node3D" unique_id=2133668272]
 
 [node name="SceneConfig" parent="." unique_id=705177490 node_paths=PackedStringArray("exclusion_list") instance=ExtResource("1_jno8s")]
+exclusion_list = [NodePath("../CanvasLayer"), NodePath("../Clouds")]
 input_manager = true
 ui_manager = true
 time_manager = true
-exclusion_list = [NodePath("../CanvasLayer"), NodePath("../Clouds")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1101404155]
 stream = ExtResource("96_6q1tb")
