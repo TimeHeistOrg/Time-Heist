@@ -31,7 +31,7 @@ func _on_hitbox_body_entered(body):
 		catch_player()
 
 func catch_player():
-	globals.player_caught()
+	globals.player_caught(self)
 
 func disable_catch():
 	catch_enabled = false

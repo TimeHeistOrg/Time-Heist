@@ -19,7 +19,8 @@ func setup(config: TextAppConfig) -> void:
 
 func _ready() -> void:
 	time_manager = globals.time_manager
-	default_focus = people.get_child(0)
+	if people.get_child_count() > 0:
+		default_focus = people.get_child(0)
 	create_convo_buttons()
 
 func set_convo(convo : TextConvo):
@@ -40,7 +41,7 @@ func update_panel(convo : TextConvo):
 		var speaker_id := int(line[comma_index + 1])
 		var message := line.substr(comma_index + 2).strip_edges()
 		var index = convos.find(convo)
-		if time <= time_manager.cur_time:
+		if not globals.time_manager or time <= time_manager.cur_time:
 			var bubble = left_bubble if speaker_id != which_person[index] else right_bubble
 			var bubble_instance = bubble.instantiate()
 			chatlog.add_child(bubble_instance)

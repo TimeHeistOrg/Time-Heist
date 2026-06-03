@@ -1,11 +1,11 @@
 extends Node3D
 class_name Tutorial
 
-@onready var start_spot: Marker3D = $"SubViewportContainer/SubViewport/Tutorial/Room 1/StartSpot"
-@onready var room_2_area_3d: Area3D = $"SubViewportContainer/SubViewport/Tutorial/Room 2/Room2Area3D"
-@onready var room_2_save_spot: Marker3D = $"SubViewportContainer/SubViewport/Tutorial/Room 2/Room2Area3D/Room2SaveSpot"
-@onready var room_6_area_3d: Area3D = $"SubViewportContainer/SubViewport/Tutorial/Room 6/Room6Area3D"
-@onready var room_6_save_spot: Marker3D = $"SubViewportContainer/SubViewport/Tutorial/Room 6/Room6Area3D/Room6SaveSpot"
+@export var start_spot: Marker3D
+@export var room_2_area_3d: Area3D
+@export var room_2_save_spot: Marker3D
+@export var room_6_area_3d: Area3D
+@export var room_6_save_spot: Marker3D
 
 var save_spots
 

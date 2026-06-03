@@ -23,6 +23,8 @@ var player_camera : Camera3D
 
 var camera : Node3D
 
+var caught_by: Node
+
 #region Tutorial
 var in_tutorial : bool = false
 var tutorial_start_point : int = 0
@@ -81,7 +83,8 @@ var red_color : Color = Color("d73438")
 func _ready():
 	pass
 
-func player_caught():
+func player_caught(_catcher: Node):
+	caught_by = _catcher
 	#print("caught!")
 	if ui_manager:
 		ui_manager.caught_ui.open()

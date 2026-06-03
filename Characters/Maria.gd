@@ -8,7 +8,7 @@ var dial_start_loc := "start"
 var dialogue_balloon
 
 func _ready():
-	animation_player.play("Intern/idle")
+	animation_player.play("intern/idle")
 
 func interact():
 	print("interacted")

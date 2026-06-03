@@ -58,6 +58,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="Screen" type="MeshInstance3D" parent="." unique_id=1400247346]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.008925617, 0.29647523, -0.078984305)
+visible = false
+layers = 2
 mesh = SubResource("QuadMesh_j65km")
 
 [node name="Area3D" type="Area3D" parent="Screen" unique_id=1770695385]

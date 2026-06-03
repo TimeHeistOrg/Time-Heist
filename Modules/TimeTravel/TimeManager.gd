@@ -55,7 +55,7 @@ func _physics_process(delta):
 		cur_time += delta_time
 	
 	if cur_time > 5 * 60:
-		globals.player_caught()
+		globals.player_caught(self)
 		globals.ui_manager.caught_ui.label.text = "Out of time!"
 
 func start_time():
