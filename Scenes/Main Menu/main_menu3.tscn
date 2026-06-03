@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bhq8qc76s7c86" path="res://Assets/UI/Main Menu/playhover.png" id="4_i6mko"]
 [ext_resource type="Texture2D" uid="uid://bfc7iirrlrj5r" path="res://Assets/UI/Main Menu/creditshover.png" id="5_i6g8v"]
 [ext_resource type="Texture2D" uid="uid://rop0vuvsqp3w" path="res://Assets/UI/Main Menu/creditsdefault.png" id="6_ilpl1"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="7_mohnt"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="7_mohnt"]
 [ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="10_ifg3e"]
 [ext_resource type="Shader" uid="uid://ddnclfmn4abmy" path="res://Effects/main_menu_vignette.gdshader" id="12_i6g8v"]
 

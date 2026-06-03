@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dsg2oiempe3xa" path="res://Assets/UI/Main Menu/playdefault.png" id="5_p5wrb"]
 [ext_resource type="Texture2D" uid="uid://bhq8qc76s7c86" path="res://Assets/UI/Main Menu/playhover.png" id="6_57crx"]
 [ext_resource type="Texture2D" uid="uid://rop0vuvsqp3w" path="res://Assets/UI/Main Menu/creditsdefault.png" id="7_iiq3b"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="8_287i0"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="8_287i0"]
 
 [node name="MainMenu" type="Control" unique_id=194556561]
 layout_mode = 3
