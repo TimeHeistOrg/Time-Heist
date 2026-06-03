@@ -15,6 +15,8 @@ var is_ready : bool = true : #TIMEVAR
 			retrigger_timer = retrigger
 		is_ready = value
 
+@export var disabled: bool = false
+
 signal keycard_scanned
 
 
@@ -29,6 +31,8 @@ func _ready() -> void:
 	indicator.mesh.material.albedo_color = default_color
 
 func interact():
+	if disabled: 
+		return
 	if not is_ready:
 		return
 	if globals.player_unlock_everything:
@@ -61,3 +65,15 @@ func show_feedback(color: Color) -> void:
 
 func _on_feedback_end() -> void:
 	indicator.mesh.material.albedo_color = default_color
+
+func disable():
+	disabled = true
+
+func enable():
+	disabled = false
+
+func set_disabled(value:bool):
+	disabled = value
+
+func toggle_disabled():
+	disabled = not disabled

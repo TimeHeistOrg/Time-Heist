@@ -1721,4 +1721,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 8.125)
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 4/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 4/SwingingDoor" method="unlock_and_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Door scanner" to="SubViewportContainer/SubViewport/Tutorial/Room 6/SwingingDoor2" method="unlock_and_open"]
 [connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 6/NPC" method="start_path_at_current_time"]
+[connection signal="keycard_scanned" from="SubViewportContainer/SubViewport/Tutorial/Room 6/Keycard Scanner2" to="SubViewportContainer/SubViewport/Tutorial/Room 6/Keycard Scanner2" method="disable"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/Tutorial/Room 8/Area3D" to="." method="_on_area_3d_body_entered"]
