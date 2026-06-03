@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://begdut20cbu15"]
 
 [ext_resource type="Script" uid="uid://tdcuwudsecor" path="res://Modules/UI/Game UI/Device/settings.gd" id="1_pnwlj"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="2_7ttha"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="2_7ttha"]
 
 [sub_resource type="Animation" id="Animation_7ttha"]
 length = 0.001

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cbso7c2lv8lx6" path="res://Assets/UI/Device Menu/Database/foldericon.png" id="1_a8xl4"]
 [ext_resource type="Script" uid="uid://ccr2u5kohoir8" path="res://Modules/UI/Game UI/Device/Device Files/folder_button.gd" id="2_6a6lp"]
 [ext_resource type="Texture2D" uid="uid://cn7cemv0cna7b" path="res://Assets/UI/Device Menu/Database/foldericonopen.png" id="2_qxfag"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="3_434hm"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="3_434hm"]
 [ext_resource type="Script" uid="uid://cqynlfu31hxav" path="res://Modules/UI/Game UI/autosize_label.gd" id="4_qxfag"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_qxfag"]

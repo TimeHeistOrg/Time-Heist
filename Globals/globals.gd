@@ -83,6 +83,14 @@ var red_color : Color = Color("d73438")
 func _ready():
 	pass
 
+func _process(_delta):
+	if not ui_manager:
+		if Input.is_action_just_pressed("escape"):
+			if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			else:
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 func player_caught(_catcher: Node):
 	caught_by = _catcher
 	#print("caught!")
