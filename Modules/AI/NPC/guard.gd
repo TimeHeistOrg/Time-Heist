@@ -171,4 +171,4 @@ func _on_npc_hitbox_body_entered(body: Node3D) -> void:
 		enter_caught()
 		
 func catch_player():
-	globals.player_caught()
+	globals.player_caught(self)

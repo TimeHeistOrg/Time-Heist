@@ -947,7 +947,7 @@ parameters/TimeScale/scale = 1.0
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 5.798, 1.928)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot/CameraMarker" unique_id=214841099]
-cull_mask = 1048031
+cull_mask = 1048029
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera Pivot/CameraMarker/Camera3D" unique_id=1937731431]
 
@@ -967,6 +967,9 @@ modulate = Color(1, 0.684147, 0.7443726, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+
+[node name="ComputerCamera" type="Camera3D" parent="Camera Pivot/CameraMarker/Camera3D" unique_id=117230800]
+cull_mask = 2
 
 [node name="DetectionPoint" type="Marker3D" parent="." unique_id=500860138]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.5, 0)

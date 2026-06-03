@@ -46,7 +46,7 @@ var time_detecting: float = 0
 		create_mesh()
 
 @export var catch_active = true
-signal caught
+signal caught(catcher:Node)
 
 var polygon_points : PackedVector2Array = []
 
@@ -151,7 +151,7 @@ func _process(_delta: float) -> void:
 		
 		globals.safe_ratio = min(globals.safe_ratio, (time_till_caught - time_detecting) / time_till_caught)
 		if catch_active and time_detecting >= time_till_caught:
-			caught.emit()
+			caught.emit(self)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body == globals.player:
