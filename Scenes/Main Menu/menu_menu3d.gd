@@ -14,6 +14,7 @@ var play_clicked:bool = false
 
 func _ready() -> void:
 	$CanvasLayer/OriginalFocus.grab_focus()
+	global_inventory.reset_documents_and_clearance()
 	pass
 
 func _on_play_pressed() -> void:
