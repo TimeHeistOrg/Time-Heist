@@ -1,33 +1,8 @@
 [gd_scene format=3 uid="uid://3lkcmqqpfawu"]
 
 [ext_resource type="Script" uid="uid://cssqu6xj2pwer" path="res://Scenes/scene_config.gd" id="1_vmr1u"]
+[ext_resource type="Environment" uid="uid://cv1gfj05sh260" path="res://Effects/test_enviroment.tres" id="2_giapk"]
 [ext_resource type="Material" uid="uid://kvqyxm07kwge" path="res://Effects/screen_post_fx.tres" id="2_r0j84"]
-
-[sub_resource type="Gradient" id="Gradient_giapk"]
-offsets = PackedFloat32Array(0, 0.1539924, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0.08235294, 0.24705882, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_d6ckj"]
-gradient = SubResource("Gradient_giapk")
-
-[sub_resource type="Environment" id="Environment_r4ph4"]
-background_color = Color(0.09385053, 0.11577933, 0.14867228, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.2632, 0.41160002, 0.56, 1)
-ambient_light_energy = 0.0
-tonemap_mode = 2
-ssao_enabled = true
-ssao_intensity = 1.0
-glow_enabled = true
-glow_intensity = 1.0
-glow_bloom = 0.5
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
-volumetric_fog_length = 16.0
-adjustment_enabled = true
-adjustment_contrast = 1.1
-adjustment_saturation = 1.1
-adjustment_color_correction = SubResource("GradientTexture1D_d6ckj")
 
 [sub_resource type="Environment" id="Environment_uour1"]
 
@@ -38,7 +13,7 @@ viewport_path = NodePath("ScreenSubViewport")
 script = ExtResource("1_vmr1u")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1130112284]
-environment = SubResource("Environment_r4ph4")
+environment = ExtResource("2_giapk")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=158251935]
 texture_filter = 1

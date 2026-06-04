@@ -846,7 +846,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.25, -2.4953508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
 text = "Press SHIFT to roll
-Press CTRL to toggle crouch"
+Press CTRL or C to toggle crouch"
 font_size = 60
 
 [node name="Crouch behind" type="Label3D" parent="Tutorial/Room 2/Labels" unique_id=1433120194]
@@ -861,7 +861,7 @@ font_size = 50
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2.25, -10.245351)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
-text = "Guards will turn red and stop moving when suspicious.
+text = "Guards will glow and stop moving when suspicious.
 Stay out of their line of sight for them to return to normal"
 font_size = 50
 

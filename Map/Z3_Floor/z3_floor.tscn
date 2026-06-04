@@ -8336,7 +8336,7 @@ metadata/asset_placer_res_id = "uid://b1sw083h5lqhn"
 
 [node name="Interactables" type="Node3D" parent="Lab" unique_id=1821456553]
 
-[node name="EntranceDoor" parent="Lab/Interactables" unique_id=1286014884 instance=ExtResource("80_50kx0")]
+[node name="LabEntranceDoor" parent="Lab/Interactables" unique_id=1286014884 instance=ExtResource("80_50kx0")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 31.625, 0, -23.125)
 is_locked = true
 
@@ -8542,6 +8542,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.255165, 0, 24.092789)
 [connection signal="disabled" from="Lab/Interactables/TRRoom/LeftDoor" to="Lab/Interactables/TRRoom/LeftDoor/Bars" method="set_open_opposite"]
 [connection signal="keycard_scanned" from="Lab/Interactables/TRRoom/Keycard Scanner" to="Lab/Interactables/TRRoom/LeftDoor" method="open"]
 [connection signal="keycard_scanned" from="Lab/Interactables/TRRoom/Keycard Scanner" to="Lab/Interactables/TRRoom/LeftDoor" method="enable"]
+[connection signal="keycard_scanned" from="Lab/Interactables/LabMainScanner" to="Lab/Interactables/LabEntranceDoor" method="unlock_and_open"]
+[connection signal="keycard_scanned" from="Lab/Interactables/LabMainScannerInside" to="Lab/Interactables/LabEntranceDoor" method="open"]
 [connection signal="keycard_scanned" from="Lab/Interactables/Keycard Scanner" to="Lab/Interactables/LabBackdoor" method="unlock_and_open"]
 [connection signal="keycard_scanned" from="Lab/Interactables/Keycard Scanner2" to="Lab/Interactables/LabBackdoor" method="open"]
 
