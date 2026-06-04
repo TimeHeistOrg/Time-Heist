@@ -47,7 +47,10 @@ func open()
 func close()
 
 func toggle_open():
-	is_open = not is_open
+	if is_open:
+		close()
+	else:
+		open()
 
 func set_open(value: bool):
 	@warning_ignore("standalone_ternary")

@@ -7725,7 +7725,7 @@ is_locked = true
 
 [node name="Button" parent="LabSmall/Interactables" unique_id=1599041005 instance=ExtResource("17_t1hpg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.375, 1, -4.25)
-retrigger = 2.5
+retrigger = 2.0
 
 [node name="Keycard Scanner2" parent="LabSmall/Interactables" unique_id=156751380 instance=ExtResource("17_t1hpg")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, -2.75)
