@@ -604,7 +604,7 @@ visible = false
 shape = SubResource("WorldBoundaryShape3D_hfwyr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=683846590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028934479, -0.0012888908, -0.09393215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34606552, 0.24871111, -0.59393215)
 mesh = SubResource("PlaneMesh_xauru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ciaa5")
 
@@ -759,7 +759,7 @@ outline_size = 6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.25, 2.5, -1.1203508)
 billboard = 1
 modulate = Color(0.9547822, 0.43848288, 0.40723324, 1)
-text = "Hello! Lets go through that door"
+text = "Hello! Let's go through that door"
 font_size = 60
 
 [node name="E to interact" type="Label3D" parent="Tutorial/Room 1/Labels" unique_id=1865087543]
@@ -850,11 +850,11 @@ Press CTRL or C to toggle crouch"
 font_size = 60
 
 [node name="Crouch behind" type="Label3D" parent="Tutorial/Room 2/Labels" unique_id=1433120194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.5, -2.4953508)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.625, -2.4953508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "Now be careful with this guard
-Try crouching behind these boxes to pass"
+Try crouching behind this desk to pass"
 font_size = 50
 
 [node name="Guards" type="Label3D" parent="Tutorial/Room 2/Labels" unique_id=10706750]
@@ -1597,7 +1597,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.125, 2.125, -1.9953508)
 billboard = 1
 modulate = Color(0.98039216, 0.627451, 0.59607846, 1)
 text = "If you are in here and there is no item,
-try rewinding to when they was"
+try rewinding to when there was"
 font_size = 40
 outline_size = 10
 
