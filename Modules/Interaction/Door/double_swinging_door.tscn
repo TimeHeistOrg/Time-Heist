@@ -48,6 +48,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ukplf")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1el1"]
+size = Vector3(0.04, 2, 0.25)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvv4c"]
 resource_name = "DoorMaterial"
 cull_mode = 2
@@ -202,7 +205,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_h4yj4")
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_obxfw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7va2j"]
 _data = {
 &"Closed": ExtResource("8_2r4nq"),
 &"Closing": ExtResource("6_7va2j"),
@@ -238,6 +241,18 @@ locked_animation = ExtResource("9_u1dwy")
 [node name="DoubleDoorFrame" type="MeshInstance3D" parent="DoubleDoor" unique_id=59466293]
 mesh = SubResource("ArrayMesh_6i0l3")
 skeleton = NodePath("")
+
+[node name="DoorFrameRB" type="StaticBody3D" parent="DoubleDoor/DoubleDoorFrame" unique_id=220259048]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoubleDoor/DoubleDoorFrame/DoorFrameRB" unique_id=1535789224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107, 0, 0)
+shape = SubResource("BoxShape3D_p1el1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DoubleDoor/DoubleDoorFrame/DoorFrameRB" unique_id=561511325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.857, 0, 0)
+shape = SubResource("BoxShape3D_p1el1")
 
 [node name="LeftDoorHinge" type="Node3D" parent="DoubleDoor" unique_id=1873775277]
 
@@ -285,7 +300,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_kqc4o")
 
 [node name="TimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=283260468]
-libraries/ = SubResource("AnimationLibrary_obxfw")
+libraries/ = SubResource("AnimationLibrary_7va2j")
 script = ExtResource("6_1wyck")
 metadata/_custom_type_script = "uid://b2clf5853h8va"
 

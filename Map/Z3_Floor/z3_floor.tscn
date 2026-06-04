@@ -7048,6 +7048,7 @@ light_energy = 4.0
 
 [node name="JanitorClosetDoor" parent="JanitorCloset/Interactables" unique_id=1333524653 instance=ExtResource("61_xc52o")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.625, 0, -7.375)
+is_locked = true
 
 [node name="Keycard ScannerOutside" parent="JanitorCloset/Interactables" unique_id=1749400769 node_paths=PackedStringArray("lock") instance=ExtResource("17_t1hpg")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.375, 1, -7.5)
