@@ -1575,7 +1575,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -3.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -3.75)
 
 [node name="Item" parent="Tutorial/Room 7" unique_id=2125445559 instance=ExtResource("24_ps4sb")]
-transform = Transform3D(0.20536724, 0, -0.97868496, 0, 1, 0, 0.97868496, 0, 0.20536724, 3.125, 0.96071184, -3.75)
+transform = Transform3D(1.2434986, 0, -5.925937, 0, 6.055, 0, 5.925937, 0, 1.2434986, 3.125, 0.96071184, -3.75)
 item = ExtResource("25_v3e2r")
 
 [node name="Area3D" type="Area3D" parent="Tutorial/Room 7" unique_id=81164661]
