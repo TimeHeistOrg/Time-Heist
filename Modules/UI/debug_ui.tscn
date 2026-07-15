@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://ff8d52xsw4fd"]
+
+[ext_resource type="Script" uid="uid://b1b742guris2v" path="res://Modules/UI/Game UI/debug_ui.gd" id="1_4h763"]
+
+[sub_resource type="GDScript" id="GDScript_yaem8"]
+resource_name = "TimeDisplay"
+script/source = "extends Label
+
+func _process(_delta):
+	var cur_time = globals.time_manager.cur_time
+	@warning_ignore(\"integer_division\")
+	text = \"Time Display: \" + \"%02d:%02d.%03d\" % [cur_time/60,int(cur_time)%60,(cur_time - int(cur_time))*1000]
+"
+
+[sub_resource type="GDScript" id="GDScript_u3icv"]
+resource_name = "StateDisplay"
+script/source = "extends Label
+
+func _process(_delta):
+	var cur_state = \"N/A\"
+	if globals.player:
+		cur_state = globals.player.state_machine.current_state.get_script().get_global_name()
+	text = \"Current State: \" + cur_state
+"
+
+[sub_resource type="GDScript" id="GDScript_nr7cl"]
+resource_name = "CrouchingDisplay"
+script/source = "extends Label
+
+func _process(_delta):
+	var cur_crouching = \"N/A\"
+	if globals.player:
+		cur_crouching = globals.player.is_crouching
+	text = \"Crouching: \" + str(cur_crouching)
+"
+
+[sub_resource type="GDScript" id="GDScript_isv23"]
+resource_name = "SpeedDisplay"
+script/source = "extends Label
+
+func _process(_delta):
+	var cur_speed = \"N/A\"
+	if globals.player:
+		cur_speed = str(globals.player.speed)
+	text = \"Speed: \" + cur_speed
+"
+
+[sub_resource type="GDScript" id="GDScript_df44s"]
+resource_name = "SafeRatioDisplay"
+script/source = "extends Label
+
+func _process(_delta):
+	var safe_ratio = \"N/A\"
+	if globals.player:
+		safe_ratio = str(globals.safe_ratio)
+	text = \"Safe Ratio: \" + safe_ratio
+"
+
+[node name="DEBUG UI" type="Control" unique_id=1054531982]
+process_mode = 4
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4h763")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=487518977]
+z_index = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Time Display" type="Label" parent="VBoxContainer" unique_id=1569189216]
+layout_mode = 2
+text = "Time Display"
+script = SubResource("GDScript_yaem8")
+
+[node name="State Display" type="Label" parent="VBoxContainer" unique_id=1754337093]
+layout_mode = 2
+text = "State Display"
+script = SubResource("GDScript_u3icv")
+
+[node name="Crouching Display" type="Label" parent="VBoxContainer" unique_id=937803212]
+layout_mode = 2
+text = "Crouching Display"
+script = SubResource("GDScript_nr7cl")
+
+[node name="Speed Display" type="Label" parent="VBoxContainer" unique_id=2081471728]
+layout_mode = 2
+text = "Speed Display"
+script = SubResource("GDScript_isv23")
+
+[node name="Safe Ratio Display" type="Label" parent="VBoxContainer" unique_id=300250834]
+layout_mode = 2
+script = SubResource("GDScript_df44s")

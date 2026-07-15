@@ -1,66 +1,11 @@
 [gd_scene format=3 uid="uid://bm4y2kiv4odnp"]
 
 [ext_resource type="Script" uid="uid://b25imoa11adq2" path="res://Modules/UI/ui_manager.gd" id="1_yaem8"]
-[ext_resource type="Script" uid="uid://b1b742guris2v" path="res://Modules/UI/Game UI/debug_ui.gd" id="2_u3icv"]
 [ext_resource type="PackedScene" uid="uid://o8bawnwr8utr" path="res://Modules/UI/Game UI/DocumentViewer/document_viewer.tscn" id="3_jfs1l"]
 [ext_resource type="PackedScene" uid="uid://b8umb5d42v56y" path="res://Modules/UI/Game UI/HUD/hud.tscn" id="5_df44s"]
 [ext_resource type="PackedScene" uid="uid://djm2xkntdba18" path="res://Modules/UI/Game UI/device_menu.tscn" id="5_keavj"]
 [ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="6_df44s"]
 [ext_resource type="PackedScene" uid="uid://cndkl22sd4vd8" path="res://Modules/UI/Game UI/CaughtUI.tscn" id="8_1ex2v"]
-
-[sub_resource type="GDScript" id="GDScript_yaem8"]
-resource_name = "TimeDisplay"
-script/source = "extends Label
-
-func _process(_delta):
-	var cur_time = globals.time_manager.cur_time
-	@warning_ignore(\"integer_division\")
-	text = \"Time Display: \" + \"%02d:%02d.%03d\" % [cur_time/60,int(cur_time)%60,(cur_time - int(cur_time))*1000]
-"
-
-[sub_resource type="GDScript" id="GDScript_u3icv"]
-resource_name = "StateDisplay"
-script/source = "extends Label
-
-func _process(_delta):
-	var cur_state = \"N/A\"
-	if globals.player:
-		cur_state = globals.player.state_machine.current_state.get_script().get_global_name()
-	text = \"Current State: \" + cur_state
-"
-
-[sub_resource type="GDScript" id="GDScript_nr7cl"]
-resource_name = "CrouchingDisplay"
-script/source = "extends Label
-
-func _process(_delta):
-	var cur_crouching = \"N/A\"
-	if globals.player:
-		cur_crouching = globals.player.is_crouching
-	text = \"Crouching: \" + str(cur_crouching)
-"
-
-[sub_resource type="GDScript" id="GDScript_isv23"]
-resource_name = "SpeedDisplay"
-script/source = "extends Label
-
-func _process(_delta):
-	var cur_speed = \"N/A\"
-	if globals.player:
-		cur_speed = str(globals.player.speed)
-	text = \"Speed: \" + cur_speed
-"
-
-[sub_resource type="GDScript" id="GDScript_df44s"]
-resource_name = "SafeRatioDisplay"
-script/source = "extends Label
-
-func _process(_delta):
-	var safe_ratio = \"N/A\"
-	if globals.player:
-		safe_ratio = str(globals.safe_ratio)
-	text = \"Safe Ratio: \" + safe_ratio
-"
 
 [node name="UI Manager" type="Control" unique_id=1478464990]
 process_mode = 3
@@ -77,53 +22,6 @@ script = ExtResource("1_yaem8")
 unique_name_in_owner = true
 z_index = 4
 layout_mode = 1
-
-[node name="DEBUG UI" type="Control" parent="." unique_id=1553451654]
-process_mode = 4
-visible = false
-z_index = 3
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("2_u3icv")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DEBUG UI" unique_id=938135867]
-z_index = 1
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
-grow_vertical = 0
-
-[node name="Time Display" type="Label" parent="DEBUG UI/VBoxContainer" unique_id=1629058186]
-layout_mode = 2
-text = "Time Display"
-script = SubResource("GDScript_yaem8")
-
-[node name="State Display" type="Label" parent="DEBUG UI/VBoxContainer" unique_id=1732052527]
-layout_mode = 2
-text = "State Display"
-script = SubResource("GDScript_u3icv")
-
-[node name="Crouching Display" type="Label" parent="DEBUG UI/VBoxContainer" unique_id=1972601677]
-layout_mode = 2
-text = "Crouching Display"
-script = SubResource("GDScript_nr7cl")
-
-[node name="Speed Display" type="Label" parent="DEBUG UI/VBoxContainer" unique_id=620182975]
-layout_mode = 2
-text = "Speed Display"
-script = SubResource("GDScript_isv23")
-
-[node name="Safe Ratio Display" type="Label" parent="DEBUG UI/VBoxContainer" unique_id=679642968]
-layout_mode = 2
-script = SubResource("GDScript_df44s")
 
 [node name="DocumentViewer" parent="." unique_id=1468834605 instance=ExtResource("3_jfs1l")]
 visible = false
