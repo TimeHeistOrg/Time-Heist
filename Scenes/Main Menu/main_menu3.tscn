@@ -2111,33 +2111,33 @@ texture = ExtResource("3_ilpl1")
 [node name="titlescreenv3" parent="SubViewportContainer/SubViewport" unique_id=1359590925 instance=ExtResource("4_i6g8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012798309, 0.028505325, -0.01197052)
 
-[node name="ResidentialSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="0" unique_id=749739834]
+[node name="ResidentialSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="0" unique_id=574058859]
 transform = Transform3D(2.1252377, 0, 0, 0, 0.33396327, 0, 0, 0, 1.0185913, -1.7490871, -0.9752307, -13.939119)
 mesh = SubResource("ArrayMesh_24fjd")
 
-[node name="CoolTowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="1" unique_id=1318770354]
+[node name="CoolTowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="1" unique_id=423266636]
 layers = 4
 
-[node name="OfficeSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="2" unique_id=667910757]
+[node name="OfficeSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="2" unique_id=144963710]
 layers = 256
 mesh = SubResource("ArrayMesh_bgryv")
 
-[node name="TowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="3" unique_id=1263570085]
+[node name="TowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="3" unique_id=926847428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4632578, -14.008069, -45.878307)
 
-[node name="Camera" parent="SubViewportContainer/SubViewport/titlescreenv3" index="8" unique_id=1541922819]
+[node name="Camera" parent="SubViewportContainer/SubViewport/titlescreenv3" index="8" unique_id=468975109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4954393, 4.0880947, 13.867525)
 far = 220.79
 
-[node name="MainSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="16" unique_id=288589561]
+[node name="MainSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="16" unique_id=1206822745]
 layers = 512
 mesh = SubResource("ArrayMesh_ntibg")
 
-[node name="HeliPadSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="17" unique_id=1808811161]
+[node name="HeliPadSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="17" unique_id=2049935378]
 layers = 4
 mesh = SubResource("ArrayMesh_j0vim")
 
-[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/titlescreenv3/Armature" parent_id_path=PackedInt32Array(1359590925, 1863759394) index="0" unique_id=1526736693]
+[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/titlescreenv3/Armature" parent_id_path=PackedInt32Array(1359590925, 1642871082) index="0" unique_id=1412132974]
 bones/0/position = Vector3(-0.008413643, 1.1659902, -193.46)
 bones/0/rotation = Quaternion(-0.5379754, -0.09280015, 0.025388949, 0.8374522)
 bones/1/position = Vector3(-4.4703484e-07, 7.4956274, -0.99010175)
@@ -2214,7 +2214,7 @@ bones/39/position = Vector3(-1.9903615e-05, 18.139803, -1.4139478e-05)
 bones/39/rotation = Quaternion(0.37119666, 0.013526988, 0.00071055954, 0.92845553)
 bones/40/position = Vector3(-3.934838e-08, 6.8207483, 1.15297735e-05)
 
-[node name="CoolSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="20" unique_id=1123847909]
+[node name="CoolSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="20" unique_id=1646884704]
 layers = 32
 mesh = SubResource("ArrayMesh_i6g8v")
 
