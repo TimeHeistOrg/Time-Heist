@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5fs8rlbtl5vh"]
 
-[ext_resource type="Environment" uid="uid://c6n3q8mai7shf" path="res://Effects/new_test_environment.tres" id="1_dgdbi"]
+[ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/SceneConfig.tscn" id="1_b4jh7"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="2_p0fcu"]
 [ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/test_computer.tres" id="3_lww7r"]
 [ext_resource type="Resource" uid="uid://cdmieat3en1nr" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/josh_playtest_computer.tres" id="4_fkalk"]
@@ -53,9 +53,11 @@ albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yeiif"]
 material = SubResource("StandardMaterial3D_vnn0b")
-size = Vector3(18.25, 2, 0.25)
+size = Vector3(18.625, 5.5, 0.25)
 
-[node name="Debug Mall" type="Node3D" unique_id=1495256944]
+[node name="Lighting Test" type="Node3D" unique_id=1495256944]
+
+[node name="SceneConfig" parent="." unique_id=705177490 instance=ExtResource("1_b4jh7")]
 
 [node name="Lights" type="Node3D" parent="." unique_id=1253343583]
 
@@ -92,9 +94,6 @@ light_energy = 0.5
 omni_range = 3.0
 omni_attenuation = 2.5
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1486580716]
-environment = ExtResource("1_dgdbi")
-
 [node name="Computer" parent="." unique_id=1194039688 instance=ExtResource("2_p0fcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5460143, 0, -5.144451)
 data = ExtResource("3_lww7r")
@@ -104,10 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3289857, 0, -5.769451)
 data = ExtResource("4_fkalk")
 
 [node name="Player" parent="." unique_id=288105915 instance=ExtResource("5_6el51")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 14, 0, -7.5)
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player" unique_id=885707867]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 5.798, 1.928)
+transform = Transform3D(-0.98018324, 0, 0.19809249, 0, 1, 0, -0.19809249, 0, -0.98018324, 13.125, 0, -7.25)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1157303031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.875, 0, 0)
@@ -213,5 +209,6 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, 4.25, 0, -3)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=405635762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25, 3, -2.875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4375, 1.25, -2.875)
+layers = 15
 mesh = SubResource("BoxMesh_yeiif")
