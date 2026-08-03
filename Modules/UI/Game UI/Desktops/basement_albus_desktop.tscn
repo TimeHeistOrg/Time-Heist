@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/app_window.tscn" id="3_r5cru"]
 [ext_resource type="PackedScene" uid="uid://dkcsig15pybbc" path="res://Modules/Interaction/Computer/Text App/text_tab.tscn" id="4_4mqo0"]
 [ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="5_514rl"]
-[ext_resource type="Resource" uid="uid://cxus0xrdd5e5u" path="res://Assets/TextConvos/Resources/Archive Puzzle/mrsecurity_to_john.tres" id="6_meel3"]
+[ext_resource type="Resource" uid="uid://cxus0xrdd5e5u" path="res://Content/TextConvos/Resources/Archive Puzzle/mrsecurity_to_john.tres" id="6_meel3"]
 
 [node name="BasementAlbusDesktop" type="Control" unique_id=1828267665]
 layout_mode = 3

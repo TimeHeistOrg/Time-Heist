@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dqfr3l52ngywk" path="res://Modules/AI/NPC/tutorial_guard.gd" id="1_ng2hs"]
 [ext_resource type="PackedScene" uid="uid://be0g844ywaxq6" path="res://Modules/ConeVision/player_detector.tscn" id="2_r3n6b"]
 [ext_resource type="PackedScene" uid="uid://sr7naop2qhp7" path="res://Modules/ConeVision/laser.tscn" id="3_s4gjg"]
-[ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Dialogue/Linda_face.png" id="4_r8js3"]
-[ext_resource type="AudioStream" uid="uid://c2wmvoidbx0k2" path="res://Assets/SFX/digital-ui-access-denied-alert-vadi-sound-1-1-00-01.mp3" id="5_06uwp"]
+[ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Assets/Sprites/Linda_face.png" id="4_r8js3"]
+[ext_resource type="AudioStream" uid="uid://c2wmvoidbx0k2" path="res://Assets/Audio/SFX/guard_seen.mp3" id="5_06uwp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6qgu"]
 resource_name = "bottom grey"

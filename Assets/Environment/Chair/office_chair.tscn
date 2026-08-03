@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d3gtn4sbko11j"]
+
+[ext_resource type="PackedScene" uid="uid://c10whac4yvmis" path="res://Assets/Environment/Imported Assets/officechairv2.glb" id="1_8ig32"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yt0i7"]
+
+[node name="OfficeChair" type="Node3D" unique_id=1214352518]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=63001347]
+collision_layer = 8
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1742950390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0517578e-05, 0.61279297, -0.060813904)
+shape = SubResource("CapsuleShape3D_yt0i7")
+
+[node name="officechairv2" parent="." unique_id=1578907433 instance=ExtResource("1_8ig32")]

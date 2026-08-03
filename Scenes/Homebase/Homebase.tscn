@@ -10,26 +10,26 @@
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="8_gjqgy"]
 [ext_resource type="Script" uid="uid://cx0ieu0m32vi" path="res://Scenes/Homebase/friend.gd" id="8_urm2d"]
 [ext_resource type="Script" uid="uid://du7w2m0hi52ek" path="res://Scenes/Homebase/leave_area.gd" id="10_li6v2"]
-[ext_resource type="Resource" uid="uid://brwt5hp8o0ynn" path="res://Dialogue/start_run.dialogue" id="13_duq24"]
-[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Models/Enviornment/shelf_tall_old.tscn" id="13_g4j4g"]
-[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="14_1ssgq"]
-[ext_resource type="PackedScene" uid="uid://dkqvotopd4ufp" path="res://Dialogue/dialogue_area.tscn" id="15_blrf4"]
-[ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="15_duq24"]
-[ext_resource type="Resource" uid="uid://dia7uwu0uy0sd" path="res://Dialogue/to_tutorial.dialogue" id="16_5rx8s"]
-[ext_resource type="PackedScene" uid="uid://fmcuj3rcvfja" path="res://Assets/Models/Enviornment/l_desk.tscn" id="16_hmmab"]
-[ext_resource type="PackedScene" uid="uid://b4umi6y0r105j" path="res://Assets/Models/Enviornment/computer_desk.tscn" id="18_duq24"]
-[ext_resource type="PackedScene" uid="uid://cratpfmhvs24i" path="res://Assets/Models/Enviornment/4_wide_bookshelf.tscn" id="18_i1y4g"]
-[ext_resource type="PackedScene" uid="uid://coe6an4rwgtgm" path="res://Assets/Models/Enviornment/file_cabinet.tscn" id="19_tmni2"]
-[ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Models/Enviornment/MeetingTable.tscn" id="22_uyw5b"]
-[ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Models/Enviornment/small_shelf.tscn" id="25_blrf4"]
-[ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Models/Enviornment/plant.tscn" id="26_uyw5b"]
-[ext_resource type="PackedScene" uid="uid://dhac04mwooy3s" path="res://Assets/Models/Enviornment/tall_shelf_enclosed2.tscn" id="27_blrf4"]
-[ext_resource type="PackedScene" uid="uid://cbuk6xkawm4lf" path="res://Characters/Arjun.tscn" id="27_udxfg"]
+[ext_resource type="Resource" uid="uid://brwt5hp8o0ynn" path="res://Content/Dialogue/Homebase/start_run.dialogue" id="13_duq24"]
+[ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Environment/Shelf_Counter/old_shelf.tscn" id="13_g4j4g"]
+[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Environment/Chair/old_standard_chair.tscn" id="14_1ssgq"]
+[ext_resource type="PackedScene" uid="uid://dkqvotopd4ufp" path="res://Modules/Dialogue/dialogue_area.tscn" id="15_blrf4"]
+[ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Environment/Desk_Table/old_standard_desk.tscn" id="15_duq24"]
+[ext_resource type="Resource" uid="uid://dia7uwu0uy0sd" path="res://Content/Dialogue/Homebase/to_tutorial.dialogue" id="16_5rx8s"]
+[ext_resource type="PackedScene" uid="uid://fmcuj3rcvfja" path="res://Assets/Environment/Desk_Table/old_l_desk.tscn" id="16_hmmab"]
+[ext_resource type="PackedScene" uid="uid://b4umi6y0r105j" path="res://Assets/Environment/Desk_Table/old_cctv_desk.tscn" id="18_duq24"]
+[ext_resource type="PackedScene" uid="uid://cratpfmhvs24i" path="res://Assets/Environment/Shelf_Counter/old_4_wide_bookshelf.tscn" id="18_i1y4g"]
+[ext_resource type="PackedScene" uid="uid://coe6an4rwgtgm" path="res://Assets/Environment/Shelf_Counter/old_file_cabinet.tscn" id="19_tmni2"]
+[ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Environment/Desk_Table/meeting_table.tscn" id="22_uyw5b"]
+[ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Environment/Shelf_Counter/small_shelf.tscn" id="25_blrf4"]
+[ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Environment/Decorations/plant.tscn" id="26_uyw5b"]
+[ext_resource type="PackedScene" uid="uid://bxg3l730qjn07" path="res://Assets/Environment/Shelf_Counter/full_closed_shelf.tscn" id="27_blrf4"]
+[ext_resource type="PackedScene" uid="uid://cbuk6xkawm4lf" path="res://Modules/Characters/Arjun.tscn" id="27_udxfg"]
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="28_5rx8s"]
-[ext_resource type="PackedScene" uid="uid://o4040awfxuav" path="res://Characters/Katya.tscn" id="28_blrf4"]
-[ext_resource type="PackedScene" uid="uid://crv58s02cuc78" path="res://Assets/Models/Enviornment/tall_shelf.tscn" id="29_5rx8s"]
+[ext_resource type="PackedScene" uid="uid://o4040awfxuav" path="res://Modules/Characters/Katya.tscn" id="28_blrf4"]
 [ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/SceneConfig.tscn" id="29_b7rcp"]
-[ext_resource type="PackedScene" uid="uid://d2qonmqfm6c31" path="res://Characters/Maria.tscn" id="30_hrrrw"]
+[ext_resource type="PackedScene" uid="uid://8q7cu0tt8b0n" path="res://Assets/Environment/Shelf_Counter/big_shelf.tscn" id="30_5rx8s"]
+[ext_resource type="PackedScene" uid="uid://d2qonmqfm6c31" path="res://Modules/Characters/Maria.tscn" id="30_hrrrw"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hfwyr"]
 
@@ -369,16 +369,16 @@ transform = Transform3D(-0.6323403, 0, 0.7746908, 0, 1, 0, -0.7746908, 0, -0.632
 transform = Transform3D(-0.08303429, 0, 0.99654675, 0, 1, 0, -0.99654675, 0, -0.08303429, -1.8482448, 0, -5.176756)
 
 [node name="ShelfCabinet" parent="." unique_id=1819643507 instance=ExtResource("27_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, 0.3000002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, 0.3000002)
 
 [node name="ShelfCabinet2" parent="." unique_id=1142887684 instance=ExtResource("27_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -0.49999982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, -0.49999982)
 
 [node name="ShelfCabinet3" parent="." unique_id=1042827175 instance=ExtResource("27_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -1.2999998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, -1.2999998)
 
 [node name="ShelfCabinet4" parent="." unique_id=2070575907 instance=ExtResource("27_blrf4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -2.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, -2.1)
 
 [node name="SmallShelf" parent="." unique_id=1214352518 instance=ExtResource("25_blrf4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -3.2)
@@ -389,40 +389,40 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1,
 [node name="SmallShelf3" parent="." unique_id=2094504162 instance=ExtResource("25_blrf4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1, 0, -4.7)
 
-[node name="ShelfCabinet5" parent="." unique_id=696665350 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf" parent="." unique_id=964828957 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -7.6000004)
 
-[node name="ShelfCabinet6" parent="." unique_id=1313294160 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf2" parent="." unique_id=440215775 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.6000004)
 
-[node name="ShelfCabinet7" parent="." unique_id=890403343 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf3" parent="." unique_id=1907692478 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -7.6000004)
 
-[node name="ShelfCabinet8" parent="." unique_id=987242225 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf4" parent="." unique_id=1074691438 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.8, 0, -7.8)
 
-[node name="ShelfCabinet9" parent="." unique_id=434905005 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf5" parent="." unique_id=1611421422 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -7.8)
 
-[node name="ShelfCabinet10" parent="." unique_id=1094777190 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf6" parent="." unique_id=1716587206 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.8, 0, -7.8)
 
-[node name="ShelfCabinet11" parent="." unique_id=403777366 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf7" parent="." unique_id=1495335489 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -8.900001)
 
-[node name="ShelfCabinet12" parent="." unique_id=208610913 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf8" parent="." unique_id=172332306 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.900001)
 
-[node name="ShelfCabinet13" parent="." unique_id=777444353 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf9" parent="." unique_id=33637627 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -8.900001)
 
-[node name="ShelfCabinet14" parent="." unique_id=1133693517 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf10" parent="." unique_id=337348638 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.8, 0, -9.1)
 
-[node name="ShelfCabinet15" parent="." unique_id=1654844543 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf11" parent="." unique_id=699164519 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -9.1)
 
-[node name="ShelfCabinet16" parent="." unique_id=1927302892 instance=ExtResource("29_5rx8s")]
+[node name="BigShelf12" parent="." unique_id=351284929 instance=ExtResource("30_5rx8s")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.8, 0, -9.1)
 
 [connection signal="anon_interacted" from="Friend/Interactable" to="Friend" method="_on_interactable_anon_interacted"]

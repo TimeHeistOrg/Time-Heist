@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/app_window.tscn" id="3_wtqju"]
 [ext_resource type="PackedScene" uid="uid://dkcsig15pybbc" path="res://Modules/Interaction/Computer/Text App/text_tab.tscn" id="4_k6bq1"]
 [ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="5_ymxa1"]
-[ext_resource type="Resource" uid="uid://ujhtjbh7l5w7" path="res://Assets/TextConvos/Resources/Archive Puzzle/key_handoff.tres" id="6_38jt0"]
+[ext_resource type="Resource" uid="uid://ujhtjbh7l5w7" path="res://Content/TextConvos/Resources/Archive Puzzle/key_handoff.tres" id="6_38jt0"]
 
 [node name="Basement Desktop Lib" type="Control" unique_id=753114228]
 layout_mode = 3

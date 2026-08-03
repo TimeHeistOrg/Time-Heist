@@ -18,8 +18,8 @@ func setup(app: AppData, ui: ComputerUI) -> void:
 func _on_button_pressed() -> void:
 	computer_ui.open_app(app_data)
 
-func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(globals.clicking_cursor)
-
-func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(globals.normal_cursor)
+#func _on_mouse_entered() -> void:
+	#Input.set_custom_mouse_cursor(globals.clicking_cursor)
+#
+#func _on_mouse_exited() -> void:
+	#Input.set_custom_mouse_cursor(globals.normal_cursor)

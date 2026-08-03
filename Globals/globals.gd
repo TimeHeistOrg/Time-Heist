@@ -72,8 +72,8 @@ enum Device_Tabs {
 ##endregion
 
 #region ui
-var normal_cursor = preload("res://Assets/UI/Computer/Cursor_normal.png")
-var clicking_cursor = preload("res://Assets/UI/Computer/Cursor_click.png")
+#var normal_cursor = preload("res://Assets/UI/Computer/Cursor_normal.png")
+#var clicking_cursor = preload("res://Assets/UI/Computer/Cursor_click.png")
 var ui_scale: float = .75
 #endregion
 

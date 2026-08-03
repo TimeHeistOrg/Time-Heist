@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://cjdygin65oxhh"]
+
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="1_kcr7v"]
+[ext_resource type="Texture2D" uid="uid://d0ww2sjxfbuyd" path="res://Content/Documents/Textures/2_clean_time.png" id="1_pladl"]
+
+[resource]
+script = ExtResource("1_kcr7v")
+document_id = 2
+title = "Clean time"
+document_image = ExtResource("1_pladl")
+relevant_tags = Array[String](["All Files"])
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

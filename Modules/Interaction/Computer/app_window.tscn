@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://q5g0v26dm1my"]
 
 [ext_resource type="Script" uid="uid://cvsjvf2hm0j0v" path="res://Modules/Interaction/Computer/app_window.gd" id="1_dotep"]
-[ext_resource type="Texture2D" uid="uid://jkgk1dsduwuc" path="res://Assets/UI/Computer/file bar top nox.png" id="2_nqhg3"]
-[ext_resource type="Texture2D" uid="uid://balhwiq4nx04k" path="res://Assets/UI/Computer/Close_Button.png" id="3_sa258"]
-[ext_resource type="Texture2D" uid="uid://dy2got4dkfd57" path="res://Assets/UI/Computer/Minimize_Button.png" id="4_sa258"]
-[ext_resource type="Texture2D" uid="uid://b3cl7tf4p4c2p" path="res://Assets/UI/Computer/Maximize_Button.png" id="5_kjki6"]
+[ext_resource type="Texture2D" uid="uid://jkgk1dsduwuc" path="res://Modules/Interaction/Computer/ComputerAssets/file bar top nox.png" id="2_nqhg3"]
+[ext_resource type="Texture2D" uid="uid://balhwiq4nx04k" path="res://Modules/Interaction/Computer/ComputerAssets/Close_Button.png" id="3_sa258"]
+[ext_resource type="Texture2D" uid="uid://dy2got4dkfd57" path="res://Modules/Interaction/Computer/ComputerAssets/Minimize_Button.png" id="4_sa258"]
+[ext_resource type="Texture2D" uid="uid://b3cl7tf4p4c2p" path="res://Modules/Interaction/Computer/ComputerAssets/Maximize_Button.png" id="5_kjki6"]
 
 [node name="App Window" type="Control" unique_id=411550248]
 layout_mode = 3

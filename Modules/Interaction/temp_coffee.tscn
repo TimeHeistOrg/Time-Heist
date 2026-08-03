@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d36of8ff253ob"]
 
-[ext_resource type="ArrayMesh" uid="uid://dgx0sohtlxa4s" path="res://Assets/Items/Meshes/coffee_mug.res" id="1_ooshc"]
+[ext_resource type="ArrayMesh" uid="uid://dgx0sohtlxa4s" path="res://Content/Items/Meshes/coffee_mug.res" id="1_ooshc"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_kguye"]
 [ext_resource type="Script" uid="uid://buhosr6g8knnm" path="res://Modules/Interaction/stashable.gd" id="4_7uwef"]
 

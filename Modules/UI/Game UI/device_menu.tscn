@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bigh7xaj6n6yj" path="res://Modules/UI/Game UI/Device/Device Files/device_files.tscn" id="4_4t7mm"]
 [ext_resource type="PackedScene" uid="uid://dc0glsn1mwwwq" path="res://Modules/UI/Game UI/Device/Inventory/inventory_panel.tscn" id="4_7dje4"]
 [ext_resource type="PackedScene" uid="uid://begdut20cbu15" path="res://Modules/UI/Game UI/Device/settings.tscn" id="4_hgc2y"]
-[ext_resource type="AudioStream" uid="uid://da3exkttg2ndx" path="res://Assets/SFX/button_confirm.ogg" id="7_m01ss"]
-[ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="8_ijymv"]
+[ext_resource type="AudioStream" uid="uid://da3exkttg2ndx" path="res://Assets/Audio/SFX/button_confirm.ogg" id="7_m01ss"]
+[ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/Audio/SFX/button_move.ogg" id="8_ijymv"]
 [ext_resource type="PackedScene" uid="uid://ds171imx2qg0u" path="res://Modules/UI/Game UI/MiniTimeJuiceBar/mini_time_juice_bar.tscn" id="8_pmuwh"]
-[ext_resource type="PackedScene" uid="uid://ddugiq37t31fv" path="res://Assets/Models/Imported Assets/TimeMachine_left.fbx" id="10_q575b"]
-[ext_resource type="PackedScene" uid="uid://coioh5wpt010b" path="res://Assets/Models/Imported Assets/TimeMachine_right.fbx" id="11_mgddb"]
+[ext_resource type="PackedScene" uid="uid://ddugiq37t31fv" path="res://Assets/Environment/Imported Assets/TimeMachine_left.fbx" id="10_q575b"]
+[ext_resource type="PackedScene" uid="uid://coioh5wpt010b" path="res://Assets/Environment/Imported Assets/TimeMachine_right.fbx" id="11_mgddb"]
 
 [sub_resource type="Animation" id="Animation_upcod"]
 length = 0.001

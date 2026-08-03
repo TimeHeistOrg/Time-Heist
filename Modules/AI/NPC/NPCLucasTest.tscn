@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bomvk14icglbq"]
 
 [ext_resource type="Script" uid="uid://dxhkc2f80jysl" path="res://Modules/AI/NPC/PathFollower.gd" id="1_3yuln"]
-[ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Dialogue/Linda_face.png" id="2_yt8hl"]
+[ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Assets/Sprites/Linda_face.png" id="2_yt8hl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eq44y"]
 albedo_color = Color(0.15021607, 0.5912154, 0.9274573, 1)

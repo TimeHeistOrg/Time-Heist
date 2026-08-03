@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyps150nhsdnv"]
 
-[ext_resource type="Texture2D" uid="uid://1r0tud40uc4" path="res://Assets/UI/Computer/Text Messages/sendingmessage.png" id="1_qvnur"]
+[ext_resource type="Texture2D" uid="uid://1r0tud40uc4" path="res://Modules/Interaction/Computer/ComputerAssets/Text Messages/sendingmessage.png" id="1_qvnur"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spsbq"]
 

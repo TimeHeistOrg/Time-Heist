@@ -1,6 +1,6 @@
 extends Node3D
 
-var resource := load("res://Dialogue/homebase_friend.dialogue")
+var resource := load("res://Content/Dialogue/Homebase/lauren_linda_friend.dialogue")
 var balloon_scene := "res://Dialogue/balloon.tscn"
 var dial_start_loc := "start"
 var dialogue_balloon

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dx080k5623l3p"]
 
 [ext_resource type="Script" uid="uid://djhk3dt3f38v5" path="res://Player/player_controller.gd" id="1_b1ygp"]
-[ext_resource type="ArrayMesh" uid="uid://cxxn5ewrc336a" path="res://Assets/Meshes/Player/BodyTextured.res" id="2_o28un"]
-[ext_resource type="ArrayMesh" uid="uid://dobbi3lheyckp" path="res://Assets/Meshes/Player/BackpackTextured.res" id="3_n471f"]
-[ext_resource type="ArrayMesh" uid="uid://0fubj6k0kllb" path="res://Assets/Meshes/Player/TimeMachineTextured.res" id="4_7emwf"]
-[ext_resource type="ArrayMesh" uid="uid://boiwwo22arptp" path="res://Assets/Meshes/Player/BadgeTextured.res" id="5_hshwv"]
-[ext_resource type="ArrayMesh" uid="uid://dhgwpvsr6hr1d" path="res://Assets/Meshes/Player/HairTextured.res" id="6_gpjlu"]
+[ext_resource type="ArrayMesh" uid="uid://bi15yxow05efk" path="res://Assets/Characters/Justin/justin_body_mesh.mesh" id="2_roy6y"]
+[ext_resource type="ArrayMesh" uid="uid://crgsgsl1hdeju" path="res://Assets/Characters/Justin/justin_backpack_mesh.mesh" id="3_roy6y"]
+[ext_resource type="ArrayMesh" uid="uid://cww7vupp6i3l4" path="res://Assets/Characters/Justin/justin_timedevice_mesh.mesh" id="4_roy6y"]
+[ext_resource type="ArrayMesh" uid="uid://dsjgjjnyjvn7x" path="res://Assets/Characters/Justin/justin_badge_mesh.mesh" id="5_roy6y"]
+[ext_resource type="ArrayMesh" uid="uid://ruc6qfb8euln" path="res://Assets/Characters/Justin/justin_hair_mesh.mesh" id="6_roy6y"]
 [ext_resource type="Animation" uid="uid://bcfh1nth7p8mn" path="res://Player/Animation/CrouchedWalking/crouch_idle.res" id="7_8mwp6"]
 [ext_resource type="Animation" uid="uid://b82c7x0pae1m3" path="res://Player/Animation/CrouchedWalking/crouch_walking.res" id="8_qemgg"]
 [ext_resource type="Animation" uid="uid://1ebaif5esg5f" path="res://Player/Animation/MaleLocomotion/idle.res" id="9_8viyr"]
@@ -932,23 +932,23 @@ bones/29/rotation = Quaternion(0, 0, 0, 1)
 bones/29/scale = Vector3(1, 1, 1)
 
 [node name="Body" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1649262296]
-mesh = ExtResource("2_o28un")
+mesh = ExtResource("2_roy6y")
 skin = SubResource("Skin_v3wqe")
 
 [node name="Backpack" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1146617930]
-mesh = ExtResource("3_n471f")
+mesh = ExtResource("3_roy6y")
 skin = SubResource("Skin_a7e3d")
 
-[node name="fake time device (for now)" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=265624416]
-mesh = ExtResource("4_7emwf")
+[node name="TimeDevice" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=265624416]
+mesh = ExtResource("4_roy6y")
 skin = SubResource("Skin_evhqo")
 
 [node name="Badge" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=1528689054]
-mesh = ExtResource("5_hshwv")
+mesh = ExtResource("5_roy6y")
 skin = SubResource("Skin_8p8ys")
 
-[node name="hair?" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=358221465]
-mesh = ExtResource("6_gpjlu")
+[node name="Hair" type="MeshInstance3D" parent="Mesh/Armature/Skeleton3D" unique_id=358221465]
+mesh = ExtResource("6_roy6y")
 skin = SubResource("Skin_fw5v7")
 
 [node name="Interactor" parent="Mesh" unique_id=2145607717 instance=ExtResource("17_j2n6q")]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_166rj"]
 [ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="2_6067t"]
-[ext_resource type="Resource" uid="uid://blg2kipp43p2e" path="res://Assets/Documents/Resources/z3_justin_doc.tres" id="2_n7res"]
+[ext_resource type="Resource" uid="uid://blg2kipp43p2e" path="res://Content/Documents/Resources/z3_justin_doc.tres" id="2_n7res"]
 [ext_resource type="Script" uid="uid://ch45yfbtv40b2" path="res://Modules/Interaction/Computer/Resources/file_app_config.gd" id="3_n7w3m"]
 
 [sub_resource type="Resource" id="Resource_pq2kw"]

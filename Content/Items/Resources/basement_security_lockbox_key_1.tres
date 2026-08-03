@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://ccb6qtg54rgyj"]
+
+[ext_resource type="Texture2D" uid="uid://cvpbqw8yprtuj" path="res://Content/Items/Textures/silver_key_1_old.png" id="1_o4x8e"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="1_ynpm8"]
+
+[resource]
+script = ExtResource("1_ynpm8")
+name = "Silver key"
+description = "I wonder where this can be used"
+image = ExtResource("1_o4x8e")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"

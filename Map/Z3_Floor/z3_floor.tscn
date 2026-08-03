@@ -9,71 +9,69 @@
 [ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="7_0bsg0"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="8_e2iiq"]
 [ext_resource type="Texture2D" uid="uid://bj2ogqq6ttqux" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_90_angle.png" id="9_ga7uj"]
-[ext_resource type="Texture2D" uid="uid://cfqdcqf8bndkr" path="res://Effects/cloud_texture.png" id="11_nigfc"]
 [ext_resource type="Script" uid="uid://eqki63ticm1v" path="res://Map/Debug_Maps/test_room_hide.gd" id="12_e2iiq"]
 [ext_resource type="PackedScene" uid="uid://bxqpme2qjir3g" path="res://Modules/MapBuilding/office_light.tscn" id="12_nigfc"]
-[ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Models/Enviornment/MeetingTable.tscn" id="14_3ybk4"]
-[ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Models/Enviornment/plant.tscn" id="15_cnd03"]
-[ext_resource type="PackedScene" uid="uid://d3gtn4sbko11j" path="res://Assets/Models/Enviornment/office_chair.tscn" id="15_y6qj7"]
-[ext_resource type="PackedScene" uid="uid://bvm6vcceemdoc" path="res://Assets/Models/Enviornment/whiteboard.tscn" id="16_dgl2p"]
+[ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Environment/Desk_Table/meeting_table.tscn" id="14_3ybk4"]
+[ext_resource type="PackedScene" uid="uid://bypd3h8336gog" path="res://Assets/Environment/Decorations/plant.tscn" id="15_cnd03"]
+[ext_resource type="PackedScene" uid="uid://d3gtn4sbko11j" path="res://Assets/Environment/Chair/office_chair.tscn" id="15_y6qj7"]
+[ext_resource type="PackedScene" uid="uid://bvm6vcceemdoc" path="res://Assets/Environment/Decorations/whiteboard.tscn" id="16_dgl2p"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="17_t1hpg"]
-[ext_resource type="PackedScene" uid="uid://c6k8vhjcf6jjc" path="res://Assets/Models/Enviornment/reception_desk.tscn" id="18_4rwq3"]
-[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="18_6ltrj"]
-[ext_resource type="PackedScene" uid="uid://b4444a5rqfiiv" path="res://Assets/Models/Enviornment/locker_no_interact.tscn" id="18_7ewkb"]
-[ext_resource type="PackedScene" uid="uid://dhac04mwooy3s" path="res://Assets/Models/Enviornment/tall_shelf_enclosed2.tscn" id="18_cq1go"]
-[ext_resource type="PackedScene" uid="uid://bvy2dlw8f51f7" path="res://Assets/Models/Enviornment/cubicle_6.tscn" id="18_krbj1"]
-[ext_resource type="PackedScene" uid="uid://0t31h6tiefvb" path="res://Assets/Models/Enviornment/tall_shelf_enclosed.tscn" id="19_42wl3"]
+[ext_resource type="PackedScene" uid="uid://c6k8vhjcf6jjc" path="res://Assets/Environment/Desk_Table/reception_desk.tscn" id="18_4rwq3"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="18_6ltrj"]
+[ext_resource type="PackedScene" uid="uid://b4444a5rqfiiv" path="res://Assets/Environment/Decorations/locker_no_interact.tscn" id="18_7ewkb"]
+[ext_resource type="PackedScene" uid="uid://bxg3l730qjn07" path="res://Assets/Environment/Shelf_Counter/full_closed_shelf.tscn" id="18_cq1go"]
+[ext_resource type="PackedScene" uid="uid://bvy2dlw8f51f7" path="res://Assets/Environment/Desk_Table/cubicle_6.tscn" id="18_krbj1"]
+[ext_resource type="PackedScene" uid="uid://0t31h6tiefvb" path="res://Assets/Environment/Shelf_Counter/back_closed_shelf.tscn" id="19_42wl3"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="19_p8kop"]
 [ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/test_computer.tres" id="20_83phm"]
-[ext_resource type="PackedScene" uid="uid://c3wleconqpaqy" path="res://Assets/Models/Enviornment/pc_tower.tscn" id="20_s65nw"]
-[ext_resource type="PackedScene" uid="uid://dmpqkd8aehlh7" path="res://Assets/Models/Imported Assets/monitor_V3.glb" id="20_xc52o"]
-[ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Models/Enviornment/small_shelf.tscn" id="20_y6qj7"]
+[ext_resource type="PackedScene" uid="uid://c3wleconqpaqy" path="res://Assets/Environment/Decorations/pc_tower.tscn" id="20_s65nw"]
+[ext_resource type="PackedScene" uid="uid://dmpqkd8aehlh7" path="res://Assets/Environment/Imported Assets/monitor_V3.glb" id="20_xc52o"]
+[ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Environment/Shelf_Counter/small_shelf.tscn" id="20_y6qj7"]
 [ext_resource type="PackedScene" uid="uid://uww33bnurarr" path="res://Modules/Interaction/HideSpot/locker.tscn" id="21_wsjrk"]
 [ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/NPC/Guard.tscn" id="22_mbdnt"]
-[ext_resource type="PackedScene" uid="uid://b1sw083h5lqhn" path="res://Assets/Models/Enviornment/small_shelf_long.tscn" id="22_necek"]
+[ext_resource type="PackedScene" uid="uid://b1sw083h5lqhn" path="res://Assets/Environment/Shelf_Counter/small_shelf_long.tscn" id="22_necek"]
 [ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="23_q0a50"]
 [ext_resource type="PackedScene" uid="uid://1cs4nrno8aha" path="res://Modules/Interaction/lockable.tscn" id="23_wsjrk"]
-[ext_resource type="PackedScene" uid="uid://b4ad3ylkwaj3p" path="res://Assets/Models/Enviornment/big_shelf_long.tscn" id="24_71osp"]
+[ext_resource type="PackedScene" uid="uid://b4ad3ylkwaj3p" path="res://Assets/Environment/Shelf_Counter/big_shelf_long.tscn" id="24_71osp"]
 [ext_resource type="PackedScene" uid="uid://3qury6ftpyua" path="res://Modules/Interaction/Recharge Station/recharge_station.tscn" id="25_krbj1"]
-[ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Models/Enviornment/standard_desk.tscn" id="26_uijwk"]
-[ext_resource type="PackedScene" uid="uid://crv58s02cuc78" path="res://Assets/Models/Enviornment/tall_shelf.tscn" id="27_4rwq3"]
+[ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Environment/Desk_Table/old_standard_desk.tscn" id="26_uijwk"]
 [ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/Clearance Giver/clearance_giver.tscn" id="27_yf3gh"]
-[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="28_c6rx7"]
-[ext_resource type="PackedScene" uid="uid://dow6h3uhurjcs" path="res://Assets/Models/Enviornment/corner_desk.tscn" id="28_krbj1"]
+[ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Environment/Chair/old_standard_chair.tscn" id="28_c6rx7"]
+[ext_resource type="PackedScene" uid="uid://dow6h3uhurjcs" path="res://Assets/Environment/Desk_Table/corner_desk.tscn" id="28_krbj1"]
 [ext_resource type="PackedScene" uid="uid://d36of8ff253ob" path="res://Modules/Interaction/temp_coffee.tscn" id="32_8o8iy"]
-[ext_resource type="PackedScene" uid="uid://8q7cu0tt8b0n" path="res://Assets/Models/Enviornment/big_shelf.tscn" id="32_83phm"]
-[ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="33_m7rp0"]
+[ext_resource type="PackedScene" uid="uid://8q7cu0tt8b0n" path="res://Assets/Environment/Shelf_Counter/big_shelf.tscn" id="32_83phm"]
+[ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Environment/Shelf_Counter/old_counter.tscn" id="33_m7rp0"]
 [ext_resource type="Resource" uid="uid://cdmieat3en1nr" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/josh_playtest_computer.tres" id="34_jsgag"]
 [ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="35_jno8s"]
 [ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="36_jsgag"]
-[ext_resource type="Resource" uid="uid://d3gtigfbf5ijo" path="res://Assets/UI/Computer/Text Messages/josh_andy_curly_drylab_keycard.tres" id="37_6sta3"]
+[ext_resource type="Resource" uid="uid://d3gtigfbf5ijo" path="res://Content/TextConvos/Resources/Z3/josh_andy_curly_drylab_keycard.tres" id="37_6sta3"]
 [ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="37_m7rp0"]
 [ext_resource type="Script" uid="uid://4064plqmijmo" path="res://Modules/Interaction/Computer/Resources/text_app_config.gd" id="38_47nfd"]
 [ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="39_71dmg"]
-[ext_resource type="PackedScene" uid="uid://crjkh3mdkhhfr" path="res://Assets/Models/Enviornment/tv.tscn" id="41_rjonq"]
-[ext_resource type="Resource" uid="uid://2x0ba0nmg2we" path="res://Assets/Items/Resources/fuse.tres" id="42_1ibeh"]
+[ext_resource type="PackedScene" uid="uid://crjkh3mdkhhfr" path="res://Assets/Environment/Decorations/tv.tscn" id="41_rjonq"]
+[ext_resource type="Resource" uid="uid://2x0ba0nmg2we" path="res://Content/Items/Resources/fuse.tres" id="42_1ibeh"]
 [ext_resource type="PackedScene" uid="uid://b8ujtjyoflg8w" path="res://Modules/Interaction/Interface/generic_interface_opener.tscn" id="43_urdum"]
-[ext_resource type="Resource" uid="uid://hlbwyaj7qm4e" path="res://Assets/Items/Resources/sleeping_pills.tres" id="43_ygele"]
+[ext_resource type="Resource" uid="uid://hlbwyaj7qm4e" path="res://Content/Items/Resources/sleeping_pills.tres" id="43_ygele"]
 [ext_resource type="PackedScene" uid="uid://bet0opph8bdm" path="res://Modules/UI/Game UI/UIPuzzles/keypad_ui.tscn" id="44_71osp"]
 [ext_resource type="Resource" uid="uid://ci0fil53nv2jc" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/locker_bros_1_computer.tres" id="44_dt2so"]
 [ext_resource type="Resource" uid="uid://bv4qh8to2wluy" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/maria_computer.tres" id="45_issly"]
 [ext_resource type="Resource" uid="uid://u7n1br3nv88k" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/locker_bros_2_computer.tres" id="45_ludy3"]
 [ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="45_q0a50"]
-[ext_resource type="Resource" uid="uid://26wao2ods0hq" path="res://Assets/Documents/Resources/z3_office_map.tres" id="48_bacra"]
-[ext_resource type="PackedScene" uid="uid://bdcam7xlo4ify" path="res://Assets/Models/Enviornment/toilet.tscn" id="48_ln6ov"]
+[ext_resource type="Resource" uid="uid://26wao2ods0hq" path="res://Content/Documents/Resources/z3_office_map.tres" id="48_bacra"]
+[ext_resource type="PackedScene" uid="uid://bdcam7xlo4ify" path="res://Assets/Environment/Bathroom/toilet.tscn" id="48_ln6ov"]
 [ext_resource type="PackedScene" uid="uid://b044w5b2cv7tp" path="res://Modules/Interaction/Door/bathroom_stall_door.tscn" id="48_wjtok"]
 [ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="49_6sta3"]
 [ext_resource type="Resource" uid="uid://bnwwaq42dfusl" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/justin_computer.tres" id="49_eiwon"]
-[ext_resource type="Texture2D" uid="uid://cv8x5rymrofqt" path="res://Assets/Documents/Textures/14_office_map.png" id="49_hjdgr"]
-[ext_resource type="PackedScene" uid="uid://0oh788m3hc14" path="res://Assets/Models/Enviornment/mirror.tscn" id="50_045i1"]
-[ext_resource type="PackedScene" uid="uid://bd0iyc8b0gku6" path="res://Assets/Models/Enviornment/sink.tscn" id="51_6wes1"]
+[ext_resource type="Texture2D" uid="uid://cv8x5rymrofqt" path="res://Content/Documents/Textures/14_office_map.png" id="49_hjdgr"]
+[ext_resource type="PackedScene" uid="uid://0oh788m3hc14" path="res://Assets/Environment/Bathroom/mirror.tscn" id="50_045i1"]
+[ext_resource type="PackedScene" uid="uid://bd0iyc8b0gku6" path="res://Assets/Environment/Bathroom/sink.tscn" id="51_6wes1"]
 [ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="51_iknc1"]
 [ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="52_6q1tb"]
 [ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="53_eiwon"]
 [ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="54_yvgy5"]
 [ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="55_ej2in"]
 [ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="56_80j5r"]
-[ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Assets/Items/Resources/z3_drylab_keycard.tres" id="56_hjdgr"]
+[ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Content/Items/Resources/z3_drylab_keycard.tres" id="56_hjdgr"]
 [ext_resource type="Script" uid="uid://daejfwfkoy2cv" path="res://addons/NPC Pathing/PathClasses/SetVarAction.gd" id="58_xqhd6"]
 [ext_resource type="Script" uid="uid://cjhgp3kkd22yr" path="res://addons/NPC Pathing/PathClasses/DoorAction.gd" id="59_8jlgf"]
 [ext_resource type="Script" uid="uid://dytcvxvfnohai" path="res://addons/NPC Pathing/PathClasses/BranchAction.gd" id="60_l4sw6"]
@@ -81,40 +79,19 @@
 [ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="61_xc52o"]
 [ext_resource type="PackedScene" uid="uid://b02sy8jnytlnw" path="res://Modules/Interaction/Door/hidden_door.tscn" id="62_8o8iy"]
 [ext_resource type="PackedScene" uid="uid://ctftfayvoseda" path="res://Modules/Interaction/Puzzles/puzzle_panel.tscn" id="63_6q1tb"]
-[ext_resource type="Resource" uid="uid://byt5mxt5py6iu" path="res://Assets/Items/Resources/z3_garden_scissors.tres" id="63_eiwon"]
-[ext_resource type="Resource" uid="uid://cfwtyeqpjdonl" path="res://Assets/Documents/Resources/z3_gold_lab_silver_office.tres" id="67_ej2in"]
-[ext_resource type="Texture2D" uid="uid://cww2x0rufq0ap" path="res://Assets/Documents/Textures/21_gold_lab_silver_office.png" id="68_80j5r"]
-[ext_resource type="Resource" uid="uid://cjwuds2r02tu5" path="res://Assets/Items/Resources/z3_house_key_gold.tres" id="75_5alli"]
+[ext_resource type="Resource" uid="uid://byt5mxt5py6iu" path="res://Content/Items/Resources/z3_garden_scissors.tres" id="63_eiwon"]
+[ext_resource type="Resource" uid="uid://cfwtyeqpjdonl" path="res://Content/Documents/Resources/z3_gold_lab_silver_office.tres" id="67_ej2in"]
+[ext_resource type="Texture2D" uid="uid://cww2x0rufq0ap" path="res://Content/Documents/Textures/21_gold_lab_silver_office.png" id="68_80j5r"]
+[ext_resource type="Resource" uid="uid://cjwuds2r02tu5" path="res://Content/Items/Resources/z3_house_key_gold.tres" id="75_5alli"]
 [ext_resource type="Resource" uid="uid://cc73my60cuw3e" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/laura_computer.tres" id="78_xc52o"]
 [ext_resource type="PackedScene" uid="uid://cfopbjoaqp7ku" path="res://Modules/Interaction/Door/double_swinging_door.tscn" id="80_50kx0"]
-[ext_resource type="PackedScene" uid="uid://bd6ue7tfa0xs6" path="res://Assets/Models/Imported Assets/vent.fbx" id="81_wqor4"]
-[ext_resource type="Resource" uid="uid://hpk26t0rrwii" path="res://Assets/Documents/Resources/z3_bathroom_closed.tres" id="82_5alli"]
-[ext_resource type="Resource" uid="uid://d2qh1q4shlbtn" path="res://Assets/Items/Resources/z3_house_key_silver.tres" id="82_sc1jj"]
-[ext_resource type="Texture2D" uid="uid://jcakwph2dvbs" path="res://Assets/Documents/Textures/20_bathroom_closed.png" id="83_uix1y"]
+[ext_resource type="PackedScene" uid="uid://bd6ue7tfa0xs6" path="res://Assets/Environment/Imported Assets/vent.fbx" id="81_wqor4"]
+[ext_resource type="Resource" uid="uid://hpk26t0rrwii" path="res://Content/Documents/Resources/z3_bathroom_closed.tres" id="82_5alli"]
+[ext_resource type="Resource" uid="uid://d2qh1q4shlbtn" path="res://Content/Items/Resources/z3_house_key_silver.tres" id="82_sc1jj"]
+[ext_resource type="Texture2D" uid="uid://jcakwph2dvbs" path="res://Content/Documents/Textures/20_bathroom_closed.png" id="83_uix1y"]
 [ext_resource type="PackedScene" uid="uid://25n08ywscgkj" path="res://Modules/Interaction/Door/bars.tscn" id="89_50kx0"]
-[ext_resource type="PackedScene" uid="uid://ob26146yejqw" path="res://Assets/Models/Enviornment/red_plant.tscn" id="90_6q1tb"]
-[ext_resource type="AudioStream" uid="uid://0g0pdg05gm2m" path="res://Assets/Music/Time Scheist.mp3" id="96_6q1tb"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2iiq"]
-emission_shape_offset = Vector3(0, -4, 0)
-emission_shape_scale = Vector3(72.59, 0.25, 63.76)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-initial_velocity_min = 0.5
-initial_velocity_max = 1.5
-gravity = Vector3(0, 0, 0)
-scale_min = 672.7
-scale_max = 773.83997
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1u7u"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("11_nigfc")
-billboard_mode = 1
-
-[sub_resource type="QuadMesh" id="QuadMesh_e2auu"]
-material = SubResource("StandardMaterial3D_j1u7u")
-size = Vector2(37.3, 16.84)
+[ext_resource type="PackedScene" uid="uid://ob26146yejqw" path="res://Modules/red_plant.tscn" id="90_6q1tb"]
+[ext_resource type="AudioStream" uid="uid://0g0pdg05gm2m" path="res://Assets/Audio/Music/Time Scheist.mp3" id="96_6q1tb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qqru8"]
 
@@ -4206,7 +4183,7 @@ metadata/_custom_type_script = "uid://bqksnw54upvlw"
 [node name="Z3Floor" type="Node3D" unique_id=2133668272]
 
 [node name="SceneConfig" parent="." unique_id=705177490 node_paths=PackedStringArray("exclusion_list") instance=ExtResource("1_jno8s")]
-exclusion_list = [NodePath("../CanvasLayer"), NodePath("../Clouds")]
+exclusion_list = [NodePath("../CanvasLayer"), NodePath("")]
 input_manager = true
 ui_manager = true
 time_manager = true
@@ -4216,15 +4193,6 @@ stream = ExtResource("96_6q1tb")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
-
-[node name="Clouds" type="GPUParticles3D" parent="." unique_id=558484689]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
-visible = false
-amount = 200
-lifetime = 20.0
-visibility_aabb = AABB(-50, -10, -50, 100, 20, 100)
-process_material = SubResource("ParticleProcessMaterial_e2iiq")
-draw_pass_1 = SubResource("QuadMesh_e2auu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1429792906]
 layer = 10
@@ -6892,7 +6860,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2, 2
 [node name="Decor" type="Node3D" parent="BackElevatorHallway" unique_id=1490377388]
 
 [node name="ShelfCabinet" parent="BackElevatorHallway/Decor" unique_id=1819643507 instance=ExtResource("18_cq1go")]
-transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 3.8551645, 0, -7.75)
+transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 3.8551645, 0, -7.75)
 
 [node name="ShelfCabinet2" parent="BackElevatorHallway/Decor" unique_id=52948198 instance=ExtResource("19_42wl3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.8551645, 0, -6.5)
@@ -7557,10 +7525,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.3
 [node name="SmallShelf2" parent="MeetingRoom3/Decor" unique_id=1122384489 instance=ExtResource("20_y6qj7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.349999, -0.6, -1.0499992)
 
-[node name="ShelfCabinet" parent="MeetingRoom3/Decor" unique_id=791518038 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet" parent="MeetingRoom3/Decor" unique_id=1838974536 instance=ExtResource("32_83phm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.1500001, 0, -0.39999962)
 
-[node name="ShelfCabinet2" parent="MeetingRoom3/Decor" unique_id=768085054 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet2" parent="MeetingRoom3/Decor" unique_id=2146339954 instance=ExtResource("32_83phm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.1500001, 0, -4.299999)
 
 [node name="SmallShelf3" parent="MeetingRoom3/Decor" unique_id=834328827 instance=ExtResource("20_y6qj7")]
@@ -8081,78 +8049,38 @@ metadata/asset_placer_res_id = "uid://crjkh3mdkhhfr"
 [node name="Plant (1)" parent="Lab/Decor" unique_id=1127135047 instance=ExtResource("15_cnd03")]
 transform = Transform3D(1.3784211, 0, 0, 0, 1.3784211, 0, 0, 0, 1.3784211, 34.096157, 0, -22.690372)
 
-[node name="ShelfCabinet3" parent="Lab/Decor" unique_id=144166862 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet3" parent="Lab/Decor" unique_id=1192472304 instance=ExtResource("32_83phm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 31.1, 0, -10.950001)
 
-[node name="ShelfCabinet4" parent="Lab/Decor" unique_id=1801455481 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet4" parent="Lab/Decor" unique_id=1019950713 instance=ExtResource("32_83phm")]
 transform = Transform3D(0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.7071067, 30.7, 0, -11.750001)
 
-[node name="ShelfCabinet5" parent="Lab/Decor" unique_id=576247835 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet5" parent="Lab/Decor" unique_id=148508855 instance=ExtResource("32_83phm")]
 transform = Transform3D(0.9659257, 0, -0.25881913, 0, 1, 0, 0.25881913, 0, 0.9659257, 29.900002, 0, -12.250001)
 
-[node name="ShelfCabinet6" parent="Lab/Decor" unique_id=1738547891 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(0.96592575, 0, -0.25881916, 0, 1, 0, 0.25881916, 0, 0.96592575, 25.463629, 0, -16.882593)
+[node name="ShelfCabinet6" parent="Lab/Decor" unique_id=1570910830 instance=ExtResource("32_83phm")]
+transform = Transform3D(0.9659258, 0, -0.2588192, 0, 1, 0, 0.2588192, 0, 0.9659258, 25.463627, 0, -16.882593)
 
-[node name="ShelfCabinet7" parent="Lab/Decor" unique_id=27303351 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet7" parent="Lab/Decor" unique_id=1641715134 instance=ExtResource("32_83phm")]
 transform = Transform3D(1.0000001, 0, -2.3841858e-07, 0, 1, 0, 2.3841858e-07, 0, 1.0000001, 24.522655, 0, -16.94476)
 
-[node name="ShelfCabinet8" parent="Lab/Decor" unique_id=1426286080 instance=ExtResource("27_4rwq3")]
+[node name="ShelfCabinet8" parent="Lab/Decor" unique_id=2078130814 instance=ExtResource("32_83phm")]
 transform = Transform3D(0.9659258, 0, 0.25881878, 0, 1, 0, -0.25881878, 0, 0.9659258, 23.46372, 0, -16.87265)
 
 [node name="SmallShelf" parent="Lab/Decor" unique_id=329797656 instance=ExtResource("20_y6qj7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 39.35, 0, -16.5)
 
-[node name="MegaShelf" type="Node3D" parent="Lab/Decor" unique_id=530957852]
+[node name="MegaShelf1a" parent="Lab/Decor" unique_id=1241925538 instance=ExtResource("24_71osp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -14.724998)
 
-[node name="ShelfCabinet" parent="Lab/Decor/MegaShelf" unique_id=572355050 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -15.85)
+[node name="MegaShelf1b" parent="Lab/Decor" unique_id=875052835 instance=ExtResource("24_71osp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -11.724998)
 
-[node name="ShelfCabinet2" parent="Lab/Decor/MegaShelf" unique_id=1329267169 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -15.05)
+[node name="MegaShelf2a" parent="Lab/Decor" unique_id=2039430727 instance=ExtResource("24_71osp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -11.825001)
 
-[node name="ShelfCabinet3" parent="Lab/Decor/MegaShelf" unique_id=16230772 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -14.25)
-
-[node name="ShelfCabinet4" parent="Lab/Decor/MegaShelf" unique_id=1989181809 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -13.45)
-
-[node name="ShelfCabinet5" parent="Lab/Decor/MegaShelf" unique_id=855663424 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -12.650001)
-
-[node name="ShelfCabinet6" parent="Lab/Decor/MegaShelf" unique_id=1814743137 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -11.85)
-
-[node name="ShelfCabinet7" parent="Lab/Decor/MegaShelf" unique_id=1194390749 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -11.05)
-
-[node name="ShelfCabinet8" parent="Lab/Decor/MegaShelf" unique_id=877005828 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 37.5, 0, -10.25)
-
-[node name="MegaShelf2" type="Node3D" parent="Lab/Decor" unique_id=773882754]
-
-[node name="ShelfCabinet" parent="Lab/Decor/MegaShelf2" unique_id=943363927 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -12.950001)
-
-[node name="ShelfCabinet2" parent="Lab/Decor/MegaShelf2" unique_id=598257545 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -12.15)
-
-[node name="ShelfCabinet3" parent="Lab/Decor/MegaShelf2" unique_id=2146746427 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -11.35)
-
-[node name="ShelfCabinet4" parent="Lab/Decor/MegaShelf2" unique_id=70754985 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -10.549999)
-
-[node name="ShelfCabinet5" parent="Lab/Decor/MegaShelf2" unique_id=551114971 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -9.75)
-
-[node name="ShelfCabinet6" parent="Lab/Decor/MegaShelf2" unique_id=390253630 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -8.950001)
-
-[node name="ShelfCabinet7" parent="Lab/Decor/MegaShelf2" unique_id=678002357 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -8.15)
-
-[node name="ShelfCabinet8" parent="Lab/Decor/MegaShelf2" unique_id=1184867038 instance=ExtResource("27_4rwq3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -7.3500004)
+[node name="MegaShelf2b" parent="Lab/Decor" unique_id=1937357260 instance=ExtResource("24_71osp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36, 0, -8.825001)
 
 [node name="ShelfCabinet" parent="Lab/Decor" unique_id=1377556692 instance=ExtResource("18_cq1go")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16.05, 0, -0.14999962)

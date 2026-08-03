@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cfi4568w1mep7" path="res://Modules/ConeVision/cone_vision.gd" id="1_a0itm"]
 [ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Effects/laser.gdshader" id="1_kdpmb"]
 [ext_resource type="Script" uid="uid://g5kay17l4jvc" path="res://Modules/ConeVision/visionmeshgen.gd" id="2_a0itm"]
-[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/SFX/laser.ogg" id="3_1cksi"]
+[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/Audio/SFX/laser.ogg" id="3_1cksi"]
 [ext_resource type="Material" uid="uid://df0n62538ev1x" path="res://Modules/ConeVision/VisionMeshMat.tres" id="3_7ingd"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_23e0v"]

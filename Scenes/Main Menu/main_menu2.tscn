@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b42j8ycb3g26l"]
 
-[ext_resource type="Script" uid="uid://dv3pmyjmcfrbs" path="res://Scenes/Main Menu/main_menu.gd" id="1_c0awy"]
 [ext_resource type="Texture2D" uid="uid://dt2jut8yswykf" path="res://Assets/UI/Main Menu/start screen mockup lofi.png" id="2_c0awy"]
 [ext_resource type="Texture2D" uid="uid://1e762uk44mwt" path="res://Assets/UI/Main Menu/settingsdefault.png" id="3_287i0"]
 [ext_resource type="Texture2D" uid="uid://cxy8sj7p8e6l1" path="res://Assets/UI/Main Menu/settingshover.png" id="3_pbbqo"]
@@ -10,6 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://rop0vuvsqp3w" path="res://Assets/UI/Main Menu/creditsdefault.png" id="7_iiq3b"]
 [ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="8_287i0"]
 
+[sub_resource type="GDScript" id="GDScript_287i0"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+
+func _on_play_pressed() -> void:
+	SceneManager.change_scene(SceneManager.Scene.TUTORIAL)
+	pass
+
+func _on_settings_pressed():
+	pass # Replace with function body.
+
+func _on_credits_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
 [node name="MainMenu" type="Control" unique_id=194556561]
 layout_mode = 3
 anchors_preset = 15
@@ -17,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_c0awy")
+script = SubResource("GDScript_287i0")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=615041850]
 custom_minimum_size = Vector2(0, 700)

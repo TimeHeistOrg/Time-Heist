@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bu61w3fsjjqll" path="res://Modules/Interaction/Recharge Station/recharge_station.gd" id="1_34lw2"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_ivxhb"]
-[ext_resource type="PackedScene" uid="uid://pmnkf7o45cti" path="res://Assets/Models/Imported Assets/recharge_station.glb" id="2_xitml"]
+[ext_resource type="PackedScene" uid="uid://pmnkf7o45cti" path="res://Assets/Environment/Imported Assets/recharge_station.glb" id="2_xitml"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xitml"]
 size = Vector3(1.0410156, 2, 1.0400391)
