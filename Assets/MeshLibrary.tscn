@@ -8,11 +8,11 @@
 [ext_resource type="ArrayMesh" uid="uid://bmv2grujv4m2d" path="res://Assets/Meshes/Walls/Doorway.tres" id="5_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://blfq83f2t8l1f" path="res://Assets/Meshes/staircase_Cube.res" id="6_upl86"]
 [ext_resource type="ArrayMesh" uid="uid://dyx80kvgx8fo1" path="res://Assets/Meshes/FloorTile_Cube.res" id="7_upl86"]
-[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="8_a05ek"]
-[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="9_l6peu"]
-[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="10_utgb0"]
-[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="11_m0onw"]
-[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="12_p5opj"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="8_a05ek"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="9_l6peu"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="10_utgb0"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="11_m0onw"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="12_p5opj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m0onw"]
 size = Vector3(0.25, 2, 0.25)

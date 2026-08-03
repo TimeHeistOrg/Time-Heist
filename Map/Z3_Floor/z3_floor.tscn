@@ -40,7 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/Clearance Giver/clearance_giver.tscn" id="27_yf3gh"]
 [ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Models/Enviornment/standard_chair.tscn" id="28_c6rx7"]
 [ext_resource type="PackedScene" uid="uid://dow6h3uhurjcs" path="res://Assets/Models/Enviornment/corner_desk.tscn" id="28_krbj1"]
-[ext_resource type="PackedScene" uid="uid://d36of8ff253ob" path="res://Modules/Interaction/temp_plant.tscn" id="32_8o8iy"]
+[ext_resource type="PackedScene" uid="uid://d36of8ff253ob" path="res://Modules/Interaction/temp_coffee.tscn" id="32_8o8iy"]
 [ext_resource type="PackedScene" uid="uid://8q7cu0tt8b0n" path="res://Assets/Models/Enviornment/big_shelf.tscn" id="32_83phm"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Models/Enviornment/counter.tscn" id="33_m7rp0"]
 [ext_resource type="Resource" uid="uid://cdmieat3en1nr" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/josh_playtest_computer.tres" id="34_jsgag"]

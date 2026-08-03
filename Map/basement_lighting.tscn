@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://c3sr3i21fceav" path="res://Assets/Models/Stock Assets/Box_Base.fbx" id="37_xlhwn"]
 [ext_resource type="Script" uid="uid://buhosr6g8knnm" path="res://Modules/Interaction/stashable.gd" id="38_sbk6u"]
 [ext_resource type="PackedScene" uid="uid://cratpfmhvs24i" path="res://Assets/Models/Enviornment/4_wide_bookshelf.tscn" id="38_t0xwl"]
-[ext_resource type="PackedScene" uid="uid://d36of8ff253ob" path="res://Modules/Interaction/temp_plant.tscn" id="39_lw6qw"]
+[ext_resource type="PackedScene" uid="uid://d36of8ff253ob" path="res://Modules/Interaction/temp_coffee.tscn" id="39_lw6qw"]
 [ext_resource type="Resource" uid="uid://bl3wymmqufqh2" path="res://Assets/Items/Resources/archive_key.tres" id="40_erqh4"]
 [ext_resource type="PackedScene" uid="uid://88o6koqkm65w" path="res://Assets/Models/Stock Assets/FileCabinet_Small.fbx" id="41_bvtp0"]
 [ext_resource type="PackedScene" uid="uid://dpbn3tv4fvft7" path="res://Assets/Models/Stock Assets/Table_Box.fbx" id="41_x8xvc"]
