@@ -2,19 +2,23 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cm2ucyu2yoy4t" path="res://Assets/Meshes/Walls/Wall.res" id="1_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://v2p65exd6thd" path="res://Assets/Meshes/untrimmed_wall.res" id="2_l6peu"]
+[ext_resource type="ArrayMesh" uid="uid://cf64cvvno8yr5" path="res://Assets/Meshes/WideWall_Cube_001.res" id="2_m8hoe"]
 [ext_resource type="ArrayMesh" uid="uid://b721wjhrywnsc" path="res://Assets/Meshes/Walls/HalfWallMiddle.res" id="3_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://b7o1olkitp2fj" path="res://Assets/Meshes/Walls/HalfWallEdge.res" id="4_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://bmv2grujv4m2d" path="res://Assets/Meshes/Walls/Doorway.tres" id="5_l6peu"]
 [ext_resource type="ArrayMesh" uid="uid://blfq83f2t8l1f" path="res://Assets/Meshes/staircase_Cube.res" id="6_upl86"]
 [ext_resource type="ArrayMesh" uid="uid://dyx80kvgx8fo1" path="res://Assets/Meshes/FloorTile_Cube.res" id="7_upl86"]
-[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="8_a05ek"]
-[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="9_l6peu"]
-[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="10_utgb0"]
-[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="11_m0onw"]
-[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="12_p5opj"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="8_a05ek"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="9_l6peu"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="10_utgb0"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="11_m0onw"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="12_p5opj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m0onw"]
 size = Vector3(0.25, 2, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_upl86"]
+size = Vector3(0.25, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m2k06"]
 size = Vector3(0.25, 1, 0.25)
@@ -135,6 +139,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SmallWall/RigidBody3D" unique_id=1675896749]
 shape = SubResource("BoxShape3D_m0onw")
+
+[node name="WideWall" type="MeshInstance3D" parent="." unique_id=1798293783]
+visible = false
+layers = 33
+mesh = ExtResource("2_m8hoe")
+
+[node name="RigidBody3D" type="StaticBody3D" parent="WideWall" unique_id=2068181852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.375)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WideWall/RigidBody3D" unique_id=156315385]
+shape = SubResource("BoxShape3D_upl86")
 
 [node name="WindowMiddle" type="MeshInstance3D" parent="." unique_id=161874877]
 visible = false
