@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://x1th4llfsrc1"]
-
-[resource]
-resource_name = "Dirt.002"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.49430427, 0.2989378, 0.21718228, 1)
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0

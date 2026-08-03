@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://clco7c3docdte"]
 
-[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="1_mj1eb"]
-[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="2_fotk3"]
-[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="3_kldae"]
-[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="4_1no42"]
-[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="5_36fif"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="1_mj1eb"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="2_fotk3"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="3_kldae"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="4_1no42"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="5_36fif"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Assets/MeshLibrary.tres" id="6_a6xxq"]
 [ext_resource type="PackedScene" uid="uid://c2jmn7fqcsv24" path="res://Player[OLD]/OLD_camera_pivot.tscn" id="7_kl7s0"]
 [ext_resource type="PackedScene" uid="uid://b0eilnkhu73fw" path="res://Player[OLD]/OLD_Player.tscn" id="8_515ed"]
@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="10_0l4f8"]
 [ext_resource type="PackedScene" uid="uid://j4buig8m5yp3" path="res://Assets/Models/Imported Assets/cubicle_six_v3.glb" id="11_fotk3"]
 [ext_resource type="PackedScene" uid="uid://oyq0g5wotgxh" path="res://Assets/Models/Door_v20.gltf" id="12_b4kwg"]
-[ext_resource type="Material" uid="uid://bnu20tryb3xh8" path="res://Assets/Materials/PS Graphics Textures/Door_Material/door_material.tres" id="13_36fif"]
-[ext_resource type="Material" uid="uid://bps7barfjsgtm" path="res://Assets/Materials/PS Graphics Textures/Door_Material/knob_material.tres" id="14_a6xxq"]
+[ext_resource type="Material" uid="uid://bnu20tryb3xh8" path="res://Assets/Materials/Doors/Door_Material/door_material.tres" id="13_36fif"]
+[ext_resource type="Material" uid="uid://bps7barfjsgtm" path="res://Assets/Materials/Doors/Door_Material/knob_material.tres" id="14_a6xxq"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_terai"]
 

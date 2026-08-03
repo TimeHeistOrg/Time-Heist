@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dmcfah8vacfq6" path="res://Modules/Interaction/Door/generic_door.gd" id="1_nk12b"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_im0k3"]
 [ext_resource type="AudioStream" uid="uid://cdpr7pq46qe1h" path="res://Assets/SFX/open_door.ogg" id="4_gx118"]
-[ext_resource type="Material" uid="uid://bnu20tryb3xh8" path="res://Assets/Materials/PS Graphics Textures/Door_Material/door_material.tres" id="4_haa8g"]
+[ext_resource type="Material" uid="uid://bnu20tryb3xh8" path="res://Assets/Materials/Doors/Door_Material/door_material.tres" id="4_haa8g"]
 [ext_resource type="AudioStream" uid="uid://bihq08irhlvhi" path="res://Assets/SFX/door_lock.ogg" id="5_iwxtq"]
-[ext_resource type="Material" uid="uid://bps7barfjsgtm" path="res://Assets/Materials/PS Graphics Textures/Door_Material/knob_material.tres" id="5_tcs74"]
+[ext_resource type="Material" uid="uid://bps7barfjsgtm" path="res://Assets/Materials/Doors/Door_Material/knob_material.tres" id="5_tcs74"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6kuux"]
 
