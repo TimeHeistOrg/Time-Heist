@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="1_dwmf4"]
 [ext_resource type="Texture2D" uid="uid://7jn17winpeyi" path="res://Assets/Items/Textures/fuse.png" id="1_gdyvb"]
-[ext_resource type="ArrayMesh" uid="uid://d0c8ubnwcaajy" path="res://Assets/Items/Meshes/fuse.res" id="2_d4jt2"]
+[ext_resource type="ArrayMesh" uid="uid://bo7ggkt0yy3a3" path="res://Assets/Items/Meshes/fuse.res" id="2_d4jt2"]
 
 [resource]
 script = ExtResource("1_dwmf4")
