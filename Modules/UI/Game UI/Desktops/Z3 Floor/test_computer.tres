@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="4_lc2jo"]
 [ext_resource type="Script" uid="uid://bjskgs3dd7urj" path="res://Modules/Interaction/Computer/Resources/email_app_config.gd" id="5_o50am"]
 [ext_resource type="Resource" uid="uid://bfjfesbg0arfi" path="res://Assets/Documents/Resources/first_test_document.tres" id="5_pdc8g"]
+[ext_resource type="Resource" uid="uid://c2o4ml4lp7et4" path="res://Assets/Documents/Resources/z3_laura_to_front_desk.tres" id="6_5mp0m"]
 [ext_resource type="Script" uid="uid://ch45yfbtv40b2" path="res://Modules/Interaction/Computer/Resources/file_app_config.gd" id="6_o50am"]
 
 [sub_resource type="Resource" id="Resource_1xfwy"]
@@ -16,7 +17,7 @@ metadata/_custom_type_script = "uid://ch45yfbtv40b2"
 
 [sub_resource type="Resource" id="Resource_tr3qd"]
 script = ExtResource("5_o50am")
-emails = Array[ExtResource("4_kkj4l")]([ExtResource("5_pdc8g")])
+emails = Array[ExtResource("4_kkj4l")]([ExtResource("5_pdc8g"), ExtResource("6_5mp0m")])
 metadata/_custom_type_script = "uid://bjskgs3dd7urj"
 
 [resource]

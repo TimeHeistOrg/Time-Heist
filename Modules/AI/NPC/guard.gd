@@ -1,5 +1,5 @@
 @tool
-class_name Guard extends NPC
+class_name Guard extends PathFollower
 
 #Seen at all -> Suspicious:
 	#stops moving, tracks player, quesrtion mark
@@ -142,7 +142,8 @@ func enter_normal():
 	_enter_state(AlertStates.NORMAL)
 
 func _enter_normal():
-	$torso.get_surface_override_material(0).emission = color
+	#$torso.get_surface_override_material(0).emission = Color(0,0,0,)
+	$torso.get_surface_override_material(0).emission_energy_multiplier = 1
 
 func enter_sus():
 	state = AlertStates.SUSPICIOUS
@@ -155,7 +156,8 @@ func enter_caught():
 
 func _enter_sus():
 	$AudioStreamPlayer.play()
-	$torso.get_surface_override_material(0).emission = Color(1.0, 0.0, 0.0, 1.0)
+	#$torso.get_surface_override_material(0).emission = Color(1.0, 0.0, 0.0, 1.0)
+	$torso.get_surface_override_material(0).emission_energy_multiplier = 3
 
 func enter_alert():
 	state = AlertStates.ALERT
@@ -169,4 +171,4 @@ func _on_npc_hitbox_body_entered(body: Node3D) -> void:
 		enter_caught()
 		
 func catch_player():
-	globals.player_caught()
+	globals.player_caught(self)

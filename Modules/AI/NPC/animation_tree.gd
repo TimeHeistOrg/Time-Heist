@@ -1,6 +1,6 @@
 extends AnimationTree
 
-@onready var npc_script: NPC = $".."
+@onready var npc_script: PathFollower = $".."
 
 var last_processed_component: PathComponent
 var time_scale: float = 0 #to adapt to time travel

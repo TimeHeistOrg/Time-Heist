@@ -36,8 +36,8 @@ func _validate_property(property: Dictionary):
 	if property.name == "start_time":
 		property.usage |= PROPERTY_USAGE_READ_ONLY
 
-func progress(npc: NPC, from: float, to: float):
+func progress(npc: PathFollower, from: float, to: float):
 	return to >= end_time
 
-func revert(npc: NPC, from: float, to: float):
+func revert(npc: PathFollower, from: float, to: float):
 	return to < start_time

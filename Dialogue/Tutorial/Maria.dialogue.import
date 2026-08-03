@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://5bv7v8eapkbg"
+path="res://.godot/imported/Maria.dialogue-9667ec64168bfa3ce1e191a0c5622bba.tres"
+
+[deps]
+
+source_file="res://Dialogue/Tutorial/Maria.dialogue"
+dest_files=["res://.godot/imported/Maria.dialogue-9667ec64168bfa3ce1e191a0c5622bba.tres"]
+
+[params]
+
+defaults=true

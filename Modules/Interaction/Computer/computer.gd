@@ -6,6 +6,7 @@ class_name Computer
 @onready var view_position: Marker3D = $ViewPosition
 @onready var computer_ui: ComputerUI = %"Computer UI"
 @onready var sub_viewport: SubViewport = $SubViewport
+@onready var screen_mesh: MeshInstance3D = $Screen
 
 var original_transform: Transform3D
 var original_fov: float
@@ -25,6 +26,8 @@ func interact() -> void:
 	if is_viewing:
 		return
 	globals.player.lock_camera()
+	globals.player.visible = false
+	screen_mesh.visible = true
 	computer_ui.open()
 	lerp_camera_to_screen()
 	#print("COMPUTER INTERACT")
@@ -52,4 +55,9 @@ func lerp_camera_to_screen() -> void:
 
 func close_computer() -> void:
 	if globals.player:
-		globals.player.return_camera(func(): is_viewing = false)
+		globals.player.visible = true
+		globals.player.return_camera(_on_computer_closed)
+
+func _on_computer_closed():
+	is_viewing = false
+	screen_mesh.visible = false

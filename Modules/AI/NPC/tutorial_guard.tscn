@@ -48,14 +48,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ptfpa")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yuln"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3n6b"]
 resource_local_to_scene = true
-albedo_color = Color(1, 0.87058824, 0.78431374, 1)
+albedo_color = Color(0.87086356, 0.28329608, 0.22849053, 1)
 metallic = 0.8
 roughness = 0.5
 emission_enabled = true
-emission = Color(0.8117647, 0.49019608, 0, 1)
-emission_energy_multiplier = 3.0
+emission = Color(1, 0, 0, 1)
 backlight = Color(0.99997944, 0.71876156, 0.67345256, 1)
 stencil_flags = 2
 stencil_outline_thickness = 0.001
@@ -144,6 +143,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_flecr")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng2hs"]
+resource_local_to_scene = true
+albedo_color = Color(0.87086356, 0.28329608, 0.22849053, 1)
+metallic = 0.8
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+backlight = Color(0.99997944, 0.71876156, 0.67345256, 1)
+stencil_flags = 2
+stencil_outline_thickness = 0.001
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yt8hl"]
 albedo_color = Color(0.35006392, 0.35006395, 0.35006392, 1)
 metallic = 0.8
@@ -179,7 +189,7 @@ sight_line_radius = 7.5
 transform = Transform3D(15.31432, 0, 0, 0, -6.6941016e-07, 8.609855, 0, -15.314319, -3.763487e-07, -0.00017647594, 0.26309648, 0)
 mesh = SubResource("ArrayMesh_3yuln")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_3yuln")
+surface_material_override/0 = SubResource("StandardMaterial3D_r3n6b")
 
 [node name="tire" type="MeshInstance3D" parent="." unique_id=1767033042]
 transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0.31826976, 0.24740723, -3.6469192e-08)
@@ -190,7 +200,7 @@ skeleton = NodePath("")
 transform = Transform3D(-13.599682, 1.1889222e-06, 0, -5.6005867e-08, -0.64063257, 13.584587, 1.187602e-06, 13.584587, 0.64063257, -0.00016136988, 0.9761665, 1.3115658e-07)
 mesh = SubResource("ArrayMesh_cy4ms")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_3yuln")
+surface_material_override/0 = SubResource("StandardMaterial3D_ng2hs")
 
 [node name="EyeClinder" type="MeshInstance3D" parent="." unique_id=1281035009]
 transform = Transform3D(0.2287981, 0, 0, 0, 0.01096248, 0, 0, 0, 0.27177733, 0, 1.2961587, -0.037184685)

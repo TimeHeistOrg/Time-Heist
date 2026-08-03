@@ -1,0 +1,217 @@
+[gd_resource type="Resource" script_class="NPCPath" format=3 uid="uid://dmclqd4mfbwie"]
+
+[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="1_a5pcy"]
+[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="2_qhgeu"]
+[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="3_jekvv"]
+[ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="4_3gqfl"]
+[ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="5_nu5op"]
+[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="6_71cje"]
+[ext_resource type="Script" uid="uid://cjhgp3kkd22yr" path="res://addons/NPC Pathing/PathClasses/DoorAction.gd" id="8_4p5e4"]
+[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="9_b6v4q"]
+
+[sub_resource type="Resource" id="Resource_4cqtb"]
+script = ExtResource("4_3gqfl")
+rotation_deg = 90.0
+metadata/_custom_type_script = "uid://68nqpa721my0"
+
+[sub_resource type="Resource" id="Resource_vmfy0"]
+script = ExtResource("5_nu5op")
+end_time = 60.0
+duration = 60.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_o8obq"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(20.375, 0, -7.375)
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_4cqtb"), SubResource("Resource_vmfy0")])
+time_end = 60.0
+
+[sub_resource type="Resource" id="Resource_fjjbm"]
+script = ExtResource("5_nu5op")
+end_time = 2.0
+duration = 2.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_24jtv"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-14.875, 0, 9)
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_fjjbm")])
+time_start = 222.875
+time_end = 224.875
+id = 2
+
+[sub_resource type="Resource" id="Resource_dtmjb"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 0.23863553964259163
+prev_vertex = SubResource("Resource_o8obq")
+next_vertex = SubResource("Resource_24jtv")
+time_start = 60.0
+time_end = 222.875
+id = 1
+
+[sub_resource type="Resource" id="Resource_8kwe4"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-23.125, 0, 9)
+time_start = 230.375
+time_end = 230.375
+id = 4
+
+[sub_resource type="Resource" id="Resource_0ijnm"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.5
+prev_vertex = SubResource("Resource_24jtv")
+next_vertex = SubResource("Resource_8kwe4")
+time_start = 224.875
+time_end = 230.375
+id = 3
+
+[sub_resource type="Resource" id="Resource_l5glx"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-23, 0, -0.625)
+time_start = 236.7922077178955
+time_end = 236.7922077178955
+id = 6
+
+[sub_resource type="Resource" id="Resource_rk2n6"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.4999999999999931
+prev_vertex = SubResource("Resource_8kwe4")
+next_vertex = SubResource("Resource_l5glx")
+time_start = 230.375
+time_end = 236.7922077178955
+id = 5
+
+[sub_resource type="Resource" id="Resource_4uldv"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-20.875, 0, -8)
+time_start = 241.90890153249103
+time_end = 241.90890153249103
+id = 8
+
+[sub_resource type="Resource" id="Resource_76cgj"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.5000000000000056
+prev_vertex = SubResource("Resource_l5glx")
+next_vertex = SubResource("Resource_4uldv")
+time_start = 236.7922077178955
+time_end = 241.90890153249103
+id = 7
+
+[sub_resource type="Resource" id="Resource_6p77y"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-15.875, 0, -13.875)
+time_start = 247.05199305216473
+time_end = 247.05199305216473
+id = 10
+
+[sub_resource type="Resource" id="Resource_6umlm"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.4999999999999971
+prev_vertex = SubResource("Resource_4uldv")
+next_vertex = SubResource("Resource_6p77y")
+time_start = 241.90890153249103
+time_end = 247.05199305216473
+id = 9
+
+[sub_resource type="Resource" id="Resource_38rwy"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-8.75, 0, -13.875)
+time_start = 251.80199305216473
+time_end = 251.80199305216473
+id = 12
+
+[sub_resource type="Resource" id="Resource_2rrnv"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.5
+prev_vertex = SubResource("Resource_6p77y")
+next_vertex = SubResource("Resource_38rwy")
+time_start = 247.05199305216473
+time_end = 251.80199305216473
+id = 11
+
+[sub_resource type="Resource" id="Resource_sq051"]
+script = ExtResource("8_4p5e4")
+door = NodePath("../../../Closet/Interactables/ClosetDoor")
+metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
+
+[sub_resource type="Resource" id="Resource_576od"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-8.75, 0, -13.25)
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_sq051")])
+time_start = 252.21865971883136
+time_end = 252.21865971883136
+id = 14
+
+[sub_resource type="Resource" id="Resource_uvddg"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.5000000000001363
+prev_vertex = SubResource("Resource_38rwy")
+next_vertex = SubResource("Resource_576od")
+time_start = 251.80199305216473
+time_end = 252.21865971883136
+id = 13
+
+[sub_resource type="Resource" id="Resource_tgjao"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-8.75, 0, -10.25)
+time_start = 254.21865971883136
+time_end = 254.21865971883136
+id = 16
+
+[sub_resource type="Resource" id="Resource_6ccv2"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.5
+prev_vertex = SubResource("Resource_576od")
+next_vertex = SubResource("Resource_tgjao")
+time_start = 252.21865971883136
+time_end = 254.21865971883136
+id = 15
+
+[sub_resource type="Resource" id="Resource_s14ng"]
+script = ExtResource("5_nu5op")
+end_time = 60.0
+duration = 60.0
+metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
+
+[sub_resource type="Resource" id="Resource_s40bf"]
+resource_local_to_scene = true
+script = ExtResource("2_qhgeu")
+position = Vector3(-9.5, 0, -5.25)
+vertex_actions = Array[ExtResource("3_jekvv")]([SubResource("Resource_s14ng")])
+time_start = 257.5892845789591
+time_end = 317.5892845789591
+id = 18
+
+[sub_resource type="Resource" id="Resource_vpbhr"]
+resource_local_to_scene = true
+script = ExtResource("6_71cje")
+speed = 1.4999999999999958
+prev_vertex = SubResource("Resource_tgjao")
+next_vertex = SubResource("Resource_s40bf")
+time_start = 254.21865971883136
+time_end = 257.5892845789591
+id = 17
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("9_b6v4q")
+path_components = Array[ExtResource("1_a5pcy")]([SubResource("Resource_o8obq"), SubResource("Resource_dtmjb"), SubResource("Resource_24jtv"), SubResource("Resource_0ijnm"), SubResource("Resource_8kwe4"), SubResource("Resource_rk2n6"), SubResource("Resource_l5glx"), SubResource("Resource_76cgj"), SubResource("Resource_4uldv"), SubResource("Resource_6umlm"), SubResource("Resource_6p77y"), SubResource("Resource_2rrnv"), SubResource("Resource_38rwy"), SubResource("Resource_uvddg"), SubResource("Resource_576od"), SubResource("Resource_6ccv2"), SubResource("Resource_tgjao"), SubResource("Resource_vpbhr"), SubResource("Resource_s40bf")])
+snap = 0.125
+metadata/_custom_type_script = "uid://bqksnw54upvlw"

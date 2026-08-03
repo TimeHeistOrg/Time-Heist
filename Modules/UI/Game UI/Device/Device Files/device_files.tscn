@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://rjinxblp7bsc" path="res://Modules/UI/Game UI/Device/Device Files/device_files.gd" id="1_40ogp"]
 [ext_resource type="Texture2D" uid="uid://df28njmkboh6d" path="res://Assets/UI/Device Menu/Database/info bar.png" id="2_ay7ts"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="3_vsybf"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="3_vsybf"]
 [ext_resource type="PackedScene" uid="uid://dui7y0up6fidp" path="res://Modules/UI/Game UI/Device/device_document_viewer.tscn" id="4_xvwb1"]
-[ext_resource type="Texture2D" uid="uid://dw4406xdsw0jc" path="res://Assets/UI/Device Menu/Database/fullscreen.png" id="5_vsybf"]
+[ext_resource type="Texture2D" uid="uid://csvwbe2vmdocv" path="res://Assets/UI/Device Menu/Database/fullscreen_new.png" id="5_vsybf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_131ax"]
 bg_color = Color(1, 1, 1, 1)

@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="NPCPath" format=3 uid="uid://16pmtsv7p3ud"]
+
+[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="1_84y3i"]
+[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="2_kkvbf"]
+[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="3_tfi6g"]
+[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="4_6g0tl"]
+[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="5_gurug"]
+
+[sub_resource type="Resource" id="Resource_pons7"]
+resource_local_to_scene = true
+script = ExtResource("2_kkvbf")
+position = Vector3(-24.25, 0, 12.5)
+
+[sub_resource type="Resource" id="Resource_527ty"]
+resource_local_to_scene = true
+script = ExtResource("2_kkvbf")
+position = Vector3(-24.25, 0, 3.25)
+time_start = 9.25
+time_end = 9.25
+id = 2
+
+[sub_resource type="Resource" id="Resource_ulk87"]
+resource_local_to_scene = true
+script = ExtResource("4_6g0tl")
+speed = 1.0
+prev_vertex = SubResource("Resource_pons7")
+next_vertex = SubResource("Resource_527ty")
+time_end = 9.25
+id = 1
+
+[sub_resource type="Resource" id="Resource_psywp"]
+resource_local_to_scene = true
+script = ExtResource("2_kkvbf")
+position = Vector3(-17.5, 0, 3.25)
+time_start = 16.0
+time_end = 16.0
+id = 4
+
+[sub_resource type="Resource" id="Resource_70u0m"]
+resource_local_to_scene = true
+script = ExtResource("4_6g0tl")
+speed = 1.0
+prev_vertex = SubResource("Resource_527ty")
+next_vertex = SubResource("Resource_psywp")
+time_start = 9.25
+time_end = 16.0
+id = 3
+
+[sub_resource type="Resource" id="Resource_y311k"]
+resource_local_to_scene = true
+script = ExtResource("2_kkvbf")
+position = Vector3(-24.25, 0, 3.25)
+time_start = 22.75
+time_end = 22.75
+id = 6
+
+[sub_resource type="Resource" id="Resource_tdogb"]
+resource_local_to_scene = true
+script = ExtResource("4_6g0tl")
+speed = 1.0
+prev_vertex = SubResource("Resource_psywp")
+next_vertex = SubResource("Resource_y311k")
+time_start = 16.0
+time_end = 22.75
+id = 5
+
+[sub_resource type="Resource" id="Resource_ucoyd"]
+resource_local_to_scene = true
+script = ExtResource("4_6g0tl")
+speed = 1.0
+prev_vertex = SubResource("Resource_y311k")
+next_vertex = SubResource("Resource_pons7")
+is_loop_line = true
+time_start = 22.75
+time_end = 32.0
+id = 7
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("5_gurug")
+path_components = Array[ExtResource("1_84y3i")]([SubResource("Resource_pons7"), SubResource("Resource_ulk87"), SubResource("Resource_527ty"), SubResource("Resource_70u0m"), SubResource("Resource_psywp"), SubResource("Resource_tdogb"), SubResource("Resource_y311k"), SubResource("Resource_ucoyd")])
+loop = true
+metadata/_custom_type_script = "uid://bqksnw54upvlw"

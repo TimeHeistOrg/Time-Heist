@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://chp3aqvx54cgi"]
 
-[ext_resource type="Material" uid="uid://kvqyxm07kwge" path="res://Effects/screen_post_fx.tres" id="1_mwjbm"]
 [ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/SceneConfig.tscn" id="1_yjhg3"]
 [ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="3_ymwqx"]
 [ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="4_07tka"]
+[ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/test_computer.tres" id="4_y1si3"]
+[ext_resource type="Resource" uid="uid://cdmieat3en1nr" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/josh_playtest_computer.tres" id="5_0qcv7"]
 [ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="5_yjhg3"]
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="6_k1gnt"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="7_7aoa1"]
@@ -19,38 +20,27 @@
 [ext_resource type="PackedScene" uid="uid://cne2roithf6os" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn" id="18_0wlcr"]
 [ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="20_8b7s2"]
 
-[sub_resource type="Gradient" id="Gradient_mwdlf"]
-offsets = PackedFloat32Array(0, 0.1539924, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0.08235294, 0.24705882, 1, 1, 1, 1, 1)
+[sub_resource type="ViewportTexture" id="ViewportTexture_y1si3"]
+viewport_path = NodePath("SubViewport")
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_d6ckj"]
-gradient = SubResource("Gradient_mwdlf")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qcv7"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_y1si3")
+billboard_mode = 1
 
-[sub_resource type="Environment" id="Environment_07tka"]
-background_color = Color(0.09385053, 0.11577933, 0.14867228, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.2632, 0.41160002, 0.56, 1)
-ambient_light_energy = 0.0
-tonemap_mode = 2
-ssao_enabled = true
-ssao_intensity = 1.0
-glow_enabled = true
-glow_intensity = 1.0
-glow_bloom = 0.5
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
-volumetric_fog_length = 16.0
-adjustment_enabled = true
-adjustment_contrast = 1.1
-adjustment_saturation = 1.1
-adjustment_color_correction = SubResource("GradientTexture1D_d6ckj")
+[sub_resource type="QuadMesh" id="QuadMesh_fry3c"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_0qcv7")
+size = Vector2(2.83, 1.5)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0qcv7"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m7fnc"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fry3c"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_mgh7o"]
 size = Vector2(100, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7fnc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wlcr"]
 albedo_texture = ExtResource("3_ymwqx")
 metallic = 1.0
 metallic_texture = ExtResource("5_yjhg3")
@@ -62,9 +52,9 @@ ao_texture = ExtResource("4_07tka")
 uv1_scale = Vector3(12.5, 12.5, 12.5)
 grow_amount = -4.125
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mgh7o"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mpas6"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_0wlcr"]
+[sub_resource type="QuadMesh" id="QuadMesh_8b7s2"]
 
 [node name="Debug Mall" type="Node3D" unique_id=1495256944]
 
@@ -72,49 +62,36 @@ grow_amount = -4.125
 input_manager = true
 ui_manager = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1959069130]
-environment = SubResource("Environment_07tka")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1985251051]
-texture_filter = 1
-material = ExtResource("1_mwjbm")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 2
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=831776583]
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-physics_object_picking = true
-size = Vector2i(960, 540)
-size_2d_override = Vector2i(640, 360)
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="Computer" parent="SubViewportContainer/SubViewport" unique_id=1194039688 instance=ExtResource("13_k1gnt")]
+[node name="Computer" parent="." unique_id=1194039688 instance=ExtResource("13_k1gnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5460143, 0, -5.144451)
+data = ExtResource("4_y1si3")
 
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=288105915 instance=ExtResource("8_rbmgi")]
+[node name="Computer2" parent="." unique_id=82439749 instance=ExtResource("13_k1gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3289857, 0, -5.769451)
+data = ExtResource("5_0qcv7")
+
+[node name="Player" parent="." unique_id=288105915 instance=ExtResource("8_rbmgi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5)
 
-[node name="Floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=771670139]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player/Camera Pivot/CameraMarker/Camera3D" parent_id_path=PackedInt32Array(288105915, 214841099) index="2" unique_id=885707867]
+
+[node name="MeshInstance3D" parent="Player/Inventory Wheel Holder" parent_id_path=PackedInt32Array(288105915, 1988325530) index="0" unique_id=332989845]
+mesh = SubResource("QuadMesh_fry3c")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1157303031]
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=612664855]
-shape = SubResource("WorldBoundaryShape3D_0qcv7")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1072306771]
+shape = SubResource("WorldBoundaryShape3D_m7fnc")
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Floor" unique_id=1963213374]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1732563000]
 layers = 4
-mesh = SubResource("PlaneMesh_fry3c")
-surface_material_override/0 = SubResource("StandardMaterial3D_m7fnc")
+mesh = SubResource("PlaneMesh_mgh7o")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wlcr")
 metadata/_edit_lock_ = true
 
-[node name="Walls" type="GridMap" parent="SubViewportContainer/SubViewport" unique_id=488532655]
+[node name="Walls" type="GridMap" parent="." unique_id=1902901798]
 mesh_library = ExtResource("8_piedo")
 cell_size = Vector3(0.25, 2, 0.25)
 cell_center_y = false
@@ -125,19 +102,19 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="SubViewportContainer/SubViewport" unique_id=473583453]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=342883767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.058178, 0, 21.921896)
-process_material = SubResource("ParticleProcessMaterial_mgh7o")
-draw_pass_1 = SubResource("QuadMesh_0wlcr")
+process_material = SubResource("ParticleProcessMaterial_mpas6")
+draw_pass_1 = SubResource("QuadMesh_8b7s2")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1533534779]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1511552761]
 transform = Transform3D(1, 0, 0, 0, 0.44293037, 0.8965561, 0, -0.8965561, 0.44293037, 0, 6.798643, 5.608078)
 visible = false
 layers = 64
 
-[node name="Lights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=586401872]
+[node name="Lights" type="Node3D" parent="." unique_id=79356776]
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1870678051]
+[node name="SpotLight3D6" type="SpotLight3D" parent="Lights" unique_id=1021076887]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -13.321789, 9.112866, 6.0631075)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -150,7 +127,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=556486793]
+[node name="SpotLight3D7" type="SpotLight3D" parent="Lights" unique_id=820972037]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -12.571789, 9.112866, -0.18689251)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -163,7 +140,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=714744138]
+[node name="SpotLight3D8" type="SpotLight3D" parent="Lights" unique_id=2142745472]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -15.321789, 7.8628664, -15.4368925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -176,7 +153,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D18" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=952938771]
+[node name="SpotLight3D18" type="SpotLight3D" parent="Lights" unique_id=1892028187]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -7.4713936, 7.8628664, -15.4368925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -189,7 +166,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D9" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=516763463]
+[node name="SpotLight3D9" type="SpotLight3D" parent="Lights" unique_id=225368535]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -7.571789, 9.112866, -11.6868925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -202,7 +179,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D10" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1660479256]
+[node name="SpotLight3D10" type="SpotLight3D" parent="Lights" unique_id=1949160173]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -2.5717888, 9.112866, -6.9368925)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -215,7 +192,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D11" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=316716589]
+[node name="SpotLight3D11" type="SpotLight3D" parent="Lights" unique_id=479677093]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -0.3217888, 9.112866, -16.936893)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -229,7 +206,7 @@ spot_attenuation = 0.5
 spot_angle = 41.64
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=869748245]
+[node name="SpotLight3D12" type="SpotLight3D" parent="Lights" unique_id=2102205639]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 4.178211, 7.1128664, -11.686893)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -242,7 +219,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D16" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1051647848]
+[node name="SpotLight3D16" type="SpotLight3D" parent="Lights" unique_id=957400344]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 11.678211, 7.1128664, -7.6868935)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -255,7 +232,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D15" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1883681625]
+[node name="SpotLight3D15" type="SpotLight3D" parent="Lights" unique_id=1510588232]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -2.5717888, 6.8628664, -4.1868935)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -268,7 +245,7 @@ spot_range = 31.135
 spot_attenuation = 0.5
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=50844680]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=860952620]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 7.1256046, 2.686267, -0.063752174)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -282,7 +259,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D21" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=2108755495]
+[node name="SpotLight3D21" type="SpotLight3D" parent="Lights" unique_id=1901238056]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 3.6256046, 2.500773, -3.5588334)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -296,7 +273,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D13" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1600892347]
+[node name="SpotLight3D13" type="SpotLight3D" parent="Lights" unique_id=680723488]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 3.0984678, 2.686267, -0.063752174)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -310,7 +287,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D19" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1733961585]
+[node name="SpotLight3D19" type="SpotLight3D" parent="Lights" unique_id=1385571131]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 11.494732, 2.8242683, -0.26296568)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -324,7 +301,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D20" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=1356505385]
+[node name="SpotLight3D20" type="SpotLight3D" parent="Lights" unique_id=354219170]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 14.959049, 2.8242683, -0.26296568)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -338,7 +315,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=939809107]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=393843851]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 2, 8.232662, 9.596434)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -352,7 +329,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D14" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=346048323]
+[node name="SpotLight3D14" type="SpotLight3D" parent="Lights" unique_id=1514198832]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 4.25, 2.3891387, 7.501831)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -365,7 +342,7 @@ spot_range = 7.946
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=593014381]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights" unique_id=201954009]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 0, 8.232662, 28.134186)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -379,7 +356,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=2050861288]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lights" unique_id=234105926]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -9.51265, 6.501198, -6.1524324)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -393,7 +370,7 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="SpotLight3D17" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Lights" unique_id=357107182]
+[node name="SpotLight3D17" type="SpotLight3D" parent="Lights" unique_id=103571242]
 transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -16.51265, 8.501198, -6.1524324)
 layers = 64
 light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
@@ -407,29 +384,29 @@ spot_attenuation = 0.5
 spot_angle = 60.0
 spot_angle_attenuation = 2.4622889
 
-[node name="Lever" parent="SubViewportContainer/SubViewport" unique_id=1750000146 instance=ExtResource("10_07tka")]
+[node name="Lever" parent="." unique_id=1750000146 instance=ExtResource("10_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 1, -3.0000007)
 
-[node name="Lever2" parent="SubViewportContainer/SubViewport" unique_id=572724153 instance=ExtResource("10_07tka")]
+[node name="Lever2" parent="." unique_id=898899433 instance=ExtResource("10_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.75, 1, -3.0000007)
 is_jammed = true
 
-[node name="Generic_Door" parent="SubViewportContainer/SubViewport" unique_id=74631722 instance=ExtResource("9_ymwqx")]
+[node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("9_ymwqx")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.25, 0, -3)
 
-[node name="Keycard Scanner" parent="SubViewportContainer/SubViewport" unique_id=609647611 instance=ExtResource("12_07tka")]
+[node name="Keycard Scanner" parent="." unique_id=600970463 instance=ExtResource("12_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.5, 0.75, -3)
 
-[node name="Keycard Scanner2" parent="SubViewportContainer/SubViewport" unique_id=925346116 instance=ExtResource("12_07tka")]
+[node name="Keycard Scanner2" parent="." unique_id=1416873081 instance=ExtResource("12_07tka")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.25, 0.75, -3)
 
-[node name="PuzzlePanel" parent="SubViewportContainer/SubViewport" unique_id=1321296564 node_paths=PackedStringArray("puzzle") instance=ExtResource("14_k1gnt")]
+[node name="PuzzlePanel" parent="." unique_id=1321296564 node_paths=PackedStringArray("puzzle") instance=ExtResource("14_k1gnt")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0, -3)
 puzzle = NodePath("PipeGame")
 
-[node name="PipeGame" parent="SubViewportContainer/SubViewport/PuzzlePanel" unique_id=1151290293 instance=ExtResource("15_fry3c")]
+[node name="PipeGame" parent="PuzzlePanel" unique_id=1151290293 instance=ExtResource("15_fry3c")]
 
-[node name="Background" type="ColorRect" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame" unique_id=1302336372]
+[node name="Background" type="ColorRect" parent="PuzzlePanel/PipeGame" unique_id=214442977]
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
@@ -440,82 +417,82 @@ offset_top = -160.0
 offset_right = 160.0
 offset_bottom = 160.0
 
-[node name="Row 0" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background" unique_id=520973626 instance=ExtResource("16_m7fnc")]
+[node name="Row 0" parent="PuzzlePanel/PipeGame/Background" unique_id=520973626 instance=ExtResource("16_m7fnc")]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 64.0
 
-[node name="Cell_(0, 0)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 0" unique_id=425733919 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(0, 0)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=425733919 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="Cell_(0, 1)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 0" unique_id=1808312073 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(0, 1)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=340688284 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
 offset_bottom = 64.0
 
-[node name="Cell_(0, 2)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 0" unique_id=1817276887 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(0, 2)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=38827867 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 128.0
 offset_right = 192.0
 offset_bottom = 64.0
 
-[node name="Cell_(0, 3)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 0" unique_id=1499344632 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(0, 3)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=816818469 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
 offset_bottom = 64.0
 
-[node name="Cell_(0, 4)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 0" unique_id=810058031 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(0, 4)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=1431801663 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
 
-[node name="Row 1" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background" unique_id=831425952 instance=ExtResource("16_m7fnc")]
+[node name="Row 1" parent="PuzzlePanel/PipeGame/Background" unique_id=1370650399 instance=ExtResource("16_m7fnc")]
 layout_mode = 0
 offset_top = 64.0
 offset_right = 320.0
 offset_bottom = 128.0
 
-[node name="Cell_(1, 0)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 1" unique_id=329908890 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(1, 0)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=1764940902 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="Cell_(1, 1)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 1" unique_id=179404648 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(1, 1)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=1809415238 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
 offset_bottom = 64.0
 
-[node name="Cell_(1, 2)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 1" unique_id=1179296099 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(1, 2)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=35134551 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 128.0
 offset_right = 192.0
 offset_bottom = 64.0
 
-[node name="Cell_(1, 3)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 1" unique_id=1102213653 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(1, 3)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=712886175 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
 offset_bottom = 64.0
 
-[node name="Cell_(1, 4)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 1" unique_id=1291382352 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(1, 4)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=1592493600 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
 
-[node name="Row 2" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background" unique_id=841412748 instance=ExtResource("16_m7fnc")]
+[node name="Row 2" parent="PuzzlePanel/PipeGame/Background" unique_id=1949517917 instance=ExtResource("16_m7fnc")]
 layout_mode = 0
 offset_top = 128.0
 offset_right = 320.0
 offset_bottom = 192.0
 
-[node name="Cell_(2, 0)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 2" unique_id=1325141895 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(2, 0)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=1782962713 instance=ExtResource("18_0wlcr")]
 modulate = Color(0.6, 1, 0.6, 1)
 layout_mode = 0
 offset_right = 64.0
@@ -524,7 +501,7 @@ texture = ExtResource("20_8b7s2")
 pipe_type = 1
 is_start_pipe = true
 
-[node name="Cell_(2, 1)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 2" unique_id=536034049 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(2, 1)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=2076489922 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
@@ -532,7 +509,7 @@ offset_bottom = 64.0
 texture = ExtResource("20_8b7s2")
 pipe_type = 1
 
-[node name="Cell_(2, 2)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 2" unique_id=638990978 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(2, 2)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=797272504 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 128.0
 offset_right = 192.0
@@ -542,7 +519,7 @@ texture = ExtResource("20_8b7s2")
 pipe_type = 1
 rotation_level = 1
 
-[node name="Cell_(2, 3)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 2" unique_id=1350455115 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(2, 3)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=1552497954 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
@@ -550,7 +527,7 @@ offset_bottom = 64.0
 texture = ExtResource("20_8b7s2")
 pipe_type = 1
 
-[node name="Cell_(2, 4)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 2" unique_id=989898027 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(2, 4)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=880805253 instance=ExtResource("18_0wlcr")]
 modulate = Color(1, 0.6, 0.6, 1)
 layout_mode = 0
 offset_left = 256.0
@@ -560,74 +537,76 @@ texture = ExtResource("20_8b7s2")
 pipe_type = 1
 is_end_pipe = true
 
-[node name="Row 3" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background" unique_id=538467071 instance=ExtResource("16_m7fnc")]
+[node name="Row 3" parent="PuzzlePanel/PipeGame/Background" unique_id=1574151354 instance=ExtResource("16_m7fnc")]
 layout_mode = 0
 offset_top = 192.0
 offset_right = 320.0
 offset_bottom = 256.0
 
-[node name="Cell_(3, 0)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 3" unique_id=1432798808 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(3, 0)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1652971879 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="Cell_(3, 1)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 3" unique_id=944102669 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(3, 1)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1726284099 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
 offset_bottom = 64.0
 
-[node name="Cell_(3, 2)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 3" unique_id=1786765251 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(3, 2)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=791702314 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 128.0
 offset_right = 192.0
 offset_bottom = 64.0
 
-[node name="Cell_(3, 3)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 3" unique_id=148267522 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(3, 3)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1313190410 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
 offset_bottom = 64.0
 
-[node name="Cell_(3, 4)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 3" unique_id=1018778521 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(3, 4)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1595850875 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
 
-[node name="Row 4" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background" unique_id=2044450139 instance=ExtResource("16_m7fnc")]
+[node name="Row 4" parent="PuzzlePanel/PipeGame/Background" unique_id=880407962 instance=ExtResource("16_m7fnc")]
 layout_mode = 0
 offset_top = 256.0
 offset_right = 320.0
 offset_bottom = 320.0
 
-[node name="Cell_(4, 0)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 4" unique_id=766479169 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(4, 0)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=1369634475 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 
-[node name="Cell_(4, 1)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 4" unique_id=305808193 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(4, 1)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=2103703744 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 128.0
 offset_bottom = 64.0
 
-[node name="Cell_(4, 2)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 4" unique_id=1673628215 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(4, 2)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=2051083336 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 128.0
 offset_right = 192.0
 offset_bottom = 64.0
 
-[node name="Cell_(4, 3)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 4" unique_id=1161399692 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(4, 3)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=1147478949 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 192.0
 offset_right = 256.0
 offset_bottom = 64.0
 
-[node name="Cell_(4, 4)" parent="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame/Background/Row 4" unique_id=920385966 instance=ExtResource("18_0wlcr")]
+[node name="Cell_(4, 4)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=860478424 instance=ExtResource("18_0wlcr")]
 layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
 
-[connection signal="puzzle_solved" from="SubViewportContainer/SubViewport/PuzzlePanel/PipeGame" to="SubViewportContainer/SubViewport/PuzzlePanel" method="turn_off"]
+[connection signal="puzzle_solved" from="PuzzlePanel/PipeGame" to="PuzzlePanel" method="turn_off"]
+
+[editable path="Player"]

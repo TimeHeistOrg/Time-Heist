@@ -30,7 +30,11 @@ func add_item(item:PickupItem):
 
 func reset_items():
 	items = items_to_start_with
-	
+
+func reset_documents_and_clearance():
+	documents.clear()
+	clearances.clear()
+
 func remove_item(item:PickupItem):
 	if has_item(item):
 		var temp_items = items.duplicate(1)

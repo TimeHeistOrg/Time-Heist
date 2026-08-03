@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyid2xchi8fsp" path="res://Modules/Interaction/Computer/Email App/email_button.gd" id="1_80oal"]
 [ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="2_bjrwd"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="2_yuq1x"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="2_yuq1x"]
 
 [node name="EmailButton" type="Button" unique_id=470069975]
 custom_minimum_size = Vector2(0, 120)

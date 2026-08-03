@@ -47,7 +47,10 @@ func open()
 func close()
 
 func toggle_open():
-	is_open = not is_open
+	if is_open:
+		close()
+	else:
+		open()
 
 func set_open(value: bool):
 	@warning_ignore("standalone_ternary")
@@ -121,3 +124,6 @@ func is_locked_setter(_value:bool): #made so that setter can be overridden in ch
 
 func is_disabled_setter(value: bool):
 	disabled.emit(value)
+	
+func is_disabled_setter_opposite(value: bool):
+	disabled.emit(not value)

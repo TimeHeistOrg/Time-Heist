@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="NPCPath" format=3 uid="uid://wiafokbada5k"]
+
+[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="1_54bul"]
+[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="2_7k8fo"]
+[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="3_hsxcm"]
+[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="4_06fai"]
+[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="5_uyu14"]
+
+[sub_resource type="Resource" id="Resource_io3r8"]
+resource_local_to_scene = true
+script = ExtResource("2_7k8fo")
+position = Vector3(-5.5, 0, -10.375)
+
+[sub_resource type="Resource" id="Resource_7riwe"]
+resource_local_to_scene = true
+script = ExtResource("2_7k8fo")
+position = Vector3(13.25, 0, -10.375)
+time_start = 37.5
+time_end = 37.5
+id = 2
+
+[sub_resource type="Resource" id="Resource_qqelr"]
+resource_local_to_scene = true
+script = ExtResource("4_06fai")
+speed = 0.5
+prev_vertex = SubResource("Resource_io3r8")
+next_vertex = SubResource("Resource_7riwe")
+time_end = 37.5
+id = 1
+
+[sub_resource type="Resource" id="Resource_pev84"]
+resource_local_to_scene = true
+script = ExtResource("4_06fai")
+speed = 0.5
+prev_vertex = SubResource("Resource_7riwe")
+next_vertex = SubResource("Resource_io3r8")
+is_loop_line = true
+time_start = 37.5
+time_end = 75.0
+id = 3
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("5_uyu14")
+path_components = Array[ExtResource("1_54bul")]([SubResource("Resource_io3r8"), SubResource("Resource_qqelr"), SubResource("Resource_7riwe"), SubResource("Resource_pev84")])
+snap = 0.125
+loop = true
+default_speed = 0.5
+metadata/_custom_type_script = "uid://bqksnw54upvlw"

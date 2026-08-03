@@ -48,11 +48,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k26ll")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ck83o"]
+size = Vector3(0.04, 2, 0.25)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htx7g"]
 resource_name = "DoorMaterial"
 cull_mode = 2
 albedo_texture = ExtResource("10_ck83o")
-metallic = 1.0
 metallic_texture = ExtResource("11_spfhl")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("11_spfhl")
@@ -137,7 +139,7 @@ shadow_mesh = SubResource("ArrayMesh_vvqcs")
 [sub_resource type="BoxShape3D" id="BoxShape3D_afson"]
 size = Vector3(0.925, 2, 0.1)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ck83o"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spfhl"]
 _data = {
 &"Closed": ExtResource("8_oftnu"),
 &"Closing": ExtResource("6_k0r4j"),
@@ -174,6 +176,18 @@ locked_animation = ExtResource("9_6vrt1")
 mesh = SubResource("ArrayMesh_m00w4")
 skeleton = NodePath("")
 
+[node name="DoorFrameRB" type="StaticBody3D" parent="Door/DoorFrame" unique_id=649696356]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/DoorFrame/DoorFrameRB" unique_id=1424062128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107, 0, 0)
+shape = SubResource("BoxShape3D_ck83o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Door/DoorFrame/DoorFrameRB" unique_id=2067785080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0, 0)
+shape = SubResource("BoxShape3D_ck83o")
+
 [node name="DoorHinge" type="Node3D" parent="Door" unique_id=651157902]
 
 [node name="DoorMesh" type="MeshInstance3D" parent="Door/DoorHinge" unique_id=1251083113]
@@ -197,7 +211,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_afson")
 
 [node name="TimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=901544769]
-libraries/ = SubResource("AnimationLibrary_ck83o")
+libraries/ = SubResource("AnimationLibrary_spfhl")
 script = ExtResource("2_n0b05")
 metadata/_custom_type_script = "uid://b2clf5853h8va"
 

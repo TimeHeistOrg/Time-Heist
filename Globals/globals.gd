@@ -23,6 +23,8 @@ var player_camera : Camera3D
 
 var camera : Node3D
 
+var caught_by: Node
+
 #region Tutorial
 var in_tutorial : bool = false
 var tutorial_start_point : int = 0
@@ -30,7 +32,8 @@ var tutorial_start_point : int = 0
 
 #region DebugMode
 var infinite_juice: bool = false
-var player_invisible: bool = true
+var player_invisible: bool = false
+var player_unlock_everything: bool = false
 #endregion
 
 #region Detection
@@ -80,7 +83,16 @@ var red_color : Color = Color("d73438")
 func _ready():
 	pass
 
-func player_caught():
+func _process(_delta):
+	if not ui_manager:
+		if Input.is_action_just_pressed("escape"):
+			if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			else:
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func player_caught(_catcher: Node):
+	caught_by = _catcher
 	#print("caught!")
 	if ui_manager:
 		ui_manager.caught_ui.open()
@@ -95,11 +107,11 @@ func player_tutorial_caught():
 
 func to_homebase():
 	#print("to homebase")
-	SceneManager.change_scene(SceneManager.Scene.HOMEBASE)
+	SceneManager.change_scene_with_transition(SceneManager.Scene.HOMEBASE)
 
 func retry():
 	#print("restart")
-	SceneManager.reload_current_scene()
+	SceneManager.reload_current_scene_transition()
 
 
 #region Signals

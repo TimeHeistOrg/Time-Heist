@@ -1,0 +1,46 @@
+[gd_resource type="Theme" format=3 uid="uid://jodljyivkod0"]
+
+[ext_resource type="FontFile" uid="uid://datdkauvfmpa2" path="res://Assets/UI/Font/Dhurjati/Dhurjati-Regular.ttf" id="1_woeg8"]
+[ext_resource type="StyleBox" uid="uid://b2k6en7363xpi" path="res://Assets/UI/Button Styles/generic_button_style_focused.tres" id="2_ye651"]
+[ext_resource type="StyleBox" uid="uid://b5474gjwf1ua" path="res://Assets/UI/Button Styles/generic_button_style_normal.tres" id="3_najkf"]
+[ext_resource type="StyleBox" uid="uid://dpyeb2o1f2q14" path="res://Assets/UI/Button Styles/generic_button_style_selected.tres" id="4_yc5xu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ye651"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_najkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc5xu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7mvsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ejll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hhlu3"]
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_woeg8")
+Button/styles/focus = ExtResource("2_ye651")
+Button/styles/hover = ExtResource("2_ye651")
+Button/styles/normal = ExtResource("3_najkf")
+Button/styles/pressed = ExtResource("4_yc5xu")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_ye651")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_najkf")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_yc5xu")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_7mvsp")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_0ejll")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_hhlu3")
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("1_woeg8")
+OptionButton/fonts/font = ExtResource("1_woeg8")
+OptionButton/styles/focus = ExtResource("2_ye651")
+OptionButton/styles/hover = ExtResource("2_ye651")
+OptionButton/styles/normal = ExtResource("3_najkf")
+OptionButton/styles/pressed = ExtResource("4_yc5xu")
+ScrollContainer/colors/scroll_hint_horizontal_color = Color(0.021759804, 0.18475929, 0.22576234, 1)
+ScrollContainer/colors/scroll_hint_vertical_color = Color(0.023529412, 0.18431373, 0.22745098, 1)

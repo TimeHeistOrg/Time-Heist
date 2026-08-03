@@ -20,7 +20,7 @@
 [ext_resource type="Resource" uid="uid://cyjk27o5om12o" path="res://Assets/Documents/Resources/basement_sec_clearance_map.tres" id="15_mdu08"]
 [ext_resource type="Resource" uid="uid://ujhtjbh7l5w7" path="res://Assets/TextConvos/Resources/Archive Puzzle/key_handoff.tres" id="16_oaarf"]
 [ext_resource type="PackedScene" uid="uid://cijyt3whigooo" path="res://Modules/Interaction/Computer/File App/file_tab.tscn" id="17_mdu08"]
-[ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/NPC.tscn" id="18_18nyf"]
+[ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="18_18nyf"]
 [ext_resource type="PackedScene" uid="uid://bnhismy4o74yd" path="res://Modules/Interaction/Computer/Email App/email_tab.tscn" id="18_brrbn"]
 [ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Assets/Documents/document_resource.gd" id="19_8qxpe"]
 [ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="19_hevkm"]

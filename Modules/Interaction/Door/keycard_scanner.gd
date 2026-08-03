@@ -2,6 +2,7 @@ extends Node3D
 class_name KeycardScanner
 
 @onready var indicator: MeshInstance3D = $Card_reader/Indicator
+@export var perma_locked: bool = false
 
 @export var lock : Lockable = null
 @export var retrigger : float = 0.0 #seconds
@@ -13,6 +14,8 @@ var is_ready : bool = true : #TIMEVAR
 		elif not value:
 			retrigger_timer = retrigger
 		is_ready = value
+
+@export var disabled: bool = false
 
 signal keycard_scanned
 
@@ -28,9 +31,17 @@ func _ready() -> void:
 	indicator.mesh.material.albedo_color = default_color
 
 func interact():
+	if disabled: 
+		return
 	if not is_ready:
 		return
-	if lock and not lock.try_unlock():
+	if globals.player_unlock_everything:
+		keycard_scanned.emit()
+		show_feedback(globals.green_color)
+		if retrigger > 0:
+			is_ready = false
+		return
+	if (lock and not lock.try_unlock()) or perma_locked:
 		show_feedback(globals.red_color)
 		return
 	
@@ -54,3 +65,15 @@ func show_feedback(color: Color) -> void:
 
 func _on_feedback_end() -> void:
 	indicator.mesh.material.albedo_color = default_color
+
+func disable():
+	disabled = true
+
+func enable():
+	disabled = false
+
+func set_disabled(value:bool):
+	disabled = value
+
+func toggle_disabled():
+	disabled = not disabled

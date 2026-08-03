@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cndkl22sd4vd8"]
 
 [ext_resource type="Script" uid="uid://dgcxp6sm8hbfv" path="res://Modules/UI/Game UI/caught_ui.gd" id="1_rlblt"]
-[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/main_theme.tres" id="2_pj4lb"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="2_pj4lb"]
 
 [sub_resource type="Animation" id="Animation_pj4lb"]
 length = 0.001
@@ -193,7 +193,6 @@ focus_neighbor_top = NodePath("../TryAgain")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../TryAgain")
 theme_override_font_sizes/font_size = 60
-disabled = true
 text = "Return to Homebase"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=820158815]

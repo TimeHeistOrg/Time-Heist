@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://denowb84fu4k1"
+path="res://.godot/imported/Arjun.dialogue-2c375edd031fc4c08c7fb4d81c2ddd5f.tres"
+
+[deps]
+
+source_file="res://Dialogue/Tutorial/Arjun.dialogue"
+dest_files=["res://.godot/imported/Arjun.dialogue-2c375edd031fc4c08c7fb4d81c2ddd5f.tres"]
+
+[params]
+
+defaults=true

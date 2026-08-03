@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://b48k1wsjxht6j"]
 
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Assets/Items/items_resource.gd" id="1_d6amf"]
-[ext_resource type="ArrayMesh" uid="uid://c4pbbx1n2vldp" path="res://Assets/Items/Meshes/coffee_mug.res" id="1_s3o8n"]
+[ext_resource type="ArrayMesh" uid="uid://dgx0sohtlxa4s" path="res://Assets/Items/Meshes/coffee_mug.res" id="1_s3o8n"]
 
 [resource]
 script = ExtResource("1_d6amf")

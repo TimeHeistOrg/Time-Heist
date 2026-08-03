@@ -1,6 +1,60 @@
 [gd_scene format=3 uid="uid://3lkcmqqpfawu"]
 
 [ext_resource type="Script" uid="uid://cssqu6xj2pwer" path="res://Scenes/scene_config.gd" id="1_vmr1u"]
+[ext_resource type="Environment" uid="uid://cv1gfj05sh260" path="res://Effects/test_enviroment.tres" id="2_giapk"]
+[ext_resource type="Material" uid="uid://kvqyxm07kwge" path="res://Effects/screen_post_fx.tres" id="2_r0j84"]
+
+[sub_resource type="Environment" id="Environment_uour1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r7jky"]
+viewport_path = NodePath("ScreenSubViewport")
 
 [node name="SceneConfig" type="Node" unique_id=705177490]
 script = ExtResource("1_vmr1u")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1130112284]
+environment = ExtResource("2_giapk")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=158251935]
+texture_filter = 1
+material = ExtResource("2_r0j84")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1560702968]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+physics_object_picking = true
+size = Vector2i(960, 540)
+size_2d_override = Vector2i(640, 360)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="ScreenSubViewport" type="SubViewport" parent="." unique_id=1832633483]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+render_target_clear_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="ScreenSubViewport" unique_id=1077235095]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 4.5, 5.798, -3.072)
+cull_mask = 2
+environment = SubResource("Environment_uour1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1969418547]
+layer = 100
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=898037269]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_r7jky")
+expand_mode = 1
+stretch_mode = 4

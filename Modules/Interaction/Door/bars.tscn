@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="1_5pe30"]
 [ext_resource type="Script" uid="uid://b57njsw2folpa" path="res://Modules/Interaction/Door/bars.gd" id="1_ibkef"]
-[ext_resource type="Animation" uid="uid://b2mfqxg6yamvb" path="res://Assets/Animations/Doors/Bars/BarsClosed.res" id="2_ut5oi"]
-[ext_resource type="Animation" uid="uid://cebegg7n5mxyq" path="res://Assets/Animations/Doors/Bars/BarsClosing.res" id="3_215d8"]
-[ext_resource type="Animation" uid="uid://b8lhf0wm57psd" path="res://Assets/Animations/Doors/Bars/BarsOpen.res" id="4_va754"]
-[ext_resource type="Animation" uid="uid://28pajonxh4c4" path="res://Assets/Animations/Doors/Bars/BarsOpening.res" id="5_terey"]
+[ext_resource type="Animation" uid="uid://dm0j58dgoe77r" path="res://Assets/Animations/Doors/Bars/BarsClosed.res" id="2_ut5oi"]
+[ext_resource type="Animation" uid="uid://oau5q3islsjn" path="res://Assets/Animations/Doors/Bars/BarsClosing.res" id="3_215d8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2n412"]
 resource_name = "Material.001"
@@ -49,12 +47,48 @@ shadow_mesh = SubResource("ArrayMesh_qstcw")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ut5oi"]
 size = Vector3(1, 2, 0.075)
 
+[sub_resource type="Animation" id="Animation_ylj3r"]
+resource_name = "BarsOpenFixed"
+length = 0.625
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bars")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.5, 0, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bars")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.001, 1, 1)
+
+[sub_resource type="Animation" id="Animation_rt6x7"]
+resource_name = "BarsOpeningFixed"
+length = 0.625
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bars")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, -0.0050962972, 0, 0, 0.06666667, 1, -0.017125929, 0, 0, 0.1, 1, -0.03537778, 0, 0, 0.13333334, 1, -0.05914075, 0, 0, 0.16666667, 1, -0.08770372, 0, 0, 0.2, 1, -0.12124446, 0, 0, 0.23333333, 1, -0.15745187, 0, 0, 0.26666668, 1, -0.19561483, 0, 0, 0.3, 1, -0.23502225, 0, 0, 0.33333334, 1, -0.27496302, 0, 0, 0.36666667, 1, -0.31419262, 0, 0, 0.4, 1, -0.35182226, 0, 0, 0.43333334, 1, -0.38714078, 0, 0, 0.46666667, 1, -0.41943702, 0, 0, 0.5, 1, -0.448, 0, 0, 0.53333336, 1, -0.47016305, 0, 0, 0.56666666, 1, -0.48645926, 0, 0, 0.6, 1, -0.49617776, 0, 0, 0.625, 1, -0.5, 0, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bars")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.033333335, 1, 1.002581, 1, 1, 0.06666667, 1, 0.9782112, 1, 1, 0.1, 1, 0.94123644, 1, 1, 0.13333334, 1, 0.89309716, 1, 1, 0.16666667, 1, 0.83523405, 1, 1, 0.2, 1, 0.7672869, 1, 1, 0.23333333, 1, 0.69393754, 1, 1, 0.26666668, 1, 0.61662656, 1, 1, 0.3, 1, 0.53679466, 1, 1, 0.33333334, 1, 0.4558823, 1, 1, 0.36666667, 1, 0.37641057, 1, 1, 0.4, 1, 0.30018002, 1, 1, 0.43333334, 1, 0.22863139, 1, 1, 0.46666667, 1, 0.16320528, 1, 1, 0.5, 1, 0.10534203, 1, 1, 0.53333336, 1, 0.060444076, 1, 1, 0.56666666, 1, 0.027430914, 1, 1, 0.6, 1, 0.007743061, 1, 1, 0.625, 1, 0.001, 1, 1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rdx5c"]
 _data = {
 &"BarsClosed": ExtResource("2_ut5oi"),
 &"BarsClosing": ExtResource("3_215d8"),
-&"BarsOpen": ExtResource("4_va754"),
-&"BarsOpening": ExtResource("5_terey")
+&"BarsOpen": SubResource("Animation_ylj3r"),
+&"BarsOpening": SubResource("Animation_rt6x7")
 }
 
 [node name="Bars" type="Node3D" unique_id=206787475]

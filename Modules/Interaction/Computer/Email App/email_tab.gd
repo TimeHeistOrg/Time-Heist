@@ -41,7 +41,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not finished:
 		for email in email_button_instances:
-			if email.email_info.email_time <= time_manager.cur_time:
+			if not time_manager or email.email_info.email_time <= time_manager.cur_time:
 				if not email.sent:
 					email.sent = true
 				if email_button_instances[email_button_instances.size()-1].sent:

@@ -1,8 +1,7 @@
 ~ start
 Do you want to start a run?
 - Yes
-	do get_tree().paused = false
-	do SceneManager.change_scene(SceneManager.Scene.GAMEPLAY)
+	do SceneManager.change_scene_to_path_with_transition("res://Map/Z3_Floor/z3_floor.tscn")
 	=> END
 - No
 	do get_tree().paused = false

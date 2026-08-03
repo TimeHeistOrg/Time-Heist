@@ -1,6 +1,0 @@
-~ start
-Intern: Hey Justin!
-Intern: I can't wait to see what you find out.
-Intern: Let me know if you find any cool tech gadgets...
-do get_tree().paused = false
-=> END

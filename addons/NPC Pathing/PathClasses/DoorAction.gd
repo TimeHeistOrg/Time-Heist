@@ -1,12 +1,12 @@
 class_name DoorAction extends InstantAction
 
-@export_node_path("Generic_Door") var door: NodePath
+@export_node_path("Door") var door: NodePath
 @export var action: door_action
 
 enum door_action {open, close, lock, unlock, unlock_and_open, close_and_lock}
 
-func progress(npc: NPC, from: float, to: float):
-	var door_node: Generic_Door = npc.get_node(door)
+func progress(npc: PathFollower, from: float, to: float):
+	var door_node: Door = npc.get_node(door)
 	match action:
 		door_action.open:
 			door_node.open()
