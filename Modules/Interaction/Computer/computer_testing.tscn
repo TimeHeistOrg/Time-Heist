@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://otgu70i5id8y"]
 
-[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="1_2ubgt"]
-[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Player/Player.tscn" id="1_ht85y"]
-[ext_resource type="Material" uid="uid://kvqyxm07kwge" path="res://Effects/screen_post_fx.tres" id="1_i6uw2"]
+[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://GameManagement/ui_manager.tscn" id="1_2ubgt"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="1_ht85y"]
+[ext_resource type="Material" uid="uid://kvqyxm07kwge" path="res://Aesthetics/PixelFX/screen_post_fx.tres" id="1_i6uw2"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="2_7c0by"]
 
 [node name="Computer Testing" type="Node3D" unique_id=788554195]

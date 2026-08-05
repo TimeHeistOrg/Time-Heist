@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://rop0vuvsqp3w" path="res://Assets/UI/Main Menu/creditsdefault.png" id="6_ilpl1"]
 [ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="7_mohnt"]
 [ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="10_ifg3e"]
-[ext_resource type="Shader" uid="uid://ddnclfmn4abmy" path="res://Effects/main_menu_vignette.gdshader" id="12_i6g8v"]
+[ext_resource type="Shader" uid="uid://ddnclfmn4abmy" path="res://Scenes/Main Menu/main_menu_vignette.gdshader" id="12_i6g8v"]
 
 [sub_resource type="Gradient" id="Gradient_mwdlf"]
 offsets = PackedFloat32Array(0, 0.1539924, 0.75342464, 1)

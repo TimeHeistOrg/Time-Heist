@@ -11,9 +11,7 @@ func _ready():
 	animation_player.play("Bob/idle")
 
 func interact():
-	print("interacted")
 	if dialogue_balloon and is_instance_valid(dialogue_balloon):
-		#print("Already talking to friend")
 		return
 		
 	#print("Talking to friend")

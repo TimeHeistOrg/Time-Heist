@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkqvotopd4ufp"]
 
-[ext_resource type="Script" uid="uid://du7w2m0hi52ek" path="res://Scenes/Homebase/leave_area.gd" id="1_rbifo"]
+[ext_resource type="Script" uid="uid://du7w2m0hi52ek" path="res://Maps/Homebase/leave_area.gd" id="1_rbifo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_li6v2"]
 size = Vector3(0.25, 3, 1.25)
