@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://b2okpxvbvt0xf"]
+
+[ext_resource type="Texture2D" uid="uid://1p5ei6hdqgav" path="res://Content/Documents/Textures/15_lab_map.png" id="1_qk12f"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="2_cevhj"]
+
+[resource]
+script = ExtResource("2_cevhj")
+document_id = 15
+title = "Lab Map"
+document_image = ExtResource("1_qk12f")
+relevant_tags = Array[String](["Map", "All Files"])
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

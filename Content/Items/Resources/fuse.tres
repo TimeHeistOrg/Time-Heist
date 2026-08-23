@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://2x0ba0nmg2we"]
+
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="1_dwmf4"]
+[ext_resource type="Texture2D" uid="uid://7jn17winpeyi" path="res://Content/Items/Textures/fuse.png" id="1_gdyvb"]
+[ext_resource type="ArrayMesh" uid="uid://bo7ggkt0yy3a3" path="res://Content/Items/Meshes/fuse.res" id="2_d4jt2"]
+
+[resource]
+script = ExtResource("1_dwmf4")
+name = "Fuse"
+description = "Looks like this came out of a small device"
+image = ExtResource("1_gdyvb")
+mesh = ExtResource("2_d4jt2")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"

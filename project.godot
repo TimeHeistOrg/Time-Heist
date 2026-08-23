@@ -20,17 +20,21 @@ config/features=PackedStringArray("4.7", "Mobile")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Assets/Audio/default_bus_layout.tres"
+
 [autoload]
 
-globals="*res://Globals/globals.gd"
-document_database="*res://Globals/document_database.gd"
+document_database="*res://GameManagement/Globals/document_database.gd"
 global_inventory="*uid://bd6hj8r16s6lx"
 DialogueManager="*uid://c3rodes2l3gxb"
 SceneManager="*uid://cbn2aivlaf362"
+globals="*uid://b33e0ts3t33ox"
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Dialogue/balloon.tscn"
+runtime/balloon_path="res://Modules/Dialogue/balloon.tscn"
 
 [display]
 
@@ -240,7 +244,7 @@ TestButton={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/first_test.dialogue", "res://Dialogue/homebase_friend.dialogue", "res://Dialogue/start_run.dialogue", "res://Dialogue/test.dialogue", "res://Dialogue/to_tutorial.dialogue", "res://Dialogue/Tutorial/tutorial_test.dialogue", "res://Dialogue/Tutorial/Arjun.dialogue", "res://Dialogue/Tutorial/Katya.dialogue", "res://Dialogue/Tutorial/Maria.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Content/Dialogue/Homebase/Arjun.dialogue", "res://Content/Dialogue/Homebase/Katya.dialogue", "res://Content/Dialogue/Homebase/Maria.dialogue", "res://Content/Dialogue/Homebase/lauren_linda_friend.dialogue", "res://Content/Dialogue/Homebase/homebase_friend.dialogue", "res://Content/Dialogue/Homebase/start_run.dialogue", "res://Content/Dialogue/Homebase/to_tutorial.dialogue")
 
 [layer_names]
 

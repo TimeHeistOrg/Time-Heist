@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://0oh788m3hc14"]
-
-[ext_resource type="PackedScene" uid="uid://djiwhvvg70snf" path="res://Assets/Models/Imported Assets/mirror.glb" id="1_qa60d"]
-
-[node name="Mirror" type="Node3D" unique_id=865723330]
-
-[node name="mirror" parent="." unique_id=1257606632 instance=ExtResource("1_qa60d")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

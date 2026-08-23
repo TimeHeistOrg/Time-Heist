@@ -15,3 +15,4 @@ func _set_create_options(menu_node: Object):
 func _handle_menu_selected(id: int):
 	if id == 2:
 		property_editor.create_new_path()
+	return true

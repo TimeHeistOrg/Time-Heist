@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjl00j05m7bpr"]
 
-[ext_resource type="Texture2D" uid="uid://daw3micm30jyx" path="res://Assets/UI/Computer/Text Messages/receivingmessage.png" id="1_7p57o"]
+[ext_resource type="Texture2D" uid="uid://daw3micm30jyx" path="res://Modules/Interaction/Computer/ComputerAssets/Text Messages/receivingmessage.png" id="1_7p57o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab3f3"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

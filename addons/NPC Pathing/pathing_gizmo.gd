@@ -169,11 +169,13 @@ func _commit_handle(id, secondary, restore, cancel):
 func _get_handle_name(id, secondary):
 	return "Handle " + str(id)
 
-func _get_handle_value(id, secondary):
+func _get_handle_value(id, secondary) -> Variant:
 	if selected_component is PathVertex:
 		return selected_component.position
 	elif selected_component is PathLine:
 		return selected_component.speed
+	else:
+		return null
 
 func _is_handle_highlighted(id, secondary):
 	return selected_component and id == selected_component.id

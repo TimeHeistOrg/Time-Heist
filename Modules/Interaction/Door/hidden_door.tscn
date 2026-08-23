@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b02sy8jnytlnw"]
 
-[ext_resource type="PackedScene" uid="uid://dhac04mwooy3s" path="res://Assets/Models/Enviornment/tall_shelf_enclosed2.tscn" id="1_5n0a5"]
+[ext_resource type="PackedScene" uid="uid://dhac04mwooy3s" path="res://Assets/Environment/Shelf_Counter/full_closed_shelf.tscn" id="1_5n0a5"]
 [ext_resource type="Script" uid="uid://bfwqxyqh6uiwb" path="res://Modules/Interaction/Door/hidden_door.gd" id="1_me3jc"]
 [ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="3_l5j44"]
 

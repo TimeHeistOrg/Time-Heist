@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://be17331wmp4fa"]
+
+[ext_resource type="Texture2D" uid="uid://bnbcooeil0ruq" path="res://Content/Documents/Textures/19_laura_to_josh.png" id="1_h1ra2"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="2_36a6r"]
+
+[resource]
+script = ExtResource("2_36a6r")
+is_email = true
+document_id = 19
+title = "Laura email to Josh"
+document_image = ExtResource("1_h1ra2")
+relevant_tags = Array[String](["Emails", "All Files"])
+email_heading = "Got another task for you."
+email_from = "Laura D"
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

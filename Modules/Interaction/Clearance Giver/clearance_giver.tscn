@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_le8sc"]
 [ext_resource type="Script" uid="uid://dbkxdjsb03h5e" path="res://Modules/Interaction/Clearance Giver/clearance_giver.gd" id="1_r8iwe"]
-[ext_resource type="PackedScene" uid="uid://c4weuyyccstc2" path="res://Assets/Models/Interactables/ClearanceMachine.glb" id="2_fh5j6"]
+[ext_resource type="PackedScene" uid="uid://c4weuyyccstc2" path="res://Assets/Environment/Imported Assets/ClearanceMachine.glb" id="2_fh5j6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8iwe"]
 size = Vector3(0.81030273, 1.770752, 0.875)

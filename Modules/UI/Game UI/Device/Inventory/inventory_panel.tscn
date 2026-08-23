@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://31ibymxtbwo0" path="res://Modules/UI/Game UI/Device/Inventory/inventory_panel.gd" id="1_uxjxt"]
 [ext_resource type="FontFile" uid="uid://datdkauvfmpa2" path="res://Assets/UI/Font/Dhurjati/Dhurjati-Regular.ttf" id="2_woo5j"]
-[ext_resource type="AudioStream" uid="uid://bvqyj0t1kq7um" path="res://Assets/SFX/pick_up.mp3" id="3_bf5q0"]
-[ext_resource type="AudioStream" uid="uid://lautowtdebhn" path="res://Assets/SFX/item_drop.mp3" id="4_dxvs7"]
+[ext_resource type="AudioStream" uid="uid://bvqyj0t1kq7um" path="res://Assets/Audio/SFX/pick_up.mp3" id="3_bf5q0"]
+[ext_resource type="AudioStream" uid="uid://lautowtdebhn" path="res://Assets/Audio/SFX/item_drop.mp3" id="4_dxvs7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf5q0"]
 bg_color = Color(0.6039216, 0.77254903, 0.827451, 1)

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bq3mncu2eepfx"]
+
+[ext_resource type="Script" uid="uid://dx2qsifcake6f" path="res://Modules/AI/Guard/guard.gd" id="1_3duep"]
+[ext_resource type="Texture2D" uid="uid://dtc4kd4x3ahd0" path="res://Assets/Sprites/Linda_face.png" id="2_3duep"]
+[ext_resource type="PackedScene" uid="uid://be0g844ywaxq6" path="res://Modules/ConeVision/player_detector.tscn" id="3_3duep"]
+[ext_resource type="PackedScene" uid="uid://sr7naop2qhp7" path="res://Modules/ConeVision/laser.tscn" id="3_k7y8f"]
+[ext_resource type="CylinderMesh" uid="uid://q6t3n1abbp46" path="res://Assets/Characters/Robot/robot_eye_mesh.tres" id="4_mrshc"]
+[ext_resource type="AudioStream" uid="uid://c2wmvoidbx0k2" path="res://Assets/Audio/SFX/guard_seen.mp3" id="5_1t78y"]
+[ext_resource type="ArrayMesh" uid="uid://cvupwyfu20qk5" path="res://Assets/Characters/Robot/robot_torso_mesh.mesh" id="5_ivj3q"]
+[ext_resource type="ArrayMesh" uid="uid://52gcnm4kls1h" path="res://Assets/Characters/Robot/robot_legs_mesh.mesh" id="6_tsa0h"]
+[ext_resource type="ArrayMesh" uid="uid://c6twy88j5q7bb" path="res://Assets/Characters/Robot/robot_tires_mesh.mesh" id="7_qyl21"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yuln"]
+resource_local_to_scene = true
+albedo_color = Color(0.87086356, 0.28329608, 0.22849053, 1)
+metallic = 0.8
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+backlight = Color(0.99997944, 0.71876156, 0.67345256, 1)
+stencil_flags = 2
+stencil_outline_thickness = 0.001
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3duep"]
+size = Vector3(1, 1.9223633, 1)
+
+[node name="Guard" type="Node3D" unique_id=854805088]
+script = ExtResource("1_3duep")
+alert_time = 0.8
+caught_time = 1.6
+
+[node name="PlayerDetector" parent="." unique_id=1869490121 instance=ExtResource("3_3duep")]
+collision_layer = 0
+input_ray_pickable = false
+sight_line_angle = 100.0
+sight_line_radius = 7.5
+
+[node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_k7y8f")]
+
+[node name="Robot" type="Node3D" parent="." unique_id=1984240208]
+
+[node name="Eye" type="MeshInstance3D" parent="Robot" unique_id=1281035009]
+unique_name_in_owner = true
+transform = Transform3D(0.2287981, 0, 0, 0, 0.01096248, 0, 0, 0, 0.27177733, 0, 1.2961587, -0.037184685)
+mesh = ExtResource("4_mrshc")
+skeleton = NodePath("../..")
+
+[node name="Torso" type="MeshInstance3D" parent="Robot" unique_id=805945296]
+unique_name_in_owner = true
+transform = Transform3D(-13.599682, 1.1889222e-06, 0, -5.6005867e-08, -0.64063257, 13.584587, 1.187602e-06, 13.584587, 0.64063257, -0.00016136988, 0.9761665, 1.3115658e-07)
+mesh = ExtResource("5_ivj3q")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_3yuln")
+
+[node name="Legs" type="MeshInstance3D" parent="Robot" unique_id=1628374913]
+unique_name_in_owner = true
+transform = Transform3D(15.31432, 0, 0, 0, -6.6941016e-07, 8.609855, 0, -15.314319, -3.763487e-07, -0.00017647594, 0.26309648, 0)
+mesh = ExtResource("6_tsa0h")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_3yuln")
+
+[node name="Tires" type="MeshInstance3D" parent="Robot" unique_id=1767033042]
+unique_name_in_owner = true
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0.31826976, 0.24740723, -3.6469192e-08)
+mesh = ExtResource("7_qyl21")
+skeleton = NodePath("")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1548599900]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 2.9, 0)
+layers = 32
+texture = ExtResource("2_3duep")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=299469070]
+collision_layer = 0
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1655377873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935791, 0)
+shape = SubResource("BoxShape3D_3duep")
+
+[node name="SeenSound" type="AudioStreamPlayer" parent="." unique_id=1442212525]
+unique_name_in_owner = true
+stream = ExtResource("5_1t78y")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_npc_hitbox_body_entered"]

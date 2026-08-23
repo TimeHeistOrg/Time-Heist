@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uww33bnurarr"]
 
-[ext_resource type="PackedScene" uid="uid://cdbpk2wwrnswd" path="res://Assets/Models/Imported Assets/Locker.glb" id="1_r1lcu"]
+[ext_resource type="PackedScene" uid="uid://cdbpk2wwrnswd" path="res://Assets/Environment/Imported Assets/Locker.glb" id="1_r1lcu"]
 [ext_resource type="PackedScene" uid="uid://b3j6f486q3yvk" path="res://Modules/Interaction/HideSpot/hide_point.tscn" id="2_r1lcu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gu15c"]

@@ -1,4 +1,4 @@
-extends Node
+class_name SceneConfig extends Node
 
 @export var player: Player
 @export var exclusion_list: Array[Node]
@@ -13,9 +13,9 @@ extends Node
 @onready var screen_camera = $ScreenSubViewport/Camera3D
 
 
-const input_manager_scene := preload("res://Globals/input_manager.gd")
-const ui_manager_scene := preload("res://Modules/UI/ui_manager.tscn")
-const time_manager_scene := preload("res://Modules/TimeTravel/TimeManager.gd")
+const input_manager_scene := preload("res://GameManagement/input_manager.gd")
+const ui_manager_scene := preload("res://GameManagement/ui_manager.tscn")
+const time_manager_scene := preload("res://GameManagement/time_manager.gd")
 
 func _ready():
 	#print("scene config ready")

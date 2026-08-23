@@ -1,0 +1,612 @@
+[gd_scene format=3 uid="uid://chp3aqvx54cgi"]
+
+[ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/SceneConfig.tscn" id="1_yjhg3"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="3_ymwqx"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="4_07tka"]
+[ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/test_computer.tres" id="4_y1si3"]
+[ext_resource type="Resource" uid="uid://cdmieat3en1nr" path="res://Modules/UI/Game UI/Desktops/Z3 Floor/josh_playtest_computer.tres" id="5_0qcv7"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="5_yjhg3"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="6_k1gnt"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="7_7aoa1"]
+[ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Modules/MapBuilding/MeshLibrary.tres" id="8_piedo"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="8_rbmgi"]
+[ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="9_ymwqx"]
+[ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="10_07tka"]
+[ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="12_07tka"]
+[ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="13_k1gnt"]
+[ext_resource type="PackedScene" uid="uid://ctftfayvoseda" path="res://Modules/Interaction/Puzzles/puzzle_panel.tscn" id="14_k1gnt"]
+[ext_resource type="PackedScene" uid="uid://hkkw08i1o4v3" path="res://Modules/UI/Game UI/Pipe Game/pipe_game.tscn" id="15_fry3c"]
+[ext_resource type="PackedScene" uid="uid://cbtqqo3a4oo70" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.tscn" id="16_m7fnc"]
+[ext_resource type="PackedScene" uid="uid://cne2roithf6os" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn" id="18_0wlcr"]
+[ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="20_8b7s2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y1si3"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qcv7"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_y1si3")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_fry3c"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_0qcv7")
+size = Vector2(2.83, 1.5)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m7fnc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mgh7o"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wlcr"]
+albedo_texture = ExtResource("3_ymwqx")
+metallic = 1.0
+metallic_texture = ExtResource("5_yjhg3")
+roughness_texture = ExtResource("7_7aoa1")
+normal_enabled = true
+normal_texture = ExtResource("6_k1gnt")
+ao_enabled = true
+ao_texture = ExtResource("4_07tka")
+uv1_scale = Vector3(12.5, 12.5, 12.5)
+grow_amount = -4.125
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mpas6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8b7s2"]
+
+[node name="Debug Mall" type="Node3D" unique_id=1495256944]
+
+[node name="SceneConfig" parent="." unique_id=705177490 instance=ExtResource("1_yjhg3")]
+input_manager = true
+ui_manager = true
+
+[node name="Computer" parent="." unique_id=1194039688 instance=ExtResource("13_k1gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5460143, 0, -5.144451)
+data = ExtResource("4_y1si3")
+
+[node name="Computer2" parent="." unique_id=82439749 instance=ExtResource("13_k1gnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3289857, 0, -5.769451)
+data = ExtResource("5_0qcv7")
+
+[node name="Player" parent="." unique_id=288105915 instance=ExtResource("8_rbmgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player/Camera Pivot/CameraMarker/Camera3D" parent_id_path=PackedInt32Array(288105915, 214841099) index="2" unique_id=885707867]
+
+[node name="MeshInstance3D" parent="Player/Inventory Wheel Holder" parent_id_path=PackedInt32Array(288105915, 1988325530) index="0" unique_id=332989845]
+mesh = SubResource("QuadMesh_fry3c")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1157303031]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1072306771]
+shape = SubResource("WorldBoundaryShape3D_m7fnc")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1732563000]
+layers = 4
+mesh = SubResource("PlaneMesh_mgh7o")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wlcr")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="GridMap" parent="." unique_id=1902901798]
+mesh_library = ExtResource("8_piedo")
+cell_size = Vector3(0.25, 2, 0.25)
+cell_center_y = false
+collision_layer = 8
+collision_mask = 0
+data = {
+"cells": PackedInt32Array(0, 65524, 655360, 0, 65525, 655360, 0, 65526, 655360, 0, 65527, 655360, 0, 65528, 655360, 0, 65529, 655360, 0, 65530, 655360, 0, 65531, 655360, 0, 65532, 655360, 0, 65533, 655360, 0, 65534, 655360, 0, 65535, 655360, 0, 0, 655360, 0, 1, 655360, 0, 2, 655360, 0, 3, 655360, 0, 4, 655360, 0, 5, 655360, 0, 6, 655360, 0, 7, 655360, 0, 8, 655360, 0, 9, 655360, 0, 10, 655360, 1, 65524, 655360, 1, 10, 655360, 2, 65524, 655360, 2, 10, 655360, 3, 65524, 655360, 3, 10, 655360, 4, 65524, 655360, 4, 10, 655360, 5, 65524, 655360, 5, 10, 655360, 6, 65524, 655360, 6, 10, 655360, 7, 65524, 655360, 7, 10, 655360, 8, 65524, 655360, 8, 10, 655360, 9, 65524, 655360, 9, 10, 655360, 10, 65524, 655360, 10, 10, 655360, 11, 65524, 655360, 11, 10, 655360, 12, 65524, 655360, 12, 10, 655360, 13, 65524, 655360, 13, 10, 655360, 14, 65524, 655360, 14, 10, 655360, 15, 65524, 655360, 15, 10, 655360, 16, 65524, 655360, 16, 10, 655360, 17, 65524, 655360, 17, 10, 655360, 18, 65524, 655360, 18, 10, 655360, 19, 65524, 655360, 19, 10, 655360, 20, 65524, 655360, 20, 10, 655360, 21, 65524, 655360, 21, 10, 655360, 22, 65524, 655360, 22, 10, 655360, 23, 65524, 655360, 23, 10, 655360, 24, 65524, 655360, 24, 10, 655360, 25, 65524, 655360, 25, 10, 655360, 26, 65524, 655360, 26, 10, 655360, 27, 65524, 655360, 27, 10, 655360, 28, 65524, 655360, 28, 10, 655360, 29, 65524, 655360, 29, 10, 655360, 30, 65524, 655360, 30, 10, 655360, 31, 65524, 655360, 31, 10, 655360, 32, 65524, 655360, 32, 10, 655360, 33, 65524, 655360, 33, 10, 655360, 34, 65524, 655360, 34, 10, 655360, 35, 65524, 655360, 35, 10, 655360, 36, 65524, 655360, 36, 65525, 655360, 36, 65526, 655360, 36, 65527, 655360, 36, 65528, 655360, 36, 65529, 655360, 36, 65530, 655360, 36, 65531, 655360, 36, 65532, 655360, 36, 1, 655360, 36, 2, 655360, 36, 3, 655360, 36, 4, 655360, 36, 5, 655360, 36, 6, 655360, 36, 7, 655360, 36, 8, 655360, 36, 9, 655360, 36, 10, 655360, 37, 65524, 655360, 37, 10, 655360, 38, 65524, 655360, 38, 10, 655360, 39, 65524, 655360, 39, 10, 655360, 40, 65524, 655360, 40, 10, 655360, 41, 65524, 655360, 41, 10, 655360, 42, 65524, 655360, 42, 10, 655360, 43, 65524, 655360, 43, 10, 655360, 44, 65524, 655360, 44, 10, 655360, 45, 65524, 655360, 45, 10, 655360, 46, 65524, 655360, 46, 10, 655360, 47, 65524, 655360, 47, 10, 655360, 48, 65524, 655360, 48, 10, 655360, 49, 65524, 655360, 49, 10, 655360, 50, 65524, 655360, 50, 10, 655360, 51, 65524, 655360, 51, 10, 655360, 52, 65524, 655360, 52, 10, 655360, 53, 65524, 655360, 53, 10, 655360, 54, 65524, 655360, 54, 10, 655360, 55, 65524, 655360, 55, 10, 655360, 56, 65524, 655360, 56, 10, 655360, 57, 65524, 655360, 57, 10, 655360, 58, 65524, 655360, 58, 10, 655360, 59, 65524, 655360, 59, 10, 655360, 60, 65524, 655360, 60, 10, 655360, 61, 65524, 655360, 61, 10, 655360, 62, 65524, 655360, 62, 10, 655360, 63, 65524, 655360, 63, 10, 655360, 64, 65524, 655360, 64, 10, 655360, 65, 65524, 655360, 65, 10, 655360, 66, 65524, 655360, 66, 10, 655360, 67, 65524, 655360, 67, 10, 655360, 68, 65524, 655360, 68, 10, 655360, 69, 65524, 655360, 69, 10, 655360, 70, 65524, 655360, 70, 10, 655360, 71, 65524, 655360, 71, 10, 655360, 72, 65524, 655360, 72, 10, 655360, 73, 65524, 655360, 73, 65525, 655360, 73, 65526, 655360, 73, 65527, 655360, 73, 65528, 655360, 73, 65529, 655360, 73, 65530, 655360, 73, 65531, 655360, 73, 65532, 655360, 73, 65533, 655360, 73, 65534, 655360, 73, 65535, 655360, 73, 0, 655360, 73, 1, 655360, 73, 2, 655360, 73, 3, 655360, 73, 4, 655360, 73, 5, 655360, 73, 6, 655360, 73, 7, 655360, 73, 8, 655360, 73, 9, 655360, 73, 10, 655360, 65505, 65524, 0, 65506, 65524, 0, 65507, 65524, 0, 65508, 65524, 0, 65509, 65524, 0, 65510, 65524, 0, 65511, 65524, 0, 65512, 65524, 0, 65513, 65524, 0, 65514, 65524, 0, 65515, 65524, 0, 65516, 65524, 0, 65517, 65524, 0, 65518, 65524, 0, 65519, 65524, 0, 65520, 65524, 0, 65521, 65524, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=342883767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.058178, 0, 21.921896)
+process_material = SubResource("ParticleProcessMaterial_mpas6")
+draw_pass_1 = SubResource("QuadMesh_8b7s2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1511552761]
+transform = Transform3D(1, 0, 0, 0, 0.44293037, 0.8965561, 0, -0.8965561, 0.44293037, 0, 6.798643, 5.608078)
+visible = false
+layers = 64
+
+[node name="Lights" type="Node3D" parent="." unique_id=79356776]
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Lights" unique_id=1021076887]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -13.321789, 9.112866, 6.0631075)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Lights" unique_id=820972037]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -12.571789, 9.112866, -0.18689251)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Lights" unique_id=2142745472]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -15.321789, 7.8628664, -15.4368925)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="Lights" unique_id=1892028187]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -7.4713936, 7.8628664, -15.4368925)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Lights" unique_id=225368535]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -7.571789, 9.112866, -11.6868925)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Lights" unique_id=1949160173]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -2.5717888, 9.112866, -6.9368925)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Lights" unique_id=479677093]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -0.3217888, 9.112866, -16.936893)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 41.64
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Lights" unique_id=2102205639]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 4.178211, 7.1128664, -11.686893)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="Lights" unique_id=957400344]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 11.678211, 7.1128664, -7.6868935)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="Lights" unique_id=1510588232]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -2.5717888, 6.8628664, -4.1868935)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=860952620]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 7.1256046, 2.686267, -0.063752174)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="Lights" unique_id=1901238056]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 3.6256046, 2.500773, -3.5588334)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="Lights" unique_id=680723488]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 3.0984678, 2.686267, -0.063752174)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="Lights" unique_id=1385571131]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 11.494732, 2.8242683, -0.26296568)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="Lights" unique_id=354219170]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 14.959049, 2.8242683, -0.26296568)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=393843851]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 2, 8.232662, 9.596434)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="Lights" unique_id=1514198832]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 4.25, 2.3891387, 7.501831)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 7.946
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights" unique_id=201954009]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, 0, 8.232662, 28.134186)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lights" unique_id=234105926]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -9.51265, 6.501198, -6.1524324)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="Lights" unique_id=103571242]
+transform = Transform3D(1, 0, 0, 0, -0.052998304, 0.99859464, 0, -0.99859464, -0.052998304, -16.51265, 8.501198, -6.1524324)
+layers = 64
+light_color = Color(0.50770867, 0.45986217, 0.89156145, 1)
+light_energy = 6.0
+light_size = 0.25
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+spot_range = 31.135
+spot_attenuation = 0.5
+spot_angle = 60.0
+spot_angle_attenuation = 2.4622889
+
+[node name="Lever" parent="." unique_id=1750000146 instance=ExtResource("10_07tka")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 1, -3.0000007)
+
+[node name="Lever2" parent="." unique_id=898899433 instance=ExtResource("10_07tka")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.75, 1, -3.0000007)
+is_jammed = true
+
+[node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("9_ymwqx")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.25, 0, -3)
+
+[node name="Keycard Scanner" parent="." unique_id=600970463 instance=ExtResource("12_07tka")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.5, 0.75, -3)
+
+[node name="Keycard Scanner2" parent="." unique_id=1416873081 instance=ExtResource("12_07tka")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.25, 0.75, -3)
+
+[node name="PuzzlePanel" parent="." unique_id=1321296564 node_paths=PackedStringArray("puzzle") instance=ExtResource("14_k1gnt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0, -3)
+puzzle = NodePath("PipeGame")
+
+[node name="PipeGame" parent="PuzzlePanel" unique_id=1151290293 instance=ExtResource("15_fry3c")]
+
+[node name="Background" type="ColorRect" parent="PuzzlePanel/PipeGame" unique_id=214442977]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="Row 0" parent="PuzzlePanel/PipeGame/Background" unique_id=520973626 instance=ExtResource("16_m7fnc")]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Cell_(0, 0)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=425733919 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Cell_(0, 1)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=340688284 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="Cell_(0, 2)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=38827867 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="Cell_(0, 3)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=816818469 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Cell_(0, 4)" parent="PuzzlePanel/PipeGame/Background/Row 0" unique_id=1431801663 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Row 1" parent="PuzzlePanel/PipeGame/Background" unique_id=1370650399 instance=ExtResource("16_m7fnc")]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 128.0
+
+[node name="Cell_(1, 0)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=1764940902 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Cell_(1, 1)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=1809415238 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="Cell_(1, 2)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=35134551 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="Cell_(1, 3)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=712886175 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Cell_(1, 4)" parent="PuzzlePanel/PipeGame/Background/Row 1" unique_id=1592493600 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Row 2" parent="PuzzlePanel/PipeGame/Background" unique_id=1949517917 instance=ExtResource("16_m7fnc")]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 192.0
+
+[node name="Cell_(2, 0)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=1782962713 instance=ExtResource("18_0wlcr")]
+modulate = Color(0.6, 1, 0.6, 1)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("20_8b7s2")
+pipe_type = 1
+is_start_pipe = true
+
+[node name="Cell_(2, 1)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=2076489922 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+texture = ExtResource("20_8b7s2")
+pipe_type = 1
+
+[node name="Cell_(2, 2)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=797272504 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+rotation = 1.5707964
+texture = ExtResource("20_8b7s2")
+pipe_type = 1
+rotation_level = 1
+
+[node name="Cell_(2, 3)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=1552497954 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+texture = ExtResource("20_8b7s2")
+pipe_type = 1
+
+[node name="Cell_(2, 4)" parent="PuzzlePanel/PipeGame/Background/Row 2" unique_id=880805253 instance=ExtResource("18_0wlcr")]
+modulate = Color(1, 0.6, 0.6, 1)
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+texture = ExtResource("20_8b7s2")
+pipe_type = 1
+is_end_pipe = true
+
+[node name="Row 3" parent="PuzzlePanel/PipeGame/Background" unique_id=1574151354 instance=ExtResource("16_m7fnc")]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 320.0
+offset_bottom = 256.0
+
+[node name="Cell_(3, 0)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1652971879 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Cell_(3, 1)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1726284099 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="Cell_(3, 2)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=791702314 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="Cell_(3, 3)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1313190410 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Cell_(3, 4)" parent="PuzzlePanel/PipeGame/Background/Row 3" unique_id=1595850875 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Row 4" parent="PuzzlePanel/PipeGame/Background" unique_id=880407962 instance=ExtResource("16_m7fnc")]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 320.0
+
+[node name="Cell_(4, 0)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=1369634475 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Cell_(4, 1)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=2103703744 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+
+[node name="Cell_(4, 2)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=2051083336 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="Cell_(4, 3)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=1147478949 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Cell_(4, 4)" parent="PuzzlePanel/PipeGame/Background/Row 4" unique_id=860478424 instance=ExtResource("18_0wlcr")]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[connection signal="puzzle_solved" from="PuzzlePanel/PipeGame" to="PuzzlePanel" method="turn_off"]
+
+[editable path="Player"]

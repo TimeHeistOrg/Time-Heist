@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://sr7naop2qhp7"]
 
 [ext_resource type="Script" uid="uid://coh18nyv7dw38" path="res://Modules/ConeVision/laser.gd" id="1_0fltk"]
-[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Effects/laser.gdshader" id="1_edjot"]
-[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/SFX/laser.ogg" id="3_utjmn"]
+[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Modules/AI/Guard/laser.gdshader" id="1_edjot"]
+[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/Audio/SFX/laser.ogg" id="3_utjmn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kdpmb"]
 noise_type = 3

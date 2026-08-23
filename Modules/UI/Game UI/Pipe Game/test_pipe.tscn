@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://42jd0b6w7qu4"]
 
-[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://Modules/UI/ui_manager.tscn" id="1_2bm35"]
-[ext_resource type="PackedScene" uid="uid://c4ck8inf0quik" path="res://Modules/UI/Game UI/Pipe Game/pipe_game.tscn" id="1_n5ij4"]
+[ext_resource type="PackedScene" uid="uid://bm4y2kiv4odnp" path="res://GameManagement/ui_manager.tscn" id="1_2bm35"]
+[ext_resource type="PackedScene" uid="uid://hkkw08i1o4v3" path="res://Modules/UI/Game UI/Pipe Game/pipe_game.tscn" id="1_n5ij4"]
 [ext_resource type="PackedScene" uid="uid://cne2roithf6os" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn" id="2_2bm35"]
 [ext_resource type="PackedScene" uid="uid://cbtqqo3a4oo70" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.tscn" id="3_6x575"]
 [ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="4_0mmcj"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://gue75w7rapn5"]
+
+[ext_resource type="Texture2D" uid="uid://burdl6iie5b6f" path="res://Content/Items/Textures/silver_key_2_old.png" id="1_nketp"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="2_e1yjx"]
+
+[resource]
+script = ExtResource("2_e1yjx")
+name = "Security Lockbox Key"
+description = "One of the two keys that unlocks the basement security room lockbox"
+image = ExtResource("1_nketp")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"

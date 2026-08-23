@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c716rv5vpbu1u" path="res://Modules/Interaction/Door/bathroom_stall_door.gd" id="1_w2822"]
 [ext_resource type="PackedScene" uid="uid://bwhdpl42wl8l5" path="res://Modules/Interaction/Door/bathroom_stall_door.glb" id="2_2boax"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="6_p0a7j"]
-[ext_resource type="AudioStream" uid="uid://cdpr7pq46qe1h" path="res://Assets/SFX/open_door.ogg" id="7_tobi8"]
-[ext_resource type="AudioStream" uid="uid://bihq08irhlvhi" path="res://Assets/SFX/door_lock.ogg" id="8_5vc0y"]
+[ext_resource type="AudioStream" uid="uid://cdpr7pq46qe1h" path="res://Assets/Audio/SFX/open_door.ogg" id="7_tobi8"]
+[ext_resource type="AudioStream" uid="uid://bihq08irhlvhi" path="res://Assets/Audio/SFX/door_lock.ogg" id="8_5vc0y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6yhnp"]
 size = Vector3(1, 2, 0.1)

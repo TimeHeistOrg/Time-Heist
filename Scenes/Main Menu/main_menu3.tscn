@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://1e762uk44mwt" path="res://Assets/UI/Main Menu/settingsdefault.png" id="2_ltef7"]
 [ext_resource type="Texture2D" uid="uid://dsg2oiempe3xa" path="res://Assets/UI/Main Menu/playdefault.png" id="3_ifg3e"]
 [ext_resource type="Texture2D" uid="uid://oqs3kaav46hm" path="res://Assets/UI/Logo/time heist logo hifi.png" id="3_ilpl1"]
-[ext_resource type="PackedScene" uid="uid://wamdo44g5e66" path="res://Assets/Models/MainMenuModels/v3/titlescreenv3.glb" id="4_i6g8v"]
+[ext_resource type="PackedScene" uid="uid://wamdo44g5e66" path="res://Assets/Environment/MainMenuModels/v3/titlescreenv3.glb" id="4_i6g8v"]
 [ext_resource type="Texture2D" uid="uid://bhq8qc76s7c86" path="res://Assets/UI/Main Menu/playhover.png" id="4_i6mko"]
 [ext_resource type="Texture2D" uid="uid://bfc7iirrlrj5r" path="res://Assets/UI/Main Menu/creditshover.png" id="5_i6g8v"]
 [ext_resource type="Texture2D" uid="uid://rop0vuvsqp3w" path="res://Assets/UI/Main Menu/creditsdefault.png" id="6_ilpl1"]
 [ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="7_mohnt"]
 [ext_resource type="Texture2D" uid="uid://0ojaguqbvv3t" path="res://Assets/UI/HUD/timeline.png" id="10_ifg3e"]
-[ext_resource type="Shader" uid="uid://ddnclfmn4abmy" path="res://Effects/main_menu_vignette.gdshader" id="12_i6g8v"]
+[ext_resource type="Shader" uid="uid://ddnclfmn4abmy" path="res://Scenes/Main Menu/main_menu_vignette.gdshader" id="12_i6g8v"]
 
 [sub_resource type="Gradient" id="Gradient_mwdlf"]
 offsets = PackedFloat32Array(0, 0.1539924, 0.75342464, 1)
@@ -2111,33 +2111,33 @@ texture = ExtResource("3_ilpl1")
 [node name="titlescreenv3" parent="SubViewportContainer/SubViewport" unique_id=1359590925 instance=ExtResource("4_i6g8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012798309, 0.028505325, -0.01197052)
 
-[node name="ResidentialSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="0" unique_id=574058859]
+[node name="ResidentialSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="0" unique_id=635473674]
 transform = Transform3D(2.1252377, 0, 0, 0, 0.33396327, 0, 0, 0, 1.0185913, -1.7490871, -0.9752307, -13.939119)
 mesh = SubResource("ArrayMesh_24fjd")
 
-[node name="CoolTowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="1" unique_id=423266636]
+[node name="CoolTowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="1" unique_id=1506283734]
 layers = 4
 
-[node name="OfficeSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="2" unique_id=144963710]
+[node name="OfficeSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="2" unique_id=912466379]
 layers = 256
 mesh = SubResource("ArrayMesh_bgryv")
 
-[node name="TowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="3" unique_id=926847428]
+[node name="TowerSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="3" unique_id=1829238655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4632578, -14.008069, -45.878307)
 
-[node name="Camera" parent="SubViewportContainer/SubViewport/titlescreenv3" index="8" unique_id=468975109]
+[node name="Camera" parent="SubViewportContainer/SubViewport/titlescreenv3" index="8" unique_id=1654848352]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4954393, 4.0880947, 13.867525)
 far = 220.79
 
-[node name="MainSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="16" unique_id=1206822745]
+[node name="MainSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="16" unique_id=2053043200]
 layers = 512
 mesh = SubResource("ArrayMesh_ntibg")
 
-[node name="HeliPadSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="17" unique_id=2049935378]
+[node name="HeliPadSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="17" unique_id=1723793]
 layers = 4
 mesh = SubResource("ArrayMesh_j0vim")
 
-[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/titlescreenv3/Armature" parent_id_path=PackedInt32Array(1359590925, 1642871082) index="0" unique_id=1412132974]
+[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/titlescreenv3/Armature" parent_id_path=PackedInt32Array(1359590925, 436633327) index="0" unique_id=213362838]
 bones/0/position = Vector3(-0.008413643, 1.1659902, -193.46)
 bones/0/rotation = Quaternion(-0.5379754, -0.09280015, 0.025388949, 0.8374522)
 bones/1/position = Vector3(-4.4703484e-07, 7.4956274, -0.99010175)
@@ -2214,7 +2214,7 @@ bones/39/position = Vector3(-1.9903615e-05, 18.139803, -1.4139478e-05)
 bones/39/rotation = Quaternion(0.37119666, 0.013526988, 0.00071055954, 0.92845553)
 bones/40/position = Vector3(-3.934838e-08, 6.8207483, 1.15297735e-05)
 
-[node name="CoolSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="20" unique_id=1646884704]
+[node name="CoolSkyScraper" parent="SubViewportContainer/SubViewport/titlescreenv3" index="20" unique_id=371258879]
 layers = 32
 mesh = SubResource("ArrayMesh_i6g8v")
 

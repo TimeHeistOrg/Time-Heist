@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://hlbwyaj7qm4e"]
+
+[ext_resource type="ArrayMesh" uid="uid://bivryx6gwryxw" path="res://Content/Items/Meshes/pill_bottle.res" id="1_p2o40"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="2_q6d6c"]
+
+[resource]
+script = ExtResource("2_q6d6c")
+name = "Sleeping Pills"
+description = "Sleep peacefully. *DISCLAIMER*: dissolve in liquid for proper use"
+mesh = ExtResource("1_p2o40")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"
