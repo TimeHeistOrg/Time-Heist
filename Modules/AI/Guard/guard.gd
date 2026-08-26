@@ -1,15 +1,17 @@
 @tool
 class_name Guard extends PathFollower
-
-#Seen at all -> Suspicious:
-	#stops moving, tracks player, quesrtion mark
-	#if player leaves sight, continues looking at last seen position & starts descalation timer
-	#if player stays in sight (without leaving) goes to alert after alert_time
-#alert:
-	#exclamation, spread alert to other nearby guards (wait on this)
-	#laser if still in sight
+## Guard class
+##
+## Seen at all -> Suspicious:
+	## stops moving, tracks player, question mark
+	## if player leaves sight, continues looking at last seen position & starts descalation timer
+	## if player stays in sight (without leaving) goes to alert after alert_time
+## alert:
+	## exclamation, spread alert to other nearby guards (wait on this)
+	## laser if still in sight
 
 # Gaurd Body Parts
+@onready var robot: Node3D = %Robot
 @onready var eye: MeshInstance3D = %Eye
 @onready var torso: MeshInstance3D = %Torso
 @onready var legs: MeshInstance3D = %Legs
@@ -24,7 +26,7 @@ var state = AlertStates.NORMAL : #TIMEVAR
 			#print("setting state to: ", AlertStates.find_key(value))
 			if globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"state",state)
-			_enter_state(value)
+			_enter_state_visual(value)
 		state = value
 
 var last_detecting_player: float = INF
@@ -47,14 +49,15 @@ var detecting_player: float = 0 : #TIMEVAR
 var time_offset: float = 0
 var time_detecting: float = 0
 
-func _enter_state(new_state: AlertStates):
+func _enter_state_visual(new_state: AlertStates):
 	match new_state:
 		AlertStates.NORMAL:
-			_enter_normal()
+			torso.get_surface_override_material(0).emission_energy_multiplier = 1
 		AlertStates.SUSPICIOUS:
-			_enter_sus()
+			seen_sound.play()
+			torso.get_surface_override_material(0).emission_energy_multiplier = 3
 		AlertStates.ALERT:
-			_enter_alert()
+			pass
 
 func _process(_delta):
 	if not Engine.is_editor_hint():
@@ -65,13 +68,13 @@ func _process(_delta):
 				detecting_player = -time_manager.cur_time
 		match state:
 			AlertStates.NORMAL:
-				normal_process()
+				normal_process(_delta)
 			AlertStates.SUSPICIOUS:
-				sus_process()
+				sus_process(_delta)
 			AlertStates.ALERT:
-				alert_process()
+				alert_process(_delta)
 
-func normal_process():
+func normal_process(_delta):
 	#print("normal_process: delta_time: ", time_manager.delta_time, " time_offset: ", time_offset)
 	if time_detecting > 0:
 		time_offset -= time_detecting
@@ -80,7 +83,7 @@ func normal_process():
 	if detector.player_spotted:
 		#print("going to sus from normal")
 		enter_sus()
-		sus_process()
+		sus_process(_delta)
 		return
 	if not path_following:
 		return
@@ -95,16 +98,27 @@ func normal_process():
 		path_following.progress(self,last_processed_time,cur_time)
 	last_processed_time = cur_time
 
-func sus_process():
+func sus_process(_delta):
 	#print("sus_process")
-	detecting_process()
+	detecting_process(_delta)
+	
+	looking_process(_delta)
+	## Look at player position / last known position
+	#if detector.player_spotted:
+		#$Robot.look_at(detector.seen_position)
+		##rotate to look at player
+	#else:
+		#$Robot.look_at(detector.seen_position)
+		##scan last seen area
+	
 	if time_detecting >= alert_time:
 		enter_alert()
 	if time_detecting == 0:
 		enter_normal()
 
-func alert_process():
-	detecting_process()
+func alert_process(_delta):
+	detecting_process(_delta)
+	looking_process(_delta)
 	if time_detecting < alert_time:
 		enter_sus()
 	if time_detecting == caught_time:
@@ -117,7 +131,7 @@ func alert_process():
 		if laser.laser_on:
 			laser.stop_laser()
 
-func detecting_process():
+func detecting_process(_delta):
 	#print("detecting_process")
 	if detecting_player > 0:
 		if time_manager.delta_time < 0 and last_detecting_player - time_manager.cur_time < -time_manager.delta_time:
@@ -133,7 +147,7 @@ func detecting_process():
 			#print(3)
 			time_offset -= time_detecting
 			time_detecting = 0
-			normal_process()
+			normal_process(_delta)
 		else:
 			#print(4)
 			time_detecting -= time_manager.delta_time
@@ -144,38 +158,39 @@ func detecting_process():
 	#print("time detecting: ", time_detecting, " delta_time: ", time_manager.delta_time, " time_offset: ", time_offset)
 	#print("cur_time: ",time_manager.cur_time, " detecting_player: ", detecting_player, " last_detecting_player: ", last_detecting_player)
 
+
 func enter_normal():
 	state = AlertStates.NORMAL
-	_enter_state(AlertStates.NORMAL)
 
-func _enter_normal():
-	#$torso.get_surface_override_material(0).emission = Color(0,0,0,)
-	torso.get_surface_override_material(0).emission_energy_multiplier = 1
 
 func enter_sus():
 	state = AlertStates.SUSPICIOUS
-	_enter_state(AlertStates.SUSPICIOUS)
-	
-func enter_caught():
-	state = AlertStates.CAUGHT
-	_enter_state(AlertStates.CAUGHT)
-	catch_player()
 
-func _enter_sus():
-	seen_sound.play()
-	#$torso.get_surface_override_material(0).emission = Color(1.0, 0.0, 0.0, 1.0)
-	torso.get_surface_override_material(0).emission_energy_multiplier = 3
 
 func enter_alert():
 	state = AlertStates.ALERT
-	_enter_state(AlertStates.ALERT)
 
-func _enter_alert():
-	pass
 
+func enter_caught():
+	state = AlertStates.CAUGHT
+	catch_player()
+
+
+## Called if the player walks into the Guard's hitbox. The player is instantly caught
 func _on_npc_hitbox_body_entered(body: Node3D) -> void:
 	if body == globals.player and not globals.player_invisible:
 		enter_caught()
-		
+
+
 func catch_player():
 	globals.player_caught(self)
+
+
+func looking_process(delta):
+	var target_position = Vector3(detector.seen_position.x,global_position.y,detector.seen_position.z)
+	
+	# TODO: right now this only moves the robot mesh for testing
+	var target_transform = robot.global_transform.looking_at(target_position, Vector3.UP)
+	robot.global_transform = robot.global_transform.interpolate_with(target_transform, 10 * delta)
+	robot.rotate_y(sin(delta))
+	

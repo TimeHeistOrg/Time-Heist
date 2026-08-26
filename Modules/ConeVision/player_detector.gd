@@ -1,8 +1,16 @@
 @tool
 class_name PlayerDetector extends Area3D
+## PlayerDectector class
+##
+## Detects player in a mesh and tests for line of sight. Used in [Guard]. This is a tool
+## so you can edit the mesh live in engine
 
+## Flag if player is in the mesh
 var player_in_zone : bool
+## Flag if palyer is in line of sight
 var player_spotted : bool
+## The position the player is being spotted
+var seen_position : Vector3
 @onready var sight_checker := $SightChecker
 @onready var collision := $DetectorCollision
 
@@ -38,6 +46,8 @@ func _ready() -> void:
 		create_mesh()
 		collision.polygon = polygon_points
 
+
+## Creates the mesh based on export values
 func create_mesh():
 	polygon_points = []
 	var start_angle = -(sight_line_angle/2)
@@ -94,6 +104,7 @@ func _process(_delta: float) -> void:
 			sight_checker.look_at(globals.player.detection_point.global_position)
 			if sight_checker.get_collider() == globals.player:
 				player_spotted = true
+				seen_position = globals.player.detection_point.global_position
 			else:
 				player_spotted = false
 		else:

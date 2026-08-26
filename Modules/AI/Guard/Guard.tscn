@@ -34,10 +34,13 @@ collision_layer = 0
 input_ray_pickable = false
 sight_line_angle = 100.0
 sight_line_radius = 7.5
+smaller_sight_line_angle = 69.92
 
 [node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_k7y8f")]
+laser_on = true
 
 [node name="Robot" type="Node3D" parent="." unique_id=1984240208]
+unique_name_in_owner = true
 
 [node name="Eye" type="MeshInstance3D" parent="Robot" unique_id=1281035009]
 unique_name_in_owner = true

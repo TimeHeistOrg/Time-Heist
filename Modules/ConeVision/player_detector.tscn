@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://be0g844ywaxq6"]
 
 [ext_resource type="Script" uid="uid://yjyaqf7frg3r" path="res://Modules/ConeVision/player_detector.gd" id="1_dmubf"]
-[ext_resource type="Script" uid="uid://g5kay17l4jvc" path="res://Modules/ConeVision/visionmeshgen.gd" id="2_dmubf"]
-[ext_resource type="Material" uid="uid://df0n62538ev1x" path="res://Modules/ConeVision/VisionMeshMat.tres" id="3_vpxxw"]
 
 [node name="PlayerDetector" type="Area3D" unique_id=1869490121]
 script = ExtResource("1_dmubf")
@@ -16,11 +14,6 @@ debug_color = Color(15.793283, 0, 8.468667, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0, -50)
 collision_mask = 9
-
-[node name="VisionConeMeshGen" type="Node3D" parent="." unique_id=1386536420 node_paths=PackedStringArray("collision_polygon")]
-script = ExtResource("2_dmubf")
-collision_polygon = NodePath("../DetectorCollision")
-mesh_material = ExtResource("3_vpxxw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

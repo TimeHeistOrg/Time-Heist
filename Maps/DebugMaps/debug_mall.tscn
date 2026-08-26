@@ -19,20 +19,21 @@
 [ext_resource type="PackedScene" uid="uid://cbtqqo3a4oo70" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.tscn" id="16_m7fnc"]
 [ext_resource type="PackedScene" uid="uid://cne2roithf6os" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn" id="18_0wlcr"]
 [ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="20_8b7s2"]
+[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/Guard.tscn" id="20_fdgdj"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_y1si3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fdgdj"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qcv7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yarxy"]
 resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_y1si3")
+albedo_texture = SubResource("ViewportTexture_fdgdj")
 billboard_mode = 1
 
-[sub_resource type="QuadMesh" id="QuadMesh_fry3c"]
+[sub_resource type="QuadMesh" id="QuadMesh_hbl44"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_0qcv7")
+material = SubResource("StandardMaterial3D_yarxy")
 size = Vector2(2.83, 1.5)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m7fnc"]
@@ -61,6 +62,7 @@ grow_amount = -4.125
 [node name="SceneConfig" parent="." unique_id=705177490 instance=ExtResource("1_yjhg3")]
 input_manager = true
 ui_manager = true
+time_manager = true
 
 [node name="Computer" parent="." unique_id=1194039688 instance=ExtResource("13_k1gnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5460143, 0, -5.144451)
@@ -76,7 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5)
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player/Camera Pivot/CameraMarker/Camera3D" parent_id_path=PackedInt32Array(288105915, 214841099) index="2" unique_id=885707867]
 
 [node name="MeshInstance3D" parent="Player/Inventory Wheel Holder" parent_id_path=PackedInt32Array(288105915, 1988325530) index="0" unique_id=332989845]
-mesh = SubResource("QuadMesh_fry3c")
+mesh = SubResource("QuadMesh_hbl44")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1157303031]
 metadata/_edit_lock_ = true
@@ -606,6 +608,9 @@ layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
+
+[node name="Guard" parent="." unique_id=854805088 instance=ExtResource("20_fdgdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.053573, 0, -4.679496)
 
 [connection signal="puzzle_solved" from="PuzzlePanel/PipeGame" to="PuzzlePanel" method="turn_off"]
 

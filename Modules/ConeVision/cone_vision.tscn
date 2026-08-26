@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfi4568w1mep7" path="res://Modules/ConeVision/cone_vision.gd" id="1_a0itm"]
 [ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Modules/AI/Guard/laser.gdshader" id="1_kdpmb"]
-[ext_resource type="Script" uid="uid://g5kay17l4jvc" path="res://Modules/ConeVision/visionmeshgen.gd" id="2_a0itm"]
 [ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/Audio/SFX/laser.ogg" id="3_1cksi"]
-[ext_resource type="Material" uid="uid://df0n62538ev1x" path="res://Modules/ConeVision/VisionMeshMat.tres" id="3_7ingd"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_23e0v"]
 
@@ -45,11 +43,6 @@ time_till_caught = 1.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 polygon = PackedVector2Array(-13.594617, -6.339274, -12.990381, -7.5, -12.287281, -8.603646, -11.490666, -9.641814, -10.606602, -10.606602, -9.641814, -11.490666, -8.603646, -12.287281, -7.5, -12.990381, -6.339274, -13.594617, -5.130302, -14.095389, -3.8822856, -14.488888, -2.6047227, -14.772117, -1.3073361, -14.942921, 0, -15, 1.3073361, -14.942921, 2.6047227, -14.772117, 3.8822856, -14.488888, 5.130302, -14.095389, 6.339274, -13.594617, 7.5, -12.990381, 8.603646, -12.287281, 9.641814, -11.490666, 10.606602, -10.606602, 11.490666, -9.641814, 12.287281, -8.603646, 12.990381, -7.5, 13.594617, -6.339274, 1.409539, -0.51303023, 1.4488888, -0.38822857, 1.4772116, -0.26047227, 1.494292, -0.13073361, 1.5, -9.1845477e-17, 1.494292, 0.13073361, 1.4772116, 0.26047227, 1.4488888, 0.38822857, 1.409539, 0.51303023, 1.3594617, 0.6339274, 1.299038, 0.75, 1.228728, 0.8603647, 1.1490667, 0.9641814, 0, 0, -1.228728, 0.8603647, -1.299038, 0.75, -1.3594617, 0.6339274, -1.409539, 0.51303023, -1.4488888, 0.38822857, -1.4772116, 0.26047227, -1.494292, 0.13073361, -1.5, 2.7553643e-16, -1.494292, -0.13073361, -1.4772116, -0.26047227, -1.4488888, -0.38822857, -1.409539, -0.51303023, -1.3594617, -0.6339274)
 debug_color = Color(15.793283, 0, 8.468667, 1)
-
-[node name="VisionConeMeshGen" type="Node3D" parent="." unique_id=126127090 node_paths=PackedStringArray("collision_polygon")]
-script = ExtResource("2_a0itm")
-collision_polygon = NodePath("../CollisionPolygon3D")
-mesh_material = ExtResource("3_7ingd")
 
 [node name="SightChecker" type="RayCast3D" parent="." unique_id=716854366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

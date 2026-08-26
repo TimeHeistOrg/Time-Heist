@@ -1,12 +1,15 @@
 class_name Laser extends Node3D
+## Lase class used in [Guard]
+##
+## Points at the target being spotted
 
 @onready var laser_mesh : MeshInstance3D = $LaserCylinder
 @onready var laser_sfx : AudioStreamPlayer = $AudioStreamPlayer
+## Flag if laser should be visible
 @export var laser_on: bool = false
 @export var target: Node3D = null
 var source: Node3D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	source = get_parent_node_3d()
 	if laser_on:
@@ -15,7 +18,6 @@ func _ready():
 		stop_laser()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if laser_on and target:
 		update_beam(source.global_position,target.global_position)
