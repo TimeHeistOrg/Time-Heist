@@ -1,9 +1,26 @@
 extends Node
-
 class_name TimeManager
+## Time Manager class
+##
+## Handles the game time as it progresses through the run. Stores the current time as well
+## as time_stack that stores any time var changes. Undoes these changes on rewind
 
+## Emit when player starts time traveling
+signal start_time_travel
+## Emit when player stops time traveling
+signal end_time_travel
+## Emit when player places a time waypoint
+signal time_waypoint_placed
+## Emit when player rewinds to a time waypoint
+signal rewinded_to_waypoint
+
+## Stores all TimeVar changes throughout the run
 var time_stack: Array[TimeDelta] = []
+## Stores all Waypoints throughout the run
+var waypoint_array: WaypointArray
+## Stores the games current time
 var cur_time: float = 0
+## How much time passes between every frame (negative if rewinding)
 var delta_time: float = 0
 
 var logging: bool = false
@@ -22,9 +39,6 @@ var max_time_juice : float = 100
 var rewind_drain_per_sec : float = 15
 var rewind_charge_per_sec : float = 40
 
-signal start_time_travel
-signal end_time_travel
-
 var time_travelling: bool = false:
 	set(value):
 		if value == time_travelling:
@@ -36,10 +50,13 @@ var time_travelling: bool = false:
 		time_travelling = value
 var fast_forwarding: bool = false
 
+
 func _ready():
 	globals.time_manager = self
 	logging = true
+	waypoint_array = WaypointArray.new(1)
 	start_time()
+
 
 func _physics_process(delta):
 	if time_travelling: #rewind
@@ -58,16 +75,20 @@ func _physics_process(delta):
 		globals.player_caught(self)
 		globals.ui_manager.caught_ui.label.text = "Out of time!"
 
+
 func start_time():
 	time_multiplier = 1
 
+
 func stop_time():
 	time_multiplier = 0
+
 
 func set_fast_forwarding(value: bool):
 	fast_forwarding = value
 	if value:
 		time_travelling = false
+
 
 func set_time_travelling(value: bool):
 	if value:
@@ -79,6 +100,19 @@ func set_time_travelling(value: bool):
 	else:
 		time_travelling = value
 
+
+func set_waypoint():
+	if waypoint_array.append(cur_time):
+		time_waypoint_placed.emit()
+
+
+func rewind_to_waypoint():
+	if waypoint_array.is_empty():
+		return
+	var goal_time = waypoint_array.pop() - cur_time
+	rewind(goal_time)
+	rewinded_to_waypoint.emit()
+	
 func rewind(time_sec:float):
 	delta_time = time_sec
 	var goal_time = cur_time + delta_time
@@ -92,6 +126,7 @@ func rewind(time_sec:float):
 		time_stack.pop_back().undo_delta()
 	logging = true
 	cur_time = goal_time
+
 
 func timelog(_object: Node,_var_name:String, _old_value):
 	var newDelta = TimeDelta.new()
@@ -108,3 +143,35 @@ class TimeDelta:
 	var old_value
 	func undo_delta():
 		object.set(var_name,old_value)
+		
+class WaypointArray:
+	var waypoint_array: Array[float]
+	var waypoint_charges_remaining: int
+	
+	func _init(charges : int) -> void:
+		waypoint_charges_remaining = charges
+	
+	func append(new_waypoint : float) -> bool:
+		if waypoint_charges_remaining == 0:
+			push_error("No waypoint charges left to use!")
+			return false
+		for waypoint in waypoint_array:
+			if waypoint >= new_waypoint:
+				push_error("Trying to insert an earlier time than an existing WaypointArray entry")
+				return false
+		waypoint_array.append(new_waypoint)
+		waypoint_charges_remaining -= 1
+		return true
+			
+			
+	func pop():
+		if waypoint_array.is_empty():
+			return null
+		waypoint_charges_remaining += 1
+		return waypoint_array.pop_front()
+	
+	func is_empty():
+		return waypoint_array.is_empty()
+	
+	func add_waypoint_charges(charges : int = 1) -> void:
+		waypoint_charges_remaining += charges

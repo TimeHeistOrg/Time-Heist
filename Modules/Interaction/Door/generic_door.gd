@@ -22,9 +22,9 @@ class_name Generic_Door
 		elif animation_player:
 			is_open = value
 			if value:
-				animation_player.play("DoorOpen")
+				animation_player.play("Door_Open")
 			else:
-				animation_player.play("DoorClosed")
+				animation_player.play("Door_Closed")
 
 @export var is_locked: bool = false : #TIMEVAR
 	set(value):
@@ -70,7 +70,7 @@ var knob_delay = 0.2
 
 func _ready():
 	if is_open:
-		animation_player.play("DoorOpen")
+		animation_player.play("Door_Open")
 		collision_body.process_mode = Node.PROCESS_MODE_DISABLED
 	door_ready = true
 
