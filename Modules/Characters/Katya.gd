@@ -3,12 +3,13 @@ extends Node3D
 @onready var animation_player = $AnimationPlayer
 
 @export var dialogue: DialogueResource
-var balloon_scene := "res://Dialogue/balloon.tscn"
+var balloon_scene := "res://Modules/Dialogue/balloon.tscn"
 var dial_start_loc := "start"
 var dialogue_balloon
 
 func _ready():
 	animation_player.play("Bob/idle")
+	animation_player.seek(randf() * animation_player.current_animation_length)
 
 func interact():
 	if dialogue_balloon and is_instance_valid(dialogue_balloon):

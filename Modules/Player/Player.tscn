@@ -977,7 +977,6 @@ transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot/CameraMarker" unique_id=214841099]
 cull_mask = 1048029
-projection = 1
 size = 7.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera Pivot/CameraMarker/Camera3D" unique_id=1937731431]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://okimnarkg6f6" path="res://Scenes/Gameplay/gameplay_scene.gd" id="1_ormwj"]
 [ext_resource type="PackedScene" uid="uid://cfgevrxrbheub" path="res://Maps/Z3Floor/z3_floor.tscn" id="2_ormwj"]
 
-[node name="Gameplay" type="Node3D" unique_id=204437487]
+[node name="Gameplay" type="Node" unique_id=702079020]
 script = ExtResource("1_ormwj")
 
 [node name="Z3Floor" parent="." unique_id=2133668272 instance=ExtResource("2_ormwj")]
