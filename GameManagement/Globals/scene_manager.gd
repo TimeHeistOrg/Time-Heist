@@ -18,10 +18,10 @@ enum Scene {
 	#FADE
 #}
 var scene_paths := {
-	Scene.GAMEPLAY: "res://Scenes/Gameplay/Gameplay.tscn",
-	Scene.HOMEBASE: "res://Scenes/Homebase/Homebase.tscn",
-	Scene.MAIN_MENU: "res://Scenes/Main Menu/main_menu3.tscn",
-	Scene.TUTORIAL: "res://Scenes/Tutorial/Tutorial.tscn"
+	Scene.GAMEPLAY: "res://Scenes/Gameplay/GameplayScene.tscn",
+	Scene.HOMEBASE: "res://Scenes/Homebase/HomebaseScene.tscn",
+	Scene.MAIN_MENU: "res://Scenes/Main Menu/MainMenuScene.tscn",
+	Scene.TUTORIAL: "res://Scenes/Tutorial/TutorialScene.tscn"
 }
 
 const START_SCENE := Scene.MAIN_MENU

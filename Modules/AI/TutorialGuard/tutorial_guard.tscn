@@ -185,24 +185,28 @@ sight_line_radius = 7.5
 
 [node name="Laser" parent="." unique_id=1428973108 instance=ExtResource("3_s4gjg")]
 
-[node name="Cylinder" type="MeshInstance3D" parent="." unique_id=1628374913]
+[node name="Legs" type="MeshInstance3D" parent="." unique_id=1628374913]
+unique_name_in_owner = true
 transform = Transform3D(15.31432, 0, 0, 0, -6.6941016e-07, 8.609855, 0, -15.314319, -3.763487e-07, -0.00017647594, 0.26309648, 0)
 mesh = SubResource("ArrayMesh_3yuln")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_r3n6b")
 
-[node name="tire" type="MeshInstance3D" parent="." unique_id=1767033042]
+[node name="Tires" type="MeshInstance3D" parent="." unique_id=1767033042]
+unique_name_in_owner = true
 transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0.31826976, 0.24740723, -3.6469192e-08)
 mesh = SubResource("ArrayMesh_ywgw4")
 skeleton = NodePath("")
 
-[node name="torso" type="MeshInstance3D" parent="." unique_id=805945296]
+[node name="Torso" type="MeshInstance3D" parent="." unique_id=805945296]
+unique_name_in_owner = true
 transform = Transform3D(-13.599682, 1.1889222e-06, 0, -5.6005867e-08, -0.64063257, 13.584587, 1.187602e-06, 13.584587, 0.64063257, -0.00016136988, 0.9761665, 1.3115658e-07)
 mesh = SubResource("ArrayMesh_cy4ms")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ng2hs")
 
-[node name="EyeClinder" type="MeshInstance3D" parent="." unique_id=1281035009]
+[node name="Eye" type="MeshInstance3D" parent="." unique_id=1281035009]
+unique_name_in_owner = true
 transform = Transform3D(0.2287981, 0, 0, 0, 0.01096248, 0, 0, 0, 0.27177733, 0, 1.2961587, -0.037184685)
 mesh = SubResource("CylinderMesh_mf4uq")
 
@@ -219,7 +223,8 @@ input_ray_pickable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935791, 0)
 shape = SubResource("BoxShape3D_3duep")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1442212525]
+[node name="SeenSound" type="AudioStreamPlayer" parent="." unique_id=1442212525]
+unique_name_in_owner = true
 stream = ExtResource("5_06uwp")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_npc_hitbox_body_entered"]
