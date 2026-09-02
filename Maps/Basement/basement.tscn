@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="25_2giet"]
 [ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="26_1wneo"]
 [ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="27_mlo4f"]
-[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/Guard.tscn" id="28_j3r2l"]
+[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/guard.tscn" id="28_j3r2l"]
 [ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="28_s3jm4"]
 [ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="29_2agqk"]
 [ext_resource type="Script" uid="uid://cjhgp3kkd22yr" path="res://addons/NPC Pathing/PathClasses/DoorAction.gd" id="29_w3oxr"]

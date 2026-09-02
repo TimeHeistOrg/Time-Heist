@@ -21,7 +21,16 @@ var waypoint_array: WaypointArray
 ## Stores the games current time
 var cur_time: float = 0
 ## How much time passes between every frame (negative if rewinding)
-var delta_time: float = 0
+var delta_time: float = 0:
+	set(value):
+		delta_time = value
+		if value == 0:
+			time_stopped = true
+		else:
+			time_stopped = false
+			
+## Flag for if time is stopped
+var time_stopped : bool = false
 
 var logging: bool = false
 var time_multiplier:float = 1
@@ -128,7 +137,7 @@ func rewind(time_sec:float):
 	cur_time = goal_time
 
 
-func timelog(_object: Node,_var_name:String, _old_value):
+func timelog(_object: Object,_var_name:String, _old_value):
 	var newDelta = TimeDelta.new()
 	newDelta.object = _object
 	newDelta.time_stamp = cur_time

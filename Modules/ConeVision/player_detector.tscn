@@ -4,6 +4,9 @@
 
 [node name="PlayerDetector" type="Area3D" unique_id=1869490121]
 script = ExtResource("1_dmubf")
+vision_color = Color(1, 0.72, 0.72, 0.13333334)
+vision_alert_color = Color(1, 0.14999998, 0.14999998, 0.24705882)
+vision_mesh_height = 0.02
 
 [node name="DetectorCollision" type="CollisionPolygon3D" parent="." unique_id=955152349]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
@@ -14,6 +17,10 @@ debug_color = Color(15.793283, 0, 8.468667, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0, -50)
 collision_mask = 9
+
+[node name="VisionMesh" type="MeshInstance3D" parent="." unique_id=251565855]
+unique_name_in_owner = true
+transform = Transform3D(-1, 8.742278e-08, 0, 3.821371e-15, 4.371139e-08, 1, 8.742278e-08, 1, -4.371139e-08, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

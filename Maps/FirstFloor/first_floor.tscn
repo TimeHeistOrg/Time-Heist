@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="4_s57rb"]
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="5_xr2co"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="7_xr2co"]
-[ext_resource type="Script" uid="uid://cyycim24066r4" path="res://Modules/AI/Guard/security_guard.gd" id="8_vk860"]
 [ext_resource type="PackedScene" uid="uid://darcn6k2u88v2" path="res://Assets/Environment/Stock Assets/Nature_Deco.fbx" id="10_0a44u"]
 [ext_resource type="PackedScene" uid="uid://cxkrnvew26ajm" path="res://Assets/Environment/Stock Assets/Nature_Deco_Bamboo1.fbx" id="11_riaqh"]
 [ext_resource type="Resource" uid="uid://bfjfesbg0arfi" path="res://Content/Documents/Resources/first_test_document.tres" id="18_cr80g"]
@@ -42,32 +41,6 @@ ao_enabled = true
 ao_texture = ExtResource("2_cjf52")
 uv1_scale = Vector3(12.5, 12.5, 12.5)
 grow_amount = -4.125
-
-[sub_resource type="Curve3D" id="Curve3D_0a44u"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 10.25, 0, 0, 0, 0, 0, 0, 0, 0, 10.251118, 0, 6.47876, 0, 0, 0, 0, 0, 0, 0.19112587, 0, 6.368225, 0, 0, 0, 0, 0, 0, -0.057577133, 0, 11.756809, 0, 0, 0, 0, 0, 0, 9.94585, 0, 11.867344, 0, 0, 0, 0, 0, 0, -9.563599, 0, 11.922611, 0, 0, 0, 0, 0, 0, -9.4280205, 0, 6.534027, 0, 0, 0, 0, 0, 0, -9.6465, 0, 0.2611599, 0, 0, 0, 0, 0, 0, -4.8356295, 0, 0.06772423, 0, 0, 0, 0, 0, 0, -4.7829533, 0, 12.008106, 0, 0, 0, 0, 0, 0, 5.634981, 0, 11.925205, 0, 0, 0, 0, 0, 0, 5.8560524, 0, -5.461624, 0, 0, 0, 0, 0, 0, -0.029943466, 0, -5.54323),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 15
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88cv8"]
-albedo_color = Color(0.5933253, 0, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_riaqh"]
-material = SubResource("StandardMaterial3D_88cv8")
-
-[sub_resource type="GDScript" id="GDScript_d6wjy"]
-resource_name = "ProximityDetector"
-script/source = "extends Area3D
-
-func _on_body_entered(body):
-	if body == globals.player:
-		globals.player_caught()
-"
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wxsiq"]
-size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6wjy"]
 size = Vector3(0.38, 2, 1.28)
@@ -181,28 +154,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 28)
 light_energy = 3.855
 shadow_enabled = true
 omni_range = 7.309
-
-[node name="Guards" type="Node3D" parent="Rooms/Main Lobby" unique_id=557749169]
-
-[node name="SecurityGuard1" type="Path3D" parent="Rooms/Main Lobby/Guards" unique_id=220013473]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.5)
-curve = SubResource("Curve3D_0a44u")
-script = ExtResource("8_vk860")
-speed = 4.0
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Rooms/Main Lobby/Guards/SecurityGuard1" unique_id=2061215116]
-transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rooms/Main Lobby/Guards/SecurityGuard1/PathFollow3D" unique_id=1715130975]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_riaqh")
-
-[node name="Area3D" type="Area3D" parent="Rooms/Main Lobby/Guards/SecurityGuard1/PathFollow3D" unique_id=964640159]
-script = SubResource("GDScript_d6wjy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/Main Lobby/Guards/SecurityGuard1/PathFollow3D/Area3D" unique_id=464436004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_wxsiq")
 
 [node name="Bamboo" type="Node3D" parent="Rooms/Main Lobby" unique_id=861452825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 25.25)
@@ -535,7 +486,5 @@ layout_mode = 1
 [node name="Item" parent="." unique_id=93420287 instance=ExtResource("31_kjo2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7551153, 0, 0)
 item = ExtResource("32_xyxbf")
-
-[connection signal="body_entered" from="Rooms/Main Lobby/Guards/SecurityGuard1/PathFollow3D/Area3D" to="Rooms/Main Lobby/Guards/SecurityGuard1/PathFollow3D/Area3D" method="_on_body_entered"]
 
 [editable path="Rooms/FrontDeskBackRoom/Doors/Behind Desk Door1"]

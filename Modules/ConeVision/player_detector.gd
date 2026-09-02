@@ -5,14 +5,43 @@ class_name PlayerDetector extends Area3D
 ## Detects player in a mesh and tests for line of sight. Used in [Guard]. This is a tool
 ## so you can edit the mesh live in engine
 
-## Flag if player is in the mesh
+## Emits when the player is seen by the detector
+signal player_seen(position : Vector3)
+
+## Emits when the player is stopped being seen by the detector
+signal player_stopped_seen(last_position : Vector3)
+
+## Flag if player is in the zone
 var player_in_zone : bool
-## Flag if palyer is in line of sight
-var player_spotted : bool
+## Flag if player is in the zone and line of sight
+var player_spotted : bool:
+	set(value):
+		if player_spotted == value:
+			return
+		elif value:
+			player_seen.emit(seen_position)
+		else:
+			player_stopped_seen.emit(last_seen_position)
+		player_spotted = value
+		_update_vision_color()
+
 ## The position the player is being spotted
 var seen_position : Vector3
+## Last seen position of the player
+var last_seen_position : Vector3
+
 @onready var sight_checker := $SightChecker
 @onready var collision := $DetectorCollision
+@onready var vision_mesh: MeshInstance3D = $VisionMesh
+
+## Colors for the vision-cone overlay shown to the player (topdown decal).
+## Brightens/reddens while the player is actually spotted.
+@export var vision_color: Color = Color(1, 1, 1, 0.12)
+@export var vision_alert_color: Color = Color(1, 0.15, 0.15, 0.35)
+## How far above the ground the decal sits, to avoid z-fighting with the floor
+@export var vision_mesh_height: float = -0.02
+
+var vision_material: StandardMaterial3D
 
 @export var sight_line_angle : float = 130:
 	set(value):
@@ -97,18 +126,61 @@ func create_mesh():
 		#current_angle -= angle_steps
 	if collision:
 		collision.polygon = polygon_points
+	_update_vision_mesh()
+
+
+## Rebuilds the flat, ground-projected vision-cone mesh shown to the player
+## from the same polygon_points used for the collision shape (see create_mesh).
+func _update_vision_mesh() -> void:
+	if not vision_mesh or polygon_points.size() < 3:
+		return
+
+	if not vision_material:
+		vision_material = StandardMaterial3D.new()
+		vision_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		vision_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		vision_material.cull_mode = BaseMaterial3D.CULL_DISABLED
+		vision_mesh.material_override = vision_material
+	_update_vision_color()
+
+	var indices := Geometry2D.triangulate_polygon(polygon_points)
+	if indices.is_empty():
+		return
+
+	var verts := PackedVector3Array()
+	var normals := PackedVector3Array()
+	for p in polygon_points:
+		verts.append(Vector3(p.x, p.y, vision_mesh_height))
+		normals.append(Vector3(0, 0, 1))
+
+	var mesh_arrays := []
+	mesh_arrays.resize(Mesh.ARRAY_MAX)
+	mesh_arrays[Mesh.ARRAY_VERTEX] = verts
+	mesh_arrays[Mesh.ARRAY_NORMAL] = normals
+	mesh_arrays[Mesh.ARRAY_INDEX] = indices
+
+	var array_mesh := ArrayMesh.new()
+	array_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, mesh_arrays)
+	vision_mesh.mesh = array_mesh
+
+
+func _update_vision_color() -> void:
+	if vision_material:
+		vision_material.albedo_color = vision_alert_color if player_spotted else vision_color
 	
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		if player_in_zone and not globals.player.is_hidden and not globals.player_invisible and globals.time_manager.delta_time > 0:
 			sight_checker.look_at(globals.player.detection_point.global_position)
 			if sight_checker.get_collider() == globals.player:
+				_seen_process(_delta)
 				player_spotted = true
-				seen_position = globals.player.detection_point.global_position
 			else:
+				last_seen_position = seen_position
 				player_spotted = false
-		else:
-				player_spotted = false
+				
+func _seen_process(_delta: float) -> void:
+	seen_position = globals.player.detection_point.global_position
 
 func _on_body_entered(body: Node3D) -> void:
 	if body == globals.player:
@@ -116,5 +188,7 @@ func _on_body_entered(body: Node3D) -> void:
 		
 func _on_body_exited(body: Node3D) -> void:
 	if body == globals.player:
-		player_in_zone = false 
+		player_in_zone = false
+	if player_spotted:
+		last_seen_position = seen_position 
 		player_spotted = false
