@@ -28,6 +28,7 @@ size = Vector3(1, 1.9223633, 1)
 script = ExtResource("1_7jld1")
 alert_time = 0.8
 caught_time = 1.6
+look_lerp_speed = null
 
 [node name="PlayerDetector" parent="." unique_id=1869490121 instance=ExtResource("2_irx7y")]
 collision_layer = 0
