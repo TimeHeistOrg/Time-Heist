@@ -8,6 +8,7 @@ collision_layer = 2
 collision_mask = 0
 input_ray_pickable = false
 script = ExtResource("1_phg58")
+prompt_text = "Interact"
 
 [node name="ActionPrompt" parent="." unique_id=676767563 instance=ExtResource("2_gohqo")]
 unique_name_in_owner = true
