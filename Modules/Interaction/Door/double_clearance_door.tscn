@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://dtyptm54g0k4j"]
 
+[ext_resource type="Script" uid="uid://iasj7ttb01gb" path="res://Modules/Interaction/Door/double_sliding_door.gd" id="1_7dxs8"]
 [ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="1_lw0bo"]
 [ext_resource type="PackedScene" uid="uid://baeo88dd11qpj" path="res://Modules/TimeTravel/time_animation_player.tscn" id="2_7gu5t"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_7dxs8"]
+[ext_resource type="Animation" uid="uid://bd415ty31dipo" path="res://Assets/Animations/Doors/ClearanceDoor/DoubleClearanceDoor/double_clearance_door_close.res" id="4_dy8j5"]
+[ext_resource type="Animation" uid="uid://bjbhigl0g2yps" path="res://Assets/Animations/Doors/ClearanceDoor/DoubleClearanceDoor/double_clearance_door_closed.res" id="5_rxnr1"]
+[ext_resource type="Animation" uid="uid://dkog21mxgid7s" path="res://Assets/Animations/Doors/ClearanceDoor/DoubleClearanceDoor/double_clearance_door_open.res" id="6_dli4q"]
+[ext_resource type="Animation" uid="uid://csfxj6leduarw" path="res://Assets/Animations/Doors/ClearanceDoor/DoubleClearanceDoor/double_clearance_door_opened.res" id="7_em4jq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bo1df"]
 size = Vector3(1, 2, 0.1)
@@ -10,10 +15,54 @@ size = Vector3(1, 2, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7gu5t"]
 size = Vector3(1, 2, 0.125)
 
+[sub_resource type="Animation" id="Animation_7dxs8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftDoorMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightDoorMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.5, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abhkb"]
+_data = {
+&"RESET": SubResource("Animation_7dxs8"),
+&"double_clearance_door_close": ExtResource("4_dy8j5"),
+&"double_clearance_door_closed": ExtResource("5_rxnr1"),
+&"double_clearance_door_open": ExtResource("6_dli4q"),
+&"double_clearance_door_opened": ExtResource("7_em4jq")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_nhe4h"]
 size = Vector3(2, 2, 2)
 
-[node name="DoubleClearanceDoor" type="Node3D" unique_id=1809149266]
+[node name="DoubleClearanceDoor" type="Node3D" unique_id=1809149266 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_7dxs8")
+anim_player = NodePath("TimeAnimationPlayer")
+opening_animation = ExtResource("6_dli4q")
+opened_animation = ExtResource("7_em4jq")
+open_swing_length = 1.0
+closing_animation = ExtResource("4_dy8j5")
+closed_animation = ExtResource("5_rxnr1")
+close_swing_length = 1.0
 
 [node name="LeftDoorMesh" type="Node3D" parent="." unique_id=244399777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
@@ -48,9 +97,12 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_7gu5t")
 
 [node name="TimeAnimationPlayer" parent="." unique_id=1923441615 instance=ExtResource("2_7gu5t")]
+libraries/ = SubResource("AnimationLibrary_abhkb")
 
 [node name="Interactable" parent="." unique_id=242002428 instance=ExtResource("3_7dxs8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="InteractableCollider" type="CollisionShape3D" parent="Interactable" unique_id=1804773834]
 shape = SubResource("BoxShape3D_nhe4h")
+
+[connection signal="interacted_by" from="Interactable" to="." method="interacted_by"]

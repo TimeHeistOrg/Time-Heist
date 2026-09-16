@@ -118,7 +118,6 @@ func animation_done():
 
 func is_open_setter(value:bool):
 	if Engine.is_editor_hint():
-		print(open_direction)
 		if value:
 			if open_direction == "Left":
 				if left_opened_animation:
