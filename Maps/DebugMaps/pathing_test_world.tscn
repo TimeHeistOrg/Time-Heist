@@ -5,12 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="3_2fdcd"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="4_tdjgc"]
 [ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="5_ah1yn"]
-[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="6_uubgh"]
-[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="7_56fgu"]
-[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="8_g31sr"]
-[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="9_0jwk2"]
-[ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="10_xrks1"]
-[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="11_hddm0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m53t8"]
 
@@ -30,113 +24,6 @@ func _process(delta):
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ah0ni"]
-
-[sub_resource type="Resource" id="Resource_58h3f"]
-resource_local_to_scene = true
-script = ExtResource("8_g31sr")
-position = Vector3(0, 0, 0)
-vertex_actions = Array[ExtResource("9_0jwk2")]([])
-time_start = 0.0
-time_end = 0.0
-id = 0
-
-[sub_resource type="Resource" id="Resource_npck5"]
-script = ExtResource("10_xrks1")
-end_time = 2.0
-duration = 2.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_kjteb"]
-resource_local_to_scene = true
-script = ExtResource("8_g31sr")
-position = Vector3(0, 0, -4)
-vertex_actions = Array[ExtResource("9_0jwk2")]([SubResource("Resource_npck5")])
-time_start = 4.0
-time_end = 6.0
-id = 2
-
-[sub_resource type="Resource" id="Resource_y0cg6"]
-resource_local_to_scene = true
-script = ExtResource("11_hddm0")
-speed = 1.0
-prev_vertex = SubResource("Resource_58h3f")
-next_vertex = SubResource("Resource_kjteb")
-is_loop_line = false
-time_start = 0.0
-time_end = 4.0
-id = 1
-
-[sub_resource type="Resource" id="Resource_7sp3u"]
-script = ExtResource("10_xrks1")
-end_time = 2.0
-duration = 2.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_jhawp"]
-resource_local_to_scene = true
-script = ExtResource("8_g31sr")
-position = Vector3(4, 0, -4)
-vertex_actions = Array[ExtResource("9_0jwk2")]([SubResource("Resource_7sp3u")])
-time_start = 14.0
-time_end = 16.0
-id = 4
-
-[sub_resource type="Resource" id="Resource_qd0hf"]
-resource_local_to_scene = true
-script = ExtResource("11_hddm0")
-speed = 0.5
-prev_vertex = SubResource("Resource_kjteb")
-next_vertex = SubResource("Resource_jhawp")
-is_loop_line = false
-time_start = 6.0
-time_end = 14.0
-id = 3
-
-[sub_resource type="Resource" id="Resource_usbjq"]
-script = ExtResource("10_xrks1")
-end_time = 2.0
-duration = 2.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_08wc8"]
-resource_local_to_scene = true
-script = ExtResource("8_g31sr")
-position = Vector3(4, 0, 0)
-vertex_actions = Array[ExtResource("9_0jwk2")]([SubResource("Resource_usbjq")])
-time_start = 20.0
-time_end = 22.0
-id = 6
-
-[sub_resource type="Resource" id="Resource_ivtw1"]
-resource_local_to_scene = true
-script = ExtResource("11_hddm0")
-speed = 1.0
-prev_vertex = SubResource("Resource_jhawp")
-next_vertex = SubResource("Resource_08wc8")
-is_loop_line = false
-time_start = 16.0
-time_end = 20.0
-id = 5
-
-[sub_resource type="Resource" id="Resource_fxlkw"]
-resource_local_to_scene = true
-script = ExtResource("11_hddm0")
-speed = 2.0
-prev_vertex = SubResource("Resource_08wc8")
-next_vertex = SubResource("Resource_58h3f")
-is_loop_line = true
-time_start = 22.0
-time_end = 24.0
-id = 7
-
-[sub_resource type="Resource" id="Resource_u8tfy"]
-resource_local_to_scene = true
-script = ExtResource("6_uubgh")
-name = ""
-path_components = Array[ExtResource("7_56fgu")]([SubResource("Resource_58h3f"), SubResource("Resource_y0cg6"), SubResource("Resource_kjteb"), SubResource("Resource_qd0hf"), SubResource("Resource_jhawp"), SubResource("Resource_ivtw1"), SubResource("Resource_08wc8"), SubResource("Resource_fxlkw")])
-snap = 0.25
-loop = true
-default_speed = 1.0
 
 [node name="Pathing Test World" type="Node3D" unique_id=1891461424]
 
@@ -173,8 +60,6 @@ texture = ExtResource("3_2fdcd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [node name="NPC" parent="." unique_id=854805088 instance=ExtResource("5_ah1yn")]
-branch_paths = Array[ExtResource("6_uubgh")]([SubResource("Resource_u8tfy")])
 follow_branch = 0
-path = SubResource("Resource_u8tfy")
 
 [connection signal="anon_interacted" from="TestCube/Interactable" to="TestCube" method="interact"]

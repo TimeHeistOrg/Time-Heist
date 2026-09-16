@@ -23,20 +23,13 @@
 [ext_resource type="PackedScene" uid="uid://3qury6ftpyua" path="res://Modules/Interaction/Recharge Station/recharge_station.tscn" id="25_dmal2"]
 [ext_resource type="Resource" uid="uid://c7atpkdvr2gl0" path="res://Content/Items/Resources/tutorial_door_key.tres" id="25_v3e2r"]
 [ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="27_gbpfp"]
-[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="28_yxgu2"]
-[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="29_4q678"]
-[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="30_fr3jc"]
 [ext_resource type="PackedScene" uid="uid://cewex1mdfqod2" path="res://Modules/AI/TutorialGuard/tutorial_guard.tscn" id="30_ucgc0"]
-[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="31_2v2e4"]
 [ext_resource type="PackedScene" uid="uid://1cs4nrno8aha" path="res://Modules/Interaction/lockable.tscn" id="31_ulrwx"]
-[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="32_2otw2"]
 [ext_resource type="PackedScene" uid="uid://c6k8vhjcf6jjc" path="res://Assets/Environment/Desk_Table/reception_desk.tscn" id="32_7kydn"]
 [ext_resource type="Resource" uid="uid://b7xexmrmy5oyr" path="res://Content/Documents/Resources/tutorial_paper.tres" id="34_1r3lh"]
 [ext_resource type="Resource" uid="uid://dt7xgcttdeiwu" path="res://Modules/UI/Game UI/Desktops/Tutorial/tutorial_computer.tres" id="34_ixt3n"]
 [ext_resource type="Resource" uid="uid://2u7ypb7xpscs" path="res://Content/Items/Resources/apple.tres" id="34_yxgu2"]
 [ext_resource type="Texture2D" uid="uid://bnuuxuhnd4ps8" path="res://Content/Documents/Textures/18_tutorial_paper.png" id="35_2fa5o"]
-[ext_resource type="Script" uid="uid://c8pv0a0in0u3y" path="res://addons/NPC Pathing/PathClasses/WaitAction.gd" id="35_3civr"]
-[ext_resource type="Script" uid="uid://cjhgp3kkd22yr" path="res://addons/NPC Pathing/PathClasses/DoorAction.gd" id="36_k05aa"]
 [ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/Clearance Giver/clearance_giver.tscn" id="37_ek4v5"]
 [ext_resource type="PackedScene" uid="uid://cnj7efh2s8lov" path="res://Modules/Lighting & Visibility/labelsfade.tscn" id="38_0wfx5"]
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="38_3civr"]
@@ -53,11 +46,9 @@
 [ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="46_s3w85"]
 [ext_resource type="PackedScene" uid="uid://crjkh3mdkhhfr" path="res://Assets/Environment/Decorations/tv.tscn" id="47_mwfe8"]
 [ext_resource type="PackedScene" uid="uid://c3wleconqpaqy" path="res://Assets/Environment/Decorations/pc_tower.tscn" id="48_wkett"]
-[ext_resource type="Script" uid="uid://68nqpa721my0" path="res://addons/NPC Pathing/PathClasses/FaceAction.gd" id="50_s3w85"]
 [ext_resource type="PackedScene" uid="uid://b4ad3ylkwaj3p" path="res://Assets/Environment/Shelf_Counter/big_shelf_long.tscn" id="50_ucgc0"]
 [ext_resource type="PackedScene" uid="uid://bd0iyc8b0gku6" path="res://Assets/Environment/Bathroom/sink.tscn" id="51_dfokh"]
 [ext_resource type="PackedScene" uid="uid://0oh788m3hc14" path="res://Assets/Environment/Bathroom/mirror.tscn" id="52_f6pwu"]
-[ext_resource type="Script" uid="uid://daejfwfkoy2cv" path="res://addons/NPC Pathing/PathClasses/SetVarAction.gd" id="54_wkett"]
 [ext_resource type="PackedScene" uid="uid://cg5npvrjq8mrx" path="res://Assets/Environment/Chair/old_standard_chair.tscn" id="61_yjryn"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hfwyr"]
@@ -83,46 +74,6 @@ size = Vector3(7.75, 1, 11.25)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k05aa"]
 size = Vector3(6.25, 1, 11.25)
 
-[sub_resource type="Resource" id="Resource_cvxcn"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(-11, 0, 1.75)
-
-[sub_resource type="Resource" id="Resource_2m0nu"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(-15.25, 0, 1.75)
-time_start = 4.25
-time_end = 4.25
-id = 2
-
-[sub_resource type="Resource" id="Resource_j8vsw"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_cvxcn")
-next_vertex = SubResource("Resource_2m0nu")
-time_end = 4.25
-id = 1
-
-[sub_resource type="Resource" id="Resource_ucgc0"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_2m0nu")
-next_vertex = SubResource("Resource_cvxcn")
-is_loop_line = true
-time_start = 4.25
-time_end = 8.5
-id = 3
-
-[sub_resource type="Resource" id="Resource_yjryn"]
-resource_local_to_scene = true
-script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_cvxcn"), SubResource("Resource_j8vsw"), SubResource("Resource_2m0nu"), SubResource("Resource_ucgc0")])
-loop = true
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_4353k"]
 size = Vector3(6, 1, 16.25)
 
@@ -131,427 +82,6 @@ size = Vector3(6, 1, 8.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uttcq"]
 size = Vector3(13, 1, 11.25)
-
-[sub_resource type="Resource" id="Resource_lrtsd"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(3.5, 0, 5.375)
-
-[sub_resource type="Resource" id="Resource_dfokh"]
-script = ExtResource("50_s3w85")
-rotation_deg = 135.0
-metadata/_custom_type_script = "uid://68nqpa721my0"
-
-[sub_resource type="Resource" id="Resource_f6pwu"]
-script = ExtResource("35_3civr")
-end_time = 5.0
-duration = 5.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_bbtu8"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(3.25, 0, 8.75)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_dfokh"), SubResource("Resource_f6pwu")])
-time_start = 3.3842466
-time_end = 8.3842466
-id = 2
-
-[sub_resource type="Resource" id="Resource_fj7il"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 0.9999999963812614
-prev_vertex = SubResource("Resource_lrtsd")
-next_vertex = SubResource("Resource_bbtu8")
-time_end = 3.3842466
-id = 1
-
-[sub_resource type="Resource" id="Resource_tfsam"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(4.75, 0, 8.75)
-time_start = 9.8842466
-time_end = 9.8842466
-id = 4
-
-[sub_resource type="Resource" id="Resource_dx32d"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_bbtu8")
-next_vertex = SubResource("Resource_tfsam")
-time_start = 8.384246587753296
-time_end = 9.884246587753296
-id = 3
-
-[sub_resource type="Resource" id="Resource_oyw2e"]
-script = ExtResource("35_3civr")
-end_time = 3.0
-duration = 3.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_ph251"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(4.75, 0, 9.5)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_oyw2e")])
-time_start = 10.6342466
-time_end = 13.6342466
-id = 6
-
-[sub_resource type="Resource" id="Resource_ry1l5"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_tfsam")
-next_vertex = SubResource("Resource_ph251")
-time_start = 9.884246587753296
-time_end = 10.634246587753296
-id = 5
-
-[sub_resource type="Resource" id="Resource_74eai"]
-script = ExtResource("50_s3w85")
-rotation_deg = 96.0
-metadata/_custom_type_script = "uid://68nqpa721my0"
-
-[sub_resource type="Resource" id="Resource_hilbg"]
-script = ExtResource("35_3civr")
-end_time = 2.0
-duration = 2.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_hk7cx"]
-script = ExtResource("50_s3w85")
-rotation_deg = 197.0
-metadata/_custom_type_script = "uid://68nqpa721my0"
-
-[sub_resource type="Resource" id="Resource_fk0l2"]
-script = ExtResource("35_3civr")
-start_time = 2.0
-end_time = 5.0
-duration = 3.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_o5vlg"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(4.75, 0, 7)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_74eai"), SubResource("Resource_hilbg"), SubResource("Resource_hk7cx"), SubResource("Resource_fk0l2")])
-time_start = 16.1342466
-time_end = 21.1342466
-id = 8
-
-[sub_resource type="Resource" id="Resource_7m7tr"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_ph251")
-next_vertex = SubResource("Resource_o5vlg")
-time_start = 13.634246587753296
-time_end = 16.134246587753296
-id = 7
-
-[sub_resource type="Resource" id="Resource_hql20"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(8, 0, 7)
-time_start = 24.3842466
-time_end = 24.3842466
-id = 10
-
-[sub_resource type="Resource" id="Resource_q3s2m"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_o5vlg")
-next_vertex = SubResource("Resource_hql20")
-time_start = 21.134246587753296
-time_end = 24.384246587753296
-id = 9
-
-[sub_resource type="Resource" id="Resource_yxrk4"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(4.25, 0, 7)
-time_start = 28.1342466
-time_end = 28.1342466
-id = 12
-
-[sub_resource type="Resource" id="Resource_7uvhe"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_hql20")
-next_vertex = SubResource("Resource_yxrk4")
-time_start = 24.384246587753296
-time_end = 28.134246587753296
-id = 11
-
-[sub_resource type="Resource" id="Resource_qgntx"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_yxrk4")
-next_vertex = SubResource("Resource_lrtsd")
-is_loop_line = true
-time_start = 28.134246587753296
-time_end = 29.92397427558899
-id = 13
-
-[sub_resource type="Resource" id="Resource_cuqy8"]
-resource_local_to_scene = true
-script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_lrtsd"), SubResource("Resource_fj7il"), SubResource("Resource_bbtu8"), SubResource("Resource_dx32d"), SubResource("Resource_tfsam"), SubResource("Resource_ry1l5"), SubResource("Resource_ph251"), SubResource("Resource_7m7tr"), SubResource("Resource_o5vlg"), SubResource("Resource_q3s2m"), SubResource("Resource_hql20"), SubResource("Resource_7uvhe"), SubResource("Resource_yxrk4"), SubResource("Resource_qgntx")])
-loop = true
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
-
-[sub_resource type="Resource" id="Resource_ace7s"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(8, 0, 8.125)
-
-[sub_resource type="Resource" id="Resource_4ry0o"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(5.5, 0, 8.125)
-time_start = 2.5
-time_end = 2.5
-id = 2
-
-[sub_resource type="Resource" id="Resource_viqwk"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_ace7s")
-next_vertex = SubResource("Resource_4ry0o")
-time_end = 2.5
-id = 1
-
-[sub_resource type="Resource" id="Resource_bcb1c"]
-script = ExtResource("50_s3w85")
-rotation_deg = 180.0
-metadata/_custom_type_script = "uid://68nqpa721my0"
-
-[sub_resource type="Resource" id="Resource_ea3xs"]
-script = ExtResource("35_3civr")
-end_time = 5.0
-duration = 5.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_p1yqh"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(7.25, 0, 9)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_bcb1c"), SubResource("Resource_ea3xs")])
-time_start = 4.456559538841248
-time_end = 9.456559538841248
-id = 4
-
-[sub_resource type="Resource" id="Resource_ioh28"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_4ry0o")
-next_vertex = SubResource("Resource_p1yqh")
-time_start = 2.5
-time_end = 4.456559538841248
-id = 3
-
-[sub_resource type="Resource" id="Resource_mljjq"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_p1yqh")
-next_vertex = SubResource("Resource_ace7s")
-is_loop_line = true
-time_start = 9.456559538841248
-time_end = 10.609002590179443
-id = 5
-
-[sub_resource type="Resource" id="Resource_g6ry7"]
-resource_local_to_scene = true
-script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_ace7s"), SubResource("Resource_viqwk"), SubResource("Resource_4ry0o"), SubResource("Resource_ioh28"), SubResource("Resource_p1yqh"), SubResource("Resource_mljjq")])
-snap = 0.125
-loop = true
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
-
-[sub_resource type="Resource" id="Resource_alef8"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(20.125, 0, 8.75)
-
-[sub_resource type="Resource" id="Resource_cjl8i"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(18.5, 0, 8.75)
-time_start = 1.625
-time_end = 1.625
-id = 2
-
-[sub_resource type="Resource" id="Resource_s2kma"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_alef8")
-next_vertex = SubResource("Resource_cjl8i")
-time_end = 1.625
-id = 1
-
-[sub_resource type="Resource" id="Resource_6c18y"]
-script = ExtResource("36_k05aa")
-door = NodePath("../SwingingDoor")
-metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
-
-[sub_resource type="Resource" id="Resource_jq0yw"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(18.5, 0, 8.5)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_6c18y")])
-time_start = 1.875
-time_end = 1.875
-id = 4
-
-[sub_resource type="Resource" id="Resource_1plgo"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_cjl8i")
-next_vertex = SubResource("Resource_jq0yw")
-time_start = 1.625
-time_end = 1.875
-id = 3
-
-[sub_resource type="Resource" id="Resource_52ddb"]
-script = ExtResource("36_k05aa")
-door = NodePath("../SwingingDoor")
-action = 1
-metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
-
-[sub_resource type="Resource" id="Resource_ouk7w"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(18.5, 0, 7.375)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_52ddb")])
-time_start = 3.0
-time_end = 3.0
-id = 6
-
-[sub_resource type="Resource" id="Resource_wmbfu"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_jq0yw")
-next_vertex = SubResource("Resource_ouk7w")
-time_start = 1.875
-time_end = 3.0
-id = 5
-
-[sub_resource type="Resource" id="Resource_fhvwx"]
-script = ExtResource("54_wkett")
-property = "picked_up"
-object = NodePath("../../Room 7/Item")
-type = 4
-bool_value = true
-metadata/_custom_type_script = "uid://daejfwfkoy2cv"
-
-[sub_resource type="Resource" id="Resource_mmtwr"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(18.5, 0, 4.75)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_fhvwx")])
-time_start = 5.625
-time_end = 5.625
-id = 8
-
-[sub_resource type="Resource" id="Resource_81075"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_ouk7w")
-next_vertex = SubResource("Resource_mmtwr")
-time_start = 3.0
-time_end = 5.625
-id = 7
-
-[sub_resource type="Resource" id="Resource_wkett"]
-script = ExtResource("36_k05aa")
-door = NodePath("../SwingingDoor")
-metadata/_custom_type_script = "uid://cjhgp3kkd22yr"
-
-[sub_resource type="Resource" id="Resource_ejtd8"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(18.5, 0, 6.75)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_wkett")])
-time_start = 7.625
-time_end = 7.625
-id = 10
-
-[sub_resource type="Resource" id="Resource_o721t"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_mmtwr")
-next_vertex = SubResource("Resource_ejtd8")
-time_start = 5.625
-time_end = 7.625
-id = 9
-
-[sub_resource type="Resource" id="Resource_sain6"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(18.5, 0, 8.75)
-time_start = 9.625
-time_end = 9.625
-id = 12
-
-[sub_resource type="Resource" id="Resource_i52hx"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_ejtd8")
-next_vertex = SubResource("Resource_sain6")
-time_start = 7.625
-time_end = 9.625
-id = 11
-
-[sub_resource type="Resource" id="Resource_aw1ul"]
-script = ExtResource("50_s3w85")
-rotation_deg = 90.0
-metadata/_custom_type_script = "uid://68nqpa721my0"
-
-[sub_resource type="Resource" id="Resource_ipndl"]
-script = ExtResource("35_3civr")
-end_time = 1.0
-duration = 1.0
-metadata/_custom_type_script = "uid://c8pv0a0in0u3y"
-
-[sub_resource type="Resource" id="Resource_u41jk"]
-resource_local_to_scene = true
-script = ExtResource("30_fr3jc")
-position = Vector3(20.125, 0, 8.75)
-vertex_actions = Array[ExtResource("31_2v2e4")]([SubResource("Resource_aw1ul"), SubResource("Resource_ipndl")])
-time_start = 11.25
-time_end = 12.25
-id = 14
-
-[sub_resource type="Resource" id="Resource_wbn2w"]
-resource_local_to_scene = true
-script = ExtResource("32_2otw2")
-speed = 1.0
-prev_vertex = SubResource("Resource_sain6")
-next_vertex = SubResource("Resource_u41jk")
-time_start = 9.625
-time_end = 11.25
-id = 13
-
-[sub_resource type="Resource" id="Resource_i7j6t"]
-resource_local_to_scene = true
-script = ExtResource("28_yxgu2")
-path_components = Array[ExtResource("29_4q678")]([SubResource("Resource_alef8"), SubResource("Resource_s2kma"), SubResource("Resource_cjl8i"), SubResource("Resource_1plgo"), SubResource("Resource_jq0yw"), SubResource("Resource_wmbfu"), SubResource("Resource_ouk7w"), SubResource("Resource_81075"), SubResource("Resource_mmtwr"), SubResource("Resource_o721t"), SubResource("Resource_ejtd8"), SubResource("Resource_i52hx"), SubResource("Resource_sain6"), SubResource("Resource_wbn2w"), SubResource("Resource_u41jk")])
-snap = 0.125
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3q7n2"]
 size = Vector3(6, 1, 7)
@@ -863,9 +393,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.75
 
 [node name="Tutorial Guard2" parent="Tutorial/Room 2" unique_id=1964660062 instance=ExtResource("30_ucgc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12.875)
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_yjryn")])
-follow_branch = 0
-path = SubResource("Resource_yjryn")
 
 [node name="Room 3" type="Node3D" parent="Tutorial" unique_id=2080792882 node_paths=PackedStringArray("room_area", "lights_node", "labels_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 14.75)
@@ -1432,16 +959,10 @@ metadata/asset_placer_res_id = "uid://cvmqwgofqw5y5"
 [node name="NPC" parent="Tutorial/Room 5" unique_id=1481007531 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, -9.375)
 catch_enabled = false
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_cuqy8")])
-follow_branch = 0
-path = SubResource("Resource_cuqy8")
 
 [node name="NPC2" parent="Tutorial/Room 5" unique_id=1796486969 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0, -6.625)
 catch_enabled = false
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_g6ry7")])
-follow_branch = 0
-path = SubResource("Resource_g6ry7")
 
 [node name="Item" parent="Tutorial/Room 5" unique_id=1375448456 instance=ExtResource("24_ps4sb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 0.75, -5.125)
@@ -1472,10 +993,7 @@ is_locked = true
 [node name="NPC" parent="Tutorial/Room 6" unique_id=1009577029 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 0, -6)
 catch_enabled = false
-branch_paths = Array[ExtResource("28_yxgu2")]([SubResource("Resource_i7j6t")])
-follow_branch = 0
 start_offset = inf_neg
-path = SubResource("Resource_i7j6t")
 
 [node name="Door scanner" parent="Tutorial/Room 6" unique_id=528108776 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.75, 1.25, -3.25)
