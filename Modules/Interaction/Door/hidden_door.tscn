@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b02sy8jnytlnw"]
 
 [ext_resource type="PackedScene" uid="uid://bxg3l730qjn07" path="res://Assets/Environment/Shelf_Counter/full_closed_shelf.tscn" id="1_5n0a5"]
-[ext_resource type="Script" uid="uid://bfwqxyqh6uiwb" path="res://Modules/Interaction/Door/hidden_door.gd" id="1_me3jc"]
+[ext_resource type="Script" uid="uid://bfwqxyqh6uiwb" path="res://Modules/Interaction/Door/sliding_door.gd" id="1_me3jc"]
 [ext_resource type="Animation" uid="uid://b1h0msto4wheh" path="res://Assets/Animations/Doors/HiddenShelfDoor/hidden_shelf_door_close_left.res" id="2_yui3g"]
 [ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="3_l5j44"]
 [ext_resource type="Animation" uid="uid://luses5hc161v" path="res://Assets/Animations/Doors/HiddenShelfDoor/hidden_shelf_door_close_right.res" id="3_vr0fc"]
@@ -12,19 +12,35 @@
 [ext_resource type="Animation" uid="uid://u62lqh3268fx" path="res://Assets/Animations/Doors/HiddenShelfDoor/hidden_shelf_door_right_opened.res" id="9_djeat"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="11_vr0fc"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yui3g"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jdpy"]
+size = Vector3(1, 2, 1.75)
+
+[sub_resource type="Animation" id="Animation_vr0fc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vr0fc"]
 _data = {
 &"Closed": ExtResource("4_1815x"),
 &"Left Closing": ExtResource("2_yui3g"),
 &"Left Opened": ExtResource("6_gvru4"),
 &"Left Opening": ExtResource("7_wx5vs"),
+&"RESET": SubResource("Animation_vr0fc"),
 &"Right Closing": ExtResource("3_vr0fc"),
 &"Right Opened": ExtResource("9_djeat"),
 &"Right Opening": ExtResource("8_cyo5p")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0jdpy"]
-size = Vector3(1, 2, 1.75)
 
 [node name="HiddenDoor" type="Node3D" unique_id=894937448 node_paths=PackedStringArray("anim_player")]
 script = ExtResource("1_me3jc")
@@ -49,21 +65,21 @@ metadata/asset_placer_res_id = "uid://dhac04mwooy3s"
 transform = Transform3D(-1.0000005, 0, 1.981894e-07, 0, 1, 0, -1.981894e-07, 0, -1.0000005, 0, 0, -0.375)
 metadata/asset_placer_res_id = "uid://dhac04mwooy3s"
 
-[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=634155462]
-libraries/ = SubResource("AnimationLibrary_yui3g")
-script = ExtResource("3_l5j44")
-metadata/_custom_type_script = "uid://b2clf5853h8va"
-
-[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("11_vr0fc")]
+[node name="Interactable" parent="Door" unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("11_vr0fc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
-meshes = [NodePath("../Door/ShelfCabinet/BigFrame2/BigFrame_003"), NodePath("../Door/ShelfCabinet2/BigFrame2/BigFrame_003")]
+meshes = [NodePath("../ShelfCabinet/BigFrame2/BigFrame_003"), NodePath("../ShelfCabinet2/BigFrame2/BigFrame_003")]
 prompt_text = "Open"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=608256132]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Interactable" unique_id=608256132]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
 shape = SubResource("BoxShape3D_0jdpy")
 
-[connection signal="interacted_by" from="Interactable" to="." method="interacted_by"]
+[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=634155462]
+libraries/ = SubResource("AnimationLibrary_vr0fc")
+script = ExtResource("3_l5j44")
+metadata/_custom_type_script = "uid://b2clf5853h8va"
+
+[connection signal="interacted_by" from="Door/Interactable" to="." method="interacted_by"]
 
 [editable path="Door/ShelfCabinet"]
 [editable path="Door/ShelfCabinet/BigFrame2"]

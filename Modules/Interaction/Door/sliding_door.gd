@@ -1,5 +1,5 @@
 @tool
-class_name HiddenShelfDoor
+class_name SlidingDoor
 extends Door
 
 var is_opening: bool = false : #TIMEVAR

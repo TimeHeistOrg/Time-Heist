@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c24oss5y2dxln"]
+
+[ext_resource type="Script" uid="uid://bfwqxyqh6uiwb" path="res://Modules/Interaction/Door/sliding_door.gd" id="1_41jsa"]
+[ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="1_82oao"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_5lu3a"]
+[ext_resource type="Animation" uid="uid://ec4gasgjg1wi" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_open_left.res" id="2_41jsa"]
+[ext_resource type="Animation" uid="uid://b056fht3h7b4f" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_open_right.res" id="3_cheig"]
+[ext_resource type="PackedScene" uid="uid://baeo88dd11qpj" path="res://Modules/TimeTravel/time_animation_player.tscn" id="4_i8pwf"]
+[ext_resource type="Animation" uid="uid://bp1xifkendnbl" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_left_opened.res" id="4_o7pbd"]
+[ext_resource type="Animation" uid="uid://kwkqwhm21ocx" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_right_opened.res" id="5_0dq8s"]
+[ext_resource type="Animation" uid="uid://dtqpnadghb8m7" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_close_left.res" id="6_qf84m"]
+[ext_resource type="Animation" uid="uid://cwuo57x4lhdgh" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_close_right.res" id="7_vl1uf"]
+[ext_resource type="Animation" uid="uid://yjiuk5y856o6" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_closed.res" id="8_s5msv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i8pwf"]
+size = Vector3(1, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2jow"]
+size = Vector3(1, 2, 0.125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41jsa"]
+size = Vector3(1, 2, 0.625)
+
+[sub_resource type="Animation" id="Animation_i8pwf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18sgs"]
+_data = {
+&"RESET": SubResource("Animation_i8pwf"),
+&"clearance_door_close_left": ExtResource("6_qf84m"),
+&"clearance_door_close_right": ExtResource("7_vl1uf"),
+&"clearance_door_closed": ExtResource("8_s5msv"),
+&"clearance_door_left_opened": ExtResource("4_o7pbd"),
+&"clearance_door_open_left": ExtResource("2_41jsa"),
+&"clearance_door_open_right": ExtResource("3_cheig"),
+&"clearance_door_right_opened": ExtResource("5_0dq8s")
+}
+
+[node name="ClearanceDoor" type="Node3D" unique_id=930660663 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_41jsa")
+anim_player = NodePath("TimeAnimationPlayer")
+left_opening_animation = ExtResource("2_41jsa")
+right_opening_animation = ExtResource("3_cheig")
+left_opened_animation = ExtResource("4_o7pbd")
+right_opened_animation = ExtResource("5_0dq8s")
+open_swing_length = 1.0
+left_closing_animation = ExtResource("6_qf84m")
+right_closing_animation = ExtResource("7_vl1uf")
+closed_animation = ExtResource("8_s5msv")
+close_swing_length = 1.0
+
+[node name="DoorMesh" type="Node3D" parent="." unique_id=2005529290]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorMesh" unique_id=1252127436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_overlay = ExtResource("1_82oao")
+mesh = SubResource("BoxMesh_i8pwf")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorMesh/MeshInstance3D" unique_id=1352464918]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/MeshInstance3D/StaticBody3D" unique_id=71669838]
+shape = SubResource("BoxShape3D_r2jow")
+
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("2_5lu3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+meshes = [NodePath("../DoorMesh/MeshInstance3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1813412837]
+shape = SubResource("BoxShape3D_41jsa")
+
+[node name="TimeAnimationPlayer" parent="." unique_id=1923441615 instance=ExtResource("4_i8pwf")]
+libraries/ = SubResource("AnimationLibrary_18sgs")
+
+[connection signal="interacted_by" from="Interactable" to="." method="interacted_by"]

@@ -1,5 +1,6 @@
 @tool
-class_name SwingingDoor extends Door
+class_name SwingingDoor
+extends Door
 
 var is_opening: bool = false : #TIMEVAR
 	set(value):

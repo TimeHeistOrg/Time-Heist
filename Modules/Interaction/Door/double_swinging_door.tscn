@@ -10,6 +10,7 @@
 [ext_resource type="Animation" uid="uid://bsypo3tir16gc" path="res://Assets/Animations/Doors/DoubleDoor/Reverse_Door_Action_Close.res" id="7_gv2yd"]
 [ext_resource type="Animation" uid="uid://bqlcddwhbsu6s" path="res://Assets/Animations/Doors/DoubleDoor/Door_Closed.res" id="8_2r4nq"]
 [ext_resource type="Animation" uid="uid://c67s1o3tjyjre" path="res://Assets/Animations/Doors/DoubleDoor/Door_Action_Locked.res" id="9_u1dwy"]
+[ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="10_a8jmh"]
 [ext_resource type="ArrayMesh" uid="uid://cljfbcuseu247" path="res://Assets/Environment/Doors/door_knob_mesh.mesh" id="11_7va2j"]
 [ext_resource type="ArrayMesh" uid="uid://dwxov757jbqkr" path="res://Assets/Environment/Doors/double_door_mesh.mesh" id="12_kqc4o"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="14_obxfw"]
@@ -105,6 +106,7 @@ shape = SubResource("BoxShape3D_p1el1")
 
 [node name="LeftDoorMesh" type="MeshInstance3D" parent="DoubleDoor/LeftDoorHinge" unique_id=1829878044]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0)
+material_overlay = ExtResource("10_a8jmh")
 mesh = ExtResource("12_kqc4o")
 skeleton = NodePath("")
 
@@ -128,6 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0)
 
 [node name="RightDoorMesh" type="MeshInstance3D" parent="DoubleDoor/RightDoorHinge" unique_id=1859292893]
 transform = Transform3D(-1, 0, -1.5087426e-07, 0, 1, 0, 1.5087426e-07, 0, -1, 0.12500004, 0, 0)
+material_overlay = ExtResource("10_a8jmh")
 mesh = ExtResource("12_kqc4o")
 skeleton = NodePath("")
 
@@ -152,7 +155,6 @@ script = ExtResource("6_1wyck")
 metadata/_custom_type_script = "uid://b2clf5853h8va"
 
 [node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("14_obxfw")]
-process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 1, 0)
 meshes = [NodePath("../DoubleDoor/LeftDoorHinge/LeftDoorMesh"), NodePath("../DoubleDoor/RightDoorHinge/RightDoorMesh")]
 
