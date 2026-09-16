@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bil2lllkaw31i"]
 
-[ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_kw5qb"]
 [ext_resource type="Script" uid="uid://b2gru4n14mfc5" path="res://Modules/Interaction/Door/keycard_scanner.gd" id="1_xq026"]
 [ext_resource type="PackedScene" uid="uid://bhfa3ole7vt83" path="res://Assets/Environment/Imported Assets/Card_reader.glb" id="2_0cwtd"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="4_82ime"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq026"]
 resource_local_to_scene = true
@@ -27,11 +27,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1094255, 0.012562171)
 mesh = SubResource("BoxMesh_xq026")
 skeleton = NodePath("../..")
 
-[node name="Interactable" type="Area3D" parent="." unique_id=34123462 node_paths=PackedStringArray("meshes")]
-collision_layer = 2
-script = ExtResource("1_kw5qb")
-meshes = [NodePath("../Card_reader/KeyCardReader")]
-metadata/_custom_type_script = "uid://d0afbfeblscar"
+[node name="Interactable" parent="." unique_id=242002428 instance=ExtResource("4_82ime")]
+prompt_text = "Scan"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1978443951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1969223, 0)

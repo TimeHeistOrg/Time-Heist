@@ -12,7 +12,7 @@ extends Node
 #8:
 
 #Vision Layers:
-#6: Minimap stuff
+#6: Minimap
 #7: Lights
 
 var time_manager: TimeManager

@@ -274,7 +274,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.125)
 mesh = SubResource("ArrayMesh_r7ilk")
 
 [node name="DoorHinge" type="Node3D" parent="Door" unique_id=1194065278]
-transform = Transform3D(-1.6292068e-07, 0, 1, 0, 1, 0, -1, 0, -1.6292068e-07, 0, 0, 0)
 
 [node name="DoorMesh" type="MeshInstance3D" parent="Door/DoorHinge" unique_id=1623307661]
 mesh = SubResource("ArrayMesh_g3bs0")

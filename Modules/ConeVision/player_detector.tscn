@@ -1,26 +1,49 @@
-[gd_scene format=3 uid="uid://be0g844ywaxq6"]
+[gd_scene format=4 uid="uid://be0g844ywaxq6"]
 
 [ext_resource type="Script" uid="uid://yjyaqf7frg3r" path="res://Modules/ConeVision/player_detector.gd" id="1_dmubf"]
-[ext_resource type="Script" uid="uid://g5kay17l4jvc" path="res://Modules/ConeVision/visionmeshgen.gd" id="2_dmubf"]
-[ext_resource type="Material" uid="uid://df0n62538ev1x" path="res://Modules/ConeVision/VisionMeshMat.tres" id="3_vpxxw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_br6xl"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.72, 0.72, 0.13333334)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dmubf"]
+_surfaces = [{
+"aabb": AABB(-6.5532165, -8, 0.02, 13.106433, 8.860365, 1e-05),
+"format": 34359742471,
+"index_count": 150,
+"index_data": PackedByteArray("MwAAAAEAAQACAAMAAwAEAAUABQAGAAcABwAIAAkACQAKAAsACwAMAA0ADQAOAA8ADwAQABEAEQASABMAEwAUABUAFQAWABcAFwAYABkAGQAaABsAGwAcAB0AHQAeAB8AHwAgACEAIQAiACMAIwAkACUAJQAmACcAJwAoACkAKQAqACsAKwAsAC0ALQAuAC8ALwAwADEAMQAyADMAMwABAAMAAwAFAAcABwAJAAsACwANAA8ADwARABMAEwAVABcAFwAZABsAGwAdAB8AHwAhACMAJQAnACkAKQArAC0ALQAvADEAMwADAAcABwALAA8ADwATABcAFwAbAB8AHwAjACUAJQApAC0ALQAxADMAMwAHAA8AFwAfACUAJQAtADMAMwAPABcAFwAlADMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("87PRwOjVksAK16M8fRvEwLuNpMAK16M88wS1wPMEtcAK16M8u42kwH0bxMAK16M86NWSwPOz0cAK16M8AACAwNez3cAK16M8bGFYwMoD6MAK16M8RB0vwLKP8MAK16M87oMEwOpG98AK16M81NCxv1wc/MAK16M8tn4yv54G/8AK16M8AAAAAAAAAMEK16M8tn4yP54G/8AK16M81NCxP1wc/MAK16M87oMEQOpG98AK16M8RB0vQLKP8MAK16M8bGFYQMoD6MAK16M8AACAQNez3cAK16M86NWSQPOz0cAK16M8u42kQH0bxMAK16M88wS1QPMEtcAK16M8fRvEQLuNpMAK16M887PRQOjVksAK16M84UamPwAAQL8K16M81wKuPxFJIr8K16M8xmu0P/NVA78K16M8MHW5P+XFxr4K16M8RRW9P59chb4K16M89kS/PwjfBb4K16M8AADAPwDI06QK16M89kS/PwjfBT4K16M8RRW9P59chT4K16M8MHW5P+XFxj4K16M8xmu0P/NVAz8K16M81wKuPxFJIj8K16M84UamPwAAQD8K16M89kadP9xAXD8K16M8AAAAAAAAAAAK16M84UamvwAAQD8K16M81wKuvxFJIj8K16M8xmu0v/NVAz8K16M8MHW5v+XFxj4K16M8RRW9v59chT4K16M89kS/vwjfBT4K16M8AADAvwDWniUK16M89kS/vwjfBb4K16M8RRW9v59chb4K16M8MHW5v+XFxr4K16M8xmu0v/NVA78K16M81wKuvxFJIr8K16M84UamvwAAQL8K16M89kadv9xAXL8K16M8/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AIA=")
+}]
 
 [node name="PlayerDetector" type="Area3D" unique_id=1869490121]
 script = ExtResource("1_dmubf")
+vision_color = Color(1, 0.72, 0.72, 0.13333334)
+vision_alert_color = Color(1, 0.14999998, 0.14999998, 0.24705882)
+vision_mesh_height = 0.02
+vision_lerp_time = 0.3
 
 [node name="DetectorCollision" type="CollisionPolygon3D" parent="." unique_id=955152349]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-polygon = PackedVector2Array(-13.594617, -6.339274, -12.990381, -7.5, -12.287281, -8.603646, -11.490666, -9.641814, -10.606602, -10.606602, -9.641814, -11.490666, -8.603646, -12.287281, -7.5, -12.990381, -6.339274, -13.594617, -5.130302, -14.095389, -3.8822856, -14.488888, -2.6047227, -14.772117, -1.3073361, -14.942921, 0, -15, 1.3073361, -14.942921, 2.6047227, -14.772117, 3.8822856, -14.488888, 5.130302, -14.095389, 6.339274, -13.594617, 7.5, -12.990381, 8.603646, -12.287281, 9.641814, -11.490666, 10.606602, -10.606602, 11.490666, -9.641814, 12.287281, -8.603646, 12.990381, -7.5, 13.594617, -6.339274, 1.409539, -0.51303023, 1.4488888, -0.38822857, 1.4772116, -0.26047227, 1.494292, -0.13073361, 1.5, -9.1845477e-17, 1.494292, 0.13073361, 1.4772116, 0.26047227, 1.4488888, 0.38822857, 1.409539, 0.51303023, 1.3594617, 0.6339274, 1.299038, 0.75, 1.228728, 0.8603647, 1.1490667, 0.9641814, 0, 0, -1.228728, 0.8603647, -1.299038, 0.75, -1.3594617, 0.6339274, -1.409539, 0.51303023, -1.4488888, 0.38822857, -1.4772116, 0.26047227, -1.494292, 0.13073361, -1.5, 2.7553643e-16, -1.494292, -0.13073361, -1.4772116, -0.26047227, -1.4488888, -0.38822857, -1.409539, -0.51303023, -1.3594617, -0.6339274)
+polygon = PackedVector2Array(-6.5532165, -4.5886116, -6.1283555, -5.142301, -5.656854, -5.656854, -5.142301, -6.1283555, -4.5886116, -6.5532165, -4, -6.928203, -3.3809462, -7.2504625, -2.7361612, -7.517541, -2.0705523, -7.7274065, -1.3891854, -7.878462, -0.69724596, -7.969558, 0, -8, 0.69724596, -7.969558, 1.3891854, -7.878462, 2.0705523, -7.7274065, 2.7361612, -7.517541, 3.3809462, -7.2504625, 4, -6.928203, 4.5886116, -6.5532165, 5.142301, -6.1283555, 5.656854, -5.656854, 6.1283555, -5.142301, 6.5532165, -4.5886116, 1.299038, -0.75, 1.3594617, -0.6339274, 1.409539, -0.51303023, 1.4488888, -0.38822857, 1.4772116, -0.26047227, 1.494292, -0.13073361, 1.5, -9.1845477e-17, 1.494292, 0.13073361, 1.4772116, 0.26047227, 1.4488888, 0.38822857, 1.409539, 0.51303023, 1.3594617, 0.6339274, 1.299038, 0.75, 1.228728, 0.8603647, 0, 0, -1.299038, 0.75, -1.3594617, 0.6339274, -1.409539, 0.51303023, -1.4488888, 0.38822857, -1.4772116, 0.26047227, -1.494292, 0.13073361, -1.5, 2.7553643e-16, -1.494292, -0.13073361, -1.4772116, -0.26047227, -1.4488888, -0.38822857, -1.409539, -0.51303023, -1.3594617, -0.6339274, -1.299038, -0.75, -1.228728, -0.8603647)
 debug_color = Color(15.793283, 0, 8.468667, 1)
 
 [node name="SightChecker" type="RayCast3D" parent="." unique_id=716854366]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-target_position = Vector3(0, 0, -50)
+target_position = Vector3(0, 0, -8)
 collision_mask = 9
 
-[node name="VisionConeMeshGen" type="Node3D" parent="." unique_id=1386536420 node_paths=PackedStringArray("collision_polygon")]
-script = ExtResource("2_dmubf")
-collision_polygon = NodePath("../DetectorCollision")
-mesh_material = ExtResource("3_vpxxw")
+[node name="VisionMesh" type="MeshInstance3D" parent="." unique_id=251565855]
+unique_name_in_owner = true
+transform = Transform3D(-1, 8.742278e-08, 0, 3.821371e-15, 4.371139e-08, 1, 8.742278e-08, 1, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_br6xl")
+mesh = SubResource("ArrayMesh_dmubf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -24,14 +24,14 @@ func _ready():
 			var im: InputManager = input_manager_scene.new()
 			add_child(im)
 			#print("path ", im.get_path())
-		if ui_manager:
-			var uim: UI_Manager = ui_manager_scene.instantiate()
-			add_child(uim)
-			#print("path ", uim.get_path())
 		if time_manager:
 			var tm: TimeManager = time_manager_scene.new()
 			add_child(tm)
 			#print("path ", tm.get_path())
+		if ui_manager:
+			var uim: UI_Manager = ui_manager_scene.instantiate()
+			add_child(uim)
+			#print("path ", uim.get_path())
 		if add_effects:
 			move_scene_into_subviewport()
 		else:

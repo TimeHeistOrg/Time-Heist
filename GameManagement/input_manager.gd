@@ -147,6 +147,11 @@ func _process_gameplay(_delta: float):
 			player.set_crouch(false)
 	if Input.is_action_just_pressed("player_interact"):
 		player.interact()
+	if Input.is_action_just_pressed("set_time_waypoint"):
+		globals.time_manager.set_waypoint()
+	if Input.is_action_just_pressed("rewind_to_waypoint"):
+		globals.time_manager.rewind_to_waypoint()
+	
 
 	if Input.is_action_just_released("inventory_wheel_scroll_up"):
 		player.inventory_wheel.scroll(1)

@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://b64t4twgcdips"]
 
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_phg58"]
+[ext_resource type="PackedScene" uid="uid://lv6dx6mth1bb" path="res://Modules/Interaction/ActionPrompt/action_prompt.tscn" id="2_gohqo"]
 
 [node name="Interactable" type="Area3D" unique_id=242002428]
 collision_layer = 2
 collision_mask = 0
 input_ray_pickable = false
 script = ExtResource("1_phg58")
+prompt_text = "Interact"
+
+[node name="ActionPrompt" parent="." unique_id=676767563 instance=ExtResource("2_gohqo")]
+unique_name_in_owner = true

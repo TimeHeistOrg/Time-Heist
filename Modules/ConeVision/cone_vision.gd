@@ -119,6 +119,7 @@ func create_mesh():
 	if collision:
 		collision.polygon = polygon_points
 	
+	
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		if player_in_zone and not globals.player.is_hidden and globals.player.can_be_seen and not globals.time_manager.is_time_traveling:

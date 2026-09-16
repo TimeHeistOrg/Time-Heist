@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://lv6dx6mth1bb"]
+
+[ext_resource type="Script" uid="uid://csw7gqca73777" path="res://Modules/Interaction/ActionPrompt/action_prompt.gd" id="1_v4le1"]
+[ext_resource type="Texture2D" uid="uid://cewhmli1tf85q" path="res://small_icon.png" id="1_wfono"]
+
+[node name="ActionPrompt" type="Node3D" unique_id=676767563]
+script = ExtResource("1_v4le1")
+
+[node name="Icon" type="Sprite3D" parent="." unique_id=789162300]
+unique_name_in_owner = true
+offset = Vector2(20, 20)
+billboard = 1
+texture = ExtResource("1_wfono")
+
+[node name="Prompt" type="Label3D" parent="." unique_id=1767889688]
+unique_name_in_owner = true
+offset = Vector2(90, 40)
+billboard = 1
+text = "Interact"
+horizontal_alignment = 0

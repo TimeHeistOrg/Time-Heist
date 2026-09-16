@@ -1,30 +1,19 @@
 [gd_scene format=3 uid="uid://cums0n03a6on2"]
 
-[ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="1_le8sc"]
 [ext_resource type="Script" uid="uid://dbkxdjsb03h5e" path="res://Modules/Interaction/Clearance Giver/clearance_giver.gd" id="1_r8iwe"]
 [ext_resource type="PackedScene" uid="uid://c4weuyyccstc2" path="res://Assets/Environment/Imported Assets/ClearanceMachine.glb" id="2_fh5j6"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r8iwe"]
-size = Vector3(0.81030273, 1.770752, 0.875)
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_fh5j6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fh5j6"]
 size = Vector3(0.68066406, 1.6975098, 0.74316406)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8iwe"]
+size = Vector3(0.81030273, 1.770752, 0.875)
 
 [node name="Clearance Giver" type="Node3D" unique_id=1251886145]
 script = ExtResource("1_r8iwe")
 
 [node name="ClearanceMachine" parent="." unique_id=1189117188 instance=ExtResource("2_fh5j6")]
-
-[node name="Interactable" type="Area3D" parent="." unique_id=1071358984 node_paths=PackedStringArray("meshes")]
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("1_le8sc")
-meshes = [NodePath("../ClearanceMachine/Clearance Machine")]
-metadata/_custom_type_script = "uid://d0afbfeblscar"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1555061485]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84484863, 0.012084961)
-shape = SubResource("BoxShape3D_r8iwe")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1467218949]
 collision_layer = 8
@@ -33,6 +22,13 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1013551560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8206787, -0.030273438)
 shape = SubResource("BoxShape3D_fh5j6")
+
+[node name="Interactable" parent="." unique_id=242002428 instance=ExtResource("3_fh5j6")]
+prompt_text = "Interact"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1555061485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84484863, 0.012084961)
+shape = SubResource("BoxShape3D_r8iwe")
 
 [connection signal="anon_interacted" from="Interactable" to="." method="interact"]
 

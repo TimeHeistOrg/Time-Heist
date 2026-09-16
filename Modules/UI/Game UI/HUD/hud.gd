@@ -14,9 +14,14 @@ var notif_on_tab : Array[bool] = [false,false,false]
 
 var charging : bool = false
 
+# HACK
+var waypoint_array : Array = []
+
 func _ready() -> void:
 	$LightPlayer.play('RESET')
 	globals.new_in_device.connect(new_notif)
+	globals.time_manager.time_waypoint_placed.connect(_place_visual_waypoint)
+	globals.time_manager.rewinded_to_waypoint.connect(_delete_visual_waypoint)
 	
 	globals.start_charging.connect(func(): charging = true)
 	globals.stop_charging.connect(func(): charging = false)
@@ -60,6 +65,7 @@ func new_notif(value : bool, tab : globals.Device_Tabs):
 		#new_notif_texture.hide()
 		$LightPlayer.play('RESET')
 
+
 func update_marker() -> void:
 	var progress = 0
 	if globals.time_manager:
@@ -69,6 +75,19 @@ func update_marker() -> void:
 	var end_x = timeline_end.global_position.x - timeline_pin.size.x/2
 	
 	timeline_pin.global_position.x = lerp(start_x, end_x, progress)
+	
+	
+# HACK: for prototyping a visual waypoint
+func _place_visual_waypoint():
+	var waypoint = %TimelinePin.duplicate()
+	waypoint_array.append(waypoint)
+	waypoint.modulate = Color(0.355, 0.822, 0.943, 1.0)
+	add_child(waypoint)
+
+
+func _delete_visual_waypoint():
+	waypoint_array.pop_back().queue_free()
+	
 	
 func set_device_icon(val : bool):
 	device_icon.visible = val

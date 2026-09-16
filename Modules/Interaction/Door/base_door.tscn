@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://00k0re5x71sa"]
 
 [ext_resource type="Script" uid="uid://b76g3mgwhr746" path="res://Modules/Interaction/Door/base_door.gd" id="1_a6vaa"]
+[ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="2_k71ps"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_xklbc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xklbc"]
@@ -16,6 +17,7 @@ collider = NodePath("MeshInstance3D/StaticBody3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1214916851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_overlay = ExtResource("2_k71ps")
 mesh = SubResource("BoxMesh_xklbc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=335056918]
