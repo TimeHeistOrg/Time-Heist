@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://cyif8uwvd8l5"]
 
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="1_qbnuv"]
-[ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="2_7li5w"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_8bbx1"]
 [ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="3_2fdcd"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="4_tdjgc"]
-[ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="5_ah1yn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m53t8"]
 
@@ -41,9 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 10)
 mesh = SubResource("BoxMesh_m53t8")
 script = SubResource("GDScript_urgcb")
 
-[node name="Interactable" type="Area3D" parent="TestCube" unique_id=727524225]
-script = ExtResource("2_7li5w")
-metadata/_custom_type_script = "uid://d0afbfeblscar"
+[node name="Interactable" parent="TestCube" unique_id=242002428 instance=ExtResource("2_8bbx1")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestCube/Interactable" unique_id=912900751]
 shape = SubResource("BoxShape3D_ah0ni")
@@ -58,8 +55,5 @@ texture = ExtResource("3_2fdcd")
 
 [node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("4_tdjgc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="NPC" parent="." unique_id=854805088 instance=ExtResource("5_ah1yn")]
-follow_branch = 0
 
 [connection signal="anon_interacted" from="TestCube/Interactable" to="TestCube" method="interact"]
