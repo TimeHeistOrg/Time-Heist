@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="11_vsdh8"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Environment/Desk_Table/old_standard_desk.tscn" id="21_snd4y"]
 [ext_resource type="PackedScene" uid="uid://cne3kilvgkpxb" path="res://Modules/AI/NPC/DetectingNPC.tscn" id="25_2giet"]
-[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/Guard.tscn" id="28_j3r2l"]
+[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/guard.tscn" id="28_j3r2l"]
 [ext_resource type="PackedScene" uid="uid://bvgin3di5xdd2" path="res://Assets/Environment/Stock Assets/Office_CounterA1.fbx" id="36_lryqj"]
 [ext_resource type="Script" uid="uid://d0afbfeblscar" path="res://Modules/Interaction/interactable.gd" id="37_6mukx"]
 [ext_resource type="Resource" uid="uid://ccb6qtg54rgyj" path="res://Content/Items/Resources/basement_security_lockbox_key_1.tres" id="37_p33is"]

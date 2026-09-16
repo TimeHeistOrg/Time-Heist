@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dmpqkd8aehlh7" path="res://Assets/Environment/Imported Assets/monitor_V3.glb" id="20_xc52o"]
 [ext_resource type="PackedScene" uid="uid://efb0belj2klm" path="res://Assets/Environment/Shelf_Counter/small_shelf.tscn" id="20_y6qj7"]
 [ext_resource type="PackedScene" uid="uid://uww33bnurarr" path="res://Modules/Interaction/HideSpot/locker.tscn" id="21_wsjrk"]
-[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/Guard.tscn" id="22_mbdnt"]
+[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/guard.tscn" id="22_mbdnt"]
 [ext_resource type="PackedScene" uid="uid://b1sw083h5lqhn" path="res://Assets/Environment/Shelf_Counter/small_shelf_long.tscn" id="22_necek"]
 [ext_resource type="PackedScene" uid="uid://1cs4nrno8aha" path="res://Modules/Interaction/lockable.tscn" id="23_wsjrk"]
 [ext_resource type="PackedScene" uid="uid://b4ad3ylkwaj3p" path="res://Assets/Environment/Shelf_Counter/big_shelf_long.tscn" id="24_71osp"]

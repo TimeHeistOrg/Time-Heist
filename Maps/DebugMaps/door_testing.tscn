@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b0eo68htgjcd3"]
+
+[ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/SceneConfig.tscn" id="1_128k0"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="2_ad844"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="3_4agmq"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="4_kdw54"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="5_4pcr6"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="6_cadfr"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="7_wt0mv"]
+[ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Modules/MapBuilding/MeshLibrary.tres" id="8_feif3"]
+[ext_resource type="PackedScene" uid="uid://00k0re5x71sa" path="res://Modules/Interaction/Door/base_door.tscn" id="9_0pv87"]
+[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="10_lyoq6"]
+[ext_resource type="PackedScene" uid="uid://25n08ywscgkj" path="res://Modules/Interaction/Door/bars.tscn" id="11_kneyq"]
+[ext_resource type="PackedScene" uid="uid://cfopbjoaqp7ku" path="res://Modules/Interaction/Door/double_swinging_door.tscn" id="12_tiovk"]
+[ext_resource type="PackedScene" uid="uid://b02sy8jnytlnw" path="res://Modules/Interaction/Door/hidden_door.tscn" id="13_ad844"]
+
+[sub_resource type="GDScript" id="GDScript_2h3rx"]
+resource_name = "DoorTesting"
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	if Input.is_action_just_pressed(\"TestButton\"):
+		$DoubleSwingingDoor.toggle_disabled()
+"
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_meejx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r14a3"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypf6f"]
+albedo_texture = ExtResource("2_ad844")
+metallic = 1.0
+metallic_texture = ExtResource("4_kdw54")
+roughness_texture = ExtResource("6_cadfr")
+normal_enabled = true
+normal_texture = ExtResource("5_4pcr6")
+ao_enabled = true
+ao_texture = ExtResource("3_4agmq")
+uv1_scale = Vector3(12.5, 12.5, 12.5)
+grow_amount = -4.125
+
+[node name="DoorTesting" type="Node3D" unique_id=1787823224]
+script = SubResource("GDScript_2h3rx")
+
+[node name="SceneConfig" parent="." unique_id=705177490 instance=ExtResource("1_128k0")]
+input_manager = true
+time_manager = true
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1607686888]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1278929793]
+shape = SubResource("WorldBoundaryShape3D_meejx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1816563652]
+mesh = SubResource("PlaneMesh_r14a3")
+surface_material_override/0 = SubResource("StandardMaterial3D_ypf6f")
+
+[node name="Player" parent="." unique_id=288105915 instance=ExtResource("7_wt0mv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5013666)
+
+[node name="Walls" type="GridMap" parent="." unique_id=1249332313]
+mesh_library = ExtResource("8_feif3")
+cell_size = Vector3(0.25, 2, 0.25)
+cell_center_y = false
+collision_layer = 8
+collision_mask = 0
+data = {
+"cells": PackedInt32Array(65533, 0, 1048576, 2, 0, 1048576, 3, 0, 1048576, 65532, 0, 1048576, 4, 0, 1048576, 5, 0, 1048576, 10, 0, 1048576, 11, 0, 1048576, 12, 0, 1048576, 13, 0, 1048576, 22, 0, 1048576, 23, 0, 1048576, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="BaseDoor" parent="." unique_id=1176759108 instance=ExtResource("9_0pv87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+
+[node name="SwingingDoor" parent="." unique_id=952628281 instance=ExtResource("10_lyoq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.625, 0, 0.125)
+
+[node name="Bars" parent="SwingingDoor" unique_id=206787475 instance=ExtResource("11_kneyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0, 0.125)
+
+[node name="DoubleSwingingDoor" parent="." unique_id=1374691189 instance=ExtResource("12_tiovk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.625, 0, 0.125)
+
+[node name="Bars" parent="DoubleSwingingDoor" unique_id=57149866 instance=ExtResource("11_kneyq")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 0, 0.125)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=767859114]
+transform = Transform3D(0.9659258, 0.06698731, -0.25, -3.8567047e-09, 0.96592593, 0.2588191, 0.25881904, -0.25000003, 0.9330127, 0, 0, 0)
+
+[node name="HiddenDoor" parent="." unique_id=894937448 instance=ExtResource("13_ad844")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.625, 0, 0.375)
+
+[connection signal="disabled" from="SwingingDoor" to="SwingingDoor/Bars" method="set_open_opposite"]
+[connection signal="disabled" from="DoubleSwingingDoor" to="DoubleSwingingDoor/Bars" method="set_open_opposite"]

@@ -19,26 +19,20 @@
 [ext_resource type="PackedScene" uid="uid://cbtqqo3a4oo70" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.tscn" id="16_m7fnc"]
 [ext_resource type="PackedScene" uid="uid://cne2roithf6os" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.tscn" id="18_0wlcr"]
 [ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="20_8b7s2"]
-[ext_resource type="PackedScene" uid="uid://bq3mncu2eepfx" path="res://Modules/AI/Guard/Guard.tscn" id="20_fdgdj"]
-[ext_resource type="Script" uid="uid://bqksnw54upvlw" path="res://addons/NPC Pathing/PathClasses/NPCPath.gd" id="21_mtsgv"]
-[ext_resource type="Script" uid="uid://br704tdr56wo1" path="res://addons/NPC Pathing/PathClasses/PathComponent.gd" id="22_6dtb4"]
-[ext_resource type="Script" uid="uid://d07sq7me61pcj" path="res://addons/NPC Pathing/PathClasses/PathVertex.gd" id="23_ad6bp"]
-[ext_resource type="Script" uid="uid://bveu2y00mhldy" path="res://addons/NPC Pathing/PathClasses/VertexAction.gd" id="24_gqqej"]
-[ext_resource type="Script" uid="uid://bfuy4q5dyjpbi" path="res://addons/NPC Pathing/PathClasses/PathLine.gd" id="25_6dtb4"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6dtb4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_h7gub"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ad6bp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdgdj"]
 resource_local_to_scene = true
 transparency = 1
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_6dtb4")
+albedo_texture = SubResource("ViewportTexture_h7gub")
 billboard_mode = 1
 
-[sub_resource type="QuadMesh" id="QuadMesh_gqqej"]
+[sub_resource type="QuadMesh" id="QuadMesh_yarxy"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_ad6bp")
+material = SubResource("StandardMaterial3D_fdgdj")
 size = Vector2(2.83, 1.5)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m7fnc"]
@@ -62,72 +56,14 @@ grow_amount = -4.125
 
 [sub_resource type="QuadMesh" id="QuadMesh_8b7s2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6vue"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbl44"]
 resource_local_to_scene = true
 albedo_color = Color(0.934157, 0.25749442, 0.26396477, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_4emtm"]
+[sub_resource type="BoxMesh" id="BoxMesh_20kmb"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_y6vue")
+material = SubResource("StandardMaterial3D_hbl44")
 size = Vector3(0.14, 0.12, 0.01)
-
-[sub_resource type="Resource" id="Resource_kqmap"]
-resource_local_to_scene = true
-script = ExtResource("23_ad6bp")
-position = Vector3(9.804, 0, -4.844)
-
-[sub_resource type="Resource" id="Resource_qru86"]
-resource_local_to_scene = true
-script = ExtResource("23_ad6bp")
-position = Vector3(5.5, 0, -9.5)
-time_start = 6.340564
-time_end = 6.340564
-id = 2
-
-[sub_resource type="Resource" id="Resource_dm0gv"]
-resource_local_to_scene = true
-script = ExtResource("25_6dtb4")
-speed = 1.0
-prev_vertex = SubResource("Resource_kqmap")
-next_vertex = SubResource("Resource_qru86")
-time_end = 6.340564
-id = 1
-
-[sub_resource type="Resource" id="Resource_c25ef"]
-resource_local_to_scene = true
-script = ExtResource("23_ad6bp")
-position = Vector3(12.25, 0, -9.5)
-time_start = 13.090564
-time_end = 13.090564
-id = 4
-
-[sub_resource type="Resource" id="Resource_lc4eq"]
-resource_local_to_scene = true
-script = ExtResource("25_6dtb4")
-speed = 1.0
-prev_vertex = SubResource("Resource_qru86")
-next_vertex = SubResource("Resource_c25ef")
-time_start = 6.340564
-time_end = 13.090564
-id = 3
-
-[sub_resource type="Resource" id="Resource_gu3p7"]
-resource_local_to_scene = true
-script = ExtResource("25_6dtb4")
-speed = 1.0
-prev_vertex = SubResource("Resource_c25ef")
-next_vertex = SubResource("Resource_kqmap")
-is_loop_line = true
-time_start = 13.090564
-time_end = 18.34996
-id = 5
-
-[sub_resource type="Resource" id="Resource_vud1l"]
-resource_local_to_scene = true
-script = ExtResource("21_mtsgv")
-path_components = Array[ExtResource("22_6dtb4")]([SubResource("Resource_kqmap"), SubResource("Resource_dm0gv"), SubResource("Resource_qru86"), SubResource("Resource_lc4eq"), SubResource("Resource_c25ef"), SubResource("Resource_gu3p7")])
-loop = true
-metadata/_custom_type_script = "uid://bqksnw54upvlw"
 
 [node name="Debug Mall" type="Node3D" unique_id=1495256944]
 
@@ -150,7 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.034339, 0, -5)
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player/Camera Pivot/CameraMarker/Camera3D" parent_id_path=PackedInt32Array(288105915, 214841099) index="2" unique_id=885707867]
 
 [node name="MeshInstance3D" parent="Player/Inventory Wheel Holder" parent_id_path=PackedInt32Array(288105915, 1988325530) index="0" unique_id=332989845]
-mesh = SubResource("QuadMesh_gqqej")
+mesh = SubResource("QuadMesh_yarxy")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1157303031]
 metadata/_edit_lock_ = true
@@ -475,7 +411,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.5
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.25, 0.75, -3)
 
 [node name="Indicator" parent="Keycard Scanner2/Card_reader" parent_id_path=PackedInt32Array(1416873081, 1591298054) index="1" unique_id=1035890338]
-mesh = SubResource("BoxMesh_4emtm")
+mesh = SubResource("BoxMesh_20kmb")
 
 [node name="PuzzlePanel" parent="." unique_id=1321296564 node_paths=PackedStringArray("puzzle") instance=ExtResource("14_k1gnt")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5, 0, -3)
@@ -683,12 +619,6 @@ layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
-
-[node name="Guard" parent="." unique_id=854805088 instance=ExtResource("20_fdgdj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.804, 0, -4.844)
-branch_paths = Array[ExtResource("21_mtsgv")]([SubResource("Resource_vud1l")])
-follow_branch = 0
-path = SubResource("Resource_vud1l")
 
 [connection signal="puzzle_solved" from="PuzzlePanel/PipeGame" to="PuzzlePanel" method="turn_off"]
 

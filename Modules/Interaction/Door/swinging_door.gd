@@ -1,8 +1,17 @@
 @tool
 class_name SwingingDoor extends Door
 
-var is_opening: bool = false
-var is_closing: bool = false
+var is_opening: bool = false : #TIMEVAR
+	set(value):
+		if globals.time_manager and globals.time_manager.logging:
+			globals.time_manager.timelog(self,"is_opening",is_opening)
+		is_opening = value
+		
+var is_closing: bool = false : #TIMEVAR
+	set(value):
+		if globals.time_manager and globals.time_manager.logging:
+			globals.time_manager.timelog(self,"is_closing",is_closing)
+		is_closing = value
 var pos_z: bool = false
 
 var user:Node3D = null
@@ -61,14 +70,15 @@ func _ready():
 func _process(_delta):
 	pass
 
+
 func open():
 	if is_open:
 		return
 	if is_closing:
 		var open_progress: float = open_start_buffer + (open_swing_length - anim_player.cur_progress)
-		if pos_z: #opens towards -z
+		if pos_z: # opens towards -z
 			open_neg_z(open_progress)
-		else:#opens towards +z
+		else: # opens towards +z
 			open_pos_z(open_progress)
 		play_creak_open(open_progress/open_swing_length)
 	else:
@@ -82,6 +92,7 @@ func open():
 	is_opening = true
 	is_closing = false
 	is_open = true
+
 
 func close():
 	if not is_open:
@@ -104,21 +115,26 @@ func close():
 	is_opening = false
 	is_open = false
 
+
 func open_neg_z(progress:float = 0):
 	anim_player.time_play("Opening",progress,animation_done)
 	pos_z = false
+
 
 func open_pos_z(progress:float = 0):
 	anim_player.time_play("ReverseOpening",progress,animation_done)
 	pos_z = true
 
+
 func close_neg_z(progress:float = 0):
 	anim_player.time_play("ReverseClosing",progress,animation_done)
 	pos_z = false
 
+
 func close_pos_z(progress:float = 0):
 	anim_player.time_play("Closing",progress,animation_done)
 	pos_z = true
+
 
 func animation_done():
 	is_opening = false
@@ -126,12 +142,14 @@ func animation_done():
 		is_closing = false
 		play_close_sound()
 
+
 func locked_door_behavior():
 	if not is_closing:
 		anim_player.time_play("Locked")
 		play_shake_sound()
 	#else: #This lets the door be opened while still closing even if its locked
 		#open()
+
 
 func is_open_setter(value:bool):
 	if Engine.is_editor_hint():
@@ -146,15 +164,18 @@ func is_open_setter(value:bool):
 			if closed_animation:
 				anim_player.play("Closed")
 
+
 func interacted_by(_person: Variant):
 	user = _person
 	anon_interacted()
+
 
 func is_locked_setter(value:bool):
 	if value:
 		play_lock_sound()
 	else:
 		play_unlock_sound()
+
 
 func play_open_sound():
 	if Engine.is_editor_hint():
@@ -163,12 +184,14 @@ func play_open_sound():
 		#print("open sound")
 		pass
 
+
 func play_creak_open(_progress: float = 0): #proportion is how open the door is range of 0-1
 	if Engine.is_editor_hint():
 		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("creak open, progress: ", progress)
 		pass
+
 
 func play_creak_close(_progress: float = 0): #proportion is how closed the door is range of 0-1
 	if Engine.is_editor_hint():
@@ -177,12 +200,14 @@ func play_creak_close(_progress: float = 0): #proportion is how closed the door 
 		#print("creak close, progress: ", progress)
 		pass
 
+
 func play_close_sound():
 	if Engine.is_editor_hint():
 		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("close sound")
 		pass
+
 
 func play_shake_sound(): #this is the sound that plays if door is attempted to be opened while locked
 	if Engine.is_editor_hint():
@@ -191,12 +216,14 @@ func play_shake_sound(): #this is the sound that plays if door is attempted to b
 		#print("shake sound")
 		pass
 
+
 func play_lock_sound():
 	if Engine.is_editor_hint():
 		return
 	if is_node_ready() and (not globals.time_manager or not globals.time_manager.time_travelling):
 		#print("lock sound")
 		pass
+
 
 func play_unlock_sound():
 	if Engine.is_editor_hint():
