@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BlackmailRecord" format=3 uid="uid://dm37vf8eohlqc"]
 
-[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Assets/Blackmail/blackmail_record.gd" id="1_hje0v"]
+[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Modules/Blackmail/blackmail_record.gd" id="1_hje0v"]
 
 [resource]
 script = ExtResource("1_hje0v")

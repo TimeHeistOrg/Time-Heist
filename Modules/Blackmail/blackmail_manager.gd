@@ -1,7 +1,7 @@
 extends Node
 
 # path to bm database (blackmail record resources should already be linked to the database within this resource)
-const BM_DATABASE_TEMPLATE_PATH = "res://Assets/Blackmail/Data/bm_database.tres"
+const BM_DATABASE_TEMPLATE_PATH = "res://Modules/Blackmail/Data/bm_database.tres"
 const BM_DATABASE_SAVE_PATH = "user://bm_database.tres"
 
 var database: BlackmailDatabase

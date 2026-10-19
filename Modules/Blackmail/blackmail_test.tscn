@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://byhtwts82sw3b"]
 
-[ext_resource type="Script" uid="uid://gdxvhew2bqkp" path="res://Map/Test_Map/test_map_dev.gd" id="1_0x4y4"]
-[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="3_asjtl"]
-[ext_resource type="PackedScene" uid="uid://op4wmgkxq6jj" path="res://Assets/Blackmail/blackmail_ui.tscn" id="3_kf6sw"]
-[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="4_kf6sw"]
-[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="5_ybrxk"]
-[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="6_an24r"]
-[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="7_ogxra"]
+[ext_resource type="Script" uid="uid://gdxvhew2bqkp" path="res://Modules/Blackmail/blackmail_test.gd" id="1_p4v2m"]
+[ext_resource type="PackedScene" uid="uid://op4wmgkxq6jj" path="res://Modules/Blackmail/blackmail_ui.tscn" id="2_okxg1"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="3_rlxi4"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="4_b6t61"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="5_delmb"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="6_xixct"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="7_vbm76"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6e2xr"]
 
@@ -14,19 +14,19 @@
 size = Vector2(100, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdy1o"]
-albedo_texture = ExtResource("3_asjtl")
+albedo_texture = ExtResource("3_rlxi4")
 metallic = 1.0
-metallic_texture = ExtResource("5_ybrxk")
-roughness_texture = ExtResource("7_ogxra")
+metallic_texture = ExtResource("5_delmb")
+roughness_texture = ExtResource("7_vbm76")
 normal_enabled = true
-normal_texture = ExtResource("6_an24r")
+normal_texture = ExtResource("6_xixct")
 ao_enabled = true
-ao_texture = ExtResource("4_kf6sw")
+ao_texture = ExtResource("4_b6t61")
 uv1_scale = Vector3(12.5, 12.5, 12.5)
 grow_amount = -4.125
 
 [node name="TestMapDev" type="Node2D" unique_id=1408029424]
-script = ExtResource("1_0x4y4")
+script = ExtResource("1_p4v2m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=512018127]
 
@@ -66,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.9773796, 0.84027636, 0.83854544, 0.75686276)
 
-[node name="BlackmailUi" parent="CanvasLayer/Panel" unique_id=837258719 instance=ExtResource("3_kf6sw")]
+[node name="BlackmailUi" parent="CanvasLayer/Panel" unique_id=837258719 instance=ExtResource("2_okxg1")]
 visible = false
 layout_mode = 1
 

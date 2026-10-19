@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://op4wmgkxq6jj"]
 
-[ext_resource type="Script" uid="uid://divinv7b07xki" path="res://Assets/Blackmail/blackmail_ui.gd" id="1_tmc7i"]
-[ext_resource type="PackedScene" uid="uid://dyjlqj6t080x8" path="res://Assets/Blackmail/bm_name_button.tscn" id="2_v3q2v"]
+[ext_resource type="Script" uid="uid://divinv7b07xki" path="res://Modules/Blackmail/blackmail_ui.gd" id="1_tmc7i"]
+[ext_resource type="PackedScene" uid="uid://dyjlqj6t080x8" path="res://Modules/Blackmail/bm_name_button.tscn" id="2_v3q2v"]
 
 [node name="BlackmailUi" type="Control" unique_id=837258719]
 layout_mode = 3

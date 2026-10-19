@@ -12,8 +12,8 @@ extends Control
 @onready var document_image: TextureRect = $"DocView/DocBody Img"
 @onready var delete_button: Button = $"DocView/HBoxContainer/Delete Button"
 
-const BM_NAME_BTN_SCN = preload("res://Assets/Blackmail/bm_name_button.tscn")
-const BM_FORM_FLD_SCN = preload("res://Assets/Blackmail/bm_form_field.tscn")
+const BM_NAME_BTN_SCN = preload("res://Modules/Blackmail/bm_name_button.tscn")
+const BM_FORM_FLD_SCN = preload("res://Modules/Blackmail/bm_form_field.tscn")
 
 var cur_record: BlackmailRecord
 var info_edits: Dictionary[String, LineEdit] = {}

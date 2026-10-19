@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cusenpp6ls7rk"]
 
-[ext_resource type="Script" uid="uid://dl6tfeyl4cfhr" path="res://Assets/Blackmail/bm_form_field.gd" id="1_et8v8"]
+[ext_resource type="Script" uid="uid://dl6tfeyl4cfhr" path="res://Modules/Blackmail/bm_form_field.gd" id="1_et8v8"]
 
 [node name="BmFormField" type="VBoxContainer" unique_id=1560913035]
 script = ExtResource("1_et8v8")
