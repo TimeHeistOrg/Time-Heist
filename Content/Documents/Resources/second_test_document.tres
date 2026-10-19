@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://dde08b7s131h7"]
+
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="1_3d44c"]
+[ext_resource type="Texture2D" uid="uid://dyx1fxsmc67y" path="res://Content/Documents/Textures/1_Second_Test_Document.png" id="1_hfxhk"]
+
+[resource]
+script = ExtResource("1_3d44c")
+is_email = true
+document_id = 1
+title = "Second_Test_Document"
+document_image = ExtResource("1_hfxhk")
+relevant_tags = Array[String](["People", "Places", "All Files"])
+email_heading = "Hi?"
+email_from = "RAH"
+email_desc = "im rahing at you"
+email_time = 15.0
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

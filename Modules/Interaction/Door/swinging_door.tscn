@@ -1,0 +1,144 @@
+[gd_scene format=4 uid="uid://cx8krs27ywg7n"]
+
+[ext_resource type="Script" uid="uid://cxepg7lglx3xo" path="res://Modules/Interaction/Door/swinging_door.gd" id="1_nrs4m"]
+[ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="2_n0b05"]
+[ext_resource type="Animation" uid="uid://co52kx6cgxusw" path="res://Assets/Animations/Doors/SingleDoor/Door_Action_Open.res" id="2_unmcj"]
+[ext_resource type="Animation" uid="uid://dt7sylifjqlld" path="res://Assets/Animations/Doors/SingleDoor/Reverse_Door_Action_Open.res" id="3_gyc77"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="4_5if86"]
+[ext_resource type="Animation" uid="uid://dchwrsyjqs5ld" path="res://Assets/Animations/Doors/SingleDoor/Door_Open.res" id="4_ck83o"]
+[ext_resource type="Animation" uid="uid://ct3i23otndm2f" path="res://Assets/Animations/Doors/SingleDoor/Reverse_Door_Open.res" id="5_spfhl"]
+[ext_resource type="Animation" uid="uid://3duvdbw683vb" path="res://Assets/Animations/Doors/SingleDoor/Door_Action_Close.res" id="6_k0r4j"]
+[ext_resource type="Animation" uid="uid://dg5r3ox3ocgl2" path="res://Assets/Animations/Doors/SingleDoor/Reverse_Door_Action_Close.res" id="7_7tvb8"]
+[ext_resource type="Animation" uid="uid://b7pbidpb87nyo" path="res://Assets/Animations/Doors/SingleDoor/Door_Closed.res" id="8_oftnu"]
+[ext_resource type="Animation" uid="uid://b5tb51s41q4h2" path="res://Assets/Animations/Doors/SingleDoor/Door_Action_Locked.res" id="9_6vrt1"]
+[ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="10_gyc77"]
+[ext_resource type="ArrayMesh" uid="uid://c4qjnckx3iri6" path="res://Assets/Environment/Doors/door_mesh.mesh" id="10_unmcj"]
+[ext_resource type="ArrayMesh" uid="uid://cljfbcuseu247" path="res://Assets/Environment/Doors/door_knob_mesh.mesh" id="12_gyc77"]
+[ext_resource type="Texture2D" uid="uid://cewhmli1tf85q" path="res://small_icon.png" id="14_gyc77"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6kuux"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k26ll"]
+_surfaces = [{
+"aabb": AABB(-0.125, 0, -0.1600001, 1, 2, 0.3200001),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYACAAJAAoACAALAAkADAAKAAkACwAMAAkADQAIAAoACwAIAA0ADAAOAAoADQAKAA4ACwAPAAwACwANAA8ADwAOAAwADwANAA4A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAACZCf//AAAAAJkJAAD//wAAmQn/////AACZCQAAAAAAAGX2AAD//wAAZfb//wAAAABl9v////8AAGX2AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m00w4"]
+resource_name = "DoorWithFrame_Cube"
+_surfaces = [{
+"aabb": AABB(-0.125, 0, -0.1600001, 1, 2, 0.3200001),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8//1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_6kuux"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD//5kJ//8AAP//AAD//wAA//+ZCQAAAAD//5kJAAAAAFTVmQn/////VNWZCf//AABU1ZkJAAD//1TVmQkAAP///78AAP//////v5kJ//////+/AAAAAP///78AAAAAAAD/v5kJAAD///+/mQkAAAAA/78AAAAA////v5kJ//8AAP//AAD///////8AAP//AAD//5kJ////////ZfYAAP//VNVl9v//AABU1WX2/////1TVZfYAAAAAVNVl9gAAAAD///////8AAP//Zfb//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///79l9v//////v/////////+/ZfYAAP///79l9gAAAAD/v///AAD///+///8AAAAA/79l9gAA////v/////8AAP//Zfb///////9l9v//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_k26ll")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ck83o"]
+size = Vector3(0.04, 2, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_afson"]
+size = Vector3(0.925, 2, 0.1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ck83o"]
+_data = {
+&"Closed": ExtResource("8_oftnu"),
+&"Closing": ExtResource("6_k0r4j"),
+&"Locked": ExtResource("9_6vrt1"),
+&"Opened": ExtResource("4_ck83o"),
+&"Opening": ExtResource("2_unmcj"),
+&"ReverseClosing": ExtResource("7_7tvb8"),
+&"ReverseOpened": ExtResource("5_spfhl"),
+&"ReverseOpening": ExtResource("3_gyc77")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1lmwa"]
+size = Vector3(1, 2, 2)
+
+[node name="SwingingDoor" type="Node3D" unique_id=952628281 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_nrs4m")
+anim_player = NodePath("TimeAnimationPlayer")
+opening_animation = ExtResource("2_unmcj")
+reverse_opening_animation = ExtResource("3_gyc77")
+opened_animation = ExtResource("4_ck83o")
+reverse_opened_animation = ExtResource("5_spfhl")
+open_swing_length = 0.625
+open_start_buffer = 0.167
+closing_animation = ExtResource("6_k0r4j")
+reverse_closing_animation = ExtResource("7_7tvb8")
+closed_animation = ExtResource("8_oftnu")
+close_swing_length = 0.625
+close_start_buffer = 0.167
+locked_animation = ExtResource("9_6vrt1")
+
+[node name="Door" type="Node3D" parent="." unique_id=1421133479]
+
+[node name="DoorFrame" type="MeshInstance3D" parent="Door" unique_id=1919586407]
+mesh = SubResource("ArrayMesh_m00w4")
+skeleton = NodePath("")
+
+[node name="DoorFrameRB" type="StaticBody3D" parent="Door/DoorFrame" unique_id=649696356]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/DoorFrame/DoorFrameRB" unique_id=1424062128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107, 0, 0)
+shape = SubResource("BoxShape3D_ck83o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Door/DoorFrame/DoorFrameRB" unique_id=2067785080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.856, 0, 0)
+shape = SubResource("BoxShape3D_ck83o")
+
+[node name="DoorHinge" type="Node3D" parent="Door" unique_id=651157902]
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Door/DoorHinge" unique_id=1251083113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0)
+material_overlay = ExtResource("10_gyc77")
+mesh = ExtResource("10_unmcj")
+skeleton = NodePath("")
+
+[node name="Knob Pivot" type="Node3D" parent="Door/DoorHinge/DoorMesh" unique_id=81299201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8568941, 0.780473, 0.0487969)
+
+[node name="DoorKnob" type="MeshInstance3D" parent="Door/DoorHinge/DoorMesh/Knob Pivot" unique_id=988495980]
+mesh = ExtResource("12_gyc77")
+skeleton = NodePath("")
+
+[node name="Door RB" type="StaticBody3D" parent="Door/DoorHinge/DoorMesh" unique_id=2066037447]
+transform = Transform3D(1, 0, 1.6292068e-07, 0, 1, 0, -1.6292068e-07, 0, 1, 0.5, 1, 0)
+collision_layer = 16
+collision_mask = 0
+
+[node name="PhysicalCollider" type="CollisionShape3D" parent="Door/DoorHinge/DoorMesh/Door RB" unique_id=236306223]
+shape = SubResource("BoxShape3D_afson")
+
+[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=901544769]
+libraries/ = SubResource("AnimationLibrary_ck83o")
+script = ExtResource("2_n0b05")
+metadata/_custom_type_script = "uid://b2clf5853h8va"
+
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("4_5if86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 1, 0)
+meshes = [NodePath("../Door/DoorHinge/DoorMesh")]
+icon = ExtResource("14_gyc77")
+prompt_text = "Open"
+
+[node name="InteractableCollider" type="CollisionShape3D" parent="Interactable" unique_id=1480339100]
+shape = SubResource("BoxShape3D_1lmwa")
+
+[connection signal="disabled" from="." to="Interactable" method="set_disabled"]
+[connection signal="interacted_by" from="Interactable" to="." method="interacted_by"]

@@ -1,0 +1,13 @@
+~ start
+Lauren: Hi friend
+Linda: This is my other personality
+Linda: Do you want to play the game?
+- Yes
+	Lauren: Go to the left
+	do get_tree().paused = false
+	=> END
+- No
+	Lauren: Ok bye.. 
+	do get_tree().paused = false
+	=> END
+=> END

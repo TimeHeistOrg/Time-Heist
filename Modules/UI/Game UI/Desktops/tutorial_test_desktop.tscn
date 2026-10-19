@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://4r0ghdojyf7g"]
+
+[ext_resource type="PackedScene" uid="uid://chgq1whavi3qi" path="res://Modules/Interaction/Computer/computer_ui.tscn" id="1_3oqxa"]
+[ext_resource type="PackedScene" uid="uid://b1xuaj1s3dwef" path="res://Modules/Interaction/Computer/desktop_item.tscn" id="2_56oc4"]
+[ext_resource type="PackedScene" uid="uid://q5g0v26dm1my" path="res://Modules/Interaction/Computer/app_window.tscn" id="3_k15yh"]
+[ext_resource type="PackedScene" uid="uid://bnhismy4o74yd" path="res://Modules/Interaction/Computer/Email App/email_tab.tscn" id="4_8w3cp"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="5_he8q5"]
+[ext_resource type="Resource" uid="uid://bfjfesbg0arfi" path="res://Content/Documents/Resources/first_test_document.tres" id="6_f5oos"]
+[ext_resource type="PackedScene" uid="uid://dkcsig15pybbc" path="res://Modules/Interaction/Computer/Text App/text_tab.tscn" id="7_8w3cp"]
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="8_f5oos"]
+[ext_resource type="Resource" uid="uid://csaufp18yr7m7" path="res://Content/TextConvos/Resources/Tutorial/tutorial_computer_convo.tres" id="9_h7og4"]
+[ext_resource type="PackedScene" uid="uid://cijyt3whigooo" path="res://Modules/Interaction/Computer/File App/file_tab.tscn" id="10_24l01"]
+[ext_resource type="Texture2D" uid="uid://c8pnkwlmfoe7d" path="res://Content/Documents/Textures/10_hello_playtester.png" id="10_em078"]
+[ext_resource type="Resource" uid="uid://cw2nowwwbrvos" path="res://Content/Documents/Resources/tutorial_hello_playtester.tres" id="11_em078"]
+
+[node name="Tutorial Test Desktop" type="Control" unique_id=718053962]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Computer UI" parent="." unique_id=1952193276 node_paths=PackedStringArray("icons") instance=ExtResource("1_3oqxa")]
+layout_mode = 1
+icons = [NodePath("Email"), NodePath("Messages")]
+
+[node name="Email" parent="Computer UI" unique_id=606060696 node_paths=PackedStringArray("tab") instance=ExtResource("2_56oc4")]
+layout_mode = 1
+offset_left = -504.0
+offset_top = -209.0
+offset_right = -504.0
+offset_bottom = -209.0
+override_title = "Email"
+item_type = 1
+tab = NodePath("Computer Tab")
+
+[node name="Computer Tab" parent="Computer UI/Email" unique_id=411550248 node_paths=PackedStringArray("content") instance=ExtResource("3_k15yh")]
+layout_mode = 1
+content = NodePath("Email Tab")
+
+[node name="Email Tab" parent="Computer UI/Email/Computer Tab" unique_id=718460647 instance=ExtResource("4_8w3cp")]
+layout_mode = 1
+emails = Array[ExtResource("5_he8q5")]([ExtResource("6_f5oos")])
+
+[node name="Messages" parent="Computer UI" unique_id=773689493 node_paths=PackedStringArray("tab") instance=ExtResource("2_56oc4")]
+layout_mode = 1
+offset_left = 398.0
+offset_top = -263.0
+offset_right = 398.0
+offset_bottom = -263.0
+override_title = "Messages"
+item_type = 2
+tab = NodePath("Computer Tab")
+
+[node name="Computer Tab" parent="Computer UI/Messages" unique_id=554654339 node_paths=PackedStringArray("content") instance=ExtResource("3_k15yh")]
+layout_mode = 1
+content = NodePath("Text Tab")
+
+[node name="Text Tab" parent="Computer UI/Messages/Computer Tab" unique_id=1299058217 instance=ExtResource("7_8w3cp")]
+layout_mode = 1
+convos = Array[ExtResource("8_f5oos")]([ExtResource("9_h7og4")])
+which_person = Array[int]([0])
+
+[node name="File" parent="Computer UI" unique_id=983190791 node_paths=PackedStringArray("tab") instance=ExtResource("2_56oc4")]
+layout_mode = 1
+offset_left = 217.0
+offset_top = 271.0
+offset_right = 217.0
+offset_bottom = 271.0
+override_icon = ExtResource("10_em078")
+override_title = "Document!"
+item_type = 3
+file = ExtResource("11_em078")
+tab = NodePath("Computer Tab")
+
+[node name="Computer Tab" parent="Computer UI/File" unique_id=1610716338 node_paths=PackedStringArray("content") instance=ExtResource("3_k15yh")]
+layout_mode = 1
+content = NodePath("File Tab")
+
+[node name="File Tab" parent="Computer UI/File/Computer Tab" unique_id=1552531707 instance=ExtResource("10_24l01")]
+layout_mode = 1
+file = ExtResource("11_em078")

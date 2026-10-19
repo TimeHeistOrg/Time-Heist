@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://cjl00j05m7bpr"]
 
+[ext_resource type="Texture2D" uid="uid://daw3micm30jyx" path="res://Modules/Interaction/Computer/ComputerAssets/Text Messages/receivingmessage.png" id="1_7p57o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab3f3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="GDScript" id="GDScript_e6f65"]
 resource_name = "text_bubble_left"
 script/source = "extends PanelContainer
@@ -8,35 +13,52 @@ func text(message:String):
 	$HBoxContainer/PanelContainer/MarginContainer/Label.text = message
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lap8d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfivx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esygq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="TextBubble" type="PanelContainer" unique_id=1300287387]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 83.0
 grow_horizontal = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ab3f3")
 script = SubResource("GDScript_e6f65")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=987643948]
 layout_mode = 2
 
-[node name="Control2" type="Control" parent="HBoxContainer" unique_id=1989951954]
+[node name="Control2" type="Panel" parent="HBoxContainer" unique_id=1472600155]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 0.02
+theme_override_styles/panel = SubResource("StyleBoxFlat_lap8d")
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=2120690348]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfivx")
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/PanelContainer" unique_id=1168113721]
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/PanelContainer" unique_id=1238548562]
 layout_mode = 2
-color = Color(0.13687307, 0.26454547, 0.08352735, 1)
+texture = ExtResource("1_7p57o")
+region_rect = Rect2(7, -4.75, 278, 117.5)
+patch_margin_left = 70
+patch_margin_top = 20
+patch_margin_right = 70
+patch_margin_bottom = 40
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer" unique_id=86986603]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 55
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
@@ -48,7 +70,8 @@ text = "Hi"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Control" type="Control" parent="HBoxContainer" unique_id=539037123]
+[node name="Control" type="Panel" parent="HBoxContainer" unique_id=2072486908]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_esygq")

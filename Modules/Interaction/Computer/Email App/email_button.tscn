@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyid2xchi8fsp" path="res://Modules/Interaction/Computer/Email App/email_button.gd" id="1_80oal"]
 [ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="2_bjrwd"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="2_yuq1x"]
 
 [node name="EmailButton" type="Button" unique_id=470069975]
 custom_minimum_size = Vector2(0, 120)
@@ -38,6 +39,8 @@ layout_mode = 2
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_yuq1x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Title"
 vertical_alignment = 1
@@ -48,6 +51,8 @@ text_overrun_behavior = 3
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("2_yuq1x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Time"
 horizontal_alignment = 2
@@ -57,6 +62,8 @@ text_overrun_behavior = 3
 [node name="From" type="Label" parent="MarginContainer/VBoxContainer" unique_id=383213464]
 clip_contents = true
 layout_mode = 2
+theme = ExtResource("2_yuq1x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "From: who"
 vertical_alignment = 1
@@ -66,6 +73,8 @@ text_overrun_behavior = 3
 [node name="Desc" type="Label" parent="MarginContainer/VBoxContainer" unique_id=23253349]
 clip_contents = true
 layout_mode = 2
+theme = ExtResource("2_yuq1x")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "Desc"
 vertical_alignment = 1

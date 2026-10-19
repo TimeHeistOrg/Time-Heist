@@ -1,22 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://8gkxub0dm0s7"]
+[gd_scene format=3 uid="uid://8gkxub0dm0s7"]
 
 [ext_resource type="Script" uid="uid://dtlv5bqgfeblj" path="res://Modules/Interaction/interactor.gd" id="1_0pqr2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ppip1"]
 size = Vector3(1, 2, 1)
 
-[node name="Interactor" type="Node3D"]
+[node name="Interactor" type="Node3D" unique_id=2145607717]
 script = ExtResource("1_0pqr2")
 
-[node name="InteractionRange" type="Area3D" parent="."]
+[node name="InteractionRange" type="Area3D" parent="." unique_id=1148414115]
 collision_layer = 0
 collision_mask = 2
+input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionRange"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionRange" unique_id=1147395958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.5)
 shape = SubResource("BoxShape3D_ppip1")
 
-[node name="Sightline" type="RayCast3D" parent="."]
+[node name="Sightline" type="RayCast3D" parent="." unique_id=193046773]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -1)
 collision_mask = 14

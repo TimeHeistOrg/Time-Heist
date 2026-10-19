@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ifxfr5l4o1rf"]
+
+[ext_resource type="Script" uid="uid://ggmxsyyxhofv" path="res://Modules/Security Camera/security_camera.gd" id="1_q2ohf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d7o7v"]
+size = Vector3(0.51, 0.46, 1.29)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q2ohf"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_kivu5"]
+size = Vector3(0.27, 0.28, 0.85)
+
+[node name="Security Camera" type="Node3D" unique_id=145429858]
+script = ExtResource("1_q2ohf")
+
+[node name="Mesh" type="Node3D" parent="." unique_id=694125097]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mesh" unique_id=1394908605]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364818, 0, 0.17364818, 0.9848077, 0, 0, 0)
+mesh = SubResource("BoxMesh_d7o7v")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh" unique_id=1530894795]
+transform = Transform3D(1, 0, 0, 0, -0.17364818, -0.98480767, 0, 0.98480767, -0.17364818, 0, -0.081870615, 0.4677617)
+mesh = SubResource("CylinderMesh_q2ohf")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mesh" unique_id=149770344]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.23430085, -0.28594822)
+mesh = SubResource("BoxMesh_kivu5")
+skeleton = NodePath("../..")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1948816816]
+transform = Transform3D(-0.9998862, 0.006617193, -0.013557612, 0.0040011876, 0.98280627, 0.1845966, 0.014546015, 0.18452135, -0.9827209, 0, -0.09691098, 0.6714871)
+fov = 36.929092

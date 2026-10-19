@@ -1,0 +1,16 @@
+~ start
+% => first
+% => second
+
+~ first
+Katya: “You’d best be going in prepared.”
+Katya: “Just because you have unlimited time doesn’t mean you should feel free to waste it.”
+Katya: “There’s not many people I’d put my life on pause for, though.”
+do get_tree().paused = false
+=> END
+~ second
+Katya: “It’s quite unfortunate that I’ve been trapped in this time loop before I could get a trim.”
+Katya: “I want to look sharp when we get to the bottom of this and our faces are on the front pages.”
+Katya: “...Next to Arjun and that bird’s nest of his though, I’m sure I’ll look fine.”
+do get_tree().paused = false
+=> END

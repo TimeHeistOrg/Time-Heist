@@ -1,17 +1,115 @@
 [gd_scene format=3 uid="uid://djm2xkntdba18"]
 
 [ext_resource type="Script" uid="uid://bd4wvbt4n011e" path="res://Modules/UI/Game UI/device_menu.gd" id="1_hgc2y"]
-[ext_resource type="Texture2D" uid="uid://c3uwunfq42tg8" path="res://Assets/UI/Time Travel Menu/time machine side left.png" id="1_wq3jl"]
-[ext_resource type="Texture2D" uid="uid://q007275otxah" path="res://Assets/UI/Time Travel Menu/time machine side right.png" id="3_y3rn4"]
+[ext_resource type="Texture2D" uid="uid://d4jvp5u20o0la" path="res://Assets/UI/Device Menu/inventoryselect.png" id="3_ijymv"]
 [ext_resource type="PackedScene" uid="uid://bigh7xaj6n6yj" path="res://Modules/UI/Game UI/Device/Device Files/device_files.tscn" id="4_4t7mm"]
 [ext_resource type="PackedScene" uid="uid://dc0glsn1mwwwq" path="res://Modules/UI/Game UI/Device/Inventory/inventory_panel.tscn" id="4_7dje4"]
 [ext_resource type="PackedScene" uid="uid://begdut20cbu15" path="res://Modules/UI/Game UI/Device/settings.tscn" id="4_hgc2y"]
-[ext_resource type="AudioStream" uid="uid://da3exkttg2ndx" path="res://Assets/SFX/button_confirm.ogg" id="7_m01ss"]
-[ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/SFX/button_move.ogg" id="8_ijymv"]
+[ext_resource type="AudioStream" uid="uid://da3exkttg2ndx" path="res://Assets/Audio/SFX/button_confirm.ogg" id="7_m01ss"]
+[ext_resource type="AudioStream" uid="uid://cj4g1ux14jflo" path="res://Assets/Audio/SFX/button_move.ogg" id="8_ijymv"]
+[ext_resource type="PackedScene" uid="uid://ds171imx2qg0u" path="res://Modules/UI/Game UI/MiniTimeJuiceBar/mini_time_juice_bar.tscn" id="8_pmuwh"]
+[ext_resource type="PackedScene" uid="uid://ddugiq37t31fv" path="res://Assets/Environment/Imported Assets/TimeMachine_left.fbx" id="10_q575b"]
+[ext_resource type="PackedScene" uid="uid://coioh5wpt010b" path="res://Assets/Environment/Imported Assets/TimeMachine_right.fbx" id="11_mgddb"]
 
-[sub_resource type="Theme" id="Theme_wq3jl"]
+[sub_resource type="Animation" id="Animation_upcod"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimeMachine_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.5, -0.25)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimeMachine_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, -0.25)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="Control" type="Control" unique_id=1283105560 node_paths=PackedStringArray("default_focus")]
+[sub_resource type="Animation" id="Animation_mgddb"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimeMachine_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.25, 0, -0.25, 0.16666667, 1, 0, 0, -0.25, 0.18647258, 1, 0, 0, -0.25, 0.4, 1, 0, -0.5, -0.25)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimeMachine_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.25, 0, -0.25, 0.16666667, 1, 0, 0, -0.25, 0.18647258, 1, 0, 0, -0.25, 0.4, 1, 0, -0.5, -0.25)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(0.6597539, 1),
+"update": 0,
+"values": [Vector2(1920, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q575b"]
+resource_name = "open"
+length = 0.4
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimeMachine_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.5, -0.25, 0.16666667, 1, 0, 0, -0.25, 0.18647258, 1, 0, 0, -0.25, 0.4, 1, -0.25, 0, -0.25)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimeMachine_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.5, -0.25, 0.16666667, 1, 0, 0, -0.25, 0.18647258, 1, 0, 0, -0.25, 0.4, 1, 0.25, 0, -0.25)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1.6245047, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1920, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgddb"]
+_data = {
+&"RESET": SubResource("Animation_upcod"),
+&"close": SubResource("Animation_mgddb"),
+&"open": SubResource("Animation_q575b")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmuwh"]
+
+[node name="Control" type="Control" unique_id=1283105560]
 z_index = 1
 layout_mode = 3
 anchors_preset = 15
@@ -20,10 +118,75 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hgc2y")
-default_focus = NodePath("MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs")
+disable_e_to_close = true
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1772771113]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580131768]
+layer = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=857335613]
+visibility_layer = 512
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=592252107]
+transparent_bg = true
+handle_input_locally = false
+canvas_cull_mask = 4293919232
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1113863532]
+cull_mask = 512
+
+[node name="TimeMachine_left" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1942334391 instance=ExtResource("10_q575b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
+
+[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=310105191]
+layers = 512
+
+[node name="TimeMachine_right" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1412619158 instance=ExtResource("11_mgddb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
+
+[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=1759296469]
+layers = 512
+
+[node name="DirectionalLight3D" type="SpotLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=25230241]
+layers = 513
+light_color = Color(0.6485435, 0.9284026, 0.99987143, 1)
+spot_angle = 59.556946
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=725419511]
+libraries/ = SubResource("AnimationLibrary_mgddb")
+autoplay = &"RESET"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=293497102]
+layer = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer2" unique_id=904575863]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/SubViewportContainer" unique_id=1069525773]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport" unique_id=1772771113]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,22 +196,29 @@ grow_vertical = 2
 theme_override_constants/margin_top = 75
 theme_override_constants/margin_bottom = 76
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=346338821]
+[node name="HBoxContainer" type="Control" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer" unique_id=1028146340]
+clip_contents = true
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="SidePanelL" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=797207222]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-texture = ExtResource("1_wq3jl")
-expand_mode = 1
-stretch_mode = 3
-
-[node name="TextureRect" type="ColorRect" parent="MarginContainer/HBoxContainer" unique_id=815694146]
-modulate = Color(0.5058824, 1, 0.99607843, 0.8117647)
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer" unique_id=815694146]
+modulate = Color(1, 1, 1, 0.8117647)
 custom_minimum_size = Vector2(1420, 0)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -710.0
+offset_top = -464.5
+offset_right = 710.0
+offset_bottom = 464.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/TextureRect" unique_id=176816240]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect" unique_id=176816240]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,38 +230,69 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer" unique_id=1757122488]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer" unique_id=1757122488]
 layout_mode = 2
 
-[node name="MenuTabs" type="TabContainer" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1277128379]
+[node name="Tabs" type="PanelContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=225485587]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pmuwh")
+
+[node name="TabTexture" type="TextureRect" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs" unique_id=981628280]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_ijymv")
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs" unique_id=1675234072]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="database" type="Button" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=1696146067]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+
+[node name="inventory" type="Button" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=511501974]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+
+[node name="settings" type="Button" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons" unique_id=1222573306]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+
+[node name="MenuTabs" type="PanelContainer" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=985773308]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-focus_mode = 2
-theme = SubResource("Theme_wq3jl")
-current_tab = 0
-all_tabs_in_front = true
-tab_focus_mode = 0
 
-[node name="DeviceFiles" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1302796986 instance=ExtResource("4_4t7mm")]
+[node name="DeviceFiles" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1302796986 instance=ExtResource("4_4t7mm")]
 layout_mode = 2
-metadata/_tab_index = 0
 
-[node name="InventoryPanel" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=473098046 instance=ExtResource("4_7dje4")]
+[node name="InventoryPanel" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=473098046 instance=ExtResource("4_7dje4")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
 
-[node name="SettingsPanel" parent="MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1743540238 instance=ExtResource("4_hgc2y")]
+[node name="SettingsPanel" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs" unique_id=1743540238 instance=ExtResource("4_hgc2y")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
 
-[node name="SidePanelR" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1458306387]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-texture = ExtResource("3_y3rn4")
-expand_mode = 1
-stretch_mode = 3
+[node name="Mini Time Juice Bar" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect" unique_id=608980422 instance=ExtResource("8_pmuwh")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -420.5
+offset_right = -21.0
+offset_bottom = -420.5
+rotation = 1.5707964
 
 [node name="ButtonConfirm" type="AudioStreamPlayer" parent="." unique_id=656915482]
 stream = ExtResource("7_m01ss")
@@ -100,3 +301,10 @@ volume_db = -15.0
 [node name="ButtonMove" type="AudioStreamPlayer" parent="." unique_id=1028115537]
 stream = ExtResource("8_ijymv")
 volume_db = -15.0
+
+[connection signal="pressed" from="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/database" to="." method="_on_database_pressed"]
+[connection signal="pressed" from="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/Tabs/Buttons/settings" to="." method="_on_settings_pressed"]
+
+[editable path="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left"]
+[editable path="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right"]

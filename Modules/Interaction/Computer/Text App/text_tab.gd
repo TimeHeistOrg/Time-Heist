@@ -1,8 +1,8 @@
-extends TabContent
+extends AppBase
 
-@export var convos : Array[TextConvo]
+var convos : Array[TextConvo]
 enum person {person0, person1}
-@export var which_person : Array[person]
+var which_person : Array[person]
 
 var current_convo : TextConvo
 
@@ -13,10 +13,15 @@ var current_convo : TextConvo
 var left_bubble := preload("res://Modules/Interaction/Computer/Text App/text_bubble_left.tscn")
 var right_bubble := preload("res://Modules/Interaction/Computer/Text App/text_bubble_right.tscn")
 
+func setup(config: TextAppConfig) -> void:
+	convos = config.convos
+	which_person = config.which_person as Array[person]
+
 func _ready() -> void:
 	time_manager = globals.time_manager
+	if people.get_child_count() > 0:
+		default_focus = people.get_child(0)
 	create_convo_buttons()
-	default_focus = people.get_child(0)
 
 func set_convo(convo : TextConvo):
 	print("veiwing convo between ", convo.person0, " and ", convo.person1)
@@ -36,7 +41,7 @@ func update_panel(convo : TextConvo):
 		var speaker_id := int(line[comma_index + 1])
 		var message := line.substr(comma_index + 2).strip_edges()
 		var index = convos.find(convo)
-		if time <= time_manager.cur_time:
+		if not globals.time_manager or time <= time_manager.cur_time:
 			var bubble = left_bubble if speaker_id != which_person[index] else right_bubble
 			var bubble_instance = bubble.instantiate()
 			chatlog.add_child(bubble_instance)
@@ -44,7 +49,7 @@ func update_panel(convo : TextConvo):
 		else:
 			return
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_convo:
 		update_panel(current_convo)
 	pass

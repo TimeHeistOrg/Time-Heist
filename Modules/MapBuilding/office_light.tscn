@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bxqpme2qjir3g"]
+
+[ext_resource type="Script" uid="uid://ivfm0cc10ph8" path="res://Modules/MapBuilding/office_light.gd" id="1_f4mdn"]
+
+[node name="OfficeLight" type="SpotLight3D" unique_id=1607967816]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.1, 0)
+layers = 64
+light_color = Color(0.69803923, 0.6901961, 0.9529412, 1)
+light_energy = 8.0
+light_size = 0.25
+light_specular = 0.0
+spot_range = 13.5
+spot_attenuation = 0.5
+spot_angle = 85.0
+spot_angle_attenuation = 2.46
+script = ExtResource("1_f4mdn")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://c2o4ml4lp7et4"]
+
+[ext_resource type="Texture2D" uid="uid://c8wc34eghmwwa" path="res://Content/Documents/Textures/22_laura_to_front_desk.png" id="1_pyhhc"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="2_40su1"]
+
+[resource]
+script = ExtResource("2_40su1")
+is_email = true
+document_id = 22
+title = "Laura email to Front Desk"
+document_image = ExtResource("1_pyhhc")
+relevant_tags = Array[String](["Emails", "All Files"])
+email_heading = "Order more fuses"
+email_from = "Laura D"
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

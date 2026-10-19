@@ -1,53 +1,79 @@
 extends Node3D
 class_name KeycardScanner
 
-signal keycard_scanned
-var display_note: bool = false
-var display_time_elapsed: float = 0
-@export var needed_item: Array[PickupItem]
-@export var needed_clearance: Array[globals.Clearances]
-@export var needed_doc: Array[DocumentInfo]
-@export var needed_lever: Array[Lever]
-@export var locked_label : String
+@onready var indicator: MeshInstance3D = $Card_reader/Indicator
+@export var perma_locked: bool = false
 
-#var success = preload("res://Assets/Materials/Interactable/success.tres")
+@export var lock : Lockable = null
+@export var retrigger : float = 0.0 #seconds
+var retrigger_timer: float = 0.0
+var is_ready : bool = true : #TIMEVAR
+	set(value):
+		if globals.time_manager and globals.time_manager.logging:
+			globals.time_manager.timelog(self,"is_ready",is_ready)
+		elif not value:
+			retrigger_timer = retrigger
+		is_ready = value
+
+@export var disabled: bool = false
+
+signal keycard_scanned
+
+
+var feedback_timer : Timer
+var default_color : Color = Color(0.081, 0.081, 0.081, 1.0)
 
 func _ready() -> void:
-	$MeshInstance3D.mesh.material.albedo_color = Color("ee4243")
-	$Label.text = locked_label
+	feedback_timer = Timer.new()
+	feedback_timer.one_shot = true
+	feedback_timer.timeout.connect(_on_feedback_end)
+	add_child(feedback_timer)
+	indicator.mesh.material.albedo_color = default_color
 
 func interact():
-	var success: bool = true
-	
-	if needed_doc:
-		for doc in needed_doc:
-			if not global_inventory.has_doc(doc):
-				success = false
-	if needed_item:
-		for item in needed_item:
-			if not global_inventory.has_item(item):
-				success = false
-	if needed_clearance:
-		for clearance in needed_clearance:
-			if not global_inventory.has_clearance(clearance):
-				success = false
-	if needed_lever:
-		for lever in needed_lever:
-			if not lever.flipped:
-				success= false
-	if not success:
-		display_note = true
-		$Label.visible = true
+	if disabled: 
 		return
-		
+	if not is_ready:
+		return
+	if globals.player_unlock_everything:
+		keycard_scanned.emit()
+		show_feedback(globals.green_color)
+		if retrigger > 0:
+			is_ready = false
+		return
+	if (lock and not lock.try_unlock()) or perma_locked:
+		show_feedback(globals.red_color)
+		return
+	
 	keycard_scanned.emit()
-	$MeshInstance3D.mesh.material.albedo_color = Color(0.0, 0.706, 0.0, 1.0)
+	show_feedback(globals.green_color)
+	if retrigger > 0:
+		is_ready = false
 
-func _process(delta):
-	if display_note:
-		if display_time_elapsed >= 2:
-			display_note = false
-			display_time_elapsed = 0
-			$Label.visible = false
-		else:
-			display_time_elapsed += delta
+func _physics_process(_delta: float) -> void:
+	if not is_ready:
+		retrigger_timer += globals.time_manager.delta_time
+		if retrigger_timer >= retrigger:
+			keycard_scanned.emit()
+			retrigger_timer = 0
+			is_ready = true
+		
+func show_feedback(color: Color) -> void:
+	indicator.mesh.material.albedo_color = color
+	feedback_timer.stop()
+	feedback_timer.start(2.0)
+
+func _on_feedback_end() -> void:
+	indicator.mesh.material.albedo_color = default_color
+
+func disable():
+	disabled = true
+
+func enable():
+	disabled = false
+
+func set_disabled(value:bool):
+	disabled = value
+
+func toggle_disabled():
+	disabled = not disabled

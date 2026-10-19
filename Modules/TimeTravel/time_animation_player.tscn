@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://baeo88dd11qpj"]
+
+[ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="1_abwmf"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" unique_id=1923441615]
+script = ExtResource("1_abwmf")

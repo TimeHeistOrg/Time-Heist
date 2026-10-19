@@ -1,4 +1,4 @@
-extends Node3D
+class_name Interactor extends Node3D
 
 @onready var sightline: RayCast3D = $Sightline
 
@@ -16,9 +16,9 @@ var targetted: Interactable:
 
 var can_interact: bool = true
 
-func _process(_delta):
-	if PlayerInput.is_action_just_pressed("player_interact") and targetted:
-		targetted.interact()
+func interact():
+	if targetted:
+		targetted.interact(globals.player)
 
 func _physics_process(_delta):
 	if in_range_interactables and can_interact:

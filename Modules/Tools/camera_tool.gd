@@ -16,9 +16,10 @@ func _process(delta: float) -> void:
 func use_tool():
 	if not is_placed:
 		if globals.player.sneak_detect.head_forward.is_colliding():
-			var camera_position = globals.player.sneak_detect.head_forward.get_collision_point()
-			var camera_direction = globals.player.sneak_detect.head_forward.get_collision_normal()
+			#var camera_position = globals.player.sneak_detect.head_forward.get_collision_point()
+			#var camera_direction = globals.player.sneak_detect.head_forward.get_collision_normal()
 			#position = camera_position
+			pass
 			
 	
 func interact():

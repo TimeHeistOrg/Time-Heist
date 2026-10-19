@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bxg3l730qjn07"]
+
+[ext_resource type="PackedScene" uid="uid://b3kuidwilpb65" path="res://Assets/Environment/Imported Assets/BigFrame2.fbx" id="1_8x8or"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_blrf4"]
+size = Vector3(0.255, 1.946, 0.815)
+
+[node name="FullClosedShelf" type="Node3D" unique_id=1223163465]
+
+[node name="BigFrame2" parent="." unique_id=859273053 instance=ExtResource("1_8x8or")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1674208294]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1660648795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00064086914, 0.9742279, 0.0026855469)
+shape = SubResource("BoxShape3D_blrf4")

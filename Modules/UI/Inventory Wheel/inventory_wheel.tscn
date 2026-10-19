@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://cvryici2ywxll"]
+
+[ext_resource type="Script" uid="uid://6yqw1betpfib" path="res://Modules/UI/Inventory Wheel/inventory_wheel.gd" id="1_jy7k8"]
+
+[sub_resource type="GDScript" id="GDScript_6up7b"]
+resource_name = "WheelSlotIcons"
+script/source = "# slot_icons.gd 
+extends Node2D
+@onready var iw: InventoryWheel = $\"..\"
+
+var sprites: Array[Sprite2D] = []
+
+func setup() -> void:
+	for s in sprites:
+		s.queue_free()
+	sprites.clear()
+	
+	# size to actual inventory, not the const
+	for i in range(global_inventory.items.size()):
+		var sprite = Sprite2D.new()
+		sprite.centered = true
+		add_child(sprite)
+		sprites.append(sprite)
+
+func update_icons(window: Array, wheel_rotation: float) -> void:
+	# rebuild if inventory size changed
+	if sprites.size() != global_inventory.items.size():
+		setup()
+
+	var target_size = iw.wheel_width * 0.4
+	var mid_r = iw.wheel_radius
+
+	for s in sprites:
+		s.visible = false
+
+	for i in range(window.size()):
+		var slot_index = iw.window_start + i
+		
+		# guard against actual items size, not num_of_items const
+		if slot_index >= global_inventory.items.size():
+			continue
+
+		var sprite = sprites[slot_index]
+		sprite.visible = true
+
+		var slot_angle = iw.start + iw.slot_width * slot_index + iw.slot_width / 2.0 + wheel_rotation
+		sprite.position = Vector2.from_angle(slot_angle) * mid_r + iw.center
+
+		var item = window[i]
+		if item and item.get(\"image\") and item.image:
+			sprite.texture = item.image
+			var tex_size = item.image.get_size()
+			var longest = max(tex_size.x, tex_size.y)
+			sprite.scale = Vector2.ONE * (target_size / longest)
+		else:
+			sprite.texture = null
+"
+
+[sub_resource type="GDScript" id="GDScript_x46q2"]
+resource_name = "DrawChosenSlot"
+script/source = "extends Node2D
+
+func draw_inven_selected():
+	queue_redraw()
+	
+func _draw() -> void:
+	var iw = self.owner as Node2D
+	draw_arc(iw.center,iw.wheel_radius, iw.start, iw.start + iw.slot_width,100,iw.selected_color,iw.wheel_width*1.2,false)
+"
+
+[sub_resource type="GDScript" id="GDScript_cmedq"]
+resource_name = "ArcDraw"
+script/source = "extends Node2D
+
+func draw_inven_arc():
+	queue_redraw()
+	
+func _draw() -> void:
+	var iw = self.owner as InventoryWheel
+	draw_arc(iw.center,iw.wheel_radius,iw.start + iw.window_start*iw.slot_width ,iw.start + (iw.window_end+1)*iw.slot_width,100,iw.wheel_color,iw.wheel_width,false)
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_psyux"]
+blend_mode = 2
+
+[sub_resource type="GDScript" id="GDScript_dqc0u"]
+resource_name = "MaskDraw"
+script/source = "extends Node2D
+
+func draw_inven_line():
+	queue_redraw()
+
+func _ready() -> void:
+	var mat = CanvasItemMaterial.new()
+	mat.blend_mode = CanvasItemMaterial.BLEND_MODE_SUB
+	material = mat
+
+func _draw() -> void:
+	var iw = self.owner as InventoryWheel
+	if iw:
+		var step = iw.slot_width
+		
+		for i in range(global_inventory.items.size()):
+			var rads = iw.start + (step * i)
+			var point = Vector2.from_angle(rads)
+			draw_line(
+				point * (iw.wheel_radius - iw.wheel_width / 2) + iw.center,
+				point * (iw.wheel_radius + iw.wheel_width / 2) + iw.center,
+				Color(0.997, 0.812, 0.892, 1.0),
+				iw.slot_gap_width,
+				true
+			)
+			
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oturb"]
+blend_mode = 2
+
+[sub_resource type="GDScript" id="GDScript_5eme7"]
+resource_name = "MaskBottomDraw"
+script/source = "#@tool
+extends Node2D
+
+var angle_start_rad
+var angle_end_rad
+
+func draw_inven_mask():
+	queue_redraw()
+
+func _ready() -> void:
+	var mat = CanvasItemMaterial.new()
+	mat.blend_mode = CanvasItemMaterial.BLEND_MODE_SUB
+	material = mat
+
+func _draw() -> void:
+	var iw = get_parent() as InventoryWheel
+	angle_start_rad = - TAU/4 - deg_to_rad(iw.angle/2)
+	angle_end_rad = - TAU/4 + deg_to_rad(iw.angle/2)
+	# bottom mask
+	var p_inner_start = Vector2.from_angle(angle_start_rad) * (iw.wheel_radius - iw.wheel_width / 2.0) + iw.center
+	var p_outer_start = Vector2.from_angle(angle_start_rad) * (iw.wheel_radius + iw.wheel_width / 2.0) + iw.center
+	var p_inner_end   = Vector2.from_angle(angle_end_rad)   * (iw.wheel_radius - iw.wheel_width / 2.0) + iw.center
+	var p_outer_end   = Vector2.from_angle(angle_end_rad)   * (iw.wheel_radius + iw.wheel_width / 2.0) + iw.center
+
+	var far_down = iw.center.y + iw.wheel_radius + 200.0
+	var far_left = iw.center.x - iw.wheel_radius - 200.0
+	var far_right = iw.center.x + iw.wheel_radius + 200.0
+
+	draw_colored_polygon(PackedVector2Array([
+		p_outer_start,
+		p_inner_start,
+		p_inner_end,
+		p_outer_end,
+		Vector2(far_right, p_outer_end.y),
+		Vector2(far_right, far_down),
+		Vector2(far_left,  far_down),
+		Vector2(far_left,  p_outer_start.y),
+	]), Color.WHITE)
+"
+
+[node name="Inventory Wheel" type="Node2D" unique_id=455971298]
+visible = false
+script = ExtResource("1_jy7k8")
+
+[node name="SlotIcons" type="Node2D" parent="." unique_id=748416799]
+z_index = 102
+script = SubResource("GDScript_6up7b")
+
+[node name="ChosenSlot" type="Node2D" parent="." unique_id=1684547581]
+z_index = 101
+script = SubResource("GDScript_x46q2")
+
+[node name="Wheel" type="Node2D" parent="." unique_id=664901295]
+
+[node name="Arc" type="Node2D" parent="Wheel" unique_id=1407072790]
+z_index = 100
+script = SubResource("GDScript_cmedq")
+
+[node name="Mask" type="Node2D" parent="Wheel" unique_id=746913725]
+z_index = 105
+material = SubResource("CanvasItemMaterial_psyux")
+script = SubResource("GDScript_dqc0u")
+
+[node name="MaskBottom" type="Node2D" parent="." unique_id=364948049]
+z_index = 105
+material = SubResource("CanvasItemMaterial_oturb")
+script = SubResource("GDScript_5eme7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1058873297]
+offset = Vector2(0, -160.38)
+zoom = Vector2(1.78, 1.78)

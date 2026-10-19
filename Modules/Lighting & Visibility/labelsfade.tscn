@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cnj7efh2s8lov"]
+
+[ext_resource type="Script" uid="uid://bf1gfp43cpqiv" path="res://Modules/Lighting & Visibility/labels_fade.gd" id="1_ua56u"]
+
+[node name="Labels" type="Node3D" unique_id=668998449]
+script = ExtResource("1_ua56u")

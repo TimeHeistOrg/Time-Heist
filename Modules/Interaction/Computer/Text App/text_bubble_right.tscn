@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://dyps150nhsdnv"]
 
+[ext_resource type="Texture2D" uid="uid://1r0tud40uc4" path="res://Modules/Interaction/Computer/ComputerAssets/Text Messages/sendingmessage.png" id="1_qvnur"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spsbq"]
+
 [sub_resource type="GDScript" id="GDScript_1w1qx"]
 resource_name = "text_bubble_right"
 script/source = "extends PanelContainer
@@ -8,35 +12,51 @@ func text(message:String):
 	$HBoxContainer/PanelContainer/MarginContainer/Label.text = message
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veypb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwqgb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa4jn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="TextBubble" type="PanelContainer" unique_id=1300287387]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 83.0
 grow_horizontal = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_spsbq")
 script = SubResource("GDScript_1w1qx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=987643948]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="HBoxContainer" unique_id=539037123]
+[node name="Control3" type="Panel" parent="HBoxContainer" unique_id=651894278]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_veypb")
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=2120690348]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pwqgb")
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/PanelContainer" unique_id=1168113721]
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/PanelContainer" unique_id=465582670]
 layout_mode = 2
-color = Color(0.055236124, 0.25398853, 0.28924757, 1)
+texture = ExtResource("1_qvnur")
+region_rect = Rect2(-4, -4.125, 282.5, 121)
+patch_margin_left = 60
+patch_margin_top = 20
+patch_margin_right = 60
+patch_margin_bottom = 40
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer" unique_id=86986603]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 55
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
@@ -48,7 +68,8 @@ text = "Hi"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Control2" type="Control" parent="HBoxContainer" unique_id=1989951954]
+[node name="Control2" type="Panel" parent="HBoxContainer" unique_id=1623910937]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 0.02
+theme_override_styles/panel = SubResource("StyleBoxFlat_wa4jn")

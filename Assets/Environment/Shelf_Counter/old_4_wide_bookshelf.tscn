@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cratpfmhvs24i"]
+
+[ext_resource type="PackedScene" uid="uid://dyj44qhnl7s3f" path="res://Assets/Environment/Stock Assets/Bookshelf.fbx" id="1_y2kfg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x2d0e"]
+size = Vector3(4.275818, 2.1635742, 1)
+
+[node name="Old4WideBookshelf" type="Node3D" unique_id=880324703]
+
+[node name="Bookshelf" parent="." unique_id=127424806 instance=ExtResource("1_y2kfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47034156, 0, 0)
+
+[node name="Bookshelf2" parent="." unique_id=1205813467 instance=ExtResource("1_y2kfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4621036, 0, 0)
+
+[node name="Bookshelf3" parent="." unique_id=1459358636 instance=ExtResource("1_y2kfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502573, 0, 0)
+
+[node name="Bookshelf4" parent="." unique_id=821186994 instance=ExtResource("1_y2kfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4886795, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=461694984]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1534494083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04458618, 1.0754395, 0)
+shape = SubResource("BoxShape3D_x2d0e")

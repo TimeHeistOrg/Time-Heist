@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bewux20nhdj2i"]
+
+[ext_resource type="PackedScene" uid="uid://bayk20th8ksox" path="res://Assets/Environment/Stock Assets/Shelf_Base.fbx" id="1_vgi0v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmx5c"]
+size = Vector3(1, 1.9976807, 0.60375977)
+
+[node name="OldShelf" type="Node3D" unique_id=1307753727]
+
+[node name="Shelf_Base" parent="." unique_id=247710958 instance=ExtResource("1_vgi0v")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1366693832]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1986903381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.005188, 0)
+shape = SubResource("BoxShape3D_jmx5c")

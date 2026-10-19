@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bju0wk4vvmrdk"]
+
+[ext_resource type="Shader" uid="uid://cockwmk3mxt8t" path="res://Assets/Materials/Interactable/sprite_outline_shader.gdshader" id="1_rtxwf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rtxwf")
+shader_parameter/outline_color = Color(0.47422016, 0.4734398, 0, 1)
+shader_parameter/outline_width = 7.0

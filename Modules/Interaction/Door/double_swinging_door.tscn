@@ -1,0 +1,163 @@
+[gd_scene format=4 uid="uid://cfopbjoaqp7ku"]
+
+[ext_resource type="Script" uid="uid://cxepg7lglx3xo" path="res://Modules/Interaction/Door/swinging_door.gd" id="1_obxfw"]
+[ext_resource type="Animation" uid="uid://dlaocr6vn4wub" path="res://Assets/Animations/Doors/DoubleDoor/Door_Action_Open.res" id="2_a8jmh"]
+[ext_resource type="Animation" uid="uid://bhoidpu0if0id" path="res://Assets/Animations/Doors/DoubleDoor/Reverse_Door_Action_Open.res" id="3_obxfw"]
+[ext_resource type="Animation" uid="uid://cs2jjcefsn5wf" path="res://Assets/Animations/Doors/DoubleDoor/Door_Open.res" id="4_kqc4o"]
+[ext_resource type="Animation" uid="uid://xp2de2fd0l1e" path="res://Assets/Animations/Doors/DoubleDoor/Reverse_Door_Open.res" id="5_p1el1"]
+[ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="6_1wyck"]
+[ext_resource type="Animation" uid="uid://dbp0jdscbo43d" path="res://Assets/Animations/Doors/DoubleDoor/Door_Action_Close.res" id="6_7va2j"]
+[ext_resource type="Animation" uid="uid://bsypo3tir16gc" path="res://Assets/Animations/Doors/DoubleDoor/Reverse_Door_Action_Close.res" id="7_gv2yd"]
+[ext_resource type="Animation" uid="uid://bqlcddwhbsu6s" path="res://Assets/Animations/Doors/DoubleDoor/Door_Closed.res" id="8_2r4nq"]
+[ext_resource type="Animation" uid="uid://c67s1o3tjyjre" path="res://Assets/Animations/Doors/DoubleDoor/Door_Action_Locked.res" id="9_u1dwy"]
+[ext_resource type="ArrayMesh" uid="uid://cljfbcuseu247" path="res://Assets/Environment/Doors/door_knob_mesh.mesh" id="11_7va2j"]
+[ext_resource type="ArrayMesh" uid="uid://dwxov757jbqkr" path="res://Assets/Environment/Doors/double_door_mesh.mesh" id="12_kqc4o"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="14_obxfw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rn2pa"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ukplf"]
+_surfaces = [{
+"aabb": AABB(-0.125, 0, -0.1600001, 2, 2, 0.3200001),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYACAAJAAoACAALAAkADAAKAAkACwAMAAkADQAIAAoACwAIAA0ADAAOAAoADQAKAA4ACwAPAAwACwANAA8ADwAOAAwADwANAA4A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAADMBP//AAAAAMwEAAD//wAAzAT/////AADMBAAAAAAAADL7AAD//wAAMvv//wAAAAAy+/////8AADL7AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6i0l3"]
+resource_name = "DoubleDoorWithFrame_Cube_004"
+_surfaces = [{
+"aabb": AABB(-0.125, 0, -0.1600001, 2, 2, 0.3200001),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8//1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_rn2pa"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD//8wE//8AAP//AAD//wAA///MBAAAAAD//8wEAAAAAFTVzAT/////VNXMBP//AABU1cwEAAD//1TVzAQAAP///78AAP//////v8wE//////+/AAAAAP///78AAAAAAAD/v8wEAAD///+/zAQAAAAA/78AAAAA////v8wE//8AAP//AAD///////8AAP//AAD//8wE////////MvsAAP//VNUy+///AABU1TL7/////1TVMvsAAAAAVNUy+wAAAAD///////8AAP//Mvv//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78y+///////v/////////+/MvsAAP///78y+wAAAAD/v///AAD///+///8AAAAA/78y+wAA////v/////8AAP//Mvv///////8y+///AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ukplf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1el1"]
+size = Vector3(0.04, 2, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqc4o"]
+size = Vector3(0.963, 2, 0.1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_obxfw"]
+_data = {
+&"Closed": ExtResource("8_2r4nq"),
+&"Closing": ExtResource("6_7va2j"),
+&"Locked": ExtResource("9_u1dwy"),
+&"Opened": ExtResource("4_kqc4o"),
+&"Opening": ExtResource("2_a8jmh"),
+&"ReverseClosing": ExtResource("7_gv2yd"),
+&"ReverseOpened": ExtResource("5_p1el1"),
+&"ReverseOpening": ExtResource("3_obxfw")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obxfw"]
+size = Vector3(2, 2, 2)
+
+[node name="DoubleSwingingDoor" type="Node3D" unique_id=1374691189 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_obxfw")
+anim_player = NodePath("TimeAnimationPlayer")
+opening_animation = ExtResource("2_a8jmh")
+reverse_opening_animation = ExtResource("3_obxfw")
+opened_animation = ExtResource("4_kqc4o")
+reverse_opened_animation = ExtResource("5_p1el1")
+open_swing_length = 0.625
+open_start_buffer = 0.167
+closing_animation = ExtResource("6_7va2j")
+reverse_closing_animation = ExtResource("7_gv2yd")
+closed_animation = ExtResource("8_2r4nq")
+close_swing_length = 0.625
+close_start_buffer = 0.167
+locked_animation = ExtResource("9_u1dwy")
+
+[node name="DoubleDoor" type="Node3D" parent="." unique_id=1812601370]
+
+[node name="DoubleDoorFrame" type="MeshInstance3D" parent="DoubleDoor" unique_id=59466293]
+mesh = SubResource("ArrayMesh_6i0l3")
+skeleton = NodePath("")
+
+[node name="DoorFrameRB" type="StaticBody3D" parent="DoubleDoor/DoubleDoorFrame" unique_id=220259048]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoubleDoor/DoubleDoorFrame/DoorFrameRB" unique_id=1535789224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107, 0, 0)
+shape = SubResource("BoxShape3D_p1el1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DoubleDoor/DoubleDoorFrame/DoorFrameRB" unique_id=561511325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.857, 0, 0)
+shape = SubResource("BoxShape3D_p1el1")
+
+[node name="LeftDoorHinge" type="Node3D" parent="DoubleDoor" unique_id=1873775277]
+
+[node name="LeftDoorMesh" type="MeshInstance3D" parent="DoubleDoor/LeftDoorHinge" unique_id=1829878044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0, 0)
+mesh = ExtResource("12_kqc4o")
+skeleton = NodePath("")
+
+[node name="LeftKnobPivot" type="Node3D" parent="DoubleDoor/LeftDoorHinge/LeftDoorMesh" unique_id=1439475740]
+transform = Transform3D(0.99975806, -0.02198938, 0, 0.02198938, 0.99975806, 0, 0, 0, 1, 0.8568941, 0.780473, 0.048796903)
+
+[node name="LeftDoorKnob" type="MeshInstance3D" parent="DoubleDoor/LeftDoorHinge/LeftDoorMesh/LeftKnobPivot" unique_id=1260588432]
+mesh = ExtResource("11_7va2j")
+skeleton = NodePath("")
+
+[node name="Door RB" type="StaticBody3D" parent="DoubleDoor/LeftDoorHinge/LeftDoorMesh" unique_id=76740338]
+transform = Transform3D(1, 0, 1.6292068e-07, 0, 1, 0, -1.6292068e-07, 0, 1, 0.519, 1, 0)
+collision_layer = 16
+collision_mask = 0
+
+[node name="PhysicalCollider" type="CollisionShape3D" parent="DoubleDoor/LeftDoorHinge/LeftDoorMesh/Door RB" unique_id=1493698327]
+shape = SubResource("BoxShape3D_kqc4o")
+
+[node name="RightDoorHinge" type="Node3D" parent="DoubleDoor" unique_id=1211717087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0)
+
+[node name="RightDoorMesh" type="MeshInstance3D" parent="DoubleDoor/RightDoorHinge" unique_id=1859292893]
+transform = Transform3D(-1, 0, -1.5087426e-07, 0, 1, 0, 1.5087426e-07, 0, -1, 0.12500004, 0, 0)
+mesh = ExtResource("12_kqc4o")
+skeleton = NodePath("")
+
+[node name="RightKnobPivot" type="Node3D" parent="DoubleDoor/RightDoorHinge/RightDoorMesh" unique_id=1296267478]
+transform = Transform3D(0.99975806, -0.02198938, 0, 0.02198938, 0.99975806, 0, 0, 0, 1, 0.85689396, 0.780473, 0.0487969)
+
+[node name="RightDoorKnob" type="MeshInstance3D" parent="DoubleDoor/RightDoorHinge/RightDoorMesh/RightKnobPivot" unique_id=479361589]
+mesh = ExtResource("11_7va2j")
+skeleton = NodePath("")
+
+[node name="Door RB" type="StaticBody3D" parent="DoubleDoor/RightDoorHinge/RightDoorMesh" unique_id=1869637894]
+transform = Transform3D(1, 0, 1.6292068e-07, 0, 1, 0, -1.6292068e-07, 0, 1, 0.519, 1, 0)
+collision_layer = 16
+collision_mask = 0
+
+[node name="PhysicalCollider" type="CollisionShape3D" parent="DoubleDoor/RightDoorHinge/RightDoorMesh/Door RB" unique_id=1921747756]
+shape = SubResource("BoxShape3D_kqc4o")
+
+[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=283260468]
+libraries/ = SubResource("AnimationLibrary_obxfw")
+script = ExtResource("6_1wyck")
+metadata/_custom_type_script = "uid://b2clf5853h8va"
+
+[node name="Interactable" parent="." unique_id=242002428 node_paths=PackedStringArray("meshes") instance=ExtResource("14_obxfw")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 1, 0)
+meshes = [NodePath("../DoubleDoor/LeftDoorHinge/LeftDoorMesh"), NodePath("../DoubleDoor/RightDoorHinge/RightDoorMesh")]
+
+[node name="InteractableCollider" type="CollisionShape3D" parent="Interactable" unique_id=1907215344]
+shape = SubResource("BoxShape3D_obxfw")
+
+[connection signal="disabled" from="." to="Interactable" method="set_disabled"]
+[connection signal="interacted_by" from="Interactable" to="." method="interacted_by"]

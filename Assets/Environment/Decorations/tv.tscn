@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://crjkh3mdkhhfr"]
+
+[ext_resource type="PackedScene" uid="uid://ceak24xvjsuba" path="res://Assets/Environment/Imported Assets/tv_65.glb" id="1_ywayn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udxfg"]
+size = Vector3(0.17398834, 0.8022461, 1.4064941)
+
+[node name="TV" type="Node3D" unique_id=865723330]
+
+[node name="tv_65" parent="." unique_id=1535908669 instance=ExtResource("1_ywayn")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.14581764, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=644151774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14581764, 0.525, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1573324213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05726242, -0.52475584, 0.0026550293)
+shape = SubResource("BoxShape3D_udxfg")

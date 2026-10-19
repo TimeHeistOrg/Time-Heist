@@ -1,0 +1,9 @@
+~ start
+Lauren: Hi welcome to our cool equipment shop
+Linda: Are u interested in some equipment?
+- Yes
+	do open_menu()
+	Linda: I hope you enjoy your equipment, bye => END
+- No
+	Lauren: Ok bye.. => END
+=> END

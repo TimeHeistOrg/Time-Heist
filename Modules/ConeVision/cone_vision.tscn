@@ -1,128 +1,8 @@
 [gd_scene format=3 uid="uid://dyhnk6p2fbc87"]
 
-[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Effects/laser.gdshader" id="1_kdpmb"]
-[ext_resource type="Script" uid="uid://dydv15dtbt8or" path="res://Modules/ConeVision/laser_cylinder.gd" id="2_n627y"]
-[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/SFX/laser.ogg" id="3_1cksi"]
-
-[sub_resource type="GDScript" id="GDScript_23e0v"]
-resource_name = "cone_vision"
-script/source = "@tool
-extends Area3D
-
-var player_spotted
-@onready var sight_checker := $SightChecker
-@onready var collision := $CollisionPolygon3D
-@onready var laser: MeshInstance3D = $Laser
-@onready var laser_mesh: ImmediateMesh = laser.mesh
-
-@onready var laser_node : MeshInstance3D = $LaserCylinder
-@onready var laser_sfx : AudioStreamPlayer = $AudioStreamPlayer
-
-var time_detecting: float = 0
-
-@export var sight_line_angle : float = 220:
-	set(value):
-		sight_line_angle = value
-		create_mesh()
-@export var sight_line_radius : float = 75:
-	set(value):
-		sight_line_radius = value
-		create_mesh()
-@export var smaller_sight_line_radius : float = 20:
-	set(value):
-		smaller_sight_line_radius = value
-		create_mesh()
-@export var time_till_caught : float = 2
-@export var angle_steps : float = 5:
-	set(value):
-		angle_steps = value
-		create_mesh()
-
-var polygon_points : PackedVector2Array = []
-
-func _ready() -> void:
-	if not Engine.is_editor_hint():
-		globals.safe_ratio = 1
-		sight_checker.target_position.z = -sight_line_radius
-		create_mesh()
-		collision.polygon = polygon_points
-		laser_node.visible = false
-
-func create_mesh():
-	print(\"mesh\")
-	polygon_points = []
-	var start_angle = -sight_line_angle / 2.0
-	var end_angle = sight_line_angle / 2.0
-	
-	var current_angle = start_angle
-	while current_angle <= end_angle:
-		var rad = deg_to_rad(current_angle)
-		polygon_points.append(Vector2(
-			sight_line_radius * sin(rad),
-			-sight_line_radius * cos(rad)
-		))
-		current_angle += angle_steps
-		
-	current_angle = end_angle 
-	while current_angle >= start_angle:
-		var rad = deg_to_rad(current_angle)
-		polygon_points.append(Vector2(
-			-smaller_sight_line_radius * sin(rad),
-			smaller_sight_line_radius * cos(rad)
-		))
-		current_angle -= angle_steps
-
-	if collision:
-		collision.polygon = polygon_points
-	
-func _process(delta: float) -> void:
-	if not Engine.is_editor_hint():
-		if globals.time_manager.is_time_traveling:
-			laser_node.visible = false
-			laser_sfx.stop()
-			return
-		if player_spotted:
-			sight_checker.look_at(Vector3(globals.player.global_position.x, 1, globals.player.global_position.z))
-			
-			if sight_checker.get_collider() == globals.player:
-				time_detecting += delta
-				laser_mesh.clear_surfaces()
-				draw_line()
-				if laser_sfx.playing == false:
-					laser_sfx.play()
-			else:
-				time_detecting = 0
-				laser_mesh.clear_surfaces()
-				laser_node.visible = false
-				laser_sfx.stop()
-				
-			globals.safe_ratio = (time_till_caught - time_detecting) / time_till_caught
-			
-			if time_detecting >= time_till_caught:
-				caught()
-		else:
-			laser_sfx.stop()
-			laser_node.visible = false
-
-func _on_body_entered(body: Node3D) -> void:
-	if body == globals.player:
-		player_spotted = true
-		
-func _on_body_exited(body: Node3D) -> void:
-	if body == globals.player:
-		player_spotted = false 
-		time_detecting = 0
-		globals.safe_ratio = (time_till_caught - time_detecting) / time_till_caught
-		laser_mesh.clear_surfaces()
-		laser_node.visible = false
-	
-func caught() -> void:
-	globals.player_caught()
-
-func draw_line():
-	laser_node.visible = true
-	laser_node.update_beam(sight_checker.global_position, globals.player.global_position + Vector3(0, 1.0, 0))
-"
+[ext_resource type="Script" uid="uid://cfi4568w1mep7" path="res://Modules/ConeVision/cone_vision.gd" id="1_a0itm"]
+[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Modules/AI/Guard/laser.gdshader" id="1_kdpmb"]
+[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/Audio/SFX/laser.ogg" id="3_1cksi"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_23e0v"]
 
@@ -151,16 +31,17 @@ top_radius = 0.05
 bottom_radius = 0.05
 height = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1cksi"]
+size = Vector3(1, 1.9223633, 1)
+
 [node name="Cone Vision" type="Area3D" unique_id=1869490121]
-script = SubResource("GDScript_23e0v")
-sight_line_angle = 129.9
-sight_line_radius = 14.825
-smaller_sight_line_radius = 0.0
+script = ExtResource("1_a0itm")
+smaller_sight_line_angle = 65.0
 time_till_caught = 1.0
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." unique_id=955152349]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-polygon = PackedVector2Array(-13.43054, -6.2770386, -12.832353, -7.4237013, -12.136504, -8.513865, -11.348289, -9.539233, -10.473706, -10.4920025, -9.519412, -11.364921, -8.49267, -12.151345, -7.4012933, -12.84529, -6.253588, -13.441475, -5.0582895, -13.935363, -3.8244944, -14.323194, -2.5615926, -14.6020155, -1.2791954, -14.769709, 0.0129372515, -14.824994, 1.3049715, -14.767453, 2.587074, -14.597523, 3.8494873, -14.316497, 5.082604, -13.926513, 6.2770386, -13.43054, 7.4237013, -12.832353, 8.513865, -12.136504, 9.539233, -11.348289, 10.4920025, -10.473706, 11.364921, -9.519412, 12.151345, -8.49267, 12.84529, -7.4012933, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+polygon = PackedVector2Array(-13.594617, -6.339274, -12.990381, -7.5, -12.287281, -8.603646, -11.490666, -9.641814, -10.606602, -10.606602, -9.641814, -11.490666, -8.603646, -12.287281, -7.5, -12.990381, -6.339274, -13.594617, -5.130302, -14.095389, -3.8822856, -14.488888, -2.6047227, -14.772117, -1.3073361, -14.942921, 0, -15, 1.3073361, -14.942921, 2.6047227, -14.772117, 3.8822856, -14.488888, 5.130302, -14.095389, 6.339274, -13.594617, 7.5, -12.990381, 8.603646, -12.287281, 9.641814, -11.490666, 10.606602, -10.606602, 11.490666, -9.641814, 12.287281, -8.603646, 12.990381, -7.5, 13.594617, -6.339274, 1.409539, -0.51303023, 1.4488888, -0.38822857, 1.4772116, -0.26047227, 1.494292, -0.13073361, 1.5, -9.1845477e-17, 1.494292, 0.13073361, 1.4772116, 0.26047227, 1.4488888, 0.38822857, 1.409539, 0.51303023, 1.3594617, 0.6339274, 1.299038, 0.75, 1.228728, 0.8603647, 1.1490667, 0.9641814, 0, 0, -1.228728, 0.8603647, -1.299038, 0.75, -1.3594617, 0.6339274, -1.409539, 0.51303023, -1.4488888, 0.38822857, -1.4772116, 0.26047227, -1.494292, 0.13073361, -1.5, 2.7553643e-16, -1.494292, -0.13073361, -1.4772116, -0.26047227, -1.4488888, -0.38822857, -1.409539, -0.51303023, -1.3594617, -0.6339274)
 debug_color = Color(15.793283, 0, 8.468667, 1)
 
 [node name="SightChecker" type="RayCast3D" parent="." unique_id=716854366]
@@ -171,17 +52,25 @@ collision_mask = 9
 [node name="Laser" type="MeshInstance3D" parent="." unique_id=836442765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 visible = false
+layers = 9
 mesh = SubResource("ImmediateMesh_23e0v")
 
 [node name="LaserCylinder" type="MeshInstance3D" parent="." unique_id=1530977473]
 visible = false
+layers = 9
 mesh = SubResource("CylinderMesh_kdpmb")
-script = ExtResource("2_n627y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=935075018]
 stream = ExtResource("3_1cksi")
 volume_db = -5.0
 parameters/looping = true
 
+[node name="NPC hitbox" type="Area3D" parent="." unique_id=1467074222]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC hitbox" unique_id=1367928268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935791, 0)
+shape = SubResource("BoxShape3D_1cksi")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="NPC hitbox" to="." method="_on_npc_hitbox_body_entered"]

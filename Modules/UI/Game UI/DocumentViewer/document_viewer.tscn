@@ -1,8 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://o8bawnwr8utr"]
+[gd_scene format=3 uid="uid://o8bawnwr8utr"]
 
 [ext_resource type="Script" uid="uid://d1b4dlmjepbii" path="res://Modules/UI/Game UI/DocumentViewer/document_viewer.gd" id="1_jj6w3"]
 
-[node name="DocumentViewer" type="Control"]
+[sub_resource type="Animation" id="Animation_inqv3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("DocTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("DocTexture:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k3r5l"]
+resource_name = "close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DocTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.6245049, 1.6245049),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DocTexture:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_uy0q3"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DocTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.7411013, 1.7411013),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DocTexture:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k3r5l"]
+_data = {
+&"RESET": SubResource("Animation_inqv3"),
+&"close": SubResource("Animation_k3r5l"),
+&"open": SubResource("Animation_uy0q3")
+}
+
+[node name="DocumentViewer" type="Control" unique_id=98285178]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jj6w3")
 
-[node name="DocTexture" type="TextureRect" parent="."]
+[node name="DocTexture" type="TextureRect" parent="." unique_id=1427309753]
 custom_minimum_size = Vector2(0, 1080)
 layout_mode = 1
 anchors_preset = 8
@@ -25,5 +115,20 @@ offset_right = 540.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 expand_mode = 2
 stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=267449467]
+libraries/ = SubResource("AnimationLibrary_k3r5l")
+
+[node name="Label" type="Label" parent="." unique_id=1364786545]
+layout_mode = 0
+offset_left = 1622.0
+offset_top = 958.0
+offset_right = 1850.0
+offset_bottom = 1039.0
+theme_override_font_sizes/font_size = 45
+text = "ESC to exit"
+horizontal_alignment = 1
+vertical_alignment = 1

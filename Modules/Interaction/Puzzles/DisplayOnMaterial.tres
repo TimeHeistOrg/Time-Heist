@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0jcxmsv6wl8u"]
+
+[resource]
+resource_name = "Screen"
+cull_mode = 2
+albedo_color = Color(0.30980965, 0.8172551, 0.98856384, 1)
+roughness = 0.5
+emission_enabled = true
+emission = Color(0, 0.37468657, 0.67147654, 1)
+emission_energy_multiplier = 2.86

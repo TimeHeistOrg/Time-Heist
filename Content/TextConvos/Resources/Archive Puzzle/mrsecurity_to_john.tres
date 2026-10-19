@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TextConvo" format=3 uid="uid://cxus0xrdd5e5u"]
+
+[ext_resource type="Script" uid="uid://cwa1su0fsxi7t" path="res://Modules/Interaction/Computer/Resources/text_convo_resource.gd" id="1_j3ych"]
+
+[resource]
+script = ExtResource("1_j3ych")
+person0 = "John"
+person1 = "Albus"
+conversation = "0,0Slow day at work?
+0,1What did I say about texting me on the clock John.
+0,1Jk whats up man
+0,0just bored, what are you up to
+0,1dealing with the security room break in. seems like someone it trying to get access to the archive key...
+0,0you dont think this has something to do with the lever insalled in my room do you?
+0,1nah no way, people don't know what it does and they surely dont know about its twin
+0,1hr might be up your ass for a little though. theyll probably suspect you did it
+0,0shitttt I dont need this hear rn
+0,1youll be alright. anyways, have you seen my keycard?
+0,1honestly I might've left it when we had that meeting yesterday
+0,0ya probably"
+metadata/_custom_type_script = "uid://cwa1su0fsxi7t"

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://v7qhxfhoa5ng"]
+
+[ext_resource type="Script" uid="uid://blyma3ipi2j28" path="res://Modules/UI/Game UI/DesktopViewer/desktop_viewer.gd" id="1_i2a7f"]
+
+[node name="Desktop Viewer" type="Control" unique_id=2027082529]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.55554
+offset_top = 137.0
+offset_right = -243.55554
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i2a7f")

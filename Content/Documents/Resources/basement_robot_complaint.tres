@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://btvs4c8o6ktei"]
+
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="1_7nyws"]
+[ext_resource type="Texture2D" uid="uid://8ad2gn8uqywy" path="res://Content/Documents/Textures/5_basement_robot_complaint.png" id="1_p1jyb"]
+
+[resource]
+script = ExtResource("1_7nyws")
+is_email = true
+document_id = 5
+title = "Basement Robot Email Complaint"
+document_image = ExtResource("1_p1jyb")
+relevant_tags = Array[String](["Emails", "Basement", "All Files"])
+email_heading = "These new robots are freaky..."
+email_from = "John D"
+email_desc = "Please get rid of them"
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

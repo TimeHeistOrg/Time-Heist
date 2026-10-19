@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0g0pdg05gm2m"
+path="res://.godot/imported/Time Scheist.mp3-bf4786a872c5e5a76365fd2b86131d02.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Time Scheist.mp3"
+dest_files=["res://.godot/imported/Time Scheist.mp3-bf4786a872c5e5a76365fd2b86131d02.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
