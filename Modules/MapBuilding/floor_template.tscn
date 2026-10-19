@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvkgf3tscpg6c"]
 
-[ext_resource type="Script" uid="uid://6ibaxrvc8f4b" path="res://Modules/MapBuilding/Floor.gd" id="1_hmlpf"]
+[ext_resource type="Script" uid="uid://6ibaxrvc8f4b" path="res://Modules/MapBuilding/floor_lower.gd" id="1_hmlpf"]
 
 [node name="FloorTemplate" type="Node3D" unique_id=734244715]
 script = ExtResource("1_hmlpf")

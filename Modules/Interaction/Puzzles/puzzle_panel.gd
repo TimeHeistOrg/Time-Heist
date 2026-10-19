@@ -11,8 +11,8 @@ class_name PuzzlePanel extends Node3D
 
 var puzzle_ref: Node = null
 
-const off_mat: Material = preload("res://Modules/Interaction/Puzzles/DisplayOffMaterial.tres")
-const on_mat: Material = preload("res://Modules/Interaction/Puzzles/DisplayOnMaterial.tres")
+const off_mat: Material = preload("res://Modules/Interaction/Puzzles/display_off_material.tres")
+const on_mat: Material = preload("res://Modules/Interaction/Puzzles/display_on_material.tres")
 
 @onready var mesh: MeshInstance3D = $KeyCardReader
 

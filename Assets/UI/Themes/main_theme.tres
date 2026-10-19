@@ -1,9 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://jodljyivkod0"]
 
 [ext_resource type="FontFile" uid="uid://datdkauvfmpa2" path="res://Assets/UI/Font/Dhurjati/Dhurjati-Regular.ttf" id="1_woeg8"]
-[ext_resource type="StyleBox" uid="uid://b2k6en7363xpi" path="res://Assets/UI/Button Styles/generic_button_style_focused.tres" id="2_ye651"]
-[ext_resource type="StyleBox" uid="uid://b5474gjwf1ua" path="res://Assets/UI/Button Styles/generic_button_style_normal.tres" id="3_najkf"]
-[ext_resource type="StyleBox" uid="uid://dpyeb2o1f2q14" path="res://Assets/UI/Button Styles/generic_button_style_selected.tres" id="4_yc5xu"]
+[ext_resource type="StyleBox" uid="uid://b2k6en7363xpi" path="res://Assets/UI/ButtonStyles/generic_button_style_focused.tres" id="2_ye651"]
+[ext_resource type="StyleBox" uid="uid://b5474gjwf1ua" path="res://Assets/UI/ButtonStyles/generic_button_style_normal.tres" id="3_najkf"]
+[ext_resource type="StyleBox" uid="uid://dpyeb2o1f2q14" path="res://Assets/UI/ButtonStyles/generic_button_style_selected.tres" id="4_yc5xu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ye651"]
 
