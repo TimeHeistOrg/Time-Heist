@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c6w1lba1ymw14"
-path="res://.godot/imported/time_travel_end.ogg-7fe4f3f37038a575265e72c0ddfa0760.oggvorbisstr"
+path="res://.godot/imported/time_travel_end.ogg-53e3019c435cc18ea430d670d902c28b.oggvorbisstr"
 
 [deps]
 
-source_file="res://Assets/SFX/time_travel_end.ogg"
-dest_files=["res://.godot/imported/time_travel_end.ogg-7fe4f3f37038a575265e72c0ddfa0760.oggvorbisstr"]
+source_file="res://Assets/Audio/SFX/time_travel_end.ogg"
+dest_files=["res://.godot/imported/time_travel_end.ogg-53e3019c435cc18ea430d670d902c28b.oggvorbisstr"]
 
 [params]
 
