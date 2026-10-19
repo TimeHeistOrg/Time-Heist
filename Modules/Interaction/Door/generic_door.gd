@@ -151,16 +151,20 @@ func unlock_open():
 	open()
 
 func play_open_sound():
-	print("open sound")
+	#print("open sound")
+	pass
 
 func play_close_sound():
-	print("close sound")
+	#print("close sound")
+	pass
 
 func play_shake_sound(): #this is the sound that plays if door is attempted to be opened while locked
-	print("shake sound")
+	#print("shake sound")
+	pass
 
 func play_lock_sound():
-	print("lock sound")
+	#print("lock sound")
+	pass
 
  #and not globals.player.can_open_any_door
 func interact(person: Node):

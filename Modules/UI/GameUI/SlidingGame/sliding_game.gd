@@ -227,7 +227,7 @@ func _block_aligns_exit(block: SlidingBlock) -> bool:
 		   block_start+block_size <= _exit_start+_exit_size
 
 func _on_puzzle_solved(block: SlidingBlock) -> void:
-	print("Puzzle solved")
+	#print("Puzzle solved")
 	emit_signal("puzzle_solved")
 	_slide_block_exit(block)
 

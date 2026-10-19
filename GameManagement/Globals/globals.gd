@@ -17,7 +17,7 @@ extends Node
 
 var time_manager: TimeManager
 var input_manager: InputManager
-var ui_manager: UI_Manager
+var ui_manager: UIManager
 
 var player : Player
 var player_camera : Camera3D

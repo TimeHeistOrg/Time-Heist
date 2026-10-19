@@ -2,7 +2,7 @@
 class_name DetectingNPC extends PathFollower
 
 const alert_mat = preload("res://Modules/AI/NPC/alert_material.tres")
-const inactive_mat = preload("res://Modules/AI/NPC/InactiveMaterial.tres")
+const inactive_mat = preload("res://Modules/AI/NPC/inactive_material.tres")
 
 @onready var body_mesh: MeshInstance3D = %NPCbody
 @onready var hair_mesh: MeshInstance3D = %NPChair

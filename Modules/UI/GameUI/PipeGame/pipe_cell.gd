@@ -53,8 +53,8 @@ func _rotate_cell() -> void:
 	_update_rotation()
 	
 	# notify game of rotation
-	print("emit firing from cell (%d, %d)" % [row, col])
-	print("signal has %d connections" % [rotation_changed.get_connections().size()])
+	#print("emit firing from cell (%d, %d)" % [row, col])
+	#print("signal has %d connections" % [rotation_changed.get_connections().size()])
 	rotation_changed.emit(row, col)
 
 # updates the visible texture based on set pipe type

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="2_p0fcu"]
 [ext_resource type="Resource" uid="uid://cdijnfhp66gsc" path="res://Modules/UI/GameUI/Desktops/Z3Floor/test_computer.tres" id="3_lww7r"]
 [ext_resource type="Resource" uid="uid://cdmieat3en1nr" path="res://Modules/UI/GameUI/Desktops/Z3Floor/josh_playtest_computer.tres" id="4_fkalk"]
-[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player_lower.tscn" id="5_6el51"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player.tscn" id="5_6el51"]
 [ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="6_t8vjc"]
 [ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="7_dgdbi"]
 [ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="8_b4jh7"]

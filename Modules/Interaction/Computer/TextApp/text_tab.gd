@@ -24,7 +24,7 @@ func _ready() -> void:
 	create_convo_buttons()
 
 func set_convo(convo : TextConvo):
-	print("veiwing convo between ", convo.person0, " and ", convo.person1)
+	#print("veiwing convo between ", convo.person0, " and ", convo.person1)
 	current_convo = convo
 
 func update_panel(convo : TextConvo):

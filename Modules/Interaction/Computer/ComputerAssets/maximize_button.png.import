@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy2got4dkfd57"
-path="res://.godot/imported/minimize_button_lower.png-fe853781d219a3f6de0b7ccbccded539.ctex"
+uid="uid://b3cl7tf4p4c2p"
+path="res://.godot/imported/maximize_button.png-f1e5ca625b09c3ed77af7cd0789d6773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modules/Interaction/Computer/ComputerAssets/minimize_button_lower.png"
-dest_files=["res://.godot/imported/minimize_button_lower.png-fe853781d219a3f6de0b7ccbccded539.ctex"]
+source_file="res://Modules/Interaction/Computer/ComputerAssets/maximize_button.png"
+dest_files=["res://.godot/imported/maximize_button.png-f1e5ca625b09c3ed77af7cd0789d6773.ctex"]
 
 [params]
 

@@ -24,5 +24,5 @@ func _on_dialogue_finish() -> void:
 	dialogue_balloon = null
 
 func _on_interactable_anon_interacted() -> void:
-	print("interacted")
+	#print("interacted")
 	interact()

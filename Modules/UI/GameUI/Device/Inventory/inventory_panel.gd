@@ -18,7 +18,7 @@ func select():
 
 #region items
 func collect_item(item:PickupItem):
-	print("adding item into panel: ", item.name)
+	#print("adding item into panel: ", item.name)
 	var slot = inventory_slot.instantiate()
 	inventory_grid.add_child(slot)
 	slot.set_data(item)
@@ -27,7 +27,7 @@ func collect_item(item:PickupItem):
 	$Pickup.play()
 
 func remove_item(requested_item:PickupItem):
-	print("removing item ", requested_item.name)
+	#print("removing item ", requested_item.name)
 	for item_slot in inventory_grid.get_children():
 		if item_slot.item == requested_item:
 			item_slot.queue_free()

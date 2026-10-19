@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbuk6xkawm4lf"]
 
-[ext_resource type="Script" uid="uid://b1hsxcc4s4w0t" path="res://Modules/Characters/arjun_lower.gd" id="1_t3mic"]
+[ext_resource type="Script" uid="uid://b1hsxcc4s4w0t" path="res://Modules/Characters/arjun.gd" id="1_t3mic"]
 [ext_resource type="Resource" uid="uid://denowb84fu4k1" path="res://Content/Dialogue/Homebase/Arjun.dialogue" id="2_my0eq"]
 [ext_resource type="ArrayMesh" uid="uid://c8ldxaubcmoal" path="res://Assets/Characters/Arjun/arjun_body_mesh.mesh" id="3_jlsnx"]
 [ext_resource type="ArrayMesh" uid="uid://bm0aw4rs2asts" path="res://Assets/Characters/Arjun/arjun_hair_mesh.mesh" id="4_my0eq"]

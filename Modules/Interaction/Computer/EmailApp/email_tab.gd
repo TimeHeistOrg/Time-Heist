@@ -63,7 +63,7 @@ func setup_emails():
 		var button_instance = EmailButtonScene.instantiate()
 		email_buttons.add_child(button_instance)
 		email_buttons.move_child(button_instance, 0) # moves to the top
-		print(button_instance)
+		#print(button_instance)
 		button_instance.set_email_info(email)
 		button_instance.focus_entered.connect(view_panel.bind(email))
 		button_instance.hide()
@@ -77,5 +77,5 @@ func custom_email_sort(a : DocumentInfo, b : DocumentInfo):
 	return a.email_time < b.email_time
 	
 func set_defaults():
-	print(email_buttons.get_child(0))
+	#print(email_buttons.get_child(0))
 	default_focus = email_buttons.get_child(0)

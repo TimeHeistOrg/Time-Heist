@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/scene_config.tscn" id="1_j3r2l"]
 [ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="3_cgwgq"]
-[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player_lower.tscn" id="3_wy2fh"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player.tscn" id="3_wy2fh"]
 [ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="4_fqqlb"]
 [ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="5_bvtp0"]
 [ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="6_qhvyw"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://b0de055ebbyya" path="res://Modules/Interaction/security_table.tscn" id="42_8tqeg"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="42_qhvyw"]
 [ext_resource type="PackedScene" uid="uid://bewux20nhdj2i" path="res://Assets/Environment/ShelfCounter/old_shelf.tscn" id="43_addyg"]
-[ext_resource type="PackedScene" uid="uid://xao1udvjxbco" path="res://Modules/Interaction/stashable_lower.tscn" id="43_qhvyw"]
+[ext_resource type="PackedScene" uid="uid://xao1udvjxbco" path="res://Modules/Interaction/stashable.tscn" id="43_qhvyw"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Environment/ShelfCounter/old_counter.tscn" id="44_w24xq"]
 [ext_resource type="Resource" uid="uid://gue75w7rapn5" path="res://Content/Items/Resources/basement_security_lockbox_key_2.tres" id="45_54g0j"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="45_ld0yn"]

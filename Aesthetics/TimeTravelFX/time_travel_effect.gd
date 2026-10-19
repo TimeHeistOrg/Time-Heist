@@ -9,8 +9,8 @@ extends ColorRect
 @export var start_sfx : AudioStreamPlayer 
 @export var end_sfx : AudioStreamPlayer  
 
+@export var time_travel_post_fx: ShaderMaterial
 
-@onready var time_travel_post_fx = preload("res://Aesthetics/TimeTravelFX/time_travel_post_fx.tres")
 var tween : Tween
 
 var is_active: bool = false

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2qonmqfm6c31"]
 
-[ext_resource type="Script" uid="uid://bovsnek2incu4" path="res://Modules/Characters/maria_lower.gd" id="1_vs80n"]
+[ext_resource type="Script" uid="uid://bovsnek2incu4" path="res://Modules/Characters/maria.gd" id="1_vs80n"]
 [ext_resource type="Resource" uid="uid://5bv7v8eapkbg" path="res://Content/Dialogue/Homebase/Maria.dialogue" id="2_vs80n"]
 [ext_resource type="ArrayMesh" uid="uid://bit4y3lmdooi1" path="res://Assets/Characters/Maria/maria_body_mesh.mesh" id="3_vs80n"]
 [ext_resource type="ArrayMesh" uid="uid://dxhfh6cuygqfu" path="res://Assets/Characters/Maria/maria_hair_mesh.mesh" id="4_1oqaf"]

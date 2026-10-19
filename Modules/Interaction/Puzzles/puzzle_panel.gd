@@ -32,13 +32,13 @@ func _ready():
 		if puzzle:
 			puzzle.close()
 		else:
-			print("no puzzle selected")
+			push_warning("no puzzle selected!")
 
 func open_puzzle():
 	if puzzle:
 		puzzle.open()
 	else:
-		print("no puzzle selected")
+		push_warning("no puzzle selected!")
 
 func turn_on():
 	panel_on = true

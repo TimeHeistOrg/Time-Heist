@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://balhwiq4nx04k"
-path="res://.godot/imported/close_button_lower.png-04cfc1bb9ce5758c5a3ba7615c1772db.ctex"
+uid="uid://bmnti8mv3wiq4"
+path="res://.godot/imported/cursor_normal.png-84ea711d53824dfe2efe33357bd86705.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modules/Interaction/Computer/ComputerAssets/close_button_lower.png"
-dest_files=["res://.godot/imported/close_button_lower.png-04cfc1bb9ce5758c5a3ba7615c1772db.ctex"]
+source_file="res://Modules/Interaction/Computer/ComputerAssets/cursor_normal.png"
+dest_files=["res://.godot/imported/cursor_normal.png-84ea711d53824dfe2efe33357bd86705.ctex"]
 
 [params]
 

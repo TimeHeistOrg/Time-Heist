@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cvsjvf2hm0j0v" path="res://Modules/Interaction/Computer/app_window.gd" id="1_dotep"]
 [ext_resource type="Texture2D" uid="uid://jkgk1dsduwuc" path="res://Modules/Interaction/Computer/ComputerAssets/file bar top nox.png" id="2_nqhg3"]
-[ext_resource type="Texture2D" uid="uid://balhwiq4nx04k" path="res://Modules/Interaction/Computer/ComputerAssets/close_button_lower.png" id="3_sa258"]
-[ext_resource type="Texture2D" uid="uid://dy2got4dkfd57" path="res://Modules/Interaction/Computer/ComputerAssets/minimize_button_lower.png" id="4_sa258"]
-[ext_resource type="Texture2D" uid="uid://b3cl7tf4p4c2p" path="res://Modules/Interaction/Computer/ComputerAssets/maximize_button_lower.png" id="5_kjki6"]
+[ext_resource type="Texture2D" uid="uid://balhwiq4nx04k" path="res://Modules/Interaction/Computer/ComputerAssets/close_button.png" id="3_sa258"]
+[ext_resource type="Texture2D" uid="uid://dy2got4dkfd57" path="res://Modules/Interaction/Computer/ComputerAssets/minimize_button.png" id="4_sa258"]
+[ext_resource type="Texture2D" uid="uid://b3cl7tf4p4c2p" path="res://Modules/Interaction/Computer/ComputerAssets/maximize_button.png" id="5_kjki6"]
 
 [node name="App Window" type="Control" unique_id=411550248]
 layout_mode = 3

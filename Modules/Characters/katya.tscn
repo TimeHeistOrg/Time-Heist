@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o4040awfxuav"]
 
-[ext_resource type="Script" uid="uid://4754kdk6bsql" path="res://Modules/Characters/katya_lower.gd" id="1_mibd3"]
+[ext_resource type="Script" uid="uid://4754kdk6bsql" path="res://Modules/Characters/katya.gd" id="1_mibd3"]
 [ext_resource type="Resource" uid="uid://b7oh6vsnbai2j" path="res://Content/Dialogue/Homebase/Katya.dialogue" id="2_335ux"]
 [ext_resource type="ArrayMesh" uid="uid://cps2slx5pr627" path="res://Assets/Characters/Katya/katya_body_mesh.mesh" id="3_335ux"]
 [ext_resource type="ArrayMesh" uid="uid://cm64m3eg0n0ht" path="res://Assets/Characters/Katya/katya_hair_mesh.mesh" id="4_335ux"]

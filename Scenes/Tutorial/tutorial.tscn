@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bnuuxuhnd4ps8" path="res://Content/Documents/Textures/18_tutorial_paper.png" id="35_2fa5o"]
 [ext_resource type="PackedScene" uid="uid://cums0n03a6on2" path="res://Modules/Interaction/ClearanceGiver/clearance_giver.tscn" id="37_ek4v5"]
 [ext_resource type="PackedScene" uid="uid://cnj7efh2s8lov" path="res://Modules/LightingAndVisibility/labelsfade.tscn" id="38_0wfx5"]
-[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player_lower.tscn" id="38_3civr"]
+[ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player.tscn" id="38_3civr"]
 [ext_resource type="PackedScene" uid="uid://dow6h3uhurjcs" path="res://Assets/Environment/DeskTable/corner_desk.tscn" id="40_mqc0c"]
 [ext_resource type="PackedScene" uid="uid://d3gtn4sbko11j" path="res://Assets/Environment/Chair/office_chair.tscn" id="41_mwfe8"]
 [ext_resource type="PackedScene" uid="uid://cv00ael0hyxty" path="res://Assets/Environment/DeskTable/meeting_table.tscn" id="42_7kydn"]

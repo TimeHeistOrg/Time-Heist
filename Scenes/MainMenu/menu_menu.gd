@@ -30,7 +30,7 @@ func _on_play_pressed() -> void:
 func dim_lights(lights: Array, duration: float = 0.5) -> void:
 	var tween = create_tween()
 	for light in lights:
-		print(light)
+		#print(light)
 		tween.parallel().tween_property(light, "light_energy", 0.0, duration)
 	await tween.finished
 

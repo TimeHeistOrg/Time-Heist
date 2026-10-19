@@ -29,7 +29,7 @@ func _ready():
 			add_child(tm)
 			#print("path ", tm.get_path())
 		if ui_manager:
-			var uim: UI_Manager = ui_manager_scene.instantiate()
+			var uim: UIManager = ui_manager_scene.instantiate()
 			add_child(uim)
 			#print("path ", uim.get_path())
 		if add_effects:

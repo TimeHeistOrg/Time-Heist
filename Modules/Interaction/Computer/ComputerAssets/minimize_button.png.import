@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cub5cawfvcwbb"
-path="res://.godot/imported/cursor_click_lower.png-3a5eb9b1f6229959fff3917732a3e95d.ctex"
+uid="uid://dy2got4dkfd57"
+path="res://.godot/imported/minimize_button.png-37e55788242c0e2f8dc1a57f7c3fe731.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modules/Interaction/Computer/ComputerAssets/cursor_click_lower.png"
-dest_files=["res://.godot/imported/cursor_click_lower.png-3a5eb9b1f6229959fff3917732a3e95d.ctex"]
+source_file="res://Modules/Interaction/Computer/ComputerAssets/minimize_button.png"
+dest_files=["res://.godot/imported/minimize_button.png-37e55788242c0e2f8dc1a57f7c3fe731.ctex"]
 
 [params]
 

@@ -11,7 +11,7 @@ func _ready() -> void:
 			camera_view.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 			camera_view.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
 			var viewport_texture = ViewportTexture.new()
-			print(camera.get_texture())
+			#print(camera.get_texture())
 			viewport_texture = camera.get_texture()
 			camera_view.texture = viewport_texture
 			grid.add_child(camera_view)

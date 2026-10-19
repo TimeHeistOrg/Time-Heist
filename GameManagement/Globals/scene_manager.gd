@@ -6,7 +6,7 @@ extends Node
 var scene_holder: Node
 var current_scene: Node
 var transition_animator: Node
-var scene_transition := preload("res://Modules/UI/Game UI/scene_transition.tscn")
+var scene_transition := preload("res://Modules/UI/GameUI/scene_transition.tscn")
 
 enum Scene {
 	GAMEPLAY,

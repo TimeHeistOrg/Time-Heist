@@ -38,7 +38,7 @@ func get_exit_grid_pos() -> Vector2i:
 			var col := int(round(px / CELL_SIZE)) - 1
 			var row := int(round(py / CELL_SIZE)) - 1
 			return Vector2i(col, row)
-	print("ERROR: Couldn't find is_exit as true on any children")
+	push_warning("Couldn't find is_exit as true on any children!")
 	return Vector2i(-1, -1)
 	
 # Get the side the exit is on (0 = Top, 1 = Bottom, 2 = Left, 3 = Right, -1 = Error)
@@ -87,12 +87,12 @@ func _generate_border() -> void:
 								(loc < exit_start + exit_size)
 			if tile.get("is_exit") != null:
 				tile.is_exit = is_exit_tile
-
+			
 			# add child
 			add_child(tile)
 			tile.owner = get_tree().edited_scene_root if Engine.is_editor_hint() else owner
-
-	print("Created %dx%d border (play size %d, %d)" % [total_rows, total_cols, grid_rows, grid_cols])
+	
+	#print("Created %dx%d border (play size %d, %d)" % [total_rows, total_cols, grid_rows, grid_cols])
 
 # get exit region stats
 func get_exit_area() -> Dictionary:

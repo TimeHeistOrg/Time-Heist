@@ -10,7 +10,7 @@ func fade_in():
 	if not faded_in:
 		black.show()
 		$AnimationPlayer.play('fade_in')
-		print("OPENING FADE")
+		#print("OPENING FADE")
 		await $AnimationPlayer.animation_finished
 		faded_in = true
 	
@@ -19,5 +19,5 @@ func fade_out():
 		$AnimationPlayer.play('fade_out')
 		await $AnimationPlayer.animation_finished
 		black.hide()
-		print("CLOSING FADE")
+		#print("CLOSING FADE")
 		faded_in = false
