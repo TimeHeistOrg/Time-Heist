@@ -1,5 +1,5 @@
 extends Control
-class_name UI_Manager
+class_name UIManager
 
 @onready var document_viewer = $DocumentViewer
 @onready var debug_ui = $"DEBUG UI"

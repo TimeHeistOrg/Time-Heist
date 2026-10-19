@@ -19,16 +19,14 @@ var is_ready : bool = true : #TIMEVAR
 
 signal keycard_scanned
 
-
 var feedback_timer : Timer
-var default_color : Color = Color(0.081, 0.081, 0.081, 1.0)
 
 func _ready() -> void:
 	feedback_timer = Timer.new()
 	feedback_timer.one_shot = true
 	feedback_timer.timeout.connect(_on_feedback_end)
 	add_child(feedback_timer)
-	indicator.mesh.material.albedo_color = default_color
+	indicator.mesh.material.albedo_color = globals.active_color
 
 func interact():
 	if disabled: 
@@ -64,7 +62,7 @@ func show_feedback(color: Color) -> void:
 	feedback_timer.start(2.0)
 
 func _on_feedback_end() -> void:
-	indicator.mesh.material.albedo_color = default_color
+	indicator.mesh.material.albedo_color = globals.active_color
 
 func disable():
 	disabled = true
