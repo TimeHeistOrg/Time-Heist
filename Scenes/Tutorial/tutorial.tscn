@@ -993,7 +993,6 @@ is_locked = true
 [node name="NPC" parent="Tutorial/Room 6" unique_id=1009577029 instance=ExtResource("27_gbpfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.875, 0, -6)
 catch_enabled = false
-start_offset = inf_neg
 
 [node name="Door scanner" parent="Tutorial/Room 6" unique_id=528108776 node_paths=PackedStringArray("lock") instance=ExtResource("23_7sy1d")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.75, 1.25, -3.25)
