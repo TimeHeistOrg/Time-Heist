@@ -21,6 +21,8 @@
 [ext_resource type="Shader" uid="uid://d1gd8vm0a4uou" path="res://Modules/TimeTravel/TimeTravelFX/time_travel_camera_effect.gdshader" id="18_roy6y"]
 [ext_resource type="PackedScene" uid="uid://cvryici2ywxll" path="res://Modules/UI/Inventory Wheel/inventory_wheel.tscn" id="19_d7xyo"]
 [ext_resource type="Script" uid="uid://w74t1d1ps1fb" path="res://Modules/TimeTravel/TimeTravelFX/time_travel_effect.gd" id="19_u5tep"]
+[ext_resource type="AudioStream" uid="uid://i7jk7ym0v3th" path="res://Assets/Audio/SFX/time_travel_first.ogg" id="22_acwq5"]
+[ext_resource type="AudioStream" uid="uid://c6w1lba1ymw14" path="res://Assets/Audio/SFX/time_travel_end.ogg" id="23_ajmk8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pta86"]
 radius = 0.25
@@ -981,7 +983,7 @@ size = 7.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera Pivot/CameraMarker/Camera3D" unique_id=1937731431]
 
-[node name="TimeTravelRect" type="ColorRect" parent="Camera Pivot/CameraMarker/Camera3D/CanvasLayer" unique_id=1380001694]
+[node name="TimeTravelRect" type="ColorRect" parent="Camera Pivot/CameraMarker/Camera3D/CanvasLayer" unique_id=1380001694 node_paths=PackedStringArray("start_sfx", "end_sfx")]
 material = SubResource("ShaderMaterial_ps8ct")
 anchors_preset = 15
 anchor_right = 1.0
@@ -990,6 +992,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("19_u5tep")
+start_sfx = NodePath("../../../../../TimeTravelStartSFX")
+end_sfx = NodePath("../../../../../TimeTravelStopSFX")
 
 [node name="ColorRect" type="ColorRect" parent="Camera Pivot/CameraMarker/Camera3D/CanvasLayer" unique_id=1010823247]
 visible = false
@@ -1030,3 +1034,9 @@ gui_disable_input = true
 size = Vector2i(1920, 1080)
 
 [node name="Inventory Wheel" parent="SubViewport" unique_id=455971298 instance=ExtResource("19_d7xyo")]
+
+[node name="TimeTravelStartSFX" type="AudioStreamPlayer" parent="." unique_id=1510517680]
+stream = ExtResource("22_acwq5")
+
+[node name="TimeTravelStopSFX" type="AudioStreamPlayer" parent="." unique_id=805823347]
+stream = ExtResource("23_ajmk8")

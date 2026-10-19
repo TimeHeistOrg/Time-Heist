@@ -101,6 +101,7 @@ load_path = "res://.godot/imported/DBempty.png-ddffdb95b591911a933dab6b7af1aa3a.
 load_path = "res://.godot/imported/DBfull.png-0df07d8ec7d360b5bf3adca59d061d77.ctex"
 
 [node name="HUD" type="Control" unique_id=528506545]
+z_index = 4
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
