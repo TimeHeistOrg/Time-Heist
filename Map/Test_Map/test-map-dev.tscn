@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://byhtwts82sw3b"]
 
-[ext_resource type="Script" uid="uid://cr5np8rmg8ooi" path="res://Map/Test_Map/test_map_dev.gd" id="1_0x4y4"]
-[ext_resource type="Script" uid="uid://crf1xu5s3egeq" path="res://Map/Test_Map/dialogue_test_panel.gd" id="2_vmfa2"]
-[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_albedo.png" id="3_asjtl"]
+[ext_resource type="Script" uid="uid://gdxvhew2bqkp" path="res://Map/Test_Map/test_map_dev.gd" id="1_0x4y4"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="3_asjtl"]
 [ext_resource type="PackedScene" uid="uid://op4wmgkxq6jj" path="res://Assets/Blackmail/blackmail_ui.tscn" id="3_kf6sw"]
-[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_ao.png" id="4_kf6sw"]
-[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_metallic.png" id="5_ybrxk"]
-[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_normal-ogl.png" id="6_an24r"]
-[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/TestFloorMat/exquistite-polished-tile_roughness.png" id="7_ogxra"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="4_kf6sw"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="5_ybrxk"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="6_an24r"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="7_ogxra"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6e2xr"]
 
@@ -37,7 +36,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_vmfa2")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1102259148]
 visible = false

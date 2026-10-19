@@ -1,6 +1,5 @@
 extends Node2D
 
-var resource := load("res://Dialogue/test.dialogue")
 var balloon_scene := "res://Dialogue/balloon.tscn"
 var dial_start_loc := "start"
 var dialogue_balloon

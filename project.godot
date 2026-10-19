@@ -31,6 +31,7 @@ global_inventory="*uid://bd6hj8r16s6lx"
 DialogueManager="*uid://c3rodes2l3gxb"
 SceneManager="*uid://cbn2aivlaf362"
 globals="*uid://b33e0ts3t33ox"
+BlackmailManager="*uid://ds68on8euarhv"
 
 [dialogue_manager]
 
