@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3j6f486q3yvk"]
+
+[ext_resource type="Script" uid="uid://jgbbq6dxfg0v" path="res://Modules/Interaction/HideSpot/hide_point.gd" id="1_xi2j3"]
+
+[node name="HidePoint" type="Marker3D" unique_id=1385311744]
+script = ExtResource("1_xi2j3")

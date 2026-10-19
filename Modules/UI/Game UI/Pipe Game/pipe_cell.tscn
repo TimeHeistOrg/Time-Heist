@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cne2roithf6os"]
+
+[ext_resource type="Script" uid="uid://dnrstdlc3i47r" path="res://Modules/UI/Game UI/Pipe Game/pipe_cell.gd" id="1_x5kxx"]
+[ext_resource type="Texture2D" uid="uid://dmcfnjmmhdcf0" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_straight.png" id="2_xrqqm"]
+[ext_resource type="Texture2D" uid="uid://bj2ogqq6ttqux" path="res://Modules/UI/Game UI/Pipe Game/pipe_textures/pipe_90_angle.png" id="3_dwc78"]
+
+[node name="PipeCell" type="TextureRect" unique_id=425733919]
+custom_minimum_size = Vector2(64, 64)
+pivot_offset = Vector2(32, 32)
+script = ExtResource("1_x5kxx")
+straight_texture = ExtResource("2_xrqqm")
+angle_90_texture = ExtResource("3_dwc78")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dqppj2nwbwjuw"]
+
+[ext_resource type="Script" uid="uid://bcaed0hq1u75r" path="res://Modules/UI/Game UI/Sliding Game/sliding_border_tile.gd" id="1_ghi4l"]
+
+[node name="SlidingBorderTile" type="Control" unique_id=825156542]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ghi4l")

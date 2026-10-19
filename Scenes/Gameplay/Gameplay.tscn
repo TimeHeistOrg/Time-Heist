@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dj21llfomqjk7"]
-
-[ext_resource type="Script" uid="uid://okimnarkg6f6" path="res://Scenes/Gameplay/gameplay.gd" id="1_ormwj"]
-[ext_resource type="PackedScene" uid="uid://bcaqr4mgi321y" path="res://Map/basement_lighting.tscn" id="1_ver4l"]
-
-[node name="Gameplay" type="Node3D" unique_id=204437487]
-script = ExtResource("1_ormwj")
-
-[node name="Basement" parent="." unique_id=462452041 instance=ExtResource("1_ver4l")]

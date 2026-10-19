@@ -1,0 +1,15 @@
+~ start
+% => first
+% => second
+~ first
+Arjun: “J-dog! How’s the mission going?”
+Arjun: “Wait, man… have I asked that before? Like, we could have had this conversation sooo many times and I’d have no idea.”
+Arjun: “Trippy.”
+do get_tree().paused = false
+=> END
+~ second
+Arjun: “Did you know I’m really good at keeping secrets, JT?”
+Arjun: “You’ve got to tell me all the juicy insider info you’re finding in there. I could use them to get promoted from intern to senior intern!”
+Arjun: “Or was that part of the plan already…”
+do get_tree().paused = false
+=> END

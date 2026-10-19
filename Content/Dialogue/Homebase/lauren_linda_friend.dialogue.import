@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bjdmsphtr0ptg"
+path="res://.godot/imported/lauren_linda_friend.dialogue-b9b0dc662f0ac29987c41bf32cd8efc5.tres"
+
+[deps]
+
+source_file="res://Content/Dialogue/Homebase/lauren_linda_friend.dialogue"
+dest_files=["res://.godot/imported/lauren_linda_friend.dialogue-b9b0dc662f0ac29987c41bf32cd8efc5.tres"]
+
+[params]
+
+defaults=true

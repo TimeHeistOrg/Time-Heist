@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://ixu3w8mgsrxm"]
+
+[ext_resource type="Texture2D" uid="uid://d16psthp7cv1t" path="res://Content/Items/Textures/keycard.png" id="1_brbdj"]
+[ext_resource type="ArrayMesh" uid="uid://cwpwrgnxqvoa5" path="res://Content/Items/Meshes/bread.res" id="2_ugv3o"]
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="3_srnrd"]
+
+[resource]
+script = ExtResource("3_srnrd")
+name = "Keycard"
+description = "A keycard that reads \"Dry Lab\""
+image = ExtResource("1_brbdj")
+mesh = ExtResource("2_ugv3o")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"

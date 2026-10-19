@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PickupItem" format=3 uid="uid://bl3wymmqufqh2"]
+
+[ext_resource type="Script" uid="uid://dgvkvasouhadn" path="res://Content/Items/items_resource.gd" id="1_0mtsv"]
+[ext_resource type="Texture2D" uid="uid://c4seseltwqufx" path="res://Content/Items/Textures/archive_key.png" id="1_5ivjq"]
+[ext_resource type="ArrayMesh" uid="uid://bvlbaq33kvbs" path="res://Content/Items/Meshes/archive_key.res" id="2_ajvwa"]
+
+[resource]
+script = ExtResource("1_0mtsv")
+name = "Archive Key"
+description = "The key to the Archive Room. Shared by the two librarians that maintain the archives"
+image = ExtResource("1_5ivjq")
+mesh = ExtResource("2_ajvwa")
+metadata/_custom_type_script = "uid://dgvkvasouhadn"

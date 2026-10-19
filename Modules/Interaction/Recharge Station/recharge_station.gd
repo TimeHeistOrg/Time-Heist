@@ -4,7 +4,7 @@ class_name RechargeStation
 var in_zone : bool = false
 var charging : bool = false:
 	set(value):
-		print("set charing to ", value)
+		#print("set charing to ", value)
 		if not value:
 			wire_mesh.clear_surfaces()
 		charging = value
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		if charging:
 			wire_mesh.clear_surfaces()
 			draw_line()
-			globals.time_juice = minf(globals.max_time_juice, globals.time_juice + globals.rewind_charge_per_sec * delta)
+			globals.time_manager.time_juice = minf(globals.time_manager.max_time_juice, globals.time_manager.time_juice + globals.time_manager.rewind_charge_per_sec * delta)
 	pass
 	
 func interact():
@@ -31,8 +31,10 @@ func interact():
 		return
 	if charging: 
 		charging = false
+		globals.stop_charging.emit()
 	else:
 		charging = true
+		globals.start_charging.emit()
 	
 func draw_line():
 	var start_point = Vector3.ZERO  # local origin of the laser node
@@ -49,7 +51,7 @@ func draw_line():
 
 func _on_charge_area_body_entered(body: Node3D) -> void:
 	if body == globals.player:
-		print("entering zone")
+		#print("entering zone")
 		#old_speed = player.current_max_speed
 		#player.current_max_speed = speed_in_zone
 		in_zone = true
@@ -57,8 +59,9 @@ func _on_charge_area_body_entered(body: Node3D) -> void:
 	
 func _on_charge_area_body_exited(body: Node3D) -> void:
 	if body == globals.player:
-		print("exiting zone")
+		#print("exiting zone")
 		#player.current_max_speed = old_speed
 		in_zone = false
 		wire_mesh.clear_surfaces()
 		charging = false
+		globals.stop_charging.emit()

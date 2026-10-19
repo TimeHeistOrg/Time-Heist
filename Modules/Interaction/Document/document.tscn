@@ -14,9 +14,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 transparent = false
 texture_filter = 0
 
-[node name="Interactable" parent="." unique_id=1358523539 node_paths=PackedStringArray("mesh", "interact_object") instance=ExtResource("3_bfmq7")]
-mesh = NodePath("../Sprite3D")
-interact_object = NodePath("..")
+[node name="Interactable" parent="." unique_id=1358523539 instance=ExtResource("3_bfmq7")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1782897562]
 shape = SubResource("BoxShape3D_bwo5f")

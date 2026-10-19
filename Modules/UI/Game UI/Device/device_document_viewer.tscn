@@ -17,7 +17,7 @@ environment = SubResource("Environment_gjq0a")
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, -1.2355669)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=39217723]
-transform = Transform3D(2000, 0, 0, 0, 800, 0, 0, 0, 574.57, 0, 0, -2.220087)
+transform = Transform3D(3000, 0, 0, 0, 2000, 0, 0, 0, 574.57, 0, 0, -2.220087)
 modulate = Color(0, 0, 0, 1)
 texture = SubResource("CanvasTexture_gjq0a")
 

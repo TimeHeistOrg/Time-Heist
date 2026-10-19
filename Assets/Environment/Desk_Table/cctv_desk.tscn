@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dttiswqp5kjij"]
+
+[ext_resource type="PackedScene" uid="uid://baxc0r31om4pa" path="res://Assets/Environment/Stock Assets/Office_Desk_3.fbx" id="1_wq3u0"]
+[ext_resource type="PackedScene" uid="uid://ps0p06w7npfo" path="res://Assets/Environment/Stock Assets/Computer_Old_Monitor.fbx" id="2_lvqw8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vto4r"]
+size = Vector3(2.4247742, 1.8823242, 0.7975769)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m68u3"]
+size = Vector3(2.37, 1.23, 0.46)
+
+[node name="CCTVDesk" type="Node3D" unique_id=243360912]
+
+[node name="Office_Desk_3" parent="." unique_id=758414944 instance=ExtResource("1_wq3u0")]
+
+[node name="Computer_Old_Monitor" parent="." unique_id=1838925896 instance=ExtResource("2_lvqw8")]
+transform = Transform3D(0.9563252, 0, 0.29230493, 0, 1, 0, -0.29230493, 0, 0.9563252, -0.6122949, 0.92599213, 0.0526374)
+
+[node name="Computer_Old_Monitor2" parent="." unique_id=1078568483 instance=ExtResource("2_lvqw8")]
+transform = Transform3D(0.99973464, 0, -0.023036271, 0, 1, 0, 0.023036271, 0, 0.99973464, 0.28229976, 0.92599213, 0.0013055503)
+
+[node name="Computer_Old_Monitor4" parent="." unique_id=61566975 instance=ExtResource("2_lvqw8")]
+transform = Transform3D(0.9297573, 0, -0.3681732, 0, 1, 0, 0.3681732, 0, 0.9297573, 0.72022897, 0.92599213, 0.08149554)
+
+[node name="Computer_Old_Monitor3" parent="." unique_id=1440172897 instance=ExtResource("2_lvqw8")]
+transform = Transform3D(0.99993503, 0, -0.011396766, 0, 1, 0, 0.011396766, 0, 0.99993503, -0.1675485, 0.92599213, -0.013714343)
+
+[node name="Computer_Old_Monitor5" parent="." unique_id=1861244808 instance=ExtResource("2_lvqw8")]
+transform = Transform3D(0.963003, 0, 0.26949134, 0, 1, 0, -0.26949134, 0, 0.963003, -0.37233967, 1.3836892, -0.054736286)
+
+[node name="Computer_Old_Monitor6" parent="." unique_id=1192036719 instance=ExtResource("2_lvqw8")]
+transform = Transform3D(0.8999235, 0, -0.43604815, 0, 1, 0, 0.43604815, 0, 0.8999235, 0.551524, 1.3836892, -0.062951565)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1796130454]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1101068195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0072784424, 0.9953613, -0.023635864)
+shape = SubResource("BoxShape3D_vto4r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=504469731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
+mesh = SubResource("BoxMesh_m68u3")
+skeleton = NodePath("../..")

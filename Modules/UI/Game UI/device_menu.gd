@@ -1,9 +1,21 @@
 extends UI
 class_name DeviceMenu
 
-@onready var menu_tabs: TabContainer = $MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs
+var first_time : bool = true
+@onready var hud: HUD = %HUD
+
+#region Tabs
+@onready var margin_container: MarginContainer = %MarginContainer
+@onready var menu_tabs: PanelContainer = %MenuTabs
 var tabs : Array[MenuTabPanel]
 @export var focused_tab : int = 0
+var tab_assets : Array[Texture] = [
+	preload("res://Assets/UI/Device Menu/databaseselect.png"),
+	preload("res://Assets/UI/Device Menu/inventoryselect.png"),
+	preload("res://Assets/UI/Device Menu/settingsselect.png")
+]
+@onready var tab_texture: TextureRect = %TabTexture
+#endregion
 
 @onready var button_move : AudioStreamPlayer = $ButtonMove
 @onready var button_confirm : AudioStreamPlayer = $ButtonConfirm
@@ -11,6 +23,7 @@ var tabs : Array[MenuTabPanel]
 #$MarginContainer/HBoxContainer/TextureRect/MarginContainer/VBoxContainer/MenuTabs/DeviceFiles.select() #TEMP!
 
 func _ready() -> void:
+	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("RESET")
 	setup_button_sounds(self)
 	for tab in menu_tabs.get_children():
 		tabs.append(tab)
@@ -18,8 +31,28 @@ func _ready() -> void:
 
 func open():
 	super.open()
+	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("open")
+	margin_container.mouse_filter = MOUSE_FILTER_STOP
+	await $CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.animation_finished
+	hud.set_device_icon(false) #hides device hud icon when device is open
 	select_tab(focused_tab)
+	$CanvasLayer2/SubViewportContainer.mouse_filter = MOUSE_FILTER_PASS
 
+func close():
+	get_viewport().gui_release_focus()
+	margin_container.mouse_filter = MOUSE_FILTER_IGNORE
+	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("close")
+	hud.set_device_icon(true) #open device hud icon when device is closed
+	if first_time:
+		$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("RESET")
+		first_time = false
+		super.close()
+	else:
+		await get_tree().create_timer(0.4).timeout
+		super.close()
+	$CanvasLayer2/SubViewportContainer.mouse_filter = MOUSE_FILTER_IGNORE
+
+#region Tab Functions
 func handle_input(_delta):
 	super.handle_input(_delta)
 	if Input.is_action_just_pressed("ui_tab_forward"):
@@ -28,14 +61,28 @@ func handle_input(_delta):
 	if Input.is_action_just_pressed("ui_tab_backwards"):
 		focused_tab = (focused_tab - 1 + tabs.size()) % tabs.size()
 		select_tab(focused_tab)
+	if Input.is_action_just_pressed("device_menu"):
+		close()
 	tabs[focused_tab].handle_input(_delta)
 		
 func select_tab(selected_tab : int):
-	#for tab in tabs:
-		#tab.hide()
+	focused_tab = selected_tab
+	for tab in tabs:
+		tab.hide()
+	tab_texture.texture = tab_assets[selected_tab]
 	tabs[selected_tab].show()
 	tabs[selected_tab].select()
 	button_move.play()
+	
+func _on_database_pressed() -> void:
+	select_tab(0)
+	
+func _on_inventory_pressed() -> void:
+	select_tab(1)
+
+func _on_settings_pressed() -> void:
+	select_tab(2)
+#endregion
 
 func setup_button_sounds(node: Node) -> void:
 	for child in node.get_children():
@@ -56,4 +103,3 @@ func _on_button_pressed() -> void:
 		if button_confirm.playing:
 			button_confirm.stop()
 		button_confirm.play()
-	

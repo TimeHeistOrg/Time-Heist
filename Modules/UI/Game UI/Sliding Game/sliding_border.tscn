@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://kp0kf6edjmno"]
+
+[ext_resource type="Script" uid="uid://bygnllhheg0bt" path="res://Modules/UI/Game UI/Sliding Game/sliding_border.gd" id="1_uatha"]
+
+[node name="SlidingBorder" type="Control" unique_id=558620757]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uatha")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ComputerData" format=3 uid="uid://cc73my60cuw3e"]
+
+[ext_resource type="Script" uid="uid://bh2lgnvkrmn2e" path="res://Modules/Interaction/Computer/Resources/app_data.gd" id="1_v7g42"]
+[ext_resource type="Script" uid="uid://drdqf0ywp8oy7" path="res://Modules/Interaction/Computer/Resources/computer_data.gd" id="2_gjvhf"]
+
+[resource]
+script = ExtResource("2_gjvhf")
+metadata/_custom_type_script = "uid://drdqf0ywp8oy7"

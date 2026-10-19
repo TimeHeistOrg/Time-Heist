@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://b751ng4sj0vkt"]
+
+[ext_resource type="Texture2D" uid="uid://pby23nxijoct" path="res://Content/Documents/Textures/17_tutorial_file.png" id="1_5rt2k"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="2_37qgj"]
+
+[resource]
+script = ExtResource("2_37qgj")
+document_id = 17
+title = "File!"
+document_image = ExtResource("1_5rt2k")
+relevant_tags = Array[String](["This is a folder", "All Files"])
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DocumentInfo" format=3 uid="uid://26wao2ods0hq"]
+
+[ext_resource type="Texture2D" uid="uid://cv8x5rymrofqt" path="res://Content/Documents/Textures/14_office_map.png" id="1_iu7yt"]
+[ext_resource type="Script" uid="uid://c4r7d4bl70rat" path="res://Content/Documents/document_resource.gd" id="1_ts2bt"]
+
+[resource]
+script = ExtResource("1_ts2bt")
+document_id = 14
+title = "Office Map"
+document_image = ExtResource("1_iu7yt")
+relevant_tags = Array[String](["Map", "All Files"])
+metadata/_custom_type_script = "uid://c4r7d4bl70rat"

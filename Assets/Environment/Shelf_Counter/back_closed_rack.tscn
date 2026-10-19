@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bpw8hnf2ethgj"]
+
+[ext_resource type="PackedScene" uid="uid://dpdvkht1hejii" path="res://Assets/Environment/Imported Assets/BigFrame.fbx" id="1_qmiey"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udxfg"]
+size = Vector3(0.82263184, 1.9519043, 0.25805664)
+
+[node name="BackClosedRack" type="Node3D" unique_id=306160027]
+
+[node name="BigFrame" parent="." unique_id=1749198266 instance=ExtResource("1_qmiey")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2055743909]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1927576856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032348633, 0.9725342, -0.0013427734)
+shape = SubResource("BoxShape3D_udxfg")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b0de055ebbyya"]
+
+[ext_resource type="Script" uid="uid://dlv6psnj1vee3" path="res://Modules/Interaction/Security Cameras/security_computer.gd" id="1_vto4r"]
+[ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_m68u3"]
+[ext_resource type="PackedScene" uid="uid://dttiswqp5kjij" path="res://Assets/Environment/Desk_Table/cctv_desk.tscn" id="3_osff4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apjpk"]
+size = Vector3(2.5, 1.75, 1)
+
+[node name="SecurityTable" type="Node3D" unique_id=2091381812]
+script = ExtResource("1_vto4r")
+
+[node name="Interactable" parent="." unique_id=242002428 instance=ExtResource("3_m68u3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=191127591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("BoxShape3D_apjpk")
+
+[node name="CCTVDesk" parent="." unique_id=243360912 instance=ExtResource("3_osff4")]
+
+[connection signal="anon_interacted" from="Interactable" to="." method="interact"]

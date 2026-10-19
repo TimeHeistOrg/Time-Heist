@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://douyrmcftak5u"
+path="res://.godot/imported/homebase_friend.dialogue-e3fa825ef6e6ff57b015d36908341978.tres"
+
+[deps]
+
+source_file="res://Content/Dialogue/Homebase/homebase_friend.dialogue"
+dest_files=["res://.godot/imported/homebase_friend.dialogue-e3fa825ef6e6ff57b015d36908341978.tres"]
+
+[params]
+
+defaults=true

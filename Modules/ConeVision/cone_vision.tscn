@@ -1,162 +1,8 @@
 [gd_scene format=3 uid="uid://dyhnk6p2fbc87"]
 
-[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Effects/laser.gdshader" id="1_kdpmb"]
-[ext_resource type="Script" uid="uid://dydv15dtbt8or" path="res://Modules/ConeVision/laser_cylinder.gd" id="2_n627y"]
-[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/SFX/laser.ogg" id="3_1cksi"]
-
-[sub_resource type="GDScript" id="GDScript_23e0v"]
-resource_name = "cone_vision"
-script/source = "@tool
-extends Area3D
-
-var player_in_zone : bool
-var player_spotted : bool
-@onready var sight_checker := $SightChecker
-@onready var collision := $CollisionPolygon3D
-@onready var laser: MeshInstance3D = $Laser
-@onready var laser_mesh: ImmediateMesh = laser.mesh
-
-@onready var laser_node : MeshInstance3D = $LaserCylinder
-@onready var laser_sfx : AudioStreamPlayer = $AudioStreamPlayer
-
-@export var on_gaurd : bool = true
-@export var use_overriden_vals : bool = false
-var disabled : bool = false : #TIMEVAR
-	set(value):
-		if globals.time_manager and globals.time_manager.logging:
-			globals.time_manager.timelog(self,\"disabled\",disabled,value)
-		disabled = value
-		process_mode = Node.PROCESS_MODE_DISABLED if value else Node.PROCESS_MODE_INHERIT
-
-var time_detecting: float = 0
-
-@export var sight_line_angle : float = 130:
-	set(value):
-		sight_line_angle = value
-		create_mesh()
-@export var sight_line_radius : float = 15:
-	set(value):
-		sight_line_radius = value
-		create_mesh()
-@export var smaller_sight_line_radius : float = 1.5:
-	set(value):
-		smaller_sight_line_radius = value
-		create_mesh()
-@export var time_till_caught : float = 2
-@export var angle_steps : float = 5:
-	set(value):
-		angle_steps = value
-		create_mesh()
-
-var polygon_points : PackedVector2Array = []
-
-func _ready() -> void:
-	if not Engine.is_editor_hint():
-		if not use_overriden_vals:
-			sight_line_angle = globals.gaurd_sight_line_angle if on_gaurd else globals.person_sight_line_angle
-			sight_line_radius = globals.gaurd_sight_line_radius if on_gaurd else globals.person_sight_line_radius
-			smaller_sight_line_radius = globals.gaurd_smaller_sight_line_radius if on_gaurd else globals.person_smaller_sight_line_radius
-		
-		globals.safe_ratio = 1
-		sight_checker.target_position.z = -sight_line_radius
-		create_mesh()
-		collision.polygon = polygon_points
-		laser_node.visible = false
-
-func create_mesh():
-	polygon_points = []
-	var start_angle = -(sight_line_angle/2)
-	var end_angle = sight_line_angle/2
-	
-	var current_angle = start_angle
-	while current_angle <= end_angle:
-		var rad = deg_to_rad(current_angle)
-		polygon_points.append(Vector2(
-			sight_line_radius * sin(rad),
-			-sight_line_radius * cos(rad)
-		))
-		current_angle += angle_steps
-	
-	if smaller_sight_line_radius == 0:
-		polygon_points.append(Vector2.ZERO)
-	else:
-		end_angle = start_angle+360 #finish the loop around
-		while current_angle <= end_angle:
-			var rad = deg_to_rad(current_angle)
-			polygon_points.append(Vector2(
-				smaller_sight_line_radius * sin(rad),
-				-smaller_sight_line_radius * cos(rad)
-			))
-			current_angle += angle_steps
-		
-		
-	#current_angle = end_angle 
-	#while current_angle >= start_angle:
-		#var rad = deg_to_rad(current_angle)
-		#polygon_points.append(Vector2(
-			#-smaller_sight_line_radius * sin(rad),
-			#smaller_sight_line_radius * cos(rad)
-		#))
-		#current_angle -= angle_steps
-
-	if collision:
-		collision.polygon = polygon_points
-	
-func _process(delta: float) -> void:
-	if not Engine.is_editor_hint():
-		if player_in_zone and globals.player.can_be_seen and not globals.time_manager.is_time_traveling:
-			#sight_checker.look_at(Vector3(globals.player.global_position.x, 1, globals.player.global_position.z))
-			sight_checker.look_at(globals.player.detection_point.global_position)
-			
-			if sight_checker.get_collider() == globals.player:
-				player_spotted = true
-			else:
-				player_spotted = false
-				laser_sfx.stop()
-				laser_node.visible = false
-				
-		if player_spotted and globals.player.can_be_seen and not globals.time_manager.is_time_traveling:
-			time_detecting += globals.time_manager.delta_time
-			laser_mesh.clear_surfaces()
-			draw_line()
-			if laser_sfx.playing == false:
-				laser_sfx.play()
-		else:
-			time_detecting = max(time_detecting - delta, 0.0)
-			laser_mesh.clear_surfaces()
-			laser_node.visible = false
-			laser_sfx.stop()
-		
-		
-		globals.safe_ratio = min(globals.safe_ratio, (time_till_caught - time_detecting) / time_till_caught)
-		if time_detecting >= time_till_caught:
-			caught()
-
-func _on_body_entered(body: Node3D) -> void:
-	if body == globals.player:
-		player_in_zone = true
-		
-func _on_body_exited(body: Node3D) -> void:
-	if body == globals.player:
-		player_in_zone = false 
-		player_spotted = false
-		#time_detecting = 0
-		#globals.safe_ratio = (time_till_caught - time_detecting) / time_till_caught
-		laser_mesh.clear_surfaces()
-		laser_node.visible = false
-	
-func caught() -> void:
-	globals.player_caught()
-
-func draw_line():
-	laser_node.visible = true
-	laser_node.update_beam(sight_checker.global_position, globals.player.global_position + Vector3(0, 1.0, 0))
-
-
-func _on_npc_hitbox_body_entered(body: Node3D) -> void:
-	if body == globals.player and globals.player.can_be_seen:
-		caught()
-"
+[ext_resource type="Script" uid="uid://cfi4568w1mep7" path="res://Modules/ConeVision/cone_vision.gd" id="1_a0itm"]
+[ext_resource type="Shader" uid="uid://drgbpq2p48wou" path="res://Modules/AI/Guard/laser.gdshader" id="1_kdpmb"]
+[ext_resource type="AudioStream" uid="uid://cuq3predooygd" path="res://Assets/Audio/SFX/laser.ogg" id="3_1cksi"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_23e0v"]
 
@@ -189,12 +35,13 @@ height = 1.0
 size = Vector3(1, 1.9223633, 1)
 
 [node name="Cone Vision" type="Area3D" unique_id=1869490121]
-script = SubResource("GDScript_23e0v")
+script = ExtResource("1_a0itm")
+smaller_sight_line_angle = 65.0
 time_till_caught = 1.0
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." unique_id=955152349]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-polygon = PackedVector2Array(-13.594617, -6.339274, -12.990381, -7.5, -12.287281, -8.603646, -11.490666, -9.641814, -10.606602, -10.606602, -9.641814, -11.490666, -8.603646, -12.287281, -7.5, -12.990381, -6.339274, -13.594617, -5.130302, -14.095389, -3.8822856, -14.488888, -2.6047227, -14.772117, -1.3073361, -14.942921, 0, -15, 1.3073361, -14.942921, 2.6047227, -14.772117, 3.8822856, -14.488888, 5.130302, -14.095389, 6.339274, -13.594617, 7.5, -12.990381, 8.603646, -12.287281, 9.641814, -11.490666, 10.606602, -10.606602, 11.490666, -9.641814, 12.287281, -8.603646, 12.990381, -7.5, 13.594617, -6.339274, 1.409539, -0.51303023, 1.4488888, -0.38822857, 1.4772116, -0.26047227, 1.494292, -0.13073361, 1.5, -9.184851e-17, 1.494292, 0.13073361, 1.4772116, 0.26047227, 1.4488888, 0.38822857, 1.409539, 0.51303023, 1.3594617, 0.6339274, 1.299038, 0.75, 1.228728, 0.8603647, 1.1490667, 0.9641814, 1.0606601, 1.0606601, 0.9641814, 1.1490667, 0.8603647, 1.228728, 0.75, 1.299038, 0.6339274, 1.3594617, 0.51303023, 1.409539, 0.38822857, 1.4488888, 0.26047227, 1.4772116, 0.13073361, 1.494292, 1.8369701e-16, 1.5, -0.13073361, 1.494292, -0.26047227, 1.4772116, -0.38822857, 1.4488888, -0.51303023, 1.409539, -0.6339274, 1.3594617, -0.75, 1.299038, -0.8603647, 1.228728, -0.9641814, 1.1490667, -1.0606601, 1.0606601, -1.1490667, 0.9641814, -1.228728, 0.8603647, -1.299038, 0.75, -1.3594617, 0.6339274, -1.409539, 0.51303023, -1.4488888, 0.38822857, -1.4772116, 0.26047227, -1.494292, 0.13073361, -1.5, 2.7554554e-16, -1.494292, -0.13073361, -1.4772116, -0.26047227, -1.4488888, -0.38822857, -1.409539, -0.51303023, -1.3594617, -0.6339274)
+polygon = PackedVector2Array(-13.594617, -6.339274, -12.990381, -7.5, -12.287281, -8.603646, -11.490666, -9.641814, -10.606602, -10.606602, -9.641814, -11.490666, -8.603646, -12.287281, -7.5, -12.990381, -6.339274, -13.594617, -5.130302, -14.095389, -3.8822856, -14.488888, -2.6047227, -14.772117, -1.3073361, -14.942921, 0, -15, 1.3073361, -14.942921, 2.6047227, -14.772117, 3.8822856, -14.488888, 5.130302, -14.095389, 6.339274, -13.594617, 7.5, -12.990381, 8.603646, -12.287281, 9.641814, -11.490666, 10.606602, -10.606602, 11.490666, -9.641814, 12.287281, -8.603646, 12.990381, -7.5, 13.594617, -6.339274, 1.409539, -0.51303023, 1.4488888, -0.38822857, 1.4772116, -0.26047227, 1.494292, -0.13073361, 1.5, -9.1845477e-17, 1.494292, 0.13073361, 1.4772116, 0.26047227, 1.4488888, 0.38822857, 1.409539, 0.51303023, 1.3594617, 0.6339274, 1.299038, 0.75, 1.228728, 0.8603647, 1.1490667, 0.9641814, 0, 0, -1.228728, 0.8603647, -1.299038, 0.75, -1.3594617, 0.6339274, -1.409539, 0.51303023, -1.4488888, 0.38822857, -1.4772116, 0.26047227, -1.494292, 0.13073361, -1.5, 2.7553643e-16, -1.494292, -0.13073361, -1.4772116, -0.26047227, -1.4488888, -0.38822857, -1.409539, -0.51303023, -1.3594617, -0.6339274)
 debug_color = Color(15.793283, 0, 8.468667, 1)
 
 [node name="SightChecker" type="RayCast3D" parent="." unique_id=716854366]
@@ -205,12 +52,13 @@ collision_mask = 9
 [node name="Laser" type="MeshInstance3D" parent="." unique_id=836442765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 visible = false
+layers = 9
 mesh = SubResource("ImmediateMesh_23e0v")
 
 [node name="LaserCylinder" type="MeshInstance3D" parent="." unique_id=1530977473]
 visible = false
+layers = 9
 mesh = SubResource("CylinderMesh_kdpmb")
-script = ExtResource("2_n627y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=935075018]
 stream = ExtResource("3_1cksi")

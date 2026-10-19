@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cbtqqo3a4oo70"]
+
+[ext_resource type="Script" uid="uid://vgwqte4k53qv" path="res://Modules/UI/Game UI/Pipe Game/pipe_row.gd" id="1_uighh"]
+
+[node name="PipeRow" type="Control" unique_id=520973626]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uighh")

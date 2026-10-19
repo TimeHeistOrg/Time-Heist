@@ -1,7 +1,27 @@
-[gd_scene format=3 uid="uid://0o2xjnq7qhqi"]
+[gd_scene format=3 uid="uid://bg7iu282q1yhs"]
 
-[ext_resource type="Script" uid="uid://dv3pmyjmcfrbs" path="res://Scenes/Main Menu/main_menu.gd" id="1_udvrb"]
-[ext_resource type="Texture2D" uid="uid://rk2jgw3f23q" path="res://Assets/UI/Main Menu/Screenshot 2025-11-21 at 01.35.53.png" id="2_u5mth"]
+[sub_resource type="GDScript" id="GDScript_287i0"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+
+func _on_play_pressed() -> void:
+	SceneManager.change_scene(SceneManager.Scene.TUTORIAL)
+	pass
+
+func _on_settings_pressed():
+	pass # Replace with function body.
+
+func _on_credits_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t58hr"]
+load_path = "res://.godot/imported/Screenshot 2025-11-21 at 01.35.53.png-f93b5572ebc484fc946e34b822dcd8eb.ctex"
 
 [node name="Control" type="Control" unique_id=1731609564]
 layout_mode = 3
@@ -10,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_udvrb")
+script = SubResource("GDScript_287i0")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1041832130]
 layout_mode = 1
@@ -31,7 +51,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_u5mth")
+texture = SubResource("CompressedTexture2D_t58hr")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1063009141]

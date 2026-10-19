@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://q5g0v26dm1my"]
+
+[ext_resource type="Script" uid="uid://cvsjvf2hm0j0v" path="res://Modules/Interaction/Computer/app_window.gd" id="1_dotep"]
+[ext_resource type="Texture2D" uid="uid://jkgk1dsduwuc" path="res://Modules/Interaction/Computer/ComputerAssets/file bar top nox.png" id="2_nqhg3"]
+[ext_resource type="Texture2D" uid="uid://balhwiq4nx04k" path="res://Modules/Interaction/Computer/ComputerAssets/Close_Button.png" id="3_sa258"]
+[ext_resource type="Texture2D" uid="uid://dy2got4dkfd57" path="res://Modules/Interaction/Computer/ComputerAssets/Minimize_Button.png" id="4_sa258"]
+[ext_resource type="Texture2D" uid="uid://b3cl7tf4p4c2p" path="res://Modules/Interaction/Computer/ComputerAssets/Maximize_Button.png" id="5_kjki6"]
+
+[node name="App Window" type="Control" unique_id=411550248]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dotep")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1296257520]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bar" type="NinePatchRect" parent="VBoxContainer" unique_id=1134167444]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+texture = ExtResource("2_nqhg3")
+patch_margin_left = 220
+patch_margin_right = 220
+
+[node name="Drag" type="Button" parent="VBoxContainer/Bar" unique_id=1953460896]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+action_mode = 0
+
+[node name="Close" type="TextureButton" parent="VBoxContainer/Bar" unique_id=452228202]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 7.0
+offset_right = 73.0
+offset_bottom = 57.0
+texture_pressed = ExtResource("3_sa258")
+texture_hover = ExtResource("3_sa258")
+texture_focused = ExtResource("3_sa258")
+
+[node name="Minimize" type="TextureButton" parent="VBoxContainer/Bar" unique_id=1005503328]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 94.0
+offset_top = 7.0
+offset_right = 144.0
+offset_bottom = 57.000008
+texture_pressed = ExtResource("4_sa258")
+texture_hover = ExtResource("4_sa258")
+texture_focused = ExtResource("4_sa258")
+
+[node name="Maximize" type="TextureButton" parent="VBoxContainer/Bar" unique_id=2084130901]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 165.0
+offset_top = 7.0
+offset_right = 215.0
+offset_bottom = 57.00001
+texture_pressed = ExtResource("5_kjki6")
+texture_hover = ExtResource("5_kjki6")
+texture_focused = ExtResource("5_kjki6")
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1951333107]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Panel" unique_id=148758486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.7372549, 0.972549, 1, 0.34117648)
+
+[connection signal="button_up" from="VBoxContainer/Bar/Drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="VBoxContainer/Bar/Drag" to="." method="_on_drag_pressed"]
+[connection signal="pressed" from="VBoxContainer/Bar/Close" to="." method="_on_close_pressed"]

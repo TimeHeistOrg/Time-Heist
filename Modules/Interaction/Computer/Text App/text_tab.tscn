@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dplsscrfppaxu" path="res://Modules/Interaction/Computer/Text App/text_tab.gd" id="1_5ndhg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ndhg"]
+bg_color = Color(0.7882353, 0.91764706, 0.9607843, 1)
+
 [node name="Text Tab" type="Control" unique_id=1299058217]
 layout_mode = 3
 anchors_preset = 15
@@ -28,6 +31,8 @@ size_flags_stretch_ratio = 0.3
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ndhg")
+follow_focus = true
 horizontal_scroll_mode = 0
 
 [node name="Chatlog" type="VBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=1950848013]
