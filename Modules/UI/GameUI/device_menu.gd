@@ -29,8 +29,13 @@ func _ready() -> void:
 		tabs.append(tab)
 	select_tab(focused_tab)
 
+func _set_viewport_containers_visible(value: bool) -> void:
+	for container: SubViewportContainer in find_children("*", "SubViewportContainer", true, false):
+		container.visible = value
+
 func open():
 	super.open()
+	_set_viewport_containers_visible(true)
 	$CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.play("open")
 	margin_container.mouse_filter = MOUSE_FILTER_STOP
 	await $CanvasLayer/SubViewportContainer/SubViewport/AnimationPlayer.animation_finished
@@ -51,6 +56,7 @@ func close():
 		await get_tree().create_timer(0.4).timeout
 		super.close()
 	$CanvasLayer2/SubViewportContainer.mouse_filter = MOUSE_FILTER_IGNORE
+	_set_viewport_containers_visible(false)
 
 #region Tab Functions
 func handle_input(_delta):

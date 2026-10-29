@@ -109,7 +109,6 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/HBoxContainer/Control/RightPanel" unique_id=532101542]
 handle_input_locally = false
 size = Vector2i(644, 1040)
-render_target_update_mode = 4
 
 [node name="DeviceDocumentViewer" parent="MarginContainer/HBoxContainer/Control/RightPanel/SubViewport" unique_id=1694635236 instance=ExtResource("4_xvwb1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.544469, 0)
