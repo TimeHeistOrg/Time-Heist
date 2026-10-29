@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ds171imx2qg0u" path="res://Modules/UI/GameUI/MiniTimeJuiceBar/mini_time_juice_bar.tscn" id="8_pmuwh"]
 [ext_resource type="PackedScene" uid="uid://ddugiq37t31fv" path="res://Assets/Environment/Imported Assets/TimeMachine_left.fbx" id="10_q575b"]
 [ext_resource type="PackedScene" uid="uid://coioh5wpt010b" path="res://Assets/Environment/Imported Assets/TimeMachine_right.fbx" id="11_mgddb"]
+[ext_resource type="Shader" uid="uid://beksu36c7ch7e" path="res://Modules/UI/GameUI/device_hologram.gdshader" id="hologram_shader"]
 
 [sub_resource type="Animation" id="Animation_upcod"]
 length = 0.001
@@ -107,6 +108,14 @@ _data = {
 &"open": SubResource("Animation_q575b")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hologram"]
+shader = ExtResource("hologram_shader")
+shader_parameter/panel_color = Color(0.015, 0.12, 0.22, 0.82)
+shader_parameter/rim_color = Color(0.18, 0.75, 1, 1)
+shader_parameter/scanline_strength = 0.10000000475
+shader_parameter/num_scanlines = 750.000035625
+shader_parameter/scanline_speed = 25.0000011875
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmuwh"]
 
 [node name="Control" type="Control" unique_id=1283105560]
@@ -146,13 +155,13 @@ cull_mask = 512
 [node name="TimeMachine_left" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1942334391 instance=ExtResource("10_q575b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
 
-[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=310105191]
+[node name="LEFT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_left" index="0" unique_id=501240637]
 layers = 512
 
 [node name="TimeMachine_right" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1412619158 instance=ExtResource("11_mgddb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25)
 
-[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=1759296469]
+[node name="RIGHT" parent="CanvasLayer/SubViewportContainer/SubViewport/TimeMachine_right" index="0" unique_id=1503046572]
 layers = 512
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=25230241]
@@ -203,6 +212,7 @@ size_flags_horizontal = 4
 
 [node name="TextureRect" type="ColorRect" parent="CanvasLayer2/SubViewportContainer/SubViewport/MarginContainer/HBoxContainer" unique_id=815694146]
 modulate = Color(1, 1, 1, 0.8117647)
+material = SubResource("ShaderMaterial_hologram")
 custom_minimum_size = Vector2(1420, 0)
 layout_mode = 1
 anchors_preset = 8
