@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c24oss5y2dxln"]
 
-[ext_resource type="Script" uid="uid://bfwqxyqh6uiwb" path="res://Modules/Interaction/Door/sliding_door.gd" id="1_41jsa"]
+[ext_resource type="Script" uid="uid://bfwqxyqh6uiwb" path="res://Modules/Interaction/Door/SlidingDoor/sliding_door.gd" id="1_41jsa"]
 [ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="1_82oao"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_5lu3a"]
 [ext_resource type="Animation" uid="uid://ec4gasgjg1wi" path="res://Assets/Animations/Doors/ClearanceDoor/clearance_door_open_left.res" id="2_41jsa"]

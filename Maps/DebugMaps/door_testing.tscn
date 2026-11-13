@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="6_cadfr"]
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="7_wt0mv"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Modules/MapBuilding/MeshLibrary.tres" id="8_feif3"]
-[ext_resource type="PackedScene" uid="uid://00k0re5x71sa" path="res://Modules/Interaction/Door/base_door.tscn" id="9_0pv87"]
-[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="10_lyoq6"]
-[ext_resource type="PackedScene" uid="uid://25n08ywscgkj" path="res://Modules/Interaction/Door/bars.tscn" id="11_kneyq"]
-[ext_resource type="PackedScene" uid="uid://cfopbjoaqp7ku" path="res://Modules/Interaction/Door/double_swinging_door.tscn" id="12_tiovk"]
-[ext_resource type="PackedScene" uid="uid://b02sy8jnytlnw" path="res://Modules/Interaction/Door/hidden_door.tscn" id="13_ad844"]
-[ext_resource type="PackedScene" uid="uid://c24oss5y2dxln" path="res://Modules/Interaction/Door/clearance_door.tscn" id="14_4agmq"]
-[ext_resource type="PackedScene" uid="uid://dtyptm54g0k4j" path="res://Modules/Interaction/Door/double_clearance_door.tscn" id="15_kdw54"]
+[ext_resource type="PackedScene" uid="uid://00k0re5x71sa" path="res://Modules/Interaction/Door/BaseDoor/base_door.tscn" id="9_0pv87"]
+[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/SwingingDoor/swinging_door.tscn" id="10_lyoq6"]
+[ext_resource type="PackedScene" uid="uid://25n08ywscgkj" path="res://Modules/Interaction/Door/door_block.tscn" id="11_kneyq"]
+[ext_resource type="PackedScene" uid="uid://cfopbjoaqp7ku" path="res://Modules/Interaction/Door/SwingingDoor/double_swinging_door.tscn" id="12_tiovk"]
+[ext_resource type="PackedScene" uid="uid://b02sy8jnytlnw" path="res://Modules/Interaction/Door/SlidingDoor/hidden_door.tscn" id="13_ad844"]
+[ext_resource type="PackedScene" uid="uid://c24oss5y2dxln" path="res://Modules/Interaction/Door/SlidingDoor/ClearanceDoor/clearance_door.tscn" id="14_4agmq"]
+[ext_resource type="PackedScene" uid="uid://dtyptm54g0k4j" path="res://Modules/Interaction/Door/SlidingDoor/ClearanceDoor/double_clearance_door.tscn" id="15_kdw54"]
 
 [sub_resource type="GDScript" id="GDScript_2h3rx"]
 resource_name = "DoorTesting"
@@ -79,17 +79,23 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="BaseDoor" parent="." unique_id=1176759108 instance=ExtResource("9_0pv87")]
+[node name="BaseDoor" parent="." unique_id=1176759108 node_paths=PackedStringArray("blocker") instance=ExtResource("9_0pv87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
+blocker = NodePath("DoorBlock")
+
+[node name="DoorBlock" parent="BaseDoor" unique_id=206787475 instance=ExtResource("11_kneyq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125)
 
-[node name="SwingingDoor" parent="." unique_id=952628281 instance=ExtResource("10_lyoq6")]
+[node name="SwingingDoor" parent="." unique_id=952628281 node_paths=PackedStringArray("blocker") instance=ExtResource("10_lyoq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.625, 0, 0.125)
+blocker = NodePath("Bars")
 
-[node name="Bars" parent="SwingingDoor" unique_id=206787475 instance=ExtResource("11_kneyq")]
+[node name="Bars" parent="SwingingDoor" unique_id=176097256 instance=ExtResource("11_kneyq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0, 0.125)
 
-[node name="DoubleSwingingDoor" parent="." unique_id=1374691189 instance=ExtResource("12_tiovk")]
+[node name="DoubleSwingingDoor" parent="." unique_id=1374691189 node_paths=PackedStringArray("blocker") instance=ExtResource("12_tiovk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.625, 0, 0.125)
+blocker = NodePath("Bars")
 
 [node name="Bars" parent="DoubleSwingingDoor" unique_id=57149866 instance=ExtResource("11_kneyq")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 0, 0.125)

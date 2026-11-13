@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="8_nr5nl"]
 [ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Modules/MapBuilding/MeshLibrary.tres" id="9_0wmwb"]
 [ext_resource type="Script" uid="uid://eqki63ticm1v" path="res://Modules/MapBuilding/room.gd" id="10_k05aa"]
-[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="11_dfokh"]
+[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/SwingingDoor/swinging_door.tscn" id="11_dfokh"]
 [ext_resource type="PackedScene" uid="uid://bxqpme2qjir3g" path="res://Modules/MapBuilding/office_light.tscn" id="12_4353k"]
 [ext_resource type="PackedScene" uid="uid://b17uyj1mwvfcl" path="res://Assets/Environment/Shelf_Counter/old_counter.tscn" id="18_capbt"]
 [ext_resource type="PackedScene" uid="uid://djn3ckwc8enih" path="res://Modules/Interaction/Document/document.tscn" id="19_gewwa"]

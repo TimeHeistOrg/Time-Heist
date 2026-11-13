@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/Player.tscn" id="8_rbmgi"]
 [ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="10_07tka"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="12_07tka"]
-[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="13_ad6bp"]
+[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/SwingingDoor/swinging_door.tscn" id="13_ad6bp"]
 [ext_resource type="PackedScene" uid="uid://d34pm0fchacnp" path="res://Modules/Interaction/Computer/computer.tscn" id="13_k1gnt"]
 [ext_resource type="PackedScene" uid="uid://ctftfayvoseda" path="res://Modules/Interaction/Puzzles/puzzle_panel.tscn" id="14_k1gnt"]
 [ext_resource type="PackedScene" uid="uid://hkkw08i1o4v3" path="res://Modules/UI/Game UI/Pipe Game/pipe_game.tscn" id="15_fry3c"]

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d30xr8t56lq6a" path="res://Modules/Interaction/Door/lever.tscn" id="12_77kbt"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="13_2c0jc"]
 [ext_resource type="PackedScene" uid="uid://bil2lllkaw31i" path="res://Modules/Interaction/Door/keycard_scanner.tscn" id="14_3qgfm"]
-[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/swinging_door.tscn" id="15_b4jh7"]
+[ext_resource type="PackedScene" uid="uid://cx8krs27ywg7n" path="res://Modules/Interaction/Door/SwingingDoor/swinging_door.tscn" id="15_b4jh7"]
 [ext_resource type="PackedScene" uid="uid://b6wv5r50sr8bh" path="res://Modules/Interaction/Item/item.tscn" id="16_gkbqk"]
 [ext_resource type="Resource" uid="uid://ixu3w8mgsrxm" path="res://Content/Items/Resources/z3_drylab_keycard.tres" id="17_jbpi7"]
 [ext_resource type="PackedScene" uid="uid://cvmqwgofqw5y5" path="res://Assets/Environment/Desk_Table/old_standard_desk.tscn" id="18_e0ig8"]

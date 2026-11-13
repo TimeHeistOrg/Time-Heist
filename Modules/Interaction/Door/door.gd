@@ -11,6 +11,9 @@ signal disabled(value: bool)
 ## Pass in that locker that locks this door
 @export var locker: Lockable = null
 
+## Pass in a door block that blocks this door
+@export var blocker: DoorBlock = null
+
 ## Flag if door is open
 @export var is_open: bool = false : #TIMEVAR
 	set(value):
@@ -122,6 +125,8 @@ func toggle_disabled():
 
 
 func anon_interacted():
+	if blocker and not blocker.is_open:
+		return
 	if is_open:
 			close()
 	else:

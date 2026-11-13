@@ -1,5 +1,6 @@
 @tool
-class_name BaseDoor extends Door
+class_name BaseDoor
+extends Door
 
 @export var mesh: MeshInstance3D
 @export var collider: StaticBody3D

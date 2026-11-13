@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cx8krs27ywg7n"]
 
-[ext_resource type="Script" uid="uid://cxepg7lglx3xo" path="res://Modules/Interaction/Door/swinging_door.gd" id="1_nrs4m"]
+[ext_resource type="Script" uid="uid://cxepg7lglx3xo" path="res://Modules/Interaction/Door/SwingingDoor/swinging_door.gd" id="1_nrs4m"]
 [ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="2_n0b05"]
 [ext_resource type="Animation" uid="uid://co52kx6cgxusw" path="res://Assets/Animations/Doors/SingleDoor/Door_Action_Open.res" id="2_unmcj"]
 [ext_resource type="Animation" uid="uid://dt7sylifjqlld" path="res://Assets/Animations/Doors/SingleDoor/Reverse_Door_Action_Open.res" id="3_gyc77"]

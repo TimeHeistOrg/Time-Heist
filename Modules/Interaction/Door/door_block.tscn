@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://25n08ywscgkj"]
 
 [ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="1_5pe30"]
-[ext_resource type="Script" uid="uid://b57njsw2folpa" path="res://Modules/Interaction/Door/bars.gd" id="1_ibkef"]
-[ext_resource type="Animation" uid="uid://dm0j58dgoe77r" path="res://Assets/Animations/Doors/Bars/BarsClosed.res" id="2_ut5oi"]
-[ext_resource type="Animation" uid="uid://oau5q3islsjn" path="res://Assets/Animations/Doors/Bars/BarsClosing.res" id="3_215d8"]
+[ext_resource type="Script" uid="uid://b57njsw2folpa" path="res://Modules/Interaction/Door/door_block.gd" id="1_ibkef"]
+[ext_resource type="Animation" uid="uid://dwxhtaa13a6m7" path="res://Assets/Animations/Doors/Bars/door_block_closed.res" id="2_15sqw"]
+[ext_resource type="Animation" uid="uid://dy2q5kp4jgdaa" path="res://Assets/Animations/Doors/Bars/door_block_opened.res" id="3_15sqw"]
+[ext_resource type="Animation" uid="uid://dsqkf7co0cg0s" path="res://Assets/Animations/Doors/Bars/door_block_closing.res" id="3_w6maa"]
+[ext_resource type="Animation" uid="uid://bp25qa5nkr1fl" path="res://Assets/Animations/Doors/Bars/door_block_opening.res" id="5_2fo0g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2n412"]
 resource_name = "Material.001"
@@ -47,69 +49,41 @@ shadow_mesh = SubResource("ArrayMesh_qstcw")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ut5oi"]
 size = Vector3(1, 2, 0.075)
 
-[sub_resource type="Animation" id="Animation_ylj3r"]
-resource_name = "BarsOpenFixed"
-length = 0.625
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bars")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.5, 0, 0)
-tracks/1/type = "scale_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("Bars")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0.001, 1, 1)
-
-[sub_resource type="Animation" id="Animation_rt6x7"]
-resource_name = "BarsOpeningFixed"
-length = 0.625
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bars")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.033333335, 1, -0.0050962972, 0, 0, 0.06666667, 1, -0.017125929, 0, 0, 0.1, 1, -0.03537778, 0, 0, 0.13333334, 1, -0.05914075, 0, 0, 0.16666667, 1, -0.08770372, 0, 0, 0.2, 1, -0.12124446, 0, 0, 0.23333333, 1, -0.15745187, 0, 0, 0.26666668, 1, -0.19561483, 0, 0, 0.3, 1, -0.23502225, 0, 0, 0.33333334, 1, -0.27496302, 0, 0, 0.36666667, 1, -0.31419262, 0, 0, 0.4, 1, -0.35182226, 0, 0, 0.43333334, 1, -0.38714078, 0, 0, 0.46666667, 1, -0.41943702, 0, 0, 0.5, 1, -0.448, 0, 0, 0.53333336, 1, -0.47016305, 0, 0, 0.56666666, 1, -0.48645926, 0, 0, 0.6, 1, -0.49617776, 0, 0, 0.625, 1, -0.5, 0, 0)
-tracks/1/type = "scale_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("Bars")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.033333335, 1, 1.002581, 1, 1, 0.06666667, 1, 0.9782112, 1, 1, 0.1, 1, 0.94123644, 1, 1, 0.13333334, 1, 0.89309716, 1, 1, 0.16666667, 1, 0.83523405, 1, 1, 0.2, 1, 0.7672869, 1, 1, 0.23333333, 1, 0.69393754, 1, 1, 0.26666668, 1, 0.61662656, 1, 1, 0.3, 1, 0.53679466, 1, 1, 0.33333334, 1, 0.4558823, 1, 1, 0.36666667, 1, 0.37641057, 1, 1, 0.4, 1, 0.30018002, 1, 1, 0.43333334, 1, 0.22863139, 1, 1, 0.46666667, 1, 0.16320528, 1, 1, 0.5, 1, 0.10534203, 1, 1, 0.53333336, 1, 0.060444076, 1, 1, 0.56666666, 1, 0.027430914, 1, 1, 0.6, 1, 0.007743061, 1, 1, 0.625, 1, 0.001, 1, 1)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rdx5c"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15sqw"]
 _data = {
-&"BarsClosed": ExtResource("2_ut5oi"),
-&"BarsClosing": ExtResource("3_215d8"),
-&"BarsOpen": SubResource("Animation_ylj3r"),
-&"BarsOpening": SubResource("Animation_rt6x7")
+&"Closed": ExtResource("2_15sqw"),
+&"Closing": ExtResource("3_w6maa"),
+&"Opened": ExtResource("3_15sqw"),
+&"Opening": ExtResource("5_2fo0g")
 }
 
-[node name="Bars" type="Node3D" unique_id=206787475]
+[node name="DoorBlock" type="Node3D" unique_id=206787475]
 script = ExtResource("1_ibkef")
+opening_animation = ExtResource("5_2fo0g")
+opened_animation = ExtResource("3_15sqw")
+open_animation_length = 0.625
+closing_animation = ExtResource("3_w6maa")
+closed_animation = ExtResource("2_15sqw")
+close_animation_length = 0.625
+is_locked = true
+is_disabled = true
 
-[node name="PositioningNode" type="Node3D" parent="." unique_id=167467920]
-transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.019)
+[node name="DoorMesh" type="Node3D" parent="." unique_id=167467920]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Bars" type="MeshInstance3D" parent="PositioningNode" unique_id=856710129]
-transform = Transform3D(1.0129051, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Bars" type="MeshInstance3D" parent="DoorMesh" unique_id=856710129]
 mesh = SubResource("ArrayMesh_drrua")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PositioningNode/Bars" unique_id=281468458]
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorMesh/Bars" unique_id=281468458]
 collision_layer = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PositioningNode/Bars/StaticBody3D" unique_id=831653307]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/Bars/StaticBody3D" unique_id=831653307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_ut5oi")
 
-[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="PositioningNode" unique_id=419731094]
-libraries/ = SubResource("AnimationLibrary_rdx5c")
+[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="DoorMesh" unique_id=419731094]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_15sqw")
 script = ExtResource("1_5pe30")
 metadata/_custom_type_script = "uid://b2clf5853h8va"

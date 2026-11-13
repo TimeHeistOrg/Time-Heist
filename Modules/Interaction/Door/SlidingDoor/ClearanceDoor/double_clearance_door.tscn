@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtyptm54g0k4j"]
 
-[ext_resource type="Script" uid="uid://iasj7ttb01gb" path="res://Modules/Interaction/Door/double_sliding_door.gd" id="1_7dxs8"]
+[ext_resource type="Script" uid="uid://iasj7ttb01gb" path="res://Modules/Interaction/Door/SwingingDoor/double_sliding_door.gd" id="1_7dxs8"]
 [ext_resource type="Material" uid="uid://cmmic8qhdr6km" path="res://Assets/Materials/Interactable/interactable_outline.tres" id="1_lw0bo"]
 [ext_resource type="PackedScene" uid="uid://baeo88dd11qpj" path="res://Modules/TimeTravel/time_animation_player.tscn" id="2_7gu5t"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="3_7dxs8"]
