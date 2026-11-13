@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://byhtwts82sw3b"]
+
+[ext_resource type="Script" uid="uid://gdxvhew2bqkp" path="res://Modules/Blackmail/blackmail_test.gd" id="1_p4v2m"]
+[ext_resource type="PackedScene" uid="uid://op4wmgkxq6jj" path="res://Modules/Blackmail/blackmail_ui.tscn" id="2_okxg1"]
+[ext_resource type="Texture2D" uid="uid://xt01w1u2qfwc" path="res://Assets/Materials/Floor/exquistite-polished-tile_albedo.png" id="3_rlxi4"]
+[ext_resource type="Texture2D" uid="uid://cjwgyolwq6axi" path="res://Assets/Materials/Floor/exquistite-polished-tile_ao.png" id="4_b6t61"]
+[ext_resource type="Texture2D" uid="uid://d1ud0cbta6goq" path="res://Assets/Materials/Floor/exquistite-polished-tile_metallic.png" id="5_delmb"]
+[ext_resource type="Texture2D" uid="uid://iysiiph8g0nq" path="res://Assets/Materials/Floor/exquistite-polished-tile_normal-ogl.png" id="6_xixct"]
+[ext_resource type="Texture2D" uid="uid://bi1v4o5qgvkpp" path="res://Assets/Materials/Floor/exquistite-polished-tile_roughness.png" id="7_vbm76"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6e2xr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7cihh"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdy1o"]
+albedo_texture = ExtResource("3_rlxi4")
+metallic = 1.0
+metallic_texture = ExtResource("5_delmb")
+roughness_texture = ExtResource("7_vbm76")
+normal_enabled = true
+normal_texture = ExtResource("6_xixct")
+ao_enabled = true
+ao_texture = ExtResource("4_b6t61")
+uv1_scale = Vector3(12.5, 12.5, 12.5)
+grow_amount = -4.125
+
+[node name="TestMapDev" type="Node2D" unique_id=1408029424]
+script = ExtResource("1_p4v2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=512018127]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=826685405]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1102259148]
+visible = false
+layout_mode = 0
+offset_left = 181.0
+offset_top = 193.0
+offset_right = 361.86957
+offset_bottom = 297.0
+text = "DO STUFF?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel" unique_id=1535936068]
+visible = false
+layout_mode = 0
+offset_left = 484.0
+offset_top = 486.0
+offset_right = 618.0
+offset_bottom = 620.0
+text = "close"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Panel" unique_id=2001877730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9773796, 0.84027636, 0.83854544, 0.75686276)
+
+[node name="BlackmailUi" parent="CanvasLayer/Panel" unique_id=837258719 instance=ExtResource("2_okxg1")]
+visible = false
+layout_mode = 1
+
+[node name="toggle blackmail btn" type="Button" parent="CanvasLayer/Panel" unique_id=1756771878]
+layout_mode = 0
+offset_left = 1625.0
+offset_top = 910.0
+offset_right = 1877.0
+offset_bottom = 1042.0
+theme_override_font_sizes/font_size = 32
+text = "toggle ui"
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=122076743]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1901912768]
+visible = false
+shape = SubResource("WorldBoundaryShape3D_6e2xr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=205663353]
+mesh = SubResource("PlaneMesh_7cihh")
+surface_material_override/0 = SubResource("StandardMaterial3D_gdy1o")
+
+[connection signal="button_down" from="CanvasLayer/Panel/CloseButton" to="CanvasLayer/Panel" method="_on_close_button_button_down"]
+[connection signal="pressed" from="CanvasLayer/Panel/toggle blackmail btn" to="." method="_on_toggle_blackmail_btn_pressed"]

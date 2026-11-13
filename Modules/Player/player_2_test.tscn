@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xv4pqq1xwivr"]
 
-[ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Modules/MapBuilding/MeshLibrary.tres" id="1_yuasa"]
+[ext_resource type="MeshLibrary" uid="uid://dy0vxnd1qseb5" path="res://Modules/MapBuilding/mesh_library.tres" id="1_yuasa"]
 [ext_resource type="PackedScene" path="res://Player/player.tscn" id="2_mpc7k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2b0l"]

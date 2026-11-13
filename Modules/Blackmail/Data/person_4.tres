@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BlackmailRecord" format=3 uid="uid://dm37vf8eohlqc"]
+
+[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Modules/Blackmail/blackmail_record.gd" id="1_hje0v"]
+
+[resource]
+script = ExtResource("1_hje0v")
+person_name = "Timothy"
+person_info = Dictionary[String, String]({
+"letter 1": "a",
+"letter 2": "b",
+"letter 3": "c",
+"letter 4": "d",
+"letter 5": "e",
+"letter 6": "f",
+"letter 7": "g",
+"letter 8": "h",
+"letter 9": "i",
+"major": "gdim",
+"nickname": "tim",
+"nickname 2": "heist"
+})
+document_text = "timothy aka tim aka heist aka abcd is a cool person for sure im just typing text now to see what happens if theres a lot of characters in here hsdjkfhsdkujfh ksdjhfkjsdh fksdjhf kjsadhfkjsdahf kjsdhfkjsadh fdikusdhfiuksdhf isakduhfiu sdhfiusdhf ius"
+metadata/_custom_type_script = "uid://bga3yf0f4gjyl"

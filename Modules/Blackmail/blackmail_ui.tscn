@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://op4wmgkxq6jj"]
+
+[ext_resource type="Script" uid="uid://divinv7b07xki" path="res://Modules/Blackmail/blackmail_ui.gd" id="1_tmc7i"]
+[ext_resource type="PackedScene" uid="uid://dyjlqj6t080x8" path="res://Modules/Blackmail/bm_name_button.tscn" id="2_v3q2v"]
+
+[node name="BlackmailUi" type="Control" unique_id=837258719]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -480.0
+offset_right = 360.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmc7i")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1168510237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NamesView" type="VBoxContainer" parent="." unique_id=44999151]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Name Text" type="Label" parent="NamesView" unique_id=570152272]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Select a Target"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Empty3" type="Label" parent="NamesView" unique_id=361959771]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NamesView" unique_id=480097195]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NamesListVBox" type="VBoxContainer" parent="NamesView/ScrollContainer" unique_id=626536647]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BmNameButton" parent="NamesView/ScrollContainer/NamesListVBox" unique_id=1667584812 instance=ExtResource("2_v3q2v")]
+layout_mode = 2
+
+[node name="BmNameButton2" parent="NamesView/ScrollContainer/NamesListVBox" unique_id=2123072261 instance=ExtResource("2_v3q2v")]
+layout_mode = 2
+
+[node name="BmNameButton3" parent="NamesView/ScrollContainer/NamesListVBox" unique_id=650392022 instance=ExtResource("2_v3q2v")]
+layout_mode = 2
+
+[node name="FormView" type="VBoxContainer" parent="." unique_id=1975734995]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Form Text" type="Label" parent="FormView" unique_id=113537163]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Enter Target Information:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FormView" unique_id=1573724996]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InfoHolder" type="VBoxContainer" parent="FormView/ScrollContainer" unique_id=1510467505]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Error Text" type="Label" parent="FormView" unique_id=407381982]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "ERROR MESSAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Submit Button" type="Button" parent="FormView" unique_id=1002854789]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Submit"
+
+[node name="Form Back Button" type="Button" parent="FormView" unique_id=2119230102]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="DocView" type="VBoxContainer" parent="." unique_id=1148599035]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Doc Text" type="Label" parent="DocView" unique_id=1398760878]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Document View
+------------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DocBody Text" type="Label" parent="DocView" unique_id=1151952718]
+custom_minimum_size = Vector2(720, 45)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "words?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DocBody Img" type="TextureRect" parent="DocView" unique_id=787818288]
+layout_mode = 2
+
+[node name="Line" type="Label" parent="DocView" unique_id=1676077378]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "------------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DocView" unique_id=1462520671]
+layout_mode = 2
+alignment = 1
+
+[node name="Back Button" type="Button" parent="DocView/HBoxContainer" unique_id=2107214810]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Empty4" type="Label" parent="DocView/HBoxContainer" unique_id=906924348]
+layout_mode = 2
+text = "                                            "
+
+[node name="Delete Button" type="Button" parent="DocView/HBoxContainer" unique_id=1896127923]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Delete"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="FormView/Form Back Button" to="." method="_on_form_back_button_pressed"]

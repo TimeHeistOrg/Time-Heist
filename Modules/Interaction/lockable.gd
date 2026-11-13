@@ -41,7 +41,7 @@ func try_unlock():
 		return false
 		
 func fail_unlock():
-	print("failed unlock")
+	#print("failed unlock")
 	globals.ui_manager.display_message(locked_label)
 	#display_note = true
 	#label.visible = true
@@ -68,7 +68,7 @@ func check_interact():
 				success = false
 	if needed_lever:
 		for lever in needed_lever:
-			print(lever.flipped)
+			#print(lever.flipped)
 			if lever_check_unflipped:
 				if lever.flipped:
 					success= false

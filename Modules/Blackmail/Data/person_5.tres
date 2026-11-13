@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BlackmailRecord" format=3 uid="uid://bslf8g2rq35jy"]
+
+[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Modules/Blackmail/blackmail_record.gd" id="1_3ud33"]
+
+[resource]
+script = ExtResource("1_3ud33")
+person_name = "Test"
+person_info = Dictionary[String, String]({
+"nope": "yep",
+"t": "est",
+"te": "st",
+"tes": "t",
+"yes": "no"
+})
+document_text = "I HAVE NOTHING"
+metadata/_custom_type_script = "uid://bga3yf0f4gjyl"

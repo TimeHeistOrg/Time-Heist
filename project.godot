@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="TimeHeist"
-run/main_scene="uid://brvqb2m5ecmet"
+run/main_scene="uid://f04ptbmcmt5v"
 config/features=PackedStringArray("4.7", "Mobile")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -31,6 +31,7 @@ global_inventory="*uid://bd6hj8r16s6lx"
 DialogueManager="*uid://c3rodes2l3gxb"
 SceneManager="*uid://cbn2aivlaf362"
 globals="*uid://b33e0ts3t33ox"
+BlackmailManager="*uid://ds68on8euarhv"
 
 [dialogue_manager]
 

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BlackmailRecord" format=3 uid="uid://b6u7or1bj7xel"]
+
+[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Modules/Blackmail/blackmail_record.gd" id="1_sr06v"]
+
+[resource]
+script = ExtResource("1_sr06v")
+person_name = "Dev"
+person_info = Dictionary[String, String]({
+"location": "not uci",
+"status": "unc"
+})
+document_text = "this is some text im tired"
+metadata/_custom_type_script = "uid://bga3yf0f4gjyl"

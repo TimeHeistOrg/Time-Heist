@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlackmailDatabase" format=3]
+
+[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Modules/Blackmail/blackmail_record.gd" id="1_q66ki"]
+[ext_resource type="Script" uid="uid://c00spym6w8yag" path="res://Modules/Blackmail/blackmail_database.gd" id="2_aihhs"]
+[ext_resource type="Resource" uid="uid://bw4vogoyl3sy" path="res://Modules/Blackmail/Data/person_1.tres" id="2_dcx8u"]
+[ext_resource type="Resource" uid="uid://dma1l5lda31kw" path="res://Modules/Blackmail/Data/person_2.tres" id="3_3io7d"]
+[ext_resource type="Resource" uid="uid://b6u7or1bj7xel" path="res://Modules/Blackmail/Data/person_3.tres" id="4_vdtk0"]
+[ext_resource type="Resource" uid="uid://dm37vf8eohlqc" path="res://Modules/Blackmail/Data/person_4.tres" id="5_5qtyh"]
+[ext_resource type="Resource" uid="uid://bslf8g2rq35jy" path="res://Modules/Blackmail/Data/person_5.tres" id="6_ifwsu"]
+
+[resource]
+script = ExtResource("2_aihhs")
+bm_records = Array[ExtResource("1_q66ki")]([ExtResource("2_dcx8u"), ExtResource("3_3io7d"), ExtResource("4_vdtk0"), ExtResource("5_5qtyh"), ExtResource("6_ifwsu")])
+metadata/_custom_type_script = "uid://c00spym6w8yag"

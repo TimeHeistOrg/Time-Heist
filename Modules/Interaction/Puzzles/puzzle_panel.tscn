@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ctftfayvoseda"]
 
 [ext_resource type="Script" uid="uid://lo5ao6nip25h" path="res://Modules/Interaction/Puzzles/puzzle_panel.gd" id="1_gi8vs"]
-[ext_resource type="Material" uid="uid://ca4bw4j7ywva0" path="res://Modules/Interaction/Puzzles/DisplayOffMaterial.tres" id="2_3ic0p"]
+[ext_resource type="Material" uid="uid://ca4bw4j7ywva0" path="res://Modules/Interaction/Puzzles/display_off_material.tres" id="2_3ic0p"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_6w2gt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypcla"]

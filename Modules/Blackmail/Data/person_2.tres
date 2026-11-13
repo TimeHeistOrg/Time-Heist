@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlackmailRecord" format=3 uid="uid://dma1l5lda31kw"]
+
+[ext_resource type="Script" uid="uid://bga3yf0f4gjyl" path="res://Modules/Blackmail/blackmail_record.gd" id="1_yvsvo"]
+
+[resource]
+script = ExtResource("1_yvsvo")
+person_name = "Linda"
+person_info = Dictionary[String, String]({
+"animal": "cat",
+"job": "3d model",
+"seven": "teen"
+})
+document_text = "linda loves cats, especially butter and pepper"
+metadata/_custom_type_script = "uid://bga3yf0f4gjyl"

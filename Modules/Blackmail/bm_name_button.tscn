@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dyjlqj6t080x8"]
+
+[ext_resource type="Script" uid="uid://qewbxe4yrmuc" path="res://Modules/Blackmail/bm_name_button.gd" id="1_jdj3b"]
+
+[node name="BmNameButton" type="Button" unique_id=1667584812]
+theme_override_font_sizes/font_size = 32
+text = "Name"
+script = ExtResource("1_jdj3b")

@@ -1,5 +1,5 @@
-#extends AnimationTree
-#
+extends AnimationTree
+
 #@onready var npc_script: PathFollower = $".."
 #
 #var last_processed_component: PathComponent
@@ -14,7 +14,7 @@
 			#set("parameters/Transition/transition_request","Walking")
 		#elif last_processed_component is PathVertex:
 			#set("parameters/Transition/transition_request","Standing")
-	#
-	##TODO make the animation scale with time travel, time_multiplier is not being used properly in time manager
-	##if time_scale != globals.time_manager.time_multiplier:
-		##pass
+	
+	#TODO make the animation scale with time travel, time_multiplier is not being used properly in time manager
+	#if time_scale != globals.time_manager.time_multiplier:
+		#pass

@@ -1,0 +1,415 @@
+[gd_scene format=3 uid="uid://begdut20cbu15"]
+
+[ext_resource type="Script" uid="uid://tdcuwudsecor" path="res://Modules/UI/GameUI/Device/settings.gd" id="1_pnwlj"]
+[ext_resource type="Theme" uid="uid://jodljyivkod0" path="res://Assets/UI/Themes/main_theme.tres" id="2_7ttha"]
+
+[sub_resource type="Animation" id="Animation_7ttha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/SettingsVerticality/ScrollContainer:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/SettingsVerticality:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer/SettingsVerticality/Container:size_flags_stretch_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer/SettingsVerticality:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0cor1"]
+resource_name = "settings_close_new"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/SettingsVerticality/ScrollContainer:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1.6245043),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/SettingsVerticality:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1.7411013),
+"update": 0,
+"values": [2.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer/SettingsVerticality/Container:size_flags_stretch_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1.6245047),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer/SettingsVerticality:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_pnwlj"]
+resource_name = "settings_open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/SettingsVerticality/ScrollContainer:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333334, 0.3),
+"transitions": PackedFloat32Array(1.6245043, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/SettingsVerticality:size_flags_stretch_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1.7411013, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer/SettingsVerticality/Container:size_flags_stretch_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13333334, 0.3),
+"transitions": PackedFloat32Array(1.6245047, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer/SettingsVerticality:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0cor1"]
+_data = {
+&"RESET": SubResource("Animation_7ttha"),
+&"settings_close": SubResource("Animation_0cor1"),
+&"settings_open": SubResource("Animation_pnwlj")
+}
+
+[node name="SettingsPanel" type="Control" unique_id=1183147821 node_paths=PackedStringArray("main_focus")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_pnwlj")
+main_focus = NodePath("HBoxContainer/VBoxContainer/Settings")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2072320580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1339200596]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Settings" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=448108556]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 90
+toggle_mode = true
+text = "Settings"
+
+[node name="Homebase" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=265424093]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 90
+text = "Homebase"
+
+[node name="Quit" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1686965176]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 90
+text = "Quit Game"
+
+[node name="SettingsVerticality" type="VBoxContainer" parent="HBoxContainer" unique_id=74313591]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/SettingsVerticality" unique_id=338549066]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("2_7ttha")
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/SettingsVerticality/ScrollContainer" unique_id=1168460960]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.2003226, 0.42366183, 0.5781183, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect" unique_id=1847865960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer" unique_id=2020621070]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1235203097]
+custom_minimum_size = Vector2(0.43, 45.62)
+layout_mode = 2
+
+[node name="Geneal Settings" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/Panel2" unique_id=875378066]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -51.809998
+offset_bottom = 42.190002
+grow_horizontal = 2
+grow_vertical = 2
+text = "General Settings"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1082894597]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1821005762]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Fullscreen"
+
+[node name="FullscreenToggle" type="CheckButton" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1028578565]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = ExtResource("2_7ttha")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1239228719]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2118778939]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Resolution"
+
+[node name="ResolutionOptions" type="OptionButton" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1858669119]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 1
+item_count = 4
+popup/item_0/text = "1600 x 900"
+popup/item_0/id = 0
+popup/item_1/text = "1920 x 1080"
+popup/item_1/id = 1
+popup/item_2/text = "2560 x 1440"
+popup/item_2/id = 2
+popup/item_3/text = "3840 x 2160"
+popup/item_3/id = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=323511733]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=218991919]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Mouse Sensitivity"
+
+[node name="Control" type="Control" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=669747871]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mouse Sens" type="HSlider" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=784390032]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 1
+min_value = 0.5
+max_value = 10.0
+step = 0.01
+value = 2.0
+
+[node name="Panel" type="Panel" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1561486857]
+custom_minimum_size = Vector2(0.43, 45.62)
+layout_mode = 2
+
+[node name="Sound Settings" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/Panel" unique_id=1396143371]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -54.809998
+offset_bottom = 39.190002
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sound Settings"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1754811310]
+layout_mode = 2
+
+[node name="Mute" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=921609231]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Mute"
+
+[node name="Mute Button" type="CheckButton" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1163352382]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=758782787]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1981692200]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Music Volume"
+
+[node name="Control" type="Control" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1772287273]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Music volume" type="HSlider" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=115973685]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1418568543]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1823144471]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SFX Volume"
+
+[node name="Control" type="Control" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=672543670]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFX volume" type="HSlider" parent="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1807859981]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Container" type="TextureRect" parent="HBoxContainer/SettingsVerticality" unique_id=1509222070]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=430255314]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_0cor1")
+
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_toggled"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Homebase" to="." method="_on_homebase_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/FullscreenToggle" to="." method="_on_fullscreen_toggle_toggled"]
+[connection signal="item_selected" from="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer2/ResolutionOptions" to="." method="_on_resolution_options_item_selected"]
+[connection signal="value_changed" from="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer4/Mouse Sens" to="." method="_on_mouse_sens_value_changed"]
+[connection signal="toggled" from="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer3/Mute Button" to="." method="_on_mute_toggled"]
+[connection signal="value_changed" from="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer5/Music volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/SettingsVerticality/ScrollContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer6/SFX volume" to="." method="_on_sfx_volume_value_changed"]

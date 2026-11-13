@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://dc0glsn1mwwwq"]
+
+[ext_resource type="Script" uid="uid://31ibymxtbwo0" path="res://Modules/UI/GameUI/Device/Inventory/inventory_panel.gd" id="1_uxjxt"]
+[ext_resource type="FontFile" uid="uid://datdkauvfmpa2" path="res://Assets/UI/Font/Dhurjati/Dhurjati-Regular.ttf" id="2_woo5j"]
+[ext_resource type="AudioStream" uid="uid://bvqyj0t1kq7um" path="res://Assets/Audio/SFX/pick_up.mp3" id="3_bf5q0"]
+[ext_resource type="AudioStream" uid="uid://lautowtdebhn" path="res://Assets/Audio/SFX/item_drop.mp3" id="4_dxvs7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf5q0"]
+bg_color = Color(0.6039216, 0.77254903, 0.827451, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="InventoryPanel" type="Control" unique_id=881891003 node_paths=PackedStringArray("main_focus")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_uxjxt")
+main_focus = NodePath("HBoxContainer/Inventory")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1187803673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Inventory" type="VBoxContainer" parent="HBoxContainer" unique_id=283626769]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Info" type="Control" parent="HBoxContainer/Inventory" unique_id=1412575173]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Tools" type="Control" parent="HBoxContainer/Inventory" unique_id=725235121]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Clearance" type="GridContainer" parent="HBoxContainer/Inventory" unique_id=1994816049]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+columns = 2
+
+[node name="Security" type="Panel" parent="HBoxContainer/Inventory/Clearance" unique_id=1384283985]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Inventory/Clearance/Security" unique_id=1103478648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3164139, 0.7105515, 0.46574497, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/Clearance/Security" unique_id=187217973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Security"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lab" type="Panel" parent="HBoxContainer/Inventory/Clearance" unique_id=2083719237]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Inventory/Clearance/Lab" unique_id=1600993430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.63929945, 0.7315927, 0.77827734, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/Clearance/Lab" unique_id=1357133161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Lab"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upper Office" type="Panel" parent="HBoxContainer/Inventory/Clearance" unique_id=2088005091]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Inventory/Clearance/Upper Office" unique_id=2067525088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.664617, 0.5461116, 0.8691985, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/Clearance/Upper Office" unique_id=1067995210]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Upper Office"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Utility" type="Panel" parent="HBoxContainer/Inventory/Clearance" unique_id=1734371859]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Inventory/Clearance/Utility" unique_id=1376431534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.83417994, 0.5235299, 0.46272343, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/Clearance/Utility" unique_id=492215968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Utility"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabII" type="Panel" parent="HBoxContainer/Inventory/Clearance" unique_id=1902797102]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Inventory/Clearance/LabII" unique_id=947826359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.042806886, 0.65035903, 0.99999994, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/Inventory/Clearance/LabII" unique_id=211899527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Lab II"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=419748439]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=568333566]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 10
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer" unique_id=426348759]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bf5q0")
+
+[node name="ItemInfo" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Panel" unique_id=2007348829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_woo5j")
+theme_override_font_sizes/normal_font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pickup" type="AudioStreamPlayer" parent="." unique_id=921789571]
+stream = ExtResource("3_bf5q0")
+bus = &"SFX"
+
+[node name="Drop" type="AudioStreamPlayer" parent="." unique_id=2061675621]
+stream = ExtResource("4_dxvs7")
+bus = &"SFX"

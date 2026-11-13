@@ -1,5 +1,5 @@
-#@tool
-#class_name Guard extends PathFollower
+@tool
+class_name Guard extends PathFollower
 ### Guard class
 ###
 ### State machine: NORMAL -> SEEN -> ALERT -> CAUGHT

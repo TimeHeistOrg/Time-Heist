@@ -17,7 +17,7 @@ extends Node
 
 var time_manager: TimeManager
 var input_manager: InputManager
-var ui_manager: UI_Manager
+var ui_manager: UIManager
 
 var player : Player
 var player_camera : Camera3D
@@ -80,6 +80,9 @@ var ui_scale: float = .75
 
 var green_color : Color = Color("46af56ff")
 var red_color : Color = Color("d73438")
+var active_color: Color = Color(0.521, 0.521, 0.521, 1.0)
+var disabled_color : Color = Color(0.081, 0.081, 0.081, 1.0)
+
 
 func _ready():
 	pass
