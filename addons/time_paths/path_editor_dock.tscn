@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://3wt12c4cpk6l"]
+
+[ext_resource type="Script" uid="uid://bi3yw674acg6y" path="res://addons/time_paths/path_editor_dock.gd" id="1_tet8p"]
+
+[node name="PathEditorDock" type="VBoxContainer" unique_id=738869074]
+script = ExtResource("1_tet8p")
+
+[node name="ScrubSection" type="HBoxContainer" parent="." unique_id=694500687]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ScrubEnabledCheck" type="CheckBox" parent="ScrubSection" unique_id=1755364585]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="ScrubLabel" type="Label" parent="ScrubSection" unique_id=1684168117]
+layout_mode = 2
+text = "Scrub Enabled"
+
+[node name="ScrubPlayButton" type="Button" parent="ScrubSection" unique_id=1425778071]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Play"
+
+[node name="ScrubSlider" type="HSlider" parent="ScrubSection" unique_id=397163527]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 20.0
+step = 0.0
+allow_greater = true
+
+[node name="ScrubTimeLabel" type="Label" parent="ScrubSection" unique_id=549247511]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00s"
+
+[node name="StartTimeLabel" type="Label" parent="ScrubSection" unique_id=1001923504]
+layout_mode = 2
+text = "Start"
+
+[node name="ScrubMinTime" type="SpinBox" parent="ScrubSection" unique_id=1502209666]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EndTimeLabel" type="Label" parent="ScrubSection" unique_id=263456284]
+layout_mode = 2
+text = "End"
+
+[node name="ScrubMaxTime" type="SpinBox" parent="ScrubSection" unique_id=817462613]
+unique_name_in_owner = true
+layout_mode = 2
+value = 20.0
+
+[node name="HSeparator1" type="HSeparator" parent="." unique_id=1809337998]
+layout_mode = 2
+
+[node name="ToolSettingsBar" type="HBoxContainer" parent="." unique_id=1866584397]
+layout_mode = 2
+
+[node name="GridEnabledLabel" type="Label" parent="ToolSettingsBar" unique_id=568861561]
+layout_mode = 2
+text = "Grid Enabled"
+
+[node name="GridSnapCheck" type="CheckBox" parent="ToolSettingsBar" unique_id=1342785413]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+
+[node name="GridSizeLabel" type="Label" parent="ToolSettingsBar" unique_id=455862752]
+layout_mode = 2
+text = "Grid Size"
+
+[node name="GridSnapSize" type="SpinBox" parent="ToolSettingsBar" unique_id=1193316143]
+unique_name_in_owner = true
+layout_mode = 2
+step = 0.0
+value = 0.25
+allow_greater = true
+
+[node name="HSeparator2" type="HSeparator" parent="." unique_id=1428713355]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1380721339]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(0, 0)
+
+[node name="LeftColumn" type="ScrollContainer" parent="HSplitContainer" unique_id=1515257073]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="LeftContent" type="VBoxContainer" parent="HSplitContainer/LeftColumn" unique_id=1926778740]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PathLabel" type="Label" parent="HSplitContainer/LeftColumn/LeftContent" unique_id=416312941]
+layout_mode = 2
+text = "Path"
+
+[node name="EditorResourcePicker" type="EditorResourcePicker" parent="HSplitContainer/LeftColumn/LeftContent" unique_id=2041391026]
+unique_name_in_owner = true
+layout_mode = 2
+base_type = "PathData"
+
+[node name="EditButton" type="Button" parent="HSplitContainer/LeftColumn/LeftContent" unique_id=1689132472]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+
+[node name="Status" type="Label" parent="HSplitContainer/LeftColumn/LeftContent" unique_id=541855987]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="MiddleColumn" type="ScrollContainer" parent="HSplitContainer" unique_id=2112439143]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MiddleContent" type="VBoxContainer" parent="HSplitContainer/MiddleColumn" unique_id=493237164]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PathPropertiesLabel" type="Label" parent="HSplitContainer/MiddleColumn/MiddleContent" unique_id=2031285530]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Path Properties"
+
+[node name="PathPropertiesInspector" type="EditorInspector" parent="HSplitContainer/MiddleColumn/MiddleContent" unique_id=1528690284]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightColumn" type="ScrollContainer" parent="HSplitContainer" unique_id=594872538]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightContent" type="VBoxContainer" parent="HSplitContainer/RightColumn" unique_id=648076017]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VertexInspectorLabel" type="Label" parent="HSplitContainer/RightColumn/RightContent" unique_id=1835162590]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Vertex Properties"
+
+[node name="VertexTimingLabel" type="Label" parent="HSplitContainer/RightColumn/RightContent" unique_id=1177332087]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VertexInspector" type="EditorInspector" parent="HSplitContainer/RightColumn/RightContent" unique_id=691064256]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
