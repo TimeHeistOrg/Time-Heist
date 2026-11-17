@@ -1,6 +1,18 @@
 @tool
 class_name PathFollower extends Node3D
 
+#region path signals
+signal vertex_reached(vertex_id: int)
+signal action_executed(vertex_id: int, action: VertexAction)
+signal edge_entered(edge_id: int)
+signal path_finished
+#endregion
+
+#region enums
+enum State { UNSTARTED, PRE_DELAY, DWELLING, MOVING, FINISHED}
+#endregion
+
+#region constants
 const MISSING_ANIMATION_PLAYER_WARNING: String = "An AnimationPlayer needs to be assingned for rotation of the PathFollower"
 const MISSING_CW_ANIMATION_WARNING: String = "No track name assigned for clockwise rotation"
 const MISSING_CCW_ANIMATION_WARNING: String = "No track name assigned for counter-clockwise rotation"
@@ -9,154 +21,124 @@ const DEFAULT_CW_ANIMATION_PATH: String = "res://addons/time_paths/resources/clo
 const DEFAULT_CW_ANIMATION_NAME: String = "DEFAULT_CLOCKWISE_ANIMATION"
 const DEFAULT_CCW_ANIMATION_PATH: String = "res://addons/time_paths/resources/counter_clockwise_default_animation.tres"
 const DEFAULT_CCW_ANIMATION_NAME: String = "DEFAULT_COUNTER_CLOCKWISE_ANIMATION"
+#endregion
 
-signal vertex_reached(vertex_id: int)
-signal action_executed(vertex_id: int, action: VertexAction)
-signal edge_entered(edge_id: int)
-signal path_finished
-
-enum State { UNSTARTED, PRE_DELAY, DWELLING, MOVING, FINISHED}
-
+#region path exports
 ## The [PathData] that this [PathFollower] will follow.
-@export var path_data: PathData:
-	set(value):
-		path_data = value
-		if Engine.is_editor_hint() and is_inside_tree():
-			if path_data != null:
-				_snap_to_start()
-			update_gizmos()
+@export var path_data: PathData: set = _path_data_setter
 
 ## The time offset that the path follower will be following the path off of. [br]
 ## If start_offset > 0, the follower will begin the path at start_offset seconds. [br]
 ## If start_offset < 0, the follower will begin at start_offset seconds into the path.
-@export var start_offset: float = 0.0
+@export var start_offset: float = 0.0: set = _start_offset_setter
 
 ## If true, the [PathFollower] will be moved with the Time Paths Plugin preview scrubber.
-@export var editor_preview_enabled: bool = true
+@export var editor_preview_enabled: bool = true: set = _editor_preview_enabled_setter
 
 ## If true, a preview of the assigned path will be displayed in the 3D editor.
-@export var show_path_gizmo: bool = true:
-	set(value):
-		show_path_gizmo = value
-		update_gizmos()
+@export var show_path_gizmo: bool = true: set = _show_path_gizmo_setter
 
 ## If true, calls [method PathFollower.start] automatically in _ready().
-@export var auto_start: bool = true
+@export var auto_start: bool = true: set = _auto_start_setter
 
 ## If true, the [PathFollower] will drive itself using built-in process. [br]
 ## Set false if external code will be calling [method PathFollower.advance] directly.
-@export var run_process: bool = true
+@export var run_process: bool = true: set = _run_process_setter
+#endregion
 
+#region rotation exports
 @export_category("Rotation")
 ## Whether rotation should be enabled for the path follower. [br]
 ## If so, will use default rotation animations to turn towards the direction of movement.
-@export var rotation_enabled: bool = false:
-	set(value):
-		rotation_enabled = value
-		update_configuration_warnings()
-		notify_property_list_changed()
+@export var rotation_enabled: bool = false: set = _rotation_enabled_setter
 
 
 ## Export button to automatically add an animation player (if one is not assigned) and add the default animations to the player (either the assigned or newly created one) 
-@export_tool_button("Add Default Animations") var add_default_animations: Callable = _add_default_animations
-
+@export_tool_button("Add Default Animations") var add_default_animations: Callable = _add_default_animations: set = _add_default_animations_setter
 
 ## The animation player that will be used for animating the rotation of the follower as it follows the path. [br]
 ## Implemented as an animation player to allow for more control on how rotations behave. [br]
-@export var rotation_animation_player: AnimationPlayer:
-	set(value):
-		if value != rotation_animation_player:
-			if rotation_animation_player:
-				rotation_animation_player.animation_list_changed.disconnect(notify_property_list_changed)
-			if value:
-				value.animation_list_changed.connect(notify_property_list_changed)
-		rotation_animation_player = value
-		update_configuration_warnings()
-		notify_property_list_changed()
+@export var rotation_animation_player: AnimationPlayer: set = _rotation_animation_player_setter
 
 ## Animation to play when the follower is turning clockwise. [br]
 ## Uses default animations if unset. 1 Second = 1 degree of rotation, 0 degrees is facing the -Z axis. Animation should loop.
-@export var clockwise_animation: StringName:
-	set(value):
-		clockwise_animation = value
-		update_configuration_warnings()
+@export var clockwise_animation: StringName: set = _clockwise_animation_setter
 
 ## Animation to play when the follower is turning counter-clockwise. [br]
 ## Uses default animations if unset. 1 Second = 1 degree of rotation, 0 degrees is facing the -Z axis. Animation should loop.
-@export var counter_clockwise_animation: StringName:
-	set(value):
-		counter_clockwise_animation = value
-		update_configuration_warnings()
+@export var counter_clockwise_animation: StringName: set = _counter_clockwise_animation_setter
 
 ## Speed of clockwise rotation in degrees per second.
-@export var clockwise_rotation_speed: float = 1
+@export var clockwise_rotation_speed: float = 1: set = _clockwise_rotation_speed_setter
 
 ## Speed of counter-clockwise rotation in degrees per second.
-@export var counter_clockwise_rotation_speed: float = 1
+@export var counter_clockwise_rotation_speed: float = 1: set = _counter_clockwise_rotation_speed_setter
+#endregion
 
+#region state properties 
 ## The current [enum PathFollower.State] of the [PathFollower]
-var _state: State = State.UNSTARTED
+var _state: State = State.UNSTARTED: set = _state_setter
 
 ## Whether the [PathFollower] is [i]travelling[/i] backwards or forwards along the path. [br]
 ## Not to be confused with rewinding. This is used purely for Ping Pong paths.
-var _travelling_backward: bool = false
+var _travelling_backward: bool = false: set = _travelling_backward_setter
 
 ## If [member PathFollower._state] is State.DWELLING or State.BLOCKED_EXTERNAL, represents the vertex that the [PathFollower] is dwelling at. [br]
 ## If [member PathFollower._state] == State.MOVING, represents the vertex that the [PathFollower] is travelling [i]from[/i]. [br]
 ## In all other states, _current_vertex_id is undefined.
-var _current_vertex_id: int = -1
+var _current_vertex_id: int = -1: set = _current_vertex_id_setter
 
 ## If [member PathFollower._state] == State.MOVING, represents the vertex that the [PathFollower] is travelling [i]to[/i]. [br]
 ## In all other states, _current_vertex_id is undefined.
-var _target_vertex_id: int = -1
+var _target_vertex_id: int = -1: set = _target_vertex_id_setter
 
 ## If [member PathFollower._state] == State.MOVING, represents the edge that the [PathFollower] is travelling along. [br]
 ## In all other states, _current_vertex_id is undefined.
-var _current_edge_id: int = -1
+var _current_edge_id: int = -1: set = _current_edge_id_setter
 
 ## The current action that is being executed during vertex dwell. -1 whenever not dwelling.
-var _cur_action_index: int = -1
+var _cur_action_index: int = -1: set = _cur_action_index_setter
 
 ## Represents how much longer to wait while dwelling on a vertex.
-var _action_wait_remaining: float = 0
+var _action_wait_remaining: float = 0: set = _action_wait_remaining_setter
 
 ## How much time is left in State.PRE_DELAY. [br]
 ## When in State.UNSTARTED should be equal to [member start_offset] and 0 when in State.PRE_DELAY.
-var _pre_delay_remaining: float = 0
+var _pre_delay_remaining: float = 0: set = _pre_delay_remaining_setter
 
 ## The amount of time left moving along the current [PathEdge].
 ## -1 if not in State.MOVING.
-var _edge_time_remaining: float = 0
+var _edge_time_remaining: float = 0: set = _edge_time_remaining_setter
 
 ## The total amount time that it takes to move along the current [PathEdge] (from start vertex to end vertex).
 ## -1 if not in State.MOVING.
-var _edge_time_length: float = 0.0001
+var _edge_time_length: float = 0.0001: set = _edge_time_length_setter
 
 ## The id of the [PathEdge] that will be taken due to [BranchAction]s. [br]
 ## -1 if there are no [BranchAction]s 
-var _branch_edge_id: int = -1
+var _branch_edge_id: int = -1: set = _branch_edge_id_setter
 
 ## Elapsed time since [method PathFollower.start]. Includes [member time_offset]. 
-var _path_time: float = 0
+var _path_time: float = 0: set = _path_time_setter
 
 ## Array of [PathEdge] ids in the order that they are taken. Consumed during Ping Pong backward retrace.
-var _edge_history: Array[int]
+var _edge_history: Array[int] = []: set = _edge_history_setter
+#endregion
 
-#region preview
+#region preview properties
 ## Set true by the Time Paths preview scrubber when it is driving this node. [br]
 ## Used when executing a [VertexAction] that would need real conditions (i.e. [BranchAction], [InteractAction])
-var is_preview_driving: bool = false
+var is_preview_driving: bool = false: set = _is_preview_driving_setter
 #endregion
 
-
-#region rotation
+#region rotation properties
 ## Goal time of current rotation animation. Undefined if not animating.
-var _rotation_goal: float = 0
+var _rotation_goal: float = 0: set = _rotation_goal_setter
 ## A flag for whether the rotation track needs to loop before it has actually reached its goal.
-var _needs_loop_before_goal: bool = false
+var _needs_loop_before_goal: bool = false: set = _needs_loop_before_goal_setter
 #endregion
 
-
+#region godot built-ins
 func _enter_tree() -> void:
 	if Engine.is_editor_hint():
 		add_to_group("time_path_followers")
@@ -216,126 +198,9 @@ func _validate_property(property: Dictionary) -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
 		update_gizmos()
+#endregion
 
-
-# Moves the node to the path_data's root vertex (starting point)
-func _snap_to_start():
-	if path_data == null:
-		return
-	var root := path_data.get_start_vertex()
-	if root != null:
-		global_position = root.position
-
-
-## Called by Time Paths plugin when preview scrubbing is disabled to return followers to start.
-func reset_to_start() -> void:
-	is_preview_driving = false
-	_snap_to_start()
-
-
-## Move through the path delta seconds. Will only accept delta >= 0.
-func advance(delta: float) -> void:
-	if path_data == null or _state == State.UNSTARTED:
-		return
-	elif delta > 0:
-		_forward_step(delta)
-	elif delta < 0:
-		_backward_step(delta)
-	_update_transform()
-
-
-## Seeks to the position in the path at [parameter time] after path start.
-func seek(time: float) -> void:
-	advance(time - _path_time)
-
-
-## Sets the branch to take next after the current vertex. Will be overridden by subsequent set_branch_to_take calls.
-func set_branch_to_take(edge_id: int) -> void:
-	_branch_edge_id = edge_id
-
-
-## Begins rotation toward the target direction. Uses shortest path for turn direction. [br]
-## [parameter target_direction] will be projected onto the xz plane to get direction.
-func start_turn(target_direction: Vector3):
-	if Engine.is_editor_hint():
-		return
-	if not rotation_animation_player:
-		push_warning("No rotation animation player assigned for path follower! Cannot rotate.")
-		return
-	var current: float = rotation.y
-	var target: float = Vector3.FORWARD.signed_angle_to(Vector3(target_direction.x,0,target_direction.z),Vector3.UP)
-	# Represents amount and direction of turn in radians. Positive -> CCW, Negative CW (when viewed from above)
-	var turn_value: float = fposmod(target-current, 2*PI)
-	if turn_value > PI:
-		turn_value -= 2*PI
-	var current_rotation: float
-	if turn_value < 0: #clockwise
-		_rotation_goal = 360 - fposmod(rad_to_deg(target),360)
-		current_rotation = 360-fposmod(rad_to_deg(current),360)
-		begin_rotation_animation(true,current_rotation)
-	elif turn_value > 0: #counter-clockwise
-		_rotation_goal = fposmod(rad_to_deg(target),360)
-		current_rotation = fposmod(rad_to_deg(current),360)
-		begin_rotation_animation(false,current_rotation)
-	if current_rotation > _rotation_goal:
-		_needs_loop_before_goal = true
-
-## Begins the rotation animation player. [br]
-## If [paramter clockwise] is true, rotates clockwise, else rotates counter-clockwise
-## See [property clockwise_animations] or [property counter_clockwise_animations] for interpretation of [parameter start_time]
-## This function and can be overridden if custom animation players are used.
-func begin_rotation_animation(clockwise:bool, start_time: float):
-	if clockwise:
-		rotation_animation_player.play(clockwise_animation,-1,clockwise_rotation_speed)
-	else:
-		rotation_animation_player.play(counter_clockwise_animation,-1,counter_clockwise_rotation_speed)
-	rotation_animation_player.seek(start_time,true)
-
-## Used by the [property add_default_animations] export button to add an animation player (if one is not assigned) and add the default animations to it (or to the assigned AnimationPlayer).
-func _add_default_animations() -> void:
-	if not rotation_animation_player:
-		var new_player: AnimationPlayer = AnimationPlayer.new()
-		new_player.name = "AnimationPlayer"
-		var undo_redo: EditorUndoRedoManager = EditorInterface.get_editor_undo_redo()
-		undo_redo.create_action("Create Default Rotation AnimationPlayer")
-		undo_redo.add_do_method(self,"add_child",new_player)
-		undo_redo.add_do_property(new_player,"owner",get_tree().edited_scene_root)
-		undo_redo.add_do_property(self,"rotation_animation_player",new_player)
-		undo_redo.add_do_reference(new_player)
-		undo_redo.add_undo_method(self,"remove_child",new_player)
-		undo_redo.add_undo_property(self,"rotation_animation_player",rotation_animation_player)
-		undo_redo.commit_action()
-	if rotation_animation_player.has_animation_library(DEFAULT_ANIMATION_LIBRARY_NAME):
-		return
-	var animation_library: AnimationLibrary = AnimationLibrary.new()
-	if rotation_animation_player.has_animation(DEFAULT_CW_ANIMATION_NAME):
-		push_warning("The animation player already has the default clockwise animation added.")
-	else:
-		animation_library.add_animation(DEFAULT_CW_ANIMATION_NAME,load(DEFAULT_CW_ANIMATION_PATH))
-	if rotation_animation_player.has_animation(DEFAULT_CCW_ANIMATION_PATH):
-		push_warning("The animation player already has the default counter clockwise animation added.")
-	else:
-		animation_library.add_animation(DEFAULT_CCW_ANIMATION_NAME,load(DEFAULT_CCW_ANIMATION_PATH))
-	if not animation_library.get_animation_list().is_empty():
-		rotation_animation_player.add_animation_library(DEFAULT_ANIMATION_LIBRARY_NAME,animation_library)
-	clockwise_animation = DEFAULT_ANIMATION_LIBRARY_NAME + "/" + DEFAULT_CW_ANIMATION_NAME
-	counter_clockwise_animation = DEFAULT_ANIMATION_LIBRARY_NAME + "/" + DEFAULT_CCW_ANIMATION_NAME
-
-## Returns how long the follower has been following the path. Accounts for start offset. See [method get_current_time] to get the current time along the path. Does not account for any re-traversing of the path.
-func get_elapsed_time() -> float:
-	return _path_time - start_offset
-
-
-## Returns how far into the path the follower is in seconds. Does not account for start offset. See [method get_elapsed_time] to get amount of time follower has been following path.
-func get_current_time() -> float:
-	return _path_time
-
-
-## Returns true if the follower is finished with the path.
-func is_finished() -> bool:
-	return _state == State.FINISHED
-
-
+#region path controls
 ## Initializes the follower at path_data's root and begins simulating. Reinitializes if already initialized.
 ## Safe to call again to restart from scratch.
 func start() -> void:
@@ -367,8 +232,45 @@ func start() -> void:
 	
 	_update_transform()
 
-#region Forward Simulation
 
+## Move through the path delta seconds. Will only accept delta >= 0.
+func advance(delta: float) -> void:
+	if path_data == null or _state == State.UNSTARTED:
+		return
+	elif delta > 0:
+		_forward_step(delta)
+	elif delta < 0:
+		_backward_step(delta)
+	_update_transform()
+
+
+## Seeks to the position in the path at [parameter time] after path start.
+func seek(time: float) -> void:
+	advance(time - _path_time)
+
+
+## Called by Time Paths plugin when preview scrubbing is disabled to return followers to start.
+func reset_to_start() -> void:
+	is_preview_driving = false
+	_snap_to_start()
+
+
+## Returns how long the follower has been following the path. Accounts for start offset. See [method get_current_time] to get the current time along the path. Does not account for any re-traversing of the path.
+func get_elapsed_time() -> float:
+	return _path_time - start_offset
+
+
+## Returns how far into the path the follower is in seconds. Does not account for start offset. See [method get_elapsed_time] to get amount of time follower has been following path.
+func get_current_time() -> float:
+	return _path_time
+
+
+## Returns true if the follower is finished with the path.
+func is_finished() -> bool:
+	return _state == State.FINISHED
+#endregion
+
+#region Forward Simulation
 ## Steps forward into the path by [parameter delta] seconds
 func _forward_step(delta: float) -> void:
 	var remaining := delta
@@ -497,7 +399,7 @@ func _begin_next_edge() -> void:
 	
 	var new_direction := (to_vertex.position - from_vertex.position).normalized()
 	if rotation_enabled and new_direction != Vector3.ZERO and not to_vertex.suppress_incoming_turn:
-		start_turn(new_direction)
+		_start_turn(new_direction)
 	
 	edge_entered.emit(_current_edge_id)
 	_state = State.MOVING
@@ -564,7 +466,93 @@ func _arrive_at_vertex() -> void:
 	_action_wait_remaining = -1.0
 	_branch_edge_id = -1
 	_state = State.DWELLING
+
+
+## Sets the branch to take next after the current vertex. Will be overridden by subsequent set_branch_to_take calls.
+func set_branch_to_take(edge_id: int) -> void:
+	_branch_edge_id = edge_id
 #endregion
+
+#region rotation
+## Begins rotation toward the target direction. Uses shortest path for turn direction. [br]
+## [parameter target_direction] will be projected onto the xz plane to get direction.
+func _start_turn(target_direction: Vector3):
+	if Engine.is_editor_hint():
+		return
+	if not rotation_animation_player:
+		push_warning("No rotation animation player assigned for path follower! Cannot rotate.")
+		return
+	var current: float = rotation.y
+	var target: float = Vector3.FORWARD.signed_angle_to(Vector3(target_direction.x,0,target_direction.z),Vector3.UP)
+	# Represents amount and direction of turn in radians. Positive -> CCW, Negative CW (when viewed from above)
+	var turn_value: float = fposmod(target-current, 2*PI)
+	if turn_value > PI:
+		turn_value -= 2*PI
+	var current_rotation: float
+	if turn_value < 0: #clockwise
+		_rotation_goal = 360 - fposmod(rad_to_deg(target),360)
+		current_rotation = 360-fposmod(rad_to_deg(current),360)
+		begin_rotation_animation(true,current_rotation)
+	elif turn_value > 0: #counter-clockwise
+		_rotation_goal = fposmod(rad_to_deg(target),360)
+		current_rotation = fposmod(rad_to_deg(current),360)
+		begin_rotation_animation(false,current_rotation)
+	if current_rotation > _rotation_goal:
+		_needs_loop_before_goal = true
+
+## Begins the rotation animation player. [br]
+## If [paramter clockwise] is true, rotates clockwise, else rotates counter-clockwise
+## See [property clockwise_animations] or [property counter_clockwise_animations] for interpretation of [parameter start_time]
+## This function and can be overridden if custom animation players are used.
+func begin_rotation_animation(clockwise:bool, start_time: float):
+	if clockwise:
+		rotation_animation_player.play(clockwise_animation,-1,clockwise_rotation_speed)
+	else:
+		rotation_animation_player.play(counter_clockwise_animation,-1,counter_clockwise_rotation_speed)
+	rotation_animation_player.seek(start_time,true)
+
+## Used by the [property add_default_animations] export button to add an animation player (if one is not assigned) and add the default animations to it (or to the assigned AnimationPlayer).
+func _add_default_animations() -> void:
+	if not rotation_animation_player:
+		var new_player: AnimationPlayer = AnimationPlayer.new()
+		new_player.name = "AnimationPlayer"
+		var undo_redo: EditorUndoRedoManager = EditorInterface.get_editor_undo_redo()
+		undo_redo.create_action("Create Default Rotation AnimationPlayer")
+		undo_redo.add_do_method(self,"add_child",new_player)
+		undo_redo.add_do_property(new_player,"owner",get_tree().edited_scene_root)
+		undo_redo.add_do_property(self,"rotation_animation_player",new_player)
+		undo_redo.add_do_reference(new_player)
+		undo_redo.add_undo_method(self,"remove_child",new_player)
+		undo_redo.add_undo_property(self,"rotation_animation_player",rotation_animation_player)
+		undo_redo.commit_action()
+	if rotation_animation_player.has_animation_library(DEFAULT_ANIMATION_LIBRARY_NAME):
+		return
+	var animation_library: AnimationLibrary = AnimationLibrary.new()
+	if rotation_animation_player.has_animation(DEFAULT_CW_ANIMATION_NAME):
+		push_warning("The animation player already has the default clockwise animation added.")
+	else:
+		animation_library.add_animation(DEFAULT_CW_ANIMATION_NAME,load(DEFAULT_CW_ANIMATION_PATH))
+	if rotation_animation_player.has_animation(DEFAULT_CCW_ANIMATION_PATH):
+		push_warning("The animation player already has the default counter clockwise animation added.")
+	else:
+		animation_library.add_animation(DEFAULT_CCW_ANIMATION_NAME,load(DEFAULT_CCW_ANIMATION_PATH))
+	if not animation_library.get_animation_list().is_empty():
+		rotation_animation_player.add_animation_library(DEFAULT_ANIMATION_LIBRARY_NAME,animation_library)
+	clockwise_animation = DEFAULT_ANIMATION_LIBRARY_NAME + "/" + DEFAULT_CW_ANIMATION_NAME
+	counter_clockwise_animation = DEFAULT_ANIMATION_LIBRARY_NAME + "/" + DEFAULT_CCW_ANIMATION_NAME
+#endregion
+
+#region transform
+
+
+## Moves the node to the path_data's root vertex (starting point)
+func _snap_to_start():
+	if path_data == null:
+		return
+	var root := path_data.get_start_vertex()
+	if root != null:
+		global_position = root.position
+
 
 ## Computes the position of the follower given its current state variables.
 func get_computed_position() -> Vector3:
@@ -588,10 +576,116 @@ func get_computed_position() -> Vector3:
 func _update_transform() -> void:
 	if is_inside_tree():
 		global_position = get_computed_position()
+#endregion
 
 #region Backward Simulation (Unimplemented)
 
 ## Called when the follower should take a step of [parameter delta] seconds backwards in its path. Unimplemented, but left to be overridden to implement backtravelling.
 func _backward_step(delta: float):
 	push_warning("Backward step is unimplemented for this PathFollower")
+#endregion
+
+#region setters
+func _path_data_setter(value):
+	path_data = value
+	if Engine.is_editor_hint() and is_inside_tree():
+		if path_data != null:
+			_snap_to_start()
+		update_gizmos()
+
+func _start_offset_setter(value):
+	start_offset = value
+
+func _editor_preview_enabled_setter(value):
+	editor_preview_enabled = value
+
+func _show_path_gizmo_setter(value):
+	show_path_gizmo = value
+	update_gizmos()
+
+func _auto_start_setter(value):
+	auto_start = value
+
+func _run_process_setter(value):
+	run_process = value
+
+func _rotation_enabled_setter(value):
+	rotation_enabled = value
+	update_configuration_warnings()
+	notify_property_list_changed()
+
+func _add_default_animations_setter(value):
+	add_default_animations = value
+
+func _rotation_animation_player_setter(value):
+	if value != rotation_animation_player:
+		if rotation_animation_player:
+			rotation_animation_player.animation_list_changed.disconnect(notify_property_list_changed)
+		if value:
+			value.animation_list_changed.connect(notify_property_list_changed)
+	rotation_animation_player = value
+	update_configuration_warnings()
+	notify_property_list_changed()
+
+func _clockwise_animation_setter(value):
+	clockwise_animation = value
+	update_configuration_warnings()
+
+func _counter_clockwise_animation_setter(value):
+	counter_clockwise_animation = value
+	update_configuration_warnings()
+
+func _clockwise_rotation_speed_setter(value):
+	clockwise_rotation_speed = value
+
+func _counter_clockwise_rotation_speed_setter(value):
+	counter_clockwise_rotation_speed = value
+
+func _state_setter(value):
+	_state = value
+
+func _travelling_backward_setter(value):
+	_travelling_backward = value
+
+func _current_vertex_id_setter(value):
+	_current_vertex_id = value
+
+func _target_vertex_id_setter(value):
+	_target_vertex_id = value
+
+func _current_edge_id_setter(value):
+	_current_edge_id = value
+
+func _cur_action_index_setter(value):
+	_cur_action_index = value
+
+func _action_wait_remaining_setter(value):
+	_action_wait_remaining = value
+
+func _pre_delay_remaining_setter(value):
+	_pre_delay_remaining = value
+
+func _edge_time_remaining_setter(value):
+	_edge_time_remaining = value
+
+func _edge_time_length_setter(value):
+	_edge_time_length = value
+
+func _branch_edge_id_setter(value):
+	_branch_edge_id = value
+
+func _path_time_setter(value):
+	_path_time = value
+
+func _edge_history_setter(value):
+	_edge_history = value
+
+func _is_preview_driving_setter(value):
+	is_preview_driving = value
+
+func _rotation_goal_setter(value):
+	_rotation_goal = value
+	
+func _needs_loop_before_goal_setter(value):
+	_needs_loop_before_goal = value
 #endregion
