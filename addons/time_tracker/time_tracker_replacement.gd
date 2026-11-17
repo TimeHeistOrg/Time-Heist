@@ -2,7 +2,7 @@
 extends Node
 
 var editor: ScriptEditor
-var replacement_string:String = ": #TIMEVAR\n\tset(value):\n\t\tif globals.time_manager and globals.time_manager.logging:\n\t\t\tglobals.time_manager.timelog(self,\"VARNAME\",VARNAME)\n\t\tVARNAME = value"
+var replacement_string:String = ": #TIMEVAR\n\tset(value):\n\t\tif not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:\n\t\t\tglobals.time_manager.timelog(self,\"VARNAME\",VARNAME)\n\t\tVARNAME = value"
 var undo_redo: EditorUndoRedoManager
 
 func _ready():

@@ -19,7 +19,7 @@ class_name Document
 var is_visible: bool = true: #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
-			if globals.time_manager and globals.time_manager.logging:
+			if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_visible",is_visible)
 		is_visible = value
 		if value:

@@ -3,7 +3,7 @@ extends AppBase
 var emails
 var email_button_instances : Array[EmailButton]  #TIMEVAR
 	#set(value):
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self,"email_button_instances",email_button_instances)
 		#email_button_instances = value
 		#print("SET FUNCTION CALLED")
@@ -18,7 +18,7 @@ var time_manager : TimeManager
 var first_time : bool = true #need?
 var finished : bool = false : #TIMEVAR
 	set(value):
-		if globals.time_manager and globals.time_manager.logging:
+		if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"finished",finished)
 		finished = value
 

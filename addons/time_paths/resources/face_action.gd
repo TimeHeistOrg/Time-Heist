@@ -13,4 +13,4 @@ func get_display_name() -> String:
 func _execute(follower: Object) -> float:
 	if follower.has_method("begin_turn"):
 		return follower.call("begin_turn", target_direction)
-	return 0.0
+	return block_time

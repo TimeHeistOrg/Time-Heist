@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://cyif8uwvd8l5"]
 
+[ext_resource type="PackedScene" uid="uid://3lkcmqqpfawu" path="res://Scenes/scene_config.tscn" id="1_7li5w"]
 [ext_resource type="PackedScene" uid="uid://dx080k5623l3p" path="res://Modules/Player/player.tscn" id="1_qbnuv"]
 [ext_resource type="PackedScene" uid="uid://b64t4twgcdips" path="res://Modules/Interaction/interactable.tscn" id="2_8bbx1"]
 [ext_resource type="Texture2D" uid="uid://co4jpppqbvflr" path="res://icon.svg" id="3_2fdcd"]
 [ext_resource type="PackedScene" uid="uid://bk11o2jtj5d7g" path="res://Modules/Interaction/Door/generic_door.tscn" id="4_tdjgc"]
+[ext_resource type="Script" uid="uid://bqvnh1acxcqty" path="res://Modules/AI/TimePathFollower/time_path_follower.gd" id="5_8bbx1"]
+[ext_resource type="Script" uid="uid://c2tfic5m1pfay" path="res://addons/time_paths/resources/path_edge.gd" id="6_38b67"]
+[ext_resource type="Script" uid="uid://cj8wbl3qc6l2j" path="res://addons/time_paths/resources/path_data.gd" id="7_lwkac"]
+[ext_resource type="Script" uid="uid://cubjybclcdt7g" path="res://addons/time_paths/resources/path_vertex.gd" id="8_qbnuv"]
+[ext_resource type="Script" uid="uid://f845h7rcahvl" path="res://addons/time_paths/resources/vertex_action.gd" id="9_7li5w"]
+[ext_resource type="Script" uid="uid://drf8qjxbwsqng" path="res://addons/time_paths/resources/wait_action.gd" id="10_lwkac"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m53t8"]
 
@@ -16,7 +23,7 @@ script/source = "extends MeshInstance3D
 func interact():
 	print(\"interacted with test_cube\")
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed(\"debug_button\"):
 		branch = not branch
 		print(\"branch is now \", branch)
@@ -24,7 +31,82 @@ func _process(delta):
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ah0ni"]
 
+[sub_resource type="Resource" id="Resource_2fdcd"]
+script = ExtResource("6_38b67")
+id = 0
+from_vertex = 0
+to_vertex = 1
+
+[sub_resource type="Resource" id="Resource_tdjgc"]
+script = ExtResource("6_38b67")
+id = 1
+from_vertex = 1
+to_vertex = 2
+
+[sub_resource type="Resource" id="Resource_ah1yn"]
+script = ExtResource("6_38b67")
+id = 2
+from_vertex = 2
+to_vertex = 3
+
+[sub_resource type="Resource" id="Resource_uubgh"]
+script = ExtResource("6_38b67")
+id = 3
+from_vertex = 3
+to_vertex = 4
+
+[sub_resource type="Resource" id="Resource_56fgu"]
+script = ExtResource("8_qbnuv")
+id = 0
+
+[sub_resource type="Resource" id="Resource_38b67"]
+script = ExtResource("10_lwkac")
+metadata/_custom_type_script = "uid://drf8qjxbwsqng"
+
+[sub_resource type="Resource" id="Resource_g31sr"]
+script = ExtResource("8_qbnuv")
+id = 1
+position = Vector3(0, 0, -4)
+actions = Array[ExtResource("9_7li5w")]([SubResource("Resource_38b67")])
+
+[sub_resource type="Resource" id="Resource_0jwk2"]
+script = ExtResource("8_qbnuv")
+id = 2
+position = Vector3(6, 0, -4)
+
+[sub_resource type="Resource" id="Resource_xrks1"]
+script = ExtResource("8_qbnuv")
+id = 3
+position = Vector3(4, 0, -2)
+
+[sub_resource type="Resource" id="Resource_hddm0"]
+script = ExtResource("8_qbnuv")
+id = 4
+position = Vector3(4, 0, 0)
+
+[sub_resource type="Resource" id="Resource_8bbx1"]
+script = ExtResource("7_lwkac")
+vertices = Array[ExtResource("8_qbnuv")]([SubResource("Resource_56fgu"), SubResource("Resource_g31sr"), SubResource("Resource_0jwk2"), SubResource("Resource_xrks1"), SubResource("Resource_hddm0")])
+edges = Array[ExtResource("6_38b67")]([SubResource("Resource_2fdcd"), SubResource("Resource_tdjgc"), SubResource("Resource_ah1yn"), SubResource("Resource_uubgh")])
+metadata/_custom_type_script = "uid://cj8wbl3qc6l2j"
+
+[sub_resource type="PrismMesh" id="PrismMesh_ptw78"]
+size = Vector3(0.75, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bbx1"]
+albedo_color = Color(0.68290573, 0.55371857, 0.9446828, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1oms"]
+size = Vector3(100, 2, 100)
+
 [node name="Pathing Test World" type="Node3D" unique_id=1891461424]
+
+[node name="SceneConfig" parent="." unique_id=705177490 node_paths=PackedStringArray("player", "exclusion_list") instance=ExtResource("1_7li5w")]
+player = NodePath("../Player")
+exclusion_list = [NodePath("../Camera3D2"), NodePath("../Camera3D")]
+input_manager = true
+ui_manager = true
+time_manager = true
 
 [node name="Player" parent="." unique_id=288105915 instance=ExtResource("1_qbnuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7756777, 0, -3.2493715)
@@ -36,7 +118,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.78
 transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, -14.140339, 5.19565, 1.5849341e-06)
 
 [node name="TestCube" type="MeshInstance3D" parent="." unique_id=139582015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.5, 10)
 mesh = SubResource("BoxMesh_m53t8")
 script = SubResource("GDScript_urgcb")
 
@@ -47,6 +129,7 @@ shape = SubResource("BoxShape3D_ah0ni")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1573951455]
 transform = Transform3D(0.57513374, -0.37195083, 0.7286108, -1.4901161e-08, 0.8906576, 0.4546746, -0.8180594, -0.26149872, 0.5122472, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1477550229]
 transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0, 0, 0)
@@ -55,5 +138,24 @@ texture = ExtResource("3_2fdcd")
 
 [node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("4_tdjgc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="TimePathFollower" type="Node3D" parent="." unique_id=1893362196 node_paths=PackedStringArray("state_label")]
+script = ExtResource("5_8bbx1")
+state_label = NodePath("Label3D")
+path_data = SubResource("Resource_8bbx1")
+metadata/_custom_type_script = "uid://bqvnh1acxcqty"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TimePathFollower" unique_id=1053517040]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
+mesh = SubResource("PrismMesh_ptw78")
+surface_material_override/0 = SubResource("StandardMaterial3D_8bbx1")
+
+[node name="Label3D" type="Label3D" parent="TimePathFollower" unique_id=36603312]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 2.0759091, 0)
+text = "STATE"
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1193992787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_p1oms")
 
 [connection signal="anon_interacted" from="TestCube/Interactable" to="TestCube" method="interact"]

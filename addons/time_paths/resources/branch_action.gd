@@ -22,10 +22,10 @@ func _execute(follower: Object) -> float:
 	if follower.get("is_editor_preview") == true:
 		if preview_result and follower.has_method("take_branch"):
 			follower.call("take_branch", target_edge_id)
-		return 0.0
+		return block_time
 
 	if condition == "":
-		return 0.0
+		return block_time
 
 	var expr := Expression.new()
 	var parse_err := expr.parse(condition)
@@ -41,4 +41,4 @@ func _execute(follower: Object) -> float:
 	if bool(result) and follower.has_method("take_branch"):
 		follower.call("take_branch", target_edge_id)
 
-	return 0.0
+	return block_time

@@ -16,8 +16,9 @@ var tween : Tween
 var is_active: bool = false
 
 func _ready() -> void:
-	globals.time_manager.start_time_travel.connect(_play_animation)
-	globals.time_manager.end_time_travel.connect(_stop_animation)
+	if globals.time_manager:
+		globals.time_manager.start_time_travel.connect(_play_animation)
+		globals.time_manager.end_time_travel.connect(_stop_animation)
 	visible = false
 	_set_shader_radius(0.0)
 

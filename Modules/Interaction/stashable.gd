@@ -4,13 +4,13 @@ class_name Stashable
 var has_item : bool
 @export var is_locked : bool = false : #TIMEVAR
 	set(value):
-		if globals.time_manager and globals.time_manager.logging:
+		if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"is_locked",is_locked)
 		is_locked = value
 @export var held_item : PickupItem = null : #TIMEVAR
 	set(value):
 		#print("\tSTASHABLE SET BEING CALLED. HELD_IMEM IS NOW ", value)
-		if globals.time_manager and globals.time_manager.logging:
+		if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"held_item",held_item)
 		held_item = value
 		has_item = true if value else false

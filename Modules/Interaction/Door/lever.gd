@@ -48,7 +48,7 @@ var cur_action: LeverTimeAction = null: #TIMEVAR
 				#print("set animation close")
 				animation_player.play("DownToUp")
 				animation_player.pause()
-		if globals.time_manager and globals.time_manager.logging:
+		if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"cur_action",cur_action)
 		cur_action = value
 

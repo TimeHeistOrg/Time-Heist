@@ -8,7 +8,7 @@ signal disabled(value: bool)
 	set(value):
 		#print("set is_open to ", value)
 		if not Engine.is_editor_hint():
-			if globals.time_manager and globals.time_manager.logging:
+			if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_open",is_open)
 		is_open_setter(value)
 		is_open = value
@@ -17,7 +17,7 @@ signal disabled(value: bool)
 	set(value):
 		#print("set is_locked to ", value)
 		if not Engine.is_editor_hint():
-			if globals.time_manager and globals.time_manager.logging:
+			if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_locked",is_locked)
 		is_locked_setter(value)
 		is_locked = value
@@ -25,7 +25,7 @@ signal disabled(value: bool)
 @export var is_disabled: bool = false: #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
-			if globals.time_manager and globals.time_manager.logging:
+			if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"is_disabled",is_disabled)
 		is_disabled_setter(value)
 		is_disabled = value

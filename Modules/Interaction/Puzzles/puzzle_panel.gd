@@ -19,7 +19,7 @@ const on_mat: Material = preload("res://Modules/Interaction/Puzzles/display_on_m
 var panel_on: bool : #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
-			if globals.time_manager and globals.time_manager.logging:
+			if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"panel_on",panel_on)
 		if is_node_ready():
 			panel_on_setter(value)

@@ -7,7 +7,7 @@ var open_position = Vector3(0,0,-1.6)
 
 var is_open : bool: #TIMEVAR
 	set(value):
-		if globals.time_manager and globals.time_manager.logging:
+		if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"is_open",is_open)
 		is_open = value
 		if value:

@@ -42,7 +42,7 @@ class_name Guard extends PathFollower
 		#if value == state:
 			#return
 		#if not Engine.is_editor_hint():
-			#if globals.time_manager and globals.time_manager.logging:
+			#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				#globals.time_manager.timelog(self, "state", state)
 		#var old_state = state
 		#state = value
@@ -55,7 +55,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == player_seen:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self, "player_seen", player_seen)
 		#if value:
 			#sight_started_at = time_manager.cur_time
@@ -70,7 +70,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == sight_started_at:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self, "sight_started_at", sight_started_at)
 		#sight_started_at = value
 #
@@ -79,7 +79,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == lost_sight_at:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self,"lost_sight_at",lost_sight_at)
 		#lost_sight_at = value
 #
@@ -104,7 +104,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == total_time_away_from_normal:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self, "total_time_away_from_normal", total_time_away_from_normal)
 		#total_time_away_from_normal = value
 #
@@ -114,7 +114,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == left_normal_at:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self, "left_normal_at", left_normal_at)
 		#left_normal_at = value
 #
@@ -149,7 +149,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == target_seen_position:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self, "target_seen_position", target_seen_position)
 		#target_seen_position = value
 #
@@ -161,7 +161,7 @@ class_name Guard extends PathFollower
 	#set(value):
 		#if value == alert_group:
 			#return
-		#if globals.time_manager and globals.time_manager.logging:
+		#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			#globals.time_manager.timelog(self, "alert_group", alert_group)
 		#alert_group = value
 #
@@ -479,7 +479,7 @@ class_name Guard extends PathFollower
 		#set(value):
 			#if value == members:
 				#return
-			#if globals.time_manager and globals.time_manager.logging:
+			#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				#globals.time_manager.timelog(self, "members", members.duplicate())
 			#members = value
 #
@@ -492,7 +492,7 @@ class_name Guard extends PathFollower
 		#set(value):
 			#if value == lost_sight_at:
 				#return
-			#if globals.time_manager and globals.time_manager.logging:
+			#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				#globals.time_manager.timelog(self, "lost_sight_at", lost_sight_at)
 			#lost_sight_at = value
 #
@@ -504,7 +504,7 @@ class_name Guard extends PathFollower
 		#set(value):
 			#if value == had_sight:
 				#return
-			#if globals.time_manager and globals.time_manager.logging:
+			#if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				#globals.time_manager.timelog(self, "had_sight", had_sight)
 			#had_sight = value
 #

@@ -10,7 +10,7 @@ const inactive_mat = preload("res://Modules/AI/NPC/inactive_material.tres")
 @export var catch_enabled: bool = true : #TIMEVAR
 	set(value):
 		if not Engine.is_editor_hint():
-			if globals.time_manager and globals.time_manager.logging:
+			if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 				globals.time_manager.timelog(self,"catch_enabled",catch_enabled)
 		catch_enabled_setter(value)
 		catch_enabled = value

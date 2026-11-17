@@ -12,7 +12,7 @@ var cur_action: TimeAnimationAction = null : #TIMEVAR
 		if value:
 			play(value.track)
 			pause()
-		if globals.time_manager and globals.time_manager.logging:
+		if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
 			globals.time_manager.timelog(self,"cur_action",cur_action)
 		cur_action = value
 var cur_progress: float = 0
