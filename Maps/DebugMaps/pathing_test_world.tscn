@@ -143,6 +143,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 script = ExtResource("5_8bbx1")
 state_label = NodePath("Label3D")
 path_data = SubResource("Resource_8bbx1")
+start_offset = 10.0
 metadata/_custom_type_script = "uid://bqvnh1acxcqty"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="TimePathFollower" unique_id=1053517040]
@@ -157,5 +158,6 @@ text = "STATE"
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1193992787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_p1oms")
+metadata/_edit_lock_ = true
 
 [connection signal="anon_interacted" from="TestCube/Interactable" to="TestCube" method="interact"]

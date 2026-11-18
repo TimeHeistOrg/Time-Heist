@@ -3,18 +3,26 @@ class_name TimePathFollower extends PathFollower
 
 @export var state_label: Label3D
 
-func _state_setter(value):
-	if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
-		globals.time_manager.timelog(self,"_state",_state)
-	_state = value
-	state_label.text = State.find_key(_state)
+var _time_finished: float = -1
 
-func _process(delta: float) -> void:
+func _state_setter(value):
+	super._state_setter(value)
+	state_label.text = State.find_key(value)
+	if value == State.FINISHED:
+		_time_finished = _path_time
+
+
+func _branch_edge_id_setter(value):
+	if not Engine.is_editor_hint() and globals.time_manager and globals.time_manager.logging:
+		globals.time_manager.timelog(self,"_branch_edge_id",_branch_edge_id)
+	_branch_edge_id = value
+
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		pass
 	else:
 		if run_process:
-			advance(delta*globals.time_manager.time_multiplier)
+			seek(globals.time_manager.cur_time)
 
 #region backward simulation
 ## Steps backward into the path by [parameter delta] seconds
@@ -28,6 +36,8 @@ func _backward_step(delta: float) -> void:
 				remaining = _dwelling_backward_step(remaining)
 			State.MOVING:
 				remaining = _moving_backward_step(remaining)
+			State.FINISHED:
+				remaining = _finished_backward_step(remaining)
 			_:
 				break
 
@@ -39,6 +49,7 @@ func _pre_delay_backward_step(remaining) -> float:
 	_pre_delay_remaining += consumed
 	if _pre_delay_remaining >= start_offset:
 		_pre_delay_remaining = start_offset
+		_state = State.UNSTARTED
 	return remaining - consumed
 
 
@@ -50,7 +61,7 @@ func _dwelling_backward_step(remaining) -> float:
 		return 0.0
 	
 	
-	if _cur_action_index < 0:
+	if vertex.actions.is_empty() or _cur_action_index < 0:
 		_begin_previous_edge()
 		return remaining
 	
@@ -76,8 +87,6 @@ func _moving_backward_step(remaining: float) -> float:
 	_path_time -= consumed
 	_edge_time_remaining += consumed
 	if _edge_time_remaining >= _edge_time_length:
-		if not _travelling_backward:
-			_edge_history.pop_back()
 		_current_vertex_id = _current_vertex_id
 		_arrive_at_previous_vertex()
 	return remaining - consumed
@@ -85,48 +94,40 @@ func _moving_backward_step(remaining: float) -> float:
 
 ## (Re)Initializes the edge state variables to begin a previous edge.
 func _begin_previous_edge():
-	pass
-		#var edge: PathEdge
-	#
-	#if not _travelling_backward:
-		#edge = _pick_forward_edge(_current_vertex_id)
-		#if edge == null:
-			#_handle_forward_terminal()
-			#return
-		#_target_vertex_id = edge.to_vertex
-	#else:
-		#if _edge_history.is_empty():
-			#_handle_backward_terminal()
-			#return
-		#var last: Dictionary = _edge_history.pop_back()
-		#edge = path_data.get_edge_by_id(last["edge_id"])
-		#if edge == null:
-			#_handle_backward_terminal()
-			#return
-		#_target_vertex_id = edge.from_vertex  # walking it in reverse
-	#
-	#_current_edge_id = edge.id
-	#
-	#var from_vertex := path_data.get_vertex_by_id(_current_vertex_id)
-	#var to_vertex := path_data.get_vertex_by_id(_target_vertex_id)
-	#var edge_length := from_vertex.position.distance_to(to_vertex.position)
-	#var speed := to_vertex.get_effective_speed(path_data.default_speed)
-	#_edge_time_remaining = edge_length / speed if speed > 0.0 else 0.0
-	#_edge_time_length = max(_edge_time_remaining, 0.0001)
-	#
-	#var new_direction := (to_vertex.position - from_vertex.position).normalized()
-	#if rotation_enabled and new_direction != Vector3.ZERO and not to_vertex.suppress_incoming_turn:
-		#_start_turn(new_direction)
-	#
-	#edge_entered.emit(_current_edge_id)
-	#_state = State.MOVING
+	if _edge_history.is_empty():
+		_state = State.PRE_DELAY
+		return
+	var edge: PathEdge = path_data.get_edge_by_id(_edge_history.pop_back())
+	
+	_current_edge_id = edge.id
+	_current_vertex_id = edge.from_vertex
+	_target_vertex_id = edge.to_vertex
+	
+	var from_vertex := path_data.get_vertex_by_id(_current_vertex_id)
+	var to_vertex := path_data.get_vertex_by_id(_target_vertex_id)
+	var edge_length := from_vertex.position.distance_to(to_vertex.position)
+	var speed := to_vertex.get_effective_speed(path_data.default_speed)
+	_edge_time_remaining = 0.0
+	_edge_time_length = max(edge_length / speed, 0.0001)
+	_state = State.MOVING
 
 
 ## (Re)Initializes the vertex state variables to begin a previous vertex.
 func _arrive_at_previous_vertex():
-	pass
-	#vertex_reached.emit(_current_vertex_id)
-	#_cur_action_index = 0
-	#_action_wait_remaining = -1.0
-	#_branch_edge_id = -1
-	#_state = State.DWELLING
+	var vertex = path_data.get_vertex_by_id(_target_vertex_id)
+	_cur_action_index = vertex.actions.size()-1
+	if _cur_action_index > 0:
+		_action_wait_remaining = vertex.actions[_cur_action_index].get_block_time()
+	else:
+		_action_wait_remaining = 0
+	_state = State.DWELLING
+
+
+## Handles the behavior for a forward step when in the FINISHED state.
+func _finished_backward_step(remaining):
+	var consumed := minf(remaining, _path_time - _time_finished)
+	_path_time -= consumed
+	if _path_time <= _time_finished:
+		_time_finished = -1
+		_state = State.DWELLING
+	return remaining - consumed
