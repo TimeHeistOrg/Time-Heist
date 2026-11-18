@@ -10,7 +10,100 @@
 [ext_resource type="Script" uid="uid://cj8wbl3qc6l2j" path="res://addons/time_paths/resources/path_data.gd" id="7_lwkac"]
 [ext_resource type="Script" uid="uid://cubjybclcdt7g" path="res://addons/time_paths/resources/path_vertex.gd" id="8_qbnuv"]
 [ext_resource type="Script" uid="uid://f845h7rcahvl" path="res://addons/time_paths/resources/vertex_action.gd" id="9_7li5w"]
-[ext_resource type="Script" uid="uid://drf8qjxbwsqng" path="res://addons/time_paths/resources/wait_action.gd" id="10_lwkac"]
+[ext_resource type="Animation" uid="uid://bqnl3wulf81qt" path="res://addons/time_paths/resources/clockwise_default_animation.tres" id="12_2fdcd"]
+[ext_resource type="Script" uid="uid://cmaj4hk6rhpod" path="res://addons/time_paths/resources/branch_action.gd" id="12_7li5w"]
+[ext_resource type="Script" uid="uid://n5lh3o46he4c" path="res://Modules/AI/TimePathFollower/interact_action.gd" id="12_ah1yn"]
+[ext_resource type="Animation" uid="uid://wd3hrrbi2iet" path="res://addons/time_paths/resources/counter_clockwise_default_animation.tres" id="13_tdjgc"]
+[ext_resource type="Script" uid="uid://b2clf5853h8va" path="res://Modules/TimeTravel/time_animation_player.gd" id="14_tdjgc"]
+
+[sub_resource type="Resource" id="Resource_2fdcd"]
+script = ExtResource("6_38b67")
+id = 0
+from_vertex = 0
+to_vertex = 1
+
+[sub_resource type="Resource" id="Resource_qbnuv"]
+script = ExtResource("6_38b67")
+id = 2
+from_vertex = 1
+to_vertex = 2
+
+[sub_resource type="Resource" id="Resource_7li5w"]
+script = ExtResource("6_38b67")
+id = 3
+from_vertex = 1
+to_vertex = 3
+
+[sub_resource type="Resource" id="Resource_hddm0"]
+script = ExtResource("6_38b67")
+id = 6
+from_vertex = 3
+to_vertex = 5
+
+[sub_resource type="Resource" id="Resource_0jwk2"]
+script = ExtResource("6_38b67")
+id = 7
+from_vertex = 5
+to_vertex = 0
+is_loop_edge = true
+
+[sub_resource type="Resource" id="Resource_56fgu"]
+script = ExtResource("8_qbnuv")
+id = 0
+
+[sub_resource type="Resource" id="Resource_ah1yn"]
+script = ExtResource("12_7li5w")
+condition = "_globals.branch_test"
+target_edge_id = 3
+metadata/_custom_type_script = "uid://cmaj4hk6rhpod"
+
+[sub_resource type="Resource" id="Resource_g31sr"]
+script = ExtResource("8_qbnuv")
+id = 1
+position = Vector3(0, 0, -2)
+actions = Array[ExtResource("9_7li5w")]([SubResource("Resource_ah1yn")])
+
+[sub_resource type="Resource" id="Resource_tdjgc"]
+script = ExtResource("12_ah1yn")
+interactable_root_node_name = "Pathing Test World"
+metadata/_custom_type_script = "uid://n5lh3o46he4c"
+
+[sub_resource type="Resource" id="Resource_uubgh"]
+script = ExtResource("8_qbnuv")
+id = 2
+position = Vector3(-2, 0, -2)
+actions = Array[ExtResource("9_7li5w")]([SubResource("Resource_tdjgc")])
+
+[sub_resource type="Resource" id="Resource_xrks1"]
+script = ExtResource("8_qbnuv")
+id = 3
+position = Vector3(3.75, 0, -2)
+
+[sub_resource type="Resource" id="Resource_y0cg6"]
+script = ExtResource("8_qbnuv")
+id = 5
+position = Vector3(3.75, 0, 0)
+
+[sub_resource type="Resource" id="Resource_8bbx1"]
+script = ExtResource("7_lwkac")
+vertices = Array[ExtResource("8_qbnuv")]([SubResource("Resource_56fgu"), SubResource("Resource_g31sr"), SubResource("Resource_uubgh"), SubResource("Resource_xrks1"), SubResource("Resource_y0cg6")])
+edges = Array[ExtResource("6_38b67")]([SubResource("Resource_2fdcd"), SubResource("Resource_qbnuv"), SubResource("Resource_7li5w"), SubResource("Resource_hddm0"), SubResource("Resource_0jwk2")])
+metadata/_custom_type_script = "uid://cj8wbl3qc6l2j"
+
+[sub_resource type="PrismMesh" id="PrismMesh_ptw78"]
+size = Vector3(0.75, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bbx1"]
+albedo_color = Color(0.68290573, 0.55371857, 0.9446828, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ah1yn"]
+_data = {
+&"DEFAULT_CLOCKWISE_ANIMATION": ExtResource("12_2fdcd"),
+&"DEFAULT_COUNTER_CLOCKWISE_ANIMATION": ExtResource("13_tdjgc")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1oms"]
+size = Vector3(100, 2, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m53t8"]
 
@@ -25,79 +118,13 @@ func interact():
 
 func _process(_delta):
 	if Input.is_action_just_pressed(\"debug_button\"):
-		branch = not branch
-		print(\"branch is now \", branch)
+		globals.branch_test = not globals.branch_test
+		print(\"branch_test set to: \", globals.branch_test)
+		#branch = not branch
+		#print(\"branch is now \", branch)
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ah0ni"]
-
-[sub_resource type="Resource" id="Resource_2fdcd"]
-script = ExtResource("6_38b67")
-id = 0
-from_vertex = 0
-to_vertex = 1
-
-[sub_resource type="Resource" id="Resource_tdjgc"]
-script = ExtResource("6_38b67")
-id = 1
-from_vertex = 1
-to_vertex = 2
-
-[sub_resource type="Resource" id="Resource_ah1yn"]
-script = ExtResource("6_38b67")
-id = 2
-from_vertex = 2
-to_vertex = 3
-
-[sub_resource type="Resource" id="Resource_uubgh"]
-script = ExtResource("6_38b67")
-id = 3
-from_vertex = 3
-to_vertex = 4
-
-[sub_resource type="Resource" id="Resource_56fgu"]
-script = ExtResource("8_qbnuv")
-id = 0
-
-[sub_resource type="Resource" id="Resource_38b67"]
-script = ExtResource("10_lwkac")
-metadata/_custom_type_script = "uid://drf8qjxbwsqng"
-
-[sub_resource type="Resource" id="Resource_g31sr"]
-script = ExtResource("8_qbnuv")
-id = 1
-position = Vector3(0, 0, -4)
-actions = Array[ExtResource("9_7li5w")]([SubResource("Resource_38b67")])
-
-[sub_resource type="Resource" id="Resource_0jwk2"]
-script = ExtResource("8_qbnuv")
-id = 2
-position = Vector3(6, 0, -4)
-
-[sub_resource type="Resource" id="Resource_xrks1"]
-script = ExtResource("8_qbnuv")
-id = 3
-position = Vector3(4, 0, -2)
-
-[sub_resource type="Resource" id="Resource_hddm0"]
-script = ExtResource("8_qbnuv")
-id = 4
-position = Vector3(4, 0, 0)
-
-[sub_resource type="Resource" id="Resource_8bbx1"]
-script = ExtResource("7_lwkac")
-vertices = Array[ExtResource("8_qbnuv")]([SubResource("Resource_56fgu"), SubResource("Resource_g31sr"), SubResource("Resource_0jwk2"), SubResource("Resource_xrks1"), SubResource("Resource_hddm0")])
-edges = Array[ExtResource("6_38b67")]([SubResource("Resource_2fdcd"), SubResource("Resource_tdjgc"), SubResource("Resource_ah1yn"), SubResource("Resource_uubgh")])
-metadata/_custom_type_script = "uid://cj8wbl3qc6l2j"
-
-[sub_resource type="PrismMesh" id="PrismMesh_ptw78"]
-size = Vector3(0.75, 1, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bbx1"]
-albedo_color = Color(0.68290573, 0.55371857, 0.9446828, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_p1oms"]
-size = Vector3(100, 2, 100)
 
 [node name="Pathing Test World" type="Node3D" unique_id=1891461424]
 
@@ -117,16 +144,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.78
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1188379275]
 transform = Transform3D(-4.371139e-08, 0, -0.9999999, 0, 0.99999994, 0, 1, 0, -4.3711385e-08, -14.140339, 5.19565, 1.5849341e-06)
 
-[node name="TestCube" type="MeshInstance3D" parent="." unique_id=139582015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.5, 10)
-mesh = SubResource("BoxMesh_m53t8")
-script = SubResource("GDScript_urgcb")
-
-[node name="Interactable" parent="TestCube" unique_id=242002428 instance=ExtResource("2_8bbx1")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestCube/Interactable" unique_id=912900751]
-shape = SubResource("BoxShape3D_ah0ni")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1573951455]
 transform = Transform3D(0.57513374, -0.37195083, 0.7286108, -1.4901161e-08, 0.8906576, 0.4546746, -0.8180594, -0.26149872, 0.5122472, 0, 0, 0)
 shadow_enabled = true
@@ -139,11 +156,16 @@ texture = ExtResource("3_2fdcd")
 [node name="Generic_Door" parent="." unique_id=74631722 instance=ExtResource("4_tdjgc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
-[node name="TimePathFollower" type="Node3D" parent="." unique_id=1893362196 node_paths=PackedStringArray("state_label")]
+[node name="TimePathFollower" type="Node3D" parent="." unique_id=1893362196 node_paths=PackedStringArray("state_label", "rotation_animation_player")]
 script = ExtResource("5_8bbx1")
 state_label = NodePath("Label3D")
 path_data = SubResource("Resource_8bbx1")
-start_offset = 10.0
+rotation_enabled = true
+rotation_animation_player = NodePath("TimeAnimationPlayer")
+clockwise_animation = &"DEFAULT_ROTATION_ANIMATION_LIBRARY/DEFAULT_CLOCKWISE_ANIMATION"
+counter_clockwise_animation = &"DEFAULT_ROTATION_ANIMATION_LIBRARY/DEFAULT_COUNTER_CLOCKWISE_ANIMATION"
+clockwise_rotation_speed = 360.0
+counter_clockwise_rotation_speed = 360.0
 metadata/_custom_type_script = "uid://bqvnh1acxcqty"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="TimePathFollower" unique_id=1053517040]
@@ -153,11 +175,29 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8bbx1")
 
 [node name="Label3D" type="Label3D" parent="TimePathFollower" unique_id=36603312]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 2.0759091, 0)
-text = "STATE"
+text = "DWELLING"
+
+[node name="TimeAnimationPlayer" type="AnimationPlayer" parent="TimePathFollower" unique_id=80938408]
+libraries/DEFAULT_ROTATION_ANIMATION_LIBRARY = SubResource("AnimationLibrary_ah1yn")
+script = ExtResource("14_tdjgc")
+metadata/_custom_type_script = "uid://b2clf5853h8va"
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1193992787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_p1oms")
 metadata/_edit_lock_ = true
 
-[connection signal="anon_interacted" from="TestCube/Interactable" to="TestCube" method="interact"]
+[node name="Node3D" type="Node3D" parent="." unique_id=868180623]
+
+[node name="TestCube" type="MeshInstance3D" parent="Node3D" unique_id=139582015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6358433, 0.5, -1.9316549)
+mesh = SubResource("BoxMesh_m53t8")
+skeleton = NodePath("../..")
+script = SubResource("GDScript_urgcb")
+
+[node name="Interactable" parent="Node3D/TestCube" unique_id=242002428 instance=ExtResource("2_8bbx1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/TestCube/Interactable" unique_id=912900751]
+shape = SubResource("BoxShape3D_ah0ni")
+
+[connection signal="anon_interacted" from="Node3D/TestCube/Interactable" to="Node3D/TestCube" method="interact"]

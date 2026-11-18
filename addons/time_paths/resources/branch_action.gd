@@ -18,7 +18,7 @@ func get_display_name() -> String:
 	return "Branch if (%s) -> edge %d" % [cond_display, target_edge_id]
 
 
-func _execute(follower: Object) -> float:
+func _execute(follower: PathFollower) -> float:
 	if follower.get("is_editor_preview") == true:
 		if preview_result and follower.has_method("take_branch"):
 			follower.call("take_branch", target_edge_id)
@@ -38,7 +38,7 @@ func _execute(follower: Object) -> float:
 		push_error("BranchAction: condition '%s' failed to evaluate: %s" % [condition, expr.get_error_text()])
 		return 0.0
 
-	if bool(result) and follower.has_method("take_branch"):
-		follower.call("take_branch", target_edge_id)
+	if bool(result):
+		follower.set_branch_to_take(target_edge_id)
 
 	return block_time

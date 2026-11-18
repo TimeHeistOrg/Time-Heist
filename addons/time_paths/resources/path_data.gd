@@ -166,8 +166,7 @@ func compute_vertex_timing(vertex_id: int) -> Dictionary:
 				continue
 			if action.execution_direction == VertexAction.ExecutionDirection.BACKWARD_ONLY:
 				continue
-			if action is WaitAction:
-				time += action.duration
+			time += action.block_time
 
 	return {"reachable": true, "arrival": arrival, "departure": time}
 

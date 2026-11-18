@@ -12,7 +12,7 @@ enum ExecutionDirection { FORWARD_ONLY, BACKWARD_ONLY, BOTH }
 ## Used for PING-PONG paths. Specifies whether this action should be executed when moving forward on the path, backward on the path, or both.
 @export var execution_direction: ExecutionDirection = ExecutionDirection.FORWARD_ONLY
 ## How long (if at all) to block/wait on this action
-@export var block_time: float = 0
+@export_range(0,100,0.001,"or_greater") var block_time: float = 0
 
 ## Get the display name for this vertex action. Returns class name if not overridden.
 func get_display_name() -> String:

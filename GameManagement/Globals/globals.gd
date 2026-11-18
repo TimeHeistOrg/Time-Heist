@@ -83,6 +83,8 @@ var red_color : Color = Color("d73438")
 var active_color: Color = Color(0.521, 0.521, 0.521, 1.0)
 var disabled_color : Color = Color(0.081, 0.081, 0.081, 1.0)
 
+var branch_test:bool = false
+
 
 func _ready():
 	pass

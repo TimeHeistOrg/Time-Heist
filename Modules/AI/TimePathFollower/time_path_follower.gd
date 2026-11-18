@@ -4,6 +4,7 @@ class_name TimePathFollower extends PathFollower
 @export var state_label: Label3D
 
 var _time_finished: float = -1
+var _globals = globals
 
 func _state_setter(value):
 	super._state_setter(value)
@@ -75,7 +76,7 @@ func _dwelling_backward_step(remaining) -> float:
 	
 	_path_time -= consumed
 	_action_wait_remaining += consumed
-	if _action_wait_remaining > action.get_block_time():
+	if _action_wait_remaining >= action.get_block_time():
 		_cur_action_index -= 1
 		_action_wait_remaining = vertex.actions[_cur_action_index].get_block_time()
 	return remaining - consumed
@@ -114,7 +115,7 @@ func _begin_previous_edge():
 
 ## (Re)Initializes the vertex state variables to begin a previous vertex.
 func _arrive_at_previous_vertex():
-	var vertex = path_data.get_vertex_by_id(_target_vertex_id)
+	var vertex = path_data.get_vertex_by_id(_current_vertex_id)
 	_cur_action_index = vertex.actions.size()-1
 	if _cur_action_index > 0:
 		_action_wait_remaining = vertex.actions[_cur_action_index].get_block_time()
@@ -129,5 +130,5 @@ func _finished_backward_step(remaining):
 	_path_time -= consumed
 	if _path_time <= _time_finished:
 		_time_finished = -1
-		_state = State.DWELLING
+		_arrive_at_previous_vertex()
 	return remaining - consumed
