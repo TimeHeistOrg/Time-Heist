@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bntlvmtcr8jjj"]
+
+[ext_resource type="Script" uid="uid://bmmcf0datj8x0" path="res://addons/document_database/document_database_dock.gd" id="1_w65yx"]
+
+[node name="DocumentDatabaseDock" type="VBoxContainer" unique_id=1218396705]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_w65yx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=825861752]
+layout_mode = 2
+
+[node name="Search" type="LineEdit" parent="HBoxContainer" unique_id=1202417212]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search for documents..."
+
+[node name="New" type="Button" parent="HBoxContainer" unique_id=1566791618]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "New"
+
+[node name="Upload" type="Button" parent="HBoxContainer" unique_id=883976112]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Upload"
+
+[node name="Reload" type="Button" parent="HBoxContainer" unique_id=607124810]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Reload"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2024863720]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="DocumentListContainer" type="GridContainer" parent="ScrollContainer" unique_id=268422760]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[connection signal="text_changed" from="HBoxContainer/Search" to="." method="_on_search_text_changed"]
+[connection signal="button_down" from="HBoxContainer/New" to="." method="_on_new_button_down"]
+[connection signal="button_down" from="HBoxContainer/Upload" to="." method="_on_upload_button_down"]
+[connection signal="button_down" from="HBoxContainer/Reload" to="." method="_on_reload_button_down"]
+[connection signal="child_entered_tree" from="ScrollContainer/DocumentListContainer" to="ScrollContainer/DocumentListContainer" method="_update"]
+[connection signal="child_exiting_tree" from="ScrollContainer/DocumentListContainer" to="ScrollContainer/DocumentListContainer" method="_update"]
