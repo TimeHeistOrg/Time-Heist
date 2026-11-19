@@ -1,7 +1,7 @@
 extends Node
 class_name DocumentDatabase
 
-@export var documents_folder: String = "res://Assets/Documents/Resources/"
+@export var documents_folder: String = "res://Content/Documents/Resources/"
 @export var recursive: bool = false #look into sub folders? idk if will be needed
 
 var by_id: Dictionary = {}
@@ -28,9 +28,11 @@ func reload() -> void:
 		#Ignore unrelated resources in the folder
 
 func get_document(id: int) -> DocumentInfo:
+	if not has_document(id):
+		push_warning("Failed to retrive document: " + str(id))
 	return by_id.get(id)
 
-func has_document(id: String) -> bool:
+func has_document(id: int) -> bool:
 	return by_id.has(id)
 
 func print_all_documents_title():
