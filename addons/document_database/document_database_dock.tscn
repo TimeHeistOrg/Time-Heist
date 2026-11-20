@@ -2,6 +2,34 @@
 
 [ext_resource type="Script" uid="uid://bmmcf0datj8x0" path="res://addons/document_database/document_database_dock.gd" id="1_w65yx"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvjan"]
+bg_color = Color(0.7137255, 0.25882354, 0.25882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w65yx"]
+bg_color = Color(0.6342404, 0.2192319, 0.21862611, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvs1v"]
+bg_color = Color(0.57290876, 0.19387633, 0.19337359, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxokm"]
+bg_color = Color(0.37042874, 0.11067892, 0.112447985, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="DocumentDatabaseDock" type="VBoxContainer" unique_id=1218396705]
 clip_contents = true
 anchors_preset = 15
@@ -36,6 +64,15 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Reload"
 
+[node name="Clear" type="Button" parent="HBoxContainer" unique_id=1953707911]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yvjan")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w65yx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xvs1v")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lxokm")
+text = "Clear"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2024863720]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
@@ -53,5 +90,6 @@ columns = 3
 [connection signal="button_down" from="HBoxContainer/New" to="." method="_on_new_button_down"]
 [connection signal="button_down" from="HBoxContainer/Upload" to="." method="_on_upload_button_down"]
 [connection signal="button_down" from="HBoxContainer/Reload" to="." method="_on_reload_button_down"]
+[connection signal="button_down" from="HBoxContainer/Clear" to="." method="_on_clear_button_down"]
 [connection signal="child_entered_tree" from="ScrollContainer/DocumentListContainer" to="ScrollContainer/DocumentListContainer" method="_update"]
 [connection signal="child_exiting_tree" from="ScrollContainer/DocumentListContainer" to="ScrollContainer/DocumentListContainer" method="_update"]

@@ -57,13 +57,59 @@ func _on_upload_button_down() -> void:
 
 
 func _on_new_button_down() -> void:
-	var newPath := folder_path.path_join("new_document.tres")
+	var i := 0
+	while true:
+		if i == 0:
+			if FileAccess.file_exists(folder_path.path_join("new_document.tres")):
+				i += 1
+			else:
+				break
+		elif FileAccess.file_exists(folder_path.path_join("new_document (%d).tres" % i)):
+			i += 1
+		else:
+			break
+	var newPath: String
+	if i == 0:
+		newPath = folder_path.path_join("new_document.tres")
+	else:
+		newPath = folder_path.path_join("new_document (%d).tres" % i)
 	var newDocument := DocumentInfo.new()
 	ResourceSaver.save(newDocument, newPath)
-	EditorInterface.get_file_system_dock().navigate_to_path(newPath)
 	EditorInterface.edit_resource(newDocument)
+	EditorInterface.select_file(newPath)
 	reload()
 
 
 func _on_search_text_changed(new_text: String) -> void:
 	search(new_text)
+
+# Short confirm window to prevent accidental database deletions
+var initialPress := false
+func _on_clear_button_down() -> void:
+	if not initialPress:
+		$HBoxContainer/Clear.text = "Sure?"
+		$HBoxContainer/Clear.disabled = true
+		await get_tree().create_timer(1).timeout
+		$HBoxContainer/Clear.text = "2.."
+		await get_tree().create_timer(1).timeout
+		$HBoxContainer/Clear.text = "1.."
+		await get_tree().create_timer(1).timeout
+		$HBoxContainer/Clear.text = "Confirm"
+		$HBoxContainer/Clear.disabled = false
+		initialPress = true
+		await get_tree().create_timer(5).timeout
+		if initialPress:
+			$HBoxContainer/Clear.text = "Clear"
+			initialPress = false
+	else:
+		$HBoxContainer/Clear.text = "..."
+		$HBoxContainer/Clear.disabled = true
+		initialPress = false
+		for file_name in DirAccess.get_files_at(folder_path):
+			DirAccess.remove_absolute(folder_path.path_join(file_name))
+		reload()
+		$HBoxContainer/Clear.text = "Cleared!"
+		await get_tree().create_timer(2).timeout
+		$HBoxContainer/Clear.text = "Clear"
+		$HBoxContainer/Clear.disabled = false
+		
