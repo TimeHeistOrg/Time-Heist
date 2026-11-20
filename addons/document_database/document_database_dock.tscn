@@ -52,11 +52,15 @@ placeholder_text = "Search for documents..."
 [node name="New" type="Button" parent="HBoxContainer" unique_id=1566791618]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+tooltip_text = "Creates a new DocumentInfo resource and assigns it a unique ID."
 text = "New"
 
 [node name="Upload" type="Button" parent="HBoxContainer" unique_id=883976112]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+tooltip_text = "Upload a .csv/.json file containing document information.
+
+Overwrites existing data."
 text = "Upload"
 
 [node name="Reload" type="Button" parent="HBoxContainer" unique_id=607124810]
@@ -67,6 +71,7 @@ text = "Reload"
 [node name="Clear" type="Button" parent="HBoxContainer" unique_id=1953707911]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
+tooltip_text = "Permanently deletes all documents from the file system."
 theme_override_styles/normal = SubResource("StyleBoxFlat_yvjan")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w65yx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xvs1v")
