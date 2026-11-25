@@ -1,3 +1,4 @@
+@tool
 extends Node
 
 enum Scene {
@@ -19,17 +20,19 @@ var scene_paths := {
 const START_SCENE := Scene.MAIN_MENU
 const ROOT_SCENE_NAME := "TimeHeist"
 
-enum Manager {
-	INPUT_MANAGER,
-	UI_MANAGER,
-	TIME_MANAGER
-}
+#enum Manager {
+	#INPUT_MANAGER,
+	#UI_MANAGER,
+	#TIME_MANAGER
+#}
+#
+#var managers := {
+	#Manager.INPUT_MANAGER: preload("res://GameManagement/input_manager.gd"),
+	#Manager.UI_MANAGER: preload("res://GameManagement/ui_manager.tscn"),
+	#Manager.TIME_MANAGER: preload("res://GameManagement/time_manager.gd")
+#}
 
-var managers := {
-	Manager.INPUT_MANAGER: preload("res://GameManagement/input_manager.gd"),
-	Manager.UI_MANAGER: preload("res://GameManagement/ui_manager.tscn"),
-	Manager.TIME_MANAGER: preload("res://GameManagement/time_manager.gd")
-}
+var managers: Array[GDScript] = [InputManager,UIManager,TimeManager]
 
 # since this is a global, need to assign these in _ready
 var current_scene: Node
@@ -42,18 +45,20 @@ var scene_transition := preload("res://Modules/UI/GameUI/scene_transition.tscn")
 
 
 func _ready() -> void:
-	sub_viewport_container = SubViewportContainer.new()
-	add_child(sub_viewport_container)
+	print("ready!")
+	if not Engine.is_editor_hint():
+		sub_viewport_container = SubViewportContainer.new()
+		add_child(sub_viewport_container)
 
-	sub_viewport = SubViewport.new()
-	sub_viewport_container.add_child(sub_viewport)
+		sub_viewport = SubViewport.new()
+		sub_viewport_container.add_child(sub_viewport)
 
-	transition_animator = scene_transition.instantiate()
-	add_child(transition_animator)
-	
-	await get_tree().process_frame
-	_get_run_scene()
-	get_tree().root.print_tree_pretty()
+		transition_animator = scene_transition.instantiate()
+		add_child(transition_animator)
+		
+		await get_tree().process_frame
+		_get_run_scene()
+		get_tree().root.print_tree_pretty()
 
 
 func _get_run_scene() -> void:
@@ -66,7 +71,7 @@ func _get_run_scene() -> void:
 	if config == null:
 		push_warning("SceneManager: No SceneConfig found in '%s'." % run_scene.name)
 		return
-	print("config: ", config, " managers: ", config.managers)
+	#print("config: ", config, " managers: ", config.managers)
 	_setup_managers(run_scene, config)
 	run_scene.reparent(sub_viewport)
 	current_scene = run_scene
@@ -84,11 +89,12 @@ func _find_scene_config(root: Node) -> SceneConfig:
 
 
 func _setup_managers(root: Node, config: SceneConfig) -> void:
-	for manager in config.managers:
-		print(manager)
-		var new_manager: Node = managers[manager].new()
-		new_manager.name = Manager.keys()[manager].capitalize().replace(" ", "")
-		root.add_child(new_manager)
+	#for manager in config.managers:
+		#print(manager)
+		#var new_manager: Node = managers[manager].new()
+		#new_manager.name = Manager.keys()[manager].capitalize().replace(" ", "")
+		#root.add_child(new_manager)
+	pass
 
 
 func change_scene(s: Scene, transition = null) -> void:
