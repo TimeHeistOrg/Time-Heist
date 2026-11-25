@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://l2usfejrpvv5"]
+
+[ext_resource type="Script" uid="uid://dff353uhlrip3" path="res://scene.gd" id="1_lc1oi"]
+
+[node name="Test" type="Node" unique_id=1604746294]
+script = ExtResource("1_lc1oi")
+managers = Array[int]([0, 2])
+metadata/_custom_type_script = "uid://dff353uhlrip3"

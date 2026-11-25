@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://78f141t871ho"]
+
+[ext_resource type="Script" uid="uid://dff353uhlrip3" path="res://scene.gd" id="1_gjdyk"]
+
+[node name="Scene" type="Node" unique_id=1037561594]
+script = ExtResource("1_gjdyk")
+managers = Array[int]([2, 1])

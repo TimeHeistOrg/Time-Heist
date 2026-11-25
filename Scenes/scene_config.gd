@@ -1,4 +1,4 @@
-class_name SceneConfig extends Node
+extends Node
 
 @export var player: Player
 @export var exclusion_list: Array[Node]
@@ -11,7 +11,6 @@ class_name SceneConfig extends Node
 @onready var scene_subviewport_container = $SubViewportContainer
 @onready var scene_subviewport = $SubViewportContainer/SubViewport
 @onready var screen_camera = $ScreenSubViewport/Camera3D
-
 
 const input_manager_scene := preload("res://GameManagement/input_manager.gd")
 const ui_manager_scene := preload("res://GameManagement/ui_manager.tscn")
@@ -39,7 +38,7 @@ func _ready():
 			for sibling: Node in get_parent().get_children():
 				if sibling is Player and not player:
 					player = sibling
-			
+
 
 func move_scene_into_subviewport():
 	for sibling: Node in get_parent().get_children():
