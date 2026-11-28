@@ -121,7 +121,7 @@ func rewind_to_waypoint():
 	var goal_time = waypoint_array.pop() - cur_time
 	rewind(goal_time)
 	rewinded_to_waypoint.emit()
-	
+
 func rewind(time_sec:float):
 	delta_time = time_sec
 	var goal_time = cur_time + delta_time

@@ -132,3 +132,10 @@ func _finished_backward_step(remaining):
 		_time_finished = -1
 		_arrive_at_previous_vertex()
 	return remaining - consumed
+
+
+func begin_rotation_animation(clockwise:bool, start_time: float):
+	if clockwise:
+		rotation_animation_player.time_play(clockwise_animation,start_time,clockwise_rotation_speed)
+	else:
+		rotation_animation_player.time_play(counter_clockwise_animation,start_time,counter_clockwise_rotation_speed)
